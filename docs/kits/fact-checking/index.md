@@ -2,15 +2,16 @@
 title: Fact-Checking Kit
 ---
 
-## Intended use
-- Users of existing agent/LLM systems
-- Developers building agents
+# Fact-Checking Kit
 
-## Core rules
-(put your rules here)
+## Scope
+(put your scope)
+
+## Rules
+(put your rules)
 
 ## Copy/paste block
-(put your block here)
+(put your instruction block)
 
 ## Output contract
 - FACT / INFERENCE / UNKNOWN
