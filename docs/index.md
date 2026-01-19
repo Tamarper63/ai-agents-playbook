@@ -5,4 +5,5 @@ title: ai-agents-playbook
 # ai-agents-playbook
 
 ## Start here
-- [Fact-Checking Kit](kits/fact-checking/)
+- [Facts-Only (Citations Required)](kits/facts-only-citations/)
+
