@@ -1,0 +1,10 @@
+title: ai-agents-playbook
+description: A public, versioned knowledge base for building reliable AI agents and securing agentic systems.
+
+theme: jekyll-theme-cayman
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
