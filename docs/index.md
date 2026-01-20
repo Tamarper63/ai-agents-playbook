@@ -2,7 +2,7 @@
 title: ai-agents-playbook
 ---
 
-# ai-agents-playbook
+# AI-agents-playbook
 
 A public, versioned knowledge base for building reliable AI systems (agents, orchestration, evaluation) and securing agentic workflows (tool access, permissions, guardrails).
 
