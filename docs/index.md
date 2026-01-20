@@ -18,8 +18,8 @@ This site is organized into the following lanes:
 
 ## Entry points
 
-- [Notes]({% link notes/index.md %})
-- [How-to guides]({% link how-to/index.md %})
-- [Reference]({% link reference/index.md %})
-- [Policies]({% link policies/index.md %})
-- [Prompt blocks]({% link prompts/index.md %})
+- [Notes](notes/index.md)
+- [How-to guides](how-to/index.md)
+- [Reference](reference/index.md)
+- [Policies](policies/index.md)
+- [Prompt blocks](prompts/index.md)
