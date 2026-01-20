@@ -14,11 +14,12 @@ This site is organized into the following lanes:
 - **How-to guides**: step-by-step procedures and checklists.
 - **Reference**: stable definitions and conventions.
 - **Policies + Prompts**: normative operating contracts and copy/paste prompt blocks.
+- **Prompt blocks**: reusable prompt templates for agentic workflows and system instructions.
 
 ## Entry points
 
-- [Notes](notes/)
-- [How-to guides](how-to/)
-- [Reference](reference/)
-- [Policies](policies/)
-- [Prompt blocks](prompts/)
+- [Notes]({% link notes/index.md %})
+- [How-to guides]({% link how-to/index.md %})
+- [Reference]({% link reference/index.md %})
+- [Policies]({% link policies/index.md %})
+- [Prompt blocks]({% link prompts/index.md %})
