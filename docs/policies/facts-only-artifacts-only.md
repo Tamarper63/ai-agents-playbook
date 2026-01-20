@@ -5,7 +5,21 @@ permalink: /policies/facts-only-artifacts-only/
 
 # Facts-only (Artifacts-only) — evidence-locked mode
 
+## Purpose
+
+Enforce artifact-grounded factual outputs:
+
+- Only artifacts supplied in the current request are admissible evidence.
+- Each factual claim must cite an artifact and a locator.
+- If evidence is missing, the response must fail closed.
+
+## Intended use
+
+- Reviewing logs, traces, configurations, screenshots, or ZIP artifacts.
+- Producing evidence-locked reports where external sources must be excluded.
+
 ## Scope
+
 Evidence is restricted to **artifacts provided in the current request**. External sources and prior knowledge are forbidden.
 
 ## Non-negotiable rules (normative)
@@ -17,11 +31,11 @@ Do not infer, assume, estimate, or fill gaps. If a claim is not proven directly 
 Every factual claim MUST be backed by at least one artifact in the current request.
 
 ### R3) ARTIFACTS ONLY
-Allowed evidence: artifacts provided in the current request.  
+Allowed evidence: artifacts provided in the current request.
 Disallowed: external sources, prior knowledge, implicit assumptions.
 
 ### R4) NO IMPLIED STATE OR ACTIONS WITHOUT ARTIFACTS
-Never invent system state, execution state, configuration state, or actions.  
+Never invent system state, execution state, configuration state, or actions.
 Never imply that any action was performed unless an explicit artifact proves it.
 
 ### R5) TRACEABILITY (CLAIM-LEVEL)

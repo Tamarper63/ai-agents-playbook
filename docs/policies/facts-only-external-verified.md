@@ -5,7 +5,20 @@ permalink: /policies/facts-only-external-verified/
 
 # Facts-only (External verification allowed) — evidence-locked mode
 
+## Purpose
+
+Enforce formally verified factual outputs:
+
+- Each factual claim must cite an authoritative external source with a stable locator (e.g., DOI, standard identifier, ISBN+section, or institution+locator).
+- If verification is missing, the response must fail closed.
+
+## Intended use
+
+- Research summaries intended for publication.
+- Technical guidance where unsourced factual claims are unacceptable.
+
 ## Scope
+
 Every factual claim must be verified against formal, authoritative external sources. No unsourced facts.
 
 ## Non-negotiable rules (normative)
@@ -27,7 +40,7 @@ Disallowed:
 - Random blogs, social media, marketing pages, forum posts, unverifiable screenshots.
 
 ### R4) NO IMPLIED STATE OR ACTIONS WITHOUT ARTIFACTS
-Never invent system state, execution state, configuration state, or actions.  
+Never invent system state, execution state, configuration state, or actions.
 Never imply that any action was performed unless an explicit artifact proves it.
 
 ### R5) TRACEABILITY (CLAIM-LEVEL)

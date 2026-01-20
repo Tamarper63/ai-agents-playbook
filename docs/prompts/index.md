@@ -1,12 +1,18 @@
 ---
-layout: default
 title: Prompt blocks
 permalink: /prompts/
 ---
 
 # Prompt blocks
 
-Copy/paste system prompts:
+Copy/paste prompt blocks aligned to the policies.
 
-- [Mode A — Facts-only (Artifacts-only)]({{ "/prompts/facts-only-artifacts-only.system.txt" | relative_url }})
-- [Mode B — Facts-only (External verification allowed)]({{ "/prompts/facts-only-external-verified.system.txt" | relative_url }})
+## Blocks
+
+- [Mode A — Facts-only (Artifacts-only)](facts-only-artifacts-only.system.txt)
+- [Mode B — Facts-only (External verification allowed)](facts-only-external-verified.system.txt)
+
+## Usage
+
+- Use the corresponding policy page as the normative reference.
+- Treat the prompt block as an implementation convenience.
