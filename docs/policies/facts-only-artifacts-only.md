@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Facts-only (Artifacts-only) — evidence-locked mode
 permalink: /policies/facts-only-artifacts-only/
 ---
@@ -7,7 +6,6 @@ permalink: /policies/facts-only-artifacts-only/
 # Facts-only (Artifacts-only) — evidence-locked mode
 
 ## Scope
-
 Evidence is restricted to **artifacts provided in the current request**. External sources and prior knowledge are forbidden.
 
 ## Non-negotiable rules (normative)

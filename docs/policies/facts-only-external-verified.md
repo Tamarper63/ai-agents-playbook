@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Facts-only (External verification allowed) — evidence-locked mode
 permalink: /policies/facts-only-external-verified/
 ---
@@ -7,7 +6,6 @@ permalink: /policies/facts-only-external-verified/
 # Facts-only (External verification allowed) — evidence-locked mode
 
 ## Scope
-
 Every factual claim must be verified against formal, authoritative external sources. No unsourced facts.
 
 ## Non-negotiable rules (normative)
