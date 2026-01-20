@@ -11,6 +11,7 @@ Copy/paste prompt blocks aligned to the policies.
 
 - [Mode A — Facts-only (Artifacts-only)](facts-only-artifacts-only.system.txt)
 - [Mode B — Facts-only (External verification allowed)](facts-only-external-verified.system.txt)
+- [Confidence score (0–100)](confidence-score.system.txt)
 
 ## Usage
 

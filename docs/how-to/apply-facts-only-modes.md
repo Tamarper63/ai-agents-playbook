@@ -10,12 +10,12 @@ This guide describes how to use the facts-only policies and prompt blocks in thi
 ## Choose a mode
 
 - **Artifacts-only (no external sources):**
-  - Policy: [Facts-only (Artifacts-only)](../../policies/facts-only-artifacts-only/)
-  - Prompt: [facts-only-artifacts-only.system.txt](../../prompts/facts-only-artifacts-only.system.txt)
+  - Policy: [Facts-only (Artifacts-only)]({% link policies/facts-only-artifacts-only.md %})
+  - Prompt: [facts-only-artifacts-only.system.txt]({% link prompts/facts-only-artifacts-only.system.txt %})
 
 - **External-verified (formal sources allowed):**
-  - Policy: [Facts-only (External verification allowed)](../../policies/facts-only-external-verified/)
-  - Prompt: [facts-only-external-verified.system.txt](../../prompts/facts-only-external-verified.system.txt)
+  - Policy: [Facts-only (External verification allowed)]({% link policies/facts-only-external-verified.md %})
+  - Prompt: [facts-only-external-verified.system.txt]({% link prompts/facts-only-external-verified.system.txt %})
 
 ## For users of existing agent/chat systems
 

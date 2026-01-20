@@ -15,5 +15,6 @@ In this repository, policies are one module among others (Notes / How-to / Refer
 
 ## Policies
 
-- [Facts-only (Artifacts-only)](facts-only-artifacts-only/)
-- [Facts-only (External verification allowed)](facts-only-external-verified/)
+- [Facts-only (Artifacts-only)](facts-only-artifacts-only)
+- [Facts-only (External verification allowed)](facts-only-external-verified)
+- [Confidence score (0–100) — reporting rules](confidence-score)
