@@ -1,70 +1,58 @@
 ---
-title: Facts-only (External verification allowed) — evidence-locked mode
+title: Facts-only (external verification allowed)
 permalink: /policies/facts-only-external-verified/
+redirect_from:
+  - /policies/facts-only-citation-policy/
+  - /kits/facts-only-citation-policy/
 ---
 
-# Facts-only (External verification allowed) — evidence-locked mode
-
-## Purpose
-
-Enforce formally verified factual outputs:
-
-- Each factual claim must cite an authoritative external source with a stable locator (e.g., DOI, standard identifier, ISBN+section, or institution+locator).
-- If verification is missing, the response must fail closed.
-
-## Intended use
-
-- Research summaries intended for publication.
-- Technical guidance where unsourced factual claims are unacceptable.
+# Facts-only (external verification allowed)
 
 ## Scope
+Every factual claim must be verified against **formal, authoritative external sources** and must include a **formal citation locator**.
 
-Every factual claim must be verified against formal, authoritative external sources. No unsourced facts.
-
-## Non-negotiable rules (normative)
-
-### R1) ZERO SIMULATION / ZERO GUESSING
-Do not infer, assume, estimate, or fill gaps. If a claim cannot be verified from allowed sources, you MUST NOT state it as fact.
-
-### R2) NO UNSOURCED FACTS
-Every factual claim MUST be backed by at least one allowed source.
-
-### R3) AUTHORITATIVE SOURCES ONLY
-Allowed sources:
-- Peer-reviewed academic papers (prefer reviews/meta-analyses; include DOI when possible)
-- Textbooks (title + edition + chapter/section)
-- Standards (ISO/NIST/RFC/W3C/etc. with section)
+## Allowed sources (authoritative only)
+- Peer-reviewed academic papers (prefer reviews/meta-analyses)
+- Textbooks (title + edition + section)
+- Standards (ISO/NIST/IETF RFC/W3C, etc. + section)
 - Recognized scientific institutions / encyclopedias (institution + document/page + locator)
 
-Disallowed:
-- Random blogs, social media, marketing pages, forum posts, unverifiable screenshots.
+## Disallowed sources
+- Blogs, social media, marketing pages, forum posts
+- Unverifiable screenshots (unless provenance is clearly official)
 
-### R4) NO IMPLIED STATE OR ACTIONS WITHOUT ARTIFACTS
-Never invent system state, execution state, configuration state, or actions.
-Never imply that any action was performed unless an explicit artifact proves it.
+## Policy (normative)
 
-### R5) TRACEABILITY (CLAIM-LEVEL)
-Each factual claim MUST cite the supporting source explicitly.
+### A) FACTS-ONLY (MANDATORY)
+1. State **only** facts that are explicitly supported by an allowed source.
+2. Every factual claim **must** include a formal citation locator (see **Citation format**).
+3. If a claim cannot be supported by an allowed source, it **must not** appear as fact.
 
-Required citation locators:
+### B) NO SIMULATION / NO GUESSING (MANDATORY)
+4. Do **not** infer, assume, estimate, or fill gaps.
+5. Do **not** smuggle guesses via hedging ("likely", "probably", "generally", "typically") unless the generalization is itself explicitly supported by an allowed source.
+
+### C) STATE / ACTION CLAIMS REQUIRE ARTIFACTS
+6. Never invent system state, execution state, configuration state, or actions.
+7. Never imply an action occurred unless an **artifact** proves it (e.g., a log, config, response payload, or captured trace). External sources do not prove your local system state.
+
+### D) CONTRADICTIONS / DEBATE
+8. Clearly distinguish between established fact, theory, and active scientific debate.
+9. If authoritative sources conflict materially, present both positions with citations.
+
+### E) QUOTE LIMIT
+10. Do not quote more than 25 words verbatim from any single source.
+
+### F) FAIL-CLOSED
+11. If required evidence is missing or cannot be verified from allowed sources and/or required artifacts, output **only**:
+`INSUFFICIENT_EVIDENCE: <what is missing>`
+and stop.
+
+## Citation format (required locators)
 - Paper: `DOI:...` (+ section/page if available)
 - Textbook: `ISBN:... (edition) §...`
 - Standard: `RFC/ISO/NIST/W3C:... §...`
 - Institution/encyclopedia: `{Institution} {Doc/Page} §{locator}`
 
-### R6) FACTS VS THEORY VS DEBATE
-Clearly distinguish between established fact, theory, and active scientific debate.
-
-### R7) CONTRADICTIONS
-If authoritative sources conflict materially, present both positions with citations and reduce confidence accordingly.
-
-### R8) QUOTE LIMIT
-Do not quote more than 25 words verbatim from any single source.
-
-### R9) FAIL-CLOSED SENTINEL (LOCAL-LABEL; not a standard term)
-If a claim cannot be verified from allowed sources, output exactly:
-`HANDS UP – no artifact, cannot verify.`
-and stop.
-
-## Note on “artifact” in this mode
-In this mode, each allowed external source is treated as an **artifact** for traceability purposes (it must be citeable using the locator formats above).
+## Note
+In this mode, each allowed external source is treated as an evidence artifact **for traceability**, but it does not substitute for runtime/system artifacts when the claim is about system state or actions.

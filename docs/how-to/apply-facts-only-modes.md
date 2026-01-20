@@ -1,57 +1,56 @@
 ---
-title: Apply the facts-only modes (users + developers)
+title: Apply the facts-only modes
 permalink: /how-to/apply-facts-only-modes/
 ---
 
-# Apply the facts-only modes (users + developers)
+# Apply the facts-only modes
 
-This guide describes how to use the facts-only policies and prompt blocks in this repository.
+This guide explains how to apply the policies and prompts in this repository.
 
 ## Choose a mode
 
-- **Artifacts-only (no external sources):**
-  - Policy: [Facts-only (Artifacts-only)](../../policies/facts-only-artifacts-only/)
-  - Prompt: [facts-only-artifacts-only.system.txt](../../prompts/facts-only-artifacts-only.system.txt)
+### Mode A: Artifacts-only
+Use when you have concrete artifacts (files, logs, configs, screenshots with provenance) and want the assistant to rely only on those artifacts.
 
-- **External-verified (formal sources allowed):**
-  - Policy: [Facts-only (External verification allowed)](../../policies/facts-only-external-verified/)
-  - Prompt: [facts-only-external-verified.system.txt](../../prompts/facts-only-external-verified.system.txt)
+- Policy: [Facts-only (artifacts only)]({{ "/policies/facts-only-artifacts-only/" | relative_url }})
+- Prompt: [Artifacts-only system prompt]({{ "/prompts/facts-only-artifacts-only.system.txt" | relative_url }})
 
-## For users of existing agent/chat systems
+### Mode B: External verification allowed
+Use when you want factual claims verified against authoritative external sources.
 
-### Input structure
+- Policy: [Facts-only (external verification allowed)]({{ "/policies/facts-only-external-verified/" | relative_url }})
+- Prompt: [External-verified system prompt]({{ "/prompts/facts-only-external-verified.system.txt" | relative_url }})
 
-Provide:
-1) **Task** — the exact question
-2) **Evidence** — artifacts (Mode A) or authoritative sources (Mode B)
-3) **Constraints** — scope/date definitions/exclusions
+## For users of existing LLM/agent systems (chat-based)
 
-### Artifact citation requirement (Mode A)
+1) Paste the chosen **system prompt** into the highest-priority instruction field your product provides (for example: system/custom/project instructions).
+2) Provide your task and (for Mode A) attach artifacts, or (for Mode B) provide authoritative sources.
 
-When you provide artifacts, include identifiers that can be cited in the output:
-- filename
-- section/page/line ranges
-- labeled snippets
+### Task wrapper (recommended)
 
-Expected behavior:
-- If the system cannot prove a claim from your artifacts, it must return exactly:
-  `HANDS UP – no artifact, cannot verify.`
+**Mode A (artifacts-only)**
+
+> Artifacts:
+> - [attach files or paste excerpts]
+>
+> Task: [your question]
+>
+> Requirements: Apply the artifacts-only facts-only policy. If you cannot verify from artifacts, output exactly: `INSUFFICIENT_EVIDENCE: <what is missing>`
+
+**Mode B (external verification)**
+
+> Sources:
+> - [peer-reviewed papers / standards / textbooks / recognized institutions]
+>
+> Task: [your question]
+>
+> Requirements: Apply the external-verified facts-only policy. If you cannot verify, output exactly: `INSUFFICIENT_EVIDENCE: <what is missing>`
 
 ## For developers building agents
 
-### Enforcement control 1: precondition check
+Implement the policy as two gates:
 
-Do not enter “factual output mode” unless evidence is present:
-- Mode A: at least one artifact is attached/provided
-- Mode B: at least one admissible authoritative source is retrievable and citeable
+1) **Precondition gate**: do not ask for factual output unless artifacts/sources are available.
+2) **Post-generation gate**: reject outputs with any factual claim missing the required citation locator.
 
-### Enforcement control 2: post-generation gate
-
-Reject the model output unless:
-- every factual claim has a valid citation/locator
-- no implied state/action appears without an explicit artifact
-
-Fail closed behavior:
-- If the output fails the gate, return exactly:
-  `HANDS UP – no artifact, cannot verify.`
-  and stop.
+If a gate fails, return exactly: `INSUFFICIENT_EVIDENCE: <what is missing>`
