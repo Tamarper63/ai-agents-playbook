@@ -1,29 +1,24 @@
 ---
-title: ai-agents-playbook
-description: A public, versioned knowledge base for building reliable AI agents and securing agentic systems.
-permalink: /
+title: AI-agents-playbook
 ---
 
-# ai-agents-playbook
+# AI-agents-playbook
 
-A public, versioned knowledge base for building reliable AI agents (architecture, prompting, evaluation) and securing agentic systems (tool access, permissions, guardrails).
+A public, versioned knowledge base for building reliable AI systems (agents, orchestration, evaluation) and securing agentic workflows (tool access, permissions, guardrails).
 
-## Start here
+## What this site contains
 
-### Policies (normative)
-- [Facts-only (artifacts only)]({{ "/policies/facts-only-artifacts-only/" | relative_url }})
-- [Facts-only (external verification allowed)]({{ "/policies/facts-only-external-verified/" | relative_url }})
+This site is organized into the following lanes:
 
-### Prompts (copy/paste)
-- [Artifacts-only system prompt]({{ "/prompts/facts-only-artifacts-only.system.txt" | relative_url }})
-- [External-verified system prompt]({{ "/prompts/facts-only-external-verified.system.txt" | relative_url }})
-- [Academic research mode system prompt]({{ "/prompts/academic-research-mode.system.txt" | relative_url }})
+- **Notes**: long-form technical writeups and research notes.
+- **How-to guides**: step-by-step procedures and checklists.
+- **Reference**: stable definitions and conventions.
+- **Policies + Prompts**: normative operating contracts and copy/paste prompt blocks.
 
-### How-to
-- [Apply the facts-only modes]({{ "/how-to/apply-facts-only-modes/" | relative_url }})
+## Entry points
 
-### Reference
-- [Reference index]({{ "/reference/" | relative_url }})
-
-### Articles
-- [Articles]({{ "/articles/" | relative_url }})
+- [Notes](notes/)
+- [How-to guides](how-to/)
+- [Reference](reference/)
+- [Policies](policies/)
+- [Prompt blocks](prompts/)

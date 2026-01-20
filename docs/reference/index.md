@@ -5,16 +5,9 @@ permalink: /reference/
 
 # Reference
 
-Reference material: schemas, configs, and machine-readable contracts.
+Stable definitions, conventions, and reusable reference material.
 
-## CODE-RPC
-- Config: [code_rpc_config.json]({{ "/reference/code-rpc/code_rpc_config.json" | relative_url }})
-- Schema: [code_rpc.schema.json]({{ "/reference/code-rpc/code_rpc.schema.json" | relative_url }})
-- Policy text: [policy.txt]({{ "/reference/code-rpc/policy.txt" | relative_url }})
-- Instructions text: [instructions.txt]({{ "/reference/code-rpc/instructions.txt" | relative_url }})
+## Pages
 
-## Prompts
-- Academic research mode (copy/paste): [academic-research-mode.system.txt]({{ "/prompts/academic-research-mode.system.txt" | relative_url }})
-
-## Style
-- Non-sycophantic / objective constraints: [non-sycophantic.txt]({{ "/reference/style/non-sycophantic.txt" | relative_url }})
+- [Site structure and content conventions](site-structure-and-conventions/)
+- [Evidence and citation conventions](evidence-and-citation-conventions/)

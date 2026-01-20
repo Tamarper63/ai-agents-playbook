@@ -1,4 +1,4 @@
-title: ai-agents-playbook
+title: AI-agents-playbook
 description: A public, versioned knowledge base for building reliable AI agents and securing agentic systems.
 
 # GitHub Pages project site:
@@ -8,13 +8,8 @@ baseurl: /ai-agents-playbook
 
 theme: jekyll-theme-cayman
 
-plugins:
-  - jekyll-redirect-from
-
 defaults:
   - scope:
       path: ""
     values:
       layout: default
-
-permalink: pretty
