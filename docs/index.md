@@ -1,5 +1,5 @@
 ---
-title: ai-agents-playbook
+title: AI-agents-playbook
 ---
 
 # AI-agents-playbook
