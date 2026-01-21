@@ -13,4 +13,4 @@ Landing page for notes on:
 
 
 ## Notes
-- [Fluency Is Not Factuality](fluency-vs-factuality)
+- [Fluency Is Not Factuality](model-training-and-eval/fluency-vs-factuality/)

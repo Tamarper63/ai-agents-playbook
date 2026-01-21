@@ -4,7 +4,6 @@ permalink: /notes/model-training-and-eval/fluency-vs-factuality/
 summary: Why coherent LLM outputs can be incorrect, and how to enforce evidence-locked answers.
 ---
 
-
 # Fluency ≠ Factuality — why LLMs can sound right and be wrong
 
 ## Abstract
