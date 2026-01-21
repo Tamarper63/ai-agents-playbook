@@ -1,3 +1,5 @@
+# _config.yml
+
 title: AI-agents-playbook
 description: A public, versioned knowledge base for building reliable AI agents and securing agentic systems.
 
@@ -7,6 +9,12 @@ url: https://tamarper63.github.io
 baseurl: /ai-agents-playbook
 
 theme: jekyll-theme-cayman
+
+# Custom palette consumed by assets/css/style.scss via site.palette.*
+palette:
+  header_primary: "#0F172A"
+  header_secondary: "#111827"
+  accent: "#D97706"
 
 defaults:
   - scope:

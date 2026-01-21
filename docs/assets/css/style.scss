@@ -1,21 +1,22 @@
+/* assets/css/style.scss */
 ---
 ---
 
-/* Pull palette from _config.yml (optional). */
-$header_primary: {{ site.palette.header_primary | default: "#155799" }};
-$header_secondary: {{ site.palette.header_secondary | default: "#159957" }};
-$accent: {{ site.palette.accent | default: "#159957" }};
+/* Pull palette from _config.yml */
+$header_primary: {{ site.palette.header_primary | default: "#0F172A" }};
+$header_secondary: {{ site.palette.header_secondary | default: "#111827" }};
+$accent: {{ site.palette.accent | default: "#D97706" }};
 
 @import "{{ site.theme }}";
 
-/* A) shrink the Cayman header (no layout changes) */
+/* Header compaction + palette */
 .page-header {
-  padding: 2.25rem 1rem; /* default is much larger; this reduces the hero height */
+  padding: 2.25rem 1rem;
   background-color: $header_primary;
   background-image: linear-gradient(120deg, $header_secondary, $header_primary);
 }
 
-/* B) tighten title/tagline typography */
+/* Title/tagline rhythm */
 .project-name {
   margin: 0.15rem 0;
   font-size: 2.2rem;
@@ -25,16 +26,32 @@ $accent: {{ site.palette.accent | default: "#159957" }};
   margin: 0.4rem auto 0;
   font-size: 1rem;
   max-width: 56rem;
+  opacity: 0.9;
 }
 
-/* C) reduce GitHub button visual dominance (still same placement/layout) */
-.page-header .btn {
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
-  opacity: 0.82;
+/* Remove the GitHub header button (layout unchanged; just hidden) */
+.page-header a.btn[href*="github.com"] {
+  display: none !important;
 }
 
-/* D) apply accent color to main links */
+/* Link styling */
 .main-content a {
   color: $accent;
+}
+.main-content a:hover {
+  text-decoration: underline;
+}
+.main-content a:visited {
+  color: $accent;
+}
+
+/* Code styling aligned to accent */
+code {
+  background: rgba(217, 119, 6, 0.10);
+}
+pre, code {
+  border-radius: 8px;
+}
+pre {
+  border-left: 4px solid $accent;
 }

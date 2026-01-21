@@ -11,3 +11,5 @@ Landing page for notes on:
 - policy enforcement points (pre-call gating, runtime checks, post-call validation)
 - auditability and observability of tool actions
 - threat models for prompt injection and indirect tool steering
+
+- [The Attack Surface Isn’t the LLM — It’s the Controller Loop](controller-loop-attack-surface/index.md)
