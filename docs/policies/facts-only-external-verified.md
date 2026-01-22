@@ -3,7 +3,11 @@ title: Facts-only (External verification allowed) — evidence-locked mode
 permalink: /policies/facts-only-external-verified/
 ---
 
-# Facts-only (External verification allowed) — evidence-locked mode
+## Canonical links
+
+- **Prompt block (copy/paste):** [facts-only-external-verified.system.txt]({{ '/prompts/facts-only-external-verified.system.txt' | relative_url }})
+- **How-to (apply modes):** [Apply the facts-only modes]({{ '/how-to/apply-facts-only-modes/' | relative_url }})
+- **Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
 
 ## Purpose
 

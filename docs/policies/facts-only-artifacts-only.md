@@ -3,7 +3,11 @@ title: Facts-only (Artifacts-only) — evidence-locked mode
 permalink: /policies/facts-only-artifacts-only/
 ---
 
-# Facts-only (Artifacts-only) — evidence-locked mode
+## Canonical links
+
+- **Prompt block (copy/paste):** [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
+- **How-to (apply modes):** [Apply the facts-only modes]({{ '/how-to/apply-facts-only-modes/' | relative_url }})
+- **Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
 
 ## Purpose
 

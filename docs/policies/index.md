@@ -18,3 +18,4 @@ In this repository, policies are one module among others (Notes / How-to / Refer
 - [Facts-only (Artifacts-only)]({{ '/policies/facts-only-artifacts-only/' | relative_url }})
 - [Facts-only (External verification allowed)]({{ '/policies/facts-only-external-verified/' | relative_url }})
 - [Confidence score (0–100) — reporting rules]({{ '/policies/confidence-score/' | relative_url }})
+- [Technical Accuracy Policy (Evidence-Gated Claims)]({{ '/policies/technical-accuracy-policy/' | relative_url }})

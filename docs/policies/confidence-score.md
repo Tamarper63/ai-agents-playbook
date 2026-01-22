@@ -3,7 +3,11 @@ title: Confidence score (0–100) — reporting rules
 permalink: /policies/confidence-score/
 ---
 
-# Confidence score (0–100) — reporting rules
+## Canonical links
+
+- **Prompt block (copy/paste):** [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
+- **How-to (apply):** [Add a confidence score (0–100) to every response]({{ '/how-to/add-confidence-score-to-responses/' | relative_url }})
+- **Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
 
 ## Scope
 This policy defines mandatory confidence-score reporting rules for responses.
