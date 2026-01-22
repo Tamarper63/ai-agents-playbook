@@ -3,9 +3,15 @@ title: Technical Accuracy Gate — Prompt Templates
 permalink: /prompts/technical-accuracy-gate-templates/
 ---
 
-# Technical Accuracy Gate — Prompt Templates
+## Canonical links
+
+- **Policy (normative):** [Technical Accuracy Policy (Evidence-Gated Claims)]({{ '/policies/technical-accuracy-policy/' | relative_url }})
+- **How-to (procedure):** [Technical Accuracy Gate — Verification Procedure]({{ '/how-to/technical-accuracy-gate-procedure/' | relative_url }})
+- **Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
 
 ## Template 1 (ChatGPT / Custom Instructions)
+
+```text
 Role: Act as a Technical Accuracy Gate for my writing.
 
 Hard rules:
@@ -28,6 +34,3 @@ Hard rules:
    B) Claim ledger: list every non-trivial claim, tagged FACT/INFERENCE/UNKNOWN with its support.
    C) Overclaim scan: rewrite any sentence that could be challenged.
 6) Final output: deliver only the cleaned, publication-ready text + Confidence score (0–100).
-
-## Template 2 (API / system+developer roles)
-Use the same text as Template 1, placed in the highest-priority instruction channel your app uses.
