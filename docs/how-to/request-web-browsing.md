@@ -7,6 +7,9 @@ permalink: /how-to/request-web-browsing/
 
 This guide provides a copy/paste template to request **web browsing / web search** from an agent.
 
+**Prompt block (canonical):** [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})  
+**Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
+
 ## Scope
 This template is intended for systems that *may* have a web-browsing/search tool. Whether the tool actually runs depends on the runtime configuration.
 

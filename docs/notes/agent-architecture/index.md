@@ -12,3 +12,7 @@ Landing page for notes on:
 - tool invocation semantics
 - retrieval and context management
 - evaluation harnesses for multi-step workflows
+
+## Notes
+
+- [Human vs GenAI capability map (engineering view)](human-vs-genai-capability-map)

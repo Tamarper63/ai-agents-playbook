@@ -5,17 +5,27 @@ permalink: /how-to/apply-facts-only-modes/
 
 # Apply the facts-only modes (users + developers)
 
-This guide describes how to use the facts-only policies and prompt blocks in this repository.
+This guide explains how to use the facts-only policies and their matching prompt blocks.
+
+**Canonical prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
 
 ## Choose a mode
 
-- **Artifacts-only (no external sources):**
-  - Policy: [Facts-only (Artifacts-only)]({{ '/policies/facts-only-artifacts-only/' | relative_url }})
-  - Prompt: [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
+Pick one based on what evidence is allowed.
 
-- **External-verified (formal sources allowed):**
-  - Policy: [Facts-only (External verification allowed)]({{ '/policies/facts-only-external-verified/' | relative_url }})
-  - Prompt: [facts-only-external-verified.system.txt]({{ '/prompts/facts-only-external-verified.system.txt' | relative_url }})
+### Mode A — Artifacts-only (no external sources)
+
+Use this when the user provides artifacts (files, logs, screenshots, excerpts) and you must not use the web.
+
+- **Policy (normative):** [Facts-only (Artifacts-only)]({{ '/policies/facts-only-artifacts-only/' | relative_url }})
+- **Prompt block (canonical copy/paste):** [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
+
+### Mode B — External-verified (authoritative sources allowed)
+
+Use this when web/official sources are allowed and the system can retrieve and cite them.
+
+- **Policy (normative):** [Facts-only (External verification allowed)]({{ '/policies/facts-only-external-verified/' | relative_url }})
+- **Prompt block (canonical copy/paste):** [facts-only-external-verified.system.txt]({{ '/prompts/facts-only-external-verified.system.txt' | relative_url }})
 
 ## For users of existing agent/chat systems
 
