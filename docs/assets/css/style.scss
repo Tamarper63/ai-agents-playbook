@@ -1,11 +1,11 @@
-/* assets/css/style.scss (or docs/assets/css/style.scss) */
+/* docs/assets/css/style.scss */
 ---
 ---
 
 /* Palette from _config.yml */
-$header_primary: {{ site.palette.header_primary | default: "#0F172A" }};
-$header_secondary: {{ site.palette.header_secondary | default: "#111827" }};
-$accent: {{ site.palette.accent | default: "#D97706" }};
+$header_primary: {{ site.palette.header_primary | default: "#081849" }};   /* deep navy */
+$header_secondary: {{ site.palette.header_secondary | default: "#213885" }}; /* lapis blue */
+$accent: {{ site.palette.accent | default: "#893172" }};                  /* plum */
 
 @import "{{ site.theme }}";
 
@@ -50,7 +50,7 @@ $accent: {{ site.palette.accent | default: "#D97706" }};
 
   padding: 0.65rem 1rem;
   background: #ffffff;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+  border-bottom: 1px solid rgba($header_primary, 0.10);
 }
 
 .site-nav a {
@@ -64,7 +64,7 @@ $accent: {{ site.palette.accent | default: "#D97706" }};
 
 .site-nav a:hover {
   text-decoration: none;
-  background: rgba(15, 23, 42, 0.06);
+  background: rgba($header_primary, 0.06);
 }
 
 /* Active section highlight */
@@ -97,7 +97,7 @@ $accent: {{ site.palette.accent | default: "#D97706" }};
 
 /* ===== Code styling aligned to accent ===== */
 code {
-  background: rgba(217, 119, 6, 0.10); /* #D97706 @ 10% */
+  background: rgba($accent, 0.10);
 }
 pre,
 code {

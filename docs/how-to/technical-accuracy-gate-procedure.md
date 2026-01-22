@@ -3,7 +3,11 @@ title: Technical Accuracy Gate — Verification Procedure
 permalink: /how-to/technical-accuracy-gate-procedure/
 ---
 
-# Technical Accuracy Gate — Verification Procedure
+## Canonical links
+
+- **Prompt templates (copy/paste):** [Technical Accuracy Gate — Prompt Templates]({{ '/prompts/technical-accuracy-gate-templates/' | relative_url }})
+- **Policy (normative):** [Technical Accuracy Policy (Evidence-Gated Claims)]({{ '/policies/technical-accuracy-policy/' | relative_url }})
+- **Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
 
 ## Scope
 This procedure applies when you want to enforce the Technical Accuracy Policy during editing.
