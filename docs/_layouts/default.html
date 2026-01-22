@@ -6,7 +6,6 @@
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-    <!-- Optional: the theme’s hook for custom head snippets -->
     {% include head-custom.html %}
   </head>
 
@@ -20,11 +19,20 @@
 
     <header class="{{ header_class }}" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title }}</h1>
-
       {% if page.url == '/' %}
         <h2 class="project-tagline">{{ site.description }}</h2>
       {% endif %}
     </header>
+
+    <!-- Primary navigation (global) -->
+    <nav class="site-nav" aria-label="Primary">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/how-to/' | relative_url }}" {% if page.url contains '/how-to/' %}aria-current="page"{% endif %}>How-to</a>
+      <a href="{{ '/notes/' | relative_url }}" {% if page.url contains '/notes/' %}aria-current="page"{% endif %}>Notes</a>
+      <a href="{{ '/reference/' | relative_url }}" {% if page.url contains '/reference/' %}aria-current="page"{% endif %}>Reference</a>
+      <a href="{{ '/policies/' | relative_url }}" {% if page.url contains '/policies/' %}aria-current="page"{% endif %}>Policies</a>
+      <a href="{{ '/prompts/' | relative_url }}" {% if page.url contains '/prompts/' %}aria-current="page"{% endif %}>Prompts</a>
+    </nav>
 
     <main id="content" class="main-content" role="main">
       {{ content }}

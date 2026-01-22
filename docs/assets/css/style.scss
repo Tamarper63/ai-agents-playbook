@@ -1,22 +1,21 @@
-/* assets/css/style.scss */
+/* assets/css/style.scss (or docs/assets/css/style.scss) */
 ---
 ---
 
-/* Pull palette from _config.yml */
+/* Palette from _config.yml */
 $header_primary: {{ site.palette.header_primary | default: "#0F172A" }};
 $header_secondary: {{ site.palette.header_secondary | default: "#111827" }};
 $accent: {{ site.palette.accent | default: "#D97706" }};
 
 @import "{{ site.theme }}";
 
-/* Header compaction + palette */
+/* ===== Header (hero) compaction + palette ===== */
 .page-header {
   padding: 2.25rem 1rem;
   background-color: $header_primary;
   background-image: linear-gradient(120deg, $header_secondary, $header_primary);
 }
 
-/* Title/tagline rhythm */
 .project-name {
   margin: 0.15rem 0;
   font-size: 2.2rem;
@@ -29,12 +28,63 @@ $accent: {{ site.palette.accent | default: "#D97706" }};
   opacity: 0.9;
 }
 
-/* Remove the GitHub header button (layout unchanged; just hidden) */
+/* Compact header on inner pages (layout adds .page-header--compact) */
+.page-header--compact {
+  padding: 1.25rem 1rem;
+}
+.page-header--compact .project-name {
+  font-size: 1.6rem;
+}
+
+/* Hide GitHub button in header (if present) */
 .page-header a.btn[href*="github.com"] {
   display: none !important;
 }
 
-/* Link styling */
+/* ===== Primary nav ===== */
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+
+  padding: 0.65rem 1rem;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+}
+
+.site-nav a {
+  color: $header_primary;
+  text-decoration: none;
+
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  text-decoration: none;
+  background: rgba(15, 23, 42, 0.06);
+}
+
+/* Active section highlight */
+.site-nav a[aria-current="page"] {
+  font-weight: 700;
+  border-bottom: 2px solid $accent;
+  border-radius: 0;
+}
+
+/* ===== Content typography: neutral headings ===== */
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  color: $header_primary;
+}
+
+/* ===== Links (accent) ===== */
 .main-content a {
   color: $accent;
 }
@@ -45,13 +95,19 @@ $accent: {{ site.palette.accent | default: "#D97706" }};
   color: $accent;
 }
 
-/* Code styling aligned to accent */
+/* ===== Code styling aligned to accent ===== */
 code {
-  background: rgba(217, 119, 6, 0.10);
+  background: rgba(217, 119, 6, 0.10); /* #D97706 @ 10% */
 }
-pre, code {
+pre,
+code {
   border-radius: 8px;
 }
 pre {
   border-left: 4px solid $accent;
+}
+
+/* Optional: hide footer "View on GitHub" */
+.site-footer-owner {
+  display: none !important;
 }
