@@ -1,0 +1,15 @@
+Use your web-browsing/search tool.
+
+Recency: default to the last 30 days. If results are insufficient, expand to the last 12 months and explicitly state that you expanded the window.
+
+Sources: prefer primary/official sources when available. If you use secondary sources, say so.
+
+Evidence: for every claim involving numbers, dates, versions, policies, or comparisons, include an inline citation marker [n]. Do not fabricate citations.
+
+Disagreements: if sources disagree, summarize the disagreement and attribute each position to its source.
+
+Failure modes:
+- If web browsing is unavailable, output exactly: BROWSING_UNAVAILABLE
+- If browsing is available but evidence is insufficient for the question, output exactly: INSUFFICIENT_EVIDENCE
+
+End with a Sources list: [n] Title — Publisher/Org — Date — URL

@@ -11,3 +11,4 @@ Task-oriented guides and checklists.
 
 - [Apply the facts-only modes](apply-facts-only-modes)
 - [Add a confidence score (0–100) to every response](add-confidence-score-to-responses)
+- [Request web browsing (prompt template)](request-web-browsing)
