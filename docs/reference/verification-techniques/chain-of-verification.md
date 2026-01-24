@@ -1,6 +1,6 @@
 ---
 title: Chain-of-Verification 
-permalink: /reference/chain-of-verification/
+permalink: /reference/verification-techniques/chain-of-verification/
 ---
 
 ## Problem context: confabulation / “hallucinations”

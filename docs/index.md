@@ -2,34 +2,46 @@
 title: AI-agents-playbook
 ---
 
-A public, versioned knowledge base for building reliable AI systems (agents, orchestration, evaluation) and securing agentic workflows (tool access, permissions, guardrails).
+A public, versioned knowledge base for:
+- Building reliable AI agents (architecture, orchestration, evaluation)
+- Securing agentic systems (tool access, permissions, guardrails)
 
-## Start here
+## What’s in this repository
 
-- **How-to guides** — step-by-step procedures and checklists you can apply immediately.  
-  [Open How-to guides](how-to/index.md)
+- **How-to** — task-oriented procedures and checklists.  
+  [Open How-to guides]({{ '/how-to/' | relative_url }})
 
-- **Prompt blocks** — copy/paste templates used by the guides and policies.  
-  [Open Prompt blocks](prompts/index.md)
+- **Policies** — operating rules (evidence rules, citation requirements, fail-closed conditions).  
+  [Open Policies]({{ '/policies/' | relative_url }})
 
-- **Policies** — enforceable operating modes (facts-only, evidence rules, confidence rules).  
-  [Open Policies](policies/index.md)
+- **Prompts** — copy/paste blocks mapped to policies and used by the guides.  
+  [Open Prompt blocks]({{ '/prompts/' | relative_url }})
 
-- **Reference** — stable definitions, conventions, and canonical “source of truth” pages.  
-  [Open Reference](reference/index.md)
+- **Reference** — stable definitions and conventions to keep naming and links consistent.  
+  [Open Reference]({{ '/reference/' | relative_url }})
 
-- **Articles** — long-form technical writeups and research posts (formerly “Notes”).  
-  [Open Articles](articles/index.md)
+- **Articles** — long-form technical writeups and research posts.  
+  [Open Articles]({{ '/articles/' | relative_url }})
 
-## Recommended first steps
+## Choose an entry point
 
-### If you’re here to learn (non-experts included)
+### If you need an operating mode (facts-only, mandatory citations, confidence scoring)
+1) Start in **Policies** → select the mode.  
+2) Copy the matching **Prompt block**.  
+3) Apply it via the linked **How-to** guide.
 
-- Start with **How-to guides** for practical workflows.
-- Use **Reference** when a term or convention is unclear.
-- Use **Prompt blocks** when you need copy/paste templates, and keep the matching **Policies** enabled.
+### If you need a concrete procedure (verification, browsing requests, reporting)
+1) Start in **How-to** → select the guide.  
+2) Use linked **Policies** + **Prompts** as dependencies (keep mappings explicit).
 
-### If you’re adding content or maintaining the site
+### If you’re maintaining or extending the site
+1) Start in **Reference** → align terminology, linking, and naming.  
+2) Add content under **Articles / How-to / Policies / Prompts** according to scope.
 
-- If you’re adding new content: start with **Reference** to align terminology and linking.  
-- If you’re applying the operating modes: start with **Policies**, then use the matching **Prompt blocks**.
+## Content model (how pages relate)
+
+- **Policies** define rules (what is allowed / required).  
+- **Prompts** operationalize rules (copy/paste blocks).  
+- **How-to** describes procedures (when/how to apply policies + prompts).  
+- **Reference** is the canonical glossary and conventions.  
+- **Articles** contain deep dives and research writeups.
