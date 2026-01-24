@@ -35,5 +35,5 @@ Residual gaps are where production systems typically fail (consistency, provenan
 
 ## Suggested next read in this repo
 
-- Notes → Model training and evaluation → Fluency vs factuality: [Fluency Is Not Factuality]({{ '/notes/model-training-and-eval/fluency-vs-factuality/' | relative_url }})
+- Articles → Model training and evaluation → Fluency vs factuality: [Fluency Is Not Factuality]({{ '/articles/model-training-and-eval/fluency-vs-factuality/' | relative_url }})
 - Policies: Facts-only / Evidence rules (when accuracy matters): [Policies]({{ '/policies/' | relative_url }})

@@ -13,8 +13,12 @@ These are prompt blocks for the highest-priority instruction layer available in 
 
 ## Blocks (with direct mapping)
 
-### Mode A — Artifacts-only (no external sources)
+## Verification / deliberation prompts
+- **Prompt (copy/paste):** [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
+- **Policy (normative):** [Chain-of-Verification — policy]({{ '/policies/chain-of-verification/' | relative_url }})
+- **How-to (procedure):** [Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
 
+### Mode A — Artifacts-only (no external sources)
 - **Prompt (copy/paste):** [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
 - **Policy (normative):** [Facts-only (Artifacts-only)]({{ '/policies/facts-only-artifacts-only/' | relative_url }})
 - **How-to (apply):** [Apply the facts-only modes]({{ '/how-to/apply-facts-only-modes/' | relative_url }})
