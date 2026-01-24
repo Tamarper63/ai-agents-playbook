@@ -14,3 +14,6 @@ Landing page for notes on:
 
 ## Notes
 - [Fluency Is Not Factuality](fluency-vs-factuality)
+- [Theory of mind in LLMs — what benchmarks test (and what they don’t)]({{ '/articles/model-training-and-eval/theory-of-mind-in-llms/' | relative_url }})
+
+

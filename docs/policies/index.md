@@ -13,6 +13,18 @@ Policies are normative operating contracts. They define:
 
 In this repository, policies are one module among others (Notes / How-to / Reference).
 
+## How to use policies (normative) vs prompts (operational)
+
+- **Policies** define the normative operating contract (evidence, citations, fail-closed).
+- **Prompt blocks** are the operational copy/paste implementation of a policy for a given runtime instruction layer.
+- **How-to guides** describe the application procedure and expected inputs/outputs.
+
+Start here:
+1) Pick a policy below (rules).
+2) Copy/paste the mapped prompt block from [/prompts/]({{ '/prompts/' | relative_url }}).
+3) Follow the mapped how-to guide for the procedure.
+
+
 ## Policies
 
 - [Facts-only (Artifacts-only)]({{ '/policies/facts-only-artifacts-only/' | relative_url }})

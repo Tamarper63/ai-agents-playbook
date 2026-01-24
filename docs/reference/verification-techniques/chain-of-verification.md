@@ -3,8 +3,6 @@ title: Chain-of-Verification
 permalink: /reference/chain-of-verification/
 ---
 
-# Chain-of-Verification 
-
 ## Problem context: confabulation / “hallucinations”
 NIST defines **confabulation** as a phenomenon where generative AI systems “generate and confidently present erroneous or false content in response to prompts,” including outputs that diverge from the prompt/input or contradict prior statements in the same context; NIST notes these phenomena are colloquially called **“hallucinations”** or **“fabrications.”** (NIST AI 600-1, §2.2 “Confabulation”, p. 9) :contentReference[oaicite:0]{index=0}
 
