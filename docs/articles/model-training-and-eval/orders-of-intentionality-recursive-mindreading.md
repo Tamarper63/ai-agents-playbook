@@ -1,6 +1,6 @@
 ---
 title: Orders of intentionality / recursive mindreading (LLMs)
-permalink: /reference/verification-techniques/orders-of-intentionality/
+permalink: /articles/model-training-and-eval/orders-of-intentionality-recursive-mindreading/
 summary: A precise reference for nested mental-state attribution (“orders of intentionality” / “recursive mindreading”) and how this notion is used in LLM evaluation—without implying mechanism-level ToM.
 ---
 

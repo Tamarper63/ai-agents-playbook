@@ -5,50 +5,115 @@ summary: Evidence-anchored overview of how ToM is defined in psychology, how it 
 ---
 
 ## Abstract
-This article summarizes how **Theory of Mind (ToM)** is defined in the cognitive-science literature and how recent work has **operationalized** ToM-style tasks for **LLM evaluation**, with explicit citations for every non-trivial claim.
+This article summarizes (1) how **Theory of Mind (ToM)** is defined in cognitive science, (2) how recent work **operationalizes** ToM-style tasks for **LLM evaluation**, and (3) what the strongest empirical papers **do and do not warrant** as conclusions. Every non-trivial claim is backed by an explicit citation (see References).
 
-## Definitions (as used in the cited literature)
+---
 
-**Theory of Mind (ToM).** “An individual has a theory of mind if he imputes mental states to himself and others… such states are not directly observable… and the system can be used to make predictions about the behavior of others.” (Premack & Woodruff, 1978, *Behavioral and Brain Sciences*).  
-Source: Cambridge Core (journal page). DOI details are provided by the publisher page.  
+## 1) Definitions (as used in the cited literature)
 
-**ToM task / benchmark (LLM evaluation context).** A dataset + protocol that measures model performance on tasks derived from, or inspired by, human ToM tests (e.g., false-belief tasks), reported as quantitative accuracy or similar metrics (see Strachan et al., 2024; Kosinski, 2023; van Duijn et al., 2023).
+### Theory of Mind (ToM)
+Premack & Woodruff (1978) introduced ToM (in the context of chimpanzee cognition) as the capacity to **attribute mental states** (that are not directly observable) to self/others and to use those attributions to **predict behavior**. (Behavioral and Brain Sciences; DOI: [10.1017/S0140525X00076512](https://doi.org/10.1017/S0140525X00076512); publisher page: https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/does-the-chimpanzee-have-a-theory-of-mind/1E96B02CD9850016B7C93BC6D2FEF1D0)
 
-## What is being tested in LLM ToM evaluations (as operationalized)
-Multiple papers operationalize ToM using **false-belief-style tasks** and related social-reasoning tests, then score model responses against expected answers (Kosinski, 2023; Strachan et al., 2024).  
-Kosinski (2023) reports a battery built from false-belief tasks and matched controls, with prompts distributed across diverse tasks (Kosinski, 2023; arXiv:2302.02083).  
-Strachan et al. (2024) report testing multiple LLMs and humans across a selected battery of tests used in human ToM evaluation, and they report comparative results (Strachan et al., 2024; *Nature Human Behaviour*; DOI:10.1038/s41562-024-01882-z).
+### “ToM benchmark / task” (LLM evaluation context)
+In recent LLM evaluation work, “ToM task/benchmark” commonly refers to a **dataset + administration protocol + scoring rule** that adapts (or is inspired by) established human ToM tests (e.g., false-belief, strange stories, faux pas, hinting/indirect requests), producing quantitative scores (accuracy / ordinal points / etc.). (Examples: Strachan et al., 2024; Chen et al., 2024 — see References.)
 
-## Key empirical results (bounded to the cited papers)
+---
 
-### 1) Instruction tuning vs. base models (reported finding)
-van Duijn et al. (2023) report that **instruction-tuned** LLMs (notably GPT-family instruction-tuned variants in their evaluation) outperform other models on their ToM tasks, while **base** LLMs are mostly unable to solve ToM tasks even with specialized prompting (van Duijn et al., 2023; arXiv:2310.20320).
+## 2) What LLM “ToM evaluations” operationalize in practice
 
-### 2) Human–LLM comparisons on ToM-related tests (reported finding)
-Strachan et al. (2024) report a comparison between GPT-3.5/GPT-4, LLaMA2-Chat variants, and a human sample, across a ToM test battery (Strachan et al., 2024; DOI:10.1038/s41562-024-01882-z).  
-In their results section, Strachan et al. (2024) discuss differential performance across tests (for example, faux pas) and analyze patterns such as conservative responding and confounds relating to bias and information integration (Strachan et al., 2024; DOI:10.1038/s41562-024-01882-z).
+### Common test families used in a major human–LLM comparison (Strachan et al., 2024)
+Strachan et al. (Nature Human Behaviour; DOI: [10.1038/s41562-024-01882-z](https://doi.org/10.1038/s41562-024-01882-z); article: https://www.nature.com/articles/s41562-024-01882-z) report a “battery” spanning multiple ToM-related abilities and explicitly list: **hinting task**, **false-belief task**, **faux pas recognition**, and **strange stories**, plus an **irony comprehension** test (adapted stimuli).
 
-### 3) Benchmark interpretation caveat (explicit statement in the literature)
-Strachan et al. (2024) explicitly caution that while LLMs are designed to emulate human-like responses, this does not imply the analogy extends to the “underlying cognition” producing those responses (Strachan et al., 2024; DOI:10.1038/s41562-024-01882-z).  
-They further note that model successes and failures can arise from “non-human-like processes,” and they point to qualitative analyses in their supplementary materials for such cases (Strachan et al., 2024; DOI:10.1038/s41562-024-01882-z).
+They also report a human comparison sample of **N = 1,907** (total), and that they ran **multiple independent sessions** per LLM to probe variability/boundaries. (Same source.)
 
-### 4) Critiques: what some ToM benchmarks may fail to capture (position paper claim)
-Riemer et al. argue that many existing ToM benchmarks for LLMs are “broken” for their intended purpose, due to inability to directly test adaptation to new partners and due to assumptions imported from human testing (Riemer et al., OpenReview: “Position: Theory of Mind Benchmarks are Broken for Large Language Models”).  
-They introduce a distinction they call “literal theory of mind” vs. “functional theory of mind,” and claim that strong performance on one does not necessarily imply strong performance on the other (Riemer et al., OpenReview: “Position: Theory of Mind Benchmarks are Broken for Large Language Models”).  
-(These terms are **their** terminology; this article does not treat them as standard psychological taxonomy.)
+### Benchmarking papers that package multi-task ToM suites (ToMBench / “TMBench”, 2024)
+Chen et al. (arXiv: [2402.15052](https://arxiv.org/abs/2402.15052); DOI: [10.48550/arXiv.2402.15052](https://doi.org/10.48550/arXiv.2402.15052)) describe a bilingual benchmark (English/Chinese) built from a fixed set of ToM-related tasks used in psychology and list the included tasks explicitly (e.g., **Unexpected Outcome**, **Scalar Implicature**, **Persuasion Story**, **False Belief**, **Ambiguous Story**, **Hinting**, **Strange Stories**, **Faux Pas**).
 
-## Why this matters for builders (bounded to cited statements)
-Strachan et al. (2024) state that an important direction for future research is understanding how LLM performance on mentalistic inferences (or the absence of them) influences **dynamically unfolding** human–machine interactions, and they describe this as an open challenge (Strachan et al., 2024; DOI:10.1038/s41562-024-01882-z).  
-Riemer et al.’s critique implies that benchmark choice can affect what you think you measured (e.g., prediction vs. adaptation), which is directly relevant to evaluation design (Riemer et al., OpenReview: “Position: Theory of Mind Benchmarks are Broken for Large Language Models”).
+ToMBench reports dataset sizing at the task level (counts per task) and presents task names and counts in-table. (Same source; project repo: https://github.com/zhchen18/ToMBench)
 
-## Benchmarks and artifacts referenced in the literature
-ToMBench / MBench is described as a bilingual ToM benchmark for LLMs, covering multiple tasks and abilities, with a released repository and accompanying paper (arXiv:2402.15052; ToMBench GitHub repository).  
-(Use the paper as primary reference for claims; the repo is for code/data release.)
+---
+
+## 3) Key empirical findings (bounded strictly to what the cited papers report)
+
+### 3.1 Human–LLM comparisons across multiple ToM tests (Strachan et al., 2024)
+Strachan et al. report:
+- **Ceiling / near-ceiling** performance for both humans and the tested LLMs on their false-belief test items, including on “novel” items they generated as controls. (Strachan et al., 2024 — see References.)  
+- A pattern where, for LLMs, success on false-belief items **may admit lower-level explanations than belief tracking** (their phrasing) and should not be assumed to reflect human-like belief reasoning. (Strachan et al., 2024 — see References.)  
+- Susceptibility of GPT-family models to **minor perturbations** of classic false-belief formulations has been reported in prior work; Strachan et al. discuss perturbation variants and report a control study where human participants also failed on about half of those perturbations (as described in their supplementary material). (Strachan et al., 2024 — see References.)
+
+They also document detailed administration/coding choices for faux pas, hinting, and strange stories (including how they restricted faux-pas coding to the key mental-state question for their analysis). (Strachan et al., 2024 — see References.)
+
+### 3.2 Instruction-tuned vs. base models (van Duijn et al., 2023)
+van Duijn et al. (arXiv: [2310.20320](https://arxiv.org/abs/2310.20320); DOI: [10.48550/arXiv.2310.20320](https://doi.org/10.48550/arXiv.2310.20320)) report that **instruction-tuned** models can perform well on their ToM task suite, while **base** models generally do not, even with prompting strategies explored in that work.
+
+### 3.3 Robustness challenges under “trivial alterations” (Ullman 2023; Shapira et al. 2023)
+Multiple works report that LLM performance on ToM-style tests can **drop sharply** under small changes to the task framing/items (“trivial alterations”), and this observation is referenced as a challenge for interpreting ToM benchmark performance as stable competence. (Ullman, 2023; Shapira et al., 2023 — see References.)
+
+### 3.4 Contamination / memorization risk (benchmark authors’ concern)
+ToMBench demonstrates that when prompted to “give a Sally-Anne test example and its answer,” GPT-3.5/4 can produce samples closely matching canonical examples, and it flags this as a **contamination risk** in its analysis context. (Chen et al., 2024 — see References.)
+
+### 3.5 “Where is ToM encoded?” representational probing (Wu et al., 2025)
+Wu et al. (npj Artificial Intelligence; DOI: [10.1038/s44387-025-00031-9](https://doi.org/10.1038/s44387-025-00031-9); article: https://www.nature.com/articles/s44387-025-00031-9) analyze ToM-style behavior in an open-weight LLM and report links between performance and **a small set of attention heads**, including intervention-style analyses as described by the authors.
+
+---
+
+## 4) What these benchmarks *do not* justify (as explicitly cautioned in the literature)
+
+### 4.1 Behavioral success ≠ “human-like belief tracking” (interpretation constraint)
+Strachan et al. explicitly note that LLM false-belief success can be consistent with **lower-level explanations than belief tracking**, and they discuss why some perturbation results complicate simple “LLM has ToM” interpretations. (Strachan et al., 2024 — see References.)
+
+### 4.2 Benchmark validity critique (Riemer et al., OpenReview position)
+Riemer et al. (OpenReview: “Position: Theory of Mind Benchmarks are Broken for Large Language Models”) argue that many ToM benchmarks are “broken” for their intended purpose and introduce their own distinction (“literal theory of mind” vs. “functional theory of mind”), explicitly framing this as benchmark-interpretation risk rather than a standard psychological taxonomy. (Riemer et al., 2025 — see References.)
+
+---
+
+## 5) “Machine Theory of Mind” (what the term is used for, and how it relates)
+
+In ML usage, “machine theory of mind” is used for work that aims to model other agents’ unobservable mental states (beliefs/goals/knowledge) to predict behavior, often in multi-agent or interactive settings; a canonical use of the term in this framing is Rabinowitz et al. (2018). (Rabinowitz et al., 2018 — see References.)
+
+(Important: this section is definitional/positioning based on cited sources; it does not claim that LLM benchmark scores imply machine-agent ToM competence.)
+
+---
+
+## 6) Practical takeaways (restricted to what the cited authors imply/state)
+
+- Because performance can be explained by **non-belief-tracking mechanisms** (as discussed by Strachan et al.), ToM-benchmark success should be treated as **behavioral task performance**, not a claim about human-like cognition. (Strachan et al., 2024 — see References.)  
+- Benchmark choice and task design can strongly shape what is being measured; this is the central warning in the OpenReview position critique. (Riemer et al., 2025 — see References.)  
+- Robustness and contamination are treated as first-order concerns in benchmark construction and interpretation (ToMBench’s demonstrations and discussion). (Chen et al., 2024 — see References.)
+
+---
 
 ## References (primary / formal)
-1) Premack, D., & Woodruff, G. (1978). *Does the chimpanzee have a theory of mind?* Behavioral and Brain Sciences. Cambridge Core (publisher page).  
-2) Kosinski, M. (2023). *Evaluating Large Language Models in Theory of Mind Tasks / Theory of Mind May Have Spontaneously Emerged in Large Language Models.* arXiv:2302.02083. DOI:10.48550/arXiv.2302.02083.  
-3) van Duijn, M. J., et al. (2023). *Theory of Mind in Large Language Models.* arXiv:2310.20320.  
-4) Strachan, J. W. A., et al. (2024). *Testing theory of mind in large language models and humans.* Nature Human Behaviour 8, 1285–1295 (2024). DOI:10.1038/s41562-024-01882-z.  
-5) Riemer, M., et al. *Position: Theory of Mind Benchmarks are Broken for Large Language Models.* OpenReview forum paper.  
-6) Chen, Z., et al. (2024). *Benchmarking Theory of Mind in Large Language Models (MBench / ToMBench).* arXiv:2402.15052. + official ToMBench GitHub repository.
+
+1) Premack, D., & Woodruff, G. (1978). *Does the chimpanzee have a theory of mind?* **Behavioral and Brain Sciences**.  
+   DOI: https://doi.org/10.1017/S0140525X00076512  
+   Publisher page: https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/does-the-chimpanzee-have-a-theory-of-mind/1E96B02CD9850016B7C93BC6D2FEF1D0
+
+2) Strachan, J. W. A., et al. (2024). *Testing theory of mind in large language models and humans.* **Nature Human Behaviour**.  
+   DOI: https://doi.org/10.1038/s41562-024-01882-z  
+   Article: https://www.nature.com/articles/s41562-024-01882-z
+
+3) van Duijn, M. J., et al. (2023). *Theory of Mind in Large Language Models.* arXiv: https://arxiv.org/abs/2310.20320  
+   DOI: https://doi.org/10.48550/arXiv.2310.20320
+
+4) Chen, Z., et al. (2024). *ToMBench: Benchmarking Theory of Mind in Large Language Models.* arXiv: https://arxiv.org/abs/2402.15052  
+   DOI: https://doi.org/10.48550/arXiv.2402.15052  
+   Repo: https://github.com/zhchen18/ToMBench
+
+5) Ullman, T. (2023). *Large language models fail on trivial alterations to theory-of-mind tasks.* arXiv: https://arxiv.org/abs/2302.08399  
+   DOI: https://doi.org/10.48550/arXiv.2302.08399
+
+6) Shapira, N., et al. (2023). *Clever Hans or neural theory of mind? Stress testing social reasoning in large language models.* arXiv: https://arxiv.org/abs/2305.14763  
+   DOI: https://doi.org/10.48550/arXiv.2305.14763
+
+7) Wu, Y., et al. (2025). *How large language models encode theory-of-mind: a study on sparse parameter patterns.* **npj Artificial Intelligence**.  
+   DOI: https://doi.org/10.1038/s44387-025-00031-9  
+   Article: https://www.nature.com/articles/s44387-025-00031-9
+
+8) Riemer, M., et al. (2025). *Position: Theory of Mind Benchmarks are Broken for Large Language Models.* OpenReview forum paper: https://openreview.net/forum?id=BCP8UU2BcU  
+   PDF: https://openreview.net/pdf/cc8f79dde944929f46203d43a664211ac4e11939.pdf  
+   arXiv: https://arxiv.org/abs/2412.19726
+
+9) Rabinowitz, N. C., et al. (2018). *Machine Theory of Mind.* ICML 2018 (PMLR).  
+   Proceedings page: https://proceedings.mlr.press/v80/rabinowitz18a.html  
+   arXiv: https://arxiv.org/abs/1802.07740
