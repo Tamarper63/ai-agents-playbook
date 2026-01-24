@@ -38,6 +38,7 @@ Allowed sources:
 - Peer-reviewed academic papers (prefer reviews/meta-analyses; include DOI when possible)
 - Textbooks (title + edition + chapter/section)
 - Standards (ISO/NIST/RFC/W3C/etc. with section)
+- Official vendor documentation (product/API docs, release notes, security advisories; include vendor + doc title + version/date + section)
 - Recognized scientific institutions / encyclopedias (institution + document/page + locator)
 
 Disallowed:

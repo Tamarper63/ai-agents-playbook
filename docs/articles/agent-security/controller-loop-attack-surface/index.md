@@ -4,8 +4,6 @@ permalink: /articles/agent-security/controller-loop-attack-surface/
 summary: Why planner/controller loops amplify risk in tool-using systems, and which controls actually reduce it.
 ---
 
-# The Attack Surface Isn’t the LLM — It’s the Controller Loop
-
 ## Thesis
 In tool-using systems, the primary attack surface is not the language model itself. The risk scales in the **controller loop** (the orchestration layer that plans, calls tools, evaluates outcomes, retries, and decides when to stop).
 

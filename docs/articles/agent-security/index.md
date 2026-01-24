@@ -3,8 +3,6 @@ title: Agent security
 permalink: /articles/agent-security/
 ---
 
-# Agent security
-
 Landing page for notes on:
 
 - permissions and capability models for agents and tools

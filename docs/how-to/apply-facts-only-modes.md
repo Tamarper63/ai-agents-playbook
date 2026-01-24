@@ -3,7 +3,6 @@ title: Apply the facts-only modes (users + developers)
 permalink: /how-to/apply-facts-only-modes/
 ---
 
-
 This guide explains how to use the facts-only policies and their matching prompt blocks.
 
 **Canonical prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
@@ -11,6 +10,22 @@ This guide explains how to use the facts-only policies and their matching prompt
 ## Choose a mode
 
 Pick one based on what evidence is allowed.
+
+## Terminology in the literature (non-normative mapping)
+
+This repo’s “Mode A / Mode B” labels are local. The mappings below refer to terms used in NLP research:
+
+- **Mode A (Artifacts-only; no external sources)** is consistent with a **closed-book QA** setting (answering without access to external context/documents at inference time). 
+- **Mode B (External-verified; authoritative sources allowed)** is consistent with an **open-book QA** setting (answering with respect to a provided set of facts/documents).
+- If Mode B is implemented as retrieval + generation, a common architecture is **retrieval-augmented generation (RAG)**. 
+
+
+## Industry / research terms (mapping)
+
+- **Mode A (Artifacts-only; no external sources)** is analogous to **closed-book question answering**: answering without access to external context/evidence at inference time. 
+- **Mode B (External-verified; authoritative sources allowed)** is analogous to **open-book question answering**: answering with respect to a provided/retrieved set of documents (“open-book facts”).
+- If Mode B is implemented as retrieval + generation, a common architecture is **retrieval-augmented generation (RAG)** (parametric + non-parametric memory). 
+
 
 ### Mode A — Artifacts-only (no external sources)
 
@@ -22,6 +37,7 @@ Use this when the user provides artifacts (files, logs, screenshots, excerpts) a
 ### Mode B — External-verified (authoritative sources allowed)
 
 Use this when web/official sources are allowed and the system can retrieve and cite them.
+Definition: “authoritative sources” are the Allowed/Disallowed source categories in the Mode B policy below.
 
 - **Policy (normative):** [Facts-only (External verification allowed)]({{ '/policies/facts-only-external-verified/' | relative_url }})
 - **Prompt block (canonical copy/paste):** [facts-only-external-verified.system.txt]({{ '/prompts/facts-only-external-verified.system.txt' | relative_url }})

@@ -1,10 +1,9 @@
 ---
 title: Fluency Is Not Factuality - Why LLMs Can Sound Right and Be Wrong
-permalink: /articles/model-training-and-eval/fluency-vs-factuality/
++permalink: /articles/model-training-and-eval/fluency-vs-factuality/
 summary: Why coherent LLM outputs can be incorrect, and how to enforce evidence-locked answers.
 ---
 
-# Fluency ≠ Factuality — why LLMs can sound right and be wrong
 
 ## Abstract
 Highly fluent output is not evidence of factual correctness. Modern large language models (LLMs) can produce coherent, well-structured text while still generating unsupported or incorrect claims. This note explains *why* that happens, using established terminology and canonical references.

@@ -3,10 +3,9 @@ title: Add a confidence score (0–100) to every response
 permalink: /how-to/add-confidence-score-to-responses/
 ---
 
-How-to guides are goal-oriented directions that help the user get something done correctly and safely. 
+# Add a confidence score (0–100) to every response
 
 ## Goal
-Ensure every response ends with a numeric confidence score (0–100).
 
 ## Prerequisites
 - You maintain a response template or a policy section that governs response formatting.

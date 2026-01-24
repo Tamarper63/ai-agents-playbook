@@ -3,17 +3,23 @@ title: Prompt blocks
 permalink: /prompts/
 ---
 
-Copy/paste prompt blocks aligned to policies and used by the guides.
+## Where to paste these blocks (by vendor)
+
+These are prompt blocks for the highest-priority instruction layer available in the target runtime.
+
+- **OpenAI API (reasoning models):** paste into the **developer message**. 
+- **Anthropic Claude API:** paste into the **system** parameter (system prompt). 
+- **Google Vertex AI (Gemini):** paste into **system instructions**. 
 
 ## Blocks (with direct mapping)
 
-### Mode A — Facts-only (Artifacts-only)
+### Mode A — Artifacts-only (no external sources)
 
 - **Prompt (copy/paste):** [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
 - **Policy (normative):** [Facts-only (Artifacts-only)]({{ '/policies/facts-only-artifacts-only/' | relative_url }})
 - **How-to (apply):** [Apply the facts-only modes]({{ '/how-to/apply-facts-only-modes/' | relative_url }})
 
-### Mode B — Facts-only (External verification allowed)
+### Mode B — External-verified (authoritative sources allowed)
 
 - **Prompt (copy/paste):** [facts-only-external-verified.system.txt]({{ '/prompts/facts-only-external-verified.system.txt' | relative_url }})
 - **Policy (normative):** [Facts-only (External verification allowed)]({{ '/policies/facts-only-external-verified/' | relative_url }})
