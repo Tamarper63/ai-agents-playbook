@@ -1,6 +1,6 @@
 ---
 title: Model training and evaluation
-permalink: /notes/model-training-and-eval/
+permalink: /articles/model-training-and-eval/
 ---
 
 # Model training and evaluation

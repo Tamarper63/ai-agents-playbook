@@ -1,6 +1,6 @@
 ---
 title: Agent architecture
-permalink: /notes/agent-architecture/
+permalink: /articles/agent-architecture/
 ---
 
 # Agent architecture

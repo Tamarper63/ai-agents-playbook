@@ -3,7 +3,6 @@ title: Request web browsing (prompt template)
 permalink: /how-to/request-web-browsing/
 ---
 
-# Request web browsing (prompt template)
 
 This guide provides a copy/paste template to request **web browsing / web search** from an agent.
 

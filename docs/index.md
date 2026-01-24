@@ -10,7 +10,7 @@ A public, versioned knowledge base for building reliable AI systems (agents, orc
   [Open How-to guides](how-to/index.md)
 
 - **Notes** — long-form technical writeups and research notes.  
-  [Open Notes](notes/index.md)
+  [Open Articles](articles/index.md)
 
 - **Reference** — stable definitions, conventions, and canonical “source of truth” pages.  
   [Open Reference](reference/index.md)

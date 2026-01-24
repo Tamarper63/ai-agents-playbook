@@ -12,9 +12,9 @@ theme: jekyll-theme-cayman
 
 # Custom palette consumed by assets/css/style.scss via site.palette.*
 palette:
-  header_primary: "#081849"     # deep navy
-  header_secondary: "#213885"   # lapis blue
-  accent: "#893172"             # plum
+  header_primary: "#081849"
+  header_secondary: "#213885"
+  accent: "#893172"
 
 defaults:
   - scope:

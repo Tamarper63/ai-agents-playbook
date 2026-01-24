@@ -3,7 +3,6 @@ title: Technical Accuracy Gate — Verification Procedure
 permalink: /how-to/technical-accuracy-gate-procedure/
 ---
 
-## Canonical links
 
 - **Prompt templates (copy/paste):** [Technical Accuracy Gate — Prompt Templates]({{ '/prompts/technical-accuracy-gate-templates/' | relative_url }})
 - **Policy (normative):** [Technical Accuracy Policy (Evidence-Gated Claims)]({{ '/policies/technical-accuracy-policy/' | relative_url }})

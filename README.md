@@ -9,7 +9,7 @@ https://tamarper63.github.io/ai-agents-playbook/
 
 ## Content map
 
-- **Notes**: long-form technical writeups and research notes.
+- **Articles**: long-form technical writeups and research notes.
 - **How-to guides**: task-focused procedures and checklists.
 - **Reference**: stable terminology and conventions.
 - **Policies**: normative operating contracts (e.g., facts-only modes).
@@ -18,7 +18,7 @@ https://tamarper63.github.io/ai-agents-playbook/
 ## Start here
 
 - Home: `docs/index.md`
-- Notes: `docs/notes/`
+- Notes: `docs/articles/`
 - How-to guides: `docs/how-to/`
 - Reference: `docs/reference/`
 - Policies: `docs/policies/`

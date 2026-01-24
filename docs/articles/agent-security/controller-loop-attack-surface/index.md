@@ -1,6 +1,6 @@
 ---
 title: The Attack Surface Isn’t the LLM — It’s the Controller Loop
-permalink: /notes/agent-security/controller-loop-attack-surface/
+permalink: /articles/agent-security/controller-loop-attack-surface/
 summary: Why planner/controller loops amplify risk in tool-using systems, and which controls actually reduce it.
 ---
 

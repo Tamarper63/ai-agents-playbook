@@ -1,6 +1,6 @@
 ---
 title: Agent security
-permalink: /notes/agent-security/
+permalink: /articles/agent-security/
 ---
 
 # Agent security

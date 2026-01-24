@@ -3,7 +3,6 @@ title: Apply the facts-only modes (users + developers)
 permalink: /how-to/apply-facts-only-modes/
 ---
 
-# Apply the facts-only modes (users + developers)
 
 This guide explains how to use the facts-only policies and their matching prompt blocks.
 

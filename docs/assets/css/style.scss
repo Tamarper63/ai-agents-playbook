@@ -98,7 +98,6 @@ $accent: {{ site.palette.accent | default: "#D97706" }};
 code {
   background: rgba($accent, 0.10);
 }
-
 pre,
 code {
   border-radius: 8px;
