@@ -18,7 +18,7 @@ https://tamarper63.github.io/ai-agents-playbook/
 ## Start here
 
 - Home: `docs/index.md`
-- Notes: `docs/articles/`
+- Articles: `docs/articles/`
 - How-to guides: `docs/how-to/`
 - Reference: `docs/reference/`
 - Policies: `docs/policies/`

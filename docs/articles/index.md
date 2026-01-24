@@ -4,8 +4,7 @@ permalink: /articles/
 ---
 
 
-Long-form technical writeups.
-
+Long-form articles and research notes (technical writeups, deep dives, and research posts).
 ## Topics
 
 - [Agent architecture]({{ '/articles/agent-architecture/' | relative_url }})

@@ -12,38 +12,62 @@
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
+    {% assign purl = page.url | default: '' %}
+
     {% assign header_class = 'page-header' %}
-    {% unless page.url == '/' %}
+    {% unless purl == '/' %}
       {% assign header_class = header_class | append: ' page-header--compact' %}
     {% endunless %}
 
     <header class="{{ header_class }}" role="banner">
-       <h1 class="project-name">{{ site.title }}</h1>
-      {% if page.url == '/' %}
+      <h1 class="project-name">{{ site.title }}</h1>
+      {% if purl == '/' %}
         <h2 class="project-tagline">{{ site.description }}</h2>
       {% endif %}
     </header>
 
     <!-- Primary navigation (global) -->
     <nav class="site-nav" aria-label="Primary">
-      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
-      <a href="{{ '/how-to/' | relative_url }}" {% if page.url contains '/how-to/' %}aria-current="page"{% endif %}>How-to</a>
-      <a href="{{ '/notes/' | relative_url }}" {% if page.url contains '/notes/' %}aria-current="page"{% endif %}>Notes</a>
-      <a href="{{ '/reference/' | relative_url }}" {% if page.url contains '/reference/' %}aria-current="page"{% endif %}>Reference</a>
-      <a href="{{ '/policies/' | relative_url }}" {% if page.url contains '/policies/' %}aria-current="page"{% endif %}>Policies</a>
-      <a href="{{ '/prompts/' | relative_url }}" {% if page.url contains '/prompts/' %}aria-current="page"{% endif %}>Prompts</a>
+      {% if purl == '/' %}
+        <a href="{{ '/' | relative_url }}" aria-current="page">Home</a>
+      {% else %}
+        <a href="{{ '/' | relative_url }}">Home</a>
+      {% endif %}
+
+      {% if purl contains '/how-to/' %}
+        <a href="{{ '/how-to/' | relative_url }}" aria-current="page">How-to</a>
+      {% else %}
+        <a href="{{ '/how-to/' | relative_url }}">How-to</a>
+      {% endif %}
+
+      {% if purl contains '/prompts/' %}
+        <a href="{{ '/prompts/' | relative_url }}" aria-current="page">Prompts</a>
+      {% else %}
+        <a href="{{ '/prompts/' | relative_url }}">Prompts</a>
+      {% endif %}
+
+      {% if purl contains '/policies/' %}
+        <a href="{{ '/policies/' | relative_url }}" aria-current="page">Policies</a>
+      {% else %}
+        <a href="{{ '/policies/' | relative_url }}">Policies</a>
+      {% endif %}
+
+      {% if purl contains '/reference/' %}
+        <a href="{{ '/reference/' | relative_url }}" aria-current="page">Reference</a>
+      {% else %}
+        <a href="{{ '/reference/' | relative_url }}">Reference</a>
+      {% endif %}
+
+      <!-- Label = Articles. Current source folder in ZIP is /docs/notes/ (no /docs/articles/ yet). -->
+      {% if purl contains '/notes/' %}
+        <a href="{{ '/articles/' | relative_url }}" aria-current="page">Articles</a>
+      {% else %}
+        <a href="{{ '/articles/' | relative_url }}">Articles</a>
+      {% endif %}
     </nav>
 
     <main id="content" class="main-content" role="main">
       {{ content }}
-
-      <footer class="site-footer">
-        {% if site.github.repository_url %}
-          <span class="site-footer-owner">
-            <a href="{{ site.github.repository_url }}">View on GitHub</a>
-          </span>
-        {% endif %}
-      </footer>
     </main>
   </body>
 </html>

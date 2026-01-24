@@ -9,17 +9,17 @@ A public, versioned knowledge base for building reliable AI systems (agents, orc
 - **How-to guides** — step-by-step procedures and checklists you can apply immediately.  
   [Open How-to guides](how-to/index.md)
 
-- **Notes** — long-form technical writeups and research notes.  
-  [Open Articles](articles/index.md)
-
-- **Reference** — stable definitions, conventions, and canonical “source of truth” pages.  
-  [Open Reference](reference/index.md)
+- **Prompt blocks** — copy/paste templates used by the guides and policies.  
+  [Open Prompt blocks](prompts/index.md)
 
 - **Policies** — enforceable operating modes (facts-only, evidence rules, confidence rules).  
   [Open Policies](policies/index.md)
 
-- **Prompt blocks** — copy/paste templates used by the guides and policies.  
-  [Open Prompt blocks](prompts/index.md)
+- **Reference** — stable definitions, conventions, and canonical “source of truth” pages.  
+  [Open Reference](reference/index.md)
+
+- **Articles** — long-form technical writeups and research posts (formerly “Notes”).  
+  [Open Articles](articles/index.md)
 
 ## Recommended first steps
 
@@ -27,6 +27,7 @@ A public, versioned knowledge base for building reliable AI systems (agents, orc
 
 - Start with **How-to guides** for practical workflows.
 - Use **Reference** when a term or convention is unclear.
+- Use **Prompt blocks** when you need copy/paste templates, and keep the matching **Policies** enabled.
 
 ### If you’re adding content or maintaining the site
 
