@@ -14,5 +14,4 @@ permalink: /reference/site-structure-and-conventions/
 - **Prompt blocks (`/prompts/`)**: copy/paste prompts aligned to policies.
 
 ## Linking convention
-
 Use plain Markdown links (no Liquid) to keep links readable in both GitHub UI and built Pages.

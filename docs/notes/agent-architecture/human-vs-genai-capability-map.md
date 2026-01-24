@@ -12,7 +12,7 @@ The goal is not neuroscience completeness. The goal is fast, explicit tradeoff r
 
 ## Data (CSV)
 
-- Download the full table: [human-vs-genai-capability-map.csv](human-vs-genai-capability-map.csv)
+- Download the full table: [human-vs-genai-capability-map.csv]({{ '/assets/data/human-vs-genai-capability-map.csv' | relative_url }})
 
 ## How to use this map
 
@@ -35,5 +35,5 @@ Residual gaps are where production systems typically fail (consistency, provenan
 
 ## Suggested next read in this repo
 
-- Notes → Model training and evaluation → Fluency vs factuality: [Fluency Is Not Factuality](../model-training-and-eval/fluency-vs-factuality)
-- Policies: Facts-only / Evidence rules (when accuracy matters): [Policies]
+- Notes → Model training and evaluation → Fluency vs factuality: [Fluency Is Not Factuality]({{ '/notes/model-training-and-eval/fluency-vs-factuality/' | relative_url }})
+- Policies: Facts-only / Evidence rules (when accuracy matters): [Policies]({{ '/policies/' | relative_url }})

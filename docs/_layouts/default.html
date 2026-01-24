@@ -18,7 +18,7 @@
     {% endunless %}
 
     <header class="{{ header_class }}" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title }}</h1>
+       <h1 class="project-name">{{ site.title }}</h1>
       {% if page.url == '/' %}
         <h2 class="project-tagline">{{ site.description }}</h2>
       {% endif %}

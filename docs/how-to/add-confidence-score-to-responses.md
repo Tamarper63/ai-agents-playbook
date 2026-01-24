@@ -5,11 +5,7 @@ permalink: /how-to/add-confidence-score-to-responses/
 
 # Add a confidence score (0–100) to every response
 
-How-to guides are goal-oriented directions that help the user get something done correctly and safely.
-
-**Prompt block (canonical):** [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})  
-**Policy (normative):** [Confidence score (0–100) — reporting rules]({{ '/policies/confidence-score/' | relative_url }})  
-**Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
+How-to guides are goal-oriented directions that help the user get something done correctly and safely. :contentReference[oaicite:9]{index=9}
 
 ## Goal
 Ensure every response ends with a numeric confidence score (0–100).

@@ -32,9 +32,9 @@ Copy/paste prompt blocks aligned to policies and used by the guides.
 
 ### Technical Accuracy Gate — Prompt Templates
 
-- **Templates page:** [Technical Accuracy Gate — Prompt Templates]({{ '/prompts/technical-accuracy-gate-templates/' | relative_url }}) :contentReference[oaicite:2]{index=2}
-- **Policy (normative):** [Technical Accuracy Policy (Evidence-Gated Claims)]({{ '/policies/technical-accuracy-policy/' | relative_url }}) :contentReference[oaicite:3]{index=3}
-- **How-to (procedure):** [Technical Accuracy Gate — Verification Procedure]({{ '/how-to/technical-accuracy-gate-procedure/' | relative_url }}) :contentReference[oaicite:4]{index=4}
+- **Templates page:** [Technical Accuracy Gate — Prompt Templates]({{ '/prompts/technical-accuracy-gate-templates/' | relative_url }}) 
+- **Policy (normative):** [Technical Accuracy Policy (Evidence-Gated Claims)]({{ '/policies/technical-accuracy-policy/' | relative_url }}): 
+- **How-to (procedure):** [Technical Accuracy Gate — Verification Procedure]({{ '/how-to/technical-accuracy-gate-procedure/' | relative_url }}): 
 
 ## Usage rules
 
