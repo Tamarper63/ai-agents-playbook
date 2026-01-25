@@ -9,8 +9,8 @@ Task-oriented guides and checklists.
 
 ## Guides
 
-- [Technical Accuracy Gate — Verification Procedure](technical-accuracy-gate-procedure)
-- [Apply the facts-only modes](apply-facts-only-modes)
-- [Add a confidence score (0–100) to every response](add-confidence-score-to-responses)
-- [Request web browsing (prompt template)](request-web-browsing)
-- [Chain-of-Verification — procedure](chain-of-verification-procedure)
+[Technical Accuracy Gate — Verification Procedure]({{ '/how-to/technical-accuracy-gate-procedure/' | relative_url }})
+[Apply the facts-only modes (users + developers)]({{ '/how-to/apply-facts-only-modes/' | relative_url }})
+[Add confidence score to responses]({{ '/how-to/add-confidence-score-to-responses/' | relative_url }})
+[Request web browsing (prompt template)]({{ '/how-to/request-web-browsing/' | relative_url }})
+[Chain-of-Verification (CoVe) procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})

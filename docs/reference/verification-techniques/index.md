@@ -1,4 +1,4 @@
-                  ---
+---
 title: Hallucination mitigation — verification methods
 permalink: /reference/verification-techniques/
 ---

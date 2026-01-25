@@ -10,4 +10,4 @@ Landing page for notes on:
 - auditability and observability of tool actions
 - threat models for prompt injection and indirect tool steering
 
-- [The Attack Surface Isn’t the LLM — It’s the Controller Loop]({{ '/notes/agent-security/controller-loop-attack-surface/' | relative_url }})
+- [Controller-loop attack surface]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})

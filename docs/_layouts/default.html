@@ -59,7 +59,7 @@
       {% endif %}
 
       <!-- Label = Articles. Current source folder in ZIP is /docs/notes/ (no /docs/articles/ yet). -->
-      {% if purl contains '/notes/' %}
+      {% if purl contains '/articles/' %}
         <a href="{{ '/articles/' | relative_url }}" aria-current="page">Articles</a>
       {% else %}
         <a href="{{ '/articles/' | relative_url }}">Articles</a>

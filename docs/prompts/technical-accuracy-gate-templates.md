@@ -11,11 +11,11 @@ permalink: /prompts/technical-accuracy-gate-templates/
 
 ## Where to paste this template (vendor terminology)
 
-- **ChatGPT UI:** paste into **Custom Instructions**. :contentReference[oaicite:5]{index=5}
-- **OpenAI API:** for **reasoning models**, put the instruction block in the **developer** message (OpenAI documents developer messages as the instruction layer for reasoning models). :contentReference[oaicite:6]{index=6}  
-  For API runtimes that support **system** messages, system/developer instructions take precedence over user messages. :contentReference[oaicite:7]{index=7}
-- **Anthropic Claude API:** paste into the **system** parameter (system prompt). :contentReference[oaicite:8]{index=8}
-- **Google Vertex AI (Gemini):** paste into **system instructions**. :contentReference[oaicite:9]{index=9}
+- **ChatGPT UI:** paste into **Custom Instructions**. 
+- **OpenAI API:** for **reasoning models**, put the instruction block in the **developer** message (OpenAI documents developer messages as the instruction layer for reasoning models). 
+  For API runtimes that support **system** messages, system/developer instructions take precedence over user messages. 
+- **Anthropic Claude API:** paste into the **system** parameter (system prompt). 
+- **Google Vertex AI (Gemini):** paste into **system instructions**.
 
 
 ## Template 1 (ChatGPT UI — Custom Instructions)

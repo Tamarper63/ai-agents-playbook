@@ -15,4 +15,5 @@ Landing page for notes on:
 
 ## Notes
 
-- [Human vs GenAI capability map (engineering view)](human-vs-genai-capability-map)
++- [Human vs GenAI capability map (engineering view)]({{ '/articles/agent-architecture/human-vs-genai-capability-map/' | relative_url }})
+

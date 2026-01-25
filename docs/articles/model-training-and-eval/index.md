@@ -13,7 +13,7 @@ Landing page for notes on:
 
 
 ## Notes
-- [Fluency Is Not Factuality](fluency-vs-factuality)
+- [Fluency Is Not Factuality]({{ '/articles/model-training-and-eval/fluency-vs-factuality/' | relative_url }})
 - [Theory of mind in LLMs — what benchmarks test (and what they don’t)]({{ '/articles/model-training-and-eval/theory-of-mind-in-llms/' | relative_url }})
 - [Orders of intentionality and recursive mindreading in LLM evaluation]({{ '/articles/model-training-and-eval/orders-of-intentionality-recursive-mindreading/' | relative_url }})
 
