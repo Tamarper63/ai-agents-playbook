@@ -3,10 +3,9 @@
 title: AI-agents-playbook
 description: A public, versioned knowledge base for building reliable AI agents and securing agentic systems.
 
-# GitHub Pages project site:
-# https://tamarper63.github.io/ai-agents-playbook/
-url: https://tamarper63.github.io
-baseurl: /ai-agents-playbook
+# Custom domain (canonical)
+url: https://www.andyagentlab.com
+baseurl: ""
 
 theme: jekyll-theme-cayman
 

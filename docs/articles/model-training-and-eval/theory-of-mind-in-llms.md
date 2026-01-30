@@ -86,34 +86,34 @@ In ML usage, “machine theory of mind” is used for work that aims to model ot
 ## References (primary / formal)
 
 1) Premack, D., & Woodruff, G. (1978). *Does the chimpanzee have a theory of mind?* **Behavioral and Brain Sciences**.  
-   DOI: https://doi.org/10.1017/S0140525X00076512  
-   Publisher page: https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/does-the-chimpanzee-have-a-theory-of-mind/1E96B02CD9850016B7C93BC6D2FEF1D0
+   DOI: [10.1017/S0140525X00076512](https://doi.org/10.1017/S0140525X00076512)  
+   Publisher page: [Cambridge Core](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/does-the-chimpanzee-have-a-theory-of-mind/1E96B02CD9850016B7C93BC6D2FEF1D0)
 
 2) Strachan, J. W. A., et al. (2024). *Testing theory of mind in large language models and humans.* **Nature Human Behaviour**.  
-   DOI: https://doi.org/10.1038/s41562-024-01882-z  
-   Article: https://www.nature.com/articles/s41562-024-01882-z
+   DOI: [10.1038/s41562-024-01882-z](https://doi.org/10.1038/s41562-024-01882-z)  
+   Article: [Nature (HTML)](https://www.nature.com/articles/s41562-024-01882-z)
 
-3) van Duijn, M. J., et al. (2023). *Theory of Mind in Large Language Models.* arXiv: https://arxiv.org/abs/2310.20320  
-   DOI: https://doi.org/10.48550/arXiv.2310.20320
+3) van Duijn, M. J., et al. (2023). *Theory of Mind in Large Language Models.* arXiv: [2310.20320](https://arxiv.org/abs/2310.20320)  
+   DOI: [10.48550/arXiv.2310.20320](https://doi.org/10.48550/arXiv.2310.20320)
 
-4) Chen, Z., et al. (2024). *ToMBench: Benchmarking Theory of Mind in Large Language Models.* arXiv: https://arxiv.org/abs/2402.15052  
-   DOI: https://doi.org/10.48550/arXiv.2402.15052  
-   Repo: https://github.com/zhchen18/ToMBench
+4) Chen, Z., et al. (2024). *ToMBench: Benchmarking Theory of Mind in Large Language Models.* arXiv: [2402.15052](https://arxiv.org/abs/2402.15052)  
+   DOI: [10.48550/arXiv.2402.15052](https://doi.org/10.48550/arXiv.2402.15052)  
+   Repo: [zhchen18/ToMBench](https://github.com/zhchen18/ToMBench)
 
-5) Ullman, T. (2023). *Large language models fail on trivial alterations to theory-of-mind tasks.* arXiv: https://arxiv.org/abs/2302.08399  
-   DOI: https://doi.org/10.48550/arXiv.2302.08399
+5) Ullman, T. (2023). *Large language models fail on trivial alterations to theory-of-mind tasks.* arXiv: [2302.08399](https://arxiv.org/abs/2302.08399)  
+   DOI: [10.48550/arXiv.2302.08399](https://doi.org/10.48550/arXiv.2302.08399)
 
-6) Shapira, N., et al. (2023). *Clever Hans or neural theory of mind? Stress testing social reasoning in large language models.* arXiv: https://arxiv.org/abs/2305.14763  
-   DOI: https://doi.org/10.48550/arXiv.2305.14763
+6) Shapira, N., et al. (2023). *Clever Hans or neural theory of mind? Stress testing social reasoning in large language models.* arXiv: [2305.14763](https://arxiv.org/abs/2305.14763)  
+   DOI: [10.48550/arXiv.2305.14763](https://doi.org/10.48550/arXiv.2305.14763)
 
 7) Wu, Y., et al. (2025). *How large language models encode theory-of-mind: a study on sparse parameter patterns.* **npj Artificial Intelligence**.  
-   DOI: https://doi.org/10.1038/s44387-025-00031-9  
-   Article: https://www.nature.com/articles/s44387-025-00031-9
+   DOI: [10.1038/s44387-025-00031-9](https://doi.org/10.1038/s44387-025-00031-9)  
+   Article: [Nature (HTML)](https://www.nature.com/articles/s44387-025-00031-9)
 
-8) Riemer, M., et al. (2025). *Position: Theory of Mind Benchmarks are Broken for Large Language Models.* OpenReview forum paper: https://openreview.net/forum?id=BCP8UU2BcU  
-   PDF: https://openreview.net/pdf/cc8f79dde944929f46203d43a664211ac4e11939.pdf  
-   arXiv: https://arxiv.org/abs/2412.19726
+8) Riemer, M., et al. (2025). *Position: Theory of Mind Benchmarks are Broken for Large Language Models.* OpenReview forum paper: [BCP8UU2BcU](https://openreview.net/forum?id=BCP8UU2BcU)  
+   PDF: [OpenReview PDF](https://openreview.net/pdf/cc8f79dde944929f46203d43a664211ac4e11939.pdf)  
+   arXiv: [2412.19726](https://arxiv.org/abs/2412.19726)
 
 9) Rabinowitz, N. C., et al. (2018). *Machine Theory of Mind.* ICML 2018 (PMLR).  
-   Proceedings page: https://proceedings.mlr.press/v80/rabinowitz18a.html  
-   arXiv: https://arxiv.org/abs/1802.07740
+   Proceedings page: [PMLR v80](https://proceedings.mlr.press/v80/rabinowitz18a.html)  
+   arXiv: [1802.07740](https://arxiv.org/abs/1802.07740)
