@@ -5,23 +5,20 @@
   <h1 class="newsletter-title">Get Playbook Updates</h1>
 
   <p class="newsletter-subtitle">
-    Short, technical updates on building reliable AI agents and securing agentic systems.
+    Engineering notes on building reliable AI agents (architecture, orchestration, evaluation) and running evidence-gated workflows (policies, prompts, procedures).
+    Also covers safety boundaries for tool-using systems (permissions, guardrails).
   </p>
 
   <ul class="newsletter-list">
-    <li>New prompt blocks and policies (verification, tool-use boundaries, failure modes).</li>
-    <li>Threat models and diagrams for agentic systems (prompt injection, tool routing, RBAC).</li>
-    <li>Practical checklists and templates you can copy/paste into real projects.</li>
-    <li>Release notes when major sections change (renames, migrations, deprecations).</li>
+    <li>Agent architecture patterns and execution control planes (LLM-led vs controller-led).</li>
+    <li>Evaluation harnesses, verification workflows, and evidence-gated quality gates.</li>
+    <li>Copy/paste templates: prompt blocks, checklists, and operational procedures.</li>
+    <li>Security boundaries for tool/retrieval use (prompt injection, routing, RBAC) where relevant.</li>
   </ul>
 
   <div class="newsletter-form">
     {% include newsletter-embed.html %}
   </div>
-
-  <p class="newsletter-meta">
-    Frequency: 1–2 emails/week. Unsubscribe anytime.
-  </p>
 </section>
 
 {% else %}

@@ -1,6 +1,12 @@
 <form class="newsletter-form"
       action="https://buttondown.com/api/emails/embed-subscribe/andyagentlab"
       method="post">
+  <!-- Buttondown supports tags and UTM params via hidden fields. -->
+  <input type="hidden" name="tag" value="website">
+  <input type="hidden" name="utm_source" value="andyagentlab">
+  <input type="hidden" name="utm_medium" value="website">
+  <input type="hidden" name="utm_campaign" value="newsletter">
+
   <label class="newsletter-label" for="bd-email">Email</label>
 
   <div class="newsletter-row">
@@ -13,5 +19,5 @@
     <button class="newsletter-button" type="submit">Subscribe</button>
   </div>
 
-  <p class="newsletter-hint">1–2 emails/week. Unsubscribe anytime.</p>
+  <p class="newsletter-hint">Sent occasionally. Unsubscribe anytime.</p>
 </form>

@@ -6,7 +6,7 @@ permalink: /how-to/request-web-browsing/
 This guide provides copy/paste templates to request **web browsing / web search** from an agent.
 
 **Prompt (composite):** [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})  
-**Prompt blocks (building blocks):** [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }}) · [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
+**Prompt components:** [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }}) · [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
 **Policy (normative):** [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }})  
 **Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
 

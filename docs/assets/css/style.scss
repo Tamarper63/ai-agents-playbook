@@ -302,8 +302,13 @@ pre {
   font-weight: 700;
   cursor: pointer;
   color: #fff;
-  background: #893172;
+  background: #2563EB;
 }
+
+.newsletter-button:hover {
+  background: #1E40AF;
+}
+
 
 .newsletter-hint { margin: 0.75rem 0 0; font-size: 0.95rem; opacity: 0.8; }
 
