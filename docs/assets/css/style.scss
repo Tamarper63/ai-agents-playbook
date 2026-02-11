@@ -282,7 +282,7 @@ pre {
 .newsletter-title { margin: 0 0 0.25rem; font-size: 1.15rem; }
 .newsletter-subtitle { margin: 0 0 0.75rem; opacity: 0.85; }
 
-.newsletter-form { max-width: 560px; }
+.newsletter-form { max-width: 560px; margin-top: 0.75rem; }
 .newsletter-label { display:block; font-weight:600; margin-bottom:0.5rem; }
 
 .newsletter-row { display:flex; gap:0.6rem; align-items:center; }
@@ -309,7 +309,6 @@ pre {
   background: #1E40AF;
 }
 
-
 .newsletter-hint { margin: 0.75rem 0 0; font-size: 0.95rem; opacity: 0.8; }
 
 .newsletter-cta--footer {
@@ -318,9 +317,6 @@ pre {
   border: none;
   margin-top: 0.75rem;
 }
-
-.newsletter-footer-link { font-weight: 700; text-decoration: none; }
-.newsletter-footer-link:hover { text-decoration: underline; }
 
 /* ===== Home hero (UPDATED) ===== */
 .home-hero {
@@ -474,7 +470,6 @@ pre {
 .home-role-title { margin-top: 0; }
 .home-role-items { margin: 0.5rem 0 0; padding-left: 1.1rem; }
 
-
 .capability-map {
   width: 100%;
   min-width: 980px; /* prevents cramped columns on desktop */
@@ -507,22 +502,31 @@ pre {
 .capability-map tbody tr:hover td {
   background: rgba(15, 23, 42, 0.03);
 }
+
 /* Newsletter (page + footer) */
 .newsletter-list { margin: 0 0 1rem 1.25rem; }
 .newsletter-list li { margin: 0.25rem 0; }
 
-.newsletter-form { margin-top: 0.75rem; }
 .newsletter-meta { margin-top: 0.75rem; font-size: 0.95rem; opacity: 0.8; }
+
+.newsletter-footer {
+  max-width: 64rem;
+  margin: 0 auto 0.6rem;
+}
 
 .newsletter-footer-inner {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.6rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .newsletter-footer-title { font-weight: 700; }
+.newsletter-footer-title::after {
+  content: "·";
+  margin: 0 0.35rem;
+  opacity: 0.6;
+}
 .newsletter-footer-link { font-weight: 700; text-decoration: none; }
 .newsletter-footer-link:hover { text-decoration: underline; }
-

@@ -29,10 +29,6 @@ Notes:
 
 ## Engineering Quality Gate — Architecture & Best Practices
 
-Use when you want a pre-merge / pre-release quality gate for architecture, best practices, and regressions.
-
-- **Prompt (system, copy/paste):** [engineering-quality-gate.system.txt]({{ '/prompts/engineering-quality-gate.system.txt' | relative_url }})
-- **Prompt (user runner):** [engineering-quality-gate.user.txt]({{ '/prompts/engineering-quality-gate.user.txt' | relative_url }})
 - **Policy (normative):** [Engineering Quality Gate Policy (Architecture & Best Practices)]({{ '/policies/engineering-quality-gate-policy/' | relative_url }})
 - **How-to (procedure):** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
 
@@ -109,15 +105,20 @@ Use when you want a strict gate for technical writing where factual claims must 
 - **Policy (normative):** [Evidence-Gated Technical Writing Policy (Claims)]({{ '/policies/evidence-gated-technical-writing-policy/' | relative_url }})
 - **How-to (procedure):** [Evidence-Gated Technical Writing Gate — Verification Procedure (Claims)]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
 
-## Operating profile — objective technical mode
+## Objective technical baseline (non-simulative)
 
-Use when you want a global “tone/behavior” profile (objective, technical, no fluff).
+Use when you want a global baseline for **objective technical work**:
+- no simulation/fabrication,
+- rules-first behavior,
+- clear instruction-priority handling,
+- compatible with facts-only evidence policies and fail-closed sentinels.
 
-- **Prompt (system, copy/paste):** [objective-technical-operating-profile.system.txt]({{ '/prompts/objective-technical-operating-profile.system.txt' | relative_url }})
-- **Policy (normative):** [Objective Technical Operating Profile]({{ '/policies/objective-technical-operating-profile/' | relative_url }})
+- **Prompt A (style, system):** [objective-technical-style-non-simulative.system.txt]({{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }})
+- **Prompt B (ruleset, system):** [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
+- **Policy (normative):** [Objective Technical Ruleset (non-simulative)]({{ '/policies/objective-technical-operating-profile/' | relative_url }})
 
 ## Usage rules
 
-- Policy pages are **normative** (rules).
-- Prompt files are **operational** (copy/paste).
-- Keep mappings explicit to prevent drift between Policy, How-to, and Prompt artifacts.
+- Policy pages are normative (rules).
+- Prompt blocks/templates are operational (copy/paste).
+- Keep mappings explicit to prevent drift between Policy, Guide, and Prompt artifacts.

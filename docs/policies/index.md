@@ -19,7 +19,7 @@ Use this page as a **chooser + map**:
 - **Need academic-style, evidence-gated outputs with confidence reporting** → Evidence-Gated Academic Mode (EGAM)
 - **Need a numeric confidence line (0–100) as an analytic confidence report** → Evidence-based confidence score (0–100)
 - **Need a strict gate for technical writing where claims must be verified** → Evidence-Gated Technical Writing Policy (Claims)
-- **Need an objective technical operating profile (no fluff, rules-first)** → Objective Technical Operating Profile — policy
+- **Need an objective technical baseline (no fluff, rules-first)** → Objective Technical Ruleset — policy
 - **Need an engineering quality gate for architecture/best-practices/regressions** → Engineering Quality Gate Policy
 
 ## Policies (with direct mappings)
@@ -65,5 +65,13 @@ Use this page as a **chooser + map**:
   **Prompt (system):** [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})  
   **How-to:** [Add a confidence score (0–100) to every response]({{ '/how-to/add-confidence-score-to-responses/' | relative_url }})
 
-- **Policy:** [Objective Technical Operating Profile — policy]({{ '/policies/objective-technical-operating-profile/' | relative_url }})  
-  **Prompt (system):** [objective-technical-operating-profile.system.txt]({{ '/prompts/objective-technical-operating-profile.system.txt' | relative_url }})
+- **Policy:** [Objective Technical Ruleset — policy]({{ '/policies/objective-technical-operating-profile/' | relative_url }})  
+  **Prompt (system):** [objective-technical-style-non-simulative.system.txt]({{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }}) · [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
+
+- **Policy:** [Evidence-Gated Technical Writing Policy (Claims)]({{ '/policies/evidence-gated-technical-writing-policy/' | relative_url }})  
+  **How-to:** [Evidence-Gated Technical Writing Gate — Verification Procedure (Claims)]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
+
+### Engineering gates
+
+- **Policy:** [Engineering Quality Gate Policy (Architecture & Best Practices)]({{ '/policies/engineering-quality-gate-policy/' | relative_url }})  
+  **How-to:** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
