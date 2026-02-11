@@ -1,0 +1,12 @@
+<h2>{{ site.data.home.mental_model.title }}</h2>
+<p>{{ site.data.home.mental_model.lede }}</p>
+
+<ul>
+  {% for item in site.data.home.mental_model.items %}
+    <li><strong>{{ item.label }}</strong> — {{ item.desc }}</li>
+  {% endfor %}
+</ul>
+
+{% if site.data.home.mental_model.note %}
+  <p class="home-note">{{ site.data.home.mental_model.note }}</p>
+{% endif %}

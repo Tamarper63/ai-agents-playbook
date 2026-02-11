@@ -1,0 +1,14 @@
+<h2>{{ site.data.home.paths_by_role.title }}</h2>
+
+<div class="home-role-grid">
+  {% for r in site.data.home.paths_by_role.roles %}
+    <section class="home-role" aria-label="{{ r.role }}">
+      <h3 class="home-role-title">{{ r.role }}</h3>
+      <ul class="home-role-items">
+        {% for it in r.items %}
+          <li><a href="{{ it.url | relative_url }}">{{ it.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>

@@ -1,0 +1,10 @@
+Run the ENGINEERING QUALITY GATE on the materials below.
+
+OUTPUT EXACTLY in this order:
+A) CONTEXT SNAPSHOT
+B) ARCHITECTURE CLASSIFICATION (EVIDENCE-BASED)
+C) FINDINGS (ACTIONABLE, SOURCE-BOUND)
+D) CHANGESET PLAN (FILE-SPECIFIC)
+E) CONFIDENCE
+
+MATERIALS (goal, constraints, code/design excerpts, and authoritative sources) START:

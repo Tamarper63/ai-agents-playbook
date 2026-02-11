@@ -1,0 +1,22 @@
+Prompt Engineering — Daily Work (Copy/Paste Templates)
+
+TEMPLATE 1 — Objective mode + evidence boundary
+Answer in a strictly objective, neutral way.
+If a claim is not supported by reliable sources or by the content I provided, write: NOT VERIFIED.
+Do not speculate or infer missing details.
+
+TEMPLATE 2 — Mandatory full-read + “sections used”
+First: fully read and analyze all attached content.
+Second: summarize what you understood (bullets).
+Third: answer my question.
+Also list exactly which files/sections you used.
+If anything was too long to fully process, say so explicitly.
+
+TEMPLATE 3 — External verification (web) + citations
+Use live web search and cite every external source you rely on.
+Prefer official vendor documentation and primary sources.
+If sources conflict, report the conflict and do not guess.
+
+TEMPLATE 4 — Fail-closed on low confidence
+If you are not confident (>= 0.90), respond only with:
+INSUFFICIENT_EVIDENCE: <what is missing>

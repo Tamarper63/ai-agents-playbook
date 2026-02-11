@@ -1,0 +1,15 @@
+<h2>{{ site.data.home.scope.title }}</h2>
+
+<h3>{{ site.data.home.scope.covers_title }}</h3>
+<ul>
+  {% for item in site.data.home.scope.covers %}
+    <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+<h3>{{ site.data.home.scope.excludes_title }}</h3>
+<ul>
+  {% for item in site.data.home.scope.excludes %}
+    <li>{{ item }}</li>
+  {% endfor %}
+</ul>

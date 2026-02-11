@@ -1,0 +1,7 @@
+<h2>{{ site.data.home.reading_order.title }}</h2>
+
+<ol>
+  {% for item in site.data.home.reading_order.items %}
+    <li>{{ item }}</li>
+  {% endfor %}
+</ol>

@@ -1,0 +1,19 @@
+<section class="home-hero" aria-label="Homepage intro">
+  <p class="home-lede">{{ site.data.home.hero.lede }}</p>
+
+  <ul class="home-hero-bullets">
+    {% for b in site.data.home.hero.bullets %}
+      <li>{{ b }}</li>
+    {% endfor %}
+  </ul>
+
+  <div class="home-actions" aria-label="Primary actions">
+    <a class="home-primary" href="{{ site.data.home.actions.primary.url | relative_url }}">
+      {{ site.data.home.actions.primary.label }}
+    </a>
+
+    {% for a in site.data.home.actions.secondary %}
+      <a class="home-secondary" href="{{ a.url | relative_url }}">{{ a.label }}</a>
+    {% endfor %}
+  </div>
+</section>

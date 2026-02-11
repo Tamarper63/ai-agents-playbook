@@ -1,0 +1,36 @@
+# docs/_config.yml
+
+title: AI Agents Playbook
+description: A public, versioned knowledge base for building reliable AI agents and securing agentic systems.
+
+# Custom domain (canonical)
+url: https://www.andyagentlab.com
+baseurl: ""
+
+theme: jekyll-theme-cayman
+google_analytics: G-2ZQ4K2Z02Q
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+palette:
+  header_primary: "#081849"
+  header_secondary: "#213885"
+  accent: "#893172"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+social:
+  name: Andy Agent Lab
+  links:
+    - https://www.linkedin.com/in/tamar-peretz-59245b198/
+    - https://github.com/Tamarper63/ai-agents-playbook
+
+newsletter:
+  provider: buttondown
+  buttondown_username: andyagentlab
+  subscribe_url: "https://buttondown.com/andyagentlab"

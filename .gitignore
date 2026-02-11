@@ -1,0 +1,16 @@
+# Jekyll build output (never commit)
+_site/
+.jekyll-cache/
+.sass-cache/
+.bundle/
+vendor/
+
+# local snapshots / backups (never commit)
+ai-agents-playbook_worktree_*.zip
+ai-agents-playbook_worktree_*.zip.sha256
+blog-ai_*.zip
+blog-ai_*.zip.sha256
+
+# IDE
+.idea/
+.DS_Store

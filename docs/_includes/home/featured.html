@@ -1,0 +1,7 @@
+<h2>{{ site.data.home.featured.title }}</h2>
+
+<ul>
+  {% for item in site.data.home.featured.items %}
+    <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
+  {% endfor %}
+</ul>

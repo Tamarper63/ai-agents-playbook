@@ -1,0 +1,34 @@
+{% assign mode = include.mode | default: 'footer' %}
+
+{% if mode == 'page' %}
+<section class="newsletter-block" aria-label="Newsletter signup">
+  <h1 class="newsletter-title">Get Playbook Updates</h1>
+
+  <p class="newsletter-subtitle">
+    Short, technical updates on building reliable AI agents and securing agentic systems.
+  </p>
+
+  <ul class="newsletter-list">
+    <li>New prompt blocks and policies (verification, tool-use boundaries, failure modes).</li>
+    <li>Threat models and diagrams for agentic systems (prompt injection, tool routing, RBAC).</li>
+    <li>Practical checklists and templates you can copy/paste into real projects.</li>
+    <li>Release notes when major sections change (renames, migrations, deprecations).</li>
+  </ul>
+
+  <div class="newsletter-form">
+    {% include newsletter-embed.html %}
+  </div>
+
+  <p class="newsletter-meta">
+    Frequency: 1–2 emails/week. Unsubscribe anytime.
+  </p>
+</section>
+
+{% else %}
+<section class="newsletter-footer" aria-label="Newsletter">
+  <div class="newsletter-footer-inner">
+    <span class="newsletter-footer-title">Newsletter</span>
+    <a class="newsletter-footer-link" href="{{ '/newsletter/' | relative_url }}">Subscribe for updates</a>
+  </div>
+</section>
+{% endif %}

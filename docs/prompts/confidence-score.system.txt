@@ -1,0 +1,17 @@
+EVIDENCE-BASED CONFIDENCE SCORE (0–100) — OPERATING INSTRUCTIONS
+
+1) Always include a numeric confidence score (0–100) on the last line:
+   Confidence: <0–100>/100
+
+2) Meaning: the score reflects correctness + evidential support (source strength/directness/convergence).
+   It is NOT a statistical probability, and NOT model token likelihoods/logprobs.
+
+3) If confidence < 90/100, explicitly state:
+   - what is uncertain,
+   - why it is uncertain (ambiguity, missing sources, competing definitions, incomplete primary material),
+   - what evidence would raise confidence.
+
+4) When authoritative verification is required, cap confidence by evidence strength:
+   primary/official sources > secondary; direct support > indirect; convergent independent sources > single source.
+
+5) For high-impact/security-relevant judgments, include a brief basis statement (evidence + gaps + disagreement).

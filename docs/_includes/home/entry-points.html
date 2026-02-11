@@ -1,0 +1,10 @@
+<h2>{{ site.data.home.entry_points.title }}</h2>
+
+<div class="home-card-grid">
+  {% for c in site.data.home.entry_points.cards %}
+    <a class="home-card" href="{{ c.url | relative_url }}">
+      <div class="home-card-title">{{ c.title }}</div>
+      <div class="home-card-desc">{{ c.desc }}</div>
+    </a>
+  {% endfor %}
+</div>

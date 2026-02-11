@@ -1,0 +1,145 @@
+hero:
+  lede: "A public, versioned playbook for building reliable AI agents (architecture, orchestration, evaluation) and securing tool-using systems (tools, permissions, guardrails)."
+  bullets:
+    - "Practical agent-building material: architecture patterns, capability mapping, and evaluation framing."
+    - "Operational security policies: evidence-first rules, citations, fail-closed quality gates, and trust boundaries."
+    - "Copy/paste prompt blocks + step-by-step procedures to operationalize the policies."
+actions:
+  primary:
+    label: "Start here: Fact-Checking Kit"
+    url: "/how-to/fact-checking-kit/"
+  secondary:
+    - label: "Build: Agent architecture"
+      url: "/articles/agent-architecture/"
+    - label: "Secure: Provenance boundary report"
+      url: "/articles/agent-security/provenance-boundary-report/"
+    - label: "Run: Engineering Quality Gate"
+      url: "/how-to/engineering-quality-gate-procedure/"
+
+
+quickstart:
+  title: "Start here (5 minutes)"
+  steps:
+    - title: "Run the verification workflow (reduce factual errors)"
+      output: "A repeatable verification procedure you can apply to non-trivial answers."
+      url: "/how-to/fact-checking-kit/"
+    - title: "Understand the core agent architecture building blocks"
+      output: "A practical orientation to agent architecture (state, tools, retrieval, lifecycle)."
+      url: "/articles/agent-architecture/"
+    - title: "Apply a quality gate for non-trivial outputs"
+      output: "A strict gate: verify → refuse when evidence is missing (fail-closed)."
+      url: "/how-to/engineering-quality-gate-procedure/"
+
+paths_by_role:
+  title: "Pick a path (by role)"
+  roles:
+    - role: "Builder / Developer"
+      items:
+        - label: "Agent architecture (overview)"
+          url: "/articles/agent-architecture/"
+        - label: "Human vs GenAI capability map (engineering view)"
+          url: "/articles/agent-architecture/human-vs-genai-capability-map/"
+        - label: "Prompt Engineering Guide for Daily Work"
+          url: "/how-to/prompt-engineering-daily-work/"
+        - label: "Engineering Quality Gate — Procedure"
+          url: "/how-to/engineering-quality-gate-procedure/"
+    - role: "Security / Platform"
+      items:
+        - label: "Policies (operating contracts)"
+          url: "/policies/"
+        - label: "Facts-only evidence boundary"
+          url: "/how-to/choose-facts-only-evidence-boundary/"
+        - label: "Provenance boundary report"
+          url: "/articles/agent-security/provenance-boundary-report/"
+        - label: "Objective Technical Operating Profile — policy"
+          url: "/policies/objective-technical-operating-profile/"
+    - role: "Research / Deeper dives"
+      items:
+        - label: "Agent security (index)"
+          url: "/articles/agent-security/"
+        - label: "Model training & eval (index)"
+          url: "/articles/model-training-and-eval/"
+        - label: "Reference (stable terms)"
+          url: "/reference/"
+
+entry_points:
+  title: "Choose an entry point (by goal)"
+  cards:
+    - title: "Agent architecture"
+      desc: "Practical patterns for building agents: state, tools, retrieval, lifecycle."
+      url: "/articles/agent-architecture/"
+    - title: "Policies"
+      desc: "Operating contracts: evidence, citations, trust boundaries, fail-closed rules."
+      url: "/policies/"
+    - title: "Prompts"
+      desc: "Reusable prompt blocks (copy/paste) aligned to the policies."
+      url: "/prompts/"
+    - title: "How-to"
+      desc: "Step-by-step procedures and checklists for daily work."
+      url: "/how-to/"
+    - title: "Articles"
+      desc: "Long-form technical analysis, case studies, and deeper dives."
+      url: "/articles/"
+    - title: "Reference"
+      desc: "Stable terminology and conventions used across the site."
+      url: "/reference/"
+
+featured:
+  title: "Featured (high-signal)"
+  items:
+    - label: "Agent architecture (overview)"
+      url: "/articles/agent-architecture/"
+    - label: "Fact-Checking Kit"
+      url: "/how-to/fact-checking-kit/"
+    - label: "Engineering Quality Gate — Procedure"
+      url: "/how-to/engineering-quality-gate-procedure/"
+    - label: "Prompt Engineering Guide for Daily Work"
+      url: "/how-to/prompt-engineering-daily-work/"
+    - label: "Provenance boundary report"
+      url: "/articles/agent-security/provenance-boundary-report/"
+
+recommended:
+  title: "Recommended next reads"
+  items:
+    - label: "LLM boundary — first touch"
+      url: "/articles/agent-security/llm-boundary-first-touch/"
+    - label: "Orders of Intentionality — recursive mindreading"
+      url: "/articles/model-training-and-eval/orders-of-intentionality-recursive-mindreading/"
+    - label: "Human vs GenAI capability map (engineering view)"
+      url: "/articles/agent-architecture/human-vs-genai-capability-map/"
+
+mental_model:
+  title: "How the content is organized (mental model)"
+  lede: "This structure follows common documentation separation:"
+  items:
+    - label: "How-to"
+      desc: "task execution (procedures)"
+    - label: "Reference"
+      desc: "stable definitions and conventions"
+    - label: "Articles"
+      desc: "explanation/background and deeper reasoning"
+  note: "Agent architecture lives under Articles as practical engineering writeups."
+
+reading_order:
+  title: "Recommended reading order (first-time visitors)"
+  items:
+    - "Agent architecture → building blocks and system boundaries"
+    - "Policies → trust boundaries + evidence rules"
+    - "Prompts → operationalize the rules (copy/paste)"
+    - "How-to → apply procedures end-to-end"
+    - "Articles → deeper dives and case studies"
+    - "Reference → shared vocabulary and conventions"
+
+scope:
+  title: "Scope (what this is / isn’t)"
+  covers_title: "What this site covers"
+  covers:
+    - "Practical agent-building content (architecture patterns, capability mapping, evaluation framing)."
+    - "Operational policies for verifiable outputs and bounded tool use."
+    - "Reusable prompt blocks aligned to those policies."
+    - "How-to procedures and checklists for engineering workflows."
+    - "Long-form analysis (articles) and stable terminology (reference)."
+  excludes_title: "What this site does not cover"
+  excludes:
+    - "Vendor-specific configuration guides (unless scoped in an article)."
+    - "General AI/news commentary."
