@@ -7,14 +7,15 @@ This page indexes copy/paste prompt artifacts. Use the quick chooser to pick the
 
 ## Quick chooser (what you need right now)
 
-- **Ship an architecture / refactor quality gate** → Engineering Quality Gate
-- **Verify web claims + produce citations** → Web verification & citations
-- **Run a strict internal verification loop (no browsing required)** → Chain-of-Verification (CoVe)
-- **Enforce a facts-only boundary** → Facts-only (choose one)
-- **Gate “academic” claims with evidence** → Evidence-Gated Academic Mode (EGAM)
-- **Report an evidence-based confidence score (0–100)** → Confidence score
-- **Lock the assistant into objective technical mode** → Objective technical operating profile
-- **Add micro components (deep read / deep search / deep analysis)** → Prompt components (micro)
+- **Ship an architecture / refactor quality gate** → [Engineering Quality Gate](#engineering-quality-gate)
+- **Verify web claims + produce citations** → [Web verification & citations](#web-verification-citations)
+- **Run a strict internal verification loop (no browsing required)** → [Chain-of-Verification (CoVe)](#chain-of-verification)
+- **Enforce a facts-only boundary** → [Facts-only (choose one)](#facts-only)
+- **Gate “academic” claims with evidence** → [Evidence-Gated Academic Mode (EGAM)](#egam)
+- **Report an evidence-based confidence score (0–100)** → [Confidence score](#confidence-score)
+- **Lock the assistant into objective technical mode** → [Objective technical operating profile](#objective-technical)
+- **Prevent overclaims + enforce terminology consistency** → [Semantic accuracy gate](#semantic-accuracy-gate)
+- **Add micro components (deep read / deep search / deep analysis)** → [Prompt components (micro)](#prompt-components-micro)
 
 ## Where to paste these blocks (by vendor)
 
@@ -29,6 +30,7 @@ Notes:
 - Files ending with **`.user.txt`** are *runner templates* you paste as the user turn when executing a workflow.
 
 ## Prompt components (micro)
+{: #prompt-components-micro }
 
 Small composable blocks you can paste into a larger prompt.
 
@@ -37,6 +39,7 @@ Small composable blocks you can paste into a larger prompt.
 - **deep-analyzed (user):** [deep-analyzed.user.txt]({{ '/prompts/components/deep-analyzed.user.txt' | relative_url }})
 
 ## Engineering Quality Gate — Architecture & Best Practices
+{: #engineering-quality-gate }
 
 - **Policy (normative):** [Engineering Quality Gate Policy (Architecture & Best Practices)]({{ '/policies/engineering-quality-gate-policy/' | relative_url }})
 - **How-to (procedure):** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
@@ -48,7 +51,8 @@ Use when you want a practical daily prompt template for consistent outcomes.
 - **Template (user prompt file):** [prompt-engineering-daily-work.user.txt]({{ '/prompts/prompt-engineering-daily-work.user.txt' | relative_url }})
 - **Guide (How-to):** [Prompt Engineering Guide for Daily Work]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }})
 
-## Verification / deliberation prompts
+## Self-verification procedure (Chain-of-Verification, CoVe)
+{: #chain-of-verification }
 
 Use when you want a structured “self-check” workflow before final answers.
 
@@ -56,12 +60,17 @@ Use when you want a structured “self-check” workflow before final answers.
 - **Policy (normative):** [Chain-of-Verification — policy]({{ '/policies/chain-of-verification/' | relative_url }})
 - **How-to (procedure):** [Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
 
-## Epistemic constraints (minimal preamble)
+## Minimal non-speculation baseline (system)
 
 Use when you want a lightweight “do-not-speculate” preamble without a full workflow.
 
 - **Prompt (system, copy/paste):** [epistemic-constraints-minimal.system.txt]({{ '/prompts/epistemic-constraints-minimal.system.txt' | relative_url }})
-## Facts-only: Artifacts-only (no external sources)
+
+## Facts-only (choose one)
+{: #facts-only }
+
+### Facts-only profile: Artifacts-only (no external sources)
+{: #facts-only-artifacts-only }
 
 Use when browsing is disallowed and the answer must be grounded only in provided artifacts.
 
@@ -70,7 +79,8 @@ Use when browsing is disallowed and the answer must be grounded only in provided
 - **How-to (procedure):** [Facts-only: Artifacts-only — procedure]({{ '/how-to/facts-only-artifacts-only/' | relative_url }})
 - **How-to (chooser):** [Choose a facts-only evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
 
-## Facts-only: Authoritative sources required (citations required)
+### Facts-only profile: Authoritative sources (citations required)
+{: #facts-only-authoritative }
 
 Use when web browsing is allowed and every material claim must be backed by authoritative sources and citations.
 
@@ -80,6 +90,7 @@ Use when web browsing is allowed and every material claim must be backed by auth
 - **How-to (chooser):** [Choose a facts-only evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
 
 ## Evidence-Gated Academic Mode (EGAM)
+{: #egam }
 
 Use when you want “academic-mode” outputs with explicit evidence gating.
 
@@ -88,6 +99,7 @@ Use when you want “academic-mode” outputs with explicit evidence gating.
 - **How-to (procedure):** [Evidence-Gated Academic Mode — procedure]({{ '/how-to/evidence-gated-academic-mode/' | relative_url }})
 
 ## Evidence-based confidence score (0–100)
+{: #confidence-score }
 
 Use when you want a numeric confidence report based on evidential support (not probability).
 
@@ -96,6 +108,7 @@ Use when you want a numeric confidence report based on evidential support (not p
 - **How-to (apply):** [Add a confidence score (0–100) to every response]({{ '/how-to/add-confidence-score-to-responses/' | relative_url }})
 
 ## Web verification & citations (web browsing)
+{: #web-verification-citations }
 
 Use when you need up-to-date facts and citation-grade references.
 
@@ -113,7 +126,8 @@ Use when you want a strict gate for technical writing where factual claims must 
 - **Policy (normative):** [Evidence-Gated Technical Writing Policy (Claims)]({{ '/policies/evidence-gated-technical-writing-policy/' | relative_url }})
 - **How-to (procedure):** [Evidence-Gated Technical Writing Gate — Verification Procedure (Claims)]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
 
-## Objective technical baseline (non-simulative)
+## Objective technical operating profile (non-simulative)
+{: #objective-technical }
 
 Use when you want a global baseline for **objective technical work**:
 - no simulation/fabrication,
@@ -124,6 +138,16 @@ Use when you want a global baseline for **objective technical work**:
 - **Prompt A (style, system):** [objective-technical-style-non-simulative.system.txt]({{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }})
 - **Prompt B (ruleset, system):** [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
 - **Policy (normative):** [Objective Technical Ruleset (non-simulative)]({{ '/policies/objective-technical-operating-profile/' | relative_url }})
+
+## Semantic accuracy gate (claims + terminology)
+{: #semantic-accuracy-gate }
+
+Use when you need to prevent overclaims and enforce consistent terminology.
+
+- **Prompt (system):** [semantic-accuracy-gate.system.txt]({{ '/prompts/semantic-accuracy-gate.system.txt' | relative_url }})
+- **Prompt (user runner):** [semantic-accuracy-gate.user.txt]({{ '/prompts/semantic-accuracy-gate.user.txt' | relative_url }})
+- **Policy (normative):** [Semantic Accuracy Gate — policy]({{ '/policies/semantic-accuracy-gate/' | relative_url }})
+- **How-to (procedure):** [Semantic Accuracy Gate — procedure]({{ '/how-to/semantic-accuracy-gate-procedure/' | relative_url }})
 
 ## Usage rules
 

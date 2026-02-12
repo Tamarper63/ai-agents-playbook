@@ -1,0 +1,14 @@
+TASK: SEMANTIC ACCURACY GATE RUNNER
+
+INPUTS
+1) Evidence boundary:
+- Allowed sources: <fill in> (e.g., “attached artifacts only” / “web browsing allowed with citations”)
+2) Source text to audit (paste below):
+
+BEGIN_TEXT
+<paste here>
+END_TEXT
+
+REQUIREMENTS
+- Apply the Semantic Accuracy Gate system rules.
+- Produce the required sections in the exact output format.

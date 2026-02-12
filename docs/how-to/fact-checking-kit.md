@@ -6,11 +6,11 @@ permalink: /how-to/fact-checking-kit/
 A concrete procedure to reduce factual errors and improve auditability.
 
 ## Canonical links
-- Chooser: [Choose a facts-only evidence boundary]({% link how-to/choose-facts-only-evidence-boundary.md %})
-- Facts-only (Artifacts-only): [Facts-only: Artifacts-only]({% link policies/facts-only-artifacts-only.md %})
-- Facts-only (Authoritative sources required): [Facts-only: Authoritative sources required]({% link policies/facts-only-authoritative-sources-required.md %})
-- Chain-of-Verification (CoVe) procedure: [Chain-of-Verification (CoVe) — procedure]({% link how-to/chain-of-verification-procedure.md %})
-- Confidence score policy: [Confidence score (0–100) — reporting rules]({% link policies/confidence-score.md %})
+- Chooser: [Choose a facts-only evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
+- Facts-only (Artifacts-only): {{ '/policies/facts-only-artifacts-only/' | relative_url }}
+- Facts-only (Authoritative sources required): {{ '/policies/facts-only-authoritative-sources-required/' | relative_url }}
+- Chain-of-Verification (CoVe) procedure: {{ '/how-to/chain-of-verification-procedure/' | relative_url }}
+- Confidence score policy: {{ '/policies/confidence-score/' | relative_url }}
 
 ## Procedure (recommended sequence)
 

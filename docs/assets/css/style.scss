@@ -1,17 +1,63 @@
 ---
 ---
+$bg: {{ site.palette.bg | default: "#FAF7F2" }};
+$surface: {{ site.palette.surface | default: "#FFFFFF" }};
 
-$header_primary: {{ site.palette.header_primary | default: "#0F172A" }};
-$header_secondary: {{ site.palette.header_secondary | default: "#111827" }};
-$accent: {{ site.palette.accent | default: "#D97706" }};
+$text: {{ site.palette.text | default: "#1A1A1A" }};
+$muted: {{ site.palette.muted | default: "#4A4A4A" }};
+
+$accent: {{ site.palette.accent | default: "#6A0F1E" }};
+$accent_2: {{ site.palette.accent_2 | default: "#A05A20" }};
+
+$border: {{ site.palette.border | default: "#E6DED6" }};
+
+$header_primary: {{ site.palette.header_primary | default: "#6A0F1E" }};
+$header_secondary: {{ site.palette.header_secondary | default: "#6A0F1E" }};
 
 @import "{{ site.theme }}";
+.page-header .project-name,
+.page-header .project-name a,
+.page-header .project-name a:visited,
+.page-header .project-tagline {
+  color: $text !important;
+}
+
+.page-header .project-name a:hover,
+.page-header .project-name a:focus {
+  text-decoration: underline;
+  text-decoration-color: $accent;
+}
+
+
+body {
+  background: $bg;
+  color: $text;
+}
+
+.main-content {
+  background: transparent;
+}
+
+.main-content a,
+.footer-links a,
+.build-info a {
+  color: $accent;
+}
+
+.main-content a:visited { color: $accent; }
+
+
+.site-nav,
+.site-footer {
+  border-color: $border;
+}
 
 .page-header {
   padding: 2.25rem 1rem;
-  background-color: $header_primary;
-  background-image: linear-gradient(120deg, $header_secondary, $header_primary);
+  background: $bg;
+  border-bottom: 1px solid $border;
 }
+
 
 .project-name {
   margin: 0.15rem 0;
@@ -26,26 +72,19 @@ $accent: {{ site.palette.accent | default: "#D97706" }};
   opacity: 0.9;
 }
 
-.page-header .project-name,
-.page-header .project-tagline {
-  color: #fff;
-}
 
-.page-header .project-name a,
-.page-header .project-name a:visited {
-  color: inherit;
-  text-decoration: none;
-  font-weight: inherit;
-}
-
-.page-header .project-name a:hover,
-.page-header .project-name a:focus {
-  text-decoration: underline;
-}
 
 .page-header--compact {
   padding: 1.25rem 1rem;
 }
+.page-header:after {
+  content: "";
+  display: block;
+  margin: 1rem auto 0;
+  max-width: 64rem;
+  border-bottom: 3px solid $accent;
+}
+
 
 .page-header--compact .project-name {
   font-size: 1.6rem;
@@ -57,8 +96,8 @@ $accent: {{ site.palette.accent | default: "#D97706" }};
 
 /* ===== Nav (UPDATED) ===== */
 .site-nav {
-  background: #ffffff;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+background: $surface;
+border-bottom: 1px solid $border;
 }
 
 .site-nav__inner {
@@ -74,7 +113,7 @@ $accent: {{ site.palette.accent | default: "#D97706" }};
 }
 
 .site-nav a {
-  color: $header_primary;
+  color: $text;
   text-decoration: none;
 
   padding: 0.35rem 0.6rem;
@@ -85,26 +124,69 @@ $accent: {{ site.palette.accent | default: "#D97706" }};
 
 .site-nav a:hover {
   text-decoration: none;
-  background: rgba(15, 23, 42, 0.06);
+  background: rgba($accent, 0.08);
 }
 
 .site-nav a[aria-current="page"] {
-  font-weight: 700;
+  font-weight: 800;
+  color: $accent;
+
+
   box-shadow: inset 0 -2px 0 $accent;
+  border-radius: 0;
+  background: transparent;
 }
 
-.main-content h1,
-.main-content h2,
-.main-content h3,
+
+.site-nav a:focus-visible {
+  outline: 3px solid rgba($accent, 0.45);
+  outline-offset: 2px;
+}
+
+
+.main-content h1 {
+  color: $text;
+  font-size: 2.35rem;
+  letter-spacing: -0.02em;
+  margin-top: 0.25rem;
+  margin-bottom: 0.9rem;
+  font-weight: 800;
+}
+
+.main-content h1::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 4px;
+  margin-top: 0.55rem;
+  border-radius: 999px;
+  background: $accent;
+  opacity: 0.95;
+}
+
+.main-content h2 {
+  color: $text;
+  font-size: 1.7rem;
+  letter-spacing: -0.01em;
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 800;
+}
+
+.main-content h3 {
+  color: $text;
+  font-size: 1.25rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.55rem;
+  font-weight: 750;
+}
+
 .main-content h4,
 .main-content h5,
 .main-content h6 {
-  color: $header_primary;
+  color: $text;
 }
 
-.main-content a {
-  color: $accent;
-}
 
 .main-content a:hover {
   text-decoration: underline;
@@ -201,15 +283,16 @@ pre {
   text-decoration: underline;
 }
 
-/* ===== Articles index: "On this page" callout + tables ===== */
 .page-toc {
   max-width: 64rem;
   margin: 1.25rem auto 1.75rem;
-  padding: 0.9rem 1.05rem;
+  padding: 1rem 1.1rem;
 
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  border-radius: 12px;
-  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid $border;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.78);
+
+  box-shadow: 0 10px 26px rgba(26, 26, 26, 0.06);
 }
 
 .page-toc__title {
@@ -302,12 +385,13 @@ pre {
   font-weight: 700;
   cursor: pointer;
   color: #fff;
-  background: #2563EB;
+  background: $accent;
 }
 
 .newsletter-button:hover {
-  background: #1E40AF;
+  opacity: 0.92;
 }
+
 
 .newsletter-hint { margin: 0.75rem 0 0; font-size: 0.95rem; opacity: 0.8; }
 

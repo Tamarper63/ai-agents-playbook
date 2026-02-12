@@ -1,5 +1,5 @@
 hero:
-  lede: "A public, versioned playbook for building reliable AI agents (architecture, orchestration, evaluation) and securing tool-using systems (tools, permissions, guardrails)."
+  lede: "A public, versioned playbook for building reliable agentic systems (architecture, orchestration, evaluation) and securing tool use with explicit trust boundaries."
   bullets:
     - "Build agents with clear execution boundaries: orchestration patterns, lifecycle, and capability mapping."
     - "Harden tool use with evidence-first rules: citations, trust boundaries, and fail-closed quality gates."
@@ -11,10 +11,10 @@ actions:
   secondary:
     - label: "Build: Agent architecture"
       url: "/articles/agent-architecture/"
-    - label: "Secure: Provenance boundary report"
-      url: "/articles/agent-security/provenance-boundary-report/"
-    - label: "Run: Engineering Quality Gate"
-      url: "/how-to/engineering-quality-gate-procedure/"
+    - label: "Run: Policies"
+      url: "/policies/"
+    - label: "Copy/Paste: Prompt blocks"
+      url: "/prompts/"
     - label: "Subscribe: Newsletter"
       url: "/newsletter/"
 
@@ -94,8 +94,6 @@ featured:
       url: "/articles/agent-security/provenance-boundary-report/"
     - label: "Human vs GenAI capability map (engineering view)"
       url: "/articles/agent-architecture/human-vs-genai-capability-map/"
-    - label: "Subscribe: Newsletter"
-      url: "/newsletter/"
 
 
 

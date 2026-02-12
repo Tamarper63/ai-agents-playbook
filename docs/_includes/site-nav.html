@@ -5,13 +5,14 @@
     {% for item in site.data.nav.items %}
       {% assign is_home = item.url == '/' %}
       {% assign is_active = false %}
+      {% assign ac = item.active_contains | default: '' %}
 
       {% if is_home %}
         {% if purl == '/' %}
           {% assign is_active = true %}
         {% endif %}
       {% else %}
-        {% if purl contains item.active_contains %}
+        {% if ac != '' and purl contains ac %}
           {% assign is_active = true %}
         {% endif %}
       {% endif %}

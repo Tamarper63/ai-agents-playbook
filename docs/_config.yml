@@ -14,9 +14,15 @@ plugins:
   - jekyll-sitemap
 
 palette:
-  header_primary: "#081849"
-  header_secondary: "#213885"
-  accent: "#893172"
+  bg: "#FAF7F2"
+  surface: "#FFFFFF"
+  text: "#1A1A1A"
+  muted: "#4A4A4A"
+  accent: "#6A0F1E"
+  accent_2: "#A05A20"
+  border: "#E6DED6"
+  header_primary: "#6A0F1E"
+  header_secondary: "#6A0F1E"
 
 defaults:
   - scope:

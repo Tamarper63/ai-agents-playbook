@@ -65,9 +65,12 @@ A minimal reading path for first-time visitors (foundational concepts → contro
 - [How Agentic Control-Plane Failures Actually Happen]({{ '/articles/agent-security/control-plane-failures/' | relative_url }})
 - [Exploiting the Trust Boundary in Agentic Systems]({{ '/articles/agent-security/trust-boundary-checkpoints/' | relative_url }})
 - [Provenance boundary failure report (client-captured artifacts)]({{ '/articles/agent-security/provenance-boundary-report/' | relative_url }})
+- [Social engineering in AI systems: attacking the decision pipeline (not just people)]({{ '/articles/agent-security/social-engineering-ai-decision-pipeline/' | relative_url }})
 
 ### Agent architecture
+- [LLM memory boundary model: how context gets selected]({{ '/articles/agent-architecture/llm-memory-boundary-model/' | relative_url }})
 - [Human vs GenAI capability map (engineering view)]({{ '/articles/agent-architecture/human-vs-genai-capability-map/' | relative_url }})
+- [LLM-led vs orchestrator-led tool execution (architecture tradeoffs)]({{ '/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/' | relative_url }})
 
 ### Model training and evaluation
 - [Fluency Is Not Factuality - Why LLMs Can Sound Right and Be Wrong]({{ '/articles/model-training-and-eval/fluency-vs-factuality/' | relative_url }})
