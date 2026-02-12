@@ -40,51 +40,8 @@
     </header>
 
     <!-- Primary navigation (global) -->
-    <nav class="site-nav" aria-label="Primary">
-      <div class="site-nav__inner">
-        {% if purl == '/' %}
-          <a href="{{ '/' | relative_url }}" aria-current="page">Home</a>
-        {% else %}
-          <a href="{{ '/' | relative_url }}">Home</a>
-        {% endif %}
+    {% include site-nav.html %}
 
-        {% if purl contains '/policies/' %}
-          <a href="{{ '/policies/' | relative_url }}" aria-current="page">Policies</a>
-        {% else %}
-          <a href="{{ '/policies/' | relative_url }}">Policies</a>
-        {% endif %}
-
-        {% if purl contains '/prompts/' %}
-          <a href="{{ '/prompts/' | relative_url }}" aria-current="page">Prompts</a>
-        {% else %}
-          <a href="{{ '/prompts/' | relative_url }}">Prompts</a>
-        {% endif %}
-
-        {% if purl contains '/how-to/' %}
-          <a href="{{ '/how-to/' | relative_url }}" aria-current="page">How-to</a>
-        {% else %}
-          <a href="{{ '/how-to/' | relative_url }}">How-to</a>
-        {% endif %}
-
-        {% if purl contains '/articles/' %}
-          <a href="{{ '/articles/' | relative_url }}" aria-current="page">Articles</a>
-        {% else %}
-          <a href="{{ '/articles/' | relative_url }}">Articles</a>
-        {% endif %}
-
-        {% if purl contains '/reference/' %}
-          <a href="{{ '/reference/' | relative_url }}" aria-current="page">Reference</a>
-        {% else %}
-          <a href="{{ '/reference/' | relative_url }}">Reference</a>
-        {% endif %}
-
-        {% if purl contains '/newsletter/' %}
-          <a href="{{ '/newsletter/' | relative_url }}" aria-current="page">Newsletter</a>
-        {% else %}
-          <a href="{{ '/newsletter/' | relative_url }}">Newsletter</a>
-        {% endif %}
-      </div>
-    </nav>
 
     <main id="content" class="main-content" role="main">
       {% if page.title and page.show_title != false %}

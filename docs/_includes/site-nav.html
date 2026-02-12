@@ -1,0 +1,26 @@
+{% assign purl = page.url | default: '' %}
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav__inner">
+    {% for item in site.data.nav.items %}
+      {% assign is_home = item.url == '/' %}
+      {% assign is_active = false %}
+
+      {% if is_home %}
+        {% if purl == '/' %}
+          {% assign is_active = true %}
+        {% endif %}
+      {% else %}
+        {% if purl contains item.active_contains %}
+          {% assign is_active = true %}
+        {% endif %}
+      {% endif %}
+
+      {% if is_active %}
+        <a href="{{ item.url | relative_url }}" aria-current="page">{{ item.label }}</a>
+      {% else %}
+        <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</nav>

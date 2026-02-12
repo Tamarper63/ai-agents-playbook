@@ -1,0 +1,28 @@
+items:
+  - label: "Home"
+    url: "/"
+    active_contains: "/"
+
+  - label: "Policies"
+    url: "/policies/"
+    active_contains: "/policies/"
+
+  - label: "Prompt blocks"
+    url: "/prompts/"
+    active_contains: "/prompts/"
+
+  - label: "How-to"
+    url: "/how-to/"
+    active_contains: "/how-to/"
+
+  - label: "Articles"
+    url: "/articles/"
+    active_contains: "/articles/"
+
+  - label: "Reference"
+    url: "/reference/"
+    active_contains: "/reference/"
+
+  - label: "Newsletter"
+    url: "/newsletter/"
+    active_contains: "/newsletter/"

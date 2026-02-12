@@ -6,8 +6,8 @@ hero:
     - "Copy/paste prompt blocks + step-by-step procedures to operationalize the policies."
 actions:
   primary:
-    label: "Start here: Fact-Checking Kit"
-    url: "/how-to/fact-checking-kit/"
+    label: "Start here: Choose an evidence boundary"
+    url: "/how-to/choose-facts-only-evidence-boundary/"
   secondary:
     - label: "Build: Agent architecture"
       url: "/articles/agent-architecture/"
@@ -20,12 +20,12 @@ actions:
 quickstart:
   title: "Start here (5 minutes)"
   steps:
+    - title: "Choose an evidence boundary (facts-only mode)"
+      output: "Define what counts as evidence and when to refuse."
+      url: "/how-to/choose-facts-only-evidence-boundary/"
     - title: "Run the verification workflow (reduce factual errors)"
       output: "A repeatable verification procedure you can apply to non-trivial answers."
       url: "/how-to/fact-checking-kit/"
-    - title: "Understand the core agent architecture building blocks"
-      output: "A practical orientation to agent architecture (state, tools, retrieval, lifecycle)."
-      url: "/articles/agent-architecture/"
     - title: "Apply a quality gate for non-trivial outputs"
       output: "A strict gate: verify → refuse when evidence is missing (fail-closed)."
       url: "/how-to/engineering-quality-gate-procedure/"
