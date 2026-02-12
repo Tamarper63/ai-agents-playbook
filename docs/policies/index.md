@@ -12,15 +12,15 @@ Use this page as a **chooser + map**:
 
 ## Quick chooser (pick the right policy fast)
 
-- **No browsing allowed; answer must be based only on provided artifacts** → Facts-only: Artifacts-only
-- **Browsing allowed; every material claim must be backed by authoritative sources + citations** → Facts-only: Authoritative sources required
-- **Need up-to-date public facts + citation-grade references** → Web Verification & Citations Policy
-- **Need a structured “self-check” loop before final output (with explicit checks)** → Chain-of-Verification
-- **Need academic-style, evidence-gated outputs with confidence reporting** → Evidence-Gated Academic Mode (EGAM)
-- **Need a numeric confidence line (0–100) as an analytic confidence report** → Evidence-based confidence score (0–100)
-- **Need a strict gate for technical writing where claims must be verified** → Evidence-Gated Technical Writing Policy (Claims)
-- **Need an objective technical baseline (no fluff, rules-first)** → Objective Technical Ruleset — policy
-- **Need an engineering quality gate for architecture/best-practices/regressions** → Engineering Quality Gate Policy
+- **No browsing allowed; answer must be based only on provided artifacts** → [Facts-only: Artifacts-only]({{ '/policies/facts-only-artifacts-only/' | relative_url }})
+- **Browsing allowed; every material claim must be backed by authoritative sources + citations** → [Facts-only: Authoritative sources required]({{ '/policies/facts-only-authoritative-sources-required/' | relative_url }})
+- **Need up-to-date public facts + citation-grade references** → [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }})
+- **Need a structured “self-check” loop before final output (with explicit checks)** → [Chain-of-Verification — policy]({{ '/policies/chain-of-verification/' | relative_url }})
+- **Need academic-style, evidence-gated outputs with confidence reporting** → [Evidence-Gated Academic Mode (EGAM)]({{ '/policies/evidence-gated-academic-mode/' | relative_url }})
+- **Need a numeric confidence line (0–100) as an analytic confidence report** → [Evidence-based confidence score (0–100)]({{ '/policies/confidence-score/' | relative_url }})
+- **Need a strict gate for technical writing where claims must be verified** → [Evidence-Gated Technical Writing Policy (Claims)]({{ '/policies/evidence-gated-technical-writing-policy/' | relative_url }})
+- **Need an objective technical baseline (no fluff, rules-first)** → [Objective Technical Ruleset — policy]({{ '/policies/objective-technical-operating-profile/' | relative_url }})
+- **Need an engineering quality gate for architecture/best-practices/regressions** → [Engineering Quality Gate Policy]({{ '/policies/engineering-quality-gate-policy/' | relative_url }})
 
 ## Policies (with direct mappings)
 
