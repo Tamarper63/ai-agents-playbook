@@ -71,7 +71,7 @@ entry_points:
     - title: "Policies"
       desc: "Operating contracts: evidence, citations, trust boundaries, fail-closed rules."
       url: "/policies/"
-    - title: "Prompts"
+    - title: "Prompt blocks"
       desc: "Reusable prompt blocks (copy/paste) aligned to the policies."
       url: "/prompts/"
     - title: "How-to"
@@ -85,7 +85,7 @@ entry_points:
       url: "/reference/"
 
 featured:
-  title: "Featured (high-signal)"
+  title: "Featured (high-signal starting points)"
   items:
     - label: "Agent architecture (overview)"
       url: "/articles/agent-architecture/"
@@ -97,38 +97,6 @@ featured:
       url: "/how-to/prompt-engineering-daily-work/"
     - label: "Provenance boundary report"
       url: "/articles/agent-security/provenance-boundary-report/"
-
-recommended:
-  title: "Recommended next reads"
-  items:
-    - label: "LLM boundary — first touch"
-      url: "/articles/agent-security/llm-boundary-first-touch/"
-    - label: "Orders of Intentionality — recursive mindreading"
-      url: "/articles/model-training-and-eval/orders-of-intentionality-recursive-mindreading/"
-    - label: "Human vs GenAI capability map (engineering view)"
-      url: "/articles/agent-architecture/human-vs-genai-capability-map/"
-
-mental_model:
-  title: "How the content is organized (mental model)"
-  lede: "This structure follows common documentation separation:"
-  items:
-    - label: "How-to"
-      desc: "task execution (procedures)"
-    - label: "Reference"
-      desc: "stable definitions and conventions"
-    - label: "Articles"
-      desc: "explanation/background and deeper reasoning"
-  note: "Agent architecture lives under Articles as practical engineering writeups."
-
-reading_order:
-  title: "Recommended reading order (first-time visitors)"
-  items:
-    - "Agent architecture → building blocks and system boundaries"
-    - "Policies → trust boundaries + evidence rules"
-    - "Prompts → operationalize the rules (copy/paste)"
-    - "How-to → apply procedures end-to-end"
-    - "Articles → deeper dives and case studies"
-    - "Reference → shared vocabulary and conventions"
 
 scope:
   title: "Scope (what this is / isn’t)"

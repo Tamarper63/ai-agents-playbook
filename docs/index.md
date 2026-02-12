@@ -11,11 +11,7 @@ show_title: false
 
 {% include home/paths-by-role.html %}
 
-{% include home/featured.html %}
-
 {% include home/recommended.html %}
-
-{% include home/mental-model.html %}
 
 {% include home/reading-order.html %}
 
