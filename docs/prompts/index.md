@@ -14,6 +14,7 @@ This page indexes copy/paste prompt artifacts. Use the quick chooser to pick the
 - **Gate “academic” claims with evidence** → Evidence-Gated Academic Mode (EGAM)
 - **Report an evidence-based confidence score (0–100)** → Confidence score
 - **Lock the assistant into objective technical mode** → Objective technical operating profile
+- **Add micro components (deep read / deep search / deep analysis)** → Prompt components (micro)
 
 ## Where to paste these blocks (by vendor)
 
@@ -26,6 +27,14 @@ These are prompt blocks for the highest-priority instruction layer available in 
 Notes:
 - Files ending with **`.system.txt`** are meant for the *policy layer* (system/developer instructions).
 - Files ending with **`.user.txt`** are *runner templates* you paste as the user turn when executing a workflow.
+
+## Prompt components (micro)
+
+Small composable blocks you can paste into a larger prompt.
+
+- **deep-read (user):** [deep-read.user.txt]({{ '/prompts/components/deep-read.user.txt' | relative_url }})
+- **deep-search (user):** [deep-search.user.txt]({{ '/prompts/components/deep-search.user.txt' | relative_url }})
+- **deep-analyzed (user):** [deep-analyzed.user.txt]({{ '/prompts/components/deep-analyzed.user.txt' | relative_url }})
 
 ## Engineering Quality Gate — Architecture & Best Practices
 
@@ -52,7 +61,6 @@ Use when you want a structured “self-check” workflow before final answers.
 Use when you want a lightweight “do-not-speculate” preamble without a full workflow.
 
 - **Prompt (system, copy/paste):** [epistemic-constraints-minimal.system.txt]({{ '/prompts/epistemic-constraints-minimal.system.txt' | relative_url }})
-
 ## Facts-only: Artifacts-only (no external sources)
 
 Use when browsing is disallowed and the answer must be grounded only in provided artifacts.

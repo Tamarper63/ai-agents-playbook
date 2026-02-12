@@ -8,6 +8,7 @@ Stable definitions, naming conventions, and reusable reference material for this
 Use this section to keep terminology and linking consistent across Policies, How-to guides, Articles, and Prompts.
 
 ## Start here
+- [Content map]({{ '/reference/content-map/' | relative_url }})
 - [Hallucination mitigation — verification methods]({{ '/reference/verification-techniques/' | relative_url }})
 
 ## Terminology anchors
@@ -15,6 +16,7 @@ Use this section to keep terminology and linking consistent across Policies, How
 
 
 ## Indexes
+- [Content map]({{ '/reference/content-map/' | relative_url }})
 - [Articles]({{ '/articles/' | relative_url }})
 - [Policies]({{ '/policies/' | relative_url }})
 - [How-to guides]({{ '/how-to/' | relative_url }})

@@ -1,0 +1,4 @@
+DEEP ANALYSIS
+- Provide an objective technical analysis (no fluff; no simulation/fabrication).
+- Separate output into: (1) Grounded observations, (2) Verified claims with citations, (3) NOT VERIFIED items.
+- Run an internal consistency check: no contradictions, no invented data, and all referenced paths/links exist.

@@ -1,0 +1,4 @@
+DEEP READ
+- Read the entire user message and all provided artifacts before responding.
+- Do not skip sections. Do not assume missing details.
+- If required inputs/artifacts are missing to complete the request, explicitly request the missing input and stop.

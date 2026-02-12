@@ -7,6 +7,7 @@ Task-oriented guides and checklists for running evidence-gated, policy-bound wor
 
 ## Quick chooser (pick what you need)
 
+- **Prefer a guided start by persona** → [Start here by role]({{ '/how-to/start-here-by-role/' | relative_url }}
 - **Choose your evidence boundary first** → [Choose a facts-only evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
 - **Need up-to-date public facts with citations** → [Request web browsing (prompt template)]({{ '/how-to/request-web-browsing/' | relative_url }})
 - **Need a verification loop before final output** → [Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
@@ -41,6 +42,7 @@ Task-oriented guides and checklists for running evidence-gated, policy-bound wor
 - [Prompt Engineering Guide for Daily Work]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }})
 
 ## Related indexes
+- [Start here by role]({{ '/how-to/start-here-by-role/' | relative_url }})
 - [Policies]({{ '/policies/' | relative_url }})
 - [Prompt blocks]({{ '/prompts/' | relative_url }})
 - [Reference]({{ '/reference/' | relative_url }})

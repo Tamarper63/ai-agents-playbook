@@ -1,0 +1,4 @@
+DEEP SEARCH
+- Before answering, search all available project artifacts relevant to the request (repo files / uploaded attachments).
+- Prefer completeness over speed: scan the full relevant scope; do not early-stop.
+- If a claim requires up-to-date or external verification, require web retrieval and citations; otherwise label NOT VERIFIED.

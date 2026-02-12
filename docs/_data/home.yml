@@ -1,9 +1,9 @@
 hero:
   lede: "A public, versioned playbook for building reliable AI agents (architecture, orchestration, evaluation) and securing tool-using systems (tools, permissions, guardrails)."
   bullets:
-    - "Practical agent-building material: architecture patterns, capability mapping, and evaluation framing."
-    - "Operational security policies: evidence-first rules, citations, fail-closed quality gates, and trust boundaries."
-    - "Copy/paste prompt blocks + step-by-step procedures to operationalize the policies."
+    - "Build agents with clear execution boundaries: orchestration patterns, lifecycle, and capability mapping."
+    - "Harden tool use with evidence-first rules: citations, trust boundaries, and fail-closed quality gates."
+    - "Operationalize the rules: copy/paste prompt blocks and step-by-step how-to procedures."
 actions:
   primary:
     label: "Start here: Choose an evidence boundary"
@@ -15,68 +15,67 @@ actions:
       url: "/articles/agent-security/provenance-boundary-report/"
     - label: "Run: Engineering Quality Gate"
       url: "/how-to/engineering-quality-gate-procedure/"
+    - label: "Subscribe: Newsletter"
+      url: "/newsletter/"
+
 
 
 quickstart:
   title: "Start here (5 minutes)"
   steps:
-    - title: "Choose an evidence boundary (facts-only mode)"
+    - title: "Choose: Evidence boundary (facts-only)"
       output: "Define what counts as evidence and when to refuse."
       url: "/how-to/choose-facts-only-evidence-boundary/"
-    - title: "Run the verification workflow (reduce factual errors)"
-      output: "A repeatable verification procedure you can apply to non-trivial answers."
+    - title: "Run: Fact-Checking Kit"
+      output: "Use a repeatable verification procedure for non-trivial answers."
       url: "/how-to/fact-checking-kit/"
-    - title: "Apply a quality gate for non-trivial outputs"
-      output: "A strict gate: verify → refuse when evidence is missing (fail-closed)."
+    - title: "Enforce: Engineering Quality Gate"
+      output: "Fail-closed when evidence is missing."
       url: "/how-to/engineering-quality-gate-procedure/"
+
 
 paths_by_role:
   title: "Pick a path (by role)"
   roles:
     - role: "Builder / Developer"
       items:
-        - label: "Agent architecture (overview)"
+        - label: "Build: Agent architecture (overview)"
           url: "/articles/agent-architecture/"
-        - label: "Human vs GenAI capability map (engineering view)"
+        - label: "Map: Human vs GenAI capability (engineering view)"
           url: "/articles/agent-architecture/human-vs-genai-capability-map/"
-        - label: "Prompt Engineering Guide for Daily Work"
+        - label: "Apply: Prompt Engineering Guide for Daily Work"
           url: "/how-to/prompt-engineering-daily-work/"
-        - label: "Engineering Quality Gate — Procedure"
-          url: "/how-to/engineering-quality-gate-procedure/"
+
     - role: "Security / Platform"
       items:
-        - label: "Policies (operating contracts)"
+        - label: "Run: Policies (operating contracts)"
           url: "/policies/"
-        - label: "Facts-only evidence boundary"
+        - label: "Define: Evidence boundary (facts-only)"
           url: "/how-to/choose-facts-only-evidence-boundary/"
-        - label: "Provenance boundary report"
+        - label: "Assess: Provenance boundary report"
           url: "/articles/agent-security/provenance-boundary-report/"
-        - label: "Objective Technical Operating Profile — policy"
-          url: "/policies/objective-technical-operating-profile/"
+
     - role: "Research / Deeper dives"
       items:
-        - label: "Agent security (index)"
+        - label: "Explore: Agent security (index)"
           url: "/articles/agent-security/"
-        - label: "Model training & eval (index)"
+        - label: "Explore: Model training & eval (index)"
           url: "/articles/model-training-and-eval/"
-        - label: "Reference (stable terms)"
+        - label: "Reference: Stable terms"
           url: "/reference/"
 
 entry_points:
   title: "Choose an entry point (by goal)"
   cards:
-    - title: "Agent architecture"
-      desc: "Practical patterns for building agents: state, tools, retrieval, lifecycle."
-      url: "/articles/agent-architecture/"
     - title: "Policies"
       desc: "Operating contracts: evidence, citations, trust boundaries, fail-closed rules."
       url: "/policies/"
-    - title: "Prompt blocks"
-      desc: "Reusable prompt blocks (copy/paste) aligned to the policies."
-      url: "/prompts/"
     - title: "How-to"
       desc: "Step-by-step procedures and checklists for daily work."
       url: "/how-to/"
+    - title: "Prompt blocks"
+      desc: "Reusable prompt blocks (copy/paste) aligned to the policies."
+      url: "/prompts/"
     - title: "Articles"
       desc: "Long-form technical analysis, case studies, and deeper dives."
       url: "/articles/"
@@ -89,25 +88,26 @@ featured:
   items:
     - label: "Agent architecture (overview)"
       url: "/articles/agent-architecture/"
-    - label: "Fact-Checking Kit"
-      url: "/how-to/fact-checking-kit/"
-    - label: "Engineering Quality Gate — Procedure"
-      url: "/how-to/engineering-quality-gate-procedure/"
     - label: "Prompt Engineering Guide for Daily Work"
       url: "/how-to/prompt-engineering-daily-work/"
     - label: "Provenance boundary report"
       url: "/articles/agent-security/provenance-boundary-report/"
+    - label: "Human vs GenAI capability map (engineering view)"
+      url: "/articles/agent-architecture/human-vs-genai-capability-map/"
+    - label: "Subscribe: Newsletter"
+      url: "/newsletter/"
+
+
 
 scope:
-  title: "Scope (what this is / isn’t)"
-  covers_title: "What this site covers"
+  title: "Scope (what this site is / isn’t)"
+  covers_title: "This site focuses on"
   covers:
-    - "Practical agent-building content (architecture patterns, capability mapping, evaluation framing)."
-    - "Operational policies for verifiable outputs and bounded tool use."
-    - "Reusable prompt blocks aligned to those policies."
-    - "How-to procedures and checklists for engineering workflows."
-    - "Long-form analysis (articles) and stable terminology (reference)."
-  excludes_title: "What this site does not cover"
+    - "Engineering patterns for building and operating AI agents with explicit execution boundaries."
+    - "Policy-bound workflows: evidence rules, verification loops, and fail-closed quality gates."
+
+  excludes_title: "This site does not focus on"
   excludes:
-    - "Vendor-specific configuration guides (unless scoped in an article)."
-    - "General AI/news commentary."
+    - "Vendor-specific configuration walkthroughs (unless scoped in an article)."
+    - "General AI news or commentary."
+
