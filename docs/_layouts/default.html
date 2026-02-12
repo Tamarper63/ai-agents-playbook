@@ -28,15 +28,12 @@
 
     <header class="{{ header_class }}" role="banner">
       {% if purl == '/' %}
-        <h1 class="project-name">
-          <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-        </h1>
+      <h1 class="project-name">
+  <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+</h1>
+<h2 class="project-tagline">{{ site.description }}</h2>
+
         <h2 class="project-tagline">{{ site.description }}</h2>
-      {% else %}
-        <div class="project-name">
-          <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-        </div>
-      {% endif %}
     </header>
 
     <!-- Primary navigation (global) -->
