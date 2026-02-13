@@ -15,6 +15,7 @@ $header_primary: {{ site.palette.header_primary | default: "#6A0F1E" }};
 $header_secondary: {{ site.palette.header_secondary | default: "#6A0F1E" }};
 
 @import "{{ site.theme }}";
+
 .page-header .project-name,
 .page-header .project-name a,
 .page-header .project-name a:visited,
@@ -27,7 +28,6 @@ $header_secondary: {{ site.palette.header_secondary | default: "#6A0F1E" }};
   text-decoration: underline;
   text-decoration-color: $accent;
 }
-
 
 body {
   background: $bg;
@@ -46,7 +46,6 @@ body {
 
 .main-content a:visited { color: $accent; }
 
-
 .site-nav,
 .site-footer {
   border-color: $border;
@@ -58,8 +57,6 @@ body {
   border-bottom: 1px solid $border;
   box-shadow: 0 1px 0 rgba($text, 0.04), 0 10px 30px rgba($text, 0.06);
 }
-
-
 
 .project-name {
   margin: 0.15rem 0;
@@ -74,11 +71,10 @@ body {
   opacity: 0.9;
 }
 
-
-
 .page-header--compact {
   padding: 1.25rem 1rem;
 }
+
 .page-header:after {
   content: "";
   display: block;
@@ -86,7 +82,6 @@ body {
   max-width: 64rem;
   border-bottom: 3px solid $accent;
 }
-
 
 .page-header--compact .project-name {
   font-size: 1.6rem;
@@ -96,10 +91,9 @@ body {
   display: none !important;
 }
 
-/* ===== Nav (UPDATED) ===== */
 .site-nav {
-background: $surface;
-border-bottom: 1px solid $border;
+  background: $surface;
+  border-bottom: 1px solid $border;
 }
 
 .site-nav__inner {
@@ -130,22 +124,18 @@ border-bottom: 1px solid $border;
 }
 
 .site-nav a[aria-current="page"] {
-  border-bottom: 2px solid $accent;
-  color: $accent;
-  font-weight: 700;
-}
-
   box-shadow: inset 0 -2px 0 $accent;
   border-radius: 0;
   background: transparent;
-}
 
+  color: $accent;
+  font-weight: 700;
+}
 
 .site-nav a:focus-visible {
   outline: 3px solid rgba($accent, 0.45);
   outline-offset: 2px;
 }
-
 
 .main-content h1 {
   color: $text;
@@ -189,7 +179,6 @@ border-bottom: 1px solid $border;
 .main-content h6 {
   color: $text;
 }
-
 
 .main-content a:hover {
   text-decoration: underline;
@@ -322,7 +311,6 @@ pre {
   margin: 0.15rem 0;
 }
 
-/* Tables: improve readability (used on /articles/). */
 .main-content table {
   width: 100%;
   border-collapse: separate;
@@ -395,7 +383,6 @@ pre {
   opacity: 0.92;
 }
 
-
 .newsletter-hint { margin: 0.75rem 0 0; font-size: 0.95rem; opacity: 0.8; }
 
 .newsletter-cta--footer {
@@ -405,7 +392,6 @@ pre {
   margin-top: 0.75rem;
 }
 
-/* ===== Home hero (UPDATED) ===== */
 .home-hero {
   max-width: 56rem;
   margin: 1.25rem auto 0;
@@ -426,7 +412,6 @@ pre {
   padding-left: 1.1rem;
 }
 
-/* ===== Home actions (UPDATED) ===== */
 .home-actions {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -468,10 +453,9 @@ pre {
   justify-content: center;
 
   width: 100%;
-  min-height: 3.25rem; /* 52px */
+  min-height: 3.25rem;
 }
 
-/* Desktop: two-column hero (text left, CTAs right) */
 @media (min-width: 900px) {
   .home-hero {
     display: grid;
@@ -494,7 +478,7 @@ pre {
   .home-actions {
     grid-column: 2;
     grid-row: 1 / span 2;
-    grid-template-columns: 1fr; /* stack CTAs vertically */
+    grid-template-columns: 1fr;
     margin: 0;
   }
 
@@ -559,7 +543,7 @@ pre {
 
 .capability-map {
   width: 100%;
-  min-width: 980px; /* prevents cramped columns on desktop */
+  min-width: 980px;
   border-collapse: separate;
   border-spacing: 0;
   background: rgba(255, 255, 255, 0.8);
@@ -590,7 +574,6 @@ pre {
   background: rgba(15, 23, 42, 0.03);
 }
 
-/* Newsletter (page + footer) */
 .newsletter-list { margin: 0 0 1rem 1.25rem; }
 .newsletter-list li { margin: 0.25rem 0; }
 

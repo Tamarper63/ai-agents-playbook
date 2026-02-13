@@ -47,5 +47,51 @@
         </span>
       </footer>
     </main>
+
+    <footer class="site-footer" role="contentinfo">
+      {% assign social_name = site.social.name | default: '' %}
+
+      <ul class="footer-links" aria-label="Social links">
+        {% if site.social.links %}
+          {% for link in site.social.links %}
+            {% if link contains 'linkedin.com' %}
+              <li><a href="{{ link }}">LinkedIn</a></li>
+            {% elsif link contains 'github.com' %}
+              <li><a href="{{ link }}">GitHub</a></li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        {% if social_name != '' %}
+          <li><span>© {{ site.time | date: '%Y' }} {{ social_name }}</span></li>
+        {% endif %}
+      </ul>
+
+      {%- comment -%}
+      Newsletter:
+      - Render in footer on all pages except the dedicated /newsletter/ page (prevents duplication).
+      - The /newsletter/ page includes the same component inside the page content.
+      {%- endcomment -%}
+      {% unless purl contains '/newsletter/' %}
+        {% include newsletter.html mode="footer" %}
+      {% endunless %}
+
+      <div class="build-info">
+        {% assign rev = site.github.build_revision | default: '' %}
+        <span>Build</span>
+        {% if rev != '' %}
+          <code>{{ rev | slice: 0, 7 }}</code>
+        {% else %}
+          <code>N/A</code>
+        {% endif %}
+        <span>·</span>
+        <span>{{ site.time | date: "%Y-%m-%d %H:%M %Z" }}</span>
+
+        {% if site.github.repository_url %}
+          <span>·</span>
+          <a href="{{ site.github.repository_url }}">Source</a>
+        {% endif %}
+      </div>
+    </footer>
   </body>
 </html>
