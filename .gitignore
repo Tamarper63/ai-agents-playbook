@@ -14,3 +14,7 @@ blog-ai_*.zip.sha256
 # IDE
 .idea/
 .DS_Store
+docs/_site/
+docs/.jekyll-cache/
+docs/.sass-cache/
+

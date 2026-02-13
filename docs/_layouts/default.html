@@ -17,81 +17,35 @@
   </head>
 
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
-
     {% assign purl = page.url | default: '' %}
+    {% assign is_home = purl == '/' %}
 
-    {% assign header_class = 'page-header' %}
-    {% unless purl == '/' %}
-      {% assign header_class = header_class | append: ' page-header--compact' %}
-    {% endunless %}
+    <header class="page-header {% if is_home %}page-header--home{% else %}page-header--compact{% endif %}" role="banner">
+      <div class="project-name">
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      </div>
 
-    <header class="{{ header_class }}" role="banner">
-  {% if purl == '/' %}
-    <h1 class="project-name">
-      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    </h1>
-    <h2 class="project-tagline">{{ site.description }}</h2>
-  {% endif %}
-</header>
-
+      {% if is_home %}
+        <div class="project-tagline">{{ site.description }}</div>
+      {% endif %}
+    </header>
 
     <!-- Primary navigation (global) -->
     {% include site-nav.html %}
 
-
     <main id="content" class="main-content" role="main">
-      {% if page.title and page.show_title != false %}
+      {% if page.show_title != false and page.title %}
         <h1 class="page-title">{{ page.title }}</h1>
       {% endif %}
 
       {{ content }}
+
+      <footer class="site-footer">
+        <span class="site-footer-owner">
+          <a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>
+          is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.
+        </span>
+      </footer>
     </main>
-
-    <footer class="site-footer" role="contentinfo">
-      {% assign social_name = site.social.name | default: '' %}
-
-      <ul class="footer-links" aria-label="Social links">
-        {% if site.social.links %}
-          {% for link in site.social.links %}
-            {% if link contains 'linkedin.com' %}
-              <li><a href="{{ link }}">LinkedIn</a></li>
-            {% elsif link contains 'github.com' %}
-              <li><a href="{{ link }}">GitHub</a></li>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-
-        {% if social_name != '' %}
-          <li><span>© {{ site.time | date: '%Y' }} {{ social_name }}</span></li>
-        {% endif %}
-      </ul>
-
-      {%- comment -%}
-      Newsletter:
-      - Render in footer on all pages except the dedicated /newsletter/ page (prevents duplication).
-      - The /newsletter/ page includes the same component inside the page content.
-      {%- endcomment -%}
-      {% unless purl contains '/newsletter/' %}
-        {% include newsletter.html mode="footer" %}
-      {% endunless %}
-
-      <div class="build-info">
-        {% assign rev = site.github.build_revision | default: '' %}
-        <span>Build</span>
-        {% if rev != '' %}
-          <code>{{ rev | slice: 0, 7 }}</code>
-        {% else %}
-          <code>N/A</code>
-        {% endif %}
-        <span>·</span>
-        <span>{{ site.time | date: "%Y-%m-%d %H:%M %Z" }}</span>
-
-        {% if site.github.repository_url %}
-          <span>·</span>
-          <a href="{{ site.github.repository_url }}">Source</a>
-        {% endif %}
-      </div>
-    </footer>
   </body>
 </html>
