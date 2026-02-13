@@ -3,7 +3,8 @@ title: Prompt blocks
 permalink: /prompts/
 ---
 
-This page indexes copy/paste prompt artifacts. Use the quick chooser to pick the right block, then follow the vendor paste rules below.
+This page indexes **copy/paste prompt artifacts** (system + user runners) and their companion **policies** / **how-to procedures**.  
+Use the quick chooser to jump to the right workflow, then follow the vendor paste rules below.
 
 ## Quick chooser (what you need right now)
 
@@ -32,11 +33,14 @@ Notes:
 ## Prompt components (micro)
 {: #prompt-components-micro }
 
-Small composable blocks you can paste into a larger prompt.
+Micro components are **reference snippets** (not standalone prompts).  
+Use them to augment a **user runner** (a `.user.txt` execution prompt) with one additional behavior.
 
-- **deep-read (user):** [deep-read.user.txt]({{ '/prompts/components/deep-read.user.txt' | relative_url }})
-- **deep-search (user):** [deep-search.user.txt]({{ '/prompts/components/deep-search.user.txt' | relative_url }})
-- **deep-analyzed (user):** [deep-analyzed.user.txt]({{ '/prompts/components/deep-analyzed.user.txt' | relative_url }})
+**How to use**
+- Pick a workflow (block) below → then add **at most 1–2 micro components** to the **user runner**.
+- Use `deep-search` only when the runtime supports browsing/tools.
+
+**Reference index (what each micro does + when to use):** [Prompt components (micro)]({{ '/prompts/components/' | relative_url }})
 
 ## Engineering Quality Gate — Architecture & Best Practices
 {: #engineering-quality-gate }
@@ -48,13 +52,13 @@ Small composable blocks you can paste into a larger prompt.
 
 Use when you want a practical daily prompt template for consistent outcomes.
 
-- **Template (user prompt file):** [prompt-engineering-daily-work.user.txt]({{ '/prompts/prompt-engineering-daily-work.user.txt' | relative_url }})
-- **Guide (How-to):** [Prompt Engineering Guide for Daily Work]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }})
+- **Template (user runner):** [prompt-engineering-daily-work.user.txt]({{ '/prompts/prompt-engineering-daily-work.user.txt' | relative_url }})
+- **How-to (procedure):** [Prompt Engineering Guide for Daily Work]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }})
 
 ## Self-verification procedure (Chain-of-Verification, CoVe)
 {: #chain-of-verification }
 
-Use when you want a structured “self-check” workflow before final answers.
+Use when you want a structured self-check workflow before final answers.
 
 - **Prompt (system, copy/paste):** [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
 - **Policy (normative):** [Chain-of-Verification — policy]({{ '/policies/chain-of-verification/' | relative_url }})
@@ -62,7 +66,7 @@ Use when you want a structured “self-check” workflow before final answers.
 
 ## Minimal non-speculation baseline (system)
 
-Use when you want a lightweight “do-not-speculate” preamble without a full workflow.
+Use when you want a lightweight do-not-speculate preamble without a full workflow.
 
 - **Prompt (system, copy/paste):** [epistemic-constraints-minimal.system.txt]({{ '/prompts/epistemic-constraints-minimal.system.txt' | relative_url }})
 
@@ -118,6 +122,7 @@ Use when you need up-to-date facts and citation-grade references.
 - **How-to (apply):** [Request web browsing (prompt template)]({{ '/how-to/request-web-browsing/' | relative_url }})
 
 ## Evidence-Gated Technical Writing Gate (Claims)
+{: #evidence-gated-technical-writing }
 
 Use when you want a strict gate for technical writing where factual claims must be verified.
 
@@ -129,7 +134,7 @@ Use when you want a strict gate for technical writing where factual claims must 
 ## Objective technical operating profile (non-simulative)
 {: #objective-technical }
 
-Use when you want a global baseline for **objective technical work**:
+Use when you want a global baseline for objective technical work:
 - no simulation/fabrication,
 - rules-first behavior,
 - clear instruction-priority handling,

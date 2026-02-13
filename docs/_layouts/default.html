@@ -18,7 +18,11 @@
 
   <body>
     {% assign purl = page.url | default: '' %}
-    {% assign is_home = purl == '/' %}
+    {% assign is_home = false %}
+    {% case purl %}
+      {% when '/' %}
+        {% assign is_home = true %}
+    {% endcase %}
 
     <header class="page-header {% if is_home %}page-header--home{% else %}page-header--compact{% endif %}" role="banner">
       <div class="project-name">
@@ -30,7 +34,6 @@
       {% endif %}
     </header>
 
-    <!-- Primary navigation (global) -->
     {% include site-nav.html %}
 
     <main id="content" class="main-content" role="main">
@@ -39,13 +42,6 @@
       {% endif %}
 
       {{ content }}
-
-      <footer class="site-footer">
-        <span class="site-footer-owner">
-          <a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>
-          is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.
-        </span>
-      </footer>
     </main>
 
     <footer class="site-footer" role="contentinfo">
@@ -67,11 +63,6 @@
         {% endif %}
       </ul>
 
-      {%- comment -%}
-      Newsletter:
-      - Render in footer on all pages except the dedicated /newsletter/ page (prevents duplication).
-      - The /newsletter/ page includes the same component inside the page content.
-      {%- endcomment -%}
       {% unless purl contains '/newsletter/' %}
         {% include newsletter.html mode="footer" %}
       {% endunless %}
