@@ -225,6 +225,42 @@ body {
   color: $text;
 }
 
+/* Reading defaults (modern, content-first) */
+.main-content {
+  /* If theme sets these, this overrides to a consistent reading measure */
+  max-width: 64rem;
+  margin: 0 auto;
+
+  /* Modern readable body */
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  /* Comfortable page gutters */
+  padding: 2.25rem 1rem 3rem;
+}
+
+@media (min-width: 900px) {
+  .main-content {
+    padding: 2.75rem 1.25rem 3.5rem;
+  }
+}
+
+/* Tighten long-form readability */
+.main-content p,
+.main-content li {
+  letter-spacing: -0.005em;
+}
+
+.main-content p {
+  margin: 0 0 1rem;
+}
+
+.main-content ul,
+.main-content ol {
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
 /* =========================
    Code blocks
    ========================= */
@@ -735,4 +771,118 @@ pre {
 
 .newsletter-footer-link:hover {
   text-decoration: underline;
+}
+
+:root {
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+
+  --radius-lg: 18px;
+
+  --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+/* =========================
+   Modern components (c-*)
+   ========================= */
+
+.c-section {
+  margin: var(--space-5) 0;
+}
+
+.c-section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.c-section__title {
+  margin: 0;
+}
+
+.c-section__link {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.c-grid {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.c-grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+/* =========================
+   Modern Card Enhancement
+   ========================= */
+
+.c-card {
+  display: block;
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--surface, #fff);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.c-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.c-card__title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.c-card__desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  opacity: 0.75;
+}
+/* =========================
+   c-card (static variant) + list styling
+   ========================= */
+
+.c-card--static:hover {
+  transform: none;
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+.c-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 0;
+}
+
+.c-card__list-item + .c-card__list-item {
+  margin-top: 0.35rem;
+}
+
+.c-card__link {
+  display: block;
+  text-decoration: none;
+  padding: 0.35rem 0.4rem;
+  border-radius: 12px;
+}
+
+.c-card__link:hover {
+  background: rgba(0, 0, 0, 0.03);
+  text-decoration: none;
 }

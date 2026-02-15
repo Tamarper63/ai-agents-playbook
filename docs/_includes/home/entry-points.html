@@ -1,10 +1,20 @@
-<h2>{{ site.data.home.entry_points.title }}</h2>
+<section class="c-section c-section--entry-points">
+  <div class="c-section__header">
+    <h2 class="c-section__title">
+      {{ site.data.home.entry_points.title }}
+    </h2>
+  </div>
 
-<div class="home-card-grid">
-  {% for c in site.data.home.entry_points.cards %}
-    <a class="home-card" href="{{ c.url | relative_url }}">
-      <div class="home-card-title">{{ c.title }}</div>
-      <div class="home-card-desc">{{ c.desc }}</div>
-    </a>
-  {% endfor %}
-</div>
+  <div class="c-grid c-grid--3">
+    {% for card in site.data.home.entry_points.cards %}
+      <a class="c-card" href="{{ card.url | relative_url }}">
+        <div class="c-card__content">
+          <div class="c-card__title">{{ card.title }}</div>
+          {% if card.desc %}
+            <div class="c-card__desc">{{ card.desc }}</div>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>

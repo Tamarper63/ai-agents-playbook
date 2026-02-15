@@ -83,6 +83,17 @@ entry_points:
       desc: "Stable terminology and conventions used across the site."
       url: "/reference/"
 
+latest_articles:
+  title: "Latest articles"
+  items:
+    - label: "Agent architecture (overview)"
+      url: "/articles/agent-architecture/"
+    - label: "Provenance boundary report"
+      url: "/articles/agent-security/provenance-boundary-report/"
+    - label: "Human vs GenAI capability map (engineering view)"
+      url: "/articles/agent-architecture/human-vs-genai-capability-map/"
+
+
 featured:
   title: "Featured (high-signal starting points)"
   items:

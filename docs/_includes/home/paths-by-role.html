@@ -1,14 +1,23 @@
-<h2>{{ site.data.home.paths_by_role.title }}</h2>
+<section class="c-section c-section--paths-by-role">
+  <div class="c-section__header">
+    <h2 class="c-section__title">{{ site.data.home.paths_by_role.title }}</h2>
+  </div>
 
-<div class="home-role-grid">
-  {% for r in site.data.home.paths_by_role.roles %}
-    <section class="home-role" aria-label="{{ r.role }}">
-      <h3 class="home-role-title">{{ r.role }}</h3>
-      <ul class="home-role-items">
-        {% for it in r.items %}
-          <li><a href="{{ it.url | relative_url }}">{{ it.label }}</a></li>
-        {% endfor %}
-      </ul>
-    </section>
-  {% endfor %}
-</div>
+  <div class="c-grid c-grid--3">
+    {% for r in site.data.home.paths_by_role.roles %}
+      <section class="c-card c-card--static" aria-label="{{ r.role }}">
+        <div class="c-card__content">
+          <div class="c-card__title">{{ r.role }}</div>
+
+          <ul class="c-card__list">
+            {% for it in r.items %}
+              <li class="c-card__list-item">
+                <a class="c-card__link" href="{{ it.url | relative_url }}">{{ it.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+</section>

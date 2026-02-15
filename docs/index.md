@@ -11,6 +11,8 @@ show_title: false
 
 {% include home/paths-by-role.html %}
 
+{% include home/latest-articles.html %}
+
 {% include home/featured.html %}
 
 {% include home/scope.html %}

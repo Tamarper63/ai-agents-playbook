@@ -1,7 +1,17 @@
-<h2>{{ site.data.home.featured.title }}</h2>
+<section class="c-section c-section--featured">
+  <div class="c-section__header">
+    <h2 class="c-section__title">
+      {{ site.data.home.featured.title }}
+    </h2>
+  </div>
 
-<ul>
-  {% for item in site.data.home.featured.items %}
-    <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
-  {% endfor %}
-</ul>
+  <div class="c-grid c-grid--3">
+    {% for item in site.data.home.featured.items %}
+      <a class="c-card" href="{{ item.url | relative_url }}">
+        <div class="c-card__content">
+          <div class="c-card__title">{{ item.label }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
