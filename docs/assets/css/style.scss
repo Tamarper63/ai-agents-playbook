@@ -21,21 +21,7 @@ $header_secondary: {{ site.palette.header_secondary | default: "#6A0F1E" }};
 /* Theme base */
 @import "{{ site.theme }}";
 
-/* =========================
-   Global / Overrides
-   ========================= */
-.page-header .project-name,
-.page-header .project-name a,
-.page-header .project-name a:visited,
-.page-header .project-tagline {
-  color: $text !important;
-}
 
-.page-header .project-name a:hover,
-.page-header .project-name a:focus {
-  text-decoration: underline;
-  text-decoration-color: $accent;
-}
 
 body {
   background: $bg;
@@ -60,61 +46,6 @@ body {
   color: $accent;
 }
 
-.site-nav,
-.site-footer {
-  border-color: $border;
-}
-
-/* =========================
-   Header (modernized) — FIXED (override Cayman)
-   ========================= */
-
-.page-header {
-  /* Cayman sets background-image gradients — must null it explicitly */
-  background-color: $surface !important;
-  background-image: none !important;
-
-  padding: 1.6rem 1rem 1.05rem;
-  text-align: center;
-
-  border-bottom: 1px solid rgba($text, 0.08);
-  box-shadow: 0 1px 0 rgba($text, 0.03);
-}
-
-/* Optional: compact variant (if used elsewhere) */
-.page-header--compact {
-  padding: 1.15rem 1rem 0.85rem;
-}
-
-/* Remove any decorative bar added elsewhere */
-.page-header:after {
-  content: none !important;
-}
-
-/* Title/tagline sizing (Cayman defaults are huge) */
-.page-header .project-name {
-  margin: 0.15rem 0 0;
-  font-size: 2.25rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-}
-
-.page-header .project-tagline {
-  margin: 0.45rem auto 0;
-  max-width: 64rem;
-  font-size: 1rem;
-  opacity: 0.85;
-}
-
-/* Hide the theme GitHub button in header (if it exists) */
-.page-header a.btn[href*="github.com"] {
-  display: none !important;
-}
-/* =========================
-   Nav (modernized) — FIXED
-   ========================= */
-
 .site-nav {
   background: rgba($surface, 0.92);
   border-bottom: 1px solid rgba($text, 0.08);
@@ -128,10 +59,91 @@ body {
   z-index: 50;
 }
 
+/* =========================
+   Header (masthead) — IDEAL (modern, branded gradient)
+   ========================= */
+
+.page-header {
+  /* Cayman baseline overrides */
+  background-color: $surface !important;
+  background-image: linear-gradient(120deg, $header_primary, $header_secondary) !important;
+  color: #fff;
+  text-align: center;
+
+  /* Modern spacing */
+  padding: 1.75rem 1rem 1.15rem;
+
+  /* Depth */
+  border-bottom: 1px solid rgba($text, 0.10);
+  box-shadow:
+    0 1px 0 rgba($text, 0.05),
+    0 14px 34px rgba($text, 0.10);
+}
+
+/* Remove Cayman decorative bar (if any) */
+.page-header:after {
+  content: none !important;
+}
+
+/* Centered container behavior */
+.page-header .project-name,
+.page-header .project-tagline {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Title */
+.page-header .project-name {
+  margin: 0.1rem auto 0;
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+/* Title link */
+.page-header .project-name a,
+.page-header .project-name a:visited {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.page-header .project-name a:hover,
+.page-header .project-name a:focus {
+  text-decoration: underline;
+  text-decoration-color: rgba(#fff, 0.85);
+}
+
+/* Tagline */
+.page-header .project-tagline {
+  margin: 0.4rem auto 0;
+  font-size: 1.02rem;
+  line-height: 1.45;
+  opacity: 0.92;
+}
+
+/* Hide the theme GitHub button in header (if it exists) */
+.page-header a.btn[href*="github.com"] {
+  display: none !important;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba($surface, 0.92);
+  border-bottom: 1px solid rgba($text, 0.08);
+
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+
+  box-shadow: 0 10px 24px rgba($text, 0.05);
+}
+
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-  .site-nav {
-    background: $surface;
-  }
+  .site-nav { background: $surface; }
 }
 
 .site-nav__inner {
@@ -150,10 +162,10 @@ body {
   color: $text;
   text-decoration: none;
 
-  padding: 0.34rem 0.62rem;
+  padding: 0.36rem 0.64rem;
   border-radius: 999px;
 
-  font-weight: 600;
+  font-weight: 650;
   line-height: 1.2;
 
   transition: background 120ms ease, box-shadow 120ms ease, color 120ms ease;
@@ -167,13 +179,17 @@ body {
 .site-nav a[aria-current="page"] {
   color: #fff !important;
   background: $accent;
-  box-shadow: 0 6px 16px rgba($text, 0.08);
+  box-shadow: 0 6px 16px rgba($text, 0.10);
 }
 
 .site-nav a:focus-visible {
   outline: 3px solid rgba($accent, 0.40);
   outline-offset: 2px;
 }
+
+
+
+
 /* =========================
    Typography
    ========================= */

@@ -22,7 +22,7 @@ palette:
   accent_2: "#A05A20"
   border: "#E6DED6"
   header_primary: "#6A0F1E"
-  header_secondary: "#6A0F1E"
+  header_secondary: "#A05A20"
 
 defaults:
   - scope:
