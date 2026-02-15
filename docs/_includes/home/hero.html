@@ -1,19 +1,23 @@
-<section class="home-hero" aria-label="Homepage intro">
-  <p class="home-lede">{{ site.data.home.hero.lede }}</p>
+<section class="c-section c-section--hero" aria-label="Homepage intro">
+  <div class="c-hero">
+    <div class="c-hero__body">
+      <p class="c-hero__lede">{{ site.data.home.hero.lede }}</p>
 
-  <ul class="home-hero-bullets">
-    {% for b in site.data.home.hero.bullets %}
-      <li>{{ b }}</li>
-    {% endfor %}
-  </ul>
+      <ul class="c-hero__bullets">
+        {% for b in site.data.home.hero.bullets %}
+          <li>{{ b }}</li>
+        {% endfor %}
+      </ul>
+    </div>
 
-  <div class="home-actions" aria-label="Primary actions">
-    <a class="home-primary" href="{{ site.data.home.actions.primary.url | relative_url }}">
-      {{ site.data.home.actions.primary.label }}
-    </a>
+    <div class="c-hero__actions" aria-label="Primary actions">
+      <a class="c-btn c-btn--primary" href="{{ site.data.home.actions.primary.url | relative_url }}">
+        {{ site.data.home.actions.primary.label }}
+      </a>
 
-    {% for a in site.data.home.actions.secondary %}
-      <a class="home-secondary" href="{{ a.url | relative_url }}">{{ a.label }}</a>
-    {% endfor %}
+      {% for a in site.data.home.actions.secondary %}
+        <a class="c-btn c-btn--secondary" href="{{ a.url | relative_url }}">{{ a.label }}</a>
+      {% endfor %}
+    </div>
   </div>
 </section>

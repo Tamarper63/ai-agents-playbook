@@ -66,68 +66,66 @@ body {
 }
 
 /* =========================
-   Header (modernized)
+   Header (modernized) — FIXED (override Cayman)
    ========================= */
+
 .page-header {
-  padding: 2.25rem 1rem 1.35rem;
-  background: $surface;
+  /* Cayman sets background-image gradients — must null it explicitly */
+  background-color: $surface !important;
+  background-image: none !important;
 
-  border-bottom: 1px solid rgba($text, 0.06);
+  padding: 1.6rem 1rem 1.05rem;
+  text-align: center;
 
-  box-shadow:
-    0 1px 0 rgba($text, 0.03),
-    0 18px 45px rgba($text, 0.06);
+  border-bottom: 1px solid rgba($text, 0.08);
+  box-shadow: 0 1px 0 rgba($text, 0.03);
 }
 
+/* Optional: compact variant (if used elsewhere) */
 .page-header--compact {
-  padding: 1.25rem 1rem 0.95rem;
+  padding: 1.15rem 1rem 0.85rem;
 }
 
-.project-name {
-  margin: 0.15rem 0;
-  font-size: 2.2rem;
-  font-weight: 700;
-}
-
-.project-tagline {
-  margin: 0.4rem auto 0;
-  font-size: 1rem;
-  max-width: 56rem;
-  opacity: 0.9;
-}
-
-.page-header--compact .project-name {
-  font-size: 1.6rem;
-}
-
-/* Brand bar */
+/* Remove any decorative bar added elsewhere */
 .page-header:after {
-  content: "";
-  display: block;
-  margin: 0.9rem auto 0;
-  max-width: 64rem;
-
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, $accent 0%, $accent_2 100%);
-  opacity: 0.92;
+  content: none !important;
 }
 
-/* Hide the theme GitHub button in header */
+/* Title/tagline sizing (Cayman defaults are huge) */
+.page-header .project-name {
+  margin: 0.15rem 0 0;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.page-header .project-tagline {
+  margin: 0.45rem auto 0;
+  max-width: 64rem;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* Hide the theme GitHub button in header (if it exists) */
 .page-header a.btn[href*="github.com"] {
   display: none !important;
 }
-
 /* =========================
-   Nav (modernized)
+   Nav (modernized) — FIXED
    ========================= */
+
 .site-nav {
   background: rgba($surface, 0.92);
-  border-bottom: 1px solid rgba($text, 0.06);
-  box-shadow: 0 10px 28px rgba($text, 0.05);
+  border-bottom: 1px solid rgba($text, 0.08);
+  box-shadow: 0 10px 24px rgba($text, 0.04);
 
   -webkit-backdrop-filter: saturate(180%) blur(10px);
   backdrop-filter: saturate(180%) blur(10px);
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
@@ -143,42 +141,39 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem;
 
-  padding: 0.65rem 1rem;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem;
 }
 
 .site-nav a {
   color: $text;
   text-decoration: none;
 
-  padding: 0.35rem 0.6rem;
-  border-radius: 10px;
+  padding: 0.34rem 0.62rem;
+  border-radius: 999px;
 
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
 
-  transition: background 120ms ease, box-shadow 120ms ease;
+  transition: background 120ms ease, box-shadow 120ms ease, color 120ms ease;
 }
 
 .site-nav a:hover {
-  text-decoration: none;
   background: rgba($accent, 0.08);
+  text-decoration: none;
 }
 
 .site-nav a[aria-current="page"] {
-  color: $accent;
-  font-weight: 700;
-
-  background: rgba($accent, 0.08);
-  box-shadow: inset 0 -2px 0 $accent;
+  color: #fff !important;
+  background: $accent;
+  box-shadow: 0 6px 16px rgba($text, 0.08);
 }
 
 .site-nav a:focus-visible {
-  outline: 3px solid rgba($accent, 0.45);
+  outline: 3px solid rgba($accent, 0.40);
   outline-offset: 2px;
 }
-
 /* =========================
    Typography
    ========================= */
@@ -217,7 +212,7 @@ body {
   margin-top: 1.6rem;
   margin-bottom: 0.55rem;
   font-weight: 750;
-}
+ }
 
 .main-content h4,
 .main-content h5,
@@ -505,190 +500,6 @@ pre {
 }
 
 /* =========================
-   Home hero
-   ========================= */
-.home-hero {
-  max-width: 56rem;
-  margin: 1.25rem auto 0;
-  padding: 1.25rem 1.25rem 1rem;
-
-  border: 1px solid rgba($text, 0.10);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.70);
-}
-
-.home-lede {
-  margin: 0 0 0.75rem;
-  font-size: 1.05rem;
-}
-
-.home-hero-bullets {
-  margin: 0 0 0.9rem;
-  padding-left: 1.1rem;
-}
-
-/* =========================
-   Home actions
-   ========================= */
-.home-actions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 0.7rem;
-  margin: 0.8rem 0 0.25rem;
-  align-items: stretch;
-}
-
-.home-primary,
-.home-secondary {
-  display: inline-block;
-  padding: 0.55rem 0.8rem;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
-.home-primary {
-  background: $accent;
-  color: #fff !important;
-
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: fit-content;
-}
-
-.home-secondary {
-  border: 1px solid rgba($text, 0.14);
-  background: rgba($text, 0.03);
-  color: $header_primary !important;
-
-  text-align: center;
-  white-space: normal;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  min-height: 3.25rem; /* 52px */
-}
-
-/* Desktop: two-column hero (text left, CTAs right) */
-@media (min-width: 900px) {
-  .home-hero {
-    display: grid;
-    grid-template-columns: 1.4fr 0.6fr;
-    column-gap: 1.25rem;
-    row-gap: 0.75rem;
-    align-items: start;
-  }
-
-  .home-lede {
-    grid-column: 1;
-    margin-bottom: 0.5rem;
-  }
-
-  .home-hero-bullets {
-    grid-column: 1;
-    margin-bottom: 0;
-  }
-
-  .home-actions {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    grid-template-columns: 1fr;
-    margin: 0;
-  }
-
-  .home-primary {
-    grid-column: auto;
-    justify-self: stretch;
-    width: 100%;
-  }
-}
-
-.home-steps {
-  padding-left: 1.2rem;
-}
-
-.home-step {
-  margin: 0.65rem 0;
-}
-
-.home-step-title a {
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.home-step-title a:hover {
-  text-decoration: underline;
-}
-
-.home-step-output {
-  opacity: 0.85;
-  margin-top: 0.2rem;
-}
-
-/* =========================
-   Home cards
-   ========================= */
-.home-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 0.9rem;
-  margin: 0.6rem 0 0.25rem;
-}
-
-.home-card {
-  display: block;
-  padding: 0.85rem 0.9rem;
-  border: 1px solid rgba($text, 0.10);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.65);
-  text-decoration: none;
-}
-
-.home-card:hover {
-  background: rgba($text, 0.03);
-}
-
-.home-card-title {
-  font-weight: 800;
-  color: $header_primary;
-  margin-bottom: 0.35rem;
-}
-
-.home-card-desc {
-  opacity: 0.85;
-}
-
-/* =========================
-   Home roles
-   ========================= */
-.home-role-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.9rem;
-}
-
-.home-role {
-  border: 1px solid rgba($text, 0.10);
-  border-radius: 14px;
-  padding: 0.8rem 0.9rem;
-  background: rgba(255, 255, 255, 0.65);
-}
-
-.home-role-title {
-  margin-top: 0;
-}
-
-.home-role-items {
-  margin: 0.5rem 0 0;
-  padding-left: 1.1rem;
-}
-
-/* =========================
    Capability map
    ========================= */
 .capability-map {
@@ -816,17 +627,22 @@ pre {
 
 .c-grid--3 {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: stretch; /* ensure equal height tracks */
 }
+
+
 /* =========================
    Modern Card Enhancement
    ========================= */
-
 .c-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   padding: var(--space-4);
   border-radius: var(--radius-lg);
-  background: var(--surface, #fff);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba($text, 0.10);
   box-shadow: var(--shadow-soft);
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
@@ -841,6 +657,7 @@ pre {
 .c-card__content {
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 0.5rem;
 }
 
@@ -885,4 +702,78 @@ pre {
 .c-card__link:hover {
   background: rgba(0, 0, 0, 0.03);
   text-decoration: none;
+}
+/* =========================
+   Hero (c-hero) + Buttons (c-btn)
+   ========================= */
+
+.c-hero {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 1rem;
+  border: 1px solid rgba($text, 0.10);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.70);
+}
+
+@media (min-width: 900px) {
+  .c-hero {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    column-gap: 1.25rem;
+    row-gap: 0.75rem;
+    align-items: start;
+  }
+}
+
+.c-hero__lede {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.c-hero__bullets {
+  margin: 0 0 0.9rem;
+  padding-left: 1.1rem;
+}
+
+.c-hero__actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.7rem;
+  margin: 0.8rem 0 0.25rem;
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .c-hero__actions {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+}
+
+.c-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.55rem 0.8rem;
+  border-radius: 12px;
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+
+  min-height: 3.25rem; /* 52px */
+}
+
+.c-btn--primary {
+  background: $accent;
+  color: #fff !important;
+}
+
+.c-btn--secondary {
+  border: 1px solid rgba($text, 0.14);
+  background: rgba($text, 0.03);
+  color: $header_primary !important;
 }
