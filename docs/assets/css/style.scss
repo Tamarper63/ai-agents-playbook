@@ -1,9 +1,5 @@
 ---
 ---
-
-/* =========================
-   Palette (Liquid-driven)
-   ========================= */
 $bg: {{ site.palette.bg | default: "#FAF7F2" }};
 $surface: {{ site.palette.surface | default: "#FFFFFF" }};
 
@@ -15,12 +11,13 @@ $accent_2: {{ site.palette.accent_2 | default: "#A05A20" }};
 
 $border: {{ site.palette.border | default: "#E6DED6" }};
 
-$header_primary: {{ site.palette.header_primary | default: "#6A0F1E" }};
-$header_secondary: {{ site.palette.header_secondary | default: "#6A0F1E" }};
+$header_primary: {{ site.palette.header_primary | default: $accent }};
+$header_secondary: {{ site.palette.header_secondary | default: $accent_2 }};
+$header_text: {{ site.palette.header_text | default: "#FFFFFF" }};
+$header_link: {{ site.palette.header_link | default: "#FFFFFF" }};
 
 /* Theme base */
 @import "{{ site.theme }}";
-
 
 
 body {
@@ -46,154 +43,170 @@ body {
   color: $accent;
 }
 
-.site-nav {
-  background: rgba($surface, 0.92);
-  border-bottom: 1px solid rgba($text, 0.08);
-  box-shadow: 0 10px 24px rgba($text, 0.04);
-
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
-  backdrop-filter: saturate(180%) blur(10px);
-
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
 /* =========================
-   Header (masthead) — IDEAL (modern, branded gradient)
+   Header (masthead) + Primary nav — single modern bar
    ========================= */
 
 .page-header {
-  /* Cayman baseline overrides */
-  background-color: $surface !important;
-  background-image: linear-gradient(120deg, $header_primary, $header_secondary) !important;
-  color: #fff;
-  text-align: center;
+  background-color: $header_primary !important;
+  background-image: none !important;
 
-  /* Modern spacing */
-  padding: 1.75rem 1rem 1.15rem;
+  color: $header_text !important;
+  text-align: left;
+  padding: 0;
 
-  /* Depth */
   border-bottom: 1px solid rgba($text, 0.10);
   box-shadow:
-    0 1px 0 rgba($text, 0.05),
-    0 14px 34px rgba($text, 0.10);
+    0 1px 0 rgba($text, 0.06),
+    0 10px 26px rgba(0, 0, 0, 0.14);
 }
 
-/* Remove Cayman decorative bar (if any) */
 .page-header:after {
   content: none !important;
 }
 
-/* Centered container behavior */
-.page-header .project-name,
-.page-header .project-tagline {
+.page-header__inner {
   max-width: 64rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 0.75rem 1rem;
 }
 
-/* Title */
+@media (max-width: 720px) {
+  .page-header__inner {
+    padding: 0.6rem 0.9rem;
+    gap: 0.75rem;
+  }
+}
+
 .page-header .project-name {
-  margin: 0.1rem auto 0;
-  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
-  font-weight: 850;
-  letter-spacing: -0.02em;
-  line-height: 1.12;
+  margin: 0 !important;
+  font-size: 1.05rem !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.1 !important;
 }
 
-/* Title link */
+@media (min-width: 900px) {
+  .page-header .project-name {
+    font-size: 1.2rem !important;
+  }
+}
+
 .page-header .project-name a,
 .page-header .project-name a:visited {
-  color: #fff !important;
+  color: $header_link !important;
   text-decoration: none !important;
 }
 
 .page-header .project-name a:hover,
 .page-header .project-name a:focus {
   text-decoration: underline;
-  text-decoration-color: rgba(#fff, 0.85);
+  text-decoration-color: rgba(255, 255, 255, 0.85);
 }
 
-/* Tagline */
 .page-header .project-tagline {
-  margin: 0.4rem auto 0;
-  font-size: 1.02rem;
-  line-height: 1.45;
-  opacity: 0.92;
+  display: none !important;
 }
 
-/* Hide the theme GitHub button in header (if it exists) */
 .page-header a.btn[href*="github.com"] {
   display: none !important;
 }
 
-.site-nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-
-  background: rgba($surface, 0.92);
-  border-bottom: 1px solid rgba($text, 0.08);
-
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
-  backdrop-filter: saturate(180%) blur(10px);
-
-  box-shadow: 0 10px 24px rgba($text, 0.05);
-}
-
-@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-  .site-nav { background: $surface; }
+/* Nav is rendered inside the header */
+.page-header .site-nav {
+  margin: 0;
+  flex: 1 1 auto;
 }
 
 .site-nav__inner {
-  max-width: 64rem;
-  margin: 0 auto;
-
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
 
-  gap: 0.6rem;
-  padding: 0.55rem 1rem;
+  padding: 0;
+
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+@media (max-width: 720px) {
+  .site-nav__inner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-left: 0.9rem;
+    scroll-padding-right: 0.9rem;
+  }
+
+  .site-nav__inner::-webkit-scrollbar {
+    height: 6px;
+  }
 }
 
 .site-nav a {
-  color: $text;
   text-decoration: none;
 
-  padding: 0.36rem 0.64rem;
-  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.45rem 0.65rem;
+  min-height: 36px;
+  border-radius: 12px;
 
   font-weight: 650;
-  line-height: 1.2;
+  line-height: 1;
 
-  transition: background 120ms ease, box-shadow 120ms ease, color 120ms ease;
+  transition: background 120ms ease, box-shadow 120ms ease, color 120ms ease, border-color 120ms ease;
 }
 
-.site-nav a:hover {
-  background: rgba($accent, 0.08);
-  text-decoration: none;
+@media (max-width: 720px) {
+  .site-nav a {
+    white-space: nowrap;
+  }
 }
 
-.site-nav a[aria-current="page"] {
+.page-header .site-nav a {
+  color: rgba(255, 255, 255, 0.90);
+  background: transparent;
+  border: 0;
+}
+
+.page-header .site-nav a:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.page-header .site-nav a[aria-current="page"] {
   color: #fff !important;
-  background: $accent;
-  box-shadow: 0 6px 16px rgba($text, 0.10);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.95);
 }
 
-.site-nav a:focus-visible {
-  outline: 3px solid rgba($accent, 0.40);
+.page-header .site-nav a.site-nav__cta {
+  background: rgba(255, 255, 255, 0.95);
+  color: $accent !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.page-header .site-nav a.site-nav__cta:hover {
+  background: rgba(255, 255, 255, 0.90);
+}
+
+.page-header .site-nav a:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.60);
   outline-offset: 2px;
 }
-
-
-
 
 /* =========================
    Typography
    ========================= */
-.main-content h1 {
+.main-content > h1.page-title {
   color: $text;
   font-size: 2.35rem;
   letter-spacing: -0.02em;
@@ -202,7 +215,7 @@ body {
   font-weight: 800;
 }
 
-.main-content h1::after {
+.main-content > h1.page-title::after {
   content: "";
   display: block;
   width: 4.5rem;
@@ -441,25 +454,26 @@ pre {
   border-bottom-right-radius: 10px;
 }
 
-/* =========================
-   Newsletter CTA
-   ========================= */
-.newsletter-cta {
+.newsletter-cta,
+.newsletter-block {
   margin: 1rem 0 0;
-  padding: 1rem;
+  padding: 1rem 1rem 0.9rem;
   border: 1px solid rgba($text, 0.12);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255,255,255,0.65);
 }
 
-.newsletter-title {
+.newsletter-title,
+.newsletter-block__title {
   margin: 0 0 0.25rem;
   font-size: 1.15rem;
+  font-weight: 800;
 }
 
-.newsletter-subtitle {
+.newsletter-subtitle,
+.newsletter-block__subtitle {
   margin: 0 0 0.75rem;
-  opacity: 0.85;
+  color: rgba($text, 0.78);
 }
 
 .newsletter-form {
@@ -719,23 +733,31 @@ pre {
   background: rgba(0, 0, 0, 0.03);
   text-decoration: none;
 }
+
 /* =========================
-   Hero (c-hero) + Buttons (c-btn)
+   Hero (c-hero) + Buttons (c-btn) — IDEAL (modern, branded)
    ========================= */
 
 .c-hero {
   max-width: 64rem;
   margin: 0 auto;
-  padding: 1.25rem 1.25rem 1rem;
+
+  /* spacing */
+  padding: 1.15rem 1.15rem 1rem;
+
+  /* modern surface (avoid a stark white "rectangle" on $bg) */
+  border-radius: 18px;
+  background: rgba($surface, 0.72);
   border: 1px solid rgba($text, 0.10);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.70);
+
+  /* depth (soft, not heavy) */
+  box-shadow: 0 14px 34px rgba($text, 0.06);
 }
 
 @media (min-width: 900px) {
   .c-hero {
     display: grid;
-    grid-template-columns: 1.4fr 0.6fr;
+    grid-template-columns: 1.45fr 0.55fr;
     column-gap: 1.25rem;
     row-gap: 0.75rem;
     align-items: start;
@@ -743,21 +765,37 @@ pre {
 }
 
 .c-hero__lede {
-  margin: 0 0 0.75rem;
-  font-size: 1.05rem;
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.85rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+  color: $text;
 }
 
 .c-hero__bullets {
   margin: 0 0 0.9rem;
   padding-left: 1.1rem;
+  color: rgba($text, 0.88);
 }
 
 .c-hero__actions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 0.7rem;
   margin: 0.8rem 0 0.25rem;
   align-items: stretch;
+
+  /* make actions feel like a separate panel (reduces “one big rectangle”) */
+  padding: 0.85rem;
+  border-radius: 16px;
+  background: rgba($accent, 0.05);
+  border: 1px solid rgba($text, 0.08);
+}
+
+@media (min-width: 900px) {
+  .c-hero__actions {
+    margin: 0; /* tighter on desktop grid */
+  }
 }
 
 @media (min-width: 900px) {
@@ -772,15 +810,22 @@ pre {
   align-items: center;
   justify-content: center;
 
-  padding: 0.55rem 0.8rem;
-  border-radius: 12px;
-  text-decoration: none;
+  padding: 0.65rem 0.95rem;
+  border-radius: 14px;
 
-  font-weight: 700;
+  text-decoration: none;
+  font-weight: 750;
   font-size: 1rem;
-  line-height: 1.2;
+  line-height: 1.15;
 
   min-height: 3.25rem; /* 52px */
+  box-shadow: 0 10px 22px rgba($text, 0.08);
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.c-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba($text, 0.10);
 }
 
 .c-btn--primary {
@@ -789,7 +834,12 @@ pre {
 }
 
 .c-btn--secondary {
+  background: transparent;
   border: 1px solid rgba($text, 0.14);
-  background: rgba($text, 0.03);
-  color: $header_primary !important;
+  color: $text !important;
+}
+
+.c-btn--secondary:hover {
+  background: rgba($accent, 0.06);
+  border-color: rgba($accent, 0.28);
 }

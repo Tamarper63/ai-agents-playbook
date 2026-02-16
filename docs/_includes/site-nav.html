@@ -13,10 +13,28 @@
         {% assign is_active = true %}
       {% endif %}
 
+      {% assign is_cta = false %}
+      {% if item.cta == true or item.is_cta == true %}
+        {% assign is_cta = true %}
+      {% endif %}
+
+      {% assign link_class = '' %}
+      {% if is_cta %}
+        {% assign link_class = 'site-nav__cta' %}
+      {% endif %}
+
       {% if is_active %}
-        <a href="{{ item.url | relative_url }}" aria-current="page">{{ item.label }}</a>
+        {% if link_class != '' %}
+          <a class="{{ link_class }}" href="{{ item.url | relative_url }}" aria-current="page">{{ item.label }}</a>
+        {% else %}
+          <a href="{{ item.url | relative_url }}" aria-current="page">{{ item.label }}</a>
+        {% endif %}
       {% else %}
-        <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+        {% if link_class != '' %}
+          <a class="{{ link_class }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+        {% else %}
+          <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+        {% endif %}
       {% endif %}
     {% endfor %}
   </div>

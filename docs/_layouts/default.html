@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en-US' }}">
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {% seo %}
 
-    {% assign cache_bust = site.github.build_revision %}
-    {% unless cache_bust %}
-      {% assign cache_bust = site.time | date: '%s' %}
-    {% endunless %}
-
+    {% assign cache_bust = site.github.build_revision | default: site.time | date: '%s' %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: cache_bust | relative_url }}">
 
     {% include head-custom.html %}
@@ -25,19 +22,18 @@
     {% endcase %}
 
     <header class="page-header {% if is_home %}page-header--home{% else %}page-header--compact{% endif %}" role="banner">
-      <div class="project-name">
-        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      </div>
+      <div class="page-header__inner">
+        <div class="project-name">
+          <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        </div>
 
-      {% if is_home %}
-        <div class="project-tagline">{{ site.description }}</div>
-      {% endif %}
+        {% include site-nav.html %}
+      </div>
     </header>
 
-    {% include site-nav.html %}
-
     <main id="content" class="main-content" role="main">
-      {% if page.show_title != false and page.title %}
+      {% assign show_title = page.show_title | default: true %}
+      {% if show_title and page.title %}
         <h1 class="page-title">{{ page.title }}</h1>
       {% endif %}
 
@@ -45,43 +41,18 @@
     </main>
 
     <footer class="site-footer" role="contentinfo">
-      {% assign social_name = site.social.name | default: '' %}
-
-      <ul class="footer-links" aria-label="Social links">
-        {% if site.social.links %}
-          {% for link in site.social.links %}
-            {% if link contains 'linkedin.com' %}
-              <li><a href="{{ link }}">LinkedIn</a></li>
-            {% elsif link contains 'github.com' %}
-              <li><a href="{{ link }}">GitHub</a></li>
-            {% endif %}
-          {% endfor %}
+      <ul class="footer-links" aria-label="Footer links">
+        {% if site.social.linkedin %}
+          <li><a href="{{ site.social.linkedin }}">LinkedIn</a></li>
         {% endif %}
-
-        {% if social_name != '' %}
-          <li><span>© {{ site.time | date: '%Y' }} {{ social_name }}</span></li>
+        {% if site.social.github %}
+          <li><a href="{{ site.social.github }}">GitHub</a></li>
         {% endif %}
+        <li><a href="{{ '/newsletter/' | relative_url }}">Newsletter</a></li>
       </ul>
 
-      {% unless purl contains '/newsletter/' %}
-        {% include newsletter.html mode="footer" %}
-      {% endunless %}
-
-      <div class="build-info">
-        {% assign rev = site.github.build_revision | default: '' %}
-        <span>Build</span>
-        {% if rev != '' %}
-          <code>{{ rev | slice: 0, 7 }}</code>
-        {% else %}
-          <code>N/A</code>
-        {% endif %}
-        <span>·</span>
-        <span>{{ site.time | date: "%Y-%m-%d %H:%M %Z" }}</span>
-
-        {% if site.github.repository_url %}
-          <span>·</span>
-          <a href="{{ site.github.repository_url }}">Source</a>
-        {% endif %}
+      <div class="build-info" aria-label="Build info">
+        <span>&copy; {{ site.time | date: '%Y' }} {{ site.author | default: site.title }}</span>
       </div>
     </footer>
   </body>

@@ -18,11 +18,19 @@ palette:
   surface: "#FFFFFF"
   text: "#1A1A1A"
   muted: "#4A4A4A"
-  accent: "#6A0F1E"
-  accent_2: "#A05A20"
   border: "#E6DED6"
-  header_primary: "#6A0F1E"
-  header_secondary: "#A05A20"
+
+  # Actions / accent (CTA + active states)
+  accent: "#E63946"      # punch-red
+  accent_2: "#457B9D"    # cerulean (optional secondary)
+
+  # Header gradient (masthead)
+  header_primary: "#1D3557"    # oxford-navy
+  header_secondary: "#457B9D"  # cerulean
+
+  # Header text/link colors (fix title readability)
+  header_text: "#F1FAEE"  # honeydew
+  header_link: "#F1FAEE"  # honeydew
 
 defaults:
   - scope:

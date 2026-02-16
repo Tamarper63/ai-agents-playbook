@@ -1,4 +1,5 @@
 ---
+layout: default
 title: AI Agents Playbook
 show_title: false
 ---

@@ -1,38 +1,35 @@
 hero:
-  lede: "A public, versioned playbook for building reliable agentic systems (architecture, orchestration, evaluation) and securing tool use with explicit trust boundaries."
+  lede: "A public, versioned playbook for building reliable AI agents (multi-step tool-using systems) and securing tool use with explicit trust boundaries."
   bullets:
-    - "Build agents with clear execution boundaries: orchestration patterns, lifecycle, and capability mapping."
-    - "Harden tool use with evidence-first rules: citations, trust boundaries, and fail-closed quality gates."
-    - "Operationalize the rules: copy/paste prompt blocks and step-by-step how-to procedures."
+    - "Design agent workflows: orchestration patterns, lifecycle/state, and tool invocation semantics."
+    - "Secure tool use: evidence boundaries, citations, and fail-closed quality gates."
+    - "Operationalize with policies, prompt blocks, and procedures."
 actions:
   primary:
-    label: "Start here: Choose an evidence boundary"
+    label: "Start: Evidence boundary"
     url: "/how-to/choose-facts-only-evidence-boundary/"
   secondary:
-    - label: "Build: Agent architecture"
+    - label: "Read: Agent architecture"
       url: "/articles/agent-architecture/"
-    - label: "Run: Policies"
+    - label: "Browse: Policies"
       url: "/policies/"
-    - label: "Copy/Paste: Prompt blocks"
+    - label: "Copy: Prompt blocks"
       url: "/prompts/"
     - label: "Subscribe: Newsletter"
       url: "/newsletter/"
 
-
-
 quickstart:
-  title: "Start here (5 minutes)"
+  title: "Quickstart (5 minutes)"
   steps:
-    - title: "Choose: Evidence boundary (facts-only)"
-      output: "Define what counts as evidence and when to refuse."
+    - title: "Set: Evidence boundary (facts-only)"
+      output: "Define allowed sources and refusal conditions (fail-closed)."
       url: "/how-to/choose-facts-only-evidence-boundary/"
     - title: "Run: Fact-Checking Kit"
-      output: "Use a repeatable verification procedure for non-trivial answers."
+      output: "Run a repeatable claim-check loop before producing non-trivial outputs."
       url: "/how-to/fact-checking-kit/"
     - title: "Enforce: Engineering Quality Gate"
-      output: "Fail-closed when evidence is missing."
+      output: "Check architecture/best-practices and regressions; fail-closed on missing requirements."
       url: "/how-to/engineering-quality-gate-procedure/"
-
 
 paths_by_role:
   title: "Pick a path (by role)"
@@ -41,14 +38,14 @@ paths_by_role:
       items:
         - label: "Build: Agent architecture (overview)"
           url: "/articles/agent-architecture/"
-        - label: "Map: Human vs GenAI capability (engineering view)"
+        - label: "Map: Human vs Generative AI capability (engineering view)"
           url: "/articles/agent-architecture/human-vs-genai-capability-map/"
-        - label: "Apply: Prompt Engineering Guide for Daily Work"
+        - label: "Use: Prompt Engineering Guide for Daily Work"
           url: "/how-to/prompt-engineering-daily-work/"
 
     - role: "Security / Platform"
       items:
-        - label: "Run: Policies (operating contracts)"
+        - label: "Apply: Policies (operating contracts)"
           url: "/policies/"
         - label: "Define: Evidence boundary (facts-only)"
           url: "/how-to/choose-facts-only-evidence-boundary/"
@@ -74,7 +71,7 @@ entry_points:
       desc: "Step-by-step procedures and checklists for daily work."
       url: "/how-to/"
     - title: "Prompt blocks"
-      desc: "Reusable prompt blocks (copy/paste) aligned to the policies."
+      desc: "Copy/paste prompt artifacts mapped to the policies."
       url: "/prompts/"
     - title: "Articles"
       desc: "Long-form technical analysis, case studies, and deeper dives."
@@ -84,39 +81,38 @@ entry_points:
       url: "/reference/"
 
 latest_articles:
-  title: "Latest articles"
+  title: "Recommended reading"
+  subtitle: "A short reading path: architecture → provenance → capability mapping."
   items:
     - label: "Agent architecture (overview)"
       url: "/articles/agent-architecture/"
     - label: "Provenance boundary report"
       url: "/articles/agent-security/provenance-boundary-report/"
-    - label: "Human vs GenAI capability map (engineering view)"
+    - label: "Human vs Generative AI capability map (engineering view)"
       url: "/articles/agent-architecture/human-vs-genai-capability-map/"
-
+  all_label: "View all articles"
+  all_url: "/articles/"
 
 featured:
-  title: "Featured (high-signal starting points)"
+  title: "Core policies (operating contracts)"
   items:
-    - label: "Agent architecture (overview)"
-      url: "/articles/agent-architecture/"
-    - label: "Prompt Engineering Guide for Daily Work"
-      url: "/how-to/prompt-engineering-daily-work/"
-    - label: "Provenance boundary report"
-      url: "/articles/agent-security/provenance-boundary-report/"
-    - label: "Human vs GenAI capability map (engineering view)"
-      url: "/articles/agent-architecture/human-vs-genai-capability-map/"
-
-
+    - label: "Facts-only: Authoritative sources required"
+      url: "/policies/facts-only-authoritative-sources-required/"
+    - label: "Web verification & citations"
+      url: "/policies/web-verification-and-citations/"
+    - label: "Semantic accuracy gate"
+      url: "/policies/semantic-accuracy-gate/"
+    - label: "Engineering quality gate"
+      url: "/policies/engineering-quality-gate-policy/"
 
 scope:
   title: "Scope (what this site is / isn’t)"
   covers_title: "This site focuses on"
   covers:
-    - "Engineering patterns for building and operating AI agents with explicit execution boundaries."
-    - "Policy-bound workflows: evidence rules, verification loops, and fail-closed quality gates."
+    - "Engineering patterns for building and operating tool-using AI agents with explicit trust boundaries."
+    - "Policy-bound workflows for evidence rules, verification loops, and fail-closed quality gates."
 
   excludes_title: "This site does not focus on"
   excludes:
     - "Vendor-specific configuration walkthroughs (unless scoped in an article)."
     - "General AI news or commentary."
-

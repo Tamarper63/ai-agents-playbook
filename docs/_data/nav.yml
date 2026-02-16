@@ -25,3 +25,4 @@ items:
   - label: "Newsletter"
     url: "/newsletter/"
     active_contains: "/newsletter/"
+    cta: true
