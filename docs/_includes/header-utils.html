@@ -1,0 +1,15 @@
+<div class="page-header__utils" aria-label="Header utilities">
+  {% if site.social and site.social.links %}
+    <div class="page-header__social" aria-label="External links">
+      {% for link in site.social.links %}
+        {% if link contains 'github.com' %}
+          <a href="{{ link }}" class="page-header__util" rel="me">GitHub</a>
+        {% elsif link contains 'linkedin.com' %}
+          <a href="{{ link }}" class="page-header__util" rel="me">LinkedIn</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <a class="site-nav__cta" href="{{ '/newsletter/' | relative_url }}">Newsletter</a>
+</div>

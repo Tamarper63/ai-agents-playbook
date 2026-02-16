@@ -3,39 +3,28 @@
 <nav class="site-nav" aria-label="Primary">
   <div class="site-nav__inner">
     {% for item in site.data.nav.items %}
-      {% assign is_active = false %}
-      {% assign item_url = item.url | default: '' %}
-      {% assign ac = item.active_contains | default: '' %}
-
-      {% if item_url != '' and purl == item_url %}
-        {% assign is_active = true %}
-      {% elsif ac != '' and purl contains ac %}
-        {% assign is_active = true %}
-      {% endif %}
-
       {% assign is_cta = false %}
       {% if item.cta == true or item.is_cta == true %}
         {% assign is_cta = true %}
       {% endif %}
 
-      {% assign link_class = '' %}
-      {% if is_cta %}
-        {% assign link_class = 'site-nav__cta' %}
-      {% endif %}
+      {% unless is_cta %}
+        {% assign is_active = false %}
+        {% assign item_url = item.url | default: '' %}
+        {% assign ac = item.active_contains | default: '' %}
 
-      {% if is_active %}
-        {% if link_class != '' %}
-          <a class="{{ link_class }}" href="{{ item.url | relative_url }}" aria-current="page">{{ item.label }}</a>
-        {% else %}
-          <a href="{{ item.url | relative_url }}" aria-current="page">{{ item.label }}</a>
+        {% if item_url != '' and purl == item_url %}
+          {% assign is_active = true %}
+        {% elsif ac != '' and purl contains ac %}
+          {% assign is_active = true %}
         {% endif %}
-      {% else %}
-        {% if link_class != '' %}
-          <a class="{{ link_class }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+
+        {% if is_active %}
+          <a href="{{ item.url | relative_url }}" aria-current="page">{{ item.label }}</a>
         {% else %}
           <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
         {% endif %}
-      {% endif %}
+      {% endunless %}
     {% endfor %}
   </div>
 </nav>

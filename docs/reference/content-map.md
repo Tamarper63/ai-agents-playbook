@@ -34,6 +34,7 @@ Long-form technical analysis, architecture patterns, and deeper dives.
 ### Reference
 Stable terms, conventions, and maps (this section).  
 - Start: [Reference]({{ '/reference/' | relative_url }})
+- Canonical figures: [Diagrams]({{ '/reference/diagrams/' | relative_url }})
 
 ## Role-based start
 If you prefer a guided entry by persona:  

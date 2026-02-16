@@ -15,6 +15,7 @@ Use **Articles** for long-form arguments/analysis, and **How-to** for step-by-st
 ## Start here
 - [Content map]({{ '/reference/content-map/' | relative_url }})
 - [Verification techniques]({{ '/reference/verification-techniques/' | relative_url }})
+- [Diagrams]({{ '/reference/diagrams/' | relative_url }})
 
 ## Terminology anchors
 Canonical pages to link when you need a stable definition.

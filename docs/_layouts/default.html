@@ -28,26 +28,38 @@
         </div>
 
         {% include site-nav.html %}
+        {% include header-utils.html %}
       </div>
     </header>
 
-    <main id="content" class="main-content" role="main">
+    <main id="content" class="main-content {% if is_home %}main-content--home{% else %}main-content--page{% endif %}" role="main">
       {% assign show_title = page.show_title | default: true %}
-      {% if show_title and page.title %}
-        <h1 class="page-title">{{ page.title }}</h1>
-      {% endif %}
 
-      {{ content }}
+      {% if is_home %}
+        {{ content }}
+      {% else %}
+        <div class="c-prose">
+          {% if show_title and page.title %}
+            <h1 class="page-title">{{ page.title }}</h1>
+          {% endif %}
+
+          {{ content }}
+        </div>
+      {% endif %}
     </main>
 
     <footer class="site-footer" role="contentinfo">
       <ul class="footer-links" aria-label="Footer links">
-        {% if site.social.linkedin %}
-          <li><a href="{{ site.social.linkedin }}">LinkedIn</a></li>
+        {% if site.social and site.social.links %}
+          {% for link in site.social.links %}
+            {% if link contains 'github.com' %}
+              <li><a href="{{ link }}">GitHub</a></li>
+            {% elsif link contains 'linkedin.com' %}
+              <li><a href="{{ link }}">LinkedIn</a></li>
+            {% endif %}
+          {% endfor %}
         {% endif %}
-        {% if site.social.github %}
-          <li><a href="{{ site.social.github }}">GitHub</a></li>
-        {% endif %}
+
         <li><a href="{{ '/newsletter/' | relative_url }}">Newsletter</a></li>
       </ul>
 

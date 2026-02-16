@@ -49,6 +49,7 @@ This section collects engineering writeups on security properties of **tool-usin
 
 ## Articles and reports
 
+- [The Attack Surface Starts Before Agents — The LLM Boundary]({{ '/articles/agent-security/llm-boundary-first-touch/' | relative_url }})
 - [Social engineering in AI systems: attacking the decision pipeline (not just people)]({{ '/articles/agent-security/social-engineering-ai-decision-pipeline/' | relative_url }})
 - [Tool-Using Systems: The Attack Surface Shifts to the Controller Loop]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})
 - [Agentic Systems: 8 Trust-Boundary Audit Checkpoints]({{ '/articles/agent-security/trust-boundary-checkpoints/' | relative_url }})

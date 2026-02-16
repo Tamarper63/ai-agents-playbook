@@ -14,23 +14,17 @@ plugins:
   - jekyll-sitemap
 
 palette:
-  bg: "#FAF7F2"
+  bg: "#FDF0D5"
   surface: "#FFFFFF"
-  text: "#1A1A1A"
-  muted: "#4A4A4A"
-  border: "#E6DED6"
-
-  # Actions / accent (CTA + active states)
-  accent: "#E63946"      # punch-red
-  accent_2: "#457B9D"    # cerulean (optional secondary)
-
-  # Header gradient (masthead)
-  header_primary: "#1D3557"    # oxford-navy
-  header_secondary: "#457B9D"  # cerulean
-
-  # Header text/link colors (fix title readability)
-  header_text: "#F1FAEE"  # honeydew
-  header_link: "#F1FAEE"  # honeydew
+  text: "#003049"
+  muted: "#669BBC"
+  accent: "#780000"
+  accent_2: "#C1121F"
+  border: "rgba(0,48,73,0.12)"
+  header_primary: "#003049"
+  header_secondary: "#003049"
+  header_text: "#FDF0D5"
+  header_link: "#FDF0D5"
 
 defaults:
   - scope:

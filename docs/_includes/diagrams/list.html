@@ -1,0 +1,9 @@
+{% for cat in site.data.diagrams.categories %}
+## {{ cat.title }}
+
+{% for d in cat.items %}
+- **[{{ d.title }}]({{ d.url | relative_url }})**
+  {{ d.summary }}
+{% endfor %}
+
+{% endfor %}

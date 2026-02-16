@@ -1,0 +1,16 @@
+categories:
+  - id: request-assembly
+    title: "Request assembly & context selection"
+    items:
+      - id: chatgpt-request-assembly-architecture
+        title: "ChatGPT request assembly architecture (R1–R8)"
+        url: "/reference/diagrams/chatgpt-request-assembly-architecture/"
+        summary: "Request assembly/context selection schematic with labeled risk injection points (R1–R8) across tools, memory, retrieval/caching, and observability."
+
+  - id: connectors
+    title: "Connectors & tool routing"
+    items:
+      - id: chatgpt-connectors-basic-vs-agent-mode
+        title: "ChatGPT connectors: basic vs agent mode"
+        url: "/reference/diagrams/chatgpt-connectors-basic-vs-agent-mode/"
+        summary: "Schematic comparing basic-mode hinting vs connector/agent-mode routing to external services, with control/risk callouts."

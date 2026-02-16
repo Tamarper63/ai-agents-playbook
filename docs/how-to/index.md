@@ -34,6 +34,7 @@ Task-oriented guides (procedures + checklists) for workflows that enforce **evid
 
 ## Verification workflows
 - [Engineering quality gate (architecture + regression checks) — procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
+- [Semantic accuracy gate — procedure]({{ '/how-to/semantic-accuracy-gate-procedure/' | relative_url }})
 - [Claim-by-claim verification for technical writing — procedure]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
 - [Chain of verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
 
