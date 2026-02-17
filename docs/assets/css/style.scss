@@ -292,9 +292,6 @@ background: linear-gradient(
   }
 }
 .page-header .project-name {
-  grid-column: 1;
-  justify-self: start;
-
   margin: 0 !important;
 
   /* larger + responsive wordmark */
@@ -305,6 +302,14 @@ background: linear-gradient(
 
   /* allow wrapping on very narrow widths instead of shrinking overall UI */
   white-space: normal;
+}
+
+/* Desktop-only placement (prevents overriding mobile centering) */
+@media (min-width: 981px) {
+  .page-header .project-name {
+    grid-column: 1;
+    justify-self: start;
+  }
 }
 
 .page-header .project-name a,
@@ -324,12 +329,16 @@ background: linear-gradient(
 /* hide theme-provided GitHub button (if present) */
 .page-header a.btn[href*="github.com"] { display: none !important; }
 
-/* Center column: nav */
 .site-nav {
-  grid-column: 2;
-  justify-self: center;
-
   min-width: 0;
+}
+
+/* Desktop-only placement (prevents overriding mobile grid-area layout) */
+@media (min-width: 981px) {
+  .site-nav {
+    grid-column: 2;
+    justify-self: center;
+  }
 }
 
 .site-nav__inner {
