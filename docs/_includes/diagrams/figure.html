@@ -1,13 +1,22 @@
 <figure class="c-figure">
   {% assign src1 = include.src | relative_url %}
-  <img
-    src="{{ src1 }}"
-    {% if include.src_2x %}srcset="{{ src1 }} 1x, {{ include.src_2x | relative_url }} 2x"{% endif %}
-    alt="{{ include.alt }}"
-    loading="lazy"
-    decoding="async"
-    {% if include.width %}width="{{ include.width }}"{% endif %}
-    {% if include.height %}height="{{ include.height }}"{% endif %}>
+
+  <a class="c-figure__link"
+     href="{{ src1 }}"
+     target="_blank"
+     rel="noopener"
+     aria-label="Open full-size diagram">
+    <img
+      src="{{ src1 }}"
+      {% if include.src_2x %}srcset="{{ src1 }} 1x, {{ include.src_2x | relative_url }} 2x"{% endif %}
+      {% if include.sizes %}sizes="{{ include.sizes }}"{% endif %}
+      alt="{{ include.alt }}"
+      loading="lazy"
+      decoding="async"
+      {% if include.width %}width="{{ include.width }}"{% endif %}
+      {% if include.height %}height="{{ include.height }}"{% endif %}>
+  </a>
+
   {% if include.caption %}
     <figcaption>{{ include.caption }}</figcaption>
   {% endif %}

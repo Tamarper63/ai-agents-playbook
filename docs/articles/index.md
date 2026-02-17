@@ -6,11 +6,6 @@ page_class: page--articles-index
 
 Long-form technical writeups (engineering-oriented): threat models, architecture notes, evaluation methodology, and evidence/verification contracts.
 
-If you are looking for step-by-step procedures and templates, go to **[How-to]({{ '/how-to/' | relative_url }})**.  
-If you need normative constraints for evidence/accuracy claims, go to **[Policies]({{ '/policies/' | relative_url }})**.  
-If you want copy/paste prompt artifacts (system + user runners), go to **[Prompt blocks]({{ '/prompts/' | relative_url }})**.  
-If you need canonical figures with text alternatives, go to **[Diagrams]({{ '/reference/diagrams/' | relative_url }})**.
-
 ## Start here {#start-here}
 
 A minimal reading path for first-time visitors (foundational framing → orchestration/control-plane risks → reliability):

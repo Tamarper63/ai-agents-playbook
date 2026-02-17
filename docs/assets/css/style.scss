@@ -823,6 +823,49 @@ box-shadow:
 .main-content table tr:last-child td:last-child { border-bottom-right-radius: 10px; }
 
 /* =========================
+   Figures / Diagrams
+   ========================= */
+
+.c-figure {
+  margin: 1.25rem auto 1.5rem;
+  max-width: 72rem;
+}
+
+.c-figure__link {
+  display: block;
+  cursor: zoom-in;
+}
+
+.c-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba($text, 0.12);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.c-figure figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba($text, 0.78);
+}
+
+@media (max-width: 720px) {
+  .c-figure {
+    max-width: none;
+    margin-left: -0.9rem;
+    margin-right: -0.9rem;
+  }
+
+  .c-figure img {
+    border-radius: 12px;
+  }
+}
+
+
+/* =========================
    Newsletter blocks
    ========================= */
 
