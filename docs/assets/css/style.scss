@@ -78,7 +78,7 @@ samp {
   background: transparent;  text-align: left;
 }
 .main-content--home {
-  padding-top: 1.25rem;
+  padding-top: 0;
 }
 /* Prose width for internal pages */
 .main-content--page .c-prose {
@@ -147,6 +147,11 @@ samp {
 .main-content a:hover {
   text-decoration: underline;
 }
+/* Home cards: prevent global link-hover underline from underlining whole cards */
+.main-content a.c-card:hover,
+.main-content a.c-card:focus {
+  text-decoration: none;
+}
 
 .main-content a:visited {
   color: $accent_2;
@@ -175,7 +180,11 @@ samp {
   position: relative;
   overflow: hidden;
 
-  background: $header_primary !important;
+background: linear-gradient(
+  180deg,
+  mix(#fff, $header_primary, 10%) 0%,
+  mix(#000, $header_primary, 18%) 100%
+) !important;
 
   color: $header_text !important;
   text-align: left;
@@ -200,15 +209,16 @@ samp {
   align-items: center;
 
   gap: 0.9rem;
-  padding: 1.1rem 1.2rem;
+  padding: 1.1rem 1.2rem 1.45rem;
 
-  min-height: 84px;
+  min-height: 92px;
 }
 
 @media (max-width: 720px) {
   .page-header__inner {
-    padding: 0.85rem 0.9rem;
+      padding: 0.85rem 0.9rem 1.05rem;
     min-height: unset;
+
 
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
@@ -278,7 +288,7 @@ samp {
   margin: 0 !important;
 
   /* larger + responsive wordmark */
-  font-size: clamp(1.2rem, 1.6vw, 1.5rem) !important;
+  font-size: clamp(1.4rem, 2.0vw, 1.85rem) !important;
   font-weight: 850 !important;
   letter-spacing: -0.02em !important;
   line-height: 1.05 !important;
@@ -289,7 +299,7 @@ samp {
 
 .page-header .project-name a,
 .page-header .project-name a:visited {
-  color: $header_link !important;
+  color: #ffffff !important;
   text-decoration: none !important;
 }
 
@@ -427,19 +437,24 @@ samp {
   align-items: center;
   justify-content: center;
 
-  padding: 0.42rem 0.6rem;
-  min-height: 36px;
-  border-radius: 999px;
+  padding: 0.28rem 0.6rem;
+  min-height: 32px;
+  border-radius: 12px;
   text-decoration: none;
+
+  font-size: 0.92rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
 
   background: $accent;
   color: $bg !important;
-  border: 1px solid rgba($bg, 0.35);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(#000, 0.12);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
 }
 
 .page-header a.site-nav__cta:hover {
-  background: rgba($accent, 0.92);
+  background: mix(#000, $accent, 8%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
   text-decoration: none;
 }
 
@@ -448,8 +463,9 @@ samp {
    ========================= */
 
 .c-section--hero {
-  padding: 1.6rem 0 1rem;
+  padding: 0 0 1rem;
   margin-top: 0;
+
 
   background:
     radial-gradient(900px 420px at 50% -160px, rgba($accent, 0.20), transparent 60%),
