@@ -32,8 +32,7 @@
       </div>
     </header>
 
-    <main id="content" class="main-content {% if is_home %}main-content--home{% else %}main-content--page{% endif %}" role="main">
-      {% assign show_title = page.show_title | default: true %}
+<main id="content" class="main-content {% if is_home %}main-content--home{% else %}main-content--page{% endif %} {{ page.page_class | default: '' }}" role="main">      {% assign show_title = page.show_title | default: true %}
 
       {% if is_home %}
         {{ content }}

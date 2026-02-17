@@ -3,9 +3,9 @@ categories:
     title: "Request assembly & context selection"
     items:
       - id: chatgpt-request-assembly-architecture
-        title: "ChatGPT request assembly architecture (R1–R8)"
+        title: "ChatGPT request assembly architecture"
         url: "/reference/diagrams/chatgpt-request-assembly-architecture/"
-        summary: "Request assembly/context selection schematic with labeled risk injection points (R1–R8) across tools, memory, retrieval/caching, and observability."
+        summary: "Request assembly/context selection schematic with annotated risk points across tools, memory, retrieval/caching, and observability."
 
   - id: connectors
     title: "Connectors & tool routing"

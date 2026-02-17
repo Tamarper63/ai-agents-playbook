@@ -1,15 +1,17 @@
 ---
 title: Articles
 permalink: /articles/
+page_class: page--articles-index
 ---
 
 Long-form technical writeups (engineering-oriented): threat models, architecture notes, evaluation methodology, and evidence/verification contracts.
 
 If you are looking for step-by-step procedures and templates, go to **[How-to]({{ '/how-to/' | relative_url }})**.  
 If you need normative constraints for evidence/accuracy claims, go to **[Policies]({{ '/policies/' | relative_url }})**.  
-If you want copy/paste prompt artifacts (system + user runners), go to **[Prompt blocks]({{ '/prompts/' | relative_url }})**.
+If you want copy/paste prompt artifacts (system + user runners), go to **[Prompt blocks]({{ '/prompts/' | relative_url }})**.  
+If you need canonical figures with text alternatives, go to **[Diagrams]({{ '/reference/diagrams/' | relative_url }})**.
 
-<nav class="page-toc" aria-label="On this page">
+<nav class="page-toc page-toc--inline" aria-label="On this page">
   <p class="page-toc__title">On this page</p>
   <ul class="page-toc__list">
     <li><a href="#start-here">Start here</a></li>
@@ -24,21 +26,20 @@ If you want copy/paste prompt artifacts (system + user runners), go to **[Prompt
 
 A minimal reading path for first-time visitors (foundational framing → orchestration/control-plane risks → reliability):
 
-1) **[The Attack Surface Starts Before Agents — The LLM Boundary]({{ '/articles/agent-security/llm-boundary-first-touch/' | relative_url }})**  
+1) **{% include page-title-link.html url="/articles/agent-security/llm-boundary-first-touch/" fallback="The Attack Surface Starts Before Agents — The LLM Boundary" %}**  
    This series starts at the first LLM-to-system boundary: where outputs can influence reads/writes to production data, logs, telemetry, or persisted state.
 
-2) **[The Attack Surface Isn’t the LLM — It’s the Controller Loop]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})**  
+2) **{% include page-title-link.html url="/articles/agent-security/controller-loop-attack-surface/" fallback="The Attack Surface Isn’t the LLM — It’s the Controller Loop" %}**  
    This series focuses on how risk can increase with orchestration loops (planning → tools → evaluation → retries), not with the model in isolation.
 
-3) **[How Agentic Control-Plane Failures Actually Happen]({{ '/articles/agent-security/control-plane-failures/' | relative_url }})**  
+3) **{% include page-title-link.html url="/articles/agent-security/control-plane-failures/" fallback="How Agentic Control-Plane Failures Actually Happen" %}**  
    Concrete control-plane failure patterns to audit: session binding, memory reuse, routing, tool enforcement, and gating/monitoring.
 
-4) **[Fluency Is Not Factuality]({{ '/articles/model-training-and-eval/fluency-vs-factuality/' | relative_url }})**  
+4) **{% include page-title-link.html url="/articles/model-training-and-eval/fluency-vs-factuality/" fallback="Fluency Is Not Factuality" %}**  
    Reliability vocabulary: why fluent text is not evidence of correctness, and what “grounding” means operationally.
 
-5) **[Prompt Engineering Guide for Daily Work (Deep Dive)]({{ '/articles/prompt-engineering/prompt-engineering-daily-work/' | relative_url }})**  
+5) **{% include page-title-link.html url="/articles/prompt-engineering/prompt-engineering-daily-work/" fallback="Prompt Engineering Guide for Daily Work (Deep Dive)" %}**  
    Prompt specs as testable contracts + evaluation patterns; complements the procedural How-to version.
-
 ## Browse by topic {#browse-by-topic}
 
 | Topic | What it covers | Hub |

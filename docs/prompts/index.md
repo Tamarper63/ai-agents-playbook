@@ -3,78 +3,56 @@ title: Prompt blocks
 permalink: /prompts/
 ---
 
-This page indexes **copy/paste prompt artifacts** (policy-layer system/developer blocks + user runner templates) and their companion **policies** and **how-to procedures**.
+This page indexes **copy/paste prompt artifacts** mapped to their companion **Policies** and **How-to procedures**.
 
-Use this page to:
-1. select the right workflow,
-2. paste the mapped prompt artifact(s),
-3. run the mapped how-to procedure (when applicable).
+- **Policy layer:** `.system.txt` (long-lived rules: evidence boundary, citations, fail-closed)
+- **Runners:** `.user.txt` (execution templates you paste as the user message)
+- **Components:** small add-ons for runners (not standalone prompts)
 
-## Terminology (used on this page)
-- **Prompt artifact:** a copy/paste prompt file (system/developer policy layer or a user runner template).
-- **Policy layer:** long-lived rules (evidence boundary, citations, fail-closed behavior).
-- **User runner:** an execution template you paste as the user message when running the workflow.
-- **Components (snippets):** small add-ons for a runner (not standalone prompts).
+## Quick chooser (pick the workflow)
 
-## Start here (recommended selection flow)
-1) Choose an **evidence boundary** (artifacts-only vs authoritative sources + citations).  
-2) If browsing is allowed, add **web verification + citations** requirements.  
-3) Add a **verification gate** (CoVe / claims gate / engineering quality gate) when the task is non-trivial.  
-4) Add **reporting/profile** requirements (confidence line, objective technical profile).  
-5) Optionally add **components/snippets** (limit to 1–2).
-
-## Recommended prompt stacks (common workflows)
-
-### Stack A — Artifacts-only / internal review (no browsing)
-- facts-only-artifacts-only.system.txt
-- (optional) chain-of-verification.system.txt
-- (optional) confidence-score.system.txt
-
-### Stack B — Web + citations (public facts)
-- facts-only-authoritative-sources-required.system.txt
-- web-browsing.user.txt
-- (recommended) chain-of-verification.system.txt
-- (optional) confidence-score.system.txt
-
-### Stack C — Technical writing / publication gate
-- evidence-gated-technical-writing-gate.system.txt
-- evidence-gated-technical-writing-gate.user.txt
-- (optional) semantic-accuracy-gate.system.txt + semantic-accuracy-gate.user.txt
-- (optional) confidence-score.system.txt
-
-## Quick chooser (what you need right now)
-- **Architecture / refactor quality gate** → [Engineering Quality Gate](#engineering-quality-gate)
+- **Facts-only evidence boundary** → [Facts-only (choose one)](#facts-only)
 - **Web verification + citations** → [Web verification & citations](#web-verification-citations)
 - **Strict internal verification loop** → [Chain-of-Verification (CoVe)](#chain-of-verification)
-- **Facts-only evidence boundary** → [Facts-only (choose one)](#facts-only)
-- **Academic evidence gating** → [Evidence-Gated Academic Mode (EGAM)](#egam)
-- **Confidence line (0–100)** → [Confidence score](#confidence-score)
-- **Objective technical baseline** → [Objective technical profile](#objective-technical)
 - **Prevent overclaims + enforce terminology consistency** → [Semantic accuracy gate](#semantic-accuracy-gate)
+- **Technical writing / publication gate (claims)** → [Evidence-Gated Technical Writing Gate](#evidence-gated-technical-writing)
+- **Architecture / refactor quality gate** → [Engineering Quality Gate](#engineering-quality-gate)
+- **Academic evidence gating** → [Evidence-Gated Academic Mode (EGAM)](#egam)
+- **Reporting (confidence line)** → [Confidence score](#confidence-score)
+- **Baseline constraints (objective technical)** → [Objective technical profile](#objective-technical)
 - **Add small behavior snippets** → [Components (snippets)](#components-snippets)
 
-## Where to paste these blocks (by vendor/runtime)
+## Common stacks (start here)
 
-These prompt artifacts target the **highest-priority instruction layer available** in the runtime.
+### Stack A — Artifacts-only / internal review (no browsing)
+- [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
+- Optional: [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
+- Optional: [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
 
-- **OpenAI API (reasoning models):** paste `.system.txt` into the **developer** message (developer messages replace system messages for reasoning models).  
-- **OpenAI API (Responses API):** use **developer/system roles** for policy-layer rules; use the `instructions` parameter for request-scoped high-level behavior when appropriate.  
-- **Anthropic Claude API:** paste policy-layer text into the top-level `system` parameter.  
-- **Google Vertex AI (Gemini):** paste policy-layer text into **system instructions**.
+### Stack B — Web + citations (public facts)
+- [facts-only-authoritative-sources-required.system.txt]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
+- [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
+- Recommended: [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
+- Optional: [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
 
-Notes:
-- `.system.txt` files are for the policy layer (system/developer instructions).
-- `.user.txt` files are runner templates for execution turns.
+### Stack C — Technical writing / publication gate (claims)
+- [evidence-gated-technical-writing-gate.system.txt]({{ '/prompts/evidence-gated-technical-writing-gate.system.txt' | relative_url }})
+- [evidence-gated-technical-writing-gate.user.txt]({{ '/prompts/evidence-gated-technical-writing-gate.user.txt' | relative_url }})
+- Optional: [semantic-accuracy-gate.system.txt]({{ '/prompts/semantic-accuracy-gate.system.txt' | relative_url }}) + [semantic-accuracy-gate.user.txt]({{ '/prompts/semantic-accuracy-gate.user.txt' | relative_url }})
+- Optional: [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
+
+## How to use (minimal)
+1) Pick a **stack** or a **workflow** section below.  
+2) Paste `.system.txt` into your runtime’s highest-priority instruction channel; paste `.user.txt` as the user message.  
+3) Follow the mapped **How-to procedure** when present.
 
 ## Components (snippets)
 {: #components-snippets }
 
-Components are **small reference snippets** (not standalone prompts).  
-Use them to augment a **user runner** with one additional behavior.
+Components are small reference snippets to augment a runner with **one additional behavior**.
 
-Rules:
-- Add **at most 1–2** components per run to avoid instruction collisions.
-- Use browsing/deep-search components only if the runtime supports tools/browsing.
+- Use **1–2 components max** per run to reduce instruction collisions.
+- Components that require tools (e.g., browsing) must be used only in runtimes that support those tools.
 
 Reference index: [Prompt components]({{ '/prompts/components/' | relative_url }})
 

@@ -1,13 +1,16 @@
 ---
 title: ChatGPT request assembly architecture
 permalink: /reference/diagrams/chatgpt-request-assembly-architecture/
-summary: Request assembly/context selection schematic with labeled risk injection points (R1–R8).
+summary: Request assembly/context selection schematic with annotated risk points across tools, memory, retrieval/caching, and observability.
 ---
 
 {% include diagrams/figure.html
   src="/assets/img/diagrams/chatgpt-request-assembly-architecture.png"
-  alt="Request assembly architecture showing user input, policy enforcement, context selector, LLM inference, and supporting planes (tools, memory, retrieval, observability) with labeled risks R1–R8"
-  caption="ChatGPT Request Assembly Architecture (schematic): request assembly/context selection with risk injection points R1–R8." %}
+  src_2x="/assets/img/diagrams/chatgpt-request-assembly-architecture@2x.png"
+  width="1600"
+  height="890"
+  alt="..."
+  caption="..." %}
 
 ## Text alternative (long description)
 
@@ -18,6 +21,6 @@ summary: Request assembly/context selection schematic with labeled risk injectio
   - Retrieval/caching: RAG/vector store; cache/replay store.
   - Memory: long-term memory (saved memory store), bio/profile attributes, user preferences, chat history, session history.
   - Streaming/observability: stream events (event bus), stream logs (telemetry sink).
-- Risk labels as shown in the diagram: R1 (context injection), R4 (assembly manipulation), R6 (tool hijack), R7 (stream/log exfiltration), R3 (retrieval poisoning), R5 (replay/cache confusion), R2 (memory poisoning), R8 (profile/preference escalation).
+- Risk callouts shown in the diagram: context injection; request assembly manipulation (ordering/truncation bias); tool hijack (tool selection + argument injection); stream/log exfiltration (prompts/outputs/user data); retrieval poisoning (RAG corpus/embeddings); replay/cache confusion (stale/wrong session state); memory poisoning (long-term memory write); profile/preference escalation (bio/prefs become control-plane).
 
-NOT VERIFIED: This page documents only what is depicted in the schematic; it does not assert that any current production system matches this architecture or these labels.
+NOT VERIFIED: This page documents only what is depicted in the schematic; it does not assert that any current production system matches this architecture or these annotations.

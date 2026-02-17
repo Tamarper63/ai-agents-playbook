@@ -1,22 +1,20 @@
 hero:
-  lede: "A public, versioned playbook for building reliable AI agents (multi-step tool-using systems) and securing tool use with explicit trust boundaries."
+  lede: "A public, versioned playbook for engineers building and securing tool-using AI agents."
   bullets:
-    - "Design agent workflows: orchestration patterns, lifecycle/state, and tool invocation semantics."
-    - "Secure tool use: evidence boundaries, citations, and fail-closed quality gates."
-    - "Operationalize with policies, prompt blocks, and procedures."
+    - "Orchestration patterns: workflows, state/lifecycle, and tool invocation."
+    - "Security gates: evidence boundaries, citations, and fail-closed checks."
+    - "Copy/paste artifacts: policies, prompt blocks, and procedures."
 actions:
   primary:
-    label: "Start: Evidence boundary"
+    label: "Choose evidence boundary"
     url: "/how-to/choose-facts-only-evidence-boundary/"
   secondary:
-    - label: "Read: Agent architecture"
+    - label: "Read architecture"
       url: "/articles/agent-architecture/"
-    - label: "Browse: Policies"
+    - label: "Browse policies"
       url: "/policies/"
-    - label: "Copy: Prompt blocks"
+    - label: "Copy prompt blocks"
       url: "/prompts/"
-    - label: "Subscribe: Newsletter"
-      url: "/newsletter/"
 
 quickstart:
   title: "Quickstart (5 minutes)"
