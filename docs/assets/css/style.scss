@@ -171,38 +171,21 @@ samp {
 /* =========================
    Header (masthead) + Primary nav + Utilities
    ========================= */
-
 .page-header {
   position: relative;
   overflow: hidden;
 
-background-image: linear-gradient(
-  180deg,
-  mix(#fff, $header_primary, 6%) 0%,
-  mix(#000, $header_primary, 34%) 100%
-) !important;
+  background: $header_primary !important;
 
   color: $header_text !important;
   text-align: left;
   padding: 0;
 
   border-bottom: 1px solid rgba(0, 0, 0, 0.22);
-  box-shadow:
-    0 1px 0 rgba(0, 0, 0, 0.12),
-    0 18px 40px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
 }
 
-.page-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-
-  background:
-    radial-gradient(900px 140px at 18% -50px, rgba($header_text, 0.16), transparent 62%),
-    radial-gradient(700px 140px at 82% -70px, rgba($header_text, 0.10), transparent 62%);
-  opacity: 0.6;
-}
+.page-header::before { content: none; }
 
 .page-header:after { content: none !important; }
 
@@ -417,21 +400,25 @@ background-image: linear-gradient(
   align-items: center;
   justify-content: center;
 
-  padding: 0.42rem 0.6rem;
-  min-height: 36px;
-  border-radius: 999px;
+  padding: 0.22rem 0.35rem;
+  min-height: 28px;
+  border-radius: 10px;
   text-decoration: none;
 
-  color: rgba($header_text, 0.88);
-  background: transparent;
-  border: 1px solid rgba($header_text, 0.22);
+  font-size: 0.92rem;
+  font-weight: 650;
 
-  transition: background 120ms ease, border-color 120ms ease;
+  color: rgba($header_text, 0.78);
+  background: transparent;
+  border: 1px solid rgba($header_text, 0.12);
+
+  transition: color 120ms ease, background 120ms ease, border-color 120ms ease;
 }
 
 .page-header a.page-header__util:hover {
-  background: rgba($header_text, 0.08);
-  border-color: rgba($header_text, 0.30);
+  color: rgba($header_text, 0.92);
+  background: rgba($header_text, 0.05);
+  border-color: rgba($header_text, 0.18);
   text-decoration: none;
 }
 .page-header a.site-nav__cta,
@@ -969,15 +956,6 @@ box-shadow:
 .c-grid .c-card { height: auto; }
 
 
-@media (max-width: 640px) {
-  .c-section--entry-points .c-grid.c-grid--3 > a.c-card {
-    flex-basis: 100%;
-    max-width: none;
-  }
-}
-/* =========================
-   Headings / content tone (page)
-   ========================= */
 
 .main-content h1,
 .main-content h2,
