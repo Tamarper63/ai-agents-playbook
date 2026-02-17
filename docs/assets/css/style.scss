@@ -274,6 +274,12 @@ background: linear-gradient(
     white-space: nowrap;
   }
   .page-header a.page-header__util,
+  .page-header a.page-header__util:visited {
+    padding: 0.22rem 0.35rem;
+    min-height: 28px;
+    font-size: 0.90rem;
+  }
+
   .page-header a.site-nav__cta,
   .page-header a.site-nav__cta:visited {
     padding: 0.35rem 0.55rem;

@@ -1,8 +1,26 @@
 <div class="page-header__utils" aria-label="Header utilities">
   {% if site.data.nav and site.data.nav.items %}
     {% for item in site.data.nav.items %}
+      {% assign is_cta = false %}
       {% if item.cta == true or item.is_cta == true %}
-        <a class="site-nav__cta" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+        {% assign is_cta = true %}
+      {% endif %}
+
+      {% if is_cta %}
+        {% assign variant = item.cta_variant | default: 'primary' %}
+        {% assign href = item.url | default: '' %}
+
+        {% if variant == 'util' %}
+          {% assign cls = 'page-header__util' %}
+        {% else %}
+          {% assign cls = 'site-nav__cta' %}
+        {% endif %}
+
+        {% if href contains '://' %}
+          <a class="{{ cls }}" href="{{ href }}" rel="noopener" target="_blank">{{ item.label }}</a>
+        {% else %}
+          <a class="{{ cls }}" href="{{ href | relative_url }}">{{ item.label }}</a>
+        {% endif %}
       {% endif %}
     {% endfor %}
   {% endif %}
