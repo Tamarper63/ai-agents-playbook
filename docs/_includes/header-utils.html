@@ -9,5 +9,11 @@
     </div>
   {% endif %}
 
-  <a class="site-nav__cta" href="{{ '/newsletter/' | relative_url }}">Newsletter</a>
+  {% if site.data.nav and site.data.nav.items %}
+    {% for item in site.data.nav.items %}
+      {% if item.cta == true or item.is_cta == true %}
+        <a class="site-nav__cta" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 </div>
