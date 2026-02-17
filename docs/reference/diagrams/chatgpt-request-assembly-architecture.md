@@ -6,7 +6,6 @@ summary: Request assembly/context selection schematic with annotated risk points
 
 {% include diagrams/figure.html
   src="/assets/img/diagrams/chatgpt-request-assembly-architecture.png"
-  src_2x="/assets/img/diagrams/chatgpt-request-assembly-architecture@2x.png"
   width="1600"
   height="890"
   alt="..."

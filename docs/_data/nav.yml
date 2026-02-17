@@ -26,3 +26,4 @@ items:
     url: "/newsletter/"
     active_contains: "/newsletter/"
     cta: true
+    cta_variant: "util"

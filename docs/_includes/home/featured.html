@@ -1,10 +1,9 @@
-<figure class="c-figure">
-  <img
-    src="{{ include.src | relative_url }}"
-    alt="{{ include.alt }}"
-    loading="lazy"
-    decoding="async">
-  {% if include.caption %}
-    <figcaption>{{ include.caption }}</figcaption>
-  {% endif %}
-</figure>
+{% assign f = site.data.home.featured %}
+
+{% if f and f.items and f.items.size > 0 %}
+## {{ f.title }}
+
+{% for it in f.items %}
+  * [{{ it.label }}]({{ it.url }})
+{% endfor %}
+{% endif %}

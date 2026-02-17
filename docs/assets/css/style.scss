@@ -214,7 +214,7 @@ background: linear-gradient(
   min-height: 92px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 980px) {
   .page-header__inner {
       padding: 0.85rem 0.9rem 1.05rem;
     min-height: unset;
@@ -255,7 +255,7 @@ background: linear-gradient(
     flex-wrap: nowrap;
   }
 
-  /* MOBILE: prevent “cut” nav — show all items (wrap) */
+  /* MOBILE + TABLET: prevent “cut” nav — show all items (wrap) */
   .page-header { overflow: visible; }
 
   .page-header .site-nav__inner {
