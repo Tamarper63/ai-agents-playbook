@@ -11,17 +11,6 @@ If you need normative constraints for evidence/accuracy claims, go to **[Policie
 If you want copy/paste prompt artifacts (system + user runners), go to **[Prompt blocks]({{ '/prompts/' | relative_url }})**.  
 If you need canonical figures with text alternatives, go to **[Diagrams]({{ '/reference/diagrams/' | relative_url }})**.
 
-<nav class="page-toc page-toc--inline" aria-label="On this page">
-  <p class="page-toc__title">On this page</p>
-  <ul class="page-toc__list">
-    <li><a href="#start-here">Start here</a></li>
-    <li><a href="#browse-by-topic">Browse by topic</a></li>
-    <li><a href="#featured">Featured (manual list)</a></li>
-    <li><a href="#all-articles">All articles</a></li>
-    <li><a href="#related-accuracy-policies">Related: accuracy policies</a></li>
-  </ul>
-</nav>
-
 ## Start here {#start-here}
 
 A minimal reading path for first-time visitors (foundational framing → orchestration/control-plane risks → reliability):
