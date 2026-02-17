@@ -262,9 +262,18 @@ background-image: linear-gradient(
     flex-wrap: wrap;
   }
 
-  .site-nav__inner {
+    .page-header .site-nav__inner {
     justify-content: flex-start;
     width: 100%;
+
+    flex-wrap: wrap;
+    overflow-x: visible;
+    gap: 0.6rem 1.05rem;
+  }
+
+  .page-header .site-nav a,
+  .page-header .site-nav a:visited {
+    white-space: normal;
   }
 }
 .page-header .project-name {
@@ -323,51 +332,6 @@ background-image: linear-gradient(
 
 .site-nav__inner::-webkit-scrollbar { height: 0; }
 
-@media (max-width: 720px) {
-  .page-header__inner {
-    padding: 0.85rem 0.9rem;
-    min-height: unset;
-
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "logo utils"
-      "nav  nav";
-
-    align-items: start;
-    gap: 0.6rem 0.75rem;
-  }
-
-  .page-header .project-name {
-    grid-area: logo;
-    grid-column: auto;
-    justify-self: start;
-  }
-
-  .site-nav {
-    grid-area: nav;
-    grid-column: auto;
-    justify-self: stretch;
-    width: 100%;
-  }
-
-  .page-header__utils {
-    grid-area: utils;
-    grid-column: auto;
-    justify-self: end;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-  }
-
-  .site-nav__inner {
-    justify-content: flex-start;
-    width: 100%;
-  }
-}
 
 /* nav links: modern underline */
 .site-nav__inner { gap: 1.05rem; }
@@ -967,6 +931,7 @@ box-shadow:
   text-decoration: none;
 }
 
+
 .c-section__link:hover { text-decoration: underline; }
 
 .c-grid {
@@ -988,8 +953,30 @@ box-shadow:
   .c-grid--2 { grid-template-columns: 1fr; }
 }
 
-.c-grid .c-card { height: 100%; }
+.c-grid { align-items: stretch; }
+.c-grid .c-card { height: auto; }
 
+/* Entry points (Home): center last row for odd counts (e.g., 5 cards) */
+.c-section--entry-points .c-grid.c-grid--3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+/* Make cards behave like a 3-col layout but center-wrap nicely */
+.c-section--entry-points .c-grid.c-grid--3 > a.c-card {
+  flex: 1 1 18rem;
+  max-width: 22rem;
+  height: auto; /* override .c-grid .c-card { height: 100%; } */
+}
+
+@media (max-width: 640px) {
+  .c-section--entry-points .c-grid.c-grid--3 > a.c-card {
+    flex-basis: 100%;
+    max-width: none;
+  }
+}
 /* =========================
    Headings / content tone (page)
    ========================= */
