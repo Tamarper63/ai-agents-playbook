@@ -259,21 +259,33 @@ background-image: linear-gradient(
     align-items: center;
     justify-content: flex-end;
     gap: 0.4rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
-    .page-header .site-nav__inner {
+  .page-header .site-nav__inner {
     justify-content: flex-start;
     width: 100%;
 
-    flex-wrap: wrap;
-    overflow-x: visible;
-    gap: 0.6rem 1.05rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    gap: 0.95rem;
   }
+
+  .page-header .site-nav__inner::-webkit-scrollbar { height: 0; }
 
   .page-header .site-nav a,
   .page-header .site-nav a:visited {
-    white-space: normal;
+    white-space: nowrap;
+  }
+  .page-header a.page-header__util,
+  .page-header a.site-nav__cta,
+  .page-header a.site-nav__cta:visited {
+    padding: 0.35rem 0.55rem;
+    min-height: 32px;
+    font-size: 0.95rem;
   }
 }
 .page-header .project-name {
@@ -956,20 +968,6 @@ box-shadow:
 .c-grid { align-items: stretch; }
 .c-grid .c-card { height: auto; }
 
-/* Entry points (Home): center last row for odd counts (e.g., 5 cards) */
-.c-section--entry-points .c-grid.c-grid--3 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.25rem;
-}
-
-/* Make cards behave like a 3-col layout but center-wrap nicely */
-.c-section--entry-points .c-grid.c-grid--3 > a.c-card {
-  flex: 1 1 18rem;
-  max-width: 22rem;
-  height: auto; /* override .c-grid .c-card { height: 100%; } */
-}
 
 @media (max-width: 640px) {
   .c-section--entry-points .c-grid.c-grid--3 > a.c-card {
@@ -1178,8 +1176,6 @@ a.c-card:visited {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-
-/* Optional: soften list markers inside cards */
 .c-card__list-item::marker {
   color: rgba($text, 0.28);
 }

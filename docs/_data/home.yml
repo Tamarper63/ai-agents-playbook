@@ -77,6 +77,9 @@ entry_points:
     - title: "Reference"
       desc: "Stable terminology and conventions used across the site."
       url: "/reference/"
+    - title: "Newsletter"
+      desc: "Low-volume updates when new core content ships."
+      url: "/newsletter/"
 
 latest_articles:
   title: "Recommended reading"
