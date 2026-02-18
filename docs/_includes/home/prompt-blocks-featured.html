@@ -1,11 +1,13 @@
-<section class="c-section c-section--featured">
+<section class="c-section c-section--prompt-blocks-featured">
   <div class="c-section__header">
-    <h2 class="c-section__title">{{ site.data.home.featured.title }}</h2>
-    <a class="c-section__link" href="{{ '/policies/' | relative_url }}">Browse policies →</a>
+    <h2 class="c-section__title">{{ site.data.home.prompt_blocks_featured.title }}</h2>
+    <a class="c-section__link" href="{{ '/prompts/' | relative_url }}">
+      Browse prompt blocks →
+    </a>
   </div>
 
-  <div class="c-grid c-grid--3">
-    {% for item in site.data.home.featured.items %}
+  <div class="c-grid c-grid--2">
+    {% for item in site.data.home.prompt_blocks_featured.items %}
       <a class="c-card" href="{{ item.url | relative_url }}">
         <div class="c-card__content">
           <div class="c-card__title">{{ item.label }}</div>

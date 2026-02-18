@@ -1,15 +1,15 @@
-Use your web-browsing/search tool.
+Use web browsing/search/grounding only if this environment provides it AND the question needs up-to-date or niche public information.
 
-Recency: default to the last 30 days. If results are insufficient, expand to the last 12 months and explicitly state that you expanded the window.
+Constraints:
+- If the user explicitly asks you NOT to browse, do not browse.
+- Default recency: last 30 days. If insufficient, expand up to 12 months and state that you expanded the window.
+- Prefer primary/official sources. If you rely on secondary sources, label them as secondary and justify why primary/official sources were insufficient.
+- Add inline citations for non-trivial claims (numbers, dates, versions, policies/regulations, comparisons, capabilities/mechanisms, security/performance assertions).
+- Do not fabricate citations.
+- If sources disagree, summarize the disagreement and attribute each position to its source.
 
-Sources: prefer primary/official sources when available. If you use secondary sources, say so.
+If browsing/grounding is not available here, say so explicitly and continue only with the evidence available in this chat.
+If available evidence is insufficient to answer, say “insufficient evidence” and stop.
 
-Evidence: for every claim involving numbers, dates, versions, policies, or comparisons, include an inline citation marker [n]. Do not fabricate citations.
-
-Disagreements: if sources disagree, summarize the disagreement and attribute each position to its source.
-
-Failure modes:
-- If web browsing is unavailable, output exactly: BROWSING_UNAVAILABLE
-- If browsing is available but evidence is insufficient for the question, output exactly: INSUFFICIENT_EVIDENCE
-
-End with a Sources list: [n] Title — Publisher/Org — Date — URL
+End with a Sources list:
+[n] Title — Publisher/Org — YYYY-MM-DD — URL

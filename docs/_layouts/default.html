@@ -23,8 +23,19 @@
 
     <header class="page-header {% if is_home %}page-header--home{% else %}page-header--compact{% endif %}" role="banner">
       <div class="page-header__inner">
-        <div class="project-name">
-          <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                <div class="project-name">
+          <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}">
+<img class="site-logo"
+     src="/assets/img/brand/andyagentlab-logo-hands-32h-white-clean.png"
+     srcset="/assets/img/brand/andyagentlab-logo-hands-32h-white-clean.png 1x,
+             /assets/img/brand/andyagentlab-logo-hands-64h-white-clean.png 2x"
+     width="129"
+     height="32"
+     alt="Andy Agent Lab logo">
+
+
+            <span class="site-title">{{ site.title }}</span>
+          </a>
         </div>
 
         {% include site-nav.html %}

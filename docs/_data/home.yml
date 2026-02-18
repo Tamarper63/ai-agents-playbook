@@ -1,32 +1,32 @@
 hero:
-  lede: "A public, versioned playbook for engineers building and securing tool-using AI agents."
+  lede: "A public, versioned playbook for engineers building reliable tool-using AI systems."
+  tagline: "Explicit boundaries + repeatable verification, before you scale tools and autonomy."
   bullets:
     - "Orchestration patterns: workflows, state/lifecycle, and tool invocation."
-    - "Security gates: evidence boundaries, citations, and fail-closed checks."
+    - "Verification contracts: evidence boundaries, citations, and fail-closed checks."
     - "Copy/paste artifacts: policies, prompt blocks, and procedures."
+
 actions:
   primary:
     label: "Choose evidence boundary"
     url: "/how-to/choose-facts-only-evidence-boundary/"
   secondary:
-    - label: "Read architecture"
-      url: "/articles/agent-architecture/"
-    - label: "Browse policies"
-      url: "/policies/"
-    - label: "Copy prompt blocks"
+    - label: "Content map"
+      url: "/reference/content-map/"
+    - label: "Browse prompt blocks"
       url: "/prompts/"
 
 quickstart:
   title: "Quickstart (5 minutes)"
   steps:
-    - title: "Set: Evidence boundary (facts-only)"
+    - title: "Set: Choose an evidence boundary"
       output: "Define allowed sources and refusal conditions (fail-closed)."
       url: "/how-to/choose-facts-only-evidence-boundary/"
     - title: "Run: Fact-Checking Kit"
       output: "Run a repeatable claim-check loop before producing non-trivial outputs."
       url: "/how-to/fact-checking-kit/"
-    - title: "Enforce: Engineering Quality Gate"
-      output: "Check architecture/best-practices and regressions; fail-closed on missing requirements."
+    - title: "Enforce: Engineering Quality Gate — Procedure"
+      output: "Validate architecture, best practices, and regressions; fail-closed on missing requirements."
       url: "/how-to/engineering-quality-gate-procedure/"
 
 paths_by_role:
@@ -34,63 +34,44 @@ paths_by_role:
   roles:
     - role: "Builder / Developer"
       items:
-        - label: "Build: Agent architecture (overview)"
-          url: "/articles/agent-architecture/"
-        - label: "Map: Human vs Generative AI capability (engineering view)"
-          url: "/articles/agent-architecture/human-vs-genai-capability-map/"
-        - label: "Use: Prompt Engineering Guide for Daily Work"
+        - label: "Decide: LLM-led vs orchestrator-led tool execution (tradeoffs)"
+          url: "/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/"
+        - label: "Model: LLM memory boundary model (context selection)"
+          url: "/articles/agent-architecture/llm-memory-boundary-model/"
+        - label: "Run: Prompt engineering (daily work) — procedure"
           url: "/how-to/prompt-engineering-daily-work/"
 
     - role: "Security / Platform"
       items:
-        - label: "Apply: Policies (operating contracts)"
-          url: "/policies/"
-        - label: "Define: Evidence boundary (facts-only)"
-          url: "/how-to/choose-facts-only-evidence-boundary/"
-        - label: "Assess: Provenance boundary report"
-          url: "/articles/agent-security/provenance-boundary-report/"
+        - label: "Audit: 8 trust-boundary checkpoints"
+          url: "/articles/agent-security/trust-boundary-checkpoints/"
+        - label: "Understand: controller-loop attack surface"
+          url: "/articles/agent-security/controller-loop-attack-surface/"
+        - label: "Review: control-plane failure patterns"
+          url: "/articles/agent-security/control-plane-failures/"
 
     - role: "Research / Deeper dives"
       items:
-        - label: "Explore: Agent security (index)"
-          url: "/articles/agent-security/"
+        - label: "Explore: Agent architecture (index)"
+          url: "/articles/agent-architecture/"
         - label: "Explore: Model training & eval (index)"
           url: "/articles/model-training-and-eval/"
-        - label: "Reference: Stable terms"
-          url: "/reference/"
-
-entry_points:
-  title: "Choose an entry point (by goal)"
-  cards:
-    - title: "Policies"
-      desc: "Operating contracts: evidence, citations, trust boundaries, fail-closed rules."
-      url: "/policies/"
-    - title: "How-to"
-      desc: "Step-by-step procedures and checklists for daily work."
-      url: "/how-to/"
-    - title: "Prompt blocks"
-      desc: "Copy/paste prompt artifacts mapped to the policies."
-      url: "/prompts/"
-    - title: "Articles"
-      desc: "Long-form technical analysis, case studies, and deeper dives."
-      url: "/articles/"
-    - title: "Reference"
-      desc: "Stable terminology and conventions used across the site."
-      url: "/reference/"
-    - title: "Newsletter"
-      desc: "Low-volume updates when new core content ships."
-      url: "/newsletter/"
+        - label: "Reference: Content map"
+          url: "/reference/content-map/"
 
 latest_articles:
   title: "Recommended reading"
-  subtitle: "A short reading path: architecture → provenance → capability mapping."
+  subtitle: "A short reading path: architecture → context assembly → capability mapping."
   items:
     - label: "Agent architecture (overview)"
       url: "/articles/agent-architecture/"
-    - label: "Provenance boundary report"
-      url: "/articles/agent-security/provenance-boundary-report/"
+      desc: "A practical overview of agent building blocks, orchestration, and control-plane boundaries."
+    - label: "LLM memory boundary model (context selection)"
+      url: "/articles/agent-architecture/llm-memory-boundary-model/"
+      desc: "A concrete model for context selection boundaries: what can enter memory/context, and how to gate it."
     - label: "Human vs Generative AI capability map (engineering view)"
       url: "/articles/agent-architecture/human-vs-genai-capability-map/"
+      desc: "An engineering map of capability gaps and substitutes (controls, scaffolds, verification)."
   all_label: "View all articles"
   all_url: "/articles/"
 
@@ -99,21 +80,25 @@ featured:
   items:
     - label: "Facts-only: Authoritative sources required"
       url: "/policies/facts-only-authoritative-sources-required/"
-    - label: "Web verification & citations"
+      desc: "Default evidence boundary: every world-claim must be backed by authoritative sources."
+    - label: "Facts-only: Artifacts-only (no external sources)"
+      url: "/policies/facts-only-artifacts-only/"
+      desc: "Strict local-evidence boundary: rely only on user-provided artifacts."
+    - label: "Web Verification & Citations Policy"
       url: "/policies/web-verification-and-citations/"
-    - label: "Semantic accuracy gate"
-      url: "/policies/semantic-accuracy-gate/"
-    - label: "Engineering quality gate"
+      desc: "Up-to-date public facts via web sources + inline citations."
+    - label: "Engineering Quality Gate Policy"
       url: "/policies/engineering-quality-gate-policy/"
+      desc: "Architecture + best-practices + regression-minded review gate."
 
 scope:
-  title: "Scope (what this site is / isn’t)"
+  title: "Scope and limitations"
   covers_title: "This site focuses on"
   covers:
-    - "Engineering patterns for building and operating tool-using AI agents with explicit trust boundaries."
-    - "Policy-bound workflows for evidence rules, verification loops, and fail-closed quality gates."
-
+    - "A public, versioned playbook for building reliable tool-using AI systems."
+    - "Evidence/verification contracts: citations, fail-closed rules, and quality gates."
+    - "Reusable artifacts: policies, prompt blocks, and procedures."
   excludes_title: "This site does not focus on"
   excludes:
-    - "Vendor-specific configuration walkthroughs (unless scoped in an article)."
+    - "Proprietary vendor details (public playbook only)."
     - "General AI news or commentary."

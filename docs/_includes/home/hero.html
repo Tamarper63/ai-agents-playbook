@@ -2,6 +2,9 @@
   <div class="c-hero">
     <div class="c-hero__body">
       <p class="c-hero__lede">{{ site.data.home.hero.lede }}</p>
+       {% if site.data.home.hero.tagline %}
+      <p class="c-hero__tagline">{{ site.data.home.hero.tagline }}</p>
+        {% endif %}
 
       <ul class="c-hero__bullets">
         {% for b in site.data.home.hero.bullets %}
