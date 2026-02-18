@@ -1,5 +1,5 @@
 hero:
-  lede: "A public, versioned playbook for engineers building reliable tool-using AI systems."
+  lede: "A public, versioned playbook for engineers building reliable tool-using AI systems. Technology is useful when you use it intelligently."
   tagline: "Explicit boundaries + repeatable verification, before you scale tools and autonomy."
   bullets:
     - "Orchestration patterns: workflows, state/lifecycle, and tool invocation."
@@ -13,7 +13,11 @@ actions:
   secondary:
     - label: "Content map"
       url: "/reference/content-map/"
-    - label: "Browse prompt blocks"
+    - label: "Start here (how-to)"
+      url: "/how-to/"
+    - label: "Start here (articles)"
+      url: "/articles/#start-here"
+    - label: "Copy prompt blocks"
       url: "/prompts/"
 
 quickstart:
@@ -26,8 +30,9 @@ quickstart:
       output: "Run a repeatable claim-check loop before producing non-trivial outputs."
       url: "/how-to/fact-checking-kit/"
     - title: "Enforce: Engineering Quality Gate — Procedure"
-      output: "Validate architecture, best practices, and regressions; fail-closed on missing requirements."
+      output: "Validate architecture/best-practices and regressions; fail-closed on missing requirements."
       url: "/how-to/engineering-quality-gate-procedure/"
+
 
 paths_by_role:
   title: "Pick a path (by role)"
@@ -61,19 +66,17 @@ paths_by_role:
 
 latest_articles:
   title: "Recommended reading"
-  subtitle: "A short reading path: architecture → context assembly → capability mapping."
+  subtitle: "A short reading path: architecture → verification → security."
   items:
-    - label: "Agent architecture (overview)"
-      url: "/articles/agent-architecture/"
-      desc: "A practical overview of agent building blocks, orchestration, and control-plane boundaries."
-    - label: "LLM memory boundary model (context selection)"
+    - label: "LLM memory boundary model: how context gets selected"
       url: "/articles/agent-architecture/llm-memory-boundary-model/"
-      desc: "A concrete model for context selection boundaries: what can enter memory/context, and how to gate it."
-    - label: "Human vs Generative AI capability map (engineering view)"
-      url: "/articles/agent-architecture/human-vs-genai-capability-map/"
-      desc: "An engineering map of capability gaps and substitutes (controls, scaffolds, verification)."
-  all_label: "View all articles"
-  all_url: "/articles/"
+      desc: "An engineering model for context selection: what gets loaded, what gets dropped, and where boundary controls belong."
+    - label: "Fluency Is Not Factuality"
+      url: "/articles/model-training-and-eval/fluency-vs-factuality/"
+      desc: "Why fluent outputs can still be wrong, and what evidence-locked answering looks like operationally."
+    - label: "How Agentic Control-Plane Failures Actually Happen"
+      url: "/articles/agent-security/control-plane-failures/"
+      desc: "Concrete failure patterns to audit: session binding, memory reuse, routing, tool enforcement, and gating/monitoring."
 
 featured:
   title: "Core policies (operating contracts)"
