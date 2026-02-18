@@ -1,10 +1,14 @@
 <section class="c-section c-section--latest">
   <div class="c-section__header">
-    <h2 class="c-section__title">
-      {{ site.data.home.latest_articles.title }}
-    </h2>
-    <a class="c-section__link" href="{{ '/articles/' | relative_url }}">
-      View all articles →
+    <div>
+      <h2 class="c-section__title">{{ site.data.home.latest_articles.title }}</h2>
+      {% if site.data.home.latest_articles.subtitle %}
+        <div class="c-card__desc">{{ site.data.home.latest_articles.subtitle }}</div>
+      {% endif %}
+    </div>
+
+    <a class="c-section__link" href="{{ site.data.home.latest_articles.all_url | relative_url }}">
+      {{ site.data.home.latest_articles.all_label }} →
     </a>
   </div>
 
@@ -12,14 +16,9 @@
     {% for item in site.data.home.latest_articles.items %}
       <a class="c-card" href="{{ item.url | relative_url }}">
         <div class="c-card__content">
-          <div class="c-card__title">
-            {{ item.label }}
-          </div>
-
+          <div class="c-card__title">{{ item.label }}</div>
           {% if item.desc %}
-          <div class="c-card__desc">
-            {{ item.desc }}
-          </div>
+            <div class="c-card__desc">{{ item.desc }}</div>
           {% endif %}
         </div>
       </a>

@@ -15,11 +15,11 @@ items:
     active_contains: "/how-to/"
 
   - label: "Articles"
-    url: "/articles/"
+    url: "/articles/#start-here"
     active_contains: "/articles/"
 
   - label: "Reference"
-    url: "/reference/"
+    url: "/reference/content-map/"
     active_contains: "/reference/"
 
   - label: "Newsletter"

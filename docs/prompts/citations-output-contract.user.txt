@@ -1,14 +1,12 @@
-Cite any claim that is not common knowledge for the intended audience. If you are unsure whether something is common knowledge, cite it.
+Citations & sources contract:
 
-At minimum, add inline [n] for claims involving: numbers/metrics, dates, versions, policies/regulations, comparisons, capabilities/mechanisms (“X enables Y”), and security/performance assertions.
-
-Do not fabricate citations.
-
-If sources disagree, summarize the disagreement and attribute each position to its source.
-
-Failure modes:
-- If web browsing is unavailable, output exactly: BROWSING_UNAVAILABLE
-- If evidence is insufficient, output exactly: INSUFFICIENT_EVIDENCE
+- Cite any claim that is not common knowledge for the intended audience.
+- If you are unsure whether a claim is common knowledge, cite it.
+- At minimum, add inline citation markers [n] for claims involving:
+  numbers/metrics, dates, versions, policies/regulations, comparisons,
+  capabilities/mechanisms (“X enables Y”), and security/performance assertions.
+- Do not fabricate citations.
+- If sources disagree, summarize the disagreement and attribute each position to its source.
 
 End with a Sources list in this exact format:
 [n] Title — Publisher/Org — YYYY-MM-DD — URL
