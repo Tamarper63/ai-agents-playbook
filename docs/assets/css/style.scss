@@ -1254,7 +1254,21 @@ samp {
   letter-spacing: -0.02em;
   font-size: clamp(1.35rem, 2vw, 1.85rem);
   line-height: 1.15;
+  font-family: $font-sans;
 }
+
+/* FIX: Cayman sets `.main-content h1..h6 { font-weight: normal; }`
+   This re-enables the intended weight for home section titles (nested headings). */
+.main-content h1.c-section__title,
+.main-content h2.c-section__title,
+.main-content h3.c-section__title,
+.main-content h4.c-section__title,
+.main-content h5.c-section__title,
+.main-content h6.c-section__title {
+  font-family: $font-sans;
+  font-weight: 900;
+}
+
 
 .c-section__link {
   font-weight: 700;
@@ -1577,33 +1591,44 @@ a.c-card:visited {
 }
 
 
-/* --- Hero headline normalization (single SSOT) --- */
-/* Template renders: <h1 class="c-hero__tagline"> ... </h1> */
-.c-hero__tagline {
+/* --- Hero headline normalization (single SSOT) ---
+   Supports:
+   - <h1 class="c-hero__tagline"> (current template)
+   - fallback <h1>/<h2> inside .c-hero (future-proof)
+*/
+.c-hero__tagline,
+.c-hero h1,
+.c-hero h2 {
   margin: 0.25rem auto 0.55rem;
 
-  max-width: 56ch; /* fewer wraps (aim: 1–2 lines desktop) */
-  font-size: clamp(1.65rem, 2.25vw, 2.35rem);
-  font-weight: 850;
+  /* Reduce wraps + keep 1–2 lines on desktop */
+  max-width: 68ch;
+
+  /* Slightly smaller + calmer scale vs current */
+  font-size: clamp(1.55rem, 1.95vw, 2.15rem);
+
+  /* Use actual imported weights (Inter includes 800/900) */
+  font-weight: 900;
+
   letter-spacing: -0.02em;
-  line-height: 1.10;
+  line-height: 1.12;
 
   text-align: center;
   text-wrap: balance;
 
-  /* USE ACCENT (burgundy) for hero headline */
-  color: $accent;
+  /* Keep headline neutral; reserve accent for CTAs */
+  color: rgba($text, 0.96);
 }
 
 .c-hero__lede {
   margin: 0.10rem auto 0.45rem;
 
-  max-width: 78ch;
-  font-size: clamp(1.0rem, 1.05vw, 1.10rem);
-  line-height: 1.38;
-  font-weight: 650;
+  max-width: 80ch;
+  font-size: clamp(1.00rem, 0.95vw, 1.07rem);
+  line-height: 1.48;
+  font-weight: 600;
   letter-spacing: -0.01em;
 
   text-align: center;
-  color: rgba($text, 0.90);
+  color: rgba($text, 0.88);
 }
