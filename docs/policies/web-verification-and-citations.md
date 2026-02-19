@@ -8,6 +8,7 @@ Define a deterministic operating contract for when to use web browsing, how to s
 
 ## Canonical links
 - How-to: [Request web browsing (prompt template)]({{ '/how-to/request-web-browsing/' | relative_url }})
+- Prompt (system SSOT): [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
 - Prompt (composite): [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
 - Prompt (block): [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }})
 - Prompt (block): [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
