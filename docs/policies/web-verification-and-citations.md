@@ -8,6 +8,7 @@ Define a deterministic operating contract for when to use web browsing, how to s
 
 ## Canonical links
 - How-to: [Request web browsing (prompt template)]({{ '/how-to/request-web-browsing/' | relative_url }})
+- Prompt (system SSOT): [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
 - Prompt (composite): [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
 - Prompt (block): [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }})
 - Prompt (block): [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
@@ -19,10 +20,10 @@ Applies when answering questions that can benefit from up-to-date or niche publi
 1) **Tool-use trigger**
    - Use web browsing/search when the answer could benefit from up-to-date or niche information.
 
-2) **User constraint**
+2) **Runtime constraints**
    - If the user explicitly asks you NOT to browse, do not browse.
-   - If you cannot fully support the answer using only sources provided in-chat, fail closed with:
-     `INSUFFICIENT_EVIDENCE`
+   - If browsing/search is unavailable in this runtime, state that explicitly and proceed only with sources provided in-chat.
+   - If you cannot fully support the answer using available sources, fail closed by stating that evidence is insufficient and stop.
 
 3) **Recency window**
    - Default to the last 30 days.
@@ -40,11 +41,7 @@ Applies when answering questions that can benefit from up-to-date or niche publi
 6) **Disagreements**
    - If sources disagree, summarize the disagreement and attribute each position to its source.
 
-7) **Failure modes**
-   - If web browsing is unavailable, output exactly: `BROWSING_UNAVAILABLE`
-   - If evidence is insufficient to answer, output exactly: `INSUFFICIENT_EVIDENCE`
-
-8) **Sources list format**
+7) **Sources list format**
    - End with a Sources list in this exact format:
      `[n] Title — Publisher/Org — YYYY-MM-DD — URL`
 

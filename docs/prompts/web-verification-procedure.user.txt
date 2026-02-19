@@ -1,12 +1,11 @@
-Use web browsing/search/grounding only if it is available in this runtime AND the request needs up-to-date or niche public information.
+Web verification procedure (requires browsing/search to be available in this runtime):
 
-Procedure:
+- If browsing/search/grounding is unavailable here, state that explicitly and proceed only with evidence provided in this chat.
 - If the user explicitly asks you NOT to browse, do not browse.
-- Default recency: last 30 days. If insufficient, expand up to 12 months and explicitly state the expansion.
+- Use browsing/search only when the request needs up-to-date or niche public information.
+- Default recency window: last 30 days. If insufficient, expand up to 12 months and explicitly state the expansion.
 - Prefer primary/official sources. If secondary sources are used, label them as secondary and justify why primary/official sources were insufficient.
-- Add inline citations [n] for non-trivial claims (numbers, dates, versions, policies/regulations, comparisons, capabilities/mechanisms, security/performance assertions).
-- Do not fabricate citations.
 - If sources disagree, summarize the disagreement and attribute each position to its source.
+- If available evidence is insufficient to answer, state “insufficient evidence” and stop.
 
-If browsing/grounding is not available here, state that explicitly and proceed only with evidence provided in this chat.
-If available evidence is insufficient to answer, state “insufficient evidence” and stop.
+Citations formatting and the Sources list format are governed by the citations-output-contract block (paste it after this block).

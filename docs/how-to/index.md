@@ -12,9 +12,9 @@ Task-oriented guides (procedures + checklists) for workflows that enforce **evid
 
 ## Start here (recommended path)
 
-1. [Choose an evidence boundary (facts-only)]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
-2. [Fact-Checking Kit]({{ '/how-to/fact-checking-kit/' | relative_url }})
-3. [Engineering quality gate — procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }}) (architecture + regression checks)
+1. [Set: Choose an evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
+2. [Run: Fact-Checking Kit]({{ '/how-to/fact-checking-kit/' | relative_url }})
+3. [Enforce: Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }}) (architecture + regression checks)
 
 ## Quick chooser (jump to a section)
 - Evidence boundaries → [Evidence boundaries](#evidence-boundaries-facts-only)

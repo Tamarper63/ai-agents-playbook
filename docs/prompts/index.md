@@ -11,15 +11,17 @@ This page indexes **copy/paste prompt artifacts** mapped to their companion **Po
 
 ## Quick chooser (pick the workflow)
 
+- **Daily work runner (template)** → [Daily work runner](#daily-work)
 - **Facts-only evidence boundary** → [Facts-only (choose one)](#facts-only)
 - **Web verification + citations** → [Web verification & citations](#web-verification-citations)
 - **Strict internal verification loop** → [Chain-of-Verification (CoVe)](#chain-of-verification)
-- **Prevent overclaims + enforce terminology consistency** → [Semantic accuracy gate](#semantic-accuracy-gate)
-- **Technical writing / publication gate (claims)** → [Evidence-Gated Technical Writing Gate](#evidence-gated-technical-writing)
 - **Architecture / refactor quality gate** → [Engineering Quality Gate](#engineering-quality-gate)
+- **Technical writing / publication gate (claims)** → [Evidence-Gated Technical Writing Gate](#evidence-gated-technical-writing)
+- **Prevent overclaims + enforce terminology consistency** → [Semantic accuracy gate](#semantic-accuracy-gate)
 - **Academic evidence gating** → [Evidence-Gated Academic Mode (EGAM)](#egam)
 - **Reporting (confidence line)** → [Confidence score](#confidence-score)
 - **Baseline constraints (objective technical)** → [Objective technical profile](#objective-technical)
+- **Minimal “do not speculate” baseline** → [Minimal non-speculation baseline](#minimal-non-speculation)
 - **Add small behavior snippets** → [Components (snippets)](#components-snippets)
 
 ## Common stacks (start here)
@@ -31,6 +33,7 @@ This page indexes **copy/paste prompt artifacts** mapped to their companion **Po
 
 ### Stack B — Web + citations (public facts)
 - [facts-only-authoritative-sources-required.system.txt]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
+- [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
 - [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
 - Recommended: [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
 - Optional: [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
@@ -131,8 +134,10 @@ Use when you need up-to-date facts and citation-grade references.
 
 - **Policy:** [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }})
 - **How-to:** [Request web browsing (prompt template)]({{ '/how-to/request-web-browsing/' | relative_url }})
+- **Prompt artifact (system):** [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
 - **Runner (user):** [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
 - **Building blocks (user):** [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }}) · [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
+- **Assembly:** paste `web-verification-procedure.user.txt` then paste `citations-output-contract.user.txt`.
 
 ## Evidence-Gated Technical Writing Gate (Claims)
 {: #evidence-gated-technical-writing }
@@ -161,7 +166,7 @@ Use to prevent overclaims and enforce consistent terminology.
 ## Usage rules (non-negotiable)
 - Policy pages are normative (rules).
 - Prompt artifacts are operational (copy/paste).
-- Keep mappings explicit to prevent drift across **Policy → How-to → Prompt artifacts**.
+- Keep mappings explicit to prevent drift across **Prompt artifacts → How-to → Policy**.
 
 ## Related indexes
 - [Policies]({{ '/policies/' | relative_url }})

@@ -1,9 +1,11 @@
 ---
 title: "Security report (client-captured): control-plane assurance failures at the LLM boundary"
+permalink: /articles/agent-security/provenance-boundary-report/
 report_type: "Security Report"
 evidence_boundary: "Client-only (UI screenshots + browser Network captures). No server logs / signed audit events available."
 observed_window_labelled_in_artifacts: "2025-11-11 (per screenshot filenames in evidence pack)"
 ---
+
 
 ## 0) Executive summary
 
