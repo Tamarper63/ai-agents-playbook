@@ -51,5 +51,5 @@ Task-oriented guides (procedures + checklists) for workflows that enforce **evid
 ## Related indexes
 - [Start here by role]({{ '/how-to/start-here-by-role/' | relative_url }})
 - [Policies]({{ '/policies/' | relative_url }})
-- [Prompt blocks]({{ '/prompts/' | relative_url }})
+- [Prompt library]({{ '/prompts/' | relative_url }})
 - [Reference]({{ '/reference/' | relative_url }})

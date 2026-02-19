@@ -1,28 +1,28 @@
 ---
-title: Prompt blocks
+title: Prompt library
 permalink: /prompts/
 ---
 
-This page indexes **copy/paste prompt artifacts** mapped to their companion **Policies** and **How-to procedures**.
+This page indexes **copy/paste prompt templates** mapped to their companion **Policies** and **How-to procedures**.
 
-- **Policy layer:** `.system.txt` (long-lived rules: evidence boundary, citations, fail-closed)
-- **Runners:** `.user.txt` (execution templates you paste as the user message)
-- **Components:** small add-ons for runners (not standalone prompts)
+- **System message templates:** `.system.txt` (highest-authority instructions: role, boundaries, output contract, fallback/“when unsure” policy)
+- **User message templates:** `.user.txt` (execution templates you paste as the user message)
+- **Prompt components:** small add-ons you paste into a user message template (not standalone workflows)
 
 ## Quick chooser (pick the workflow)
 
-- **Daily work runner (template)** → [Daily work runner](#daily-work)
+- **Daily work user template** → [Daily work template](#daily-work)
 - **Facts-only evidence boundary** → [Facts-only (choose one)](#facts-only)
 - **Web verification + citations** → [Web verification & citations](#web-verification-citations)
-- **Strict internal verification loop** → [Chain-of-Verification (CoVe)](#chain-of-verification)
+- **Structured verification loop** → [Chain-of-Verification (CoVe)](#chain-of-verification)
 - **Architecture / refactor quality gate** → [Engineering Quality Gate](#engineering-quality-gate)
 - **Technical writing / publication gate (claims)** → [Evidence-Gated Technical Writing Gate](#evidence-gated-technical-writing)
 - **Prevent overclaims + enforce terminology consistency** → [Semantic accuracy gate](#semantic-accuracy-gate)
 - **Academic evidence gating** → [Evidence-Gated Academic Mode (EGAM)](#egam)
 - **Reporting (confidence line)** → [Confidence score](#confidence-score)
 - **Baseline constraints (objective technical)** → [Objective technical profile](#objective-technical)
-- **Minimal “do not speculate” baseline** → [Minimal non-speculation baseline](#minimal-non-speculation)
-- **Add small behavior snippets** → [Components (snippets)](#components-snippets)
+- **Minimal non-speculation baseline** → [Minimal non-speculation baseline](#minimal-non-speculation)
+- **Components (add-ons)** → [Components (snippets)](#components-snippets)
 
 ## Common stacks (start here)
 
@@ -46,7 +46,7 @@ This page indexes **copy/paste prompt artifacts** mapped to their companion **Po
 
 ## How to use (minimal)
 1) Pick a **stack** or a **workflow** section below.  
-2) Paste `.system.txt` into your runtime’s highest-priority instruction channel; paste `.user.txt` as the user message.  
+2) Paste `.system.txt` as the **system message** (highest-priority instruction channel); paste `.user.txt` as the **user message**.
 3) Follow the mapped **How-to procedure** when present.
 
 ## Components (snippets)
@@ -68,14 +68,14 @@ Use when you need architecture/best-practices checks and regression-minded outpu
 
 - **Policy:** [Engineering Quality Gate Policy]({{ '/policies/engineering-quality-gate-policy/' | relative_url }})
 - **How-to:** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
-- **Prompt artifacts:** [engineering-quality-gate.system.txt]({{ '/prompts/engineering-quality-gate.system.txt' | relative_url }}) · [engineering-quality-gate.user.txt]({{ '/prompts/engineering-quality-gate.user.txt' | relative_url }})
+- **Prompt templates:** [engineering-quality-gate.system.txt]({{ '/prompts/engineering-quality-gate.system.txt' | relative_url }}) · [engineering-quality-gate.user.txt]({{ '/prompts/engineering-quality-gate.user.txt' | relative_url }})
 
 ## Daily work runner (template)
 {: #daily-work }
 
 Use for a consistent “daily driver” execution template.
 
-- **Runner (user):** [prompt-engineering-daily-work.user.txt]({{ '/prompts/prompt-engineering-daily-work.user.txt' | relative_url }})
+- **User prompt template:** [prompt-engineering-daily-work.user.txt]({{ '/prompts/prompt-engineering-daily-work.user.txt' | relative_url }})
 - **How-to:** [Prompt Engineering Guide for Daily Work]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }})
 
 ## Chain-of-Verification (CoVe)
@@ -85,7 +85,7 @@ Use for a structured self-check loop before final output.
 
 - **Policy:** [Chain-of-Verification — policy]({{ '/policies/chain-of-verification/' | relative_url }})
 - **How-to:** [Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
-- **Prompt artifact (system):** [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
+- **System prompt file:** [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
 
 ## Minimal non-speculation baseline
 {: #minimal-non-speculation }
@@ -135,7 +135,7 @@ Use when you need up-to-date facts and citation-grade references.
 - **Policy:** [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }})
 - **How-to:** [Request web browsing (prompt template)]({{ '/how-to/request-web-browsing/' | relative_url }})
 - **Prompt artifact (system):** [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
-- **Runner (user):** [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
+- **User prompt template:** [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
 - **Building blocks (user):** [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }}) · [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
 - **Assembly:** paste `web-verification-procedure.user.txt` then paste `citations-output-contract.user.txt`.
 
@@ -144,7 +144,7 @@ Use when you need up-to-date facts and citation-grade references.
 
 - **Policy:** [Evidence-Gated Technical Writing Policy (Claims)]({{ '/policies/evidence-gated-technical-writing-policy/' | relative_url }})
 - **How-to:** [Evidence-Gated Technical Writing Gate — Verification Procedure (Claims)]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
-- **Prompt artifacts:** [evidence-gated-technical-writing-gate.system.txt]({{ '/prompts/evidence-gated-technical-writing-gate.system.txt' | relative_url }}) · [evidence-gated-technical-writing-gate.user.txt]({{ '/prompts/evidence-gated-technical-writing-gate.user.txt' | relative_url }})
+- **Prompt templates:** [evidence-gated-technical-writing-gate.system.txt]({{ '/prompts/evidence-gated-technical-writing-gate.system.txt' | relative_url }}) · [evidence-gated-technical-writing-gate.user.txt]({{ '/prompts/evidence-gated-technical-writing-gate.user.txt' | relative_url }})
 
 ## Objective technical profile (non-simulative)
 {: #objective-technical }
@@ -152,7 +152,7 @@ Use when you need up-to-date facts and citation-grade references.
 Use as a global baseline for objective technical work (rules-first, non-simulative, compatible with facts-only policies).
 
 - **Policy:** [Objective Technical Ruleset]({{ '/policies/objective-technical-operating-profile/' | relative_url }})
-- **Prompt artifacts (system):** [objective-technical-style-non-simulative.system.txt]({{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }}) · [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
+- **System prompt files:** [objective-technical-style-non-simulative.system.txt]({{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }}) · [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
 
 ## Semantic accuracy gate
 {: #semantic-accuracy-gate }
@@ -161,12 +161,12 @@ Use to prevent overclaims and enforce consistent terminology.
 
 - **Policy:** [Semantic Accuracy Gate — policy]({{ '/policies/semantic-accuracy-gate/' | relative_url }})
 - **How-to:** [Semantic Accuracy Gate — procedure]({{ '/how-to/semantic-accuracy-gate-procedure/' | relative_url }})
-- **Prompt artifacts:** [semantic-accuracy-gate.system.txt]({{ '/prompts/semantic-accuracy-gate.system.txt' | relative_url }}) · [semantic-accuracy-gate.user.txt]({{ '/prompts/semantic-accuracy-gate.user.txt' | relative_url }})
+- **Prompt templates:** [semantic-accuracy-gate.system.txt]({{ '/prompts/semantic-accuracy-gate.system.txt' | relative_url }}) · [semantic-accuracy-gate.user.txt]({{ '/prompts/semantic-accuracy-gate.user.txt' | relative_url }})
 
 ## Usage rules (non-negotiable)
 - Policy pages are normative (rules).
-- Prompt artifacts are operational (copy/paste).
-- Keep mappings explicit to prevent drift across **Prompt artifacts → How-to → Policy**.
+- Prompt templates are operational (copy/paste).
+- Keep mappings explicit to prevent drift across **prompt templates → how-to → policies**.
 
 ## Related indexes
 - [Policies]({{ '/policies/' | relative_url }})

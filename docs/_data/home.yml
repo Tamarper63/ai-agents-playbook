@@ -1,24 +1,23 @@
 hero:
-  lede: "A public, versioned playbook for engineers building reliable tool-using AI systems. Technology is useful when you use it intelligently."
-  tagline: "Explicit boundaries + repeatable verification, before you scale tools and autonomy."
+  lede: "A public, versioned playbook for shipping tool-using LLM and agent systems."
+  tagline: "Reusable operating contracts (policies + prompt templates + procedures) for orchestration, evidence boundaries, and verification gates."
   bullets:
-    - "Orchestration patterns: workflows, state/lifecycle, and tool invocation."
-    - "Verification contracts: evidence boundaries, citations, and fail-closed checks."
-    - "Copy/paste artifacts: policies, prompt templates, and procedures."
+    - "Orchestration patterns: controller loops, state/lifecycle, and tool invocation."
+    - "Boundary enforcement: evidence rules, citations, and fail-closed outputs."
+    - "Security audits: trust-boundary checkpoints and control-plane failure patterns."
 
 actions:
   primary:
-    label: "Choose evidence boundary"
-    url: "/how-to/choose-facts-only-evidence-boundary/"
+    label: "Start here (by role)"
+    url: "/how-to/start-here-by-role/"
   secondary:
-    - label: "Content map"
-      url: "/reference/content-map/"
-    - label: "Start here (how-to)"
-      url: "/how-to/"
-    - label: "Start here (articles)"
-      url: "/articles/#start-here"
+    - label: "Set evidence boundary"
+      url: "/how-to/choose-facts-only-evidence-boundary/"
     - label: "Browse prompt library"
       url: "/prompts/"
+    - label: "Content map"
+      url: "/reference/content-map/"
+
 
 quickstart:
   title: "Quickstart (5 minutes)"
@@ -26,43 +25,12 @@ quickstart:
     - title: "Set: Choose an evidence boundary"
       output: "Define allowed sources and refusal conditions (fail-closed)."
       url: "/how-to/choose-facts-only-evidence-boundary/"
-    - title:  "Run: Fact-Checking Procedure"
-      output: "Run a repeatable claim-check loop before producing non-trivial outputs."
+    - title:  "Run: Verification gate (Fact-Checking Kit)"
+      output: "Run a repeatable evidence-check loop before producing non-trivial outputs."
       url: "/how-to/fact-checking-kit/"
     - title: "Enforce: Engineering Quality Gate — Procedure"
       output: "Validate architecture/best-practices and regressions; fail-closed on missing requirements."
       url: "/how-to/engineering-quality-gate-procedure/"
-
-
-paths_by_role:
-  title: "Pick a path (by role)"
-  roles:
-    - role: "Builder / Developer"
-      items:
-        - label: "Decide: LLM-led vs orchestrator-led tool execution (tradeoffs)"
-          url: "/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/"
-        - label: "Model: LLM memory boundary model (context selection)"
-          url: "/articles/agent-architecture/llm-memory-boundary-model/"
-        - label: "Run: Prompt engineering (daily work) — procedure"
-          url: "/how-to/prompt-engineering-daily-work/"
-
-    - role: "Security / Platform"
-      items:
-        - label: "Audit: 8 trust-boundary checkpoints"
-          url: "/articles/agent-security/trust-boundary-checkpoints/"
-        - label: "Understand: controller-loop attack surface"
-          url: "/articles/agent-security/controller-loop-attack-surface/"
-        - label: "Review: control-plane failure patterns"
-          url: "/articles/agent-security/control-plane-failures/"
-
-    - role: "Research / Deeper dives"
-      items:
-        - label: "Explore: Agent architecture (index)"
-          url: "/articles/agent-architecture/"
-        - label: "Explore: Model training & eval (index)"
-          url: "/articles/model-training-and-eval/"
-        - label: "Reference: Content map"
-          url: "/reference/content-map/"
 
 latest_articles:
   title: "Recommended reading"
@@ -83,25 +51,25 @@ featured:
   items:
     - label: "Facts-only: Authoritative sources required"
       url: "/policies/facts-only-authoritative-sources-required/"
-      desc: "Default evidence boundary: every world-claim must be backed by authoritative sources."
+      desc: "Evidence boundary: world-claims require authoritative sources."
     - label: "Facts-only: Artifacts-only (no external sources)"
       url: "/policies/facts-only-artifacts-only/"
-      desc: "Strict local-evidence boundary: rely only on user-provided artifacts."
+      desc: "Evidence boundary: restrict evidence to user-provided artifacts (no external sources)."
     - label: "Web Verification & Citations Policy"
       url: "/policies/web-verification-and-citations/"
-      desc: "Up-to-date public facts via web sources + inline citations."
+      desc: "Public facts via web sources + inline citations."
     - label: "Engineering Quality Gate Policy"
       url: "/policies/engineering-quality-gate-policy/"
       desc: "Architecture + best-practices + regression-minded review gate."
 
 scope:
-  title: "Scope and limitations"
-  covers_title: "This site focuses on"
+  title: "Scope"
+  covers_title: "Focus"
   covers:
-    - "A public, versioned playbook for building reliable tool-using AI systems."
-    - "Evidence/verification contracts: citations, fail-closed rules, and quality gates."
-    - "Reusable artifacts: policies, prompt blocks, and procedures."
-  excludes_title: "This site does not focus on"
+    - "Tool-using LLM and agent systems: orchestration, boundaries, verification."
+    - "Public, reusable templates: policies, prompt templates, and procedures."
+  excludes_title: "Not covered"
   excludes:
-    - "Proprietary vendor details (public playbook only)."
-    - "General AI news or commentary."
+    - "Vendor-internal or proprietary details."
+
+

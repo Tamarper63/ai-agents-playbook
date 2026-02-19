@@ -3,7 +3,7 @@ title: Prompt components
 permalink: /prompts/components/
 ---
 
-Components are small **add-ons** you paste into a **user runner** (`.user.txt`).  
+Prompt components are small **add-ons** you paste into a **user message template** (`.user.txt`).  
 They are not standalone workflows.
 
 ## Quick picks

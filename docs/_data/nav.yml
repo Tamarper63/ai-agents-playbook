@@ -19,7 +19,7 @@ items:
     active_contains: "/articles/"
 
   - label: "Reference"
-    url: "/reference/content-map/"
+    url: "/reference/"
     active_contains: "/reference/"
 
   - label: "Newsletter"

@@ -3,13 +3,13 @@ title: Content map
 permalink: /reference/content-map/
 ---
 
-A stable map of the site’s content types, plus the shortest paths to start.
+A stable map of the site’s content types and the shortest paths to start.
 
-This site separates content by **user need** (task execution vs. reference lookup vs. deeper understanding). This aligns with common documentation IA patterns (e.g., Diátaxis: how-to vs reference vs explanation). :contentReference[oaicite:1]{index=1}
+This site separates content by reader intent: task execution vs reference lookup vs explanation (conceptual understanding). This separation is consistent with the Diátaxis documentation model.
 
-## Start here (fastest path)
+## Start here (short path)
 
-### Operational ramp (5 minutes)
+### Operational ramp (quick start)
 1) **Set:** [Choose an evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})  
 2) **Run:** [Fact-Checking Kit]({{ '/how-to/fact-checking-kit/' | relative_url }})  
 3) **Enforce:** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
@@ -20,11 +20,11 @@ Use the curated path on the Articles index:
 
 ## Choose by goal (where to go)
 
-- **I want to execute a task** → [How-to]({{ '/how-to/' | relative_url }})
-- **I want a ruleset / evidence boundary contract** → [Policies]({{ '/policies/' | relative_url }})
-- **I want copy/paste prompt artifacts** → [Prompt blocks]({{ '/prompts/' | relative_url }})
-- **I want deep analysis / explanations** → [Articles]({{ '/articles/' | relative_url }})
-- **I want stable definitions / maps** → [Reference]({{ '/reference/' | relative_url }})
+- **Execute a task** → [How-to]({{ '/how-to/' | relative_url }})
+- **Select a ruleset / evidence boundary** → [Policies]({{ '/policies/' | relative_url }})
+- **Copy/paste prompt templates** → [Prompt library]({{ '/prompts/' | relative_url }})
+- **Read explanations / deep dives** → [Articles]({{ '/articles/' | relative_url }})
+- **Lookup stable definitions / diagrams** → [Reference]({{ '/reference/' | relative_url }})
 
 ## Primary sections (what each contains)
 
@@ -36,13 +36,13 @@ Step-by-step procedures and checklists for execution.
   - [Fact-Checking Kit]({{ '/how-to/fact-checking-kit/' | relative_url }})
   - [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
 
-### Policies (operating contracts)
+### Policies (operating rules)
 Normative rules: allowed evidence, citation rules, trust boundaries, and fail-closed behavior.
 - Index: [Policies]({{ '/policies/' | relative_url }})
 
-### Prompt blocks (copy/paste)
-Copy/paste artifacts aligned to the policies (system/user prompt files).
-- Index: [Prompt blocks]({{ '/prompts/' | relative_url }})
+### Prompt library (copy/paste)
+Copy/paste prompt templates mapped to policies and procedures (system/user prompt files).
+- Index: [Prompt library]({{ '/prompts/' | relative_url }})
 
 ### Articles (explanations / deep dives)
 Long-form analysis and engineering tradeoffs (architecture, reliability/eval, security boundaries).

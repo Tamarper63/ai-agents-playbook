@@ -33,12 +33,14 @@ $header-heading-color: $header_text;
 $header-bg-color: $header_primary;
 $header-bg-color-secondary: $header_secondary;
 
-$section-headings-color: $accent;
+/* Headings should follow body text color; reserve accent for CTAs/links */
+$section-headings-color: $text;
 $body-text-color: $text;
 $body-link-color: $accent_2;
 $blockquote-text-color: $muted;
 
 $border-color: $border;
+
 
 @import "{{ site.theme }}";
 
@@ -96,7 +98,8 @@ samp {
 }
 
 /* Constrain readable line length for “pure prose” direct children.
-   This avoids breaking full-width components (home hero/cards) that live inside their own sections/divs. */
+   This avoids breaking full-width components (home hero/cards) that live inside their own sections/divs.
+   NOTE: non-home pages wrap markdown inside .c-prose (see docs/_layouts/default.html), so include that too. */
 .main-content > h1,
 .main-content > h2,
 .main-content > h3,
@@ -110,7 +113,21 @@ samp {
 .main-content > pre,
 .main-content > table,
 .main-content > .highlighter-rouge,
-.main-content > .highlight {
+.main-content > .highlight,
+.main-content--page .c-prose > h1,
+.main-content--page .c-prose > h2,
+.main-content--page .c-prose > h3,
+.main-content--page .c-prose > h4,
+.main-content--page .c-prose > h5,
+.main-content--page .c-prose > h6,
+.main-content--page .c-prose > p,
+.main-content--page .c-prose > ul,
+.main-content--page .c-prose > ol,
+.main-content--page .c-prose > blockquote,
+.main-content--page .c-prose > pre,
+.main-content--page .c-prose > table,
+.main-content--page .c-prose > .highlighter-rouge,
+.main-content--page .c-prose > .highlight {
   max-width: 74ch;
   margin-left: auto;
   margin-right: auto;
@@ -130,13 +147,32 @@ samp {
   margin: 0.35rem 0;
 }
 
-/* Headings: consistent scale + tighter line-height than body */
+/* Headings: enforce font-family for ALL headings inside .main-content
+   (fixes “headings look like Cayman default” when headings are nested). */
 .main-content h1,
 .main-content h2,
 .main-content h3,
 .main-content h4,
 .main-content h5,
 .main-content h6 {
+  font-family: $font-sans !important;
+  color: $text;
+}
+
+/* Headings: consistent scale + tighter line-height than body
+   IMPORTANT: apply to direct children of .main-content (home) AND direct children of .c-prose (non-home pages). */
+.main-content > h1,
+.main-content > h2,
+.main-content > h3,
+.main-content > h4,
+.main-content > h5,
+.main-content > h6,
+.main-content--page .c-prose > h1,
+.main-content--page .c-prose > h2,
+.main-content--page .c-prose > h3,
+.main-content--page .c-prose > h4,
+.main-content--page .c-prose > h5,
+.main-content--page .c-prose > h6 {
   margin-top: 2.2rem;
   margin-bottom: 0.75rem;
   line-height: 1.18;
@@ -144,8 +180,9 @@ samp {
   text-align: left;
 }
 
-/* H1 (page titles) — apply regardless of wrappers/position inside main-content */
-.main-content h1 {
+/* H1 (page titles) */
+.main-content > h1,
+.main-content--page .c-prose > h1 {
   font-size: clamp(1.75rem, calc(1.35rem + 1.55vw), 2.45rem);
   font-weight: 820;
   letter-spacing: -0.02em;
@@ -153,34 +190,42 @@ samp {
 }
 
 /* Title spacing: when H1 is the first element inside its container */
-.main-content h1:first-child {
+.main-content > h1:first-child,
+.main-content--page .c-prose > h1:first-child {
   margin-top: 0;
   margin-bottom: 0.95rem;
 }
 
 /* Section headings */
-.main-content h2 {
+.main-content > h2,
+.main-content--page .c-prose > h2 {
   font-size: clamp(1.35rem, calc(1.10rem + 0.95vw), 1.90rem);
   font-weight: 800;
 }
 
-.main-content h3 {
+.main-content > h3,
+.main-content--page .c-prose > h3 {
   font-size: clamp(1.18rem, calc(1.05rem + 0.55vw), 1.45rem);
   font-weight: 780;
 }
 
-.main-content h4 {
+.main-content > h4,
+.main-content--page .c-prose > h4 {
   font-size: clamp(1.05rem, calc(1.00rem + 0.30vw), 1.22rem);
   font-weight: 760;
 }
 
 /* Minor headings */
-.main-content h5,
-.main-content h6 {
+.main-content > h5,
+.main-content > h6,
+.main-content--page .c-prose > h5,
+.main-content--page .c-prose > h6 {
   font-size: 1.00rem;
   font-weight: 760;
   letter-spacing: -0.01em;
 }
+
+
 
 .main-content a,
 .footer-links a,
@@ -224,11 +269,14 @@ samp {
   position: relative;
   overflow: hidden;
 
-background: linear-gradient(
-  180deg,
-  mix(#fff, $header_primary, 10%) 0%,
-  mix(#000, $header_primary, 18%) 100%
-) !important;
+  /* FORCE site font in header/nav/title (prevents Cayman header font override) */
+  font-family: $font-sans;
+
+  background: linear-gradient(
+    180deg,
+    mix(#fff, $header_primary, 10%) 0%,
+    mix(#000, $header_primary, 18%) 100%
+  ) !important;
 
   color: $header_text !important;
   text-align: left;
@@ -237,6 +285,7 @@ background: linear-gradient(
   border-bottom: 1px solid rgba(0, 0, 0, 0.22);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
 }
+
 
 .page-header::before { content: none; }
 
@@ -631,86 +680,78 @@ background: linear-gradient(
    ========================= */
 
 .c-section--hero {
-  padding: 0 0 1rem;
+  padding: 0 0 0.5rem;
   margin-top: 0;
 
-
   background:
-    radial-gradient(900px 420px at 50% -160px, rgba($accent, 0.20), transparent 60%),
-    radial-gradient(700px 420px at 15% -220px, rgba($accent_2, 0.12), transparent 60%);
+    radial-gradient(900px 420px at 50% -160px, rgba($accent, 0.18), transparent 60%),
+    radial-gradient(700px 420px at 15% -220px, rgba($accent_2, 0.10), transparent 60%);
 }
 
 .c-hero {
-  max-width: 64rem;
+  max-width: 66rem;          /* reduce side “empty” look */
   margin: 0 auto;
-  padding: 1.75rem 1.5rem 1.5rem;
 
-  border: 1px solid rgba($text, 0.08);
-  border-radius: 20px;
-background: linear-gradient(
-  180deg,
-  rgba(255, 255, 255, 0.78) 0%,
-  rgba(255, 255, 255, 0.62) 100%
-);
+  padding: 0.95rem 1.05rem 0.9rem;  /* less vertical whitespace */
 
-box-shadow:
-  0 1px 0 rgba(0, 0, 0, 0.06),
-  0 26px 70px rgba(0, 48, 73, 0.14);
+  border: 1px solid rgba($text, 0.10);
+  border-radius: 18px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.86) 0%,
+    rgba(255, 255, 255, 0.72) 100%
+  );
+
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.05),
+    0 16px 46px rgba(0, 48, 73, 0.10);
+
   text-align: center;
 }
 
 @media (max-width: 720px) {
   .c-hero {
-    padding: 1.4rem 1rem 1.2rem;
-    border-radius: 18px;
+    padding: 0.9rem 0.9rem 0.85rem;
+    border-radius: 16px;
   }
 }
 
 .c-hero__body {
-  max-width: 72ch;
-  margin: 0 auto 1.25rem;
-}
-
-
-.c-hero__tagline {
-  margin: 0 0 1.1rem;
-
-  font-size: 1.15rem;
-  font-weight: 750;
-  line-height: 1.35;
-
-  color: rgba($text, 0.88);
-}
-
-@media (min-width: 900px) {
-  .c-hero__tagline { font-size: 1.28rem; }
-}
-
-@media (min-width: 1200px) {
-  .c-hero__tagline { font-size: 1.38rem; }
+  max-width: 78ch;          /* helps headline stay 1–2 lines */
+  margin: 0 auto 0.55rem;   /* less gap before CTAs */
 }
 
 .c-hero__bullets {
-  margin: 0 auto;
+  margin: 0.45rem auto 0;
   padding-left: 0;
   list-style-position: inside;
 
   display: inline-block;
   text-align: left;
+
+  font-size: 0.95rem;
 }
 
 .c-hero__bullets li {
-  margin: 0.35rem 0;
-  color: rgba($text, 0.86);
+  margin: 0.22rem 0;
+  color: rgba($text, 0.84);
 }
 
+/* Desktop: 3 secondary CTAs on one row; primary spans full width */
 .c-hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+  align-items: center;
 
-  margin-top: 1.25rem;
+  gap: 0.45rem 0.55rem;
+
+  max-width: 48rem;
+  margin: 0.7rem auto 0;
   padding: 0;
 
   border: 0;
@@ -718,9 +759,42 @@ box-shadow:
   box-shadow: none;
 }
 
-/* =========================
-   Buttons
-   ========================= */
+/* Scope button sizing ONLY inside hero actions */
+.c-hero__actions > .c-btn {
+  width: 100%;
+  max-width: 16.5rem;
+  justify-content: center;
+
+  min-height: 40px;
+  padding: 0.52rem 0.85rem;
+}
+
+/* Primary CTA: centered + constrained */
+.c-hero__actions > .c-btn--primary {
+  grid-column: 1 / -1;
+  max-width: 20rem;
+}
+
+/* Remove old “odd centering” behavior (not needed with 3-col desktop grid) */
+.c-hero__actions > .c-btn:last-child:nth-child(even) {
+  grid-column: auto;
+  justify-self: auto;
+}
+
+/* Mobile: single column, consistent widths */
+@media (max-width: 720px) {
+  .c-hero__actions {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
+    gap: 0.5rem;
+  }
+
+  .c-hero__actions > .c-btn,
+  .c-hero__actions > .c-btn--primary {
+    max-width: 22rem;
+  }
+}
+
 
 .c-btn {
   display: inline-flex;
@@ -730,8 +804,10 @@ box-shadow:
   width: auto;
   text-align: center;
 
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
+  padding: 0.68rem 0.95rem;
+
+  /* less “pill”, more modern rounded-rect */
+  border-radius: 14px;
 
   border: 1px solid rgba($text, 0.14);
   background: rgba($surface, 0.72);
@@ -739,16 +815,18 @@ box-shadow:
   font-weight: 750;
   text-decoration: none !important;
 
-  min-height: 44px;
+  min-height: 42px;
   box-shadow: none;
 
   transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
 }
 
+
 .c-btn:hover {
   transform: translateY(-1px);
-  background: rgba($surface, 0.82);
-  border-color: rgba($text, 0.18);
+  background: rgba($surface, 0.98);
+  border-color: rgba($text, 0.22);
+  box-shadow: 0 6px 18px rgba(0, 48, 73, 0.08);
 }
 
 .c-btn:focus-visible {
@@ -761,20 +839,22 @@ box-shadow:
   background: $accent;
   color: $bg !important;
   border-color: rgba(0,0,0,0);
+  box-shadow: 0 8px 20px rgba(120, 0, 0, 0.20);
 }
 
 .c-btn--primary:hover {
-  background: rgba($accent, 0.92);
+  background: mix(#000, $accent, 8%);
 }
 
 .c-btn--secondary,
 .c-btn--secondary:visited {
   color: $text !important;
+  background: transparent;
 }
 
 .c-btn--secondary:hover {
-  background: rgba($accent, 0.05);
-  border-color: rgba($accent, 0.22);
+  background: rgba($accent, 0.06);
+  border-color: rgba($accent, 0.28);
 }
 
 /* =========================
@@ -1142,8 +1222,23 @@ box-shadow:
   opacity: 0.72;
 }
 
-.c-section { margin: 2.25rem 0; }
-.c-section--thin { margin: 1.75rem 0; }
+.c-section { margin: 1.6rem 0; }
+.c-section--thin { margin: 1.25rem 0; }
+
+/* Keep header → hero tight; reduce hero bottom spacing */
+.c-section.c-section--hero {
+  margin-top: 0;
+  margin-bottom: 1.1rem;
+}
+
+@media (max-width: 720px) {
+  .c-section.c-section--hero {
+    margin-top: 0;
+    margin-bottom: 0.95rem;
+  }
+}
+
+
 
 .c-section__header {
   display: flex;
@@ -1193,18 +1288,18 @@ box-shadow:
 
 
 
-.main-content h1,
-.main-content h2,
-.main-content h3,
-.main-content h4,
-.main-content h5,
-.main-content h6 {
+.main-content > h1,
+.main-content > h2,
+.main-content > h3,
+.main-content > h4,
+.main-content > h5,
+.main-content > h6 {
   color: $text;
   letter-spacing: -0.01em;
 }
 
-.main-content h2 { margin-top: 2.25rem; }
-.main-content h3 { margin-top: 1.85rem; }
+.main-content > h2 { margin-top: 2.25rem; }
+.main-content > h3 { margin-top: 1.85rem; }
 
 .page-header .site-nav a[aria-current="page"] { color: $header_text; }
 
@@ -1480,27 +1575,35 @@ a.c-card:visited {
 .c-card__list-item::marker {
   color: rgba($text, 0.28);
 }
-/* --- Hero headline normalization (post <h1> change) --- */
-.c-hero__tagline {
-  /* remove default h1 margins */
-  margin: 0.25rem auto 1.1rem;
 
-  /* headline scale */
-  max-width: 36ch;
-  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+
+/* --- Hero headline normalization (single SSOT) --- */
+/* Template renders: <h1 class="c-hero__tagline"> ... </h1> */
+.c-hero__tagline {
+  margin: 0.25rem auto 0.55rem;
+
+  max-width: 56ch; /* fewer wraps (aim: 1–2 lines desktop) */
+  font-size: clamp(1.65rem, 2.25vw, 2.35rem);
   font-weight: 850;
   letter-spacing: -0.02em;
-  line-height: 1.15;
+  line-height: 1.10;
 
-  /* better line breaks (prevents orphan lines on supporting browsers) */
+  text-align: center;
   text-wrap: balance;
+
+  /* USE ACCENT (burgundy) for hero headline */
+  color: $accent;
 }
 
 .c-hero__lede {
-  margin: 0 auto 0.75rem;
-  max-width: 70ch;
-  font-size: clamp(1.0rem, 1.4vw, 1.2rem);
-  line-height: 1.35;
+  margin: 0.10rem auto 0.45rem;
+
+  max-width: 78ch;
+  font-size: clamp(1.0rem, 1.05vw, 1.10rem);
+  line-height: 1.38;
   font-weight: 650;
   letter-spacing: -0.01em;
+
+  text-align: center;
+  color: rgba($text, 0.90);
 }
