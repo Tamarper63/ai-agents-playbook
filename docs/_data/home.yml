@@ -4,7 +4,7 @@ hero:
   bullets:
     - "Orchestration patterns: workflows, state/lifecycle, and tool invocation."
     - "Verification contracts: evidence boundaries, citations, and fail-closed checks."
-    - "Copy/paste artifacts: policies, prompt blocks, and procedures."
+    - "Copy/paste artifacts: policies, prompt templates, and procedures."
 
 actions:
   primary:
@@ -17,7 +17,7 @@ actions:
       url: "/how-to/"
     - label: "Start here (articles)"
       url: "/articles/#start-here"
-    - label: "Copy prompt blocks"
+    - label: "Browse prompt library"
       url: "/prompts/"
 
 quickstart:
@@ -26,7 +26,7 @@ quickstart:
     - title: "Set: Choose an evidence boundary"
       output: "Define allowed sources and refusal conditions (fail-closed)."
       url: "/how-to/choose-facts-only-evidence-boundary/"
-    - title: "Run: Fact-Checking Kit"
+    - title:  "Run: Fact-Checking Procedure"
       output: "Run a repeatable claim-check loop before producing non-trivial outputs."
       url: "/how-to/fact-checking-kit/"
     - title: "Enforce: Engineering Quality Gate — Procedure"

@@ -6,7 +6,7 @@ items:
     url: "/policies/"
     active_contains: "/policies/"
 
-  - label: "Prompt blocks"
+  - label: "Prompt library"
     url: "/prompts/"
     active_contains: "/prompts/"
 
