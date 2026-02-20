@@ -129,8 +129,8 @@ samp {
 .main-content--page .c-prose > .highlighter-rouge,
 .main-content--page .c-prose > .highlight {
   max-width: 74ch;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .main-content p {
@@ -147,86 +147,12 @@ samp {
   margin: 0.35rem 0;
 }
 
-/* Headings: enforce font-family for ALL headings inside .main-content
-   (fixes “headings look like Cayman default” when headings are nested). */
-.main-content h1,
-.main-content h2,
-.main-content h3,
-.main-content h4,
-.main-content h5,
-.main-content h6 {
-  font-family: $font-sans !important;
+/* Headings: ensure site font is applied consistently across the whole site.
+   (Do NOT override theme heading scale here; page layouts rely on theme spacing.) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-sans;
   color: $text;
 }
-
-/* Headings: consistent scale + tighter line-height than body
-   IMPORTANT: apply to direct children of .main-content (home) AND direct children of .c-prose (non-home pages). */
-.main-content > h1,
-.main-content > h2,
-.main-content > h3,
-.main-content > h4,
-.main-content > h5,
-.main-content > h6,
-.main-content--page .c-prose > h1,
-.main-content--page .c-prose > h2,
-.main-content--page .c-prose > h3,
-.main-content--page .c-prose > h4,
-.main-content--page .c-prose > h5,
-.main-content--page .c-prose > h6 {
-  margin-top: 2.2rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-  text-align: left;
-}
-
-/* H1 (page titles) */
-.main-content > h1,
-.main-content--page .c-prose > h1 {
-  font-size: clamp(1.75rem, calc(1.35rem + 1.55vw), 2.45rem);
-  font-weight: 820;
-  letter-spacing: -0.02em;
-  line-height: 1.10;
-}
-
-/* Title spacing: when H1 is the first element inside its container */
-.main-content > h1:first-child,
-.main-content--page .c-prose > h1:first-child {
-  margin-top: 0;
-  margin-bottom: 0.95rem;
-}
-
-/* Section headings */
-.main-content > h2,
-.main-content--page .c-prose > h2 {
-  font-size: clamp(1.35rem, calc(1.10rem + 0.95vw), 1.90rem);
-  font-weight: 800;
-}
-
-.main-content > h3,
-.main-content--page .c-prose > h3 {
-  font-size: clamp(1.18rem, calc(1.05rem + 0.55vw), 1.45rem);
-  font-weight: 780;
-}
-
-.main-content > h4,
-.main-content--page .c-prose > h4 {
-  font-size: clamp(1.05rem, calc(1.00rem + 0.30vw), 1.22rem);
-  font-weight: 760;
-}
-
-/* Minor headings */
-.main-content > h5,
-.main-content > h6,
-.main-content--page .c-prose > h5,
-.main-content--page .c-prose > h6 {
-  font-size: 1.00rem;
-  font-weight: 760;
-  letter-spacing: -0.01em;
-}
-
-
-
 .main-content a,
 .footer-links a,
 .build-info a {
@@ -1274,6 +1200,17 @@ samp {
   font-weight: 700;
   text-decoration: none;
 }
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  font-family: $font-sans !important;
+  color: $text;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
 
 
 .c-section__link:hover { text-decoration: underline; }
@@ -1300,17 +1237,6 @@ samp {
 .c-grid { align-items: stretch; }
 .c-grid .c-card { height: auto; }
 
-
-
-.main-content > h1,
-.main-content > h2,
-.main-content > h3,
-.main-content > h4,
-.main-content > h5,
-.main-content > h6 {
-  color: $text;
-  letter-spacing: -0.01em;
-}
 
 .main-content > h2 { margin-top: 2.25rem; }
 .main-content > h3 { margin-top: 1.85rem; }
