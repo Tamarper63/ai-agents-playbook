@@ -6,9 +6,9 @@ permalink: /how-to/
 Task-oriented guides (procedures + checklists) for executing workflows under explicit **evidence boundaries**, **verification steps**, and **policy constraints**.
 
 ## Choose the right content type (fast)
-- **Do a task (goal-oriented)** → **How-to** (this section). :contentReference[oaicite:3]{index=3}
-- **Look up stable definitions / catalogs** → **Reference**. :contentReference[oaicite:4]{index=4}
-- **Understand concepts & rationale** → **Articles** (explanations). :contentReference[oaicite:5]{index=5}
+- **Do a task (goal-oriented)** → **How-to** (this section). 
+- **Look up stable definitions / catalogs** → **Reference**. 
+- **Understand concepts & rationale** → **Articles** (explanations). 
 
 ## Terminology (used in these guides)
 - **Evidence boundary:** which sources are allowed (e.g., artifacts-only vs authoritative sources).
