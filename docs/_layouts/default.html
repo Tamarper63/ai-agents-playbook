@@ -56,24 +56,24 @@
       {% endif %}
     </main>
 
-    <footer class="site-footer" role="contentinfo">
-      <ul class="footer-links" aria-label="Footer links">
-        {% if site.social and site.social.links %}
-          {% for link in site.social.links %}
-            {% if link contains 'github.com' %}
-              <li><a href="{{ link }}">GitHub</a></li>
-            {% elsif link contains 'linkedin.com' %}
-              <li><a href="{{ link }}">LinkedIn</a></li>
-            {% endif %}
-          {% endfor %}
+<footer class="site-footer" role="contentinfo">
+  <ul class="footer-links" aria-label="Footer links" dir="ltr">
+    {% if site.social and site.social.links %}
+      {% for link in site.social.links %}
+        {% if link contains 'github.com' %}
+          <li><a href="{{ link }}">GitHub</a></li>
+        {% elsif link contains 'linkedin.com' %}
+          <li><a href="{{ link }}">LinkedIn</a></li>
         {% endif %}
+      {% endfor %}
+    {% endif %}
 
-        <li><a href="{{ '/newsletter/' | relative_url }}">Newsletter</a></li>
-      </ul>
+    <li><a href="{{ '/newsletter/' | relative_url }}">Newsletter</a></li>
+  </ul>
 
-      <div class="build-info" aria-label="Build info">
-        <span>&copy; {{ site.time | date: '%Y' }} {{ site.author | default: site.title }}</span>
-      </div>
-    </footer>
+  <div class="build-info" aria-label="Build info" dir="ltr">
+    <span><bdi dir="ltr">&copy; {{ site.time | date: '%Y' }} {{ site.author | default: site.title }}. All rights reserved.</bdi></span>
+  </div>
+</footer>
   </body>
 </html>

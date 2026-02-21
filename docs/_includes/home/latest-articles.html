@@ -7,9 +7,11 @@
       {% endif %}
     </div>
 
-    <a class="c-section__link" href="{{ site.data.home.latest_articles.all_url | relative_url }}">
-      {{ site.data.home.latest_articles.all_label }} →
-    </a>
+    {% if site.data.home.latest_articles.all_url and site.data.home.latest_articles.all_label %}
+      <a class="c-section__link" href="{{ site.data.home.latest_articles.all_url | relative_url }}">
+        {{ site.data.home.latest_articles.all_label }} <span aria-hidden="true">→</span>
+      </a>
+    {% endif %}
   </div>
 
   <div class="c-grid c-grid--3">

@@ -1,0 +1,135 @@
+flowchart TB
+
+%% =========================
+%% Styles (safe: no px, no HTML)
+%% =========================
+classDef step fill:#0F172A,stroke:#0F172A,color:#FFFFFF,stroke-width:1;
+classDef hub fill:#EEF2FF,stroke:#6366F1,color:#1E293B,stroke-width:1;
+
+classDef mem fill:#ECFDF5,stroke:#10B981,color:#064E3B,stroke-width:1;
+classDef ret fill:#EFF6FF,stroke:#3B82F6,color:#1E3A8A,stroke-width:1;
+classDef exe fill:#F5F3FF,stroke:#8B5CF6,color:#3B0764,stroke-width:1;
+classDef obs fill:#FFF7ED,stroke:#FB923C,color:#7C2D12,stroke-width:1;
+
+classDef risk fill:#FFF5F5,stroke:#D64545,color:#8B1E1E,stroke-width:1;
+
+%% =========================
+%% Core flow (ordered)
+%% =========================
+U["S1 User Input"]:::step
+GW["S2 Gateway / Policy Enforcement\n(allowlist, redaction, auth binding)"]:::step
+ASM["S3 Request Assembly / Context Selector\n(pack + order + truncate)"]:::step
+LLM["S4 LLM Inference"]:::step
+OUT["S5 Answer"]:::step
+
+U  -- "send request" --> GW
+GW -- "enforce policy" --> ASM
+ASM -- "assemble prompt" --> LLM
+LLM -- "generate" --> OUT
+
+%% =========================
+%% Context hub (causal: all feed assembly)
+%% =========================
+CTX["Context Inputs Hub\n(all sources merged BEFORE S3)"]:::hub
+CTX -- "inject into S3" --> ASM
+
+%% =========================
+%% Memory Plane (green) -> feeds CTX -> drives S3
+%% =========================
+subgraph MEM["Memory Plane"]
+direction TB
+LTM["LTM Saved Memory Store"]:::mem
+BIO["Bio / Profile Attributes"]:::mem
+PREF["User Preferences"]:::mem
+CH["Chat History\n(thread messages)"]:::mem
+SH["Session History\n(session state / metadata)"]:::mem
+end
+
+LTM  -- "read" --> CTX
+BIO  -- "read" --> CTX
+PREF -- "read" --> CTX
+CH   -- "read" --> CTX
+SH   -- "read" --> CTX
+
+%% =========================
+%% Retrieval / Caching (blue) -> feeds CTX -> drives S3
+%% =========================
+subgraph RET["Retrieval / Caching"]
+direction TB
+RAG["RAG / Vector Store"]:::ret
+CACHE["Cache / Replay Store"]:::ret
+end
+
+RAG   -- "retrieve" --> CTX
+CACHE -- "replay/serve" --> CTX
+
+%% =========================
+%% Execution / Tools (purple) - triggered after S4
+%% =========================
+subgraph EXE["Execution / Tools"]
+direction TB
+TR["Tool Router / Function Calling"]:::exe
+T1["Connector / External Tool"]:::exe
+CHAIN["Chaining\n(multi-step loop / planner retries)"]:::exe
+end
+
+LLM  -- "select tool" --> TR
+TR   -- "invoke" --> T1
+T1   -- "return" --> TR
+TR   -- "loop control" --> CHAIN
+CHAIN-- "re-prompt" --> LLM
+
+%% =========================
+%% Streaming / Observability (orange)
+%% =========================
+subgraph OBS["Streaming / Observability"]
+direction TB
+SE["Stream Events\n(event bus)"]:::obs
+SL["Stream Logs\n(telemetry sink)"]:::obs
+end
+
+ASM -- "emit events" --> SE
+TR  -- "emit events" --> SE
+SE  -- "log/telemetry" --> SL
+
+%% =========================
+%% Persistence loops (numbered causality)
+%% =========================
+T1  -- "L1 write" --> LTM
+OUT -- "L2 feedback" --> RAG
+SL  -- "L3 feeds" --> CACHE
+
+%% =========================
+%% Risk points: tagged to stage/trigger
+%% =========================
+R1["R1@S1 Context Injection\n(prompt-level steering)"]:::risk
+R2["R2@L1 Memory Poisoning\n(long term memory write)"]:::risk
+R3["R3@RET Retrieval Poisoning\n(RAG corpus/embeddings)"]:::risk
+R4["R4@S3 Assembly Manipulation\n(ordering + truncation bias)"]:::risk
+R5["R5@RET Replay / Cache Confusion\n(stale/wrong session state)"]:::risk
+R6["R6@EXE Tool Hijack\n(tool selection + argument injection)"]:::risk
+R7["R7@OBS Stream/Log Exfiltration\n(prompts/outputs/user data)"]:::risk
+R8["R8@MEM Profile/Preference Escalation\n(bio/prefs become control-plane)"]:::risk
+
+U     -. "steer" .-> R1
+R1    -. "bias S3" .-> ASM
+
+LTM   -. "poison" .-> R2
+R2    -. "re-enter via hub" .-> CTX
+
+RAG   -. "poison" .-> R3
+R3    -. "re-enter via hub" .-> CTX
+
+ASM   -. "bias" .-> R4
+
+CACHE -. "confuse" .-> R5
+R5    -. "re-enter via hub" .-> CTX
+
+TR    -. "hijack" .-> R6
+R6    -. "malicious call" .-> T1
+
+SL    -. "exfil" .-> R7
+
+BIO   -. "escalate" .-> R8
+PREF  -. "escalate" .-> R8
+R8    -. "bias S3" .-> CTX

@@ -790,9 +790,9 @@ h1, h2, h3, h4, h5, h6 {
 .site-footer-owner { display: none !important; }
 
 .site-footer {
-  margin-top: 3rem;
+  margin-top: 1.5rem; /* reduces excessive vertical gap */
   padding: 1rem;
-  border-top: 1px solid rgba($text, 0.08);
+  border-top: 1px solid $border; /* stronger separation */
   background: $surface;
 }
 
@@ -817,10 +817,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .build-info a {
   color: $accent_2;
-  text-decoration: none;
+  text-decoration: underline;
+  padding: 0.25rem 0.35rem;
 }
 
 .build-info a:hover { text-decoration: underline; }
+
+.build-info a:focus-visible {
+  outline: 3px solid rgba($accent_2, 0.55);
+  outline-offset: 2px;
+}
 
 .footer-links {
   max-width: 64rem;
@@ -847,10 +853,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-links a {
   color: $accent_2;
-  text-decoration: none;
+  text-decoration: underline;          /* link affordance */
+  padding: 0.25rem 0.35rem;            /* helps 24x24 target size */
 }
 
 .footer-links a:hover { text-decoration: underline; }
+
+.footer-links a:focus-visible {
+  outline: 3px solid rgba($accent_2, 0.55);
+  outline-offset: 2px;
+}
 
 /* =========================
    Page ToC

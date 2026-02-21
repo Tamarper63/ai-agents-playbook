@@ -35,6 +35,8 @@ quickstart:
 latest_articles:
   title: "Recommended reading"
   subtitle: "A short reading path: architecture → verification → security."
+  all_label: "Browse articles"
+  all_url: "/articles/"
   items:
     - label: "LLM memory boundary model: how context gets selected"
       url: "/articles/agent-architecture/llm-memory-boundary-model/"

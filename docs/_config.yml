@@ -2,7 +2,7 @@
 
 title: AI Agents Playbook
 description: A public, versioned knowledge base for building reliable AI agents and securing agentic systems.
-
+author: Tamar Peretz
 # Custom domain (canonical)
 url: https://www.andyagentlab.com
 baseurl: ""
