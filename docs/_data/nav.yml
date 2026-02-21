@@ -15,7 +15,7 @@ items:
     active_contains: "/how-to/"
 
   - label: "Articles"
-    url: "/articles/#start-here"
+    url: "/articles/"
     active_contains: "/articles/"
 
   - label: "Reference"

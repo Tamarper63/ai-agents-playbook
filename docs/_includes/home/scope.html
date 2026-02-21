@@ -1,15 +1,29 @@
-<h2>{{ site.data.home.scope.title }}</h2>
+<section class="c-section c-section--thin c-section--scope">
+  <div class="c-section__header">
+    <h2 class="c-section__title">{{ site.data.home.scope.title }}</h2>
+  </div>
 
-<h3>{{ site.data.home.scope.covers_title }}</h3>
-<ul>
-  {% for item in site.data.home.scope.covers %}
-    <li>{{ item }}</li>
-  {% endfor %}
-</ul>
+  <div class="c-grid c-grid--2">
+    <div class="c-card">
+      <div class="c-card__content">
+        <div class="c-card__title">{{ site.data.home.scope.covers_title }}</div>
+        <ul class="c-card__list">
+          {% for item in site.data.home.scope.covers %}
+            <li class="c-card__list-item">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
 
-<h3>{{ site.data.home.scope.excludes_title }}</h3>
-<ul>
-  {% for item in site.data.home.scope.excludes %}
-    <li>{{ item }}</li>
-  {% endfor %}
-</ul>
+    <div class="c-card">
+      <div class="c-card__content">
+        <div class="c-card__title">{{ site.data.home.scope.excludes_title }}</div>
+        <ul class="c-card__list">
+          {% for item in site.data.home.scope.excludes %}
+            <li class="c-card__list-item">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
