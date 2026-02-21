@@ -34,22 +34,22 @@ quickstart:
 
 latest_articles:
   title: "Recommended reading"
-  subtitle: "A short reading path: architecture → verification → security."
+  subtitle: "A short path: boundary → orchestration → assembly → enforcement."
   all_label: "Browse articles"
   all_url: "/articles/"
   items:
+    - label: "The Attack Surface Starts Before Agents — The LLM Boundary"
+      url: "/articles/agent-security/llm-boundary-first-touch/"
+      desc: "Where the first LLM-to-system boundary appears, and why exposure starts before “agents”."
+    - label: "The Attack Surface Isn’t the LLM — It’s the Controller Loop"
+      url: "/articles/agent-security/controller-loop-attack-surface/"
+      desc: "Why multi-step orchestration increases risk, and what to audit in plan→tools→retry loops."
     - label: "Request assembly threat model: reading the diagram"
       url: "/articles/agent-security/request-assembly-threat-model/"
-      desc: "Reviewer-oriented threat model for request assembly: context hub, truncation, tool loops, observability, and R1–R8 checkpoints."
-    - label: "LLM memory boundary model: how context gets selected"
-      url: "/articles/agent-architecture/llm-memory-boundary-model/"
-      desc: "An engineering model for context selection: what gets loaded, what gets dropped, and where boundary controls belong."
-    - label: "Fluency Is Not Factuality"
-      url: "/articles/model-training-and-eval/fluency-vs-factuality/"
-      desc: "Why fluent outputs can still be wrong, and what evidence-locked answering looks like operationally."
-    - label: "How Agentic Control-Plane Failures Actually Happen"
-      url: "/articles/agent-security/control-plane-failures/"
-      desc: "Concrete failure patterns to audit: session binding, memory reuse, routing, tool enforcement, and gating/monitoring."
+      desc: "Assembly model: context hub, truncation/ordering, tool loops, observability, and R1–R8 checkpoints."
+    - label: "Prompt Assembly Policy Enforcement: Typed Provenance"
+      url: "/articles/agent-security/prompt-assembly-policy-enforcement/"
+      desc: "Prevent authority confusion: typed provenance, no silent promotion, fail-closed enforcement at ingress."
 
 featured:
   title: "Core policies (operating contracts)"

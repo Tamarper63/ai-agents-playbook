@@ -26,12 +26,35 @@ A minimal reading path for first-time visitors (foundational framing → orchest
    Prompt specs as testable contracts + evaluation patterns; complements the procedural How-to version.
 ## Browse by topic {#browse-by-topic}
 
-| Topic | What it covers | Hub |
-|---|---|---|
-| Agent security | Policy boundaries, authorization semantics, orchestration controls, monitoring/gating design | **[Agent security]({{ '/articles/agent-security/' | relative_url }})** |
-| Agent architecture | Workflow patterns, state/lifecycle management, tool invocation semantics, retrieval/context management, evaluation harnesses | **[Agent architecture]({{ '/articles/agent-architecture/' | relative_url }})** |
-| Model training and evaluation | Reliability, calibration, evaluation methods, benchmark interpretation limits | **[Model training and evaluation]({{ '/articles/model-training-and-eval/' | relative_url }})** |
-| Prompt engineering | Practical prompting notes, evidence contracts, operational templates | **[Prompt engineering]({{ '/articles/prompt-engineering/' | relative_url }})** |
+<div class="c-grid c-grid--2">
+  <a class="c-card" href="{{ '/articles/agent-security/' | relative_url }}">
+    <div class="c-card__content">
+      <div class="c-card__title">Agent security</div>
+      <div class="c-card__desc">Policy boundaries, authorization semantics, orchestration controls, monitoring/gating design</div>
+    </div>
+  </a>
+
+  <a class="c-card" href="{{ '/articles/agent-architecture/' | relative_url }}">
+    <div class="c-card__content">
+      <div class="c-card__title">Agent architecture</div>
+      <div class="c-card__desc">Workflow patterns, state/lifecycle management, tool invocation semantics, retrieval/context management, evaluation harnesses</div>
+    </div>
+  </a>
+
+  <a class="c-card" href="{{ '/articles/model-training-and-eval/' | relative_url }}">
+    <div class="c-card__content">
+      <div class="c-card__title">Model training and evaluation</div>
+      <div class="c-card__desc">Reliability, calibration, evaluation methods, benchmark interpretation limits</div>
+    </div>
+  </a>
+
+  <a class="c-card" href="{{ '/articles/prompt-engineering/' | relative_url }}">
+    <div class="c-card__content">
+      <div class="c-card__title">Prompt engineering</div>
+      <div class="c-card__desc">Practical prompting notes, evidence contracts, operational templates</div>
+    </div>
+  </a>
+</div>
 
 ## Featured (manual list) {#featured}
 
@@ -44,6 +67,13 @@ Curated reads beyond the “Start here” path (maintain manually; keep 3–7 it
 - [Theory of mind in LLMs — what benchmarks test (and what they don’t)]({{ '/articles/model-training-and-eval/theory-of-mind-in-llms/' | relative_url }})
 
 ## All articles {#all-articles}
+
+<details class="c-disclosure" markdown="block">  
+<summary>
+  <span class="c-disclosure__label c-disclosure__label--closed">Show full list (by topic)</span>
+  <span class="c-disclosure__label c-disclosure__label--open">Hide full list (by topic)</span>
+</summary>
+<div class="c-disclosure__body" markdown="block">
 
 ### Agent security
 - [The Attack Surface Starts Before Agents — The LLM Boundary]({{ '/articles/agent-security/llm-boundary-first-touch/' | relative_url }})
@@ -66,6 +96,9 @@ Curated reads beyond the “Start here” path (maintain manually; keep 3–7 it
 
 ### Prompt engineering
 - [Prompt Engineering Guide for Daily Work (Deep Dive)]({{ '/articles/prompt-engineering/prompt-engineering-daily-work/' | relative_url }})
+
+</div>
+</details>
 
 ## Related: accuracy policies {#related-accuracy-policies}
 

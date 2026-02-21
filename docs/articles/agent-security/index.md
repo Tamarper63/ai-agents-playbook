@@ -34,11 +34,12 @@ Engineering writeups on security properties of **tool-using LLM systems (“agen
 - When you want code/architecture validation (not writing verification): {% include page-title-link.html url="/how-to/engineering-quality-gate-procedure/" fallback="Engineering Quality Gate — Procedure" %}
 
 ## Pages in this section
-- {% include page-title-link.html url="/articles/agent-security/request-assembly-threat-model/" fallback="Request assembly threat model (author-mapped)" %}
 - {% include page-title-link.html url="/articles/agent-security/llm-boundary-first-touch/" fallback="The Attack Surface Starts Before Agents — The LLM Boundary" %}
 - {% include page-title-link.html url="/articles/agent-security/controller-loop-attack-surface/" fallback="Controller-loop attack surface" %}
-- {% include page-title-link.html url="/articles/agent-security/trust-boundary-checkpoints/" fallback="8 trust-boundary checkpoints" %}
 - {% include page-title-link.html url="/articles/agent-security/control-plane-failures/" fallback="Control-plane failure patterns" %}
+- {% include page-title-link.html url="/articles/agent-security/request-assembly-threat-model/" fallback="Request assembly threat model (author-mapped)" %}
+- {% include page-title-link.html url="/articles/agent-security/prompt-assembly-policy-enforcement/" fallback="Prompt assembly policy enforcement (typed provenance)" %}
+- {% include page-title-link.html url="/articles/agent-security/trust-boundary-checkpoints/" fallback="8 trust-boundary checkpoints" %}
 - {% include page-title-link.html url="/articles/agent-security/social-engineering-ai-decision-pipeline/" fallback="Social engineering: decision pipeline" %}
 - {% include page-title-link.html url="/articles/agent-security/provenance-boundary-report/" fallback="Provenance boundary failure report" %}
 

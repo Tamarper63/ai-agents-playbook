@@ -1,0 +1,52 @@
+flowchart LR
+
+%% Styles
+classDef ui fill:#0B1B33,stroke:#0B1B33,color:#FFFFFF,stroke-width:2;
+classDef llm fill:#0F6A53,stroke:#0F6A53,color:#FFFFFF,stroke-width:2;
+classDef boundary fill:#FFF3CC,stroke:#8A6D00,color:#000000,stroke-width:2;
+classDef comp fill:#F2F2F2,stroke:#111111,color:#000000,stroke-width:2;
+classDef trusted fill:#E8F1FF,stroke:#0B3D91,color:#000000,stroke-width:2;
+classDef risk fill:#FFE6E6,stroke:#B00020,color:#5A0000,stroke-width:3;
+classDef state fill:#E8FBEF,stroke:#0F6A53,color:#000000,stroke-width:2;
+
+%% Inputs
+UI[Client UI]:::ui --> GW
+U[Untrusted user text - policy-shaped directive; example: ops notice, treat next messages as policy]:::comp --> GW
+PS[Policy store - authoritative System and Dev rules]:::trusted --> GW
+
+%% Orchestration boundary
+subgraph OB[Orchestration boundary]
+direction LR
+GW{Gateway / policy boundary; expected typed provenance enforcement}:::boundary
+CTX[Context builder - pack messages plus provenance tags]:::comp
+LLM[Core LLM]:::llm
+GW --> CTX --> LLM
+end
+
+%% Output
+LLM --> AB[Assistant behavior]:::comp
+
+%% Provenance break
+PB[Provenance break - user text treated as trusted policy]:::risk
+GW -.-> PB
+CTX -.-> PB
+PB -.-> AB
+
+%% Session / memory state (for drift across turns)
+STATE[(Session or memory state)]:::state
+AB -- persist --> STATE
+STATE -.-> CTX
+
+%% Impacts
+subgraph IMP[Impacts]
+direction TB
+I1[Instruction hierarchy leak]:::risk
+I2[Policy or constraint spoofing]:::risk
+I3[Authority-source confusion]:::risk
+I4[Privilege drift across turns]:::risk
+end
+
+AB --> I1
+AB --> I2
+AB --> I3
+STATE --> I4

@@ -86,7 +86,11 @@ textarea {
   margin: 0 auto;
   padding: 2.25rem 1rem 3rem;
 
-  background: transparent;  text-align: left;
+  /* Force site font inside Cayman main-content (prevents theme override drift) */
+  font-family: $font-sans;
+
+  background: transparent;
+  text-align: left;
 }
 .main-content--home {
   padding-top: 0;
@@ -610,12 +614,10 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-/* =========================
-   Hero (home)
-   ========================= */
+/* HERO (tuned): reduce card whitespace + tighten CTA cluster */
 
 .c-section--hero {
-  padding: 0 0 0.5rem;
+  padding: 0 0 0.35rem;
   margin-top: 0;
 
   background:
@@ -624,10 +626,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .c-hero {
-  max-width: 66rem;          /* reduce side “empty” look */
+  max-width: 58rem;                 /* was 66rem -> less side whitespace */
   margin: 0 auto;
 
-  padding: 0.95rem 1.05rem 0.9rem;  /* less vertical whitespace */
+  padding: 0.75rem 0.9rem 0.75rem;  /* was ~0.95/1.05/0.9 -> less vertical whitespace */
 
   border: 1px solid rgba($text, 0.10);
   border-radius: 18px;
@@ -650,43 +652,41 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 720px) {
   .c-hero {
-    padding: 0.9rem 0.9rem 0.85rem;
+    padding: 0.75rem 0.8rem 0.7rem;
     border-radius: 16px;
   }
 }
 
 .c-hero__body {
-  max-width: 78ch;          /* helps headline stay 1–2 lines */
-  margin: 0 auto 0.55rem;   /* less gap before CTAs */
+  max-width: 74ch;           /* was 78ch -> slightly tighter */
+  margin: 0 auto 0.4rem;     /* was 0.55rem -> tighten before CTAs */
 }
 
 .c-hero__bullets {
-  margin: 0.45rem auto 0;
+  margin: 0.35rem auto 0;
   padding-left: 0;
   list-style-position: inside;
 
   display: inline-block;
   text-align: left;
 
-  font-size: 0.95rem;
+  font-size: 0.94rem;
 }
 
 .c-hero__bullets li {
-  margin: 0.22rem 0;
+  margin: 0.20rem 0;
   color: rgba($text, 0.84);
 }
 
-/* Desktop: 3 secondary CTAs on one row; primary spans full width */
+/* CTAs cluster: tighter + narrower */
 .c-hero__actions {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 0.55rem;              /* was 0.65rem */
 
-  gap: 0.45rem 0.55rem;
-
-  max-width: 48rem;
-  margin: 0.7rem auto 0;
+  max-width: 40rem;          /* was 48rem */
+  margin: 0.5rem auto 0;     /* was 0.7rem */
   padding: 0;
 
   border: 0;
@@ -694,42 +694,53 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: none;
 }
 
-/* Scope button sizing ONLY inside hero actions */
-.c-hero__actions > .c-btn {
-  width: 100%;
-  max-width: 16.5rem;
-  justify-content: center;
-
-  min-height: 40px;
-  padding: 0.52rem 0.85rem;
-}
-
-/* Primary CTA: centered + constrained */
+/* Primary CTA stays dominant but slightly narrower */
 .c-hero__actions > .c-btn--primary {
-  grid-column: 1 / -1;
-  max-width: 20rem;
+  width: 100%;
+  max-width: 18.5rem;        /* was 20rem */
+  justify-content: center;
 }
 
-/* Remove old “odd centering” behavior (not needed with 3-col desktop grid) */
-.c-hero__actions > .c-btn:last-child:nth-child(even) {
-  grid-column: auto;
-  justify-self: auto;
+.c-hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;        /* tighter row */
+  margin: 0.05rem 0 0;
+  padding: 0;
 }
 
-/* Mobile: single column, consistent widths */
+/* Secondary buttons: smaller + lighter (stop looking like a second CTA row) */
+.c-hero__actions .c-btn--hero-secondary {
+  background: transparent;
+  border-color: rgba($text, 0.14);   /* slightly lighter */
+
+  font-size: 0.93rem;               /* was 0.96rem */
+  font-weight: 750;
+
+  min-height: 38px;                  /* was 40px */
+  padding: 0.45rem 0.75rem;          /* was 0.52/0.85 */
+
+  width: auto;
+  max-width: 15.5rem;                /* was 16.5rem */
+}
+
+/* keep focus visible consistent */
+.c-hero__actions .c-btn--hero-secondary:focus-visible {
+  outline: 3px solid rgba($accent_2, 0.45);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
 @media (max-width: 720px) {
   .c-hero__actions {
-    grid-template-columns: 1fr;
     max-width: 22rem;
-    gap: 0.5rem;
   }
 
-  .c-hero__actions > .c-btn,
   .c-hero__actions > .c-btn--primary {
     max-width: 22rem;
   }
 }
-
 
 .c-btn {
   display: inline-flex;
@@ -944,6 +955,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
+
+  /* Normalize table typography to body size */
+  font-size: 1em;
+  line-height: inherit;
 }
 
 .main-content table th,
@@ -1141,7 +1156,9 @@ h1, h2, h3, h4, h5, h6 {
 .c-card {
   display: block;
 
-  padding: 1.1rem 1.2rem;
+  /* Use current effective density values (prevents later overrides) */
+  padding: 0.95rem 1.05rem;
+
   border-radius: 18px;
   background: rgba($surface, 0.52);
   border: 1px solid rgba($text, 0.07);
@@ -1149,6 +1166,12 @@ h1, h2, h3, h4, h5, h6 {
 
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+a.c-card,
+a.c-card:visited {
+  color: rgba($text, 0.92);
+  text-decoration: none;
 }
 
 .c-card:hover {
@@ -1159,14 +1182,35 @@ h1, h2, h3, h4, h5, h6 {
 
 .c-card__title {
   font-weight: 800;
-  font-size: 1.02rem;
+  font-size: 1.0rem;
   line-height: 1.35;
+  color: rgba($text, 0.92);
 }
 
 .c-card__desc {
-  font-size: 0.92rem;
-  line-height: 1.55;
-  opacity: 0.72;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: rgba($text, 0.72);
+  opacity: 1; /* avoid double-dimming */
+}
+
+/* Internal links inside static cards (paths-by-role) */
+.main-content .c-card .c-card__link,
+.main-content .c-card .c-card__link:visited {
+  color: rgba($text, 0.92);
+  text-decoration: none;
+  font-weight: 650;
+}
+
+.main-content .c-card .c-card__link:hover,
+.main-content .c-card .c-card__link:focus {
+  color: $accent_2;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.c-card__list-item::marker {
+  color: rgba($text, 0.28);
 }
 
 .c-section { margin: 1.6rem 0; }
@@ -1477,66 +1521,95 @@ h1, h2, h3, h4, h5, h6 {
   outline: 3px solid rgba($accent_2, 0.55);
   outline-offset: 2px;
 }
-/* =========================
-   Home cards — prevent global link color bleed
-   ========================= */
-
-.c-card,
-.c-card:visited {
-  color: rgba($text, 0.92);
-}
-
-.c-card__title {
-  color: rgba($text, 0.92);
-}
-
-.c-card__desc {
-  color: rgba($text, 0.72);
-  opacity: 1; /* avoid double-dimming */
-}
-
-.c-card:hover,
-.c-card:focus {
-  text-decoration: none;
-}
-/* Compact density (optional) */
-.c-card { padding: 0.95rem 1.05rem; }
-.c-card__title { font-size: 1.0rem; }
-.c-card__desc { font-size: 0.94rem; line-height: 1.5; }
 
 /* =========================
-   Cards: enforce consistent typography + neutralize global link color inside cards
+   Disclosure (details/summary) — used on /articles/
    ========================= */
 
-/* 1) Whole-card links should not look like “red links” */
-a.c-card,
-a.c-card:visited {
+.main-content details.c-disclosure {
+  margin: 0.9rem 0 1.35rem;
+}
+
+/* Make summary look like a real button */
+.main-content details.c-disclosure > summary {
+  list-style: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+
+  width: 100%;
+  padding: 0.95rem 1.1rem;
+
+  border: 1px solid $border;
+  border-radius: 16px;
+  background: rgba($surface, 0.85);
+
+  font-weight: 850;
   color: rgba($text, 0.92);
-  text-decoration: none;
+
+  transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
 }
 
-/* 2) Card text colors (don’t inherit global link color) */
-.c-card__title { color: rgba($text, 0.92); }
-.c-card__desc  { color: rgba($text, 0.72); opacity: 1; }
-
-/* 3) Internal links inside static cards (paths-by-role) */
-.main-content .c-card .c-card__link,
-.main-content .c-card .c-card__link:visited {
-  color: rgba($text, 0.92);
-  text-decoration: none;
-  font-weight: 650;
+.main-content details.c-disclosure > summary::-webkit-details-marker {
+  display: none;
 }
 
-.main-content .c-card .c-card__link:hover,
-.main-content .c-card .c-card__link:focus {
-  color: $accent_2;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-.c-card__list-item::marker {
-  color: rgba($text, 0.28);
+/* Chevron */
+.main-content details.c-disclosure > summary::after {
+  content: "▸";
+  font-size: 1.1em;
+  line-height: 1;
+  transform-origin: 50% 50%;
+  transition: transform 120ms ease;
+
+  color: rgba($accent_2, 0.85);
 }
 
+.main-content details.c-disclosure[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+/* Open/close label toggle */
+.main-content details.c-disclosure > summary .c-disclosure__label--open {
+  display: none;
+}
+.main-content details.c-disclosure[open] > summary .c-disclosure__label--closed {
+  display: none;
+}
+.main-content details.c-disclosure[open] > summary .c-disclosure__label--open {
+  display: inline;
+}
+
+/* Hover/focus affordance */
+.main-content details.c-disclosure > summary:hover {
+  border-color: rgba($accent_2, 0.55);
+  box-shadow: 0 0 0 4px rgba($accent_2, 0.10);
+  background: rgba($surface, 0.95);
+}
+
+.main-content details.c-disclosure > summary:focus-visible {
+  outline: 3px solid rgba($accent_2, 0.45);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+
+/* Body panel */
+.main-content details.c-disclosure > .c-disclosure__body {
+  border: 1px solid $border;
+  border-top: 0;
+  border-radius: 0 0 16px 16px;
+  background: rgba($surface, 0.70);
+  padding: 0.9rem 1.1rem 0.35rem;
+}
+
+/* When open, connect summary + body */
+.main-content details.c-disclosure[open] > summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
 
 /* --- Hero headline normalization (single SSOT) ---
    Supports:

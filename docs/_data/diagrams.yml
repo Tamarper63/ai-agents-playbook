@@ -7,10 +7,15 @@ categories:
         url: "/reference/diagrams/chatgpt-request-assembly-architecture/"
         summary: "Request assembly/context selection schematic with annotated risk points across tools, memory, retrieval/caching, and observability."
 
-  - id: chatgpt-request-assembly-architecture-detailed
-    title: "ChatGPT request assembly architecture (detailed)"
-    url: "/reference/diagrams/chatgpt-request-assembly-architecture-detailed/"
-    summary: "Detailed author-mapped diagram for request assembly, context inputs hub, tool loops, optional persistence loops, observability, and R1–R8 checkpoints."
+      - id: chatgpt-request-assembly-architecture-detailed
+        title: "ChatGPT request assembly architecture (detailed)"
+        url: "/reference/diagrams/chatgpt-request-assembly-architecture-detailed/"
+        summary: "Detailed author-mapped diagram for request assembly, context inputs hub, tool loops, optional persistence loops, observability, and R1–R8 checkpoints."
+
+      - id: provenance-boundary-failure-prompt-assembly
+        title: "Provenance Boundary Failure — Prompt Assembly Diagram"
+        url: "/reference/diagrams/provenance-boundary-failure-prompt-assembly/"
+        summary: "Reference model of provenance boundary failure in prompt assembly: authority confusion and cross-turn drift."
 
   - id: connectors
     title: "Connectors & tool routing"

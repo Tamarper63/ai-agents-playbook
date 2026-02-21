@@ -8,8 +8,8 @@ summary: Request assembly/context selection schematic with annotated risk points
   src="/assets/img/diagrams/chatgpt-request-assembly-architecture.png"
   width="1600"
   height="890"
-  alt="..."
-  caption="..." %}
+  alt="Author-mapped schematic of request assembly and context selection: gateway/policy enforcement, request assembly (selection/ordering/truncation), LLM inference, tool execution, retrieval/caching inputs, memory inputs, and observability outputs with risk checkpoints R1–R8."
+  caption="ChatGPT request assembly architecture — author-mapped reference model (not vendor internal placement)." %}
 
 ## What this diagram is
 

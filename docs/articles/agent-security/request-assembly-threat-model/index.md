@@ -43,7 +43,7 @@ Use this page to:
 - **Locate enforcement boundaries** (policy binding, auth binding, tool allowlists).
 - **Audit the assembly step** (selection, ordering, truncation) as a first-class risk surface.
 - **Assess tool and connector exposure** (approval, argument validation, server-side authorization).
-- **Check observability blast radius** (what is emitted, where it lands, who can access it, retention/redaction).
+- **Check observability exposure scope** (what is emitted, where it lands, who can access it, retention/redaction).
 
 This is written for **security review and threat modeling**, not for end-user onboarding or product marketing.
 
@@ -138,11 +138,12 @@ In the diagram, tool execution is triggered from S4 via a **Tool Router / Functi
 - argument/schema validation,
 - where tool/app/connector outputs can **re-enter** assembly inputs (hub) or influence S3 outcomes.
 
-**Scope note:** treat apps/connectors and MCP-like integrations as a tool-access boundary. Reviewers should confirm:
+**Scope note:** treat apps/connectors and MCP-based integrations (Model Context Protocol; MCP) as a tool-access boundary. Reviewers should confirm:
 - whether tool use requires explicit approval / allowlisting,
 - how URLs and external content returned by tools are validated and attributed,
 - whether authorization is enforced server-side for every tool invocation.
 
+Terminology note: Model Context Protocol (MCP) is an open specification for connecting LLM clients to external tools and resources.
 
 ### Streaming / observability (orange)
 In the diagram, observability is modeled as:
@@ -208,8 +209,6 @@ Each checkpoint is written in a consistent audit template:
 - Memory cannot silently elevate permissions or tool access.
 
 (Feature context: OpenAI distinguishes saved memories vs chat history in its Memory documentation.)  
-- Memory: https://help.openai.com/en/articles/8983136-what-is-memory  
-- Memory FAQ: https://help.openai.com/en/articles/8590148-memory-faq  
 
 ### R3 — Retrieval Poisoning (RAG corpus / embeddings)
 **Failure mode:** Retrieval returns attacker-controlled or low-integrity content as trusted context.
@@ -259,17 +258,15 @@ Each checkpoint is written in a consistent audit template:
 
 **Controls to verify:**
 - Tools run under least privilege; sensitive tools require stronger gates.
+- Least-privilege is enforced and auditable for tool execution, including logging privileged function use (align to NIST SP 800-53 AC-6 / AC-6(9)).
 - Arguments are validated server-side; authorization is enforced per invocation.
 - Tool outputs are treated as untrusted unless explicitly trusted.
 
 (Feature context: OpenAI documents tools/function calling and connector/app surfaces; treat these as review surfaces, not internal placement claims.)
-- Tools: https://developers.openai.com/api/docs/guides/tools/  
-- Function calling: https://developers.openai.com/api/docs/guides/function-calling/  
-- Apps/Connectors in ChatGPT: https://help.openai.com/en/articles/11487775-connectors-in-chatgpt  
-- Connectors + MCP: https://developers.openai.com/api/docs/guides/tools-connectors-mcp/  
+
 
 ### R7 — Stream/Log Exfiltration (prompts/outputs/tool I/O/user data)
-**Failure mode:** Sensitive data leaks into logs/telemetry/event buses, widening blast radius.
+**Failure mode:** Sensitive data leaks into logs/telemetry/event buses, widening exposure scope.ֿ
 
 **Evidence to request:**
 - What is emitted (events/logs) and whether it includes prompts, retrieval contents, tool I/O.
@@ -279,6 +276,8 @@ Each checkpoint is written in a consistent audit template:
 **Controls to verify:**
 - Redaction happens before persistence and before fan-out.
 - Telemetry access is tightly controlled and retention is bounded.
+- Audit record content requirements are explicit (event type, timestamp, component/location, source, outcome, identity) and validated (align to NIST SP 800-53 AU-3).
+- Log management requirements are documented and enforced (collection, protection, retention, access control), aligned to an organizational log management program (align to NIST SP 800-92).
 - Reviewers can verify what is captured without exposing sensitive payloads.
 
 ### R8 — Profile/Preference Escalation (bio/prefs become control-plane)
@@ -297,20 +296,26 @@ Each checkpoint is written in a consistent audit template:
 ---
 
 ## Minimal reviewer checklist (use with the diagram)
-1) Identify **all context sources** feeding S3; classify them by integrity and authorization.
-2) Confirm where **authorization is bound** and where it can be bypassed (S2/S3/tool/app/connector layer).
-3) Enumerate **tools and apps/connectors** + scopes + approval policy + server-side enforcement.
-4) Review **persistence**: saved memory writes, retrieval feedback loops, cache/replay behavior, and retention.
-5) Audit **observability**: what is emitted (events/logs), who can read it, and how it is redacted.
 
----
+1. Identify all context sources feeding S3; classify them by integrity and authorization.
+2. Confirm where authorization is bound and where it can be bypassed (S2/S3/tool/app/connector layer).
+3. Enumerate tools and apps/connectors: scopes, approval policy, and server-side enforcement.
+4. Review persistence: saved memory writes, retrieval feedback loops, cache/replay behavior, and retention.
+5. Audit observability: what is emitted (events/logs), who can read it, and how it is redacted.---
 
 ## References (official feature docs; not internal placement claims)
-- OpenAI — Memory (saved memories / chat history): https://help.openai.com/en/articles/8983136-what-is-memory  
-- OpenAI — Memory FAQ: https://help.openai.com/en/articles/8590148-memory-faq  
-- OpenAI API — Function/tool calling: https://developers.openai.com/api/docs/guides/function-calling/  
-- OpenAI API — Tools overview: https://developers.openai.com/api/docs/guides/tools/  
-- OpenAI — Apps/Connectors in ChatGPT: https://help.openai.com/en/articles/11487775-connectors-in-chatgpt  
-- OpenAI API — Connectors and MCP servers (risks/safety/approvals): https://developers.openai.com/api/docs/guides/tools-connectors-mcp/  
-- OWASP — Top 10 for LLM Applications: https://owasp.org/www-project-top-10-for-large-language-model-applications/  
+- OpenAI — Memory (saved memories / chat history): https://help.openai.com/en/articles/8983136-what-is-memory
+- OpenAI — Memory FAQ: https://help.openai.com/en/articles/8590148-memory-faq
+- OpenAI API — Function/tool calling: https://developers.openai.com/api/docs/guides/function-calling/
+- OpenAI API — Tools overview: https://developers.openai.com/api/docs/guides/tools/
+- OpenAI — Apps/Connectors in ChatGPT: https://help.openai.com/en/articles/11487775-connectors-in-chatgpt
+- OpenAI API — Connectors and MCP servers (risks/safety/approvals): https://developers.openai.com/api/docs/guides/tools-connectors-mcp/
+
+- NIST SP 800-30 Rev. 1 — Guide for Conducting Risk Assessments: https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-30r1.pdf
+- NIST SP 800-154 (IPD) — Guide to Data-Centric System Threat Modeling: https://csrc.nist.gov/files/pubs/sp/800/154/ipd/docs/sp800_154_draft.pdf
+- NIST SP 800-92 — Guide to Computer Security Log Management: https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-92.pdf
+- NIST SP 800-53 Rev. 5 — Security and Privacy Controls for Information Systems and Organizations: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf
+- NIST AI 100-1 — AI RMF 1.0: https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf
+
+- OWASP — Top 10 for LLM Applications: https://owasp.org/www-project-top-10-for-large-language-model-applications/
 - NIST — AI RMF Generative AI Profile (NIST AI 600-1): https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
