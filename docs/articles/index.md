@@ -6,9 +6,14 @@ page_class: page--articles-index
 
 Long-form technical writeups (engineering-oriented): threat models, architecture notes, evaluation methodology, and evidence/verification contracts.
 
+This section is **Explanation-style** documentation (conceptual, long-form). For task execution and lookup:
+- **How-to** (procedures/checklists): **[How-to]({{ '/how-to/' | relative_url }})**
+- **Reference** (stable lookup, canonical diagrams): **[Reference]({{ '/reference/' | relative_url }})**
+- **Policies** (normative contracts): **[Policies]({{ '/policies/' | relative_url }})**
+
 ## Start here {#start-here}
 
-A minimal reading path for first-time visitors (foundational framing → orchestration/control-plane risks → reliability):
+A minimal reading path for first-time visitors (boundary framing → orchestration/control-plane risks → request assembly → reliability):
 
 1) **{% include page-title-link.html url="/articles/agent-security/llm-boundary-first-touch/" fallback="The Attack Surface Starts Before Agents — The LLM Boundary" %}**  
    This series starts at the first LLM-to-system boundary: where outputs can influence reads/writes to production data, logs, telemetry, or persisted state.
@@ -19,11 +24,12 @@ A minimal reading path for first-time visitors (foundational framing → orchest
 3) **{% include page-title-link.html url="/articles/agent-security/control-plane-failures/" fallback="How Agentic Control-Plane Failures Actually Happen" %}**  
    Concrete control-plane failure patterns to audit: session binding, memory reuse, routing, tool enforcement, and gating/monitoring.
 
-4) **{% include page-title-link.html url="/articles/model-training-and-eval/fluency-vs-factuality/" fallback="Fluency Is Not Factuality" %}**  
+4) **{% include page-title-link.html url="/articles/agent-security/request-assembly-threat-model/" fallback="Request assembly threat model: reading the diagram" %}**  
+   Threat model for assembly: selection/ordering/truncation, tool loops, observability, and checkpoints.
+
+5) **{% include page-title-link.html url="/articles/model-training-and-eval/fluency-vs-factuality/" fallback="Fluency Is Not Factuality" %}**  
    Reliability vocabulary: why fluent text is not evidence of correctness, and what “grounding” means operationally.
 
-5) **{% include page-title-link.html url="/articles/prompt-engineering/prompt-engineering-daily-work/" fallback="Prompt Engineering Guide for Daily Work (Deep Dive)" %}**  
-   Prompt specs as testable contracts + evaluation patterns; complements the procedural How-to version.
 ## Browse by topic {#browse-by-topic}
 
 <div class="c-grid c-grid--2">
@@ -58,13 +64,16 @@ A minimal reading path for first-time visitors (foundational framing → orchest
 
 ## Featured (manual list) {#featured}
 
-Curated reads beyond the “Start here” path (maintain manually; keep 3–7 items; avoid duplicating the Start here list):
+Curated reads beyond the “Start here” path (maintain manually; keep short; avoid duplicating the Start here list):
 
-- [Agentic Systems: 8 Trust-Boundary Audit Checkpoints]({{ '/articles/agent-security/trust-boundary-checkpoints/' | relative_url }})
-- [Provenance boundary failure report (client-captured artifacts)]({{ '/articles/agent-security/provenance-boundary-report/' | relative_url }})
-- [Social engineering in AI systems: attacking the decision pipeline (not just people)]({{ '/articles/agent-security/social-engineering-ai-decision-pipeline/' | relative_url }})
-- [LLM-led vs orchestrator-led tool execution (architecture tradeoffs)]({{ '/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/' | relative_url }})
-- [Theory of mind in LLMs — what benchmarks test (and what they don’t)]({{ '/articles/model-training-and-eval/theory-of-mind-in-llms/' | relative_url }})
+- {% include page-title-link.html url="/articles/agent-security/trust-boundary-checkpoints/" fallback="Agentic Systems: 8 Trust-Boundary Audit Checkpoints" %}
+- {% include page-title-link.html url="/articles/agent-security/provenance-boundary-report/" fallback="Provenance boundary failure report (client-captured artifacts)" %}
+- {% include page-title-link.html url="/articles/agent-security/social-engineering-ai-decision-pipeline/" fallback="Social engineering in AI systems: attacking the decision pipeline (not just people)" %}
+- {% include page-title-link.html url="/articles/agent-security/prompt-assembly-policy-enforcement/" fallback="Prompt Assembly Policy Enforcement: Typed Provenance to Prevent Authority Confusion" %}
+- {% include page-title-link.html url="/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/" fallback="LLM-led vs orchestrator-led tool execution (architecture tradeoffs)" %}
+- {% include page-title-link.html url="/articles/model-training-and-eval/theory-of-mind-in-llms/" fallback="Theory of mind in LLMs — what benchmarks test (and what they don’t)" %}
+- {% include page-title-link.html url="/articles/prompt-engineering/prompt-engineering-daily-work/" fallback="Prompt Engineering Guide for Daily Work (Deep Dive)" %}
+
 
 ## All articles {#all-articles}
 
@@ -80,6 +89,7 @@ Curated reads beyond the “Start here” path (maintain manually; keep 3–7 it
 - [The Attack Surface Isn’t the LLM — It’s the Controller Loop]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})
 - [How Agentic Control-Plane Failures Actually Happen]({{ '/articles/agent-security/control-plane-failures/' | relative_url }})
 - [Request assembly threat model: reading the diagram]({{ '/articles/agent-security/request-assembly-threat-model/' | relative_url }})
+- [Prompt Assembly Policy Enforcement: Typed Provenance to Prevent Authority Confusion]({{ '/articles/agent-security/prompt-assembly-policy-enforcement/' | relative_url }})
 - [Agentic Systems: 8 Trust-Boundary Audit Checkpoints]({{ '/articles/agent-security/trust-boundary-checkpoints/' | relative_url }})
 - [Provenance boundary failure report (client-captured artifacts)]({{ '/articles/agent-security/provenance-boundary-report/' | relative_url }})
 - [Social engineering in AI systems: attacking the decision pipeline (not just people)]({{ '/articles/agent-security/social-engineering-ai-decision-pipeline/' | relative_url }})
