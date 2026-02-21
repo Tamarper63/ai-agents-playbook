@@ -8,15 +8,20 @@ hero:
 
 actions:
   primary:
-    label: "Start here (by role)"
-    url: "/how-to/start-here-by-role/"
+    label: "Set evidence boundary"
+    url: "/how-to/choose-facts-only-evidence-boundary/"
   secondary:
-    - label: "Set evidence boundary"
-      url: "/how-to/choose-facts-only-evidence-boundary/"
+    - label: "Start here (by role)"
+      url: "/how-to/start-here-by-role/"
     - label: "Browse prompt library"
       url: "/prompts/"
+  links:
     - label: "Content map"
       url: "/reference/content-map/"
+    - label: "Reference"
+      url: "/reference/"
+    - label: "Policies"
+      url: "/policies/"
 
 
 quickstart:

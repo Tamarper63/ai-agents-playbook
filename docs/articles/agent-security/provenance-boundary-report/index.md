@@ -316,10 +316,9 @@ To verify server-side impact, obtain at least one of:
 - Export pipeline artifact objects (URL + sha256) or a signed “export completed” event.
 - PDP/PEP decision logs correlated to the client request (allow/deny with reason).
 
-## 8) UI-exposed label normalization (avoid internal jargon)
+## 8) UI-exposed label normalization 
 
 The evidence pack contains UI-visible strings such as:
-- code_rpc_enforcement_layer
 - security_context_watcher
 - session_hygiene_monitor
 - context_integrity_monitor

@@ -24,6 +24,14 @@
          <a class="c-btn c-btn--secondary c-btn--hero-secondary" href="{{ a.url | relative_url }}">{{ a.label }}</a>
         {% endfor %}
       </nav>
+
+      {% if site.data.home.actions.links %}
+      <nav class="c-hero__meta-links" aria-label="Quick links">
+        {% for l in site.data.home.actions.links %}
+          <a class="c-hero__meta-link" href="{{ l.url | relative_url }}">{{ l.label }}</a>
+        {% endfor %}
+      </nav>
+      {% endif %}
     </div>
   </div>
 </section>

@@ -3,58 +3,80 @@ title: Start here by role
 permalink: /how-to/start-here-by-role/
 ---
 
-Pick the path that matches your objective. Each path is a short sequence:
+Pick the path that matches your objective. All paths use the same baseline:
 
-**Do now (10–15 min)** → **Read next (context)** → **Apply (templates + routines)**
+**Set an evidence boundary** → **Run a verification workflow** → **Apply an operating contract (policies + prompt templates + procedures)**
 
-**Quick definitions (used across paths):**
-- **Evidence boundary:** what sources are allowed + when to refuse (fail-closed).
-- **Verification gate:** a repeatable evidence-check loop before non-trivial outputs.
+## Baseline (recommended for every role)
 
-Jump to: [Builder / Developer](#builder--developer) · [Security / Platform](#security--platform) · [Research / Deeper dives](#research--deeper-dives)
+1) **Set:** [Choose an evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
+2) **Run:** [Fact-Checking Kit]({{ '/how-to/fact-checking-kit/' | relative_url }})
+3) **Enforce (when shipping changes):** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
+
+If you want the normative rules first (no procedures): [Policies (operating contracts)]({{ '/policies/' | relative_url }})
+
+**Definitions (as used on this site):**
+- **Evidence boundary:** which sources are allowed (artifacts-only vs authoritative sources + citations).
+- **Verification workflow:** a repeatable procedure that checks claims before output.
+- **Operating contract:** the policy + prompt templates + procedure stack used to enforce constraints.
+
+Jump to: [Builder / Developer](#builder--developer) · [Security / Platform](#security--platform) · [Research / Evaluation](#research--evaluation)
 
 ---
 
 ## Builder / Developer
 
-### Do now (10–15 minutes)
-- **Set your evidence boundary (facts-only policy)** → [Choose a facts-only evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
-- **Run a baseline verification gate (before shipping outputs)** → [Fact-Checking Kit]({{ '/how-to/fact-checking-kit/' | relative_url }})
-- **Add an engineering output gate (architecture + regressions)** → [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
+### Do next (after the baseline)
+- **Pick a runnable stack (prompt templates mapped to policies/procedures)** → [Prompt library]({{ '/prompts/' | relative_url }})
+- **Make context selection explicit (memory boundaries)** → [Manage LLM memory boundaries]({{ '/how-to/llm-memory-boundaries/' | relative_url }})
 
-### Read next (architecture + capabilities)
-- [Agent architecture index (patterns and building blocks)]({{ '/articles/agent-architecture/' | relative_url }})
-- [Human vs GenAI capability map (engineering view)]({{ '/articles/agent-architecture/human-vs-genai-capability-map/' | relative_url }})
+### Read next (architecture + control flow)
+- [Agent architecture (hub)]({{ '/articles/agent-architecture/' | relative_url }})
+- [LLM-led vs orchestrator-led tool execution (tradeoffs)]({{ '/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/' | relative_url }})
+- [LLM memory boundary model (how context gets selected)]({{ '/articles/agent-architecture/llm-memory-boundary-model/' | relative_url }})
 
-### Apply (templates + routines)
-- [Prompt Engineering Guide for Daily Work (routine + checklist)]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }})
-- [Prompt library (system + user message templates)]({{ '/prompts/' | relative_url }})
+### Apply (routines)
+- [Prompt Engineering Guide for Daily Work (procedure)]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }})
+- [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
 
 ---
 
 ## Security / Platform
 
-### Do now (boundaries + enforcement)
-- **Pick the operating contract set (policies index)** → [Policies (operating contracts)]({{ '/policies/' | relative_url }})
-- **Set the evidence boundary used for security reviews** → [Choose a facts-only evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
-- **Enforce a review gate for architecture + regressions** → [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
+### Do next (after the baseline)
+- **Set the security review evidence model (web/citations vs artifacts-only)** → [Choose an evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
+- **If using public sources: enforce citations + browsing discipline** → [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }}) · [Request web browsing + citations]({{ '/how-to/request-web-browsing/' | relative_url }})
+- **Use a structured self-check loop on non-trivial outputs** → [Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
 
-### Assess risks (tool use + provenance + control plane)
-- [Control-plane failure patterns (audit checklist)]({{ '/articles/agent-security/control-plane-failures/' | relative_url }})
-- [Provenance boundary report (what can/can’t be verified)]({{ '/articles/agent-security/provenance-boundary-report/' | relative_url }})
-- [Agent security index (all security writeups)]({{ '/articles/agent-security/' | relative_url }})
+### Read next (threat model ramp)
+- [The Attack Surface Starts Before Agents — The LLM Boundary]({{ '/articles/agent-security/llm-boundary-first-touch/' | relative_url }})
+- [The Attack Surface Isn’t the LLM — It’s the Controller Loop]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})
+- [How Agentic Control-Plane Failures Actually Happen]({{ '/articles/agent-security/control-plane-failures/' | relative_url }})
+
+### Apply (checklists + enforcement)
+- [Agentic Systems: 8 Trust-Boundary Audit Checkpoints]({{ '/articles/agent-security/trust-boundary-checkpoints/' | relative_url }})
+- [Request assembly threat model: reading the diagram]({{ '/articles/agent-security/request-assembly-threat-model/' | relative_url }})
+- [Prompt Assembly Policy Enforcement: Typed Provenance]({{ '/articles/agent-security/prompt-assembly-policy-enforcement/' | relative_url }})
+- [Provenance boundary failure report (client-captured artifacts)]({{ '/articles/agent-security/provenance-boundary-report/' | relative_url }})
 
 ---
 
-## Research / Deeper dives
+## Research / Evaluation
 
-### Do now (orientation)
+### Do next (after the baseline)
+- **Academic-style evidence gating (formal sources + locators)** → [Evidence-Gated Academic Mode (EGAM) — procedure]({{ '/how-to/evidence-gated-academic-mode/' | relative_url }})
+- **Prevent overclaims + enforce terminology consistency** → [Semantic Accuracy Gate — Procedure]({{ '/how-to/semantic-accuracy-gate-procedure/' | relative_url }})
+- **Claim-by-claim verification for publishable drafts** → [Evidence-Gated Technical Writing Gate — procedure]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
+- **Require an evidence-based confidence line (0–100)** → [Add an evidence-based confidence score]({{ '/how-to/add-confidence-score-to-responses/' | relative_url }})
+
+### Read next (reliability + evaluation)
+- [Model training & eval (hub)]({{ '/articles/model-training-and-eval/' | relative_url }})
+- [Fluency Is Not Factuality]({{ '/articles/model-training-and-eval/fluency-vs-factuality/' | relative_url }})
+
+### Explore more (site map)
 - [Content map (how the site is organized)]({{ '/reference/content-map/' | relative_url }})
-- [Reference (stable terms and definitions)]({{ '/reference/' | relative_url }})
-
-### Explore indices
-- [Agent security index]({{ '/articles/agent-security/' | relative_url }})
-- [Model training & eval index]({{ '/articles/model-training-and-eval/' | relative_url }})
+- [Articles → Start here]({{ '/articles/#start-here' | relative_url }})
+- [Reference (stable terms and diagrams)]({{ '/reference/' | relative_url }})
 
 ---
 

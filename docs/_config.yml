@@ -12,6 +12,8 @@ google_analytics: G-2ZQ4K2Z02Q
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+exclude:
+  - reference/code-rpc/
 
 palette:
   bg: "#FDF0D5"

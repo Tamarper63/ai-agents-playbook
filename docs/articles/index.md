@@ -13,19 +13,19 @@ For procedures and lookup-style material:
 
 ## Start here {#start-here}
 
-Recommended reading order for first-time visitors (boundary framing → orchestration/control-plane risks → request assembly → reliability):
+Recommended reading order for first-time visitors (threat modeling & trust boundaries → orchestration (control-flow mechanisms) → reliability):
 
 1) **{% include page-title-link.html url="/articles/agent-security/llm-boundary-first-touch/" fallback="The Attack Surface Starts Before Agents — The LLM Boundary" %}**  
    Start at the first LLM-to-system boundary: where outputs can influence reads/writes to external state (data, logs, telemetry, persisted context).
 
 2) **{% include page-title-link.html url="/articles/agent-security/controller-loop-attack-surface/" fallback="The Attack Surface Isn’t the LLM — It’s the Controller Loop" %}**  
-   Why risk increases with orchestration loops (planning → tools → evaluation → retries), not with the model alone.
+   Why risk increases with orchestration control-flow (workflows that iterate: planning → tool invocation → evaluation → retries), not with the model alone.
 
 3) **{% include page-title-link.html url="/articles/agent-security/control-plane-failures/" fallback="How Agentic Control-Plane Failures Actually Happen" %}**  
    Auditable failure patterns: session binding, memory reuse, routing/selection, tool enforcement, observability.
 
 4) **{% include page-title-link.html url="/articles/agent-security/request-assembly-threat-model/" fallback="Request assembly threat model: reading the diagram" %}**  
-   Threat model for request assembly: selection/ordering/truncation, tool-loop integration, and checkpoints.
+   Threat model for LLM request construction: context selection/ordering/truncation, tool-output inclusion, and checkpoints.
 
 5) **{% include page-title-link.html url="/articles/model-training-and-eval/fluency-vs-factuality/" fallback="Fluency Is Not Factuality" %}**  
    Reliability vocabulary: why fluent text is not evidence of correctness, and what grounding means operationally.
@@ -36,14 +36,14 @@ Recommended reading order for first-time visitors (boundary framing → orchestr
   <a class="c-card" href="{{ '/articles/agent-security/' | relative_url }}">
     <div class="c-card__content">
       <div class="c-card__title">Agent security</div>
-      <div class="c-card__desc">Trust boundaries, authorization semantics, orchestration controls, policy enforcement, observability</div>
+      <div class="c-card__desc">Trust boundaries, authorization & access control, orchestration (control-flow mechanisms), policy enforcement, observability</div>
     </div>
   </a>
 
   <a class="c-card" href="{{ '/articles/agent-architecture/' | relative_url }}">
     <div class="c-card__content">
       <div class="c-card__title">Agent architecture</div>
-      <div class="c-card__desc">Workflow patterns, state/lifecycle, tool invocation semantics, retrieval/context management, evaluation harnesses</div>
+      <div class="c-card__desc">Workflows, state & lifecycle management, tool invocation patterns, retrieval & context management, evaluation harnesses</div>
     </div>
   </a>
 
@@ -57,7 +57,7 @@ Recommended reading order for first-time visitors (boundary framing → orchestr
   <a class="c-card" href="{{ '/articles/prompt-engineering/' | relative_url }}">
     <div class="c-card__content">
       <div class="c-card__title">Prompt engineering</div>
-      <div class="c-card__desc">Operational prompting notes, evidence rules, reusable templates</div>
+      <div class="c-card__desc">Operational prompting notes, evidence & citation requirements, reusable templates</div>
     </div>
   </a>
 </div>

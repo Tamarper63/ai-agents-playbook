@@ -1,7 +1,7 @@
 ---
 title: Control-Plane Failure Patterns in Agentic Tool-Using Systems
 permalink: /articles/agent-security/control-plane-failures/
-summary: Two recurring control-plane failure patterns—privilege persistence across interaction boundaries and detective-only integrity signals—that let untrusted state steer tool execution across steps.
+summary: Two recurring control-plane failure patterns—privilege persistence across interaction boundaries and monitoring-only integrity signals (detect without enforcement)—that let untrusted state steer tool execution across steps.
 ---
 
 ## Executive summary
@@ -11,7 +11,7 @@ This article describes two **control-plane failure patterns** observed as *audit
 | Pattern | What fails | Typical impact | What “good” looks like |
 |---|---|---|---|
 | 1) Privilege persistence across interaction boundaries | Authorization context is treated as carryover state instead of being re-validated per call | Cross-thread/tab/conversation privilege bleed; writes in the wrong boundary | Per-call authorization at a server-side enforcement point; credentials scoped + bound + short-lived |
-| 2) Detective-only integrity signals | Integrity risk is detected but does not change execution state | Tainted artifacts keep influencing routing/tools across steps | High-risk signals **gate** execution (hold/deny/quarantine) + circuit breakers |
+| 2) Monitoring-only integrity signals (detect without enforcement) | Integrity risk is detected but does not change execution state | Tainted artifacts keep influencing routing/tools across steps | High-risk signals trigger enforcement actions (hold/deny/quarantine) + circuit breakers |
 
 **Evidence boundary:** these are **audit patterns**, not claims about a specific vendor trace.
 
@@ -23,17 +23,21 @@ This article focuses on **control-plane failures** in multi-step, tool-using LLM
 
 ### System model (terminology used here)
 
-- **Control plane:** session + identity binding, context/memory handling, request assembly/routing, policy decision/enforcement for tool use, and monitoring that can **gate** execution (not only alert).  
-  (NIST uses “control plane” vs “data plane” separation in its ZTA model.)  
-- **Data plane:** the external side effects (API calls, state changes) performed by tools/connectors.
+- **Control plane (ZTA-aligned; used here by extension):** the policy + orchestration layer: session + identity binding, context/memory handling, LLM request construction + routing/selection, policy decision/enforcement for tool use, and monitoring that can trigger enforcement actions (not only alert).  
+  (NIST SP 800-207 uses a “control plane” to describe how ZTA logical components communicate, while application data is communicated on a “data plane”; see Section 3.4.)  
+- **Data plane (ZTA-aligned; used here by extension):** the external side effects (API calls, state changes) performed by tools/connectors.
+
+### Orchestration terminology (agentic)
+
+- **Orchestration / workflows / control-flow mechanisms**: used as baseline terminology for agentic control flow (see OWASP Securing Agentic Applications Guide 1.0).
 
 ### Policy decision vs enforcement (ZTA-aligned)
 
-NIST SP 800-207 describes an abstract access model where access is granted through a **policy decision point (PDP)** and a corresponding **policy enforcement point (PEP)**. In NIST’s model, the PDP decomposes into policy engine / policy administrator, while the PEP enforces the decision.  
+NIST SP 800-207 describes an abstract access model where access is granted through a **policy decision point (PDP)** and a corresponding **policy enforcement point (PEP)**. In NIST’s model, the PDP decomposes into the **policy engine (PE)** and **policy administrator (PA)**, while the PEP enforces the decision.  
 (See References.)
 
 In this article’s vocabulary:
-- **PDP:** where an allow/deny decision is made for a proposed step/action.
+- **PDP (PE+PA):** where an allow/deny decision is made for a proposed step/action.
 - **PEP:** where the allow/deny decision is enforced *before* any side effect.
 
 ### Design principle anchor (security engineering)
@@ -50,7 +54,7 @@ In this article’s vocabulary:
 <figure>
   <img
     src="{{ '/assets/img/posts/control-plane-failures/control-plane-failures.jpeg' | relative_url }}"
-    alt="Schematic (illustrative): control-plane failure propagation via session binding, memory/context, routing, tool enforcement, and non-gating integrity signals"
+    alt="Schematic (illustrative): control-plane failure propagation via session binding, memory/context, routing, tool enforcement, and non-enforcing integrity signals"
   />
   <figcaption><em>Figure 1 — Schematic (illustrative, not raw logs): propagation across session binding, memory/context, routing, tool enforcement, and integrity signals.</em></figcaption>
 </figure>
@@ -88,7 +92,7 @@ If authorization becomes implicit carryover state, the system stops enforcing **
 
 ---
 
-## Pattern 2 — Detective-only integrity signals (detect without gate)
+## Pattern 2 — Monitoring-only integrity signals (detect without enforcement)
 
 ### What it is
 The system detects integrity risk (poisoned context, anomalous memory, suspicious tool output, policy-violating arguments) but continues execution (“alert only”), allowing flagged artifacts to be reused across steps.
@@ -99,7 +103,7 @@ In multi-step controller loops, contaminated artifacts can influence:
 - argument construction,
 - subsequent LLM steps.
 
-A detective-only signal does not reduce the likelihood of side effects if the controller proceeds unchanged.
+A monitoring-only signal does not reduce the likelihood of side effects if the controller proceeds unchanged.
 
 ### Common root causes (audit targets)
 - Integrity checks run **after** tool selection or argument construction (too late in the lifecycle).
@@ -113,7 +117,7 @@ A detective-only signal does not reduce the likelihood of side effects if the co
 - **Pre-execution validation:** tool selection + arguments validated (schema + semantic constraints) before side effects.
 
 ### What to test (authorized security regression tests)
-1) **Poisoned-input gate test:** inject an untrusted chunk that triggers an integrity rule.  
+1) **Poisoned-input enforcement test:** inject an untrusted chunk that triggers an integrity rule.  
    Expected: the step is **held/blocked** and the chunk is quarantined.
 2) **Policy-violating args test:** craft model output that violates an argument constraint (tenant/scope/resource).  
    Expected: rejected by the **PEP** before tool execution.
@@ -129,7 +133,7 @@ A detective-only signal does not reduce the likelihood of side effects if the co
 | 1 | Cross-boundary privilege bleed | PEP (server-side) | Deny/hold unless boundary re-authorizes |
 | 1 | Credential binding replay | PEP (server-side) | Deny on binding mismatch |
 | 1 | Authority change mid-session | PDP+PEP on next call | Deny on next invocation |
-| 2 | Poisoned input triggers rule | Controller gate / PEP | Hold/deny + quarantine artifact |
+| 2 | Poisoned input triggers rule | Controller enforcement / PEP | Hold/deny + quarantine artifact |
 | 2 | Policy-violating args | PEP pre-execution | Reject before side effect |
 | 2 | Repeated integrity signals | Circuit breaker | Stop or degrade to read-only |
 
@@ -149,6 +153,8 @@ A detective-only signal does not reduce the likelihood of side effects if the co
 ## References
 
 - OWASP Cheat Sheet Series — AI Agent Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
-- NIST SP 800-207 — Zero Trust Architecture (PDP/PEP; control plane vs data plane): https://doi.org/10.6028/NIST.SP.800-207
+- OWASP — Securing Agentic Applications Guide 1.0 (orchestration / workflows / control-flow mechanisms): https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/
+- OWASP — Top 10 for Large Language Model Applications (2025 PDF): https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-v2025.pdf
+- NIST SP 800-207 — Zero Trust Architecture (PDP/PEP; PE/PA; control plane vs data plane): https://doi.org/10.6028/NIST.SP.800-207
 - NIST SP 800-53 Rev. 5 — Security and Privacy Controls: https://doi.org/10.6028/NIST.SP.800-53r5
 - Saltzer & Schroeder (1975) — The Protection of Information in Computer Systems: https://www.cl.cam.ac.uk/teaching/1011/R01/75-protection.pdf
