@@ -8,7 +8,9 @@ summary: A deep dive into why prompts fail in daily work, how to design evidence
 This article explains *why* daily-work prompts fail (even when they look “good”), and provides a testable framework for writing prompt **specifications** (not just “better wording”). It complements the How-to page by adding threat modeling, evaluation patterns, and security considerations.
 
 Canonical quick version (procedural):
-- {{ '/how-to/prompt-engineering-daily-work/' | relative_url }}
+- {% include page-title-link.html url="/how-to/prompt-engineering-daily-work/" fallback="Prompt Engineering Guide for Daily Work (How-to)" %}
+
+If you want the step-by-step procedure + templates, use the How-to link above. This article explains the failure modes, threat model, and evaluation harness.
 
 ## Scope and verification limits
 Model and product behavior changes over time (models, tiers, tool availability, policies). Treat tool-specific claims as versioned and verify in vendor documentation.
