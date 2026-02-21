@@ -71,6 +71,15 @@ samp {
   font-family: $font-mono;
 }
 
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 .main-content {
   /* Align with header container width */
   max-width: 72rem;

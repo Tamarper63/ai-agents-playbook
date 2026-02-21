@@ -34,7 +34,7 @@ Engineering writeups on security properties of **tool-using LLM systems (“agen
 - When you want code/architecture validation (not writing verification): {% include page-title-link.html url="/how-to/engineering-quality-gate-procedure/" fallback="Engineering Quality Gate — Procedure" %}
 
 ## Pages in this section
-
+- {% include page-title-link.html url="/articles/agent-security/request-assembly-threat-model/" fallback="Request assembly threat model (author-mapped)" %}
 - {% include page-title-link.html url="/articles/agent-security/llm-boundary-first-touch/" fallback="The Attack Surface Starts Before Agents — The LLM Boundary" %}
 - {% include page-title-link.html url="/articles/agent-security/controller-loop-attack-surface/" fallback="Controller-loop attack surface" %}
 - {% include page-title-link.html url="/articles/agent-security/trust-boundary-checkpoints/" fallback="8 trust-boundary checkpoints" %}

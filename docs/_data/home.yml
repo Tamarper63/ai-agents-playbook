@@ -38,6 +38,9 @@ latest_articles:
   all_label: "Browse articles"
   all_url: "/articles/"
   items:
+    - label: "Request assembly threat model: reading the diagram"
+      url: "/articles/agent-security/request-assembly-threat-model/"
+      desc: "Reviewer-oriented threat model for request assembly: context hub, truncation, tool loops, observability, and R1–R8 checkpoints."
     - label: "LLM memory boundary model: how context gets selected"
       url: "/articles/agent-architecture/llm-memory-boundary-model/"
       desc: "An engineering model for context selection: what gets loaded, what gets dropped, and where boundary controls belong."
