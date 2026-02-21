@@ -8,20 +8,13 @@ hero:
 
 actions:
   primary:
-    label: "Set evidence boundary"
-    url: "/how-to/choose-facts-only-evidence-boundary/"
+    label: "Start here (by role)"
+    url: "/how-to/start-here-by-role/"
   secondary:
-    - label: "Start here (by role)"
-      url: "/how-to/start-here-by-role/"
+    - label: "Jump to Quickstart"
+      url: "/#quickstart"
     - label: "Browse prompt library"
       url: "/prompts/"
-  links:
-    - label: "Content map"
-      url: "/reference/content-map/"
-    - label: "Reference"
-      url: "/reference/"
-    - label: "Policies"
-      url: "/policies/"
 
 
 quickstart:

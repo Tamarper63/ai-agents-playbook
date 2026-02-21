@@ -134,7 +134,7 @@ When describing “Level N” performance for any system (humans or LLMs), state
 4) Whether your claim is **behavioral** (task performance) or **mechanistic** (which these tasks generally do not determine). (Jones et al., 2024)
 
 ## Related prompt blocks (this site)
-- Prompt blocks index: {{ '/prompts/' | relative_url }}
+- Prompt blocks index: {% include page-title-link.html url="/prompts/" fallback="Prompt library" %}
 
 ## References (primary / canonical)
 - Dennett, D. C. (1983). *Intentional Systems in Cognitive Ethology: The “Panglossian Paradigm” Defended.* Behavioral and Brain Sciences. DOI:10.1017/S0140525X00016393.
