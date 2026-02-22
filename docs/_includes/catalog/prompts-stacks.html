@@ -1,0 +1,42 @@
+{% assign data = site.data.catalog.prompts %}
+
+<div class="c-grid c-grid--2">
+  {% for s in data.stacks %}
+    <article class="c-card">
+      <div class="c-card__title">{{ s.title }}</div>
+      {% if s.desc %}<div class="c-card__desc">{{ s.desc }}</div>{% endif %}
+
+      <div class="c-card__actions">
+        <details class="c-disclosure-compact">
+          <summary class="c-btn c-btn--secondary c-btn--compact">
+            <span class="c-disclosure__label--closed">Prompt blocks ({{ s.items | size }})</span>
+            <span class="c-disclosure__label--open">Hide prompt blocks</span>
+          </summary>
+
+          <div class="c-disclosure-compact__panel">
+            <ul class="c-linklist">
+              {% for p in s.items %}
+                {% assign fname = p | split: '/' | last %}
+                {% assign ftag = 'File' %}
+                {% if p contains '/components/' %}
+                  {% assign ftag = 'Component' %}
+                {% elsif fname contains '.system.' %}
+                  {% assign ftag = 'System' %}
+                {% elsif fname contains '.user.' %}
+                  {% assign ftag = 'User' %}
+                {% endif %}
+
+                <li>
+                  <a href="{{ p | relative_url }}" title="Open prompt block file">
+                    <span class="c-filetag c-filetag--{{ ftag | downcase }}">{{ ftag }}</span>
+                    <code>{{ fname }}</code>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+  {% endfor %}
+</div>

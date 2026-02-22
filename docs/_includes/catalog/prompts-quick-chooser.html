@@ -1,0 +1,17 @@
+{% assign data = site.data.catalog.prompts %}
+{% for group in data.quick_chooser %}
+  <div class="c-section c-section--thin">
+    <div class="c-section__header">
+      <h3 class="c-section__title c-section__title--sub">{{ group.title }}</h3>
+    </div>
+
+    <div class="c-grid {{ group.grid }}">
+      {% for item in group.items %}
+        <a class="c-card" href="{{ item.url | relative_url }}">
+          <div class="c-card__title">{{ item.title }}</div>
+          {% if item.desc %}<div class="c-card__desc">{{ item.desc }}</div>{% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}

@@ -1,0 +1,181 @@
+quick_chooser:
+  - title: "Start here"
+    grid: "c-grid--3"
+    items:
+      - title: "Daily work runner (user template)"
+        url: "/how-to/prompt-engineering-daily-work/"
+        desc: "A consistent daily driver execution template."
+      - title: "Choose a facts-only evidence boundary"
+        url: "/how-to/choose-facts-only-evidence-boundary/"
+        desc: "Pick artifacts-only vs authoritative sources required."
+      - title: "Web verification + citations"
+        url: "/policies/web-verification-and-citations/"
+        desc: "Up-to-date public facts with citation-grade sources."
+
+  - title: "Quality gates / controls"
+    grid: "c-grid--2"
+    items:
+      - title: "Chain-of-Verification (CoVe)"
+        url: "/policies/chain-of-verification/"
+        desc: "Structured self-check loop before output."
+      - title: "Engineering Quality Gate"
+        url: "/policies/engineering-quality-gate-policy/"
+        desc: "Architecture + best practices + regressions gate."
+      - title: "Evidence-Gated Technical Writing (Claims)"
+        url: "/policies/evidence-gated-technical-writing-policy/"
+        desc: "Publishable writing: claims must be verified or removed."
+      - title: "Semantic Accuracy Gate"
+        url: "/policies/semantic-accuracy-gate/"
+        desc: "Prevent overclaims + enforce terminology consistency."
+
+  - title: "Profiles / reporting"
+    grid: "c-grid--3"
+    items:
+      - title: "Evidence-Gated Academic Mode (EGAM)"
+        url: "/policies/evidence-gated-academic-mode/"
+        desc: "Academic-style evidence-gated outputs."
+      - title: "Confidence score (0–100)"
+        url: "/policies/confidence-score/"
+        desc: "Append a numeric confidence line."
+      - title: "Objective technical baseline"
+        url: "/policies/objective-technical-operating-profile/"
+        desc: "Rules-first, non-simulative baseline."
+
+  - title: "Components"
+    grid: "c-grid--2"
+    items:
+      - title: "Prompt components (snippets)"
+        url: "/prompts/components/"
+        desc: "Small add-ons to augment a runner with one behavior."
+
+stacks:
+  - title: "Stack A — Artifacts-only / internal review (no browsing)"
+    desc: "Facts-only artifacts-only + optional CoVe + optional confidence line."
+    items:
+      - "/prompts/facts-only-artifacts-only.system.txt"
+      - "/prompts/components/deep-read.user.txt"
+      - "/prompts/components/deep-scan.user.txt"
+      - "/prompts/chain-of-verification.system.txt"
+      - "/prompts/confidence-score.system.txt"
+
+  - title: "Stack B — Web + citations (public facts)"
+    desc: "Authoritative sources required + web verification workflow + optional CoVe + optional confidence."
+    items:
+      - "/prompts/facts-only-authoritative-sources-required.system.txt"
+      - "/prompts/web-verification-and-citations.system.txt"
+      - "/prompts/web-browsing.user.txt"
+      - "/prompts/chain-of-verification.system.txt"
+      - "/prompts/confidence-score.system.txt"
+
+  - title: "Stack C — Technical writing / publication gate (claims)"
+    desc: "Evidence-gated writing gate + optional semantic accuracy + optional confidence."
+    items:
+      - "/prompts/evidence-gated-technical-writing-gate.system.txt"
+      - "/prompts/evidence-gated-technical-writing-gate.user.txt"
+      - "/prompts/semantic-accuracy-gate.system.txt"
+      - "/prompts/semantic-accuracy-gate.user.txt"
+      - "/prompts/confidence-score.system.txt"
+
+catalog:
+  - title: "Daily runner"
+    grid: "c-grid--2"
+    items:
+      - title: "Daily work runner (template)"
+        desc: "Use for a consistent daily driver execution template."
+        howto: "/how-to/prompt-engineering-daily-work/"
+        prompts:
+          - "/prompts/prompt-engineering-daily-work.user.txt"
+
+  - title: "Evidence boundary"
+    grid: "c-grid--2"
+    items:
+      - title: "Facts-only: Artifacts-only"
+        desc: "No external sources; operate only on user-provided artifacts."
+        policy: "/policies/facts-only-artifacts-only/"
+        howto: "/how-to/facts-only-artifacts-only/"
+        prompts:
+          - "/prompts/facts-only-artifacts-only.system.txt"
+
+      - title: "Facts-only: Authoritative sources required"
+        desc: "Browsing allowed; claims require citation-grade sources."
+        policy: "/policies/facts-only-authoritative-sources-required/"
+        howto: "/how-to/facts-only-authoritative-sources-required/"
+        prompts:
+          - "/prompts/facts-only-authoritative-sources-required.system.txt"
+
+      - title: "Web verification & citations"
+        desc: "Up-to-date facts + citations output contract."
+        policy: "/policies/web-verification-and-citations/"
+        howto: "/how-to/request-web-browsing/"
+        span_full: true
+        prompts:
+          - "/prompts/web-verification-and-citations.system.txt"
+          - "/prompts/web-browsing.user.txt"
+          - "/prompts/web-verification-procedure.user.txt"
+          - "/prompts/citations-output-contract.user.txt"
+
+  - title: "Verification / quality gates"
+    grid: "c-grid--2"
+    items:
+      - title: "Chain-of-Verification (CoVe)"
+        desc: "Structured self-check loop before final output."
+        policy: "/policies/chain-of-verification/"
+        howto: "/how-to/chain-of-verification-procedure/"
+        prompts:
+          - "/prompts/chain-of-verification.system.txt"
+
+      - title: "Engineering Quality Gate"
+        desc: "Architecture/best-practice checks and regression-minded constraints."
+        policy: "/policies/engineering-quality-gate-policy/"
+        howto: "/how-to/engineering-quality-gate-procedure/"
+        prompts:
+          - "/prompts/engineering-quality-gate.system.txt"
+          - "/prompts/engineering-quality-gate.user.txt"
+
+      - title: "Evidence-Gated Technical Writing (Claims)"
+        desc: "Claims gate for publishable technical writing."
+        policy: "/policies/evidence-gated-technical-writing-policy/"
+        howto: "/how-to/evidence-gated-technical-writing-gate-procedure/"
+        prompts:
+          - "/prompts/evidence-gated-technical-writing-gate.system.txt"
+          - "/prompts/evidence-gated-technical-writing-gate.user.txt"
+
+      - title: "Semantic accuracy gate"
+        desc: "Prevent overclaims and enforce consistent terminology."
+        policy: "/policies/semantic-accuracy-gate/"
+        howto: "/how-to/semantic-accuracy-gate-procedure/"
+        prompts:
+          - "/prompts/semantic-accuracy-gate.system.txt"
+          - "/prompts/semantic-accuracy-gate.user.txt"
+
+  - title: "Profiles / reporting"
+    grid: "c-grid--3"
+    items:
+      - title: "Evidence-Gated Academic Mode (EGAM)"
+        desc: "Academic-style evidence-gated outputs."
+        policy: "/policies/evidence-gated-academic-mode/"
+        howto: "/how-to/evidence-gated-academic-mode/"
+        prompts:
+          - "/prompts/evidence-gated-academic-mode.system.txt"
+
+      - title: "Confidence score (0–100)"
+        desc: "Always append a numeric confidence line."
+        policy: "/policies/confidence-score/"
+        howto: "/how-to/add-confidence-score-to-responses/"
+        prompts:
+          - "/prompts/confidence-score.system.txt"
+
+      - title: "Objective technical baseline (non-simulative)"
+        desc: "Rules-first baseline compatible with facts-only policies."
+        policy: "/policies/objective-technical-operating-profile/"
+        prompts:
+          - "/prompts/objective-technical-style-non-simulative.system.txt"
+          - "/prompts/instruction-hierarchy-and-evidence-boundary.system.txt"
+
+  - title: "Baselines"
+    grid: "c-grid--2"
+    items:
+      - title: "Minimal non-speculation baseline"
+        desc: "Lightweight do-not-speculate baseline."
+        prompts:
+          - "/prompts/epistemic-constraints-minimal.system.txt"
