@@ -2,6 +2,16 @@ categories:
   - id: request-assembly
     title: "Request assembly & context selection"
     items:
+      - id: request-assembly-context-selection-attack-surface
+        title: "Request assembly / context selection — attack surface (summary)"
+        url: "/reference/diagrams/request-assembly-context-selection-attack-surface/"
+        summary: "Summary schematic of the request-assembly boundary highlighting common failure modes: instruction injection, precedence confusion, truncation, provenance loss, and memory poisoning."
+
+      - id: effective-privileges-invariant-provenance-replay
+        title: "Effective-privileges invariant — provenance & replay failure modes"
+        url: "/reference/diagrams/effective-privileges-invariant-provenance-replay/"
+        summary: "Reference diagram showing two common failures: chat-derived context influencing effective privileges, and model output persistence/replay into later context; highlights the server-side AuthZ + authoritative state invariant."
+
       - id: chatgpt-request-assembly-architecture
         title: "ChatGPT request assembly architecture"
         url: "/reference/diagrams/chatgpt-request-assembly-architecture/"
@@ -20,6 +30,10 @@ categories:
   - id: connectors
     title: "Connectors & tool routing"
     items:
+      - id: web-tool-access-prompt-injection-risks
+        title: "Web tool access — prompt injection risk map"
+        url: "/reference/diagrams/web-tool-access-prompt-injection-risks/"
+        summary: "Reference schematic of prompt-injection risk in web tool access: routing manipulation and downstream failure modes (content-based instructions, source poisoning, query leakage, unbounded consumption, improper output handling)."
       - id: chatgpt-connectors-basic-vs-agent-mode
         title: "ChatGPT connectors: basic vs agent mode"
         url: "/reference/diagrams/chatgpt-connectors-basic-vs-agent-mode/"

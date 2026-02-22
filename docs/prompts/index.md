@@ -28,6 +28,7 @@ This page indexes **copy/paste prompt templates** mapped to their companion **Po
 
 ### Stack A — Artifacts-only / internal review (no browsing)
 - [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
+- Recommended (user components): [deep-read.user.txt]({{ '/prompts/components/deep-read.user.txt' | relative_url }}) + [deep-scan.user.txt]({{ '/prompts/components/deep-scan.user.txt' | relative_url }})
 - Optional: [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
 - Optional: [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
 

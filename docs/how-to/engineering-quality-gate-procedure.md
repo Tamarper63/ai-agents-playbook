@@ -25,11 +25,14 @@ For validating claims in written text, use:
 
 ## Procedure
 1) Paste the inputs into `engineering-quality-gate.user.txt`.
-2) Provide authoritative sources for the key recommendations you expect (or allow browsing).
-3) Require output sections (in order):
+2) If the materials are a repo snapshot / zip / many files, prepend:
+   - [deep-scan.user.txt]({{ '/prompts/components/deep-scan.user.txt' | relative_url }})
+   This forces an explicit inventory + coverage before findings.
+3) Provide authoritative sources for the key recommendations you expect (or allow browsing).
+4) Require output sections (in order):
    - Context snapshot
    - Architecture classification (evidence-based)
    - Findings (source-bound)
    - Changeset plan (file-specific)
    - Confidence score
-4) If output contains `INSUFFICIENT_EVIDENCE`, provide the missing inputs and re-run.
+5) If output contains `INSUFFICIENT_EVIDENCE`, provide the missing inputs and re-run.

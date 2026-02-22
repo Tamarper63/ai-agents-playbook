@@ -1198,9 +1198,15 @@ a.c-card:visited {
 }
 
 .c-card:hover {
-  transform: translateY(-2px);
+  /* Static cards should NOT imply “click the whole card” */
   box-shadow: 0 14px 30px rgba($text, 0.07);
   border-color: rgba($text, 0.10);
+}
+
+/* Only anchor-cards lift on hover (true full-card click target) */
+a.c-card:hover,
+a.c-card:focus {
+  transform: translateY(-2px);
 }
 
 .c-card__title {
@@ -1215,6 +1221,141 @@ a.c-card:visited {
   line-height: 1.5;
   color: rgba($text, 0.72);
   opacity: 1; /* avoid double-dimming */
+}
+
+/* Title links inside cards should inherit title styling */
+.main-content .c-card__title a,
+.main-content .c-card__title a:visited {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.main-content .c-card__title a:hover,
+.main-content .c-card__title a:focus {
+  color: $accent_2;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+
+.c-linklist a:hover,
+.c-linklist a:focus {
+  color: $accent_2;
+}
+
+/* Policy catalog actions (index pages) */
+.c-card__actions {
+  margin-top: 0.90rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.60rem;
+  align-items: flex-start;
+}
+
+/* Allow specific cards to span full row in grids */
+.c-span-full { grid-column: 1 / -1; }
+
+/* Compact disclosure for catalogs (NOT the big /articles disclosure) */
+details.c-disclosure-compact {
+  display: inline-block;
+  min-width: 0;
+}
+
+details.c-disclosure-compact > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details.c-disclosure-compact > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Open/close label toggle */
+details.c-disclosure-compact > summary .c-disclosure__label--open {
+  display: none;
+}
+details.c-disclosure-compact[open] > summary .c-disclosure__label--closed {
+  display: none;
+}
+details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
+  display: inline;
+}
+
+/* Panel inside card */
+.c-disclosure-compact__panel {
+  margin-top: 0.65rem;
+  padding-left: 0.90rem;
+  border-left: 2px solid rgba($text, 0.12);
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Link list inside disclosure */
+.c-linklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.c-linklist a,
+.c-linklist a:visited {
+  color: rgba($text, 0.92);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.c-linklist a:hover,
+.c-linklist a:focus {
+  color: $accent_2;
+}
+
+/* Small tag before file tokens (System/User/File) */
+.c-filetag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.10rem 0.42rem;
+  border-radius: 999px;
+
+  font-size: 0.70rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba($text, 0.72);
+  background: rgba($text, 0.04);
+  border: 1px solid rgba($text, 0.10);
+}
+
+.c-filetag--system { }
+.c-filetag--user { }
+.c-filetag--file { }
+
+/* Code token (lightweight, not “input-like”) */
+.c-linklist code {
+  display: inline-block;
+  max-width: 100%;
+
+  background: rgba($text, 0.05);
+  border: 1px solid rgba($text, 0.10);
+  border-radius: 10px;
+  padding: 0.16rem 0.48rem;
+
+  font-size: 0.93em;
+  line-height: 1.35;
+
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 /* Internal links inside static cards (paths-by-role) */
@@ -1271,6 +1412,11 @@ a.c-card:visited {
   font-family: $font-sans;
 }
 
+/* Smaller section title variant (indexes: chooser/catalog groups) */
+.c-section__title--sub {
+  font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+}
+
 /* FIX: Cayman sets `.main-content h1..h6 { font-weight: normal; }`
    This re-enables the intended weight for home section titles (nested headings). */
 .main-content h1.c-section__title,
@@ -1298,6 +1444,31 @@ a.c-card:visited {
   color: $text;
   font-weight: 800;
   letter-spacing: -0.01em;
+}
+
+/* Page heading scale (non-home). Fixes disproportion across pages. */
+.main-content--page .page-title {
+  font-size: clamp(2.00rem, 2.6vw, 2.55rem);
+  line-height: 1.08;
+  margin: 0.15rem 0 1.10rem;
+}
+
+.main-content--page .c-prose h2 {
+  font-size: clamp(1.45rem, 2.0vw, 1.95rem);
+  line-height: 1.15;
+  margin: 2.00rem 0 0.75rem;
+}
+
+.main-content--page .c-prose h3 {
+  font-size: clamp(1.18rem, 1.5vw, 1.45rem);
+  line-height: 1.20;
+  margin: 1.55rem 0 0.55rem;
+}
+
+.main-content--page .c-prose h4 {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin: 1.20rem 0 0.45rem;
 }
 
 

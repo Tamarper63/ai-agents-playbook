@@ -10,7 +10,10 @@ permalink: /how-to/facts-only-artifacts-only/
 
 ## Procedure
 1) Paste the prompt block into the highest-priority instruction layer in your runtime.
-2) Provide artifacts (files/logs/screenshots/excerpts) in the same request.
-3) Require claim-level citations: every factual claim ends with `[artifact-id §locator]`.
-4) If a core claim cannot be proven from artifacts, fail closed with:
+2) If the request includes multiple artifacts (zip/repo/many files), prepend the component:
+   - [deep-scan.user.txt]({{ '/prompts/components/deep-scan.user.txt' | relative_url }})
+   This enforces coverage reporting + evidence pointers before answering.
+3) Provide artifacts (files/logs/screenshots/excerpts) in the same request.
+4) Require claim-level citations: every factual claim ends with `[artifact-id §locator]`.
+5) If a core claim cannot be proven from artifacts, fail closed with:
    `HANDS UP – no artifact, cannot verify.`

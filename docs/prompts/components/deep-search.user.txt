@@ -1,4 +1,4 @@
 DEEP SEARCH
-- Before answering, search all available project artifacts relevant to the request (repo files / uploaded attachments).
-- Prefer completeness over speed: scan the full relevant scope; do not early-stop.
-- If a claim requires up-to-date or external verification, require web retrieval and citations; otherwise label NOT VERIFIED.
+- Before answering, use web retrieval to verify claims that require external or up-to-date facts.
+- Prefer authoritative sources; include citations for every non-trivial claim.
+- If web retrieval is unavailable and a claim requires external verification: NOT VERIFIED.

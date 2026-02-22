@@ -9,6 +9,7 @@ They are not standalone workflows.
 ## Quick picks
 
 - **Ensure complete reading of user-provided artifacts** → [deep-read (user)](#deep-read-user)
+- **Require exhaustive artifact scanning + coverage reporting** → [deep-scan (user)](#deep-scan-user)
 - **Require web retrieval + citations (when tools are available)** → [deep-search (user)](#deep-search-user)
 - **Add a structured analysis/compliance pass** → [deep-analyzed (user)](#deep-analyzed-user)
 
@@ -17,7 +18,8 @@ They are not standalone workflows.
 | Component | Adds | Use when | File |
 |---|---|---|---|
 | deep-read (user) | Read all provided artifacts before answering | Output depends on user-provided text/files | [deep-read.user.txt]({{ '/prompts/components/deep-read.user.txt' | relative_url }}) |
-| deep-search (user) | Web retrieval steps + recency + citations | You need up-to-date facts and browsing/tools are available | [deep-search.user.txt]({{ '/prompts/components/deep-search.user.txt' | relative_url }}) |
+| deep-scan (user) | Exhaustive artifact scan + coverage reporting + evidence pointers | You have repo files / uploaded attachments and need completeness before conclusions | [deep-scan.user.txt]({{ '/prompts/components/deep-scan.user.txt' | relative_url }}) |
+| deep-search (user) | Web retrieval + citations for external/up-to-date facts | You need current/public facts and browsing/tools are available | [deep-search.user.txt]({{ '/prompts/components/deep-search.user.txt' | relative_url }}) |
 | deep-analyzed (user) | Structured analysis + missing-input/contradiction/compliance checks | Reviews/debugging/comparisons where depth matters | [deep-analyzed.user.txt]({{ '/prompts/components/deep-analyzed.user.txt' | relative_url }}) |
 
 ## Usage rules
@@ -38,11 +40,21 @@ They are not standalone workflows.
 
 ---
 
+## deep-scan (user)
+{: #deep-scan-user }
+
+**Adds:** exhaustive artifact scanning + explicit coverage disclosure + evidence pointers for non-trivial claims.  
+**Use when:** you have multiple artifacts (repo/zip/files) and need high confidence that you didn’t miss relevant content.  
+**Avoid when:** there are no artifacts to scan.  
+**File:** [deep-scan.user.txt]({{ '/prompts/components/deep-scan.user.txt' | relative_url }})
+
+---
+
 ## deep-search (user)
 {: #deep-search-user }
 
-**Adds:** explicit web retrieval steps + recency constraints + citations output.  
-**Use when:** you need up-to-date facts and browsing/tools are available.  
+**Adds:** explicit web retrieval + citations for external/up-to-date facts.  
+**Use when:** correctness depends on current/public sources and browsing/tools are available.  
 **Avoid when:** artifacts-only mode OR tools are unavailable.  
 **File:** [deep-search.user.txt]({{ '/prompts/components/deep-search.user.txt' | relative_url }})
 
@@ -52,6 +64,6 @@ They are not standalone workflows.
 {: #deep-analyzed-user }
 
 **Adds:** a structured analysis pass + explicit checks (missing inputs, contradictions, output compliance).  
-**Use when:** reviews/debugging/comparisons where analysis depth matters.  
+**Use when:** reviews/debugging/comparisons where depth matters.  
 **Avoid when:** trivial tasks where the overhead adds latency without value.  
 **File:** [deep-analyzed.user.txt]({{ '/prompts/components/deep-analyzed.user.txt' | relative_url }})
