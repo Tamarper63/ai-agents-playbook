@@ -37,7 +37,6 @@ This is presented by the authors as a deliberation procedure intended to correct
 The authors report that, in their experiments, CoVe decreases hallucinations across multiple task settings (including list-based questions from Wikidata, closed-book MultiSpanQA, and long-form text generation). (Dhuliawala et al., arXiv:2309.11495, Abstract; ACL Anthology entry) 
 
 ## References
-- **NIST** — *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)*, §2.2 “Confabulation”, p. 9. 
-- **CoVe (primary)** — Dhuliawala, S. et al. *Chain-of-Verification Reduces Hallucination in Large Language Models*. arXiv:2309.11495 (2023). DOI: 10.48550/arXiv.2309.11495.
+- **NIST** — *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)*, §2.2 “Confabulation”, p. 9. https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf- **CoVe (primary)** — Dhuliawala, S. et al. *Chain-of-Verification Reduces Hallucination in Large Language Models*. arXiv:2309.11495 (2023). DOI: 10.48550/arXiv.2309.11495.
 - **CoVe (peer-reviewed venue entry)** — *Findings of ACL 2024* entry: 2024.findings-acl.212.
 - **Survey** — Ji, Z. et al. *Survey of Hallucination in Natural Language Generation*. arXiv:2202.03629 (Abstract for overview statement).

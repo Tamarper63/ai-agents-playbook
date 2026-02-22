@@ -112,7 +112,7 @@ Status: Open | Confidence: High (UI/Network), Low (backend)
 **Summary:** UI output can claim an admin-level action was completed/approved without an auditable signed event visible to the client.  
 **Backend state:** NOT VERIFIED.
 
-- Affected layers: Router/policy; authorization semantics
+- Affected layers: Router/policy; authorization & access control
 - Preconditions: Dialogue and control paths not separated (text confirmation not bound to signed state)
 - Steps to reproduce:
   - Ask for admin-level action + require “confirm”

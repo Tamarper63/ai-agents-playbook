@@ -72,6 +72,7 @@ Jump to: [Builder / Developer](#builder--developer) · [Security / Platform](#se
 ### Read next (reliability + evaluation)
 - [Model training & eval (hub)]({{ '/articles/model-training-and-eval/' | relative_url }})
 - [Fluency Is Not Factuality]({{ '/articles/model-training-and-eval/fluency-vs-factuality/' | relative_url }})
+- [Sycophancy in LLM Assistants (belief-agreement bias)]({{ '/articles/model-training-and-eval/sycophancy-agreement-bias/' | relative_url }})
 
 ### Explore more (site map)
 - [Content map (how the site is organized)]({{ '/reference/content-map/' | relative_url }})

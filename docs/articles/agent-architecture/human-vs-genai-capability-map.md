@@ -91,4 +91,5 @@ Residual gaps are where production systems typically fail (consistency, provenan
 ## Suggested next read in this repo
 
 - Articles → Model training and evaluation → Fluency vs factuality: [Fluency Is Not Factuality]({{ '/articles/model-training-and-eval/fluency-vs-factuality/' | relative_url }})
+- Articles → Model training and evaluation → Sycophancy: [Sycophancy in LLM Assistants]({{ '/articles/model-training-and-eval/sycophancy-agreement-bias/' | relative_url }})
 - Policies: Facts-only / Evidence rules (when accuracy matters): [Policies]({{ '/policies/' | relative_url }})

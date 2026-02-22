@@ -34,12 +34,12 @@ OWASP’s GenAI Top 10 includes prompt injection (LLM01), excessive agency (LLM0
 ---
 
 ## Architecture: where the loop lives
-A practical way to reason about “what changed” is to separate **data plane** vs **control plane**:
+A practical way to reason about “what changed” is to separate **data plane** vs **control plane** (ZTA-aligned terms used here by extension):
 
 - **Data plane:** user input, retrieved chunks, tool observations (anything the model reads).
-- **Control plane:** the logic that decides *what happens next* (routing, tool selection, stop conditions, write gating).
+- **Control plane:** orchestration + policy decision/enforcement logic that decides what happens next (routing, tool selection, stop conditions, write-path enforcement).
 
-When you introduce a controller loop, the control plane becomes the dominant trust boundary.
+When you introduce a controller loop, the control plane becomes a dominant trust boundary.
 
 ### Single-shot tool use (minimal control plane)
 Typical shape:
@@ -71,10 +71,11 @@ The core differentiator is **who decides the next tool/step** and **how many tim
 
 | Pattern | Orchestration shape | Who decides the next tool/step? | Dominant risk amplifiers | Primary enforcement points |
 |---|---|---|---|---|
-| Single-shot tool use | One/few tool calls, minimal iteration | Mostly application code + one model decision | Unsafe tool args; weak write gating; mishandled tool output | Tool allowlists, strict tool schemas, output handling, server-side write gates |
-| Workflow (predetermined) | Fixed graph / code path | Graph logic | Reduced dynamism, but still exposed via tool I/O + data channels | Graph-level policy checks + tool contracts + write gates |
-| ReAct-style loop | Iterative: reason → act → observe → repeat | Model outputs + loop logic each turn | Repeated exposure to untrusted observations; step chaining; stop-condition abuse | Step-level policy gate, tool-arg constraints, loop budgets, full provenance trace |
-| Plan-and-execute | Plan first; execute step-by-step; may re-plan | Planner output + executor loop | Plan becomes an attack target; execution drift across steps; plan/tool coupling | Plan validator + per-step gate + write gate + budgets |
+| Single-shot tool use | One/few tool calls, minimal iteration | Mostly application code + one model decision | Unsafe tool args; weak write-path enforcement; mishandled tool output | Tool allowlists, strict tool schemas, output handling, server-side write-path enforcement |
+| Workflow (predetermined) | Fixed graph / code path | Graph logic | Reduced dynamism, but still exposed via tool I/O + data channels | Graph-level policy checks + tool contracts + write-path enforcement |
+| ReAct-style loop | Iterative: reason → act → observe → repeat | Model outputs + loop logic each turn | Repeated exposure to untrusted observations; step chaining; stop-condition abuse | Step-level policy enforcement checks, tool-arg constraints, loop budgets, full provenance trace |
+| Plan-and-execute | Plan first; execute step-by-step; may re-plan | Planner output + executor loop | Plan becomes an attack target; execution drift across steps; plan/tool coupling | Plan validator + per-step policy enforcement checks + write-path enforcement + budgets |
+
 
 Notes:
 - ReAct is a published research pattern (paper in References).
@@ -102,8 +103,7 @@ In looped systems, intermediate artifacts (plans, step lists, tool observations,
 Retries increase reliability, but they also increase the number of chances for a compromised observation to influence downstream decisions—especially if the loop reuses the same untrusted artifact or summary.
 
 ### 4) Stop-condition and budget hijack
-Stop conditions are control points. If the loop is allowed to “continue until done” without strict gating and budgets, you increase the chance that the system eventually crosses into a side effect.
-
+Stop conditions are control points. If the loop is allowed to “continue until done” without strict enforcement and budgets, you increase the chance that the system eventually crosses into a side effect.
 ### 5) Unbounded consumption (cost / availability)
 OWASP LLM10 frames **unbounded consumption** as a security risk: unconstrained usage can drive excessive resource consumption. In looped systems, budgets (steps/time/cost/retries) can be used as controls to mitigate that risk. (Reference: OWASP GenAI LLM10.)
 
@@ -167,7 +167,7 @@ Scope tools by capability and target:
 
 (Reference: OWASP GenAI LLM06; OWASP AI Agent Security cheat sheet.)
 
-### 3) Server-side gating for write paths (authorization + policy per call)
+### 3) Server-side enforcement for write paths (authorization + policy per call)
 Treat external side effects as privileged operations (send/post/update/upload, permission changes, exports).  
 Enforce authorization and policy checks server-side for every write call.
 
@@ -244,7 +244,7 @@ ingress(request):
     # 1) Validate tool selection + arguments (schema + semantic constraints).
     assert validate_tool_call(action, principal, state)
 
-    # 2) Server-side write gate for any external state change.
+    # 2) Server-side write-path enforcement for any external state change.
     if action.is_write:
       assert server_side_write_gate(action, principal, state)
 
@@ -272,10 +272,11 @@ ingress(request):
 - OWASP Cheat Sheet — LLM Prompt Injection Prevention: https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html
 - OWASP Cheat Sheet — AI Agent Security: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
 - OWASP GenAI — Securing Agentic Applications Guide 1.0: https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/
+- NIST SP 800-207 — Zero Trust Architecture: https://doi.org/10.6028/NIST.SP.800-207
 - NIST AI 600-1 — Generative AI Profile: https://doi.org/10.6028/NIST.AI.600-1
-- OpenAI — Function calling: https://platform.openai.com/docs/guides/function-calling
-- OpenAI — Structured Outputs: https://platform.openai.com/docs/guides/structured-outputs
-- OpenAI — Chat API reference (allowed tools + tool-call validation notes): https://platform.openai.com/docs/api-reference/chat
+- OpenAI — Safety in building agents: https://developers.openai.com/api/docs/guides/agent-builder-safety/
+- OpenAI — Function calling: https://developers.openai.com/api/docs/guides/function-calling/
+- OpenAI — Structured Outputs: https://developers.openai.com/api/docs/guides/structured-outputs/
 - Anthropic — Building Effective Agents (workflows vs agents): https://www.anthropic.com/research/building-effective-agents
 - LangGraph — Workflows and agents: https://docs.langchain.com/oss/python/langgraph/workflows-agents
 - ReAct: Synergizing Reasoning and Acting in Language Models (arXiv:2210.03629): https://arxiv.org/abs/2210.03629

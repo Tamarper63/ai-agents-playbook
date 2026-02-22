@@ -5,7 +5,7 @@ permalink: /articles/prompt-engineering/
 
 Notes on prompting as **an engineering interface**: capability boundaries, evidence contracts, and operational templates.
 
-This hub maps **Explanation (articles)** → **How-to (procedures)** → **Prompt templates** → **Policies (normative rules)**, aligned to an intent-based docs split. :contentReference[oaicite:2]{index=2}
+This hub maps **Explanation (articles)** → **How-to (procedures)** → **Prompt templates** → **Policies (normative rules)**, aligned to an intent-based docs split.
 
 ## Start here
 

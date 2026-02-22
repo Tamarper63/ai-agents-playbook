@@ -117,8 +117,7 @@ Lewis et al. operationalize this by contrasting *mentalising* vs *factual* quest
 ## How this connects to LLM evaluation (behavioral protocols, not mechanism)
 
 ### What some LLM papers do (examples)
-- **False-belief and related mental-state attribution prompts:** Kosinski evaluates LLM outputs on classic ToM-style tasks and reports that some models can solve particular task formulations. (Kosinski, 2023, arXiv:2302.02083)
-- **Multi-order task suites with human comparisons:** some recent work proposes explicit multi-order question sets and compares performance across LLMs and human baselines. (Street, 2024, arXiv:2405.18870)
+- **False-belief and related mental-state attribution prompts:** Kosinski evaluates LLM outputs on classic ToM-style tasks using a false-belief battery and reports results for multiple model families. (Kosinski, 2024, PNAS DOI:10.1073/pnas.2405460121)- **Multi-order task suites with human comparisons:** some recent work proposes explicit multi-order question sets and compares performance across LLMs and human baselines. (Street, 2024, arXiv:2405.18870)
 - **Batteries with explicit interpretive framing:** EPITOME is presented as a multi-experiment inventory and discusses the interpretive limits of behavioral ToM-style evaluation in LLMs. (Jones et al., 2024)
 
 ### What you can safely claim (publication-accurate wording)
@@ -137,13 +136,13 @@ When describing “Level N” performance for any system (humans or LLMs), state
 - Prompt blocks index: {% include page-title-link.html url="/prompts/" fallback="Prompt library" %}
 
 ## References (primary / canonical)
-- Dennett, D. C. (1983). *Intentional Systems in Cognitive Ethology: The “Panglossian Paradigm” Defended.* Behavioral and Brain Sciences. DOI:10.1017/S0140525X00016393.
-- Apperly, I. (2011). *Mindreaders: The Cognitive Basis of “Theory of Mind”.* Psychology Press. ISBN:9781841696973.
-- Wimmer, H., & Perner, J. (1983). *Beliefs about beliefs: Representation and constraining function of wrong beliefs in young children’s understanding of deception.* Cognition. DOI:10.1016/0010-0277(83)90004-5.
-- Birch, S. A. J., & Bloom, P. (2007). *The curse of knowledge in reasoning about false beliefs.* Psychological Science. DOI:10.1111/j.1467-9280.2007.01909.x.
-- Lewis, P. A., Birch, A., Hall, A., & Dunbar, R. I. M. (2017). *Higher order intentionality tasks are cognitively more demanding.* Social Cognitive and Affective Neuroscience. DOI:10.1093/scan/nsx034. (PMC:5490680)
-- O’Grady, C., Kliesch, C., Smith, K., & Scott-Phillips, T. C. (2015). *The ease and extent of recursive mindreading, across implicit and explicit tasks.* Evolution and Human Behavior. DOI:10.1016/j.evolhumbehav.2015.01.004.
-- Wilson, R., Hruby, A., Perez-Zapata, D., & van der Kleij, S. W. (2023). *Is recursive “mindreading” really an exception to limitations on recursive thinking?* Journal of Experimental Psychology: General. DOI:10.1037/xge0001322.
-- Kosinski, M. (2023). *Theory of Mind may have spontaneously emerged in large language models.* arXiv:2302.02083.
-- Street, W. (2024). arXiv:2405.18870.
-- Jones, C. R., Trott, S., & Bergen, B. (2024). *Comparing Humans and Large Language Models on an Experimental Protocol Inventory for Theory of Mind Evaluation (EPITOME).* Transactions of the Association for Computational Linguistics, 12:803–819. DOI:10.1162/tacl_a_00674. (ACL Anthology: 2024.tacl-1.45)
+- Dennett, D. C. (1983). *Intentional Systems in Cognitive Ethology: The “Panglossian Paradigm” Defended.* Behavioral and Brain Sciences. DOI:10.1017/S0140525X00016393. https://doi.org/10.1017/S0140525X00016393
+- Apperly, I. (2011). *Mindreaders: The Cognitive Basis of “Theory of Mind”.* Psychology Press. ISBN:9781841696973. https://www.routledge.com/Mindreaders-The-Cognitive-Basis-of-Theory-of-Mind/Apperly/p/book/9780415655583
+- Wimmer, H., & Perner, J. (1983). *Beliefs about beliefs: Representation and constraining function of wrong beliefs in young children’s understanding of deception.* Cognition. DOI:10.1016/0010-0277(83)90004-5. https://doi.org/10.1016/0010-0277(83)90004-5
+- Birch, S. A. J., & Bloom, P. (2007). *The curse of knowledge in reasoning about false beliefs.* Psychological Science. DOI:10.1111/j.1467-9280.2007.01909.x. https://doi.org/10.1111/j.1467-9280.2007.01909.x
+- Lewis, P. A., Birch, A., Hall, A., & Dunbar, R. I. M. (2017). *Higher order intentionality tasks are cognitively more demanding.* Social Cognitive and Affective Neuroscience. DOI:10.1093/scan/nsx034. https://doi.org/10.1093/scan/nsx034
+- O’Grady, C., Kliesch, C., Smith, K., & Scott-Phillips, T. C. (2015). *The ease and extent of recursive mindreading, across implicit and explicit tasks.* Evolution and Human Behavior. DOI:10.1016/j.evolhumbehav.2015.01.004. https://doi.org/10.1016/j.evolhumbehav.2015.01.004
+- Wilson, R., Hruby, A., Perez-Zapata, D., van der Kleij, S. W., & Apperly, I. A. (2023). *Is recursive “mindreading” really an exception to limitations on recursive thinking?* Journal of Experimental Psychology: General. DOI:10.1037/xge0001322. https://doi.org/10.1037/xge0001322
+- Kosinski, M. (2024). *Evaluating large language models in theory of mind tasks.* Proceedings of the National Academy of Sciences. DOI:10.1073/pnas.2405460121. https://doi.org/10.1073/pnas.2405460121
+- Street, W., et al. (2024). *LLMs achieve adult human performance on higher-order theory of mind tasks.* arXiv:2405.18870. https://arxiv.org/abs/2405.18870
+- Jones, C. R., Trott, S., & Bergen, B. (2024). *Comparing Humans and Large Language Models on an Experimental Protocol Inventory for Theory of Mind Evaluation (EPITOME).* Transactions of the Association for Computational Linguistics. DOI:10.1162/tacl_a_00674. https://aclanthology.org/2024.tacl-1.45/

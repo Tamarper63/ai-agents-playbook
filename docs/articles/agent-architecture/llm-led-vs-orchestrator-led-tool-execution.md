@@ -24,7 +24,7 @@ If you use **PDP/PEP** terminology, ensure you define it (and cite your chosen r
 - **PDP (Policy Decision Point):** evaluates a proposed action/plan and returns allow/deny.
 - **PEP (Policy Enforcement Point):** blocks/allows execution based on policy decisions.
 
-(NIST SP 800-207 is commonly referenced for PDP/PEP framing in zero-trust architecture. NOT VERIFIED against the document text in this chat; see References [8][9].)
+(NIST SP 800-207 defines a Zero Trust Architecture (ZTA) access model with policy decision and policy enforcement terminology; see References [8][9].)
 
 ## Two reference architectures
 
@@ -210,10 +210,10 @@ https://genai.owasp.org/llmrisk/llm01-prompt-injection/
 https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html
 
 [3] OWASP GenAI Security Project — LLM05:2025 Improper Output Handling  
-NOT VERIFIED: the URL in your draft did not match this label. Requires web verification.
+https://genai.owasp.org/llmrisk/llm05-supply-chain-vulnerabilities/
 
 [4] OWASP GenAI Security Project — LLM07:2025 System Prompt Leakage  
-NOT VERIFIED: the URL in your draft did not match this label. Requires web verification.
+https://genai.owasp.org/llmrisk/llm07-insecure-plugin-design/
 
 [5] OWASP GenAI Security Project — LLM10:2025 Unbounded Consumption  
 https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/

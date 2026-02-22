@@ -138,7 +138,7 @@ Output_schema_validation,Validate outputs deterministically,Output validator,For
 - Use enforcement patterns consistent with policy decision + policy enforcement separation described in Zero Trust Architecture. NIST SP 800-207, DOI: 10.6028/NIST.SP.800-207.
 
 ## References (formal identifiers / institutions)
-- RFC 2119 — *Key words for use in RFCs to Indicate Requirement Levels*. RFC 2119.
-- NIST SP 800-207 — *Zero Trust Architecture*. DOI: 10.6028/NIST.SP.800-207.
-- OWASP GenAI Security Project — *LLM01: Prompt Injection*. OWASP.
-- OWASP Cheat Sheet Series — *LLM Prompt Injection Prevention Cheat Sheet*. OWASP.
+- RFC 2119 — *Key words for use in RFCs to Indicate Requirement Levels*. https://www.rfc-editor.org/rfc/rfc2119.html
+- NIST SP 800-207 — *Zero Trust Architecture*. https://doi.org/10.6028/NIST.SP.800-207
+- OWASP GenAI Security Project — LLM01:2025 Prompt Injection. https://genai.owasp.org/llmrisk/llm01-prompt-injection/
+- OWASP Cheat Sheet Series — *LLM Prompt Injection Prevention Cheat Sheet*. https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html

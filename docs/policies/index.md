@@ -18,21 +18,79 @@ Use this page as a **chooser + map**:
 
 ## Quick chooser (pick one)
 
-### Evidence boundary
-- **No browsing; artifacts-only** → [Facts-only: Artifacts-only]({{ '/policies/facts-only-artifacts-only/' | relative_url }})
-- **Browsing allowed; authoritative sources + citations** → [Facts-only: Authoritative sources required]({{ '/policies/facts-only-authoritative-sources-required/' | relative_url }})
-- **Up-to-date public facts + citation-grade references** → [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }})
+<div class="c-section c-section--thin">
+  <div class="c-section__header">
+    <h3 class="c-section__title">Evidence boundary</h3>
+  </div>
 
-### Verification / quality gates
-- **Structured self-check loop before output** → [Chain-of-Verification (CoVe)]({{ '/policies/chain-of-verification/' | relative_url }})
-- **Technical writing: claims must be verified** → [Evidence-Gated Technical Writing Policy (Claims)]({{ '/policies/evidence-gated-technical-writing-policy/' | relative_url }})
-- **Architecture/best-practices/regressions gate** → [Engineering Quality Gate Policy]({{ '/policies/engineering-quality-gate-policy/' | relative_url }})
-- **Prevent overclaims + enforce terminology consistency** → [Semantic Accuracy Gate]({{ '/policies/semantic-accuracy-gate/' | relative_url }})
+  <div class="c-grid c-grid--3">
+    <a class="c-card" href="{{ '/policies/facts-only-artifacts-only/' | relative_url }}">
+      <div class="c-card__title">No browsing; artifacts-only</div>
+      <div class="c-card__desc">Operate only on user-provided artifacts. Fail-closed on missing evidence.</div>
+    </a>
 
-### Profiles / reporting
-- **Academic-style evidence-gated outputs** → [Evidence-Gated Academic Mode (EGAM)]({{ '/policies/evidence-gated-academic-mode/' | relative_url }})
-- **Required numeric confidence line (0–100)** → [Confidence score (0–100)]({{ '/policies/confidence-score/' | relative_url }})
-- **Objective technical baseline (rules-first)** → [Objective Technical Ruleset]({{ '/policies/objective-technical-operating-profile/' | relative_url }})
+    <a class="c-card" href="{{ '/policies/facts-only-authoritative-sources-required/' | relative_url }}">
+      <div class="c-card__title">Browsing allowed; authoritative sources + citations</div>
+      <div class="c-card__desc">Claims must be supported with citation-grade sources. Refuse when evidence is missing.</div>
+    </a>
+
+    <a class="c-card" href="{{ '/policies/web-verification-and-citations/' | relative_url }}">
+      <div class="c-card__title">Up-to-date public facts + citation-grade references</div>
+      <div class="c-card__desc">Web verification workflow + citations output contract.</div>
+    </a>
+  </div>
+</div>
+
+<div class="c-section c-section--thin">
+  <div class="c-section__header">
+    <h3 class="c-section__title">Verification / quality gates</h3>
+  </div>
+
+  <div class="c-grid c-grid--2">
+    <a class="c-card" href="{{ '/policies/chain-of-verification/' | relative_url }}">
+      <div class="c-card__title">Structured self-check loop before output</div>
+      <div class="c-card__desc">Chain-of-Verification (CoVe).</div>
+    </a>
+
+    <a class="c-card" href="{{ '/policies/evidence-gated-technical-writing-policy/' | relative_url }}">
+      <div class="c-card__title">Technical writing: claims must be verified</div>
+      <div class="c-card__desc">Evidence-gated writing gate for publishable outputs.</div>
+    </a>
+
+    <a class="c-card" href="{{ '/policies/engineering-quality-gate-policy/' | relative_url }}">
+      <div class="c-card__title">Architecture / best-practices / regressions gate</div>
+      <div class="c-card__desc">Engineering quality gate for code + system design outputs.</div>
+    </a>
+
+    <a class="c-card" href="{{ '/policies/semantic-accuracy-gate/' | relative_url }}">
+      <div class="c-card__title">Prevent overclaims + enforce terminology consistency</div>
+      <div class="c-card__desc">Semantic Accuracy Gate.</div>
+    </a>
+  </div>
+</div>
+
+<div class="c-section c-section--thin">
+  <div class="c-section__header">
+    <h3 class="c-section__title">Profiles / reporting</h3>
+  </div>
+
+  <div class="c-grid c-grid--3">
+    <a class="c-card" href="{{ '/policies/evidence-gated-academic-mode/' | relative_url }}">
+      <div class="c-card__title">Academic-style evidence-gated outputs</div>
+      <div class="c-card__desc">EGAM (evidence-gated academic mode).</div>
+    </a>
+
+    <a class="c-card" href="{{ '/policies/confidence-score/' | relative_url }}">
+      <div class="c-card__title">Required numeric confidence line (0–100)</div>
+      <div class="c-card__desc">Append a confidence score line to responses.</div>
+    </a>
+
+    <a class="c-card" href="{{ '/policies/objective-technical-operating-profile/' | relative_url }}">
+      <div class="c-card__title">Objective technical baseline (rules-first)</div>
+      <div class="c-card__desc">Objective technical operating profile.</div>
+    </a>
+  </div>
+</div>
 
 ## Common stacks (recommended combinations)
 
