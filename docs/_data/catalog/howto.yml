@@ -1,0 +1,165 @@
+catalog:
+  - id: evidence-boundaries-facts-only
+    title: "Evidence boundaries"
+    grid: "c-grid--2"
+    items:
+      - title: "Choose a facts-only evidence boundary"
+        url: "/how-to/choose-facts-only-evidence-boundary/"
+        desc: "Use this chooser when you need a strict “facts-only” output contract but must decide what evidence is allowed."
+        policies:
+          - title: "Facts-only: Artifacts-only"
+            url: "/policies/facts-only-artifacts-only/"
+          - title: "Facts-only: Authoritative sources required"
+            url: "/policies/facts-only-authoritative-sources-required/"
+          - title: "Evidence-Gated Academic Mode (EGAM)"
+            url: "/policies/evidence-gated-academic-mode/"
+        prompts:
+          - "/prompts/facts-only-artifacts-only.system.txt"
+          - "/prompts/facts-only-authoritative-sources-required.system.txt"
+          - "/prompts/evidence-gated-academic-mode.system.txt"
+
+      - title: "Facts-only: Artifacts-only — procedure"
+        url: "/how-to/facts-only-artifacts-only/"
+        desc: "No browsing; operate only on user-provided artifacts."
+        policy:
+          title: "Facts-only: Artifacts-only"
+          url: "/policies/facts-only-artifacts-only/"
+        prompts:
+          - "/prompts/facts-only-artifacts-only.system.txt"
+          - "/prompts/components/deep-scan.user.txt"
+
+      - title: "Facts-only: Authoritative sources required — procedure"
+        url: "/how-to/facts-only-authoritative-sources-required/"
+        desc: "Browsing allowed; claims require citation-grade sources."
+        policy:
+          title: "Facts-only: Authoritative sources required"
+          url: "/policies/facts-only-authoritative-sources-required/"
+        prompts:
+          - "/prompts/facts-only-authoritative-sources-required.system.txt"
+
+  - id: verification-workflows
+    title: "Verification workflows"
+    grid: "c-grid--2"
+    items:
+      - title: "Run Fact-Checking Kit"
+        url: "/how-to/fact-checking-kit/"
+        desc: "A concrete procedure to reduce factual errors and improve auditability."
+        policies:
+          - title: "Facts-only: Artifacts-only"
+            url: "/policies/facts-only-artifacts-only/"
+          - title: "Facts-only: Authoritative sources required"
+            url: "/policies/facts-only-authoritative-sources-required/"
+          - title: "Web Verification & Citations Policy"
+            url: "/policies/web-verification-and-citations/"
+          - title: "Confidence score (0–100)"
+            url: "/policies/confidence-score/"
+        prompts:
+          - "/prompts/facts-only-artifacts-only.system.txt"
+          - "/prompts/facts-only-authoritative-sources-required.system.txt"
+          - "/prompts/web-verification-and-citations.system.txt"
+          - "/prompts/web-browsing.user.txt"
+          - "/prompts/chain-of-verification.system.txt"
+          - "/prompts/confidence-score.system.txt"
+
+      - title: "Chain-of-Verification (CoVe) — procedure"
+        url: "/how-to/chain-of-verification-procedure/"
+        desc: "Use this procedure to run a structured verification loop before emitting a final answer."
+        policy:
+          title: "Chain-of-Verification — policy"
+          url: "/policies/chain-of-verification/"
+        prompts:
+          - "/prompts/chain-of-verification.system.txt"
+          - "/prompts/facts-only-artifacts-only.system.txt"
+          - "/prompts/facts-only-authoritative-sources-required.system.txt"
+          - "/prompts/web-verification-and-citations.system.txt"
+          - "/prompts/web-browsing.user.txt"
+          - "/prompts/citations-output-contract.user.txt"
+          - "/prompts/confidence-score.system.txt"
+          - "/prompts/instruction-hierarchy-and-evidence-boundary.system.txt"
+
+      - title: "Evidence-Gated Technical Writing Gate — procedure"
+        url: "/how-to/evidence-gated-technical-writing-gate-procedure/"
+        desc: "Verification procedure (claims)."
+        policy:
+          title: "Evidence-Gated Technical Writing Policy (Claims)"
+          url: "/policies/evidence-gated-technical-writing-policy/"
+        prompts:
+          - "/prompts/evidence-gated-technical-writing-gate.system.txt"
+          - "/prompts/evidence-gated-technical-writing-gate.user.txt"
+
+      - title: "Engineering Quality Gate — procedure"
+        url: "/how-to/engineering-quality-gate-procedure/"
+        desc: "Architecture consistency + regressions + best practices."
+        policy:
+          title: "Engineering Quality Gate Policy"
+          url: "/policies/engineering-quality-gate-policy/"
+        prompts:
+          - "/prompts/engineering-quality-gate.system.txt"
+          - "/prompts/engineering-quality-gate.user.txt"
+          - "/prompts/components/deep-scan.user.txt"
+
+      - title: "Semantic Accuracy Gate — procedure"
+        url: "/how-to/semantic-accuracy-gate-procedure/"
+        desc: "Terminology consistency + prevent overclaims."
+        policy:
+          title: "Semantic Accuracy Gate — policy"
+          url: "/policies/semantic-accuracy-gate/"
+        prompts:
+          - "/prompts/semantic-accuracy-gate.system.txt"
+          - "/prompts/semantic-accuracy-gate.user.txt"
+
+  - id: web-verification--citations
+    title: "Web verification & citations"
+    grid: "c-grid--2"
+    items:
+      - title: "Request web browsing (prompt template)"
+        url: "/how-to/request-web-browsing/"
+        desc: "This guide provides copy/paste templates to request web browsing / web search from an agent."
+        policy:
+          title: "Web Verification & Citations Policy"
+          url: "/policies/web-verification-and-citations/"
+        prompts:
+          - "/prompts/web-browsing.user.txt"
+          - "/prompts/web-verification-procedure.user.txt"
+          - "/prompts/citations-output-contract.user.txt"
+          - "/prompts/web-verification-and-citations.system.txt"
+
+  - id: modes--reporting
+    title: "Modes & reporting"
+    grid: "c-grid--2"
+    items:
+      - title: "Evidence-Gated Academic Mode (EGAM) — procedure"
+        url: "/how-to/evidence-gated-academic-mode/"
+        desc: "This guide explains how to run EGAM as a profile layered on authoritative sources."
+        policy:
+          title: "Evidence-Gated Academic Mode (EGAM)"
+          url: "/policies/evidence-gated-academic-mode/"
+        prompts:
+          - "/prompts/evidence-gated-academic-mode.system.txt"
+
+      - title: "Add an evidence-based confidence score (0–100) to every response"
+        url: "/how-to/add-confidence-score-to-responses/"
+        desc: "Ensure every response includes an evidence-based analytic confidence score."
+        policy:
+          title: "Confidence score (0–100)"
+          url: "/policies/confidence-score/"
+        prompts:
+          - "/prompts/confidence-score.system.txt"
+
+  - id: tooling--prompting
+    title: "Tooling & prompting"
+    grid: "c-grid--2"
+    items:
+      - title: "Prompt Engineering Guide for Daily Work"
+        url: "/how-to/prompt-engineering-daily-work/"
+        desc: "Provide operational, copy/paste prompting patterns for daily work across major assistants, with explicit evidence boundaries and fail-closed behavior."
+        prompts:
+          - "/prompts/prompt-engineering-daily-work.user.txt"
+
+  - id: memory--context-management
+    title: "Memory & context management"
+    grid: "c-grid--2"
+    items:
+      - title: "Manage: LLM memory boundaries (ChatGPT + agentic systems)"
+        url: "/how-to/llm-memory-boundaries/"
+        desc: "Procedure + checklist for making “memory” behavior predictable and auditable."

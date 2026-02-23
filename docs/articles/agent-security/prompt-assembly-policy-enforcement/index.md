@@ -13,12 +13,10 @@ This article is an engineering guide for one specific failure mode in prompt ass
 **Authority confusion:** untrusted content is misclassified and handled as if it were authoritative policy, causing policy spoofing and cross-turn drift.
 
 The diagram that defines the modeled pipeline is maintained as a reference (SSOT):
-- `/reference/diagrams/provenance-boundary-failure-prompt-assembly/`
+- Diagram reference: [Provenance Boundary Failure — Prompt Assembly Diagram]({{ '/reference/diagrams/provenance-boundary-failure-prompt-assembly/' | relative_url }})
+- Diagram asset (SVG): [provenance-boundary-failure-prompt-assembly.svg]({{ '/assets/img/diagrams/provenance-boundary-failure-prompt-assembly.svg' | relative_url }})
 
-Diagram asset (rendered SVG):
-- `/assets/img/diagrams/provenance-boundary-failure-prompt-assembly.svg`
-
-This page uses requirement keywords as defined by RFC 2119 (e.g., MUST, SHOULD, MAY). RFC 2119.
+This page uses requirement keywords as defined by [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119.html) (MUST, SHOULD, MAY).
 
 ## Diagram (reference only)
 ![Provenance Boundary Failure — Prompt Assembly]({{ '/assets/img/diagrams/provenance-boundary-failure-prompt-assembly.svg' | relative_url }})
@@ -31,7 +29,7 @@ The modeled pipeline has two fundamentally different input classes:
 
 The failure mode occurs when (1) and (2) are not kept separate through the prompt-assembly boundary.
 
-Prompt injection is a known class of risk where crafted inputs attempt to manipulate model behavior or override intended controls. OWASP GenAI Security Project (LLM01: Prompt Injection). OWASP.
+Prompt injection is a known class of risk where crafted inputs attempt to manipulate model behavior or override intended controls. See OWASP GenAI **LLM01:2025 Prompt Injection**. https://genai.owasp.org/llmrisk/llm01-prompt-injection/
 
 ## Security objective
 Prevent authority confusion by enforcing, at the prompt-assembly ingress, that:

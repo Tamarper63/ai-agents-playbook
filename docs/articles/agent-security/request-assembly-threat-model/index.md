@@ -302,20 +302,23 @@ Each checkpoint is written in a consistent audit template:
 2. Confirm where authorization is bound and where it can be bypassed (S2/S3/tool/app/connector layer).
 3. Enumerate tools and apps/connectors: scopes, approval policy, and server-side enforcement.
 4. Review persistence: saved memory writes, retrieval feedback loops, cache/replay behavior, and retention.
-5. Audit observability: what is emitted (events/logs), who can read it, and how it is redacted.---
+5. Audit observability: what is emitted (events/logs), who can read it, and how it is redacted.
 
+---
 
-## Suggested next
-- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
-- [Agent security]({{ '/articles/agent-security/' | relative_url }})
-- [Content map]({{ '/reference/content-map/' | relative_url }}) 
+## Suggested reading
+- [The Attack Surface Starts Before Agents — The LLM Boundary]({{ '/articles/agent-security/llm-boundary-first-touch/' | relative_url }})
+- [The Attack Surface Isn’t the Model — It’s the Orchestration Loop]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})
+- [Prompt Assembly Policy Enforcement: Typed Provenance to Prevent Authority Confusion]({{ '/articles/agent-security/prompt-assembly-policy-enforcement/' | relative_url }})
+- [How Agentic Control-Plane Failures Actually Happen]({{ '/articles/agent-security/control-plane-failures/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
 
 ## References (official feature docs; not internal placement claims)
 - OpenAI — Memory (saved memories / chat history): https://help.openai.com/en/articles/8983136-what-is-memory
 - OpenAI — Memory FAQ: https://help.openai.com/en/articles/8590148-memory-faq
 - OpenAI API — Function/tool calling: https://developers.openai.com/api/docs/guides/function-calling/
 - OpenAI API — Tools overview: https://developers.openai.com/api/docs/guides/tools/
-- OpenAI — Apps/Connectors in ChatGPT: https://help.openai.com/en/articles/11487775-connectors-in-chatgpt
+- OpenAI — Apps in ChatGPT (formerly “Connectors”): https://help.openai.com/en/articles/11487775-connectors-in-chatgpt
 - OpenAI API — Connectors and MCP servers (risks/safety/approvals): https://developers.openai.com/api/docs/guides/tools-connectors-mcp/
 
 - NIST SP 800-30 Rev. 1 — Guide for Conducting Risk Assessments: https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-30r1.pdf

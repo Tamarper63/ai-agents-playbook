@@ -13,6 +13,8 @@ actions:
   secondary:
     - label: "Browse prompt library"
       url: "/prompts/"
+    - label: "Updates (1–2×/week)"
+      url: "/updates/"
 
 quickstart:
   title: "Quickstart (5 minutes)"

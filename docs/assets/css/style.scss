@@ -1342,6 +1342,32 @@ a.c-card:focus-visible {
   align-items: flex-start;
 }
 
+/* Row-style card: left content + right CTA (prevents “empty right side” look) */
+.c-card--row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.c-card--row .c-card__main { min-width: 0; }
+
+.c-card--row .c-card__actions {
+  margin-top: 0;
+  padding-top: 0;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .c-card--row { flex-direction: column; }
+  .c-card--row .c-card__actions { width: 100%; }
+}
+
+/* Grid-wrapped disclosures: let grid gap control spacing */
+.main-content .c-disclosure-grid details.c-disclosure {
+  margin: 0;
+}
+
 /* Allow specific cards to span full row in grids */
 .c-span-full { grid-column: 1 / -1; }
 
