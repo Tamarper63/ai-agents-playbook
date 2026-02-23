@@ -1,5 +1,5 @@
 ---
-title: Tool-Using Systems The Attack Surface Shifts to the Controller Loop
+title: The Attack Surface Isn’t the Model — It’s the Orchestration Loop
 permalink: /articles/agent-security/controller-loop-attack-surface/
 summary: How multi-step controller loops change the threat model in tool-using systems, and where to enforce separation, authorization, validation, and budgets to reduce prompt injection, tool misuse, unsafe writes, and unbounded consumption.
 author: Tamar Peretz
@@ -71,12 +71,16 @@ Typical shape:
 ## Execution patterns: where risk shifts by orchestration pattern
 The core differentiator is **who decides the next tool/step** and **how many times** that decision happens.
 
+<div class="c-table" role="region" aria-label="Execution patterns by orchestration" tabindex="0" markdown="1">
+
 | Pattern | Orchestration shape | Who decides the next tool/step? | Dominant risk amplifiers | Primary enforcement points |
 |---|---|---|---|---|
 | Single-shot tool use | One/few tool calls, minimal iteration | Mostly application code + one model decision | Unsafe tool args; weak write-path enforcement; mishandled tool output | Tool allowlists, strict tool schemas, output handling, server-side write-path enforcement |
 | Workflow (predetermined) | Fixed graph / code path | Graph logic | Reduced dynamism, but still exposed via tool I/O + data channels | Graph-level policy checks + tool contracts + write-path enforcement |
 | ReAct-style loop | Iterative: reason → act → observe → repeat | Model outputs + loop logic each turn | Repeated exposure to untrusted observations; step chaining; stop-condition abuse | Step-level policy enforcement checks, tool-arg constraints, loop budgets, full provenance trace |
 | Plan-and-execute | Plan first; execute step-by-step; may re-plan | Planner output + executor loop | Plan becomes an attack target; execution drift across steps; plan/tool coupling | Plan validator + per-step policy enforcement checks + write-path enforcement + budgets |
+
+</div>
 
 
 Notes:
@@ -208,6 +212,7 @@ Log enough to reconstruct “what influenced what”:
 ## Implementation sketch (policy + router + budgets)
 Illustrative pseudocode showing enforcement points that should not depend on model compliance:
 
+```text
 ingress(request):
   principal = authenticate_and_bind(request)      # tenant/user/session binding
   mode      = decide_mode(principal, request)     # READ_ONLY / WRITE_CAPABLE
@@ -257,6 +262,8 @@ ingress(request):
 ---
 
 ## What to test (security test cases)
+<div class="c-table" role="region" aria-label="Security test cases" tabindex="0" markdown="1">
+
 | Test | Goal | Expected result |
 |---|---|---|
 | Retrieval injection test | Retrieved content cannot change tool allowlists, scopes, or authorization decisions | Tool selection remains constrained; policy gates reject elevation |
@@ -265,12 +272,15 @@ ingress(request):
 | Plan validation test | Planner cannot introduce tools/targets outside policy/tenant binding | Plan rejected or rewritten by policy, not executed |
 | Budget/stop test | Loops terminate under step/time/cost/retry ceilings | Loop stops deterministically; escalation rules trigger |
 
+</div>
 ---
 
-## Suggested next
-- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
-- [Agent architecture]({{ '/articles/agent-architecture/' | relative_url }})
-- [Content map]({{ '/reference/content-map/' | relative_url }})
+## Suggested reading
+- [The Attack Surface Starts Before Agents — The LLM Boundary]({{ '/articles/agent-security/llm-boundary-first-touch/' | relative_url }})
+- [How Agentic Control-Plane Failures Actually Happen]({{ '/articles/agent-security/control-plane-failures/' | relative_url }})
+- [Agentic Systems: 8 Trust-Boundary Audit Checkpoints]({{ '/articles/agent-security/trust-boundary-checkpoints/' | relative_url }})
+- [Request assembly threat model: reading the diagram]({{ '/articles/agent-security/request-assembly-threat-model/' | relative_url }})
+- [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
 
 ## References
 - OWASP GenAI — LLM01:2025 Prompt Injection: https://genai.owasp.org/llmrisk/llm01-prompt-injection/
@@ -278,7 +288,6 @@ ingress(request):
 - OWASP GenAI — LLM10:2025 Unbounded Consumption: https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/
 - OWASP Cheat Sheet — LLM Prompt Injection Prevention: https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html
 - OWASP Cheat Sheet — AI Agent Security: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
-- OWASP GenAI — Securing Agentic Applications Guide 1.0: https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/
 - NIST SP 800-207 — Zero Trust Architecture: https://doi.org/10.6028/NIST.SP.800-207
 - NIST AI 600-1 — Generative AI Profile: https://doi.org/10.6028/NIST.AI.600-1
 - OpenAI — Safety in building agents: https://developers.openai.com/api/docs/guides/agent-builder-safety/
@@ -286,4 +295,3 @@ ingress(request):
 - OpenAI — Structured Outputs: https://developers.openai.com/api/docs/guides/structured-outputs/
 - Anthropic — Building Effective Agents (workflows vs agents): https://www.anthropic.com/engineering/building-effective-agents
 - LangGraph — Workflows and agents: https://docs.langchain.com/oss/python/langgraph/workflows-agents
-- ReAct: Synergizing Reasoning and Acting in Language Models (arXiv:2210.03629): https://arxiv.org/abs/2210.03629
