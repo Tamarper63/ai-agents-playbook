@@ -8,10 +8,14 @@ summary: Two recurring control-plane failure patterns—privilege persistence ac
 
 This article describes two **control-plane failure patterns** observed as *audit categories* in multi-step, tool-using LLM systems:
 
+<div class="c-table" role="region" aria-label="Executive summary: control-plane failure patterns" tabindex="0" markdown="1">
+
 | Pattern | What fails | Typical impact | What “good” looks like |
 |---|---|---|---|
 | 1) Privilege persistence across interaction boundaries | Authorization context is treated as carryover state instead of being re-validated per call | Cross-thread/tab/conversation privilege bleed; writes in the wrong boundary | Per-call authorization at a server-side enforcement point; credentials scoped + bound + short-lived |
 | 2) Monitoring-only integrity signals (detect without enforcement) | Integrity risk is detected but does not change execution state | Tainted artifacts keep influencing routing/tools across steps | High-risk signals trigger enforcement actions (hold/deny/quarantine) + circuit breakers |
+
+</div>
 
 **Evidence boundary:** these are **audit patterns**, not claims about a specific vendor trace.
 
@@ -128,6 +132,8 @@ A monitoring-only signal does not reduce the likelihood of side effects if the c
 
 ## Test matrix (copy/paste)
 
+<div class="c-table" role="region" aria-label="Test matrix: control-plane failure patterns" tabindex="0" markdown="1">
+
 | Pattern | Test | Expected enforcement point | Expected result |
 |---|---|---|---|
 | 1 | Cross-boundary privilege bleed | PEP (server-side) | Deny/hold unless boundary re-authorizes |
@@ -136,6 +142,8 @@ A monitoring-only signal does not reduce the likelihood of side effects if the c
 | 2 | Poisoned input triggers rule | Controller enforcement / PEP | Hold/deny + quarantine artifact |
 | 2 | Policy-violating args | PEP pre-execution | Reject before side effect |
 | 2 | Repeated integrity signals | Circuit breaker | Stop or degrade to read-only |
+
+</div>
 
 ---
 
@@ -154,7 +162,14 @@ A monitoring-only signal does not reduce the likelihood of side effects if the c
 
 - OWASP Cheat Sheet Series — AI Agent Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
 - OWASP — Securing Agentic Applications Guide 1.0 (orchestration / workflows / control-flow mechanisms): https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/
-- OWASP — Top 10 for Large Language Model Applications (2025 PDF): https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-v2025.pdf
+- OWASP — Top 10 for LLM Applications (2025): https://genai.owasp.org/llm-top-10/
 - NIST SP 800-207 — Zero Trust Architecture (PDP/PEP; PE/PA; control plane vs data plane): https://doi.org/10.6028/NIST.SP.800-207
 - NIST SP 800-53 Rev. 5 — Security and Privacy Controls: https://doi.org/10.6028/NIST.SP.800-53r5
 - Saltzer & Schroeder (1975) — The Protection of Information in Computer Systems: https://www.cl.cam.ac.uk/teaching/1011/R01/75-protection.pdf
+
+## Suggested reading
+
+- Orchestration risk (controller loop): [The Attack Surface Isn’t the LLM — It’s the Controller Loop]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})
+- Request construction checkpoints: [Request assembly threat model: reading the diagram]({{ '/articles/agent-security/request-assembly-threat-model/' | relative_url }})
+- Trust boundary audit checklist: [Agentic Systems: 8 Trust-Boundary Audit Checkpoints]({{ '/articles/agent-security/trust-boundary-checkpoints/' | relative_url }})
+- Procedure (enforcement gate): [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})

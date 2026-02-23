@@ -1009,6 +1009,20 @@ h1, h2, h3, h4, h5, h6 {
 .main-content table tr:last-child td:first-child { border-bottom-left-radius: 10px; }
 .main-content table tr:last-child td:last-child { border-bottom-right-radius: 10px; }
 
+/* Responsive table container (scroll only the table, not the whole page) */
+.c-table {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+}
+
+.c-table:focus-visible {
+  outline: 3px solid rgba($accent_2, 0.55);
+  outline-offset: 2px;
+  border-radius: 14px;
+}
+
 /* =========================
    Figures / Diagrams
    ========================= */
