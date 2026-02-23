@@ -137,6 +137,11 @@ When describing “Level N” performance for any system (humans or LLMs), state
 ## Related prompt blocks (this site)
 - Prompt blocks index: {% include page-title-link.html url="/prompts/" fallback="Prompt library" %}
 
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Prompt engineering]({{ '/articles/prompt-engineering/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
+
 ## References (primary / canonical)
 - Dennett, D. C. (1983). *Intentional Systems in Cognitive Ethology: The “Panglossian Paradigm” Defended.* Behavioral and Brain Sciences. DOI:10.1017/S0140525X00016393. https://doi.org/10.1017/S0140525X00016393
 - Apperly, I. (2011). *Mindreaders: The Cognitive Basis of “Theory of Mind”.* Psychology Press. ISBN:9781841696973. https://www.routledge.com/Mindreaders-The-Cognitive-Basis-of-Theory-of-Mind/Apperly/p/book/9780415655583

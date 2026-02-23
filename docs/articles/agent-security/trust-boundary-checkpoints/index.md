@@ -314,7 +314,7 @@ Capture, at least:
 - [OWASP Cheat Sheet Series — AI Agent Security Cheat Sheet][owasp-agent-cheatsheet]
 - [NIST AI 600-1 — Generative AI Profile][nist-ai-600-1]
 
-[owasp-top10]: https://owasp.org/www-project-top-10-for-large-language-model-applications/
-[owasp-genai-llm01]: https://genai.owasp.org/llmrisk/llm01-prompt-injection/
-[owasp-agent-cheatsheet]: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
-[nist-ai-600-1]: https://doi.org/10.6028/NIST.AI.600-1
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Agent security]({{ '/articles/agent-security/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})

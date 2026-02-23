@@ -145,6 +145,11 @@ EVIDENCE:
 - [Evidence-Gated Technical Writing Gate]({{ '/prompts/evidence-gated-technical-writing-gate.system.txt' | relative_url }})
 - [Semantic Accuracy Gate (per-claim ledger)]({{ '/prompts/semantic-accuracy-gate.user.txt' | relative_url }})
 
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Prompt engineering]({{ '/articles/prompt-engineering/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
+
 ## References
 - Lin et al. — *TruthfulQA: Measuring How Models Mimic Human Falsehoods* (2021). arXiv:2109.07958.
 - Min et al. — *FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation* (2023). arXiv:2305.14251.

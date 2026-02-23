@@ -120,6 +120,10 @@ When a paper claims “LLMs show ToM” based on benchmarks, check whether it re
 5) Whether conclusions are framed as **behavioral task performance** rather than mechanism attribution.
 
 ---
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Prompt engineering]({{ '/articles/prompt-engineering/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
 
 ## References (primary / formal)
 

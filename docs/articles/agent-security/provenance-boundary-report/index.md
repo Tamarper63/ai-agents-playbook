@@ -338,22 +338,10 @@ In this report, these are treated as **UI-exposed labels** and are described usi
 - “memory scope enforcement”
 - “artifact/export binding”
 
-## 9) Evidence index (as provided)
-
-### UI screenshots
-- IMG_0046.PNG — monitors list and statuses (UI-exposed labels listed above)
-- IMG_0048.PNG — tier/state display elements
-- IMG_0049.PNG, IMG_0050.PNG, IMG_0051.PNG, IMG_0052.PNG, IMG_0053.PNG — labels/policy/verification sections and controller lists
-- WhatsApp Image 2025-11-11 at 14.02.54 (2).jpeg, (6).jpeg — supplemental UI context (state/labels)
-
-### Network screenshots (DevTools)
-- 2b037c02-66cd-46c6-8959-1dcb6f24a83e.png — model evidence (model_slug matches across multiple requests)
-- f051366e-74bc-425d-8452-61b960919ea5.png — additional stream markers (model flow)
-- Screenshot 2025-11-11 at 16.03.26.png — conversation search: model/policy hits (redacted)
-- Screenshot 2025-11-11 at 16.04.17.png — turn-analytics payload (“Turn exchange complete”), no artifacts attached
-- Screenshot 2025-11-11 at 16.13.58.png, 16.18.27.png — event delta/patches; no commit artifacts
-- Screenshot — GET /backend-api/celsius/ws/user 200
-- Screenshot — POST /backend-api/sentinel/chat-requirements/finalize 200 (request IDs redacted)
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Agent security]({{ '/articles/agent-security/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
 
 ## 10) References (primary)
 

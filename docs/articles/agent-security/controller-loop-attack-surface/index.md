@@ -267,6 +267,11 @@ ingress(request):
 
 ---
 
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Agent architecture]({{ '/articles/agent-architecture/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
+
 ## References
 - OWASP GenAI — LLM01:2025 Prompt Injection: https://genai.owasp.org/llmrisk/llm01-prompt-injection/
 - OWASP GenAI — LLM06:2025 Excessive Agency: https://genai.owasp.org/llmrisk/llm062025-excessive-agency/

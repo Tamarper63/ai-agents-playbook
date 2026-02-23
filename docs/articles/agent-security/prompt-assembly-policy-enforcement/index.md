@@ -139,6 +139,11 @@ Output_schema_validation,Validate outputs deterministically,Output validator,For
 - Avoid mixing authority-bearing instructions with untrusted data without explicit separation. OWASP Cheat Sheet Series (LLM Prompt Injection Prevention Cheat Sheet). OWASP.
 - Use enforcement patterns consistent with policy decision + policy enforcement separation described in Zero Trust Architecture. NIST SP 800-207, DOI: 10.6028/NIST.SP.800-207.
 
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Agent architecture]({{ '/articles/agent-architecture/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
+
 ## References (formal identifiers / institutions)
 - RFC 2119 — *Key words for use in RFCs to Indicate Requirement Levels*. https://www.rfc-editor.org/rfc/rfc2119.html
 - NIST SP 800-207 — *Zero Trust Architecture*. https://doi.org/10.6028/NIST.SP.800-207

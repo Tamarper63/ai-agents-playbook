@@ -304,6 +304,12 @@ Each checkpoint is written in a consistent audit template:
 4. Review persistence: saved memory writes, retrieval feedback loops, cache/replay behavior, and retention.
 5. Audit observability: what is emitted (events/logs), who can read it, and how it is redacted.---
 
+
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Agent security]({{ '/articles/agent-security/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }}) 
+
 ## References (official feature docs; not internal placement claims)
 - OpenAI — Memory (saved memories / chat history): https://help.openai.com/en/articles/8983136-what-is-memory
 - OpenAI — Memory FAQ: https://help.openai.com/en/articles/8590148-memory-faq

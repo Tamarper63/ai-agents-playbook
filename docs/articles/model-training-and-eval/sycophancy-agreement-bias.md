@@ -174,6 +174,11 @@ Confabulation concerns unsupported content generation and is treated as a GenAI 
 
 ---
 
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Prompt engineering]({{ '/articles/prompt-engineering/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
+
 ## References (primary / formal identifiers)
 [1] Sharma et al. “Towards Understanding Sycophancy in Language Models.” arXiv:2310.13548. (ICLR 2024).  
 [2] Wei et al. “Simple synthetic data reduces sycophancy in large language models.” arXiv:2308.03958.  

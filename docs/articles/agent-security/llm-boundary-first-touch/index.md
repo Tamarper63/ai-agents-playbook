@@ -113,6 +113,11 @@ You should be able to reconstruct:
 - [ ] High-impact actions require explicit review/approval.
 - [ ] Audit evidence exists to reconstruct an incident timeline.
 
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Agent architecture]({{ '/articles/agent-architecture/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
+
 ## References (pinned)
 OWASP (GenAI, 2025):
 - LLM Top 10 index (2025): https://genai.owasp.org/llm-top-10/

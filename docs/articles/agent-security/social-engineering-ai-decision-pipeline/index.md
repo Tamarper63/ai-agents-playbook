@@ -107,6 +107,11 @@ OWASP recommends adversarial testing and attack simulations for prompt injection
 
 **Model Context Protocol (MCP)** defines authorization capabilities at the transport level for HTTP-based transports, including scope-based authorization patterns (OAuth-based). Authorization is optional in MCP, and the spec defines how clients/servers negotiate and validate scopes/tokens. (MCP Authorization spec)
 
+## Suggested next
+- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Agent security]({{ '/articles/agent-security/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
+
 ## References
 
 - NIST Glossary — “social engineering”: https://csrc.nist.gov/glossary/term/social_engineering
