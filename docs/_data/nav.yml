@@ -19,6 +19,12 @@ items:
     url: "/reference/"
     active_contains: "/reference/"
 
+  - label: "Start here"
+    url: "/how-to/start-here-by-role/"
+    active_contains: "/how-to/start-here-by-role/"
+    cta: true
+    cta_variant: "util"
+
   - label: "Newsletter"
     url: "/newsletter/"
     active_contains: "/newsletter/"

@@ -11,7 +11,6 @@ Engineering writeups on security properties of LLM-powered agentic applications 
 
 ## Pages in this section
 
-...
 {% include catalog/articles-topic-pages.html topic="agent-security" %}
 
 {% include catalog/articles-topic-resources.html topic="agent-security" %}
