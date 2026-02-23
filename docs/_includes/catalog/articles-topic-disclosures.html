@@ -1,0 +1,96 @@
+{% assign t = site.data.catalog.articles_topics.topics[include.topic] %}
+
+{% if t and t.about_md %}
+  {% capture about_md %}{{ t.about_md }}{% endcapture %}
+  <details class="c-disclosure">
+    <summary>
+      <span class="c-disclosure__label--closed">About this section</span>
+      <span class="c-disclosure__label--open">About this section</span>
+    </summary>
+    <div class="c-disclosure__body">
+      {{ about_md | markdownify }}
+    </div>
+  </details>
+{% endif %}
+
+{% if t and t.terms_md %}
+  {% capture terms_md %}{{ t.terms_md }}{% endcapture %}
+  <details class="c-disclosure">
+    <summary>
+      <span class="c-disclosure__label--closed">Key terms</span>
+      <span class="c-disclosure__label--open">Key terms</span>
+    </summary>
+    <div class="c-disclosure__body">
+      {{ terms_md | markdownify }}
+    </div>
+  </details>
+{% endif %}
+
+{% if t and t.contracts %}
+  <details class="c-disclosure">
+    <summary>
+      <span class="c-disclosure__label--closed">Reuse (contracts)</span>
+      <span class="c-disclosure__label--open">Reuse (contracts)</span>
+    </summary>
+
+    <div class="c-disclosure__body">
+      <div class="c-grid c-grid--2">
+        {% for c in t.contracts %}
+          <div class="c-card">
+            <div class="c-card__content">
+              <div class="c-card__title">{{ c.title }}</div>
+              <div class="c-card__desc">{{ c.desc }}</div>
+              <div class="c-card__actions">
+                <a class="c-btn c-btn--secondary c-btn--compact" href="{{ c.url | relative_url }}">Open</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+{% endif %}
+
+{% if t and t.related_links %}
+  <details class="c-disclosure">
+    <summary>
+      <span class="c-disclosure__label--closed">Related</span>
+      <span class="c-disclosure__label--open">Related</span>
+    </summary>
+    <div class="c-disclosure__body">
+      <ul>
+        {% for r in t.related_links %}
+          <li>
+            <a href="{{ r.url | relative_url }}">{{ r.title }}</a>{% if r.desc %} — {{ r.desc }}{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </details>
+{% endif %}
+
+{% if t and t.related_md %}
+  {% capture related_md %}{{ t.related_md }}{% endcapture %}
+  <details class="c-disclosure">
+    <summary>
+      <span class="c-disclosure__label--closed">Related</span>
+      <span class="c-disclosure__label--open">Related</span>
+    </summary>
+    <div class="c-disclosure__body">
+      {{ related_md | markdownify }}
+    </div>
+  </details>
+{% endif %}
+
+{% if t and t.baselines_md %}
+  {% capture baselines_md %}{{ t.baselines_md }}{% endcapture %}
+  <details class="c-disclosure">
+    <summary>
+      <span class="c-disclosure__label--closed">External baselines (shared terminology)</span>
+      <span class="c-disclosure__label--open">External baselines (shared terminology)</span>
+    </summary>
+    <div class="c-disclosure__body">
+      {{ baselines_md | markdownify }}
+    </div>
+  </details>
+{% endif %}

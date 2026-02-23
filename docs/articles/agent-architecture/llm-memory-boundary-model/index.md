@@ -2,6 +2,8 @@
 title: "LLM memory boundary model: how context gets selected (and why answers change)"
 permalink: /articles/agent-architecture/llm-memory-boundary-model/
 summary: A boundary model for context assembly (memory + chat history + prompt + tool inputs) and the control-plane controls that govern eligibility, persistence, and security.
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 This article is an **explanation** (conceptual model + design implications).
@@ -106,7 +108,7 @@ OpenAI:
 - Memory FAQ (Reference saved memories / Reference chat history / Temporary Chat): https://help.openai.com/en/articles/8590148-memory-faq
 - What is Memory?: https://help.openai.com/en/articles/8983136-what-is-memory
 - Reference saved memories: https://help.openai.com/en/articles/11146739-how-does-reference-saved-memories-work
-- Safety in building agents (prompt injection guidance): https://platform.openai.com/docs/guides/agent-builder-safety
+- Safety in building agents (prompt injection guidance): https://developers.openai.com/api/docs/guides/agent-builder-safety/
 
 OWASP:
 - AI Agent Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html

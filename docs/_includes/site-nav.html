@@ -12,6 +12,11 @@
         {% assign is_active = false %}
         {% assign item_url = item.url | default: '' %}
         {% assign ac = item.active_contains | default: '' %}
+        {% assign is_external = false %}
+
+        {% if item_url contains '://' %}
+          {% assign is_external = true %}
+        {% endif %}
 
         {% if item_url != '' and purl == item_url %}
           {% assign is_active = true %}
@@ -20,9 +25,17 @@
         {% endif %}
 
         {% if is_active %}
-          <a href="{{ item.url | relative_url }}" aria-current="page">{{ item.label }}</a>
+          {% if is_external %}
+            <a class="site-nav__link site-nav__link--active" href="{{ item_url }}" aria-current="page" rel="noopener" target="_blank">{{ item.label }}</a>
+          {% else %}
+            <a class="site-nav__link site-nav__link--active" href="{{ item_url | relative_url }}" aria-current="page">{{ item.label }}</a>
+          {% endif %}
         {% else %}
-          <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+          {% if is_external %}
+            <a class="site-nav__link" href="{{ item_url }}" rel="noopener" target="_blank">{{ item.label }}</a>
+          {% else %}
+            <a class="site-nav__link" href="{{ item_url | relative_url }}">{{ item.label }}</a>
+          {% endif %}
         {% endif %}
       {% endunless %}
     {% endfor %}

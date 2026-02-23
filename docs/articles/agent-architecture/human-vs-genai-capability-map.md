@@ -2,6 +2,8 @@
 title: Human vs GenAI capability map (engineering view)
 permalink: /articles/agent-architecture/human-vs-genai-capability-map/
 summary: A practical mapping of human cognitive capabilities to GenAI limitations, engineering substitutes, and residual gaps.
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Abstract
@@ -85,7 +87,7 @@ Residual gaps are where production systems typically fail (consistency, provenan
 - Gal & Ghahramani (2016). *Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning.* arXiv:1506.02142. https://arxiv.org/abs/1506.02142
 - Robertson & Zaragoza (2009). *The Probabilistic Relevance Framework: BM25 and Beyond.* https://doi.org/10.1561/1500000019
 - OWASP Cheat Sheet Series. *AI Agent Security Cheat Sheet.* https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
-- OpenAI Docs. *Safety in building agents (prompt injection guidance).* https://platform.openai.com/docs/guides/agent-builder-safety
+- OpenAI Docs. *Safety in building agents (prompt injection guidance).* https://developers.openai.com/api/docs/guides/agent-builder-safety/
 - NIST. *NIST AI 600-1: Generative AI Profile.* https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
 
 ## Suggested next read in this repo

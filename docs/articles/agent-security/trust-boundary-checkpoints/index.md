@@ -2,6 +2,8 @@
 title: Agentic Systems 8 Trust-Boundary Audit Checkpoints
 permalink: /articles/agent-security/trust-boundary-checkpoints/
 summary: A practical audit checklist of 8 trust checkpoints where untrusted artifacts can steer routing, tool use, and write-path actions in chained LLM systems.
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Overview

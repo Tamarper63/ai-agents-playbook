@@ -1,0 +1,28 @@
+{% assign t = site.data.catalog.articles_topics.topics[include.topic] %}
+{% if t and t.start_goals %}
+
+<div class="c-grid c-grid--2">
+  {% for g in t.start_goals %}
+    {% assign p = site.pages | where: "url", g.start_url | first %}
+
+    <a class="c-card" href="{{ g.start_url | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">{{ p.title | default: g.start_url }}</div>
+        <div class="c-card__desc">{{ g.goal | replace: '**', '' }}</div>
+
+        {% if g.then_urls %}
+          <div class="c-card__meta">
+            <strong>Next:</strong>
+            {% for u in g.then_urls %}
+              {% assign p2 = site.pages | where: "url", u | first %}
+              {{ p2.title | default: u }}{% unless forloop.last %} · {% endunless %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </a>
+
+  {% endfor %}
+</div>
+
+{% endif %}

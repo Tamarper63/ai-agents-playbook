@@ -2,6 +2,8 @@
 title: Prompt Engineering Guide for Daily Work (Deep Dive)
 permalink: /articles/prompt-engineering/prompt-engineering-daily-work/
 summary: A deep dive into why prompts fail in daily work, how to design evidence-locked prompt specs, and how to evaluate them (including prompt injection risk).
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Abstract

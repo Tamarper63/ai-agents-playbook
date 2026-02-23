@@ -1,0 +1,19 @@
+{% assign t = site.data.catalog.articles_topics.topics[include.topic] %}
+
+{% assign has_resources = false %}
+{% if t.about_md %}{% assign has_resources = true %}{% endif %}
+{% if t.terms_md %}{% assign has_resources = true %}{% endif %}
+{% if t.related_links %}{% assign has_resources = true %}{% endif %}
+{% if t.related_md %}{% assign has_resources = true %}{% endif %}
+{% if t.contracts %}{% assign has_resources = true %}{% endif %}
+{% if t.baselines_md %}{% assign has_resources = true %}{% endif %}
+
+{% if has_resources %}
+<section class="c-section c-section--divider" aria-label="Section resources">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub">Section resources</h2>
+  </div>
+
+  {% include catalog/articles-topic-disclosures.html topic=include.topic %}
+</section>
+{% endif %}

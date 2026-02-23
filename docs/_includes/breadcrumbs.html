@@ -1,0 +1,86 @@
+{% assign purl = page.url | default: '' %}
+
+{% if purl != '' and purl != '/' %}
+
+  {% if purl contains '/articles/' and purl != '/articles/' %}
+    {% assign parts = purl | split:'/' %}
+    {% assign topic = parts[2] | default: '' %}
+    {% assign topic_url = '' %}
+    {% assign topic_label = '' %}
+
+    {% if topic != '' %}
+      {% assign topic_url = '/articles/' | append: topic | append: '/' %}
+      {% assign topic_page = site.pages | where: 'url', topic_url | first %}
+      {% assign topic_label = topic_page.title | default: topic %}
+    {% endif %}
+
+    {% assign is_topic_index = false %}
+    {% if topic_url != '' and purl == topic_url %}
+      {% assign is_topic_index = true %}
+    {% endif %}
+
+    <nav class="c-breadcrumbs" aria-label="Breadcrumb">
+      <ol class="c-breadcrumbs__list">
+        <li class="c-breadcrumbs__item">
+          <a href="{{ '/articles/' | relative_url }}">Articles</a>
+        </li>
+
+        {% if topic != '' %}
+          <li class="c-breadcrumbs__sep" aria-hidden="true">›</li>
+
+          {% if is_topic_index %}
+            <li class="c-breadcrumbs__item c-breadcrumbs__current" aria-current="page">{{ topic_label }}</li>
+          {% else %}
+            <li class="c-breadcrumbs__item">
+              <a href="{{ topic_url | relative_url }}">{{ topic_label }}</a>
+            </li>
+            <li class="c-breadcrumbs__sep" aria-hidden="true">›</li>
+            <li class="c-breadcrumbs__item c-breadcrumbs__current" aria-current="page">{{ page.title }}</li>
+          {% endif %}
+        {% else %}
+          <li class="c-breadcrumbs__sep" aria-hidden="true">›</li>
+          <li class="c-breadcrumbs__item c-breadcrumbs__current" aria-current="page">{{ page.title }}</li>
+        {% endif %}
+      </ol>
+
+      {% if topic != '' and is_topic_index == false %}
+        <div class="c-breadcrumbs__actions" aria-label="Section navigation">
+          <a class="c-btn c-btn--secondary c-btn--compact" href="{{ topic_url | relative_url }}" title="Back to topic index">
+            All in {{ topic_label }}
+          </a>
+          <a class="c-btn c-btn--secondary c-btn--compact" href="{{ '/articles/' | relative_url }}" title="Browse all articles">
+            Browse articles
+          </a>
+        </div>
+      {% endif %}
+    </nav>
+
+  {% elsif purl contains '/policies/' and purl != '/policies/' %}
+    <nav class="c-breadcrumbs" aria-label="Breadcrumb">
+      <ol class="c-breadcrumbs__list">
+        <li class="c-breadcrumbs__item"><a href="{{ '/policies/' | relative_url }}">Policies</a></li>
+        <li class="c-breadcrumbs__sep" aria-hidden="true">›</li>
+        <li class="c-breadcrumbs__item c-breadcrumbs__current" aria-current="page">{{ page.title }}</li>
+      </ol>
+    </nav>
+
+  {% elsif purl contains '/how-to/' and purl != '/how-to/' %}
+    <nav class="c-breadcrumbs" aria-label="Breadcrumb">
+      <ol class="c-breadcrumbs__list">
+        <li class="c-breadcrumbs__item"><a href="{{ '/how-to/' | relative_url }}">How-to</a></li>
+        <li class="c-breadcrumbs__sep" aria-hidden="true">›</li>
+        <li class="c-breadcrumbs__item c-breadcrumbs__current" aria-current="page">{{ page.title }}</li>
+      </ol>
+    </nav>
+
+  {% elsif purl contains '/reference/' and purl != '/reference/' %}
+    <nav class="c-breadcrumbs" aria-label="Breadcrumb">
+      <ol class="c-breadcrumbs__list">
+        <li class="c-breadcrumbs__item"><a href="{{ '/reference/' | relative_url }}">Reference</a></li>
+        <li class="c-breadcrumbs__sep" aria-hidden="true">›</li>
+        <li class="c-breadcrumbs__item c-breadcrumbs__current" aria-current="page">{{ page.title }}</li>
+      </ol>
+    </nav>
+  {% endif %}
+
+{% endif %}

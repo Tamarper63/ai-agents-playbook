@@ -2,6 +2,8 @@
 title: The Attack Surface Starts Before Agents — The LLM Boundary
 permalink: /articles/agent-security/llm-boundary-first-touch/
 summary: "Why agent-layer threat modeling is incomplete: the first high-leverage control point is the LLM boundary (before agents exist)."
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Scope and evidence boundary
@@ -123,10 +125,10 @@ OWASP cheat sheets:
 - AI Agent Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
 
 OpenAI:
-- Agent/Builder safety guidance: https://platform.openai.com/docs/guides/agent-builder-safety
+- Agent/Builder safety guidance: https://developers.openai.com/api/docs/guides/agent-builder-safety/
 
 NIST:
 - SP 800-207 Zero Trust Architecture: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf
-- SP 800-92 Log Management: https://csrc.nist.gov/publications/detail/sp/800-92/final
+- SP 800-92 Log Management: https://csrc.nist.gov/pubs/sp/800/92/final
 - AI RMF 1.0 (AI 100-1): https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf
 - GenAI Profile (AI 600-1): https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf

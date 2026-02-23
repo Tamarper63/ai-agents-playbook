@@ -389,8 +389,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 0.25rem;
   }
 
-  .page-header .site-nav a,
-  .page-header .site-nav a:visited {
+  .page-header .site-nav .site-nav__link,
+  .page-header .site-nav .site-nav__link:visited {
     white-space: nowrap;
   }
 
@@ -494,20 +494,21 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* nav links: modern underline */
-.site-nav__inner { gap: 1.05rem; }
 
-.page-header .site-nav a,
-.page-header .site-nav a:visited {
+.page-header .site-nav .site-nav__link,
+.page-header .site-nav .site-nav__link:visited {
   /* hard reset vs “chips” */
-    padding: 0.2rem 0 0.45rem;
-  min-height: auto;
+  padding: 0.20rem 0 0.45rem;
+  min-height: 36px;
 
   border: 0;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+
   text-decoration: none;
   white-space: nowrap;
 
@@ -519,13 +520,20 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 120ms ease;
 }
 
+@media (max-width: 980px) {
+  .page-header .site-nav .site-nav__link,
+  .page-header .site-nav .site-nav__link:visited {
+    padding: 0.55rem 0.20rem;
+    min-height: 44px; /* better tap target on mobile */
+  }
+}
 
-.page-header .site-nav a::after {
+.page-header .site-nav .site-nav__link::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-    bottom: 0.18rem; /* keep underline inside header; avoid overflow clipping */
+  bottom: 0.18rem;
   height: 2px;
   border-radius: 2px;
 
@@ -536,23 +544,31 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity 120ms ease, transform 120ms ease, background 120ms ease;
 }
 
-.page-header .site-nav a:hover {
+.page-header .site-nav .site-nav__link:hover {
   color: $header_text;
 }
-.page-header .site-nav a:hover::after {
+.page-header .site-nav .site-nav__link:hover::after {
   background: rgba($header_text, 0.40);
   opacity: 1;
   transform: scaleX(1);
 }
 
-
-.page-header .site-nav a:focus-visible {
+.page-header .site-nav .site-nav__link:focus-visible {
   outline: 3px solid rgba($header_text, 0.55);
   outline-offset: 3px;
 }
 
-
-
+/* Active/current */
+.page-header .site-nav .site-nav__link--active,
+.page-header .site-nav .site-nav__link[aria-current="page"] {
+  color: $header_text;
+}
+.page-header .site-nav .site-nav__link--active::after,
+.page-header .site-nav .site-nav__link[aria-current="page"]::after {
+  background: $accent_2;
+  opacity: 1;
+  transform: scaleX(1);
+}
 .page-header__social {
   display: inline-flex;
   align-items: center;
@@ -587,6 +603,21 @@ h1, h2, h3, h4, h5, h6 {
   border-color: rgba($header_text, 0.18);
   text-decoration: none;
 }
+
+.page-header a.page-header__util:focus-visible {
+  outline: 3px solid rgba($header_text, 0.55);
+  outline-offset: 3px;
+}
+
+/* Active state for header utilities */
+.page-header a.page-header__util--active,
+.page-header a.page-header__util--active:visited,
+.page-header a.page-header__util[aria-current="page"] {
+  color: $header_text;
+  background: rgba($header_text, 0.08);
+  border-color: rgba($header_text, 0.22);
+}
+
 .page-header a.site-nav__cta,
 .page-header a.site-nav__cta:visited {
   display: inline-flex;
@@ -612,6 +643,20 @@ h1, h2, h3, h4, h5, h6 {
   background: mix(#000, $accent, 8%);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
   text-decoration: none;
+}
+
+.page-header a.site-nav__cta:focus-visible {
+  outline: 3px solid rgba($header_text, 0.55);
+  outline-offset: 3px;
+}
+
+/* Active state for header CTA */
+.page-header a.site-nav__cta--active,
+.page-header a.site-nav__cta--active:visited,
+.page-header a.site-nav__cta[aria-current="page"] {
+  box-shadow:
+    0 0 0 2px rgba($header_text, 0.55),
+    0 2px 10px rgba(0, 0, 0, 0.14);
 }
 
 /* HERO (tuned): reduce card whitespace + tighten CTA cluster */
@@ -1251,6 +1296,14 @@ a.c-card:focus-visible {
   opacity: 1; /* avoid double-dimming */
 }
 
+/* Small meta line inside cards (e.g., "Next:" in start-here goal cards) */
+.c-card__meta {
+  margin-top: 0.55rem;
+  font-size: 0.90rem;
+  line-height: 1.45;
+  color: rgba($text, 0.62);
+}
+
 /* Card internal layout: enables actions to stick to the bottom in stretched grid rows */
 .c-card__content {
   display: flex;
@@ -1389,6 +1442,92 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
 .c-filetag--component { }
 .c-filetag--file { }
 
+/* Start-here CTA rows (full-row click targets; used by articles-topic-start-cta.html) */
+.c-pathctas {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.60rem;
+}
+
+.main-content a.c-pathcta,
+.main-content a.c-pathcta:visited {
+  color: rgba($text, 0.92);
+  text-decoration: none;
+}
+
+.main-content a.c-pathcta:hover,
+.main-content a.c-pathcta:focus-visible {
+  text-decoration: none;
+}
+
+.c-pathcta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+
+  padding: 0.58rem 0.70rem;
+  border-radius: 14px;
+
+  background: rgba($text, 0.03);
+  border: 1px solid rgba($text, 0.12);
+}
+
+.c-pathcta:hover {
+  background: rgba($accent, 0.06);
+  border-color: rgba($accent, 0.28);
+}
+
+.c-pathcta:focus-visible {
+  outline: 3px solid rgba($accent_2, 0.55);
+  outline-offset: 2px;
+}
+
+.c-pathcta__label {
+  min-width: 3.4rem;
+
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: rgba($text, 0.55);
+}
+
+.c-pathcta__title {
+  font-weight: 750;
+  color: rgba($text, 0.92);
+}
+
+.c-pathcta--then .c-pathcta__title {
+  font-weight: 700;
+  color: rgba($text, 0.82);
+}
+
+/* Topic “start here” path rows (Start → Then) */
+.c-card--path .c-card__title { margin-bottom: 0.35rem; }
+
+.c-pathrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin-top: 0.55rem;
+}
+
+.c-pathrow__links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.c-pathrow__sep { color: rgba($text, 0.35); }
+
+/* Visual hierarchy: Start is primary, Then is secondary */
+.c-pathrow--start .c-card__link { font-weight: 800; }
+.c-pathrow--then { color: rgba($text, 0.70); }
+
 /* Code token (lightweight, not “input-like”) */
 .c-linklist code {
   display: inline-block;
@@ -1406,27 +1545,84 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
   word-break: normal;
 }
 
-/* Internal links inside static cards (paths-by-role) */
+/* Internal links inside static cards (paths-by-role, topic hubs) */
 .main-content .c-card .c-card__link,
 .main-content .c-card .c-card__link:visited {
   color: rgba($text, 0.92);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba($text, 0.32);
+  text-decoration-thickness: 1px;
   font-weight: 650;
 }
 
 .main-content .c-card .c-card__link:hover,
-.main-content .c-card .c-card__link:focus {
+.main-content .c-card .c-card__link:focus-visible {
   color: $accent_2;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
+
+.main-content .c-card .c-card__link:focus-visible {
+  outline: 2px solid rgba($accent_2, 0.55);
+  outline-offset: 2px;
+  border-radius: 10px;
 }
 
 .c-card__list-item::marker {
   color: rgba($text, 0.28);
 }
 
+/* Topic “Start here” paths: reduce visual noise; preserve link affordance */
+.c-path {
+  margin-top: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.c-pathrow {
+  display: grid;
+  grid-template-columns: 3.4rem 1fr;
+  column-gap: 0.75rem;
+  align-items: baseline;
+}
+
+.c-pathrow__label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba($text, 0.55);
+}
+
+.c-pathrow__links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: baseline;
+}
+
+.c-pathrow__sep { color: rgba($text, 0.35); }
+
+/* Hierarchy: Start is primary; Then is secondary */
+.c-pathrow--start .c-card__link { font-weight: 800; }
+.c-pathrow--then  .c-card__link { font-weight: 650; }
+
 .c-section { margin: 1.6rem 0; }
 .c-section--thin { margin: 1.25rem 0; }
+
+/* Section boundary helper (e.g., between a content catalog and disclosure blocks) */
+.c-section--divider {
+  margin-top: 2.2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba($text, 0.12);
+}
+
+/* Override default disclosure margins when disclosures are wrapped in a divider section */
+.main-content .c-section--divider details.c-disclosure {
+  margin-top: 0.65rem;
+}
 
 /* Keep header → hero tight; reduce hero bottom spacing */
 .c-section.c-section--hero {
@@ -1517,6 +1713,74 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
   margin: 0.15rem 0 1.10rem;
 }
 
+/* Article meta (author + published/updated) — rendered via docs/_includes/page-meta.html */
+.main-content--page .c-prose > .c-page-meta {
+  max-width: 74ch;
+}
+
+.c-page-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin: -0.65rem 0 1.20rem; /* pulls into the page-title bottom margin */
+  font-size: 0.95rem;
+  color: $muted;
+}
+
+.c-page-meta__sep {
+  opacity: 0.55;
+}
+
+.c-page-meta time {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Breadcrumbs / local navigation (shows section + topic) */
+.c-breadcrumbs {
+  margin: 0.15rem 0 0.85rem;
+}
+
+.c-breadcrumbs__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+
+  color: rgba($text, 0.70);
+  font-size: 0.95rem;
+}
+
+.c-breadcrumbs__item a,
+.c-breadcrumbs__item a:visited {
+  color: rgba($text, 0.72);
+  text-decoration: none;
+  border-bottom: 1px solid rgba($text, 0.18);
+}
+
+.c-breadcrumbs__item a:hover {
+  color: $accent_2;
+  border-bottom-color: rgba($accent_2, 0.55);
+}
+
+.c-breadcrumbs__sep { opacity: 0.55; }
+
+.c-breadcrumbs__current {
+  color: rgba($text, 0.92);
+  font-weight: 800;
+}
+
+.c-breadcrumbs__actions {
+  margin-top: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.60rem;
+}
+
 .main-content--page .c-prose h2 {
   font-size: clamp(1.45rem, 2.0vw, 1.95rem);
   line-height: 1.15;
@@ -1564,13 +1828,7 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
 .main-content > h2 { margin-top: 2.25rem; }
 .main-content > h3 { margin-top: 1.85rem; }
 
-.page-header .site-nav a[aria-current="page"] { color: $header_text; }
 
-.page-header .site-nav a[aria-current="page"]::after {
-  background: $accent_2;
-  opacity: 1;
-  transform: scaleX(1);
-}
 /* =========================
    Page ToC – compact chips (override)
    ========================= */

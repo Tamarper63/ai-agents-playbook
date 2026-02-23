@@ -4,6 +4,8 @@ permalink: /articles/agent-security/provenance-boundary-report/
 report_type: "Security Report"
 evidence_boundary: "Client-only (UI screenshots + browser Network captures). No server logs / signed audit events available."
 observed_window_labelled_in_artifacts: "2025-11-11 (per screenshot filenames in evidence pack)"
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 
@@ -357,5 +359,5 @@ In this report, these are treated as **UI-exposed labels** and are described usi
 
 - OWASP Top 10 for Large Language Model Applications (v1.1): https://owasp.org/www-project-top-10-for-large-language-model-applications/
 - OWASP AI Agent Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
-- OpenAI: Safety in building agents: https://platform.openai.com/docs/guides/agent-builder-safety
+- OpenAI: Safety in building agents: https://developers.openai.com/api/docs/guides/agent-builder-safety/
 - NIST AI RMF: Generative AI Profile (NIST AI 600-1): https://doi.org/10.6028/NIST.AI.600-1

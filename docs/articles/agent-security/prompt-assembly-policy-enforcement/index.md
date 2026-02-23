@@ -3,6 +3,8 @@ title: "Prompt Assembly Policy Enforcement: Typed Provenance to Prevent Authorit
 permalink: /articles/agent-security/prompt-assembly-policy-enforcement/
 layout: default
 categories: [agent-security]
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Scope

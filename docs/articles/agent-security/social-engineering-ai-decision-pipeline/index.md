@@ -1,6 +1,8 @@
 ---
 title: "Social engineering in AI systems: attacking the decision pipeline (not just people)"
 permalink: /articles/agent-security/social-engineering-ai-decision-pipeline/
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Why this matters

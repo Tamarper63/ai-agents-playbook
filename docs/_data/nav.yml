@@ -3,7 +3,7 @@ items:
     url: "/policies/"
     active_contains: "/policies/"
 
-  - label: "Prompt library"
+  - label: "Prompt blocks"
     url: "/prompts/"
     active_contains: "/prompts/"
 

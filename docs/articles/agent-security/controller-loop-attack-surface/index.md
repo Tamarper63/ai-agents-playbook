@@ -2,6 +2,8 @@
 title: Tool-Using Systems The Attack Surface Shifts to the Controller Loop
 permalink: /articles/agent-security/controller-loop-attack-surface/
 summary: How multi-step controller loops change the threat model in tool-using systems, and where to enforce separation, authorization, validation, and budgets to reduce prompt injection, tool misuse, unsafe writes, and unbounded consumption.
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Why controller loops change the threat model
@@ -267,7 +269,7 @@ ingress(request):
 
 ## References
 - OWASP GenAI — LLM01:2025 Prompt Injection: https://genai.owasp.org/llmrisk/llm01-prompt-injection/
-- OWASP GenAI — LLM06:2025 Excessive Agency: https://genai.owasp.org/llmrisk/llm06-sensitive-information-disclosure/
+- OWASP GenAI — LLM06:2025 Excessive Agency: https://genai.owasp.org/llmrisk/llm062025-excessive-agency/
 - OWASP GenAI — LLM10:2025 Unbounded Consumption: https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/
 - OWASP Cheat Sheet — LLM Prompt Injection Prevention: https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html
 - OWASP Cheat Sheet — AI Agent Security: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
@@ -277,6 +279,6 @@ ingress(request):
 - OpenAI — Safety in building agents: https://developers.openai.com/api/docs/guides/agent-builder-safety/
 - OpenAI — Function calling: https://developers.openai.com/api/docs/guides/function-calling/
 - OpenAI — Structured Outputs: https://developers.openai.com/api/docs/guides/structured-outputs/
-- Anthropic — Building Effective Agents (workflows vs agents): https://www.anthropic.com/research/building-effective-agents
+- Anthropic — Building Effective Agents (workflows vs agents): https://www.anthropic.com/engineering/building-effective-agents
 - LangGraph — Workflows and agents: https://docs.langchain.com/oss/python/langgraph/workflows-agents
 - ReAct: Synergizing Reasoning and Acting in Language Models (arXiv:2210.03629): https://arxiv.org/abs/2210.03629

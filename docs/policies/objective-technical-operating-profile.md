@@ -67,6 +67,6 @@ Pair with:
 
 ## References
 
-- OpenAI API Reference (Conversations): https://platform.openai.com/docs/api-reference/conversations/create-item
-- OpenAI Prompt Engineering guide: https://platform.openai.com/docs/guides/prompt-engineering
+- OpenAI API Reference (Conversations): https://developers.openai.com/api/reference/resources/conversations/
+- OpenAI Prompt Engineering guide: https://developers.openai.com/api/docs/guides/prompt-engineering/
 - Diátaxis documentation framework: https://diataxis.fr/

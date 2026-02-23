@@ -3,6 +3,8 @@ title: "Sycophancy in LLM Assistants: What It Is, How Training Creates It, and W
 permalink: /articles/model-training-and-eval/sycophancy-agreement-bias/ 
 summary: "A technically grounded explanation of sycophancy (belief-agreement bias): what it is, what the evidence supports about prevalence, how preference optimization can produce it, and what changes in training and release practice reduce it." 
 layout: default 
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Abstract

@@ -52,6 +52,6 @@ End with a Sources list: [n] Title — Publisher/Org — YYYY-MM-DD — URL
 Some APIs expose explicit controls over tool invocation (for example, a parameter that can allow/require/forbid tool calls). Prefer runtime-level controls over prompt-only enforcement where available.
 
 ## References (tool invocation controls)
-- OpenAI: Tools guide (tool use and `tool_choice`) — https://platform.openai.com/docs/guides/tools
+- OpenAI: Tools guide (tool use and `tool_choice`) — https://developers.openai.com/api/docs/guides/tools/
 - Anthropic: Tool use docs (includes `tool_choice`) — https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use
 - Google Gemini API: Function calling — https://ai.google.dev/gemini-api/docs/function-calling

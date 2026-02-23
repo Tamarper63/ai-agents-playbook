@@ -2,6 +2,8 @@
 title: Control-Plane Failure Patterns in Agentic Tool-Using Systems
 permalink: /articles/agent-security/control-plane-failures/
 summary: Two recurring control-plane failure patterns—privilege persistence across interaction boundaries and monitoring-only integrity signals (detect without enforcement)—that let untrusted state steer tool execution across steps.
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Executive summary

@@ -1,0 +1,22 @@
+{% assign t = site.data.catalog.articles_topics.topics[include.topic] %}
+{% if t and t.page_sections %}
+
+{% for s in t.page_sections %}
+  <h3>{{ s.title }}</h3>
+
+  <div class="c-grid c-grid--2">
+    {% for u in s.urls %}
+      {% assign p = site.pages | where: "url", u | first %}
+      {% if p %}
+        <a class="c-card" href="{{ p.url | relative_url }}">
+          <div class="c-card__content">
+            <div class="c-card__title">{{ p.title }}</div>
+            {% if p.summary %}<div class="c-card__desc">{{ p.summary }}</div>{% endif %}
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endfor %}
+
+{% endif %}

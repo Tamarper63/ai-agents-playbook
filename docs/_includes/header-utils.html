@@ -1,3 +1,5 @@
+{% assign purl = page.url | default: '' %}
+
 <div class="page-header__utils" aria-label="Header utilities">
   {% if site.data.nav and site.data.nav.items %}
     {% for item in site.data.nav.items %}
@@ -9,17 +11,27 @@
       {% if is_cta %}
         {% assign variant = item.cta_variant | default: 'primary' %}
         {% assign href = item.url | default: '' %}
+        {% assign ac = item.active_contains | default: '' %}
+        {% assign is_active = false %}
+
+        {% if href != '' and purl == href %}
+          {% assign is_active = true %}
+        {% elsif ac != '' and purl contains ac %}
+          {% assign is_active = true %}
+        {% endif %}
 
         {% if variant == 'util' %}
           {% assign cls = 'page-header__util' %}
+          {% if is_active %}{% assign cls = cls | append: ' page-header__util--active' %}{% endif %}
         {% else %}
           {% assign cls = 'site-nav__cta' %}
+          {% if is_active %}{% assign cls = cls | append: ' site-nav__cta--active' %}{% endif %}
         {% endif %}
 
         {% if href contains '://' %}
-          <a class="{{ cls }}" href="{{ href }}" rel="noopener" target="_blank">{{ item.label }}</a>
+          <a class="{{ cls }}" href="{{ href }}" rel="noopener" target="_blank"{% if is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
         {% else %}
-          <a class="{{ cls }}" href="{{ href | relative_url }}">{{ item.label }}</a>
+          <a class="{{ cls }}" href="{{ href | relative_url }}"{% if is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
         {% endif %}
       {% endif %}
     {% endfor %}

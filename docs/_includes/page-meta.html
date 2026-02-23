@@ -1,0 +1,24 @@
+{% if page.published %}
+  {% assign by = page.author | default: site.author %}
+
+  <div class="c-page-meta" aria-label="Article metadata">
+    {% if by %}
+      <span class="c-page-meta__item">By {{ by }}</span>
+    {% endif %}
+
+    <span class="c-page-meta__sep" aria-hidden="true">·</span>
+
+    <span class="c-page-meta__item">
+      Published
+      <time datetime="{{ page.published | date: '%Y-%m-%d' }}">{{ page.published | date: "%Y-%m-%d" }}</time>
+    </span>
+
+    {% if page.updated %}
+      <span class="c-page-meta__sep" aria-hidden="true">·</span>
+      <span class="c-page-meta__item">
+        Updated
+        <time datetime="{{ page.updated | date: '%Y-%m-%d' }}">{{ page.updated | date: "%Y-%m-%d" }}</time>
+      </span>
+    {% endif %}
+  </div>
+{% endif %}

@@ -46,10 +46,14 @@
       {% if is_home %}
         {{ content }}
       {% else %}
-        <div class="c-prose">
-          {% if show_title and page.title %}
+       <div class="c-prose">
+          {% include breadcrumbs.html %}
+
+           {% if show_title and page.title %}
             <h1 class="page-title">{{ page.title }}</h1>
           {% endif %}
+
+          {% include page-meta.html %}
 
           {{ content }}
         </div>

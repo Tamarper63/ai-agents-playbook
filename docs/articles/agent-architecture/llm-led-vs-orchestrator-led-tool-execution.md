@@ -2,6 +2,8 @@
 title: LLM-Led vs Orchestrator-Led Tool Execution Control-Plane Placement Tradeoffs
 permalink: /articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/
 summary: A control-plane placement comparison across reliability, observability, latency, cost governance, and security for tool-using LLM systems.
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Abstract
@@ -210,10 +212,10 @@ https://genai.owasp.org/llmrisk/llm01-prompt-injection/
 https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html
 
 [3] OWASP GenAI Security Project — LLM05:2025 Improper Output Handling  
-https://genai.owasp.org/llmrisk/llm05-supply-chain-vulnerabilities/
+https://genai.owasp.org/llmrisk/llm052025-improper-output-handling/
 
 [4] OWASP GenAI Security Project — LLM07:2025 System Prompt Leakage  
-https://genai.owasp.org/llmrisk/llm07-insecure-plugin-design/
+https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/
 
 [5] OWASP GenAI Security Project — LLM10:2025 Unbounded Consumption  
 https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/

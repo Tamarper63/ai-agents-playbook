@@ -2,6 +2,8 @@
 title: Theory of mind in LLMs — what benchmarks test (and what they don’t)
 permalink: /articles/model-training-and-eval/theory-of-mind-in-llms/
 summary: Evidence-anchored overview of how ToM is defined in psychology, how it is operationalized for LLM evaluation, and what current results do and do not justify.
+author: Tamar Peretz
+published: 2026-02-22
 ---
 
 ## Scope and evidence boundary

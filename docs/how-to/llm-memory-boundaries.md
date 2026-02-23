@@ -68,7 +68,7 @@ Example (portable):
 
 OpenAI’s agent safety guidance frames prompt injection as **untrusted text entering the system** and influencing actions/tool calls.  
 That same principle applies to memory write-back: treat write-back as **a privileged action**.  
-- https://platform.openai.com/docs/guides/agent-builder-safety
+- https://developers.openai.com/api/docs/guides/agent-builder-safety/
 
 Minimum architecture requirements:
 - Memory write-back happens in a **controller/orchestrator**, not by free-form model output
@@ -95,7 +95,7 @@ Use this checklist per workflow:
 - [ ] High-impact actions require additional approval
 
 References:
-- OpenAI agent safety: https://platform.openai.com/docs/guides/agent-builder-safety  
+- OpenAI agent safety: https://developers.openai.com/api/docs/guides/agent-builder-safety/ 
 - OWASP AI Agent Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
 
 ## Notes on portability
