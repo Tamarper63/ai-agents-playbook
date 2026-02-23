@@ -1237,6 +1237,13 @@ a.c-card:focus-visible {
   opacity: 1; /* avoid double-dimming */
 }
 
+/* Card internal layout: enables actions to stick to the bottom in stretched grid rows */
+.c-card__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 /* Title links inside cards should inherit title styling */
 .main-content .c-card__title a,
 .main-content .c-card__title a:visited {
@@ -1260,7 +1267,8 @@ a.c-card:focus-visible {
 
 /* Policy catalog actions (index pages) */
 .c-card__actions {
-  margin-top: 0.90rem;
+  margin-top: auto;          /* push actions to the bottom */
+  padding-top: 0.90rem;      /* keep spacing above actions */
   display: flex;
   flex-wrap: wrap;
   gap: 0.60rem;
@@ -1334,8 +1342,13 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
 }
 
 .c-linklist a:hover,
-.c-linklist a:focus {
+.c-linklist a:focus-visible {
   color: $accent_2;
+}
+
+.c-linklist a:focus-visible {
+  outline: 2px solid rgba($accent_2, 0.55);
+  outline-offset: 2px;
 }
 
 /* Small tag before file tokens (System/User/File) */

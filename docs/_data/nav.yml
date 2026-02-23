@@ -1,7 +1,4 @@
 items:
-  - label: "Home"
-    url: "/"
-
   - label: "Policies"
     url: "/policies/"
     active_contains: "/policies/"

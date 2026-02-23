@@ -62,6 +62,7 @@ featured:
 
 scope:
   title: "Scope"
+  subtitle: "What this playbook covers (and what it intentionally does not)."
   covers_title: "Focus"
   covers:
     - "Tool-using LLM and agent systems: orchestration, boundaries, verification."

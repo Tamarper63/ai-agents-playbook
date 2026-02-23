@@ -3,6 +3,10 @@
     <h2 class="c-section__title">{{ site.data.home.scope.title }}</h2>
   </div>
 
+  {% if site.data.home.scope.subtitle %}
+    <p class="c-section__subtitle">{{ site.data.home.scope.subtitle }}</p>
+  {% endif %}
+
   <div class="c-grid c-grid--2">
     <div class="c-card">
       <div class="c-card__content">
@@ -17,12 +21,20 @@
 
     <div class="c-card">
       <div class="c-card__content">
-        <div class="c-card__title">{{ site.data.home.scope.excludes_title }}</div>
-        <ul class="c-card__list">
-          {% for item in site.data.home.scope.excludes %}
-            <li class="c-card__list-item">{{ item }}</li>
-          {% endfor %}
-        </ul>
+        <details class="c-disclosure">
+          <summary class="c-btn c-btn--secondary c-btn--compact">
+            <span class="c-disclosure__label--closed">{{ site.data.home.scope.excludes_title }}</span>
+            <span class="c-disclosure__label--open">Hide exclusions</span>
+          </summary>
+
+          <div class="c-disclosure__panel">
+            <ul class="c-card__list">
+              {% for item in site.data.home.scope.excludes %}
+                <li class="c-card__list-item">{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </details>
       </div>
     </div>
   </div>
