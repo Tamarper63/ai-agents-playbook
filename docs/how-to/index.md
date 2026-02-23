@@ -56,24 +56,24 @@ If you’re not sure where to start, use the **Start here** path below. If you n
       </a>
     </div>
   </article>
-</div>
 
-<article class="c-card c-card--row" aria-label="Alternate starting path">
-  <div class="c-card__main">
-    <div class="c-card__title">
-      <a class="c-card__link" href="{{ '/how-to/start-here-by-role/' | relative_url }}">Start here by role</a>
+  <article class="c-card c-card--row c-span-full" role="listitem" aria-label="Alternate starting path">
+    <div class="c-card__main">
+      <div class="c-card__title">
+        <a class="c-card__link" href="{{ '/how-to/start-here-by-role/' | relative_url }}">Start here by role</a>
+      </div>
+      <div class="c-card__desc">Pick the shortest path by objective (builder/developer, security/platform, research).</div>
     </div>
-    <div class="c-card__desc">Pick the shortest path by objective (builder/developer, security/platform, research).</div>
-  </div>
 
-  <div class="c-card__actions" aria-label="Start-by-role actions">
-    <a class="c-btn c-btn--secondary c-btn--compact"
-       href="{{ '/how-to/start-here-by-role/' | relative_url }}"
-       title="Open the start-by-role guide">
-      Open guide
-    </a>
-  </div>
-</article>
+    <div class="c-card__actions" aria-label="Start-by-role actions">
+      <a class="c-btn c-btn--secondary c-btn--compact"
+         href="{{ '/how-to/start-here-by-role/' | relative_url }}"
+         title="Open the start-by-role guide">
+        Open guide
+      </a>
+    </div>
+  </article>
+</div>
 
 <section class="c-section c-section--divider" aria-label="Before you run">
   <div class="c-grid c-grid--2 c-disclosure-grid" role="list" aria-label="Baseline and terminology">
@@ -115,7 +115,7 @@ If you’re not sure where to start, use the **Start here** path below. If you n
 
 ## Browse by topic (jump)
 
-<div class="c-grid c-grid--3" role="list" aria-label="How-to topics">
+<div class="c-grid c-grid--3 c-grid--topic-jump" role="list" aria-label="How-to topics">
   <article class="c-card" role="listitem">
     <div class="c-card__title">
       <a class="c-card__link" href="#evidence-boundaries-facts-only">Evidence boundaries</a>

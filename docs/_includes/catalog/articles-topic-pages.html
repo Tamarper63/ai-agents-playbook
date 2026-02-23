@@ -1,22 +1,75 @@
 {% assign t = site.data.catalog.articles_topics.topics[include.topic] %}
 {% if t and t.page_sections %}
 
-{% for s in t.page_sections %}
-  <h3>{{ s.title }}</h3>
+{%- comment -%}
+De-duplication: pages that appear in "Start here" (t.start_goals[].start_url)
+should not be repeated in "Pages in this section" by default.
+Override by passing: include.show_start_urls="true".
+{%- endcomment -%}
 
-  <div class="c-grid c-grid--2">
-    {% for u in s.urls %}
-      {% assign p = site.pages | where: "url", u | first %}
-      {% if p %}
-        <a class="c-card" href="{{ p.url | relative_url }}">
-          <div class="c-card__content">
-            <div class="c-card__title">{{ p.title }}</div>
-            {% if p.summary %}<div class="c-card__desc">{{ p.summary }}</div>{% endif %}
-          </div>
-        </a>
-      {% endif %}
-    {% endfor %}
-  </div>
+{% assign show_start_urls = include.show_start_urls | default: "false" %}
+
+{% capture start_blob %}{% if t.start_goals %}{% for g in t.start_goals %}|{{ g.start_url }}|{% endfor %}{% endif %}{% endcapture %}
+{% assign start_blob = start_blob | strip %}
+
+{% assign any_kept = "false" %}
+
+{% for s in t.page_sections %}
+{% assign keep_any = "false" %}
+
+{% for u in s.urls %}
+{% assign is_start = "false" %}
+
+{% if show_start_urls != "true" and start_blob != "" %}
+{% assign key = "|" | append: u | append: "|" %}
+{% if start_blob contains key %}
+{% assign is_start = "true" %}
+{% endif %}
+{% endif %}
+
+{% if is_start != "true" %}
+{% assign keep_any = "true" %}
+{% endif %}
 {% endfor %}
+
+{% if keep_any == "true" %}
+{% assign any_kept = "true" %}
+
+<h3>{{ s.title }}</h3>
+<div class="c-grid c-grid--2">
+{% for u in s.urls %}
+{% assign is_start = "false" %}
+
+{% if show_start_urls != "true" and start_blob != "" %}
+{% assign key = "|" | append: u | append: "|" %}
+{% if start_blob contains key %}
+{% assign is_start = "true" %}
+{% endif %}
+{% endif %}
+
+{% if is_start != "true" %}
+{% assign p = site.pages | where: "url", u | first %}
+{% if p %}
+<a class="c-card" href="{{ p.url | relative_url }}">
+  <div class="c-card__content">
+    <div class="c-card__title">{{ p.title }}</div>
+    {% if p.summary %}<div class="c-card__desc">{{ p.summary }}</div>{% endif %}
+  </div>
+</a>
+{% endif %}
+{% endif %}
+{% endfor %}
+</div>
+
+{% endif %}
+{% endfor %}
+
+{% if any_kept != "true" %}
+<div class="c-card">
+  <div class="c-card__content">
+    <div class="c-card__desc">Core pages for this topic are listed above under “Start here”. Additional pages will appear here as they’re published.</div>
+  </div>
+</div>
+{% endif %}
 
 {% endif %}

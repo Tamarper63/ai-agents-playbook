@@ -5,7 +5,32 @@ permalink: /how-to/start-here-by-role/
 
 Pick the path that matches your objective. All paths use the same baseline:
 
-**Set an evidence boundary** → **Run a verification workflow** → **Apply an operating contract (policies + prompt templates + procedures)**
+**Set an evidence boundary** → **Run a verification workflow** → **Apply an operating contract (policies + prompt blocks + procedures)**
+
+## Choose your role
+
+<div class="c-grid c-grid--3">
+  <a class="c-card" href="#builder--developer">
+    <div class="c-card__content">
+      <div class="c-card__title">Builder / Developer</div>
+      <div class="c-card__desc">Build and ship workflows (control flow, prompt blocks).</div>
+    </div>
+  </a>
+
+  <a class="c-card" href="#security--platform">
+    <div class="c-card__content">
+      <div class="c-card__title">Security / Platform</div>
+      <div class="c-card__desc">Threat modeling, enforcement, provenance and policy.</div>
+    </div>
+  </a>
+
+  <a class="c-card" href="#research--evaluation">
+    <div class="c-card__content">
+      <div class="c-card__title">Research / Evaluation</div>
+      <div class="c-card__desc">Evidence-gated writing, terminology discipline, evaluation.</div>
+    </div>
+  </a>
+</div>
 
 ## Baseline (recommended for every role)
 
@@ -13,12 +38,12 @@ Pick the path that matches your objective. All paths use the same baseline:
 2) **Run:** [Fact-Checking Kit]({{ '/how-to/fact-checking-kit/' | relative_url }})
 3) **Enforce (when shipping changes):** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
 
-If you want the normative rules first (no procedures): [Policies (operating contracts)]({{ '/policies/' | relative_url }})
+If you want the normative rules first (no procedures): [Objective Technical Baseline Rules (No Simulation) — policy]({{ '/policies/objective-technical-operating-profile/' | relative_url }})
 
 **Definitions (as used on this site):**
 - **Evidence boundary:** which sources are allowed (artifacts-only vs authoritative sources + citations).
 - **Verification workflow:** a repeatable procedure that checks claims before output.
-- **Operating contract:** the policy + prompt templates + procedure stack used to enforce constraints.
+- **Operating contract:** the policy + prompt blocks + procedure stack used to enforce constraints.
 
 Jump to: [Builder / Developer](#builder--developer) · [Security / Platform](#security--platform) · [Research / Evaluation](#research--evaluation)
 
@@ -27,7 +52,7 @@ Jump to: [Builder / Developer](#builder--developer) · [Security / Platform](#se
 ## Builder / Developer
 
 ### Do next (after the baseline)
-- **Pick a runnable stack (prompt templates mapped to policies/procedures)** → [Prompt library]({{ '/prompts/' | relative_url }})
+- **Pick a runnable stack (prompt blocks mapped to policies/procedures)** → [Prompt blocks]({{ '/prompts/' | relative_url }})
 - **Make context selection explicit (memory boundaries)** → [Manage LLM memory boundaries]({{ '/how-to/llm-memory-boundaries/' | relative_url }})
 
 ### Read next (architecture + control flow)
@@ -37,14 +62,11 @@ Jump to: [Builder / Developer](#builder--developer) · [Security / Platform](#se
 
 ### Apply (routines)
 - [Prompt Engineering Guide for Daily Work (procedure)]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }})
-- [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
-
 ---
 
 ## Security / Platform
 
 ### Do next (after the baseline)
-- **Set the security review evidence model (web/citations vs artifacts-only)** → [Choose an evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
 - **If using public sources: enforce citations + browsing discipline** → [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }}) · [Request web browsing + citations]({{ '/how-to/request-web-browsing/' | relative_url }})
 - **Use a structured self-check loop on non-trivial outputs** → [Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
 

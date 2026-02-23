@@ -1847,9 +1847,22 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
   .c-grid--2 { grid-template-columns: 1fr; }
 }
 
-.c-grid { align-items: stretch; }
+.c-grid { align-items: start; }
+.c-grid--stretch { align-items: stretch; }
 .c-grid .c-card { height: auto; }
 
+/* Topic-jump grids: compact cards without stretched empty space */
+.c-grid--topic-jump > .c-card { align-self: start; }
+
+.c-grid--topic-jump .c-card {
+  padding: 0.85rem 0.95rem;
+}
+
+.c-grid--topic-jump .c-card__actions {
+  margin-top: 0 !important;
+  justify-content: flex-end;
+  padding-top: 0.55rem;
+}
 
 .main-content > h2 { margin-top: 2.25rem; }
 .main-content > h3 { margin-top: 1.85rem; }
