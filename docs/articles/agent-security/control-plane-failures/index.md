@@ -163,7 +163,7 @@ A monitoring-only signal does not reduce the likelihood of side effects if the c
 ## References
 
 - OWASP Cheat Sheet Series — AI Agent Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
-- OWASP — Securing Agentic Applications Guide 1.0 (orchestration / workflows / control-flow mechanisms): https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/
+- OWASP — Securing Agentic Applications Guide 1.0 (orchestration / workflows / control-flow mechanisms): <https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/>
 - OWASP — Top 10 for LLM Applications (2025): https://genai.owasp.org/llm-top-10/
 - NIST SP 800-207 — Zero Trust Architecture (PDP/PEP; PE/PA; control plane vs data plane): https://doi.org/10.6028/NIST.SP.800-207
 - NIST SP 800-53 Rev. 5 — Security and Privacy Controls: https://doi.org/10.6028/NIST.SP.800-53r5

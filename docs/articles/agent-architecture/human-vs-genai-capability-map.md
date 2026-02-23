@@ -82,13 +82,13 @@ Residual gaps are where production systems typically fail (consistency, provenan
 
 ## References (primary / formal)
 
-- Lewis et al. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.* arXiv:2005.11401. https://arxiv.org/abs/2005.11401
-- Yao et al. (2022). *ReAct: Synergizing Reasoning and Acting in Language Models.* arXiv:2210.03629. https://arxiv.org/abs/2210.03629
-- Gal & Ghahramani (2016). *Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning.* arXiv:1506.02142. https://arxiv.org/abs/1506.02142
-- Robertson & Zaragoza (2009). *The Probabilistic Relevance Framework: BM25 and Beyond.* https://doi.org/10.1561/1500000019
-- OWASP Cheat Sheet Series. *AI Agent Security Cheat Sheet.* https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
-- OpenAI Docs. *Safety in building agents (prompt injection guidance).* https://developers.openai.com/api/docs/guides/agent-builder-safety/
-- NIST. *NIST AI 600-1: Generative AI Profile.* https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
+- Lewis et al. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.* arXiv:2005.11401. <https://arxiv.org/abs/2005.11401>
+- Yao et al. (2022). *ReAct: Synergizing Reasoning and Acting in Language Models.* arXiv:2210.03629. <https://arxiv.org/abs/2210.03629>
+- Gal & Ghahramani (2016). *Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning.* arXiv:1506.02142. <https://arxiv.org/abs/1506.02142>
+- Robertson & Zaragoza (2009). *The Probabilistic Relevance Framework: BM25 and Beyond.* <https://doi.org/10.1561/1500000019>
+- OWASP Cheat Sheet Series. *AI Agent Security Cheat Sheet.* <https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html>
+- OpenAI Docs. *Safety in building agents (prompt injection guidance).* <https://developers.openai.com/api/docs/guides/agent-builder-safety/>
+- NIST. *NIST AI 600-1: Generative AI Profile.* <https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf>
 
 ## Suggested next read in this repo
 

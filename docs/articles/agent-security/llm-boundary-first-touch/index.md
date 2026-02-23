@@ -52,6 +52,8 @@ If sensitive inputs/outputs are stored (logs/telemetry/analytics/memory/RAG inde
 ### 1) Read paths into the model (inputs)
 Document every source that can enter context:
 
+<div class="c-table" role="region" aria-label="Read paths into the model (inputs)" tabindex="0" markdown="1">
+
 | Source | Trust level | Sensitivity | Transformations before model | Notes |
 |---|---|---|---|---|
 | User message | Untrusted | Varies | Redaction? | |
@@ -60,8 +62,12 @@ Document every source that can enter context:
 | Database reads | Trusted (system) | Often sensitive | Field-level selection | |
 | Tool outputs (if re-injected) | Untrusted-by-default | Varies | Sanitization + provenance tags | |
 
+</div>
+
 ### 2) Write paths from the model (outputs)
 Document where outputs can land:
+
+<div class="c-table" role="region" aria-label="Write paths from the model (outputs)" tabindex="0" markdown="1">
 
 | Sink | Persisted? | Retention/TTL | Readers | Replay into prompts? | Controls |
 |---|---:|---|---|---:|---|
@@ -71,6 +77,8 @@ Document where outputs can land:
 | Memory / context store | Yes | Defined TTL | System | Yes | Scoped + gated writes |
 | Tools / internal APIs | Yes | — | Systems | — | Server-side authz + validation |
 | Routing / feature flags | Yes | — | System | Yes | Deterministic gating |
+
+</div>
 
 ### 3) Boundary owner and enforcement points
 For each boundary crossing, record:
@@ -113,9 +121,11 @@ You should be able to reconstruct:
 - [ ] High-impact actions require explicit review/approval.
 - [ ] Audit evidence exists to reconstruct an incident timeline.
 
-## Suggested next
-- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
-- [Agent architecture]({{ '/articles/agent-architecture/' | relative_url }})
+## Suggested reading
+- [The Attack Surface Isn’t the LLM — It’s the Controller Loop]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})
+- [Request assembly threat model: reading the diagram]({{ '/articles/agent-security/request-assembly-threat-model/' | relative_url }})
+- [How Agentic Control-Plane Failures Actually Happen]({{ '/articles/agent-security/control-plane-failures/' | relative_url }})
+- [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})
 
 ## References (pinned)
