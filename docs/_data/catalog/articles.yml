@@ -1,0 +1,82 @@
+intro: "Long-form technical articles (engineering-oriented): threat models, agent/system architecture notes, evaluation methodology, and evidence/citation policy design."
+
+quick_links:
+  grid: "c-grid--3"
+  items:
+    - title: "How-to"
+      url: "/how-to/"
+      desc: "Procedures and checklists (do-this, then-that)."
+    - title: "Reference"
+      url: "/reference/"
+      desc: "Stable lookup pages and canonical diagrams."
+    - title: "Policies"
+      url: "/policies/"
+      desc: "Normative operating contracts (boundaries, gates, refusals)."
+
+start_here:
+  title: "Start here"
+  grid: "c-grid--2"
+  urls:
+    - "/articles/agent-security/llm-boundary-first-touch/"
+    - "/articles/agent-security/controller-loop-attack-surface/"
+    - "/articles/agent-security/control-plane-failures/"
+    - "/articles/agent-security/request-assembly-threat-model/"
+    - "/articles/model-training-and-eval/fluency-vs-factuality/"
+
+browse_by_topic:
+  title: "Browse by topic"
+  grid: "c-grid--2"
+  items:
+    - title: "Agent security"
+      url: "/articles/agent-security/"
+      desc: "Trust boundaries, authorization & access control, orchestration (control-flow mechanisms), policy enforcement, observability"
+    - title: "Agent architecture"
+      url: "/articles/agent-architecture/"
+      desc: "Workflows, state & lifecycle management, tool invocation patterns, retrieval & context management, evaluation harnesses"
+    - title: "Model training and evaluation"
+      url: "/articles/model-training-and-eval/"
+      desc: "Reliability, evaluation methods, benchmark interpretation limits"
+    - title: "Prompt engineering"
+      url: "/articles/prompt-engineering/"
+      desc: "Operational prompting notes, evidence & citation requirements, reusable templates"
+
+featured_by_topic:
+  title: "Featured by topic"
+  grid: "c-grid--2"
+  groups:
+    - title: "Agent security"
+      url: "/articles/agent-security/"
+      desc: "Trust boundaries, orchestration risk, enforcement, observability."
+      span_full: true
+      urls:
+        - "/articles/agent-security/llm-boundary-first-touch/"
+        - "/articles/agent-security/controller-loop-attack-surface/"
+        - "/articles/agent-security/control-plane-failures/"
+        - "/articles/agent-security/request-assembly-threat-model/"
+        - "/articles/agent-security/prompt-assembly-policy-enforcement/"
+        - "/articles/agent-security/trust-boundary-checkpoints/"
+        - "/articles/agent-security/provenance-boundary-report/"
+        - "/articles/agent-security/social-engineering-ai-decision-pipeline/"
+
+    - title: "Agent architecture"
+      url: "/articles/agent-architecture/"
+      desc: "Workflows, state & lifecycle, tool invocation patterns, retrieval & context management."
+      urls:
+        - "/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/"
+        - "/articles/agent-architecture/llm-memory-boundary-model/"
+        - "/articles/agent-architecture/human-vs-genai-capability-map/"
+
+    - title: "Model training and evaluation"
+      url: "/articles/model-training-and-eval/"
+      desc: "Reliability, evaluation methods, benchmark interpretation limits."
+      urls:
+        - "/articles/model-training-and-eval/fluency-vs-factuality/"
+        - "/articles/model-training-and-eval/sycophancy-agreement-bias/"
+        - "/articles/model-training-and-eval/theory-of-mind-in-llms/"
+        - "/articles/model-training-and-eval/orders-of-intentionality-recursive-mindreading/"
+
+    - title: "Prompt engineering"
+      url: "/articles/prompt-engineering/"
+      desc: "Operational prompting notes, evidence & citation requirements, reusable templates."
+      urls:
+        - "/articles/prompt-engineering/prompt-engineering-daily-work/"

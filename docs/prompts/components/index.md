@@ -44,7 +44,7 @@ They are not standalone workflows.
 {: #deep-scan-user }
 
 **Adds:** exhaustive artifact scanning + explicit coverage disclosure + evidence pointers for non-trivial claims.  
-**Use when:** you have multiple artifacts (repo/zip/files) and need high confidence that you didn’t miss relevant content.  
+**Use when:** you have multiple artifacts (repo/zip/files) and need high confidence you didn’t miss relevant content.  
 **Avoid when:** there are no artifacts to scan.  
 **File:** [deep-scan.user.txt]({{ '/prompts/components/deep-scan.user.txt' | relative_url }})
 

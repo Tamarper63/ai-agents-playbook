@@ -1,7 +1,17 @@
 <section class="c-section c-section--featured">
   <div class="c-section__header">
-    <h2 class="c-section__title">{{ site.data.home.featured.title }}</h2>
-    <a class="c-section__link" href="{{ '/policies/' | relative_url }}">Browse policies →</a>
+    <div>
+      <h2 class="c-section__title">{{ site.data.home.featured.title }}</h2>
+      {% if site.data.home.featured.subtitle %}
+        <div class="c-card__desc">{{ site.data.home.featured.subtitle }}</div>
+      {% endif %}
+    </div>
+
+    {% if site.data.home.featured.all_url and site.data.home.featured.all_label %}
+      <a class="c-section__link" href="{{ site.data.home.featured.all_url | relative_url }}">
+        {{ site.data.home.featured.all_label }} <span aria-hidden="true">→</span>
+      </a>
+    {% endif %}
   </div>
 
   <div class="c-grid c-grid--2">

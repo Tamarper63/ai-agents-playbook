@@ -11,14 +11,12 @@ actions:
     label: "Start here (by role)"
     url: "/how-to/start-here-by-role/"
   secondary:
-    - label: "Jump to Quickstart"
-      url: "/#quickstart"
     - label: "Browse prompt library"
       url: "/prompts/"
 
-
 quickstart:
   title: "Quickstart (5 minutes)"
+  subtitle: "Procedures (How-to): do these in order."
   steps:
     - title: "Set: Choose an evidence boundary"
       output: "Define allowed sources and refusal conditions (fail-closed)."
@@ -31,9 +29,9 @@ quickstart:
       url: "/how-to/engineering-quality-gate-procedure/"
 
 latest_articles:
-  title: "Recommended reading"
-  subtitle: "A short path: boundary → orchestration → assembly → enforcement."
-  all_label: "Browse articles"
+  title: "Articles (context)"
+  subtitle: "Explanations (not procedures): why the boundaries and gates above matter."
+  all_label: "Browse all articles"
   all_url: "/articles/"
   items:
     - label: "The Attack Surface Starts Before Agents — The LLM Boundary"
@@ -42,15 +40,12 @@ latest_articles:
     - label: "The Attack Surface Isn’t the LLM — It’s the Controller Loop"
       url: "/articles/agent-security/controller-loop-attack-surface/"
       desc: "Why multi-step orchestration increases risk, and what to audit in plan→tools→retry loops."
-    - label: "Request assembly threat model: reading the diagram"
-      url: "/articles/agent-security/request-assembly-threat-model/"
-      desc: "Assembly model: context hub, truncation/ordering, tool loops, observability, and R1–R8 checkpoints."
-    - label: "Prompt Assembly Policy Enforcement: Typed Provenance"
-      url: "/articles/agent-security/prompt-assembly-policy-enforcement/"
-      desc: "Prevent authority confusion: typed provenance, no silent promotion, fail-closed enforcement at ingress."
 
 featured:
   title: "Core policies (operating contracts)"
+  subtitle: "Policies (rules): adopt these contracts first. Procedures come after."
+  all_label: "Browse policies"
+  all_url: "/policies/"
   items:
     - label: "Facts-only: Authoritative sources required"
       url: "/policies/facts-only-authoritative-sources-required/"

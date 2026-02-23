@@ -1,7 +1,11 @@
 <section class="c-section c-section--quickstart" id="quickstart">
-  <div class="c-section__header">
+    <div class="c-section__header">
     <h2 class="c-section__title">{{ site.data.home.quickstart.title }}</h2>
   </div>
+
+  {% if site.data.home.quickstart.subtitle %}
+    <p class="c-section__subtitle">{{ site.data.home.quickstart.subtitle }}</p>
+  {% endif %}
 
   <div class="c-grid c-grid--3">
     {% for s in site.data.home.quickstart.steps %}

@@ -1,0 +1,72 @@
+{% assign d = site.data.catalog.articles %}
+
+<p>{{ d.intro }}</p>
+
+<div class="c-grid {{ d.quick_links.grid }}">
+  {% for item in d.quick_links.items %}
+    <a class="c-card" href="{{ item.url | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">{{ item.title }}</div>
+        <div class="c-card__desc">{{ item.desc }}</div>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+
+<h2 id="start-here">{{ d.start_here.title }}</h2>
+
+<div class="c-grid {{ d.start_here.grid }}">
+  {% for u in d.start_here.urls %}
+    {% assign p = site.pages | where: "url", u | first %}
+    {% if p %}
+      <a class="c-card" href="{{ p.url | relative_url }}">
+        <div class="c-card__content">
+          <div class="c-card__title">{{ forloop.index }}) {{ p.title }}</div>
+          {% if p.summary %}<div class="c-card__desc">{{ p.summary }}</div>{% endif %}
+        </div>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<h2 id="browse-by-topic">{{ d.browse_by_topic.title }}</h2>
+
+<div class="c-grid {{ d.browse_by_topic.grid }}">
+  {% for item in d.browse_by_topic.items %}
+    <a class="c-card" href="{{ item.url | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">{{ item.title }}</div>
+        <div class="c-card__desc">{{ item.desc }}</div>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+
+<h2 id="featured-by-topic">{{ d.featured_by_topic.title }}</h2>
+
+<div class="c-grid {{ d.featured_by_topic.grid }}">
+  {% for group in d.featured_by_topic.groups %}
+    <article class="c-card{% if group.span_full %} c-span-full{% endif %}">
+      <div class="c-card__content">
+        <div class="c-card__title">{{ group.title }}</div>
+        <div class="c-card__desc">{{ group.desc }}</div>
+
+        <ul class="c-linklist">
+          {% for u in group.urls limit: 6 %}
+            {% assign p = site.pages | where: "url", u | first %}
+            <li>
+              <a href="{{ u | relative_url }}">{{ p.title | default: u }}</a>
+              {% if p and p.summary %}
+                <div class="c-linklist__desc">{{ p.summary }}</div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+
+        <div class="c-card__actions">
+          <a class="c-btn c-btn--secondary c-btn--compact" href="{{ group.url | relative_url }}">View all</a>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</div>

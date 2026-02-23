@@ -5,21 +5,14 @@ permalink: /reference/
 
 Reference pages are **lookup-style**: stable terminology, catalogs, and canonical figures used across the site.
 
-## How to use this section
-
-Use **Reference** when you need **definitions, exact meanings, or canonical figures**.
-If you’re trying to *do* something (a runnable task/runbook), go to **How-to**.
-If you want rationale, trade-offs, or narrative explanation, go to **Articles**.
-
-## Choose the right page type
-
-- **Reference** → “What is X?” / “What does X mean?” / “What are the canonical terms/figures?”
-- **How-to** → “How do I do X safely and repeatably?”
-- **Articles** → “Why does X matter?” / “What’s the threat model, trade-off, or reasoning?”
+Use **Reference** for **information** you want to look up and cite (“what is X?”).  
+Use **How-to** for procedures (“how do I do X?”).  
+Use **Articles** for explanations and trade-offs (“why does X matter?”).
 
 ## Reference catalogs
 
 - **[Content map]({{ '/reference/content-map/' | relative_url }})** — Site structure and shortest paths by intent.
+- **[Prompt layers & policy mapping]({{ '/reference/prompt-layers/' | relative_url }})** — Canonical definitions: Policy vs System vs User vs Components vs How-to (API + agents).
 - **[Verification techniques]({{ '/reference/verification-techniques/' | relative_url }})** — Verification method summaries used across gates and procedures.
 - **[Orders of intentionality]({{ '/reference/orders-of-intentionality/' | relative_url }})** — Terminology anchor for ToM / recursive mindreading discussions.
 - **[Diagrams]({{ '/reference/diagrams/' | relative_url }})** — Canonical figures with captions and text alternatives.

@@ -1217,6 +1217,12 @@ a.c-card:focus {
   transform: translateY(-2px);
 }
 
+a.c-card:focus-visible {
+  outline: 3px solid rgba($accent_2, 0.55);
+  outline-offset: 2px;
+}
+
+
 .c-card__title {
   font-weight: 800;
   font-size: 1.0rem;
@@ -1298,7 +1304,6 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
   width: 100%;
   max-width: 100%;
 }
-
 /* Link list inside disclosure */
 .c-linklist {
   list-style: none;
@@ -1308,6 +1313,13 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
+}
+
+.c-linklist__desc {
+  margin-top: 0.15rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: rgba($text, 0.70);
 }
 
 .c-linklist a,
@@ -1432,6 +1444,14 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
 /* Smaller section title variant (indexes: chooser/catalog groups) */
 .c-section__title--sub {
   font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+}
+
+/* One-line section subtitle (home/index pages) */
+.c-section__subtitle {
+  margin: -0.35rem 0 1rem;
+  color: rgba($text, 0.72);
+  font-size: 0.98rem;
+  line-height: 1.45;
 }
 
 /* FIX: Cayman sets `.main-content h1..h6 { font-weight: normal; }`

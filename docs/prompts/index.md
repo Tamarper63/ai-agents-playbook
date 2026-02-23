@@ -21,6 +21,8 @@ This page indexes **copy/paste prompt templates** mapped to their companion **Po
 
 {% include catalog/prompts-catalog.html %}
 
+## Components (snippets)
+
 Components are small reference snippets to augment a runner with <strong>one additional behavior</strong>.
 
 <div class="c-card" aria-label="Prompt components catalog">
@@ -39,6 +41,8 @@ Components are small reference snippets to augment a runner with <strong>one add
   </div>
 </div>
 
+- Use <strong>1–2 components max</strong> per run to reduce instruction collisions.
+- Components that require tools (e.g., browsing) must be used only in runtimes that support those tools.
 - Use <strong>1–2 components max</strong> per run to reduce instruction collisions.
 - Components that require tools (e.g., browsing) must be used only in runtimes that support those tools.
 
