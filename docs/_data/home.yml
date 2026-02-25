@@ -1,6 +1,6 @@
 hero:
   lede: "A public, versioned playbook for shipping tool-using LLM and agent systems."
-  tagline: "Reusable operating contracts (policies + prompt templates + procedures) for orchestration, evidence boundaries, and verification gates."
+  tagline: "Reusable operating contracts (policies + templates + procedures) for orchestration, evidence boundaries, and verification gates."
   bullets:
     - "Orchestration patterns: controller loops, state/lifecycle, and tool invocation."
     - "Boundary enforcement: evidence rules, citations, and fail-closed outputs."
@@ -8,10 +8,10 @@ hero:
 
 actions:
   primary:
-    label: "Start here (by role)"
+    label: "Start here"
     url: "/how-to/start-here-by-role/"
   secondary:
-    - label: "Browse prompt library"
+    - label: "Browse templates"
       url: "/prompts/"
     - label: "Updates (1–2×/week)"
       url: "/updates/"
@@ -72,5 +72,3 @@ scope:
   excludes_title: "Not covered"
   excludes:
     - "Vendor-internal or proprietary details."
-
-
