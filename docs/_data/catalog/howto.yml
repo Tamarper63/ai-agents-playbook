@@ -1,4 +1,32 @@
 catalog:
+  - id: start-here
+    title: "Start here"
+    grid: "c-grid--2"
+    items:
+      - title: "Start here — choose a role"
+        url: "/how-to/start-here-by-role/"
+        desc: "Route work to the correct how-to procedures by role, with fail-closed evidence boundaries."
+        policies:
+          - title: "Objective Technical Baseline Rules (No Simulation) — policy"
+            url: "/policies/objective-technical-operating-profile/"
+          - title: "Facts-only: Artifacts-only (no external sources)"
+            url: "/policies/facts-only-artifacts-only/"
+          - title: "Facts-only: Authoritative sources required (citations required)"
+            url: "/policies/facts-only-authoritative-sources-required/"
+          - title: "Web Verification & Citations Policy"
+            url: "/policies/web-verification-and-citations/"
+        prompts:
+          - "/prompts/facts-only-artifacts-only.system.txt"
+          - "/prompts/facts-only-authoritative-sources-required.system.txt"
+          - "/prompts/web-verification-and-citations.system.txt"
+          - "/prompts/chain-of-verification.system.txt"
+          - "/prompts/confidence-score.system.txt"
+          - "/prompts/prompt-engineering-daily-work.user.txt"
+          - "/prompts/engineering-quality-gate.system.txt"
+          - "/prompts/engineering-quality-gate.user.txt"
+          - "/prompts/evidence-gated-technical-writing-gate.system.txt"
+          - "/prompts/evidence-gated-technical-writing-gate.user.txt"
+
   - id: evidence-boundaries-facts-only
     title: "Evidence boundaries"
     grid: "c-grid--2"
