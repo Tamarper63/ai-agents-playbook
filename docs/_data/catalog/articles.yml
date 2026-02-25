@@ -39,3 +39,8 @@ browse_by_topic:
     - title: "Prompt engineering"
       url: "/articles/prompt-engineering/"
       desc: "Operational prompting notes, evidence & citation requirements, reusable templates"
+
+all_articles:
+  title: "All articles"
+  note: "Sorted by published date (newest first)."
+  grid: "c-grid--2"

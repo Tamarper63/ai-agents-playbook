@@ -2,17 +2,6 @@
 
 <p>{{ d.intro }}</p>
 
-<div class="c-grid {{ d.quick_links.grid }}">
-  {% for item in d.quick_links.items %}
-    <a class="c-card" href="{{ item.url | relative_url }}">
-      <div class="c-card__content">
-        <div class="c-card__title">{{ item.title }}</div>
-        <div class="c-card__desc">{{ item.desc }}</div>
-      </div>
-    </a>
-  {% endfor %}
-</div>
-
 <h2 id="start-here">{{ d.start_here.title }}</h2>
 {% if d.start_here.note %}<p>{{ d.start_here.note }}</p>{% endif %}
 
@@ -35,6 +24,38 @@
 
 <div class="c-grid {{ d.browse_by_topic.grid }}">
   {% for item in d.browse_by_topic.items %}
+    <a class="c-card" href="{{ item.url | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">{{ item.title }}</div>
+        <div class="c-card__desc">{{ item.desc }}</div>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+
+<h2 id="all-articles">{{ d.all_articles.title }}</h2>
+{% if d.all_articles.note %}<p>{{ d.all_articles.note }}</p>{% endif %}
+
+{% assign pages_sorted = site.pages | sort: "published" | reverse %}
+
+<div class="c-grid {{ d.all_articles.grid }}">
+  {% for p in pages_sorted %}
+    {% if p.url contains '/articles/' and p.summary %}
+      <a class="c-card" href="{{ p.url | relative_url }}">
+        <div class="c-card__content">
+          <div class="c-card__title">{{ p.title }}</div>
+          <div class="c-card__desc">{{ p.summary }}</div>
+          {% if p.published %}<div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>{% endif %}
+        </div>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<h2 id="related">Explore other sections</h2>
+
+<div class="c-grid {{ d.quick_links.grid }}">
+  {% for item in d.quick_links.items %}
     <a class="c-card" href="{{ item.url | relative_url }}">
       <div class="c-card__content">
         <div class="c-card__title">{{ item.title }}</div>
