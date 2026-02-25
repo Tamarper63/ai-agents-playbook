@@ -1,5 +1,6 @@
 ---
 title: Engineering Quality Gate Policy (Architecture & Best Practices)
+description: Policy gate for architecture correctness and best-practice compliance, requiring source-bound recommendations, file-specific deltas, and fail-closed output on insufficient evidence.
 permalink: /policies/engineering-quality-gate-policy/
 ---
 
