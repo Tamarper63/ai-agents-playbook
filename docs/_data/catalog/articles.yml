@@ -14,8 +14,7 @@ quick_links:
       desc: "Normative operating contracts (boundaries, gates, refusals)."
 
 start_here:
-  title: "Start here"
-  note: "One high-signal starting point per topic (then use the topic pages for goal-based paths + full lists)."
+  title: "Start here (one per topic)"
   grid: "c-grid--2"
   urls:
     - "/articles/agent-security/llm-boundary-first-touch/"
