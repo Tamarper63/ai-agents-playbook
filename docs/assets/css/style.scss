@@ -1057,9 +1057,46 @@ h1, h2, h3, h4, h5, h6 {
 /* Responsive table container (scroll only the table, not the whole page) */
 .c-table {
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
   margin: 1rem 0;
+}
+
+/*
+  Mobile rendering guard:
+  - With `.main-content table { width: 100% }`, tables compress and become unreadable on narrow viewports.
+  - Force horizontal overflow inside `.c-table` instead of column-squash.
+*/
+.c-table table {
+  width: auto;
+  min-width: 100%;
+}
+
+@media (max-width: 720px) {
+  .c-table table {
+    min-width: 48rem;
+  }
+}
+
+/* Exception: capability-map table carries its own min-width contract */
+.c-table table.capability-map {
+  width: 100%;
+  min-width: 980px;
+}
+
+/* Avoid long-token overflow in cells; keep links discoverable */
+.c-table th,
+.c-table td {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.c-table a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .c-table:focus-visible {

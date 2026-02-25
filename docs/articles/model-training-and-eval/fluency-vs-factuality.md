@@ -23,7 +23,7 @@ Fluency can be high while truthfulness is materially lower in multiple published
 
 ### Benchmark snapshot (paper-reported results)
 
-<div class="c-table" tabindex="0" aria-label="Benchmark snapshot table">
+<div class="c-table" role="region" aria-label="Benchmark snapshot table" tabindex="0">
   <table>
     <thead>
       <tr>

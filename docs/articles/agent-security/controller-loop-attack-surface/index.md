@@ -258,16 +258,43 @@ ingress(request):
 ---
 
 ## What to test (security test cases)
-<div class="c-table" role="region" aria-label="Security test cases" tabindex="0" markdown="1">
-
-| Test | Goal | Expected result |
-|---|---|---|
-| Retrieval injection test | Retrieved content cannot change tool allowlists, scopes, or authorization decisions | Tool selection remains constrained; policy gates reject elevation |
-| Tool-arg validation test | Invalid or policy-violating arguments are rejected | Calls fail closed; violations are logged with provenance |
-| Write-gate test | Any write-capable call requires server-side authorization per call | Writes are blocked without explicit authorization decision |
-| Plan validation test | Planner cannot introduce tools/targets outside policy/tenant binding | Plan rejected or rewritten by policy, not executed |
-| Budget/stop test | Loops terminate under step/time/cost/retry ceilings | Loop stops deterministically; escalation rules trigger |
-
+<div class="c-table" role="region" aria-label="Security test cases" tabindex="0">
+  <table>
+    <thead>
+      <tr>
+        <th>Test</th>
+        <th>Goal</th>
+        <th>Expected result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Retrieval injection test</td>
+        <td>Retrieved content cannot change tool allowlists, scopes, or authorization decisions</td>
+        <td>Tool selection remains constrained; policy gates reject elevation</td>
+      </tr>
+      <tr>
+        <td>Tool-arg validation test</td>
+        <td>Invalid or policy-violating arguments are rejected</td>
+        <td>Calls fail closed; violations are logged with provenance</td>
+      </tr>
+      <tr>
+        <td>Write-gate test</td>
+        <td>Any write-capable call requires server-side authorization per call</td>
+        <td>Writes are blocked without explicit authorization decision</td>
+      </tr>
+      <tr>
+        <td>Plan validation test</td>
+        <td>Planner cannot introduce tools/targets outside policy/tenant binding</td>
+        <td>Plan rejected or rewritten by policy, not executed</td>
+      </tr>
+      <tr>
+        <td>Budget/stop test</td>
+        <td>Loops terminate under step/time/cost/retry ceilings</td>
+        <td>Loop stops deterministically; escalation rules trigger</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 ---
 

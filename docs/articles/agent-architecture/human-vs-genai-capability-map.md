@@ -24,6 +24,7 @@ This page renders the table from an internal `_data` file at build time (no CSV 
 {% assign rows = site.data["human-vs-genai-capability-map"] %}
 
 <div class="capability-map-wrapper" role="region" aria-label="Human vs GenAI capability map">
+<div class="c-table" role="region" aria-label="Capability map" tabindex="0">
   <table class="capability-map">
     <caption class="capability-map__caption">Human vs GenAI capability map</caption>
     <thead>
@@ -49,6 +50,7 @@ This page renders the table from an internal `_data` file at build time (no CSV 
       {% endfor %}
     </tbody>
   </table>
+</div>
 </div>
 
 ## How to use this map
