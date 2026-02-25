@@ -3,18 +3,11 @@ title: Policies
 permalink: /policies/
 ---
 
-Policies are **normative operating contracts**: they define allowed evidence, citation rules, and fail-closed behavior.
+Policies are **rules**: they define evidence boundaries (what sources are allowed), citation requirements, and fail-closed behavior.
 
-## Terminology (implementation-neutral)
-
-- **Policy:** a normative ruleset for assistant behavior (boundaries, fallback, output contract, verification requirements).
-- **System message:** the highest-authority instruction layer where policies are commonly encoded.
-- **Note:** system messages influence behavior but don’t guarantee compliance; policies should be tested/iterated and layered with additional mitigations when applicable.
-
-Use this page as a **chooser + map**:
-1. Pick the policy that matches your evidence boundary and workflow goal.
-2. Copy/paste the mapped prompt template(s).
-3. Run the mapped how-to procedure (when applicable).
+Use **Policies** when you want the rules first.  
+Use **Templates** for copy/paste prompts that implement those rules.  
+Use **How-to** for step-by-step procedures that run under those rules.
 
 ## Quick chooser (pick one)
 
@@ -32,6 +25,7 @@ Use this page as a **chooser + map**:
 {% include catalog/policies-catalog.html %}
 
 ## Related indexes
-- [How-to guides]({{ '/how-to/' | relative_url }})
-- [Prompt library]({{ '/prompts/' | relative_url }})
+- [Start]({{ '/how-to/start-here-by-role/' | relative_url }})
+- [Templates]({{ '/prompts/' | relative_url }})
+- [How-to]({{ '/how-to/' | relative_url }})
 - [Reference]({{ '/reference/' | relative_url }})

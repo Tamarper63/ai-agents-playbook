@@ -5,10 +5,12 @@ permalink: /reference/content-map/
 
 A stable map of the site’s content types and the shortest paths to start.
 
-This site separates content by reader intent (Diátaxis-style mapping):
+This site separates content by reader intent (Diátaxis-style mapping), and adds two operational layers (Policies + Templates):
 - **How-to** = task execution (procedures/checklists)
 - **Reference** = stable lookup (definitions/catalogs/diagrams)
 - **Articles** = explanations (conceptual understanding + trade-offs)
+- **Policies** = rules (evidence boundary, citations, fail-closed)
+- **Templates** = copy/paste prompt artifacts mapped to policies + how-to
 
 ## Entry points (stable links)
 
@@ -23,14 +25,14 @@ This site separates content by reader intent (Diátaxis-style mapping):
 
 - **Run a procedure (goal/task)** → [How-to]({{ '/how-to/' | relative_url }})
 - **Apply a ruleset / evidence boundary** → [Policies]({{ '/policies/' | relative_url }})
-- **Copy/paste prompt templates** → [Prompt library]({{ '/prompts/' | relative_url }})
-- **Copy/paste prompt building blocks** → [Prompt components]({{ '/prompts/components/' | relative_url }})
+- **Copy/paste prompt templates** → [Templates]({{ '/prompts/' | relative_url }})
+- **Copy/paste prompt building blocks** → [Components]({{ '/prompts/components/' | relative_url }})
 - **Read explanations / deep dives** → [Articles]({{ '/articles/' | relative_url }})
 - **Lookup stable definitions / diagrams** → [Reference]({{ '/reference/' | relative_url }})
 
 ## Role-based entry
 
-- [Start here by role]({{ '/how-to/start-here-by-role/' | relative_url }})
+- [Start here]({{ '/how-to/start-here-by-role/' | relative_url }})
 
 ## Subscribe
 

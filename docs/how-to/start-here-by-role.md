@@ -1,58 +1,60 @@
 ---
-title: Start here by role
+title: Start here
 permalink: /how-to/start-here-by-role/
 ---
 
-Pick the path that matches your objective. All paths use the same baseline:
+Choose the path that matches your **goal**. Every path uses the same baseline:
 
-**Set an evidence boundary** → **Run a verification workflow** → **Apply an operating contract (policies + prompt blocks + procedures)**
+**1) Evidence boundary** → **2) Verification workflow** → **3) Apply rules + templates + procedures**
 
-## Choose your role
+## Choose your goal
 
 <div class="c-grid c-grid--3">
-  <a class="c-card" href="#builder--developer">
+  <a class="c-card" href="#build--ship">
     <div class="c-card__content">
-      <div class="c-card__title">Builder / Developer</div>
-      <div class="c-card__desc">Build and ship workflows (control flow, prompt blocks).</div>
+      <div class="c-card__title">Build & ship</div>
+      <div class="c-card__desc">Design control flow, tool use, context selection, and runnable stacks.</div>
     </div>
   </a>
 
-  <a class="c-card" href="#security--platform">
+  <a class="c-card" href="#secure--audit">
     <div class="c-card__content">
-      <div class="c-card__title">Security / Platform</div>
-      <div class="c-card__desc">Threat modeling, enforcement, provenance and policy.</div>
+      <div class="c-card__title">Secure & audit</div>
+      <div class="c-card__desc">Threat model, enforcement, provenance, and control-plane failure patterns.</div>
     </div>
   </a>
 
-  <a class="c-card" href="#research--evaluation">
+  <a class="c-card" href="#research--publish">
     <div class="c-card__content">
-      <div class="c-card__title">Research / Evaluation</div>
-      <div class="c-card__desc">Evidence-gated writing, terminology discipline, evaluation.</div>
+      <div class="c-card__title">Research & publish</div>
+      <div class="c-card__desc">Evidence-gated writing, terminology discipline, evaluation and reporting.</div>
     </div>
   </a>
 </div>
 
-## Baseline (recommended for every role)
+## Baseline (recommended for every run)
 
 1) **Set:** [Choose an evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
 2) **Run:** [Fact-Checking Kit]({{ '/how-to/fact-checking-kit/' | relative_url }})
 3) **Enforce (when shipping changes):** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
 
-If you want the normative rules first (no procedures): [Objective Technical Baseline Rules (No Simulation) — policy]({{ '/policies/objective-technical-operating-profile/' | relative_url }})
+If you want the rules first (no procedures): [Objective Technical Baseline Rules (No Simulation) — policy]({{ '/policies/objective-technical-operating-profile/' | relative_url }})
 
 **Definitions (as used on this site):**
 - **Evidence boundary:** which sources are allowed (artifacts-only vs authoritative sources + citations).
 - **Verification workflow:** a repeatable procedure that checks claims before output.
-- **Operating contract:** the policy + prompt blocks + procedure stack used to enforce constraints.
+- **Templates:** copy/paste prompt artifacts mapped to policies + how-to.
+- **Policies:** rules (normative constraints).
+- **How-to:** procedures/checklists (execution steps).
 
-Jump to: [Builder / Developer](#builder--developer) · [Security / Platform](#security--platform) · [Research / Evaluation](#research--evaluation)
+Jump to: [Build & ship](#build--ship) · [Secure & audit](#secure--audit) · [Research & publish](#research--publish)
 
 ---
 
-## Builder / Developer
+## Build & ship
 
 ### Do next (after the baseline)
-- **Pick a runnable stack (prompt blocks mapped to policies/procedures)** → [Prompt blocks]({{ '/prompts/' | relative_url }})
+- **Pick a runnable stack (templates mapped to policies/procedures)** → [Templates]({{ '/prompts/' | relative_url }})
 - **Make context selection explicit (memory boundaries)** → [Manage LLM memory boundaries]({{ '/how-to/llm-memory-boundaries/' | relative_url }})
 
 ### Read next (architecture + control flow)
@@ -62,9 +64,10 @@ Jump to: [Builder / Developer](#builder--developer) · [Security / Platform](#se
 
 ### Apply (routines)
 - [Prompt Engineering Guide for Daily Work (procedure)]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }})
+
 ---
 
-## Security / Platform
+## Secure & audit
 
 ### Do next (after the baseline)
 - **If using public sources: enforce citations + browsing discipline** → [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }}) · [Request web browsing + citations]({{ '/how-to/request-web-browsing/' | relative_url }})
@@ -83,7 +86,7 @@ Jump to: [Builder / Developer](#builder--developer) · [Security / Platform](#se
 
 ---
 
-## Research / Evaluation
+## Research & publish
 
 ### Do next (after the baseline)
 - **Academic-style evidence gating (formal sources + locators)** → [Evidence-Gated Academic Mode (EGAM) — procedure]({{ '/how-to/evidence-gated-academic-mode/' | relative_url }})

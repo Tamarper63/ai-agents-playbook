@@ -1,13 +1,13 @@
 ---
-title: Prompt library
+title: Prompt templates
 permalink: /prompts/
 ---
 
-This page indexes **copy/paste prompt templates** mapped to their companion **Policies** and **How-to procedures**.
+Copy/paste **prompt templates** mapped to their companion **Policies (rules)** and **How-to (procedures)**.
 
-- **System message templates:** `.system.txt` (highest-authority instructions: role, boundaries, output contract, fallback/“when unsure” policy)
+- **System message templates:** `.system.txt` (highest-authority rules: boundaries, output contract, fallback/“when unsure” policy)
 - **User message templates:** `.user.txt` (execution templates you paste as the user message)
-- **Prompt components:** small add-ons you paste into a user message template (not standalone workflows)
+- **Components:** small add-ons you paste into a user template (not standalone workflows)
 
 ## Quick chooser (pick the workflow)
 
@@ -17,7 +17,7 @@ This page indexes **copy/paste prompt templates** mapped to their companion **Po
 
 {% include catalog/prompts-stacks.html %}
 
-## Prompt catalog (scan)
+## Templates catalog (scan)
 
 {% include catalog/prompts-catalog.html %}
 
@@ -27,7 +27,7 @@ Components are small reference snippets to augment a runner with <strong>one add
 
 <div class="c-card" aria-label="Prompt components catalog">
   <div class="c-card__title">
-    <a href="{{ '/prompts/components/' | relative_url }}">Prompt components catalog</a>
+    <a href="{{ '/prompts/components/' | relative_url }}">Components catalog</a>
   </div>
   <div class="c-card__desc">
     Browse micro prompt components (snippets) you can add to a runner without changing the workflow.
@@ -36,7 +36,7 @@ Components are small reference snippets to augment a runner with <strong>one add
     <a class="c-btn c-btn--primary c-btn--compact"
        href="{{ '/prompts/components/' | relative_url }}"
        title="Browse the components catalog">
-      Browse prompt components
+      Browse components
     </a>
   </div>
 </div>
@@ -45,12 +45,13 @@ Components are small reference snippets to augment a runner with <strong>one add
 - Components that require tools (e.g., browsing) must be used only in runtimes that support those tools.
 
 ## Usage rules (non-negotiable)
-- Policy pages are normative (rules).
-- Prompt templates are operational (copy/paste).
-- Keep mappings explicit to prevent drift across **prompt templates → how-to → policies**.
+- **Policies** are normative rules.
+- **Templates** are operational copy/paste assets.
+- Keep mappings explicit to prevent drift across policies → templates → procedures.
 
 ## Related indexes
+- [Start]({{ '/how-to/start-here-by-role/' | relative_url }})
+- [How-to]({{ '/how-to/' | relative_url }})
 - [Policies]({{ '/policies/' | relative_url }})
-- [How-to guides]({{ '/how-to/' | relative_url }})
 - [Articles]({{ '/articles/' | relative_url }})
 - [Reference]({{ '/reference/' | relative_url }})
