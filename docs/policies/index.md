@@ -20,7 +20,7 @@ Use **How-to** for step-by-step procedures that run under those rules.
 - **Publishable writing:** Evidence-Gated Technical Writing (Claims) → Web Verification & Citations → Chain-of-Verification → Semantic Accuracy Gate  
 - **Code / architecture review:** Engineering Quality Gate → Facts-only (artifacts-only)
 
-## Policy catalog (scan)
+## Policy catalog
 
 {% include catalog/policies-catalog.html %}
 

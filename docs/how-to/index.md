@@ -8,11 +8,11 @@ Step-by-step procedures and checklists for running tasks under explicit **polici
 ## How the pieces fit
 - **Policies** = rules (evidence boundaries, citation requirements, fail-closed behavior).
 - **Prompt templates** = copy/paste prompt files you load into your runtime (typically as system/developer/user messages).
-- **How-to guides** = the procedure steps for applying the policy + templates to a task. :contentReference[oaicite:4]{index=4}
+- **How-to guides** = the procedure steps for applying the policy + templates to a task. 
 
 ## Quickstart (3 steps)
 1) Pick an **evidence boundary** (what sources are allowed).
-2) Load the mapped **system/developer prompt template(s)** (higher-priority instructions take precedence over user input). :contentReference[oaicite:5]{index=5}
+2) Load the mapped **system/developer prompt template(s)** (higher-priority instructions take precedence over user input). 
 3) Follow the **How-to** steps. If required evidence is missing, **fail closed** per the active policy.
 
 If you’re not sure where to start, use the **Start here** path below. If you need an overview of content types (How-to vs Reference vs Articles), use the [Content map]({{ '/reference/content-map/' | relative_url }}).

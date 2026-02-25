@@ -18,7 +18,9 @@ Workflow map (minimal):
 {% include catalog/howto-canonical-links.html %}
 
 ## Choose a role
-- **Option 1 (Everyday user):** you use AI tools for daily work (summaries, drafts, analysis) and need reliable defaults.
+If you are unsure, start with **Option 1 (Practitioner)**.
+
+- **Option 1 (Practitioner):** you use AI tools for daily work (summaries, drafts, analysis) and need reliable defaults.
 - **Option 2 (Builder):** you design/ship agentic systems, prompt stacks, or control flows.
 - **Option 3 (Auditor):** you verify correctness/safety, enforce evidence + citations, or investigate failures.
 - **Option 4 (Writer/Publisher):** you publish AI-assisted technical writing and must eliminate overclaims.
@@ -37,7 +39,7 @@ Ask a factual question **without** providing admissible evidence for the chosen 
 
 ## Options
 
-### Option 1 — Everyday user (daily AI use)
+### Option 1 — Practitioner (daily AI use)
 Use when you want reliable defaults for everyday AI work (drafting, summarizing, planning, analysis) without building systems.
 
 **Start with**
@@ -46,11 +48,11 @@ Use when you want reliable defaults for everyday AI work (drafting, summarizing,
 **You’ll do**
 - Apply a consistent request shape (goal + constraints + evidence boundary).
 - Prevent “confidence by fluency” by requiring explicit uncertainty handling.
-- Use prompt templates and micro-components to enforce reading/coverage when needed.
+- Use **Prompt templates** and **Prompt components** to enforce reading/coverage when needed.
 
 **Add next (when needed)**
 - [Prompt templates]({{ '/prompts/' | relative_url }})
-- [Prompt components (micro add-ons)]({{ '/prompts/components/' | relative_url }})
+- [Prompt components]({{ '/prompts/components/' | relative_url }})
 - [Run the Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
 
 Example: “Summarize these notes and list what is NOT proven under artifacts-only.”
@@ -68,7 +70,7 @@ Use when you are building or changing systems where structure matters (architect
 
 **Add next (common builder stack)**
 - [Manage LLM memory boundaries (ChatGPT + agentic systems) — procedure]({{ '/how-to/llm-memory-boundaries/' | relative_url }})
-- [Prompt components (micro add-ons)]({{ '/prompts/components/' | relative_url }})
+- [Prompt components]({{ '/prompts/components/' | relative_url }})
 - [Run the Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
 
 Example: “Review this repo snapshot for boundary violations and output a minimal changeset plan.”
@@ -114,7 +116,7 @@ Example: “Turn this AI-assisted draft into publishable content where every mat
 - Skipping the evidence boundary and expecting “facts-only” behavior.
 - Choosing a role but running a different gate contract (engineering vs writing) in the same run without deciding which contract applies.
 - Expecting “latest” without either (a) browsing enabled and allowed, or (b) providing authoritative sources yourself.
-- Using micro prompt components without a runner template (components are add-ons, not standalone workflows).
+- Using Prompt components without a runner template (components are add-ons, not standalone workflows).
 
 ## Related indexes
 - [How-to]({{ '/how-to/' | relative_url }})
