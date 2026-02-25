@@ -1,5 +1,6 @@
 ---
 title: "Evidence-Gated Academic Mode (EGAM) — procedure"
+description: Procedure for evidence-gated academic writing using authoritative sources, verified claims, and confidence scoring.
 permalink: /how-to/evidence-gated-academic-mode/
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Evidence-Gated Technical Writing Gate — Verification Procedure (Claims)
+description: Verification procedure for technical writing with terminology control, claim ledger, citations, and fail-closed output.
 permalink: /how-to/evidence-gated-technical-writing-gate-procedure/
 ---
 

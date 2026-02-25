@@ -1,5 +1,6 @@
 ---
 title: "Manage: LLM memory boundaries (ChatGPT + agentic systems)"
+description: Checklist and procedure for making LLM memory behavior predictable and auditable across ChatGPT and agentic systems.
 permalink: /how-to/llm-memory-boundaries/
 ---
 

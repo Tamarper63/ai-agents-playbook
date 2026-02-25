@@ -1,5 +1,6 @@
 ---
 title: "Facts-only: Authoritative sources required (citations required) — procedure"
+description: Procedure requiring authoritative citations for all factual claims and fail-closed behavior when sources are missing.
 permalink: /how-to/facts-only-authoritative-sources-required/
 ---
 

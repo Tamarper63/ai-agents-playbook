@@ -1,6 +1,7 @@
 ---
-title: Chain-of-Verification (CoVe) — procedure
-permalink: /how-to/chain-of-verification-procedure/
+title: "Choose allowed sources for factual answers"
+description: Choose an evidence boundary for factual answers, defining allowed sources and fail-closed enforcement rules.
+permalink: /how-to/choose-facts-only-evidence-boundary/
 ---
 
 Use this procedure to run a structured verification loop before emitting a final answer.

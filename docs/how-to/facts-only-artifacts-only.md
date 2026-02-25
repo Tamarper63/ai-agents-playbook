@@ -1,5 +1,6 @@
 ---
 title: "Answer using only the files you provide (no external sources) — procedure"
+description: Procedure to answer only from user-provided files with locator-based traceability and fail-closed behavior.
 permalink: /how-to/facts-only-artifacts-only/
 ---
 

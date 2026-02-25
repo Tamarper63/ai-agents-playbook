@@ -1,5 +1,6 @@
 ---
 title: Add an evidence-based confidence score (0–100) to every response
+description: Procedure to add an evidence-based confidence score to every response, including thresholds and disclosure rules.
 permalink: /how-to/add-confidence-score-to-responses/
 ---
 

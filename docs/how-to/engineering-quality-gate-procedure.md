@@ -1,5 +1,6 @@
 ---
 title: Engineering Quality Gate — Procedure
+description: Procedure for architecture validation, source-backed best-practice review, and translating findings into file-specific changes.
 permalink: /how-to/engineering-quality-gate-procedure/
 ---
 
