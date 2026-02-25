@@ -3,18 +3,20 @@ hero:
   lede: "Copy/paste operating contracts for evidence boundaries, verification gates, and secure orchestration."
   bullets:
     - "Adopt policies: evidence boundaries, citations, and fail-closed outputs."
-    - "Use prompt templates: copy/paste blocks mapped to those policies."
-    - "Run procedures: verification workflows and engineering quality gates."
+    - "Copy prompt templates: system/user blocks mapped to those policies."
+    - "Run procedures: fact-checking workflows and engineering quality gates."
 
 actions:
   primary:
     label: "Start here (choose a goal)"
     url: "/how-to/start-here-by-role/"
   secondary:
-    - label: "Browse policies"
-      url: "/policies/"
     - label: "Browse prompt templates"
       url: "/prompts/"
+    - label: "Browse policies"
+      url: "/policies/"
+    - label: "Browse how-to"
+      url: "/how-to/"
     - label: "Updates (1–2×/week)"
       url: "/updates/"
 
@@ -37,13 +39,13 @@ quickstart:
   subtitle: "Baseline (do in order): evidence boundary → verification → quality gate."
   steps:
     - title: "Choose an evidence boundary"
-      output: "Define allowed sources and refusal conditions (fail-closed)."
+      output: "Select allowed sources and refusal conditions (fail-closed)."
       url: "/how-to/choose-facts-only-evidence-boundary/"
     - title: "Run the Fact-Checking Kit"
-      output: "Run a repeatable evidence-check loop before producing non-trivial outputs."
+      output: "Verify non-trivial claims against allowed sources before output."
       url: "/how-to/fact-checking-kit/"
     - title: "Enforce the Engineering Quality Gate"
-      output: "Validate architecture/best-practices and regressions; fail-closed on missing requirements."
+      output: "Validate architecture/best practices and regressions before shipping changes."
       url: "/how-to/engineering-quality-gate-procedure/"
 
 featured:
@@ -52,18 +54,18 @@ featured:
   all_label: "Browse policies"
   all_url: "/policies/"
   items:
-    - label: "Facts-only: Authoritative sources required"
+    - label: "Objective Technical Baseline Rules (No Simulation) — policy"
+      url: "/policies/objective-technical-operating-profile/"
+      desc: "Non-simulative, objective operating profile with fail-closed posture."
+    - label: "Facts-only: Authoritative sources required (citations required)"
       url: "/policies/facts-only-authoritative-sources-required/"
-      desc: "Evidence boundary: world-claims require authoritative sources."
-    - label: "Facts-only: Artifacts-only (no external sources)"
-      url: "/policies/facts-only-artifacts-only/"
-      desc: "Evidence boundary: restrict evidence to user-provided artifacts (no external sources)."
+      desc: "Evidence boundary: world-claims require authoritative sources with citations."
     - label: "Web Verification & Citations Policy"
       url: "/policies/web-verification-and-citations/"
-      desc: "Public facts via web sources + inline citations."
-    - label: "Engineering Quality Gate Policy"
+      desc: "How to browse/verify and cite sources in outputs."
+    - label: "Engineering Quality Gate Policy (Architecture & Best Practices)"
       url: "/policies/engineering-quality-gate-policy/"
-      desc: "Architecture + best-practices + regression-minded review gate."
+      desc: "Architecture checks + best practices + regression-minded review gate."
 
 latest_articles:
   title: "Articles (explanation)"
@@ -71,20 +73,20 @@ latest_articles:
   all_label: "Browse all articles"
   all_url: "/articles/"
   items:
-    - label: "The Attack Surface Starts Before Agents — The LLM Boundary"
-      url: "/articles/agent-security/llm-boundary-first-touch/"
-      desc: "Where the first LLM-to-system boundary appears, and why exposure starts before “agents”."
-    - label: "The Attack Surface Isn’t the LLM — It’s the Controller Loop"
+    - label: "Fluency Is Not Factuality"
+      url: "/articles/model-training-and-eval/fluency-vs-factuality/"
+      desc: "Why fluent LLM outputs can still be wrong, and how to enforce evidence-locked answers."
+    - label: "The attack surface is the orchestration loop, not the model"
       url: "/articles/agent-security/controller-loop-attack-surface/"
-      desc: "Why multi-step orchestration increases risk, and what to audit in plan→tools→retry loops."
+      desc: "How multi-step controller loops change the threat model, and where to enforce separation, authorization, validation, and budgets."
 
 scope:
   title: "Scope"
   subtitle: "What this playbook covers (and what it intentionally does not)."
   covers_title: "Focus"
   covers:
-    - "Tool-using LLM and agent systems: orchestration, boundaries, verification."
-    - "Public, reusable templates: policies, prompt templates, and procedures."
+    - "Tool-using LLM and agent systems: orchestration, boundaries, verification, and audits."
+    - "Reusable artifacts: policies (rules), prompt templates, procedures, and diagrams."
   excludes_title: "Not covered"
   excludes:
     - "Vendor-internal or proprietary details."

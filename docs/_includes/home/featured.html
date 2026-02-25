@@ -1,11 +1,6 @@
 <section class="c-section c-section--featured">
   <div class="c-section__header">
-    <div>
-      <h2 class="c-section__title">{{ site.data.home.featured.title }}</h2>
-      {% if site.data.home.featured.subtitle %}
-        <div class="c-card__desc">{{ site.data.home.featured.subtitle }}</div>
-      {% endif %}
-    </div>
+    <h2 class="c-section__title">{{ site.data.home.featured.title }}</h2>
 
     {% if site.data.home.featured.all_url and site.data.home.featured.all_label %}
       <a class="c-section__link" href="{{ site.data.home.featured.all_url | relative_url }}">
@@ -13,6 +8,10 @@
       </a>
     {% endif %}
   </div>
+
+  {% if site.data.home.featured.subtitle %}
+    <p class="c-section__subtitle">{{ site.data.home.featured.subtitle }}</p>
+  {% endif %}
 
   <div class="c-grid c-grid--2">
     {% for item in site.data.home.featured.items %}

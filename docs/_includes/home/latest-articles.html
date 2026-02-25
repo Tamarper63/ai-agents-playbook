@@ -1,11 +1,6 @@
 <section class="c-section c-section--latest">
   <div class="c-section__header">
-    <div>
-      <h2 class="c-section__title">{{ site.data.home.latest_articles.title }}</h2>
-      {% if site.data.home.latest_articles.subtitle %}
-        <div class="c-card__desc">{{ site.data.home.latest_articles.subtitle }}</div>
-      {% endif %}
-    </div>
+    <h2 class="c-section__title">{{ site.data.home.latest_articles.title }}</h2>
 
     {% if site.data.home.latest_articles.all_url and site.data.home.latest_articles.all_label %}
       <a class="c-section__link" href="{{ site.data.home.latest_articles.all_url | relative_url }}">
@@ -13,6 +8,10 @@
       </a>
     {% endif %}
   </div>
+
+  {% if site.data.home.latest_articles.subtitle %}
+    <p class="c-section__subtitle">{{ site.data.home.latest_articles.subtitle }}</p>
+  {% endif %}
 
   <div class="c-grid c-grid--2">
     {% for item in site.data.home.latest_articles.items %}

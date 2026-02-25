@@ -1,0 +1,22 @@
+<section class="c-section c-section--paths" id="paths">
+  <div class="c-section__header">
+    <h2 class="c-section__title">{{ site.data.home.paths.title }}</h2>
+  </div>
+
+  {% if site.data.home.paths.subtitle %}
+    <p class="c-section__subtitle">{{ site.data.home.paths.subtitle }}</p>
+  {% endif %}
+
+  <div class="c-grid c-grid--3">
+    {% for p in site.data.home.paths.items %}
+      <a class="c-card" href="{{ p.url | relative_url }}">
+        <div class="c-card__content">
+          <div class="c-card__title">{{ p.label }}</div>
+          {% if p.desc %}
+            <div class="c-card__desc">{{ p.desc }}</div>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
