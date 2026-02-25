@@ -22,12 +22,35 @@ High fluency (well-written, coherent text) is not evidence of factual correctnes
 Fluency can be high while truthfulness is materially lower in multiple published evaluations:
 
 ### Benchmark snapshot (paper-reported results)
-| Benchmark | What is measured | Reported result | Source |
-| --- | --- | --- | --- |
-| TruthfulQA | Truthfulness on adversarial questions designed to elicit imitative falsehoods | Human: 94%; best model in paper: 58% | [Lin et al. (2021), arXiv:2109.07958](https://arxiv.org/abs/2109.07958) |
-| FActScore | Atomic-fact factual precision in long-form generation | ChatGPT: 58% (paper setting) | [Min et al. (2023), arXiv:2305.14251](https://arxiv.org/abs/2305.14251) |
 
-<figure>
+<div class="c-table" tabindex="0" aria-label="Benchmark snapshot table">
+  <table>
+    <thead>
+      <tr>
+        <th>Benchmark</th>
+        <th>What is measured</th>
+        <th>Reported result</th>
+        <th>Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TruthfulQA</td>
+        <td>Truthfulness on adversarial questions designed to elicit imitative falsehoods</td>
+        <td>Human: 94%; best model in paper: 58%</td>
+        <td><a href="https://arxiv.org/abs/2109.07958">Lin et al. (2021), arXiv:2109.07958</a></td>
+      </tr>
+      <tr>
+        <td>FActScore</td>
+        <td>Atomic-fact factual precision in long-form generation</td>
+        <td>ChatGPT: 58% (paper setting)</td>
+        <td><a href="https://arxiv.org/abs/2305.14251">Min et al. (2023), arXiv:2305.14251</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<figure class="c-figure">
   <img
     src="{{ '/assets/img/posts/fluency-vs-factuality/fluency-vs-factuality-diagram.svg' | relative_url }}"
     alt="Two-panel diagram: (A) benchmark snapshot showing a fluency–factuality gap; (B) evidence-locked answer pipeline with PDP/PEP enforcement and provenance capture."

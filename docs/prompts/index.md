@@ -43,8 +43,6 @@ Components are small reference snippets to augment a runner with <strong>one add
 
 - Use <strong>1–2 components max</strong> per run to reduce instruction collisions.
 - Components that require tools (e.g., browsing) must be used only in runtimes that support those tools.
-- Use <strong>1–2 components max</strong> per run to reduce instruction collisions.
-- Components that require tools (e.g., browsing) must be used only in runtimes that support those tools.
 
 ## Usage rules (non-negotiable)
 - Policy pages are normative (rules).
