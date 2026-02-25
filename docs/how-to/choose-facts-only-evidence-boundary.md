@@ -12,11 +12,6 @@ What this choice changes:
   - **your materials** (files/logs/screenshots/excerpts you attach or paste), or
   - a **cited authoritative public source** (papers/standards/official documentation with a stable locator).
 
-## How to use this page (2 minutes)
-1) Pick one option below (Option 1 / 2 / 3).
-2) Paste the linked **system prompt file** into your runtime (system/developer message if supported; otherwise paste at the top of your prompt).
-3) Follow the linked **procedure** for the option you chose.
-
 ## Canonical links
 {% include catalog/howto-canonical-links.html %}
 
@@ -30,10 +25,10 @@ What this choice changes:
 - Choose **Option 2** for “answer using cited authoritative sources”.
 - Choose **Option 3** for “Option 2 + structured report format”.
 
-## Steps
-1) Pick one option below.
-2) Open the linked **policy** and confirm it matches your intent.
-3) Copy/paste the linked **system prompt file** into your runtime:
+## How to use this page (2 minutes)
+1) Pick one option below (Option 1 / 2 / 3).
+2) Open the linked **policy (rules)** and confirm it matches your intent.
+3) Paste the linked **system prompt file** into your runtime:
    - If your runtime supports roles, paste it as a **system/developer message** (higher priority than user input).
    - Otherwise, paste it at the **top of your prompt**.
 4) Follow the linked **procedure** for the option you chose.
@@ -45,7 +40,7 @@ Use when you want answers based **only** on what you attach or paste (logs/files
 
 - **Policy (rules):** [Facts-only: Artifacts-only]({{ '/policies/facts-only-artifacts-only/' | relative_url }})
 - **System prompt file (copy/paste):** [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
-- **Procedure:** [Facts-only: Artifacts-only — procedure]({{ '/how-to/facts-only-artifacts-only/' | relative_url }})
+- **Procedure:** [Answer using only the files you provide (no external sources) — procedure]({{ '/how-to/facts-only-artifacts-only/' | relative_url }})
 
 ### Option 2 — Use cited authoritative sources (citations required)
 Use when you need **public facts** backed by citation-grade sources with stable locators (DOI / standard-id+section / official doc title+section).

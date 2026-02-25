@@ -1,6 +1,8 @@
 title: AI Agents Playbook
 description: A public, versioned knowledge base for building reliable AI agents and securing agentic systems.
-author: Tamar Peretz
+author:
+  name: Tamar Peretz
+  url: https://www.linkedin.com/in/tamar-peretz-59245b198/
 
 url: https://www.andyagentlab.com
 baseurl: ""
@@ -17,6 +19,11 @@ plugins:
 
 exclude:
   - reference/code-rpc/
+
+logo: /assets/img/brand/andyagentlab-logo-hands-128h-white-clean.png
+
+twitter:
+  card: summary_large_image
 
 palette:
   bg: "#FDF0D5"
@@ -36,6 +43,7 @@ defaults:
       path: ""
     values:
       layout: default
+      seo_description_max_words: 200
 
   - scope:
       path: ""

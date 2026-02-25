@@ -13,7 +13,7 @@ Enforce artifact-grounded factual outputs:
 ## Canonical links
 
 - **System prompt template (copy/paste):** [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
-- **How-to (procedure):** {% include page-title-link.html url="/how-to/facts-only-artifacts-only/" fallback="Facts-only: Artifacts-only — procedure" %}
+- **How-to (procedure):** {% include page-title-link.html url="/how-to/facts-only-artifacts-only/" fallback="Answer using only the files you provide (no external sources) — procedure" %}
 - **Chooser (how to pick):** {% include page-title-link.html url="/how-to/choose-facts-only-evidence-boundary/" fallback="Choose a facts-only evidence boundary" %}
 - **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
 

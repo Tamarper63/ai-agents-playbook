@@ -18,9 +18,9 @@ catalog:
           - "/prompts/facts-only-authoritative-sources-required.system.txt"
           - "/prompts/evidence-gated-academic-mode.system.txt"
 
-      - title: "Facts-only: Artifacts-only — procedure"
+      - title: "Answer using only the files you provide (no external sources) — procedure"
         url: "/how-to/facts-only-artifacts-only/"
-        desc: "No browsing; operate only on user-provided artifacts."
+        desc: "Use only user-provided files/logs/screenshots; no web browsing."
         policy:
           title: "Facts-only: Artifacts-only"
           url: "/policies/facts-only-artifacts-only/"

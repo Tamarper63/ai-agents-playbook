@@ -1,51 +1,54 @@
 hero:
-  lede: "A public, versioned playbook for shipping tool-using LLM and agent systems."
-  tagline: "Reusable operating contracts (policies + templates + procedures) for orchestration, evidence boundaries, and verification gates."
+  tagline: "Policies, prompt templates, and procedures for tool-using LLM & agent systems."
+  lede: "Copy/paste operating contracts for evidence boundaries, verification gates, and secure orchestration."
   bullets:
-    - "Orchestration patterns: controller loops, state/lifecycle, and tool invocation."
-    - "Boundary enforcement: evidence rules, citations, and fail-closed outputs."
-    - "Security audits: trust-boundary checkpoints and control-plane failure patterns."
+    - "Adopt policies: evidence boundaries, citations, and fail-closed outputs."
+    - "Use prompt templates: copy/paste blocks mapped to those policies."
+    - "Run procedures: verification workflows and engineering quality gates."
 
 actions:
   primary:
-    label: "Start here"
+    label: "Start here (choose a goal)"
     url: "/how-to/start-here-by-role/"
   secondary:
-    - label: "Browse templates"
+    - label: "Browse policies"
+      url: "/policies/"
+    - label: "Browse prompt templates"
       url: "/prompts/"
     - label: "Updates (1–2×/week)"
       url: "/updates/"
 
+paths:
+  title: "Choose a goal"
+  subtitle: "Pick a path. The baseline applies to every path."
+  items:
+    - label: "Build & ship"
+      url: "/how-to/start-here-by-role/#build--ship"
+      desc: "Control flow, tool use, context selection, and runnable stacks."
+    - label: "Secure & audit"
+      url: "/how-to/start-here-by-role/#secure--audit"
+      desc: "Threat modeling, enforcement, provenance, and control-plane failures."
+    - label: "Research & publish"
+      url: "/how-to/start-here-by-role/#research--publish"
+      desc: "Evidence-gated writing, evaluation, and reporting discipline."
+
 quickstart:
   title: "Quickstart (5 minutes)"
-  subtitle: "Procedures (How-to): do these in order."
+  subtitle: "Baseline (do in order): evidence boundary → verification → quality gate."
   steps:
-    - title: "Set: Choose an evidence boundary"
+    - title: "Choose an evidence boundary"
       output: "Define allowed sources and refusal conditions (fail-closed)."
       url: "/how-to/choose-facts-only-evidence-boundary/"
-    - title:  "Run: Verification gate (Fact-Checking Kit)"
+    - title: "Run the Fact-Checking Kit"
       output: "Run a repeatable evidence-check loop before producing non-trivial outputs."
       url: "/how-to/fact-checking-kit/"
-    - title: "Enforce: Engineering Quality Gate — Procedure"
+    - title: "Enforce the Engineering Quality Gate"
       output: "Validate architecture/best-practices and regressions; fail-closed on missing requirements."
       url: "/how-to/engineering-quality-gate-procedure/"
 
-latest_articles:
-  title: "Articles (context)"
-  subtitle: "Explanations (not procedures): why the boundaries and gates above matter."
-  all_label: "Browse all articles"
-  all_url: "/articles/"
-  items:
-    - label: "The Attack Surface Starts Before Agents — The LLM Boundary"
-      url: "/articles/agent-security/llm-boundary-first-touch/"
-      desc: "Where the first LLM-to-system boundary appears, and why exposure starts before “agents”."
-    - label: "The Attack Surface Isn’t the LLM — It’s the Controller Loop"
-      url: "/articles/agent-security/controller-loop-attack-surface/"
-      desc: "Why multi-step orchestration increases risk, and what to audit in plan→tools→retry loops."
-
 featured:
-  title: "Core policies (operating contracts)"
-  subtitle: "Policies (rules): adopt these contracts first. Procedures come after."
+  title: "Baseline policies (rules)"
+  subtitle: "Rules referenced across procedures and prompt templates."
   all_label: "Browse policies"
   all_url: "/policies/"
   items:
@@ -61,6 +64,19 @@ featured:
     - label: "Engineering Quality Gate Policy"
       url: "/policies/engineering-quality-gate-policy/"
       desc: "Architecture + best-practices + regression-minded review gate."
+
+latest_articles:
+  title: "Articles (explanation)"
+  subtitle: "Context and threat models (not procedures)."
+  all_label: "Browse all articles"
+  all_url: "/articles/"
+  items:
+    - label: "The Attack Surface Starts Before Agents — The LLM Boundary"
+      url: "/articles/agent-security/llm-boundary-first-touch/"
+      desc: "Where the first LLM-to-system boundary appears, and why exposure starts before “agents”."
+    - label: "The Attack Surface Isn’t the LLM — It’s the Controller Loop"
+      url: "/articles/agent-security/controller-loop-attack-surface/"
+      desc: "Why multi-step orchestration increases risk, and what to audit in plan→tools→retry loops."
 
 scope:
   title: "Scope"

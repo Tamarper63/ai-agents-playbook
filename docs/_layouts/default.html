@@ -76,7 +76,7 @@
   </ul>
 
   <div class="build-info" aria-label="Build info" dir="ltr">
-    <span><bdi dir="ltr">&copy; {{ site.time | date: '%Y' }} {{ site.author | default: site.title }}. All rights reserved.</bdi></span>
+    <span><bdi dir="ltr">&copy; {{ site.time | date: '%Y' }} {{ site.author.name | default: site.author | default: site.title }}. All rights reserved.</bdi></span>
   </div>
 </footer>
   </body>
