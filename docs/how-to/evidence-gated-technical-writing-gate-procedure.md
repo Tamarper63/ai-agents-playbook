@@ -4,8 +4,6 @@ permalink: /how-to/evidence-gated-technical-writing-gate-procedure/
 ---
 
 ## Purpose
-Use this page to **prevent publishing AI-assisted technical writing that contains unsupported or overstated claims** by forcing a verifiable mapping: **claim → evidence → final text**.
-
 Use this procedure in AI workflows when:
 - A draft was **written or rewritten by an LLM** and may contain **added/strengthened claims**.
 - The draft includes **world-claims** (standards/specs, versions, “latest”, metrics, comparisons, security/performance assertions).
