@@ -1,45 +1,93 @@
 ---
-title: "Evidence-Gated Academic Mode (EGAM) — procedure"
-description: Procedure for evidence-gated academic writing using authoritative sources, verified claims, and confidence scoring.
+title: Run the evidence-gated academic mode (EGAM) — procedure
 permalink: /how-to/evidence-gated-academic-mode/
 ---
 
-This guide explains how to run EGAM as a profile layered on authoritative sources.
+## Purpose
+Use this page to run **Evidence-Gated Academic Mode (EGAM)**: an evidence-gated profile layered on **Facts-only: Authoritative sources required**, enforcing an **academic register**, a **structured output contract**, and **confidence scoring**.
 
-**Policy (normative):** [Evidence-Gated Academic Mode (EGAM)]({{ '/policies/evidence-gated-academic-mode/' | relative_url }})  
-**Prompt block (copy/paste):** [evidence-gated-academic-mode.system.txt]({{ '/prompts/evidence-gated-academic-mode.system.txt' | relative_url }})  
-**Base policy:** [Facts-only: Authoritative sources required]({{ '/policies/facts-only-authoritative-sources-required/' | relative_url }})
+**Enforcement (fail-closed):**
+- EGAM **inherits** all rules from: [Facts-only: Authoritative sources required]({{ '/policies/facts-only-authoritative-sources-required/' | relative_url }}).
+- Ambiguous sentences **must** be treated as **WORLD-CLAIMS** (EGAM policy).
+- Output **must** follow this section order: `VERIFIED` → `NOT VERIFIED` → `CONFIDENCE` → `NEXT STEPS` (EGAM policy).
+- If a core WORLD-CLAIM cannot be verified with authoritative sources under the active evidence boundary, output exactly: `HANDS UP – no source, cannot verify.` and stop.
+- If the user asks about private artifacts (logs/files/ZIP) and required artifacts are missing, output exactly: `HANDS UP – no artifact, cannot verify.` and stop.
+- For questions specifically about OpenAI products/docs/policies, sources **must** be restricted to official OpenAI domains unless the user explicitly allows broader sources (EGAM policy).
 
-## Preconditions
+## Canonical links
+{% include catalog/howto-canonical-links.html %}
 
-- You can retrieve and cite formal sources with stable locators (DOI/ISBN/RFC/ISO/NIST/W3C + section/page when available).
-- If preconditions cannot be met, expected behavior is fail-closed per the base policy sentinel.
+## Choose a mode
+- **Option 1 (World-claims EGAM):** verify public facts using authoritative sources with stable locators.
+- **Option 2 (Local artifacts EGAM):** analyze user-provided artifacts; do not turn local-state into world-claims without authoritative sources.
+- **Option 3 (OpenAI-scope EGAM):** same as Option 1, but sources are restricted to official OpenAI domains.
 
-## Procedure
+## Setup
+1) Choose the evidence boundary: [Choose allowed sources for factual answers]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }}).
+2) Install the base evidence-boundary system prompt template:
+   - [facts-only-authoritative-sources-required.system.txt]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
+3) Install the EGAM profile system prompt template (layered on top of the base):
+   - [evidence-gated-academic-mode.system.txt]({{ '/prompts/evidence-gated-academic-mode.system.txt' | relative_url }})
+4) In your request, require the EGAM output contract (exact headings, in order):
+   - `VERIFIED` (cited WORLD-CLAIMS only)
+   - `NOT VERIFIED` (UNKNOWN + USER CLAIMS; ASSUMPTIONS only if explicitly requested)
+   - `CONFIDENCE` (overall + per key VERIFIED claim)
+   - `NEXT STEPS` (exact docs/standards/sections or missing artifacts)
 
-1) Paste the EGAM prompt block into the highest-priority instruction layer available in the runtime.
-2) Provide the task and scope (time window, product/version, exclusions).
-3) Enforce evidence gates:
-   - VERIFIED contains only cited WORLD-CLAIMS.
-   - Everything else moves to NOT VERIFIED.
-4) Enforce academic register:
-   - neutral, formal, modality matches evidence, no rhetoric/marketing.
-5) Require confidence:
-   - overall + per key VERIFIED claim, scored only for cited claims.
-6) If the core remains NOT VERIFIED, do not approximate; use NEXT STEPS to narrow scope or provide missing sources/artifacts.
+## Verify (smoke test)
+1) Ask a WORLD-CLAIM question, provide **no** citations, and explicitly forbid browsing.
+- Expected: output exactly `HANDS UP – no source, cannot verify.` and stop.
+2) Ask a local-artifact question (logs/files/ZIP) without attaching the artifacts.
+- Expected: output exactly `HANDS UP – no artifact, cannot verify.` and stop.
+3) Ask a scoped question and provide at least one authoritative source with a stable locator.
+- Expected: output includes `VERIFIED`/`NOT VERIFIED`/`CONFIDENCE`/`NEXT STEPS`, and every VERIFIED item is cited.
 
-## Input template (copy/paste)
+## Options
 
-- Question:
-- Scope (system boundary + version/date):
-- Evidence constraints (formal sources only):
-- Disallowed sources:
-- Output constraints (if any):
+### Option 1 — World-claims EGAM
+- **Policy (rules):** [Evidence-Gated Academic Mode (EGAM)]({{ '/policies/evidence-gated-academic-mode/' | relative_url }})
+- **Base policy (rules):** [Facts-only: Authoritative sources required]({{ '/policies/facts-only-authoritative-sources-required/' | relative_url }})
+- **System prompt templates (copy/paste):**
+  - [facts-only-authoritative-sources-required.system.txt]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
+  - [evidence-gated-academic-mode.system.txt]({{ '/prompts/evidence-gated-academic-mode.system.txt' | relative_url }})
+- **Procedure:** [Facts-only: Authoritative sources required — procedure]({{ '/how-to/facts-only-authoritative-sources-required/' | relative_url }})
 
-## Acceptance checklist
+**Example**
+- **Question:** “Verify whether claim X is supported by authoritative sources.”
+- **You must provide:** claim X + scope (product/version/date/time window) + authoritative sources with stable locators (DOI / standard-id+section / official doc version/date+section). Otherwise fail closed with `HANDS UP – no source, cannot verify.`
 
-- VERIFIED: every bullet ends with a stable locator citation.
-- NOT VERIFIED: contains unknowns + user claims (+ assumptions only if requested).
-- Academic register: neutral language, correct modality, no uncited absolutes.
-- Confidence: overall + per key verified claim.
-- NEXT STEPS: specific docs/standards/sections or missing artifacts required.
+### Option 2 — Local artifacts EGAM
+- **Policy (rules):** [Evidence-Gated Academic Mode (EGAM)]({{ '/policies/evidence-gated-academic-mode/' | relative_url }})
+- **Base policy (rules):** [Facts-only: Authoritative sources required]({{ '/policies/facts-only-authoritative-sources-required/' | relative_url }})
+- **System prompt templates (copy/paste):**
+  - [facts-only-authoritative-sources-required.system.txt]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
+  - [evidence-gated-academic-mode.system.txt]({{ '/prompts/evidence-gated-academic-mode.system.txt' | relative_url }})
+
+**Example**
+- **Question:** “Summarize what the attached logs prove vs what is not proven.”
+- **You must provide:** logs/files/screenshots/excerpts in the request. If missing, fail closed with `HANDS UP – no artifact, cannot verify.`
+
+### Option 3 — OpenAI-scope EGAM (official OpenAI sources only)
+- **Policy (rules):** [Evidence-Gated Academic Mode (EGAM)]({{ '/policies/evidence-gated-academic-mode/' | relative_url }})
+- **Base policy (rules):** [Facts-only: Authoritative sources required]({{ '/policies/facts-only-authoritative-sources-required/' | relative_url }})
+- **System prompt templates (copy/paste):**
+  - [facts-only-authoritative-sources-required.system.txt]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
+  - [evidence-gated-academic-mode.system.txt]({{ '/prompts/evidence-gated-academic-mode.system.txt' | relative_url }})
+
+**Example**
+- **Question:** “Verify claim X about an OpenAI product/document.”
+- **You must provide:** claim X + scope + citations restricted to official OpenAI domains (doc title + section/version/date). Otherwise fail closed with `HANDS UP – no source, cannot verify.`
+
+## Common mistakes
+- Putting uncited statements into `VERIFIED`.
+- Providing sources without stable locators (DOI / standard-id+section / official doc version/date+section).
+- Using marketing tone or uncited absolutes (EGAM requires academic register + evidence-matched modality).
+- Treating local-state as a world-claim (local-state requires artifacts).
+- Ignoring the OpenAI-scope restriction when the question is about OpenAI docs/products/policies.
+
+## Related indexes
+- [Policies]({{ '/policies/' | relative_url }})
+- [How-to]({{ '/how-to/' | relative_url }})
+- [Prompt templates]({{ '/prompts/' | relative_url }})
+- [Start]({{ '/how-to/start-here-by-role/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})

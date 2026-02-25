@@ -3,7 +3,8 @@ title: Start here (choose a goal)
 permalink: /how-to/start-here-by-role/
 ---
 
-Start here: apply the baseline once, then choose a goal.
+Start here: use this page to pick the right policies, prompt templates, and procedures for your goal.
+Complete the baseline once, then jump to a goal.
 
 ## Baseline (do this first)
 
@@ -11,8 +12,8 @@ Start here: apply the baseline once, then choose a goal.
   <li>
     <a class="c-card" href="{{ '/policies/objective-technical-operating-profile/' | relative_url }}">
       <div class="c-card__content">
-        <div class="c-card__title">1) Adopt the operating profile</div>
-        <div class="c-card__desc">Objective mode, no simulation, and fail-closed defaults.</div>
+        <div class="c-card__title">1) Adopt the operating profile (site-wide rules)</div>
+        <div class="c-card__desc">Sets global constraints: objective-only, no simulation, and fail-closed defaults.</div>
       </div>
     </a>
   </li>
@@ -20,8 +21,8 @@ Start here: apply the baseline once, then choose a goal.
   <li>
     <a class="c-card" href="{{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }}">
       <div class="c-card__content">
-        <div class="c-card__title">2) Choose an evidence boundary</div>
-        <div class="c-card__desc">Define allowed sources and when to refuse (fail-closed).</div>
+        <div class="c-card__title">2) Choose allowed sources (evidence boundary)</div>
+        <div class="c-card__desc">Defines which sources are allowed and when to refuse (fail-closed).</div>
       </div>
     </a>
   </li>
@@ -30,7 +31,7 @@ Start here: apply the baseline once, then choose a goal.
     <a class="c-card" href="{{ '/prompts/' | relative_url }}">
       <div class="c-card__content">
         <div class="c-card__title">3) Apply the matching prompt templates</div>
-        <div class="c-card__desc">Copy/paste system + user templates mapped to your boundary.</div>
+        <div class="c-card__desc">Copy/paste system + user prompts that implement the profile + boundary.</div>
       </div>
     </a>
   </li>
@@ -38,66 +39,42 @@ Start here: apply the baseline once, then choose a goal.
   <li>
     <a class="c-card" href="{{ '/how-to/fact-checking-kit/' | relative_url }}">
       <div class="c-card__content">
-        <div class="c-card__title">4) Verify outputs before using them</div>
+        <div class="c-card__title">4) Verify outputs before you rely on them</div>
         <div class="c-card__desc">Run the Fact-Checking Kit for non-trivial claims.</div>
       </div>
     </a>
   </li>
 </ol>
 
-**High-stakes outputs:** [Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
+### Optional controls
 
-**Shipping changes:** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
+Use these only when the condition applies:
 
-<details class="c-disclosure">
-  <summary>
-    <span class="c-disclosure__label--closed">Definitions (used above)</span>
-    <span class="c-disclosure__label--open">Hide definitions</span>
-  </summary>
+- **High-stakes outputs:** [Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
+- **Shipping changes:** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
 
-  <div class="c-disclosure__body">
-    <ul class="c-linklist">
-      <li><strong>Operating profile:</strong> global rules (objective, no simulation, fail-closed defaults).</li>
-      <li><strong>Evidence boundary:</strong> allowed sources (artifacts-only vs authoritative sources + citations).</li>
-      <li><strong>Prompt templates:</strong> copy/paste prompts mapped to policies + procedures.</li>
-      <li><strong>Verification workflow:</strong> a repeatable procedure for checking claims before output.</li>
-    </ul>
-  </div>
-</details>
+Terminology used on this page: [Jump to terminology](#terminology)
 
 ## Choose a goal
 
-<div class="c-grid c-grid--3">
-  <a class="c-card" href="#build--ship">
-    <div class="c-card__content">
-      <div class="c-card__title">Build & ship</div>
-      <div class="c-card__desc">Architecture, tool use, and context selection.</div>
-    </div>
-  </a>
-
-  <a class="c-card" href="#secure--audit">
-    <div class="c-card__content">
-      <div class="c-card__title">Secure & audit</div>
-      <div class="c-card__desc">Threat models, enforcement, and audit checkpoints.</div>
-    </div>
-  </a>
-
-  <a class="c-card" href="#research--publish">
-    <div class="c-card__content">
-      <div class="c-card__title">Research & publish</div>
-      <div class="c-card__desc">Evidence-gated writing and evaluation discipline.</div>
-    </div>
-  </a>
-</div>
+<nav class="page-toc page-toc--inline" aria-label="Jump to goal">
+  <ul class="page-toc__list">
+    <li><a href="#build--ship">Build & ship</a></li>
+    <li><a href="#secure--audit">Secure & audit</a></li>
+    <li><a href="#research--publish">Research & publish</a></li>
+  </ul>
+</nav>
 
 ---
 
 <a id="build--ship"></a>
 ## Build & ship
 
+Focus: architecture, tool use, and context selection.
+
 ### Do next
 - [Manage LLM memory boundaries]({{ '/how-to/llm-memory-boundaries/' | relative_url }})
-- [Decide execution model: LLM-led vs orchestrator-led]({{ '/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/' | relative_url }})
+- [Choose tool-execution model: LLM-led vs orchestrator-led]({{ '/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/' | relative_url }})
 
 <details class="c-disclosure-compact">
   <summary class="c-btn c-btn--secondary c-btn--compact">
@@ -118,9 +95,11 @@ Start here: apply the baseline once, then choose a goal.
 <a id="secure--audit"></a>
 ## Secure & audit
 
+Focus: threat models, enforcement, and audit checkpoints.
+
 ### Do next
 - [Threat model the controller loop]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})
-- [Run: 8 Trust-Boundary Audit Checkpoints]({{ '/articles/agent-security/trust-boundary-checkpoints/' | relative_url }})
+- [Run the 8 Trust-Boundary Audit Checkpoints]({{ '/articles/agent-security/trust-boundary-checkpoints/' | relative_url }})
 
 <details class="c-disclosure-compact">
   <summary class="c-btn c-btn--secondary c-btn--compact">
@@ -131,7 +110,6 @@ Start here: apply the baseline once, then choose a goal.
     <ul class="c-linklist">
       <li><a href="{{ '/policies/web-verification-and-citations/' | relative_url }}">Web Verification & Citations Policy</a></li>
       <li><a href="{{ '/how-to/request-web-browsing/' | relative_url }}">Request web browsing + citations</a></li>
-      <li><a href="{{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }}">The attack surface is the orchestration loop, not the model</a></li>
       <li><a href="{{ '/articles/agent-security/request-assembly-threat-model/' | relative_url }}">Request assembly threat model: reading the diagram</a></li>
       <li><a href="{{ '/articles/agent-security/prompt-assembly-policy-enforcement/' | relative_url }}">Prompt Assembly Policy Enforcement: Typed Provenance</a></li>
       <li><a href="{{ '/articles/agent-security/llm-boundary-first-touch/' | relative_url }}">The Attack Surface Starts Before Agents — The LLM Boundary</a></li>
@@ -144,9 +122,11 @@ Start here: apply the baseline once, then choose a goal.
 <a id="research--publish"></a>
 ## Research & publish
 
+Focus: evidence-gated writing and evaluation discipline.
+
 ### Do next
-- [Evidence-Gated Technical Writing Gate — procedure]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
-- [Semantic Accuracy Gate — Procedure]({{ '/how-to/semantic-accuracy-gate-procedure/' | relative_url }})
+- [Run the Evidence-Gated Technical Writing Gate]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
+- [Run the Semantic Accuracy Gate]({{ '/how-to/semantic-accuracy-gate-procedure/' | relative_url }})
 
 <details class="c-disclosure-compact">
   <summary class="c-btn c-btn--secondary c-btn--compact">
@@ -170,3 +150,23 @@ Start here: apply the baseline once, then choose a goal.
 - [Content map]({{ '/reference/content-map/' | relative_url }})
 - [Reference]({{ '/reference/' | relative_url }})
 - [Newsletter]({{ '/newsletter/' | relative_url }})
+
+<a id="terminology"></a>
+## Terminology
+
+<details class="c-disclosure">
+  <summary>
+    <span class="c-disclosure__label--closed">Show terminology</span>
+    <span class="c-disclosure__label--open">Hide terminology</span>
+  </summary>
+
+  <div class="c-disclosure__body">
+    <ul class="c-linklist">
+      <li><strong>Operating profile:</strong> the site-wide rules for outputs (objective-only, no simulation, fail-closed).</li>
+      <li><strong>Evidence boundary:</strong> the allowed source set (artifacts-only vs public sources with citations).</li>
+      <li><strong>Fail-closed:</strong> if required evidence is missing/forbidden, refuse instead of guessing.</li>
+      <li><strong>Prompt templates:</strong> copy/paste prompts that enforce the profile + boundary.</li>
+      <li><strong>Verification workflow:</strong> a repeatable checklist to validate non-trivial claims.</li>
+    </ul>
+  </div>
+</details>

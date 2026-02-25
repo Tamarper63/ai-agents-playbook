@@ -3,15 +3,15 @@ catalog:
     title: "Evidence boundaries"
     grid: "c-grid--2"
     items:
-      - title: "Choose a facts-only evidence boundary"
+      - title: "Choose allowed sources for factual answers"
         url: "/how-to/choose-facts-only-evidence-boundary/"
         desc: "Use this chooser when you need a strict “facts-only” output contract but must decide what evidence is allowed."
         policies:
-          - title: "Facts-only: Artifacts-only"
+          - title: "Facts-only: Artifacts-only (no external sources)"
             url: "/policies/facts-only-artifacts-only/"
-          - title: "Facts-only: Authoritative sources required"
+          - title: "Facts-only: Authoritative sources required (citations required)"
             url: "/policies/facts-only-authoritative-sources-required/"
-          - title: "Evidence-Gated Academic Mode (EGAM)"
+          - title: "Evidence-Gated Academic Mode (EGAM) — profile (authoritative sources + academic register + confidence)"
             url: "/policies/evidence-gated-academic-mode/"
         prompts:
           - "/prompts/facts-only-artifacts-only.system.txt"
@@ -22,17 +22,17 @@ catalog:
         url: "/how-to/facts-only-artifacts-only/"
         desc: "Use only user-provided files/logs/screenshots; no web browsing."
         policy:
-          title: "Facts-only: Artifacts-only"
+          title: "Facts-only: Artifacts-only (no external sources)"
           url: "/policies/facts-only-artifacts-only/"
         prompts:
           - "/prompts/facts-only-artifacts-only.system.txt"
           - "/prompts/components/deep-scan.user.txt"
 
-      - title: "Facts-only: Authoritative sources required — procedure"
+      - title: "Facts-only: Authoritative sources required (citations required) — procedure"
         url: "/how-to/facts-only-authoritative-sources-required/"
         desc: "Browsing allowed; claims require citation-grade sources."
         policy:
-          title: "Facts-only: Authoritative sources required"
+          title: "Facts-only: Authoritative sources required (citations required)"
           url: "/policies/facts-only-authoritative-sources-required/"
         prompts:
           - "/prompts/facts-only-authoritative-sources-required.system.txt"
@@ -41,17 +41,17 @@ catalog:
     title: "Verification workflows"
     grid: "c-grid--2"
     items:
-      - title: "Run Fact-Checking Kit"
+      - title: "Run the fact-checking kit — procedure"
         url: "/how-to/fact-checking-kit/"
         desc: "A concrete procedure to reduce factual errors and improve auditability."
         policies:
-          - title: "Facts-only: Artifacts-only"
+          - title: "Facts-only: Artifacts-only (no external sources)"
             url: "/policies/facts-only-artifacts-only/"
-          - title: "Facts-only: Authoritative sources required"
+          - title: "Facts-only: Authoritative sources required (citations required)"
             url: "/policies/facts-only-authoritative-sources-required/"
           - title: "Web Verification & Citations Policy"
             url: "/policies/web-verification-and-citations/"
-          - title: "Confidence score (0–100)"
+          - title: "Evidence-based confidence score (0–100) — analytic reporting policy"
             url: "/policies/confidence-score/"
         prompts:
           - "/prompts/facts-only-artifacts-only.system.txt"
@@ -61,7 +61,7 @@ catalog:
           - "/prompts/chain-of-verification.system.txt"
           - "/prompts/confidence-score.system.txt"
 
-      - title: "Chain-of-Verification (CoVe) — procedure"
+      - title: "Run the Chain-of-Verification (CoVe) — procedure"
         url: "/how-to/chain-of-verification-procedure/"
         desc: "Use this procedure to run a structured verification loop before emitting a final answer."
         policy:
@@ -77,7 +77,7 @@ catalog:
           - "/prompts/confidence-score.system.txt"
           - "/prompts/instruction-hierarchy-and-evidence-boundary.system.txt"
 
-      - title: "Evidence-Gated Technical Writing Gate — procedure"
+      - title: "Evidence-Gated Technical Writing Gate — Verification Procedure (Claims)"
         url: "/how-to/evidence-gated-technical-writing-gate-procedure/"
         desc: "Verification procedure (claims)."
         policy:
@@ -87,22 +87,22 @@ catalog:
           - "/prompts/evidence-gated-technical-writing-gate.system.txt"
           - "/prompts/evidence-gated-technical-writing-gate.user.txt"
 
-      - title: "Engineering Quality Gate — procedure"
+      - title: "Run the engineering quality gate — procedure"
         url: "/how-to/engineering-quality-gate-procedure/"
         desc: "Architecture consistency + regressions + best practices."
         policy:
-          title: "Engineering Quality Gate Policy"
+          title: "Engineering Quality Gate Policy (Architecture & Best Practices)"
           url: "/policies/engineering-quality-gate-policy/"
         prompts:
           - "/prompts/engineering-quality-gate.system.txt"
           - "/prompts/engineering-quality-gate.user.txt"
           - "/prompts/components/deep-scan.user.txt"
 
-      - title: "Semantic Accuracy Gate — procedure"
+      - title: "Semantic Accuracy Gate — Procedure"
         url: "/how-to/semantic-accuracy-gate-procedure/"
         desc: "Terminology consistency + prevent overclaims."
         policy:
-          title: "Semantic Accuracy Gate — policy"
+          title: "Semantic Accuracy Gate (Claims + Terminology)"
           url: "/policies/semantic-accuracy-gate/"
         prompts:
           - "/prompts/semantic-accuracy-gate.system.txt"
@@ -132,16 +132,16 @@ catalog:
         url: "/how-to/evidence-gated-academic-mode/"
         desc: "This guide explains how to run EGAM as a profile layered on authoritative sources."
         policy:
-          title: "Evidence-Gated Academic Mode (EGAM)"
+          title: "Evidence-Gated Academic Mode (EGAM) — profile (authoritative sources + academic register + confidence)"
           url: "/policies/evidence-gated-academic-mode/"
         prompts:
           - "/prompts/evidence-gated-academic-mode.system.txt"
 
-      - title: "Add an evidence-based confidence score (0–100) to every response"
+      - title: "Add an evidence-based confidence score (0–100) — procedure"
         url: "/how-to/add-confidence-score-to-responses/"
         desc: "Ensure every response includes an evidence-based analytic confidence score."
         policy:
-          title: "Confidence score (0–100)"
+          title: "Evidence-based confidence score (0–100) — analytic reporting policy"
           url: "/policies/confidence-score/"
         prompts:
           - "/prompts/confidence-score.system.txt"

@@ -38,13 +38,13 @@ quickstart:
   title: "Quickstart (5 minutes)"
   subtitle: "Baseline (do in order): evidence boundary → verification → quality gate."
   steps:
-    - title: "Choose an evidence boundary"
-      output: "Select allowed sources and refusal conditions (fail-closed)."
-      url: "/how-to/choose-facts-only-evidence-boundary/"
-    - title: "Run the Fact-Checking Kit"
+    - title: "Choose allowed sources for factual answers"
+    - output: "Select allowed sources and refusal conditions (fail-closed)."
+    - url: "/how-to/choose-facts-only-evidence-boundary/"
+    - title: "Run the fact-checking kit — procedure"
       output: "Verify non-trivial claims against allowed sources before output."
       url: "/how-to/fact-checking-kit/"
-    - title: "Enforce the Engineering Quality Gate"
+    - title: "Run the engineering quality gate — procedure"
       output: "Validate architecture/best practices and regressions before shipping changes."
       url: "/how-to/engineering-quality-gate-procedure/"
 
