@@ -1,53 +1,61 @@
 ---
-title: Control-Plane Failure Patterns in Agentic Tool-Using Systems
+title: Control-Plane Failure Patterns in Tool-Using LLM Systems
 permalink: /articles/agent-security/control-plane-failures/
-summary: Two recurring control-plane failure patterns—privilege persistence across interaction boundaries and monitoring-only integrity signals (detect without enforcement)—that let untrusted state steer tool execution across steps.
+summary: Two vendor-agnostic control-plane failure patterns—privilege persistence across interaction boundaries and non-enforcing integrity signals—that allow untrusted state to steer tool execution across steps.
 author: Tamar Peretz
 published: 2026-02-22
 ---
 
+> **What this page is:** an audit-oriented model and test checklist for multi-step, tool-using LLM systems.  
+> **What this page is not:** a claim about any specific vendor trace or internal architecture.
+
 ## Executive summary
 
-This article describes two **control-plane failure patterns** observed as *audit categories* in multi-step, tool-using LLM systems:
+This article defines two **control-plane failure patterns** that recur in audits of multi-step, tool-using LLM systems:
 
-<div class="c-table" role="region" aria-label="Executive summary: control-plane failure patterns" tabindex="0"><table><thead><tr><th>Pattern</th><th>What fails</th><th>Typical impact</th><th>What “good” looks like</th></tr></thead><tbody>
-<tr><td>1) Privilege persistence across interaction boundaries</td><td>Authorization context is treated as carryover state instead of being re-validated per call</td><td>Cross-thread/tab/conversation privilege bleed; writes in the wrong boundary</td><td>Per-call authorization at a server-side enforcement point; credentials scoped + bound + short-lived</td></tr>
-<tr><td>2) Monitoring-only integrity signals (detect without enforcement)</td><td>Integrity risk is detected but does not change execution state</td><td>Tainted artifacts keep influencing routing/tools across steps</td><td>High-risk signals trigger enforcement actions (hold/deny/quarantine) + circuit breakers</td></tr>
+<div class="c-table" role="region" aria-label="Executive summary: control-plane failure patterns" tabindex="0"><table><thead><tr><th>Pattern</th><th>Failure mode</th><th>Typical impact</th><th>Minimum bar (“good”)</th></tr></thead><tbody>
+<tr><td>1) Privilege persistence across interaction boundaries</td><td>Authorization context is treated as carryover state instead of being re-validated per tool call</td><td>Cross-thread/tab/conversation privilege bleed; writes in the wrong boundary</td><td>Per-call authorization + server-side enforcement; credentials bound + scoped + short-lived</td></tr>
+<tr><td>2) Non-enforcing integrity signals</td><td>Integrity risk is detected but execution state does not change (“detect without enforcement”)</td><td>Tainted artifacts continue to influence routing/tools across steps</td><td>High-risk signals trigger enforcement actions (hold/deny/quarantine) + circuit breakers</td></tr>
 </tbody></table></div>
 
-**Evidence boundary:** these are **audit patterns**, not claims about a specific vendor trace.
+**Evidence boundary:** the patterns are vendor-agnostic; the references are standards/guidance used to define terms and testable controls.
 
 ---
 
-## Scope and terms
+## Scope and terminology
 
-This article focuses on **control-plane failures** in multi-step, tool-using LLM systems.
+This article focuses on **control-plane failures** in systems where an LLM participates in a **multi-step controller loop** and can invoke tools/connectors.
 
 ### System model (terminology used here)
 
-- **Control plane (ZTA-aligned; used here by extension):** the policy + orchestration layer: session + identity binding, context/memory handling, LLM request construction + routing/selection, policy decision/enforcement for tool use, and monitoring that can trigger enforcement actions (not only alert).  
-  (NIST SP 800-207 uses a “control plane” to describe how ZTA logical components communicate, while application data is communicated on a “data plane”; see Section 3.4.)  
-- **Data plane (ZTA-aligned; used here by extension):** the external side effects (API calls, state changes) performed by tools/connectors.
+- **Control plane:** the policy and orchestration layer that decides *what may happen* and enforces it: identity/session binding, context construction, routing/selection, tool authorization, integrity checks, and enforcement actions.
+- **Data plane:** the side effects produced by tools/connectors (API calls, writes, state changes).
 
-### Orchestration terminology (agentic)
+This aligns with the control-plane/data-plane framing used in Zero Trust architecture discussions. :contentReference[oaicite:0]{index=0}
 
-- **Orchestration / workflows / control-flow mechanisms**: used as baseline terminology for agentic control flow (see OWASP Securing Agentic Applications Guide 1.0).
+### PDP vs PEP (decision vs enforcement)
 
-### Policy decision vs enforcement (ZTA-aligned)
+- **Policy decision point (PDP):** the component(s) that decide allow/deny for a proposed step/action.
+- **Policy enforcement point (PEP):** the component that enforces allow/deny *before* any side effect (tool execution).
 
-NIST SP 800-207 describes an abstract access model where access is granted through a **policy decision point (PDP)** and a corresponding **policy enforcement point (PEP)**. In NIST’s model, the PDP decomposes into the **policy engine (PE)** and **policy administrator (PA)**, while the PEP enforces the decision.  
-(See References.)
+(See NIST SP 800-207; also reflected in ZTA diagrams and component definitions.) :contentReference[oaicite:1]{index=1}
 
-In this article’s vocabulary:
-- **PDP (PE+PA):** where an allow/deny decision is made for a proposed step/action.
-- **PEP:** where the allow/deny decision is enforced *before* any side effect.
+### Principle anchors (security engineering)
 
-### Design principle anchor (security engineering)
+- **Complete mediation:** every access must be checked for authority.
+- **Fail-safe defaults:** default deny unless explicitly permitted.
 
-- **Complete mediation:** “Every access to every object must be checked for authority.”  
-- **Fail-safe defaults:** access should default to denial unless explicitly permitted.  
+(These principles are attributed in the Saltzer & Schroeder design-principles literature.) :contentReference[oaicite:2]{index=2}
 
-(See References.)
+### Interaction boundary (terminology used here)
+
+An **interaction boundary** is a user-visible separation such as thread/tab/conversation/workspace.  
+A UI boundary is **not** a security boundary unless the backend and tool gateway treat it as a boundary for authorization and state.
+
+### Integrity signal (terminology used here)
+
+An **integrity signal** is any detection output that indicates a risk of tainted inputs/state (e.g., poisoned retrieval, suspicious tool output, policy-violating arguments).  
+A signal is only useful for preventing harm if it can change execution state (hold/deny/quarantine).
 
 ---
 
@@ -56,74 +64,83 @@ In this article’s vocabulary:
 <figure>
   <img
     src="{{ '/assets/img/posts/control-plane-failures/control-plane-failures.jpeg' | relative_url }}"
-    alt="Schematic (illustrative): control-plane failure propagation via session binding, memory/context, routing, tool enforcement, and non-enforcing integrity signals"
+    alt="Schematic (illustrative): how failures propagate across session binding, context construction, routing, tool enforcement, and non-enforcing integrity signals"
   />
-  <figcaption><em>Figure 1 — Schematic (illustrative, not raw logs): propagation across session binding, memory/context, routing, tool enforcement, and integrity signals.</em></figcaption>
+  <figcaption><em>Figure 1 — Illustrative schematic (not raw logs): propagation across session binding, context construction, routing, tool enforcement, and integrity signals.</em></figcaption>
 </figure>
 
 ---
 
-## Pattern 1 — Privilege persistence across interaction boundaries (broken boundary semantics)
+## Pattern 1 — Privilege persistence across interaction boundaries
 
-### What it is
-Privileged authorization context (identity binding, tool scopes, “write-capable” mode, or equivalent) **persists across an interaction boundary** (e.g., thread/tab/conversation switch) because the system does not enforce a hard server-side boundary at the policy/enforcement layer.
+### Definition (failure mode)
 
-**Key distinction:** a UI boundary (“Thread A vs Thread B”) is not a security boundary unless the backend and tool gateway treat it as one.
+Privileged authorization context (identity binding, tool scopes, “write-capable” mode, or equivalent) **persists across an interaction boundary** because the system does not enforce a hard server-side boundary at the PDP/PEP layer.
 
-### Why it matters (bounded, testable)
-If authorization becomes implicit carryover state, the system stops enforcing **complete mediation** at the moment it matters most: *the next tool call*. That converts “I am allowed” from a per-call server decision into cached context that can drift across steps and boundaries.
+### Why it matters (testable impact)
+
+If authorization becomes implicit carryover state, the system stops enforcing **complete mediation** at the moment it matters most: *the next tool call*.  
+That converts “allowed to write” from a per-call decision into cached context that can drift across steps and boundaries.
 
 ### Common root causes (audit targets)
-- Reusing the same tool/connector credential across multiple threads without binding it to the relevant subject + interaction boundary (e.g., `principal_id` + `conversation_id/thread_id`).
-- Caching an allow decision (“write-capable”) without invalidation on boundary changes (thread switch), privilege drops, or TTL expiry.
-- Treating client/UI state as authoritative for tool access instead of enforcing authorization at a server-side gateway.
 
-### Controls (server-side enforcement)
-- **Hard boundary on interaction switch:** privileged modes reset on boundary change; write-capable operations require re-authorization within the target boundary.
-- **Bound, scoped, short-lived credentials:** credentials minted per principal (and, when applicable, per boundary), with short TTL and minimal scopes (read vs write separated).
-- **Per-call authorization (PDP → PEP):** every tool invocation is authorized server-side and enforced before side effects.
-- **Least privilege by construction:** smallest feasible tool surface and scope for the workflow.
+- A single tool/connector credential is reused across multiple boundaries without binding it to the subject and boundary (e.g., `principal_id` + `conversation_id/thread_id`).
+- An allow decision (“write-capable”) is cached without invalidation on boundary changes, privilege drops, or TTL expiry.
+- Client/UI state is treated as authoritative for tool access rather than enforcing authorization at a server-side gateway/PEP.
 
-### What to test (authorized security regression tests)
-1) **Cross-boundary privilege bleed test:** obtain write authorization in Boundary A, switch to Boundary B, attempt a write.  
+### Controls (minimum bar)
+
+- **Hard boundary on interaction switch:** privileged modes reset on boundary change; write-capable operations require re-authorization in the target boundary.
+- **Bound, scoped, short-lived credentials:** mint per principal (and per boundary when applicable), minimal scope (read vs write separated), short TTL.
+- **Per-call authorization (PDP → PEP):** every tool invocation is authorized and enforced server-side before side effects.
+- **Least privilege by construction:** minimize tool surface and default to read-only where feasible.
+
+### Authorized regression tests
+
+1) **Cross-boundary privilege bleed:** authorize writes in Boundary A → switch to Boundary B → attempt a write.  
    Expected: **deny/hold** unless Boundary B re-authorizes.
-2) **Credential binding test:** replay a valid credential from Boundary A in Boundary B.  
-   Expected: **deny** due to binding mismatch.
-3) **Authority change test:** revoke role/scope mid-session and repeat the same write.  
-   Expected: **deny** on the next call (no stale authorization).
+2) **Credential binding replay:** replay a valid credential from Boundary A in Boundary B.  
+   Expected: **deny** (binding mismatch).
+3) **Authority change mid-session:** revoke role/scope → repeat the same write.  
+   Expected: **deny on the next call** (no stale authorization).
 
 ---
 
-## Pattern 2 — Monitoring-only integrity signals (detect without enforcement)
+## Pattern 2 — Non-enforcing integrity signals
 
-### What it is
-The system detects integrity risk (poisoned context, anomalous memory, suspicious tool output, policy-violating arguments) but continues execution (“alert only”), allowing flagged artifacts to be reused across steps.
+### Definition (failure mode)
 
-### Why it matters (bounded, testable)
+The system detects integrity risk (tainted context, anomalous memory, suspicious tool output, policy-violating arguments) but continues execution (“alert only”), allowing flagged artifacts to re-enter context and influence later steps.
+
+### Why it matters (testable impact)
+
 In multi-step controller loops, contaminated artifacts can influence:
-- routing and tool selection,
+- routing/tool selection,
 - argument construction,
 - subsequent LLM steps.
 
-A monitoring-only signal does not reduce the likelihood of side effects if the controller proceeds unchanged.
+A monitoring-only signal does not reduce the likelihood of side effects if execution proceeds unchanged.
 
 ### Common root causes (audit targets)
+
 - Integrity checks run **after** tool selection or argument construction (too late in the lifecycle).
-- Alerts are emitted, but execution state does not change (no hold/quarantine/deny path).
+- Alerts exist but there is no execution-state transition (no hold/quarantine/deny path).
 - No circuit breaker: repeated integrity signals still allow retries, increasing exposure.
 
-### Controls (fail-safe enforcement for high-risk signals)
-- **Fail-safe defaults for high-risk signals:** prefer **hold/deny** over “continue,” and require explicit approval to resume.
-- **Quarantine tainted artifacts:** flagged memory/retrieval/tool outputs are prevented from re-entering context until reviewed or replaced.
-- **Circuit breakers:** repeated integrity violations stop execution or degrade to read-only; write intent requires operator approval.
-- **Pre-execution validation:** tool selection + arguments validated (schema + semantic constraints) before side effects.
+### Controls (minimum bar)
 
-### What to test (authorized security regression tests)
-1) **Poisoned-input enforcement test:** inject an untrusted chunk that triggers an integrity rule.  
-   Expected: the step is **held/blocked** and the chunk is quarantined.
-2) **Policy-violating args test:** craft model output that violates an argument constraint (tenant/scope/resource).  
+- **Fail-safe defaults for high-risk signals:** prefer **hold/deny** over “continue”; require explicit approval to resume.
+- **Quarantine tainted artifacts:** flagged memory/retrieval/tool outputs are prevented from re-entering context until reviewed/replaced.
+- **Circuit breakers:** repeated integrity violations stop execution or degrade to read-only; write intent requires operator approval.
+- **Pre-execution validation:** validate tool selection + arguments (schema + semantic constraints) before side effects (PEP pre-execution).
+
+### Authorized regression tests
+
+1) **Poisoned-input enforcement:** inject an untrusted chunk that triggers an integrity rule.  
+   Expected: step is **held/blocked** and artifact is quarantined.
+2) **Policy-violating arguments:** craft model output that violates a scope/tenant/resource constraint.  
    Expected: rejected by the **PEP** before tool execution.
-3) **Repeated-signal circuit-breaker test:** trigger the same integrity signal N times.  
+3) **Repeated-signal circuit breaker:** trigger the same integrity signal N times.  
    Expected: execution **stops** or degrades to **read-only**.
 
 ---
@@ -155,7 +172,7 @@ A monitoring-only signal does not reduce the likelihood of side effects if the c
 ## References
 
 - OWASP Cheat Sheet Series — AI Agent Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
-- OWASP — Securing Agentic Applications Guide 1.0 (orchestration / workflows / control-flow mechanisms): <https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/>
+- OWASP — Securing Agentic Applications Guide 1.0: <https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/>
 - OWASP — Top 10 for LLM Applications (2025): https://genai.owasp.org/llm-top-10/
 - NIST SP 800-207 — Zero Trust Architecture (PDP/PEP; PE/PA; control plane vs data plane): https://doi.org/10.6028/NIST.SP.800-207
 - NIST SP 800-53 Rev. 5 — Security and Privacy Controls: https://doi.org/10.6028/NIST.SP.800-53r5

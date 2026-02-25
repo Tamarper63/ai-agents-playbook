@@ -3,12 +3,17 @@ title: How-to guides
 permalink: /how-to/
 ---
 
-Procedures + checklists for running workflows under explicit **evidence boundaries**, **verification steps**, and **policy constraints**.
+Step-by-step procedures and checklists for running tasks under explicit **policies** (rules) and **prompt templates** (copy/paste prompt files).
 
-How these pieces fit:
-- **Policies** define the normative rules.
-- **Prompt blocks** implement those rules (copy/paste files).
-- **How-to** procedures tell you how to run them.
+## How the pieces fit
+- **Policies** = rules (evidence boundaries, citation requirements, fail-closed behavior).
+- **Prompt templates** = copy/paste prompt files you load into your runtime (typically as system/developer/user messages).
+- **How-to guides** = the procedure steps for applying the policy + templates to a task. :contentReference[oaicite:4]{index=4}
+
+## Quickstart (3 steps)
+1) Pick an **evidence boundary** (what sources are allowed).
+2) Load the mapped **system/developer prompt template(s)** (higher-priority instructions take precedence over user input). :contentReference[oaicite:5]{index=5}
+3) Follow the **How-to** steps. If required evidence is missing, **fail closed** per the active policy.
 
 If you’re not sure where to start, use the **Start here** path below. If you need an overview of content types (How-to vs Reference vs Articles), use the [Content map]({{ '/reference/content-map/' | relative_url }}).
 
@@ -33,7 +38,7 @@ If you’re not sure where to start, use the **Start here** path below. If you n
     <div class="c-card__title">
       <a class="c-card__link" href="{{ '/how-to/fact-checking-kit/' | relative_url }}">Run: Fact-Checking Kit</a>
     </div>
-    <div class="c-card__desc">Verify claims before writing (claim-by-claim workflow).</div>
+    <div class="c-card__desc">Verify claims before writing (claim-by-claim procedure).</div>
     <div class="c-card__actions" aria-label="Start here actions">
       <a class="c-btn c-btn--primary c-btn--compact"
          href="{{ '/how-to/fact-checking-kit/' | relative_url }}"
@@ -47,7 +52,7 @@ If you’re not sure where to start, use the **Start here** path below. If you n
     <div class="c-card__title">
       <a class="c-card__link" href="{{ '/how-to/engineering-quality-gate-procedure/' | relative_url }}">Enforce: Engineering Quality Gate</a>
     </div>
-    <div class="c-card__desc">Architecture + regression checks for workflows and outputs.</div>
+    <div class="c-card__desc">Architecture + regression checks for changes and outputs.</div>
     <div class="c-card__actions" aria-label="Start here actions">
       <a class="c-btn c-btn--primary c-btn--compact"
          href="{{ '/how-to/engineering-quality-gate-procedure/' | relative_url }}"
@@ -87,7 +92,7 @@ If you’re not sure where to start, use the **Start here** path below. If you n
         <p>Read/apply these before running any procedure (they define the default constraints and enforcement posture).</p>
         <ul>
           <li><strong>Policy:</strong> <a href="{{ '/policies/objective-technical-operating-profile/' | relative_url }}">Objective Technical Baseline Rules (No Simulation) — policy</a></li>
-          <li><strong>System prompt artifacts:</strong> <a href="{{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }}"><code>objective-technical-style-non-simulative.system.txt</code></a> · <a href="{{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }}"><code>instruction-hierarchy-and-evidence-boundary.system.txt</code></a></li>
+          <li><strong>System prompt templates:</strong> <a href="{{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }}"><code>objective-technical-style-non-simulative.system.txt</code></a> · <a href="{{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }}"><code>instruction-hierarchy-and-evidence-boundary.system.txt</code></a></li>
         </ul>
       </div>
     </details>
@@ -101,12 +106,11 @@ If you’re not sure where to start, use the **Start here** path below. If you n
       <div class="c-disclosure__body">
         <ul>
           <li><strong>Evidence boundary:</strong> which sources are allowed (e.g., artifacts-only vs authoritative sources).</li>
-          <li><strong>Artifacts:</strong> user-provided materials for this run (files, screenshots, pasted text, repo snapshots).</li>
+          <li><strong>Artifacts:</strong> files/logs/screenshots/excerpts you provide in the request.</li>
           <li><strong>Authoritative sources:</strong> externally published, citable sources (standards, official docs, peer-reviewed papers).</li>
           <li><strong>Claim:</strong> any non-trivial statement that should be verified before output.</li>
-          <li><strong>Verification workflow:</strong> a repeatable procedure that checks claims before output.</li>
-          <li><strong>Policy constraints:</strong> rules the system must follow (e.g., fail-closed, citation requirements).</li>
-          <li><strong>Fail-closed:</strong> if required evidence is missing, stop and report what’s missing (don’t “fill gaps”).</li>
+          <li><strong>Verification procedure:</strong> a repeatable sequence that checks claims before output.</li>
+          <li><strong>Fail-closed:</strong> if required evidence is missing, stop and report what’s missing (don’t fill gaps).</li>
         </ul>
       </div>
     </details>
@@ -128,7 +132,7 @@ If you’re not sure where to start, use the **Start here** path below. If you n
 
   <article class="c-card" role="listitem">
     <div class="c-card__title">
-      <a class="c-card__link" href="#verification-workflows">Verification workflows</a>
+      <a class="c-card__link" href="#verification-workflows">Verification procedures</a>
     </div>
     <div class="c-card__desc">Gates and procedures that verify claims before output.</div>
     <div class="c-card__actions" aria-label="Jump actions">
@@ -184,6 +188,6 @@ If you’re not sure where to start, use the **Start here** path below. If you n
 ## Related indexes
 - [Start here by role]({{ '/how-to/start-here-by-role/' | relative_url }})
 - [Policies]({{ '/policies/' | relative_url }})
-- [Prompt blocks]({{ '/prompts/' | relative_url }})
+- [Prompt templates]({{ '/prompts/' | relative_url }})
 - [Reference]({{ '/reference/' | relative_url }})
 - [Articles]({{ '/articles/' | relative_url }})

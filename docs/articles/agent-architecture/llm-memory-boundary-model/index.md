@@ -1,27 +1,42 @@
 ---
-title: "LLM memory boundary model: how context gets selected (and why answers change)"
+title: "LLM Memory Boundary Model: Context Construction (Eligibility, Selection, Persistence) and Why Answers Change"
 permalink: /articles/agent-architecture/llm-memory-boundary-model/
-summary: A boundary model for context assembly (memory + chat history + prompt + tool inputs) and the control-plane controls that govern eligibility, persistence, and security.
+summary: A vendor-agnostic model of context construction—what can enter context (eligibility), what gets used per response (selection), and what is retained for later (persistence)—and the security controls that must live outside the prompt.
 author: Tamar Peretz
 published: 2026-02-22
 ---
 
-This article is an **explanation** (conceptual model + design implications).
+This article is an **explanation** (conceptual model + design implications).  
 Procedure/checklist: [Manage: LLM memory boundaries]({{ '/how-to/llm-memory-boundaries/' | relative_url }})
 
-## Scope and evidence boundary
+## Executive summary
 
-- Product-specific statements about **ChatGPT Memory** are grounded in OpenAI documentation (see References).
-- The “boundary model” sections are an **engineering decomposition** for troubleshooting and design. Where this text uses analogies (e.g., ZTA), it is labeled as such.
+In many production incidents, “memory problems” in LLM systems are not about storage. They are about **context construction**—how the system builds the model input for a given request:
 
-## Why this exists
+- **Eligibility:** what information is allowed to influence a response.
+- **Selection:** what subset is actually used for this specific response.
+- **Persistence:** what (if anything) is retained to influence future responses.
 
-“Memory” is an overloaded term. In practice, failures that look like “memory bugs” often reduce to:
-1) what information was **eligible** to enter context,
-2) what was **selected** for this response, and
-3) what (if anything) was **persisted** for later.
+When these steps are implicit, you tend to get: answer drift, non-reproducible behavior, and expanded security exposure (prompt injection + uncontrolled persistence/write-back).
 
-This page provides a boundary model for that pipeline.
+**Evidence boundary:** vendor-specific statements in this page are limited to what OpenAI documents (see References). Everything else is a **vendor-agnostic system model** for engineering and auditing.
+
+## Scope and terminology
+
+### What “context construction” means (terminology used here)
+
+**Context construction** is the process of constructing the input context for a single model invocation from multiple sources (user input, retrieved text, tool outputs, system/developer instructions, and optional memory/history features).  
+(In this repo you may also see “request assembly” used as an equivalent term; this page uses “context construction” as the primary term.)
+
+### What “memory” means operationally (terminology used here)
+
+In production discussions, “memory” often conflates three different mechanisms:
+
+1) **Persistent memory** (explicit saved items intended to carry across sessions)  
+2) **History reference / recall** (signals pulled from prior chats; not guaranteed to be complete)  
+3) **Current-request state** (the current prompt + active settings/instructions + tool/retrieval inputs)
+
+This article keeps them separate because they fail differently and require different controls.
 
 ## What OpenAI documents about ChatGPT “Memory”
 
@@ -33,90 +48,102 @@ OpenAI also documents **Temporary Chat** as a mode that does not reference memor
 
 (See References.)
 
-## A boundary model for context assembly (portable design pattern)
+## System model: context construction as a pipeline
 
-This decomposition uses two planes:
+This model separates **inputs** (candidate sources) from **controls** (policy + enforcement).  
+Operationally: sources determine what *could* influence the response; controls determine what *may* influence it (and what can persist).
 
-### 1) Data plane (candidate inputs)
+### 1) Candidate sources (what could influence the response)
+
+Typical candidates include:
 - **Saved memories** (if enabled)
-- **Information recalled from chat history** (if enabled)
+- **History reference / recall** (if enabled)
 - **Current user message** (the live prompt)
-- **Tool outputs / retrieved documents** (when the system ingests external content)
+- **Tool outputs / retrieved documents** (RAG, connectors, browsing, logs, tickets)
 - **System/developer instructions and product configuration** (implementation-dependent)
 
-### 2) Control plane (selection + enforcement)
-- Eligibility rules (what sources are allowed)
-- Scoping rules (project-only vs global vs per-tenant)
-- Write-back rules (what may be persisted and under what conditions)
-- Tool permissioning / approvals (if actions exist)
-- Output constraints (schemas, structured outputs, filtering)
+### 2) Controls (what must be enforced outside the prompt)
 
-**Design note:** Prompts express intent; enforcement requires control-plane mechanisms.
+Controls that determine eligibility/selection/persistence commonly include:
+- **Eligibility rules:** which sources are allowed for this request (and which are forbidden)
+- **Scope rules:** project-only vs global vs tenant boundary
+- **Selection policy:** prioritization and quotas (what gets included when context is constrained)
+- **Persistence policy (write-back):** what may be retained, and under what conditions
+- **Tool permissioning / approvals:** least-privilege for side effects
+- **Output constraints:** schemas/structured outputs, filtering, redaction rules
 
-## Why “answers change” (even with the same model)
+**Engineering rule:** prompts express intent; enforcement must be implemented as control logic (policy decision + policy enforcement), not as advisory text.
 
-Answer variance can result from changes in one or more of:
-- **Prompt wording** (changes the selection target)
-- **Memory settings** (saved memories / chat history toggles)
-- **What is recalled from chat history** (not all details are retained; what’s recalled can change)
-- **Scope** (project-only vs global memory/state)
-- **External content ingestion** (different retrieved docs/tool outputs)
+## Why answers change (even with the same model)
 
-## Security implication: context assembly is a prompt-injection surface
+Answer variance often comes from changes in context construction, for example:
+- **Prompt wording changes** (different selection target and framing)
+- **Memory/history toggles change** (different eligible sources)
+- **Recall differs across time** (history reference is not guaranteed to include every detail)
+- **Scope differs** (project-only vs global state; different boundary)
+- **Retrieved/tool inputs differ** (different documents, different tool outputs)
+
+If you cannot explain a behavior change via one of the above, treat it as an observability gap and instrument the controls (see Observability below).
+
+## Security implication: context construction is a prompt-injection surface
 
 OpenAI safety guidance describes **prompt injection** as untrusted text entering a system and attempting to override intended instructions.
 
-If your system ingests external content (docs/web/tickets), accepts tool outputs as input, or allows memory write-back, treat all such text as **untrusted data** and enforce boundaries in the control plane.
+Operationally: any retrieved document, ticket, webpage, email, or tool output that is fed into context is **untrusted input**. If you also allow persistence/write-back, you additionally create a path for **untrusted input to become durable state**.
 
-OWASP guidance for AI agent security highlights prompt injection defenses, tool security/least-privilege, and memory/context security as core concerns.
+OWASP guidance for agentic security highlights prompt injection defenses, tool security/least-privilege, and memory/context security as core concerns.
 
-## Design principle: separate decision from enforcement (analogy to ZTA)
+## Design anchor: decision vs enforcement (ZTA-aligned terminology)
 
-NIST SP 800-207 (Zero Trust Architecture) distinguishes a **policy decision point (PDP)** and a **policy enforcement point (PEP)**, and uses a **control plane vs data plane** framing.
+NIST SP 800-207 (Zero Trust Architecture) describes **policy decision** and **policy enforcement** components (PDP/PEP) and uses a control-plane vs data-plane framing.
 
-**Analogy (not a standard mapping):**
-- “Model proposes an answer / candidates” ≈ decision candidate
-- “Controller/orchestrator enforces eligibility, scope, write-back, permissions” ≈ enforcement
+**Use here (by extension):**
+- **Decision:** decide whether a candidate source/action is allowed for this request.
+- **Enforcement:** guarantee that forbidden sources/actions cannot affect the request or cause side effects.
 
-## Practical controls (mapped to common guidance)
+(See References.)
+
+## Controls you can implement (vendor-agnostic)
 
 ### 1) Typed, scoped memory (avoid free-form blobs)
 - Represent memory as explicit fields (preferences, constraints, project state), not arbitrary text.
 - Attach scope (global/project/tenant) and retention (TTL or explicit removal).
 
-### 2) Controlled write-back (privileged operation)
+### 2) Persistence/write-back as a privileged operation
 - Gate write-back with policy (and optional human approval for sensitive categories).
 - Attach provenance (source, time, workflow ID).
 
-### 3) Treat tool outputs and retrieved text as untrusted inputs
+### 3) Treat retrieved text and tool outputs as untrusted inputs
 - Validate/normalize inputs.
-- Constrain data flow with schemas/structured outputs when possible.
+- Constrain ingestion with schemas/structured outputs when possible.
 
-### 4) Observability
+### 4) Observability for debugging and audit
 - Log what sources were eligible, what was selected, and what was persisted (with identifiers).
 
-## Where this repo should place follow-ups (recommendations)
+## Key takeaways
+- Model “memory issues” as **eligibility vs selection vs persistence**, not as a single blob.
+- Put controls **outside the prompt**: decision + enforcement + observability.
+- Treat all retrieved/tool text as **untrusted input**; prevent it from becoming durable state without policy.
+- Make behavior explainable by logging **eligible sources**, **selected sources**, and **persistence events**.
 
-- Procedure/checklist: `/how-to/llm-memory-boundaries/`
-- If you want deeper security coverage:
-  - “Memory threat model” under `/articles/agent-security/`
-  - Regression prompts for memory/write-back boundaries under `/prompts/` or `/kits/`
+## Suggested reading
+- [Manage: LLM memory boundaries]({{ '/how-to/llm-memory-boundaries/' | relative_url }})
+- [Request assembly threat model]({{ '/articles/agent-security/request-assembly-threat-model/' | relative_url }})
+- [The Attack Surface Isn’t the LLM — It’s the Controller Loop]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})
 
 ## References
 
 OpenAI:
 - Memory FAQ (Reference saved memories / Reference chat history / Temporary Chat): https://help.openai.com/en/articles/8590148-memory-faq
 - What is Memory?: https://help.openai.com/en/articles/8983136-what-is-memory
-- Reference saved memories: https://help.openai.com/en/articles/11146739-how-does-reference-saved-memories-work
+- How does “Reference saved memories” work?: https://help.openai.com/en/articles/11146739-how-does-reference-saved-memories-work
+- Temporary Chat FAQ: https://help.openai.com/en/articles/8914046-temporary-chat-faq
+- Memory and new controls for ChatGPT (OpenAI blog): https://openai.com/index/memory-and-new-controls-for-chatgpt/
 - Safety in building agents (prompt injection guidance): https://developers.openai.com/api/docs/guides/agent-builder-safety/
 
 OWASP:
 - AI Agent Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
+- LLM Prompt Injection Prevention Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html
 
 NIST:
-- SP 800-207 Zero Trust Architecture (PDP/PEP; control plane/data plane): https://nvlpubs.nist.gov/nistpubs/specialpublications/NIST.SP.800-207.pdf
-
-## Suggested next
-- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
-- [Model training and evaluation]({{ '/articles/model-training-and-eval/' | relative_url }})
-- [Content map]({{ '/reference/content-map/' | relative_url }})
+- SP 800-207 Zero Trust Architecture (PDP/PEP; control plane/data plane), doi:10.6028/NIST.SP.800-207: https://nvlpubs.nist.gov/nistpubs/specialpublications/NIST.SP.800-207.pdf

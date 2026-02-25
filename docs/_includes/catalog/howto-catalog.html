@@ -1,75 +1,87 @@
-{% assign hdata = site.data.catalog.howto %}
-{% assign hitem = nil %}
-
-{% for section in hdata.catalog %}
-  {% for it in section.items %}
-    {% if it.url == page.url %}
-      {% assign hitem = it %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
-
-{% if hitem %}
-  <div class="c-card" aria-label="Canonical links">
-    <div class="c-card__actions" aria-label="Canonical link actions">
-      {% if hitem.policies %}
-        {% for pol in hitem.policies %}
-          <a class="c-btn c-btn--secondary c-btn--compact"
-             href="{{ pol.url | relative_url }}"
-             title="Read the mapped policy">
-            {{ pol.title }}
-          </a>
-        {% endfor %}
-      {% elsif hitem.policy %}
-        <a class="c-btn c-btn--secondary c-btn--compact"
-           href="{{ hitem.policy.url | relative_url }}"
-           title="Read the mapped policy">
-          {{ hitem.policy.title }}
-        </a>
-      {% endif %}
-
-      <a class="c-btn c-btn--secondary c-btn--compact"
-         href="{{ '/prompts/' | relative_url }}"
-         title="Browse prompt templates">
-        Prompt templates
-      </a>
+{% assign data = site.data.catalog.howto %}
+{% for section in data.catalog %}
+  <section id="{{ section.id }}" class="c-section c-section--thin">
+    <div class="c-section__header">
+      <h3 class="c-section__title c-section__title--sub">{{ section.title }}</h3>
     </div>
 
-    {% if hitem.prompts %}
-      <div class="c-card__actions" aria-label="Mapped templates">
-        <details class="c-disclosure-compact">
-          <summary class="c-btn c-btn--secondary c-btn--compact"
-                   title="Show the prompt template files mapped to this how-to">
-            <span class="c-disclosure__label--closed">Prompt templates ({{ hitem.prompts | size }})</span>
-            <span class="c-disclosure__label--open">Hide prompt templates</span>
-          </summary>
-
-          <div class="c-disclosure-compact__panel">
-            <ul class="c-linklist">
-              {% for p in hitem.prompts %}
-                {% assign fname = p | split: '/' | last %}
-                {% assign ftag = 'File' %}
-                {% if p contains '/components/' %}
-                  {% assign ftag = 'Component' %}
-                {% elsif fname contains '.system.' %}
-                  {% assign ftag = 'System' %}
-                {% elsif fname contains '.user.' %}
-                  {% assign ftag = 'User' %}
-                {% endif %}
-
-                <li>
-                  <a href="{{ p | relative_url }}" title="Open prompt template file">
-                    <span class="c-filetag c-filetag--{{ ftag | downcase }}">{{ ftag }}</span>
-                    <code>{{ fname }}</code>
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
+    <div class="c-grid {{ section.grid }}">
+      {% for item in section.items %}
+        <article class="c-card{% if item.span_full %} c-span-full{% endif %}">
+          <div class="c-card__title">
+            <a class="c-card__link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
           </div>
-        </details>
-      </div>
-    {% endif %}
-  </div>
-{% else %}
-  <p><strong>NOT VERIFIED:</strong> this how-to is not mapped in <code>docs/_data/catalog/howto.yml</code></p>
-{% endif %}
+
+          {% if item.desc %}<div class="c-card__desc">{{ item.desc }}</div>{% endif %}
+
+          <div class="c-card__actions" aria-label="How-to actions">
+            <a class="c-btn c-btn--primary c-btn--compact"
+               href="{{ item.url | relative_url }}"
+               title="Open the how-to guide">
+              Open guide
+            </a>
+
+            {% if item.policy %}
+              <a class="c-btn c-btn--secondary c-btn--compact"
+                 href="{{ item.policy.url | relative_url }}"
+                 title="Open the mapped policy page">
+                Read policy
+              </a>
+            {% endif %}
+
+            {% if item.policies %}
+              <details class="c-disclosure-compact">
+                <summary class="c-btn c-btn--secondary c-btn--compact"
+                         title="Show related policies">
+                  <span class="c-disclosure__label--closed">Policies ({{ item.policies | size }})</span>
+                  <span class="c-disclosure__label--open">Hide policies</span>
+                </summary>
+
+                <div class="c-disclosure-compact__panel">
+                  <ul class="c-linklist">
+                    {% for pol in item.policies %}
+                      <li><a href="{{ pol.url | relative_url }}">{{ pol.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </details>
+            {% endif %}
+
+            {% if item.prompts %}
+              <details class="c-disclosure-compact">
+                <summary class="c-btn c-btn--secondary c-btn--compact"
+                         title="Show prompt template files">
+                  <span class="c-disclosure__label--closed">Prompt templates ({{ item.prompts | size }})</span>
+                  <span class="c-disclosure__label--open">Hide prompt templates</span>
+                </summary>
+
+                <div class="c-disclosure-compact__panel">
+                  <ul class="c-linklist">
+                    {% for p in item.prompts %}
+                      {% assign fname = p | split: '/' | last %}
+                      {% assign ftag = 'File' %}
+                      {% if p contains '/components/' %}
+                        {% assign ftag = 'Component' %}
+                      {% elsif fname contains '.system.' %}
+                        {% assign ftag = 'System' %}
+                      {% elsif fname contains '.user.' %}
+                        {% assign ftag = 'User' %}
+                      {% endif %}
+
+                      <li>
+                        <a href="{{ p | relative_url }}" title="Open prompt template file">
+                          <span class="c-filetag c-filetag--{{ ftag | downcase }}">{{ ftag }}</span>
+                          <code>{{ fname }}</code>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </details>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
