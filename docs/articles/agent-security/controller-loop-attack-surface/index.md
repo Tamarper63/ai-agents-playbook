@@ -71,16 +71,12 @@ Typical shape:
 ## Execution patterns: where risk shifts by orchestration pattern
 The core differentiator is **who decides the next tool/step** and **how many times** that decision happens.
 
-<div class="c-table" role="region" aria-label="Execution patterns by orchestration" tabindex="0" markdown="1">
-
-| Pattern | Orchestration shape | Who decides the next tool/step? | Dominant risk amplifiers | Primary enforcement points |
-|---|---|---|---|---|
-| Single-shot tool use | One/few tool calls, minimal iteration | Mostly application code + one model decision | Unsafe tool args; weak write-path enforcement; mishandled tool output | Tool allowlists, strict tool schemas, output handling, server-side write-path enforcement |
-| Workflow (predetermined) | Fixed graph / code path | Graph logic | Reduced dynamism, but still exposed via tool I/O + data channels | Graph-level policy checks + tool contracts + write-path enforcement |
-| ReAct-style loop | Iterative: reason → act → observe → repeat | Model outputs + loop logic each turn | Repeated exposure to untrusted observations; step chaining; stop-condition abuse | Step-level policy enforcement checks, tool-arg constraints, loop budgets, full provenance trace |
-| Plan-and-execute | Plan first; execute step-by-step; may re-plan | Planner output + executor loop | Plan becomes an attack target; execution drift across steps; plan/tool coupling | Plan validator + per-step policy enforcement checks + write-path enforcement + budgets |
-
-</div>
+<div class="c-table" role="region" aria-label="Execution patterns by orchestration" tabindex="0"><table><thead><tr><th>Pattern</th><th>Orchestration shape</th><th>Who decides the next tool/step?</th><th>Dominant risk amplifiers</th><th>Primary enforcement points</th></tr></thead><tbody>
+<tr><td>Single-shot tool use</td><td>One/few tool calls, minimal iteration</td><td>Mostly application code + one model decision</td><td>Unsafe tool args; weak write-path enforcement; mishandled tool output</td><td>Tool allowlists, strict tool schemas, output handling, server-side write-path enforcement</td></tr>
+<tr><td>Workflow (predetermined)</td><td>Fixed graph / code path</td><td>Graph logic</td><td>Reduced dynamism, but still exposed via tool I/O + data channels</td><td>Graph-level policy checks + tool contracts + write-path enforcement</td></tr>
+<tr><td>ReAct-style loop</td><td>Iterative: reason → act → observe → repeat</td><td>Model outputs + loop logic each turn</td><td>Repeated exposure to untrusted observations; step chaining; stop-condition abuse</td><td>Step-level policy enforcement checks, tool-arg constraints, loop budgets, full provenance trace</td></tr>
+<tr><td>Plan-and-execute</td><td>Plan first; execute step-by-step; may re-plan</td><td>Planner output + executor loop</td><td>Plan becomes an attack target; execution drift across steps; plan/tool coupling</td><td>Plan validator + per-step policy enforcement checks + write-path enforcement + budgets</td></tr>
+</tbody></table></div>
 
 
 Notes:

@@ -48,12 +48,13 @@ Examples of ToM-style task families used in prominent evaluations and multi-task
 
 ### 2.2 A bounded “what is measured” map (behavioral, not mechanistic)
 
-| Task family (examples) | What the protocol requires (behaviorally) | Interpretation risks *explicitly supported by cited sources* |
-|---|---|---|
-| False-belief | Answer relative to an agent-indexed belief state when it conflicts with reality | (i) Ceiling on standard items does not imply belief-tracking mechanisms; authors discuss lower-level explanations. (ii) Sensitivity to perturbations is reported and used as an interpretation constraint. |
-| Faux pas (as evaluated in recent batteries) | Answer questions about a social violation under a specified narrative and knowledge state | In cited work, the task format can have a regular internal structure that supports heuristic strategies (interpretation constraint). |
-| Strange stories / advanced mentalizing stories | Provide explanations that may involve higher-order mental states | Scoring/coding rules matter; cited work discusses response coding and how design choices affect interpretation. |
-| Multi-task suites (benchmarks) | Aggregate heterogeneous tasks into a single evaluation package | Data leakage / contamination risk is treated as a first-order issue by benchmark authors, with concrete demonstrations. |
+
+<div class="c-table" role="region" aria-label="2.2 A bounded “what is measured” map (behavioral, not mechanistic)" tabindex="0"><table><thead><tr><th>Task family (examples)</th><th>What the protocol requires (behaviorally)</th><th>Interpretation risks *explicitly supported by cited sources*</th></tr></thead><tbody>
+<tr><td>False-belief</td><td>Answer relative to an agent-indexed belief state when it conflicts with reality</td><td>(i) Ceiling on standard items does not imply belief-tracking mechanisms; authors discuss lower-level explanations. (ii) Sensitivity to perturbations is reported and used as an interpretation constraint.</td></tr>
+<tr><td>Faux pas (as evaluated in recent batteries)</td><td>Answer questions about a social violation under a specified narrative and knowledge state</td><td>In cited work, the task format can have a regular internal structure that supports heuristic strategies (interpretation constraint).</td></tr>
+<tr><td>Strange stories / advanced mentalizing stories</td><td>Provide explanations that may involve higher-order mental states</td><td>Scoring/coding rules matter; cited work discusses response coding and how design choices affect interpretation.</td></tr>
+<tr><td>Multi-task suites (benchmarks)</td><td>Aggregate heterogeneous tasks into a single evaluation package</td><td>Data leakage / contamination risk is treated as a first-order issue by benchmark authors, with concrete demonstrations.</td></tr>
+</tbody></table></div>
 
 The point of this map is to keep claims bounded: task success is evidence of **behavioral performance under a protocol**, not mechanism identification.
 

@@ -84,26 +84,30 @@ A practical way to compare patterns is to ask four questions:
 4) **What evidence is recorded for postmortems (proposed → validated → executed)?**
 
 ### Enforcement-point map (control plane vs data plane)
-| Function | LLM-led execution (typical placement) | Orchestrator-led execution (typical placement) |
-|---|---|---|
-| Tool selection | Model output | Orchestrator applies allowlist + intent gate |
-| Argument validation | Sometimes weak or partial | Enforced in orchestrator (schema + semantic constraints) |
-| Authorization for writes | Often prompt-driven or per-tool | Enforced server-side per call (write gate) |
-| Budgets (steps/time/cost) | Harder to centralize inside the loop | Natural centralization point in orchestrator |
-| Audit trail | Scattered across tool logs | Centralized decision evidence pipeline |
+
+
+<div class="c-table" role="region" aria-label="Enforcement-point map (control plane vs data plane)" tabindex="0"><table><thead><tr><th>Function</th><th>LLM-led execution (typical placement)</th><th>Orchestrator-led execution (typical placement)</th></tr></thead><tbody>
+<tr><td>Tool selection</td><td>Model output</td><td>Orchestrator applies allowlist + intent gate</td></tr>
+<tr><td>Argument validation</td><td>Sometimes weak or partial</td><td>Enforced in orchestrator (schema + semantic constraints)</td></tr>
+<tr><td>Authorization for writes</td><td>Often prompt-driven or per-tool</td><td>Enforced server-side per call (write gate)</td></tr>
+<tr><td>Budgets (steps/time/cost)</td><td>Harder to centralize inside the loop</td><td>Natural centralization point in orchestrator</td></tr>
+<tr><td>Audit trail</td><td>Scattered across tool logs</td><td>Centralized decision evidence pipeline</td></tr>
+</tbody></table></div>
 
 (“Typical placement” is an architectural tendency, not a guarantee.)
 
 ## Decision matrix (summary)
-| Dimension | LLM-led execution | Orchestrator-led execution |
-| --- | --- | --- |
-| Where authority lives | In the model loop | External controller / control plane |
-| Containment mechanisms | More dependent on model behavior | Can be enforced deterministically in code |
-| Debuggability | Reconstruct from model + tool traces | Centralized decision evidence possible |
-| Observability/audit | Often uneven unless standardized | Consistent event pipeline is straightforward |
-| Latency | Often fewer hops in simple flows | Extra hop + validations can add latency |
-| Cost governance | Must be added outside the model loop anyway | Natural centralization point for budgets/quotas |
-| Injection-to-action path | Shorter if execution is prompt-driven | Can be lengthened by gates/allowlists |
+
+
+<div class="c-table" role="region" aria-label="Decision matrix (summary)" tabindex="0"><table><thead><tr><th>Dimension</th><th>LLM-led execution</th><th>Orchestrator-led execution</th></tr></thead><tbody>
+<tr><td>Where authority lives</td><td>In the model loop</td><td>External controller / control plane</td></tr>
+<tr><td>Containment mechanisms</td><td>More dependent on model behavior</td><td>Can be enforced deterministically in code</td></tr>
+<tr><td>Debuggability</td><td>Reconstruct from model + tool traces</td><td>Centralized decision evidence possible</td></tr>
+<tr><td>Observability/audit</td><td>Often uneven unless standardized</td><td>Consistent event pipeline is straightforward</td></tr>
+<tr><td>Latency</td><td>Often fewer hops in simple flows</td><td>Extra hop + validations can add latency</td></tr>
+<tr><td>Cost governance</td><td>Must be added outside the model loop anyway</td><td>Natural centralization point for budgets/quotas</td></tr>
+<tr><td>Injection-to-action path</td><td>Shorter if execution is prompt-driven</td><td>Can be lengthened by gates/allowlists</td></tr>
+</tbody></table></div>
 
 ## Tradeoffs (architecture-first)
 

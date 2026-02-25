@@ -69,18 +69,19 @@ C5: Output gate & monitors (commit/output + any side-effects)
 
 ## 4) Findings overview (10)
 
-| ID | Finding (short) | Primary risk | OWASP (v1.1) | Confidence |
-|---|---|---|---|---|
-| F-1 | Text-only privilege confirmation (“tier active”) | False authorization state | LLM08, LLM09 | High (UI/Net) / Low (backend) |
-| F-2 | Text-only “admin action completed” | False operational state; audit gaps | LLM08, LLM09 | Med-High |
-| F-3 | Policy/system metadata echoed in output | Intelligence leak enabling follow-on attacks | LLM06 (if sensitive), else N/A | High |
-| F-4 | Cross-turn/session drift indicators | Incorrect policy application; state confusion | LLM09 (text assurance) | Med-High |
-| F-5 | Integrity alerts non-blocking | Control not enforced | LLM02 (if unsafe output flows), else N/A | High |
-| F-6 | “Verification performed” without proof artifacts | False assurance | LLM09 | Medium |
-| F-7 | “Exported/saved” without artifact/hash/url | False audit trail | LLM09 | Medium |
-| F-8 | Schema-envelope / fallback override | Guardrail bypass via structured-looking wrapper | LLM01, LLM02 | High |
-| F-9 | Role-stacking jailbreak pattern | Policy erosion | LLM01 | High |
-| F-10 | Memory scope violation via state/meta echo | Intelligence leak; policy boundary confusion | LLM06 (if sensitive), else N/A | High |
+
+<div class="c-table" role="region" aria-label="4) Findings overview (10)" tabindex="0"><table><thead><tr><th>ID</th><th>Finding (short)</th><th>Primary risk</th><th>OWASP (v1.1)</th><th>Confidence</th></tr></thead><tbody>
+<tr><td>F-1</td><td>Text-only privilege confirmation (“tier active”)</td><td>False authorization state</td><td>LLM08, LLM09</td><td>High (UI/Net) / Low (backend)</td></tr>
+<tr><td>F-2</td><td>Text-only “admin action completed”</td><td>False operational state; audit gaps</td><td>LLM08, LLM09</td><td>Med-High</td></tr>
+<tr><td>F-3</td><td>Policy/system metadata echoed in output</td><td>Intelligence leak enabling follow-on attacks</td><td>LLM06 (if sensitive), else N/A</td><td>High</td></tr>
+<tr><td>F-4</td><td>Cross-turn/session drift indicators</td><td>Incorrect policy application; state confusion</td><td>LLM09 (text assurance)</td><td>Med-High</td></tr>
+<tr><td>F-5</td><td>Integrity alerts non-blocking</td><td>Control not enforced</td><td>LLM02 (if unsafe output flows), else N/A</td><td>High</td></tr>
+<tr><td>F-6</td><td>“Verification performed” without proof artifacts</td><td>False assurance</td><td>LLM09</td><td>Medium</td></tr>
+<tr><td>F-7</td><td>“Exported/saved” without artifact/hash/url</td><td>False audit trail</td><td>LLM09</td><td>Medium</td></tr>
+<tr><td>F-8</td><td>Schema-envelope / fallback override</td><td>Guardrail bypass via structured-looking wrapper</td><td>LLM01, LLM02</td><td>High</td></tr>
+<tr><td>F-9</td><td>Role-stacking jailbreak pattern</td><td>Policy erosion</td><td>LLM01</td><td>High</td></tr>
+<tr><td>F-10</td><td>Memory scope violation via state/meta echo</td><td>Intelligence leak; policy boundary confusion</td><td>LLM06 (if sensitive), else N/A</td><td>High</td></tr>
+</tbody></table></div>
 
 ## 5) Detailed findings
 

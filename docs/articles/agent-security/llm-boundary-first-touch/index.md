@@ -52,33 +52,25 @@ If sensitive inputs/outputs are stored (logs/telemetry/analytics/memory/RAG inde
 ### 1) Read paths into the model (inputs)
 Document every source that can enter context:
 
-<div class="c-table" role="region" aria-label="Read paths into the model (inputs)" tabindex="0" markdown="1">
-
-| Source | Trust level | Sensitivity | Transformations before model | Notes |
-|---|---|---|---|---|
-| User message | Untrusted | Varies | Redaction? | |
-| Retrieved docs / web | Untrusted | Varies | Filtering / allowlist | |
-| Tickets/CRM/email summaries | Semi-trusted | Often sensitive | Redaction + minimization | |
-| Database reads | Trusted (system) | Often sensitive | Field-level selection | |
-| Tool outputs (if re-injected) | Untrusted-by-default | Varies | Sanitization + provenance tags | |
-
-</div>
+<div class="c-table" role="region" aria-label="Read paths into the model (inputs)" tabindex="0"><table><thead><tr><th>Source</th><th>Trust level</th><th>Sensitivity</th><th>Transformations before model</th><th>Notes</th></tr></thead><tbody>
+<tr><td>User message</td><td>Untrusted</td><td>Varies</td><td>Redaction?</td><td></td></tr>
+<tr><td>Retrieved docs / web</td><td>Untrusted</td><td>Varies</td><td>Filtering / allowlist</td><td></td></tr>
+<tr><td>Tickets/CRM/email summaries</td><td>Semi-trusted</td><td>Often sensitive</td><td>Redaction + minimization</td><td></td></tr>
+<tr><td>Database reads</td><td>Trusted (system)</td><td>Often sensitive</td><td>Field-level selection</td><td></td></tr>
+<tr><td>Tool outputs (if re-injected)</td><td>Untrusted-by-default</td><td>Varies</td><td>Sanitization + provenance tags</td><td></td></tr>
+</tbody></table></div>
 
 ### 2) Write paths from the model (outputs)
 Document where outputs can land:
 
-<div class="c-table" role="region" aria-label="Write paths from the model (outputs)" tabindex="0" markdown="1">
-
-| Sink | Persisted? | Retention/TTL | Readers | Replay into prompts? | Controls |
-|---|---:|---|---|---:|---|
-| Product UI | No/Yes | — | End user | Maybe | Output policies |
-| Logs / telemetry / traces | Yes | Defined TTL | Operators | Possible | Redaction + access controls |
-| Analytics events | Yes | Defined TTL | Analysts | Possible | Minimization |
-| Memory / context store | Yes | Defined TTL | System | Yes | Scoped + gated writes |
-| Tools / internal APIs | Yes | — | Systems | — | Server-side authz + validation |
-| Routing / feature flags | Yes | — | System | Yes | Deterministic gating |
-
-</div>
+<div class="c-table" role="region" aria-label="Write paths from the model (outputs)" tabindex="0"><table><thead><tr><th>Sink</th><th>Persisted?</th><th>Retention/TTL</th><th>Readers</th><th>Replay into prompts?</th><th>Controls</th></tr></thead><tbody>
+<tr><td>Product UI</td><td>No/Yes</td><td>—</td><td>End user</td><td>Maybe</td><td>Output policies</td></tr>
+<tr><td>Logs / telemetry / traces</td><td>Yes</td><td>Defined TTL</td><td>Operators</td><td>Possible</td><td>Redaction + access controls</td></tr>
+<tr><td>Analytics events</td><td>Yes</td><td>Defined TTL</td><td>Analysts</td><td>Possible</td><td>Minimization</td></tr>
+<tr><td>Memory / context store</td><td>Yes</td><td>Defined TTL</td><td>System</td><td>Yes</td><td>Scoped + gated writes</td></tr>
+<tr><td>Tools / internal APIs</td><td>Yes</td><td>—</td><td>Systems</td><td>—</td><td>Server-side authz + validation</td></tr>
+<tr><td>Routing / feature flags</td><td>Yes</td><td>—</td><td>System</td><td>Yes</td><td>Deterministic gating</td></tr>
+</tbody></table></div>
 
 ### 3) Boundary owner and enforcement points
 For each boundary crossing, record:

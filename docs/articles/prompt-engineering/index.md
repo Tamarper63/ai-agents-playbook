@@ -9,7 +9,7 @@ This hub maps **Explanation (articles)** → **How-to (procedures)** → **Promp
 
 ## Start here
 
-- **Prompt templates (SSOT index):** [{% include page-title-link.html url="/prompts/" fallback="Prompt library" %}]
+- **Prompt templates (SSOT index):** [{% include page-title-link.html url="/prompts/" fallback="Prompt templates" %}]
 - **Policies (rules):** [{% include page-title-link.html url="/policies/" fallback="Policies" %}]
 - **How-to (execution):** [{% include page-title-link.html url="/how-to/" fallback="How-to guides" %}]
 

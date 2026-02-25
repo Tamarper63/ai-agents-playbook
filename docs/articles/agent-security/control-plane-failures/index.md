@@ -10,14 +10,10 @@ published: 2026-02-22
 
 This article describes two **control-plane failure patterns** observed as *audit categories* in multi-step, tool-using LLM systems:
 
-<div class="c-table" role="region" aria-label="Executive summary: control-plane failure patterns" tabindex="0" markdown="1">
-
-| Pattern | What fails | Typical impact | What “good” looks like |
-|---|---|---|---|
-| 1) Privilege persistence across interaction boundaries | Authorization context is treated as carryover state instead of being re-validated per call | Cross-thread/tab/conversation privilege bleed; writes in the wrong boundary | Per-call authorization at a server-side enforcement point; credentials scoped + bound + short-lived |
-| 2) Monitoring-only integrity signals (detect without enforcement) | Integrity risk is detected but does not change execution state | Tainted artifacts keep influencing routing/tools across steps | High-risk signals trigger enforcement actions (hold/deny/quarantine) + circuit breakers |
-
-</div>
+<div class="c-table" role="region" aria-label="Executive summary: control-plane failure patterns" tabindex="0"><table><thead><tr><th>Pattern</th><th>What fails</th><th>Typical impact</th><th>What “good” looks like</th></tr></thead><tbody>
+<tr><td>1) Privilege persistence across interaction boundaries</td><td>Authorization context is treated as carryover state instead of being re-validated per call</td><td>Cross-thread/tab/conversation privilege bleed; writes in the wrong boundary</td><td>Per-call authorization at a server-side enforcement point; credentials scoped + bound + short-lived</td></tr>
+<tr><td>2) Monitoring-only integrity signals (detect without enforcement)</td><td>Integrity risk is detected but does not change execution state</td><td>Tainted artifacts keep influencing routing/tools across steps</td><td>High-risk signals trigger enforcement actions (hold/deny/quarantine) + circuit breakers</td></tr>
+</tbody></table></div>
 
 **Evidence boundary:** these are **audit patterns**, not claims about a specific vendor trace.
 
@@ -134,18 +130,14 @@ A monitoring-only signal does not reduce the likelihood of side effects if the c
 
 ## Test matrix (copy/paste)
 
-<div class="c-table" role="region" aria-label="Test matrix: control-plane failure patterns" tabindex="0" markdown="1">
-
-| Pattern | Test | Expected enforcement point | Expected result |
-|---|---|---|---|
-| 1 | Cross-boundary privilege bleed | PEP (server-side) | Deny/hold unless boundary re-authorizes |
-| 1 | Credential binding replay | PEP (server-side) | Deny on binding mismatch |
-| 1 | Authority change mid-session | PDP+PEP on next call | Deny on next invocation |
-| 2 | Poisoned input triggers rule | Controller enforcement / PEP | Hold/deny + quarantine artifact |
-| 2 | Policy-violating args | PEP pre-execution | Reject before side effect |
-| 2 | Repeated integrity signals | Circuit breaker | Stop or degrade to read-only |
-
-</div>
+<div class="c-table" role="region" aria-label="Test matrix: control-plane failure patterns" tabindex="0"><table><thead><tr><th>Pattern</th><th>Test</th><th>Expected enforcement point</th><th>Expected result</th></tr></thead><tbody>
+<tr><td>1</td><td>Cross-boundary privilege bleed</td><td>PEP (server-side)</td><td>Deny/hold unless boundary re-authorizes</td></tr>
+<tr><td>1</td><td>Credential binding replay</td><td>PEP (server-side)</td><td>Deny on binding mismatch</td></tr>
+<tr><td>1</td><td>Authority change mid-session</td><td>PDP+PEP on next call</td><td>Deny on next invocation</td></tr>
+<tr><td>2</td><td>Poisoned input triggers rule</td><td>Controller enforcement / PEP</td><td>Hold/deny + quarantine artifact</td></tr>
+<tr><td>2</td><td>Policy-violating args</td><td>PEP pre-execution</td><td>Reject before side effect</td></tr>
+<tr><td>2</td><td>Repeated integrity signals</td><td>Circuit breaker</td><td>Stop or degrade to read-only</td></tr>
+</tbody></table></div>
 
 ---
 
