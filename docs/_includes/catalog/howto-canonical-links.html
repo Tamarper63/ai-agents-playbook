@@ -1,0 +1,75 @@
+{% assign hdata = site.data.catalog.howto %}
+{% assign hitem = nil %}
+
+{% for section in hdata.catalog %}
+  {% for it in section.items %}
+    {% if it.url == page.url %}
+      {% assign hitem = it %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% if hitem %}
+  <div class="c-card" aria-label="Canonical links">
+    <div class="c-card__actions" aria-label="Canonical link actions">
+      {% if hitem.policies %}
+        {% for pol in hitem.policies %}
+          <a class="c-btn c-btn--secondary c-btn--compact"
+             href="{{ pol.url | relative_url }}"
+             title="Read the mapped policy">
+            {{ pol.title }}
+          </a>
+        {% endfor %}
+      {% elsif hitem.policy %}
+        <a class="c-btn c-btn--secondary c-btn--compact"
+           href="{{ hitem.policy.url | relative_url }}"
+           title="Read the mapped policy">
+          {{ hitem.policy.title }}
+        </a>
+      {% endif %}
+
+      <a class="c-btn c-btn--secondary c-btn--compact"
+         href="{{ '/prompts/' | relative_url }}"
+         title="Browse prompt templates">
+        Templates
+      </a>
+    </div>
+
+    {% if hitem.prompts %}
+      <div class="c-card__actions" aria-label="Mapped templates">
+        <details class="c-disclosure-compact">
+          <summary class="c-btn c-btn--secondary c-btn--compact"
+                   title="Show the template files mapped to this how-to">
+            <span class="c-disclosure__label--closed">Templates ({{ hitem.prompts | size }})</span>
+            <span class="c-disclosure__label--open">Hide templates</span>
+          </summary>
+
+          <div class="c-disclosure-compact__panel">
+            <ul class="c-linklist">
+              {% for p in hitem.prompts %}
+                {% assign fname = p | split: '/' | last %}
+                {% assign ftag = 'File' %}
+                {% if p contains '/components/' %}
+                  {% assign ftag = 'Component' %}
+                {% elsif fname contains '.system.' %}
+                  {% assign ftag = 'System' %}
+                {% elsif fname contains '.user.' %}
+                  {% assign ftag = 'User' %}
+                {% endif %}
+
+                <li>
+                  <a href="{{ p | relative_url }}" title="Open template file">
+                    <span class="c-filetag c-filetag--{{ ftag | downcase }}">{{ ftag }}</span>
+                    <code>{{ fname }}</code>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </details>
+      </div>
+    {% endif %}
+  </div>
+{% else %}
+  <p><strong>NOT VERIFIED:</strong> this how-to is not mapped in <code>docs/_data/catalog/howto.yml</code></p>
+{% endif %}

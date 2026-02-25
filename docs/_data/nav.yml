@@ -7,7 +7,7 @@ items:
     url: "/how-to/"
     active_contains: "/how-to/"
 
-  - label: "Templates"
+  - label: "Prompt templates"
     url: "/prompts/"
     active_contains: "/prompts/"
 
