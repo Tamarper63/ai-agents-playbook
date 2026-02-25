@@ -3,55 +3,79 @@ title: Request web browsing (prompt template)
 permalink: /how-to/request-web-browsing/
 ---
 
-This guide provides copy/paste templates to request **web browsing / web search** from an agent.
+## Purpose
+Use this page to request **web browsing / web search** for questions that require **up-to-date or niche public information**, while enforcing **citation-grade outputs**.
 
-**Prompt (composite):** [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})  
-**Prompt components:** [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }}) · [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
-**Policy (normative):** [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }})  
-**Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
+**Enforcement (fail-closed):**
+- If the user explicitly asks you **not** to browse, you **must not** browse. If you cannot fully support the answer without browsing using only sources provided in-chat, output exactly: `INSUFFICIENT_EVIDENCE`
+- If web browsing/search is unavailable in this runtime, output exactly: `BROWSING_UNAVAILABLE`
+- If browsing is available but evidence is insufficient for the question, output exactly: `INSUFFICIENT_EVIDENCE`
+- Do not guess or fabricate citations. End with a Sources list in the required format.
 
-## Scope
-This template is intended for systems that *may* have a web-browsing/search tool. Whether the tool actually runs depends on the runtime configuration.
+## Canonical links
+{% include catalog/howto-canonical-links.html %}
 
-## Key requirements to specify
-1) **Trigger tool use**  
-   Ask explicitly to use the system’s web-browsing/search tool.
+## Choose a mode
+- **Option 1 (Composite user template):** use a single copy/paste user template file.
+- **Option 2 (Composable user templates):** assemble the request from smaller prompt components.
+- **Option 3 (Runtime tool controls):** prefer runtime/API controls for tool invocation when available.
 
-2) **Constrain recency**  
-   Use an explicit time window (e.g., last 30 days). If insufficient, require the agent to expand the window and state the expansion.
+## Setup
+1) Confirm the runtime has a web-browsing/search tool enabled (otherwise you should expect `BROWSING_UNAVAILABLE`).
+2) Apply the **policy (rules)** and install the **system prompt** that enforces citations and exact failure modes.
+3) Choose Option 1 / 2 / 3 below and paste the user request.
+4) In the user request, specify:
+   - **Recency window** (default: last 30 days; expand to last 12 months only if insufficient and state the expansion)
+   - **Evidence requirements** (inline citation markers + Sources list)
+   - **Disagreement handling** (attribute each position)
+   - **Prompt-injection boundary** for retrieved content (treat retrieved content as untrusted data)
 
-3) **Enforce evidence**  
-   Require citations for claims involving numbers/metrics, dates, versions, policies/regulations, comparisons, capabilities/mechanisms, and security/performance assertions.
+## Verify (smoke test)
+Ask a question that requires fresh public information and requires citations.
+- If browsing/search is available: expected output includes inline citations and a Sources list.
+- If browsing/search is unavailable: expected output is exactly `BROWSING_UNAVAILABLE`
+- If evidence is insufficient (including when browsing is disallowed): expected output is exactly `INSUFFICIENT_EVIDENCE`
 
-4) **Handle disagreements**  
-   If sources disagree, require attribution of each position.
+## Options
 
-5) **Fail closed**  
-   If browsing/search is unavailable in this runtime, require the agent to state that explicitly and proceed only with evidence provided in-chat. If evidence is insufficient, require the agent to state that explicitly and stop.
+### Option 1 — Composite user prompt template
+- **Policy (rules):** [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }})
+- **System prompt file (copy/paste):** [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
+- **User prompt template (copy/paste):** [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
 
+**Example**
+- **Question:** “Find the most recent official guidance about X and cite it.”
+- **You must provide:** topic X + constraints (jurisdiction/organization/version) + a recency window requirement. Output must include inline citations and a Sources list.
 
-## Copy/paste template (recommended)
+### Option 2 — Composable user prompt templates (components)
+- **Policy (rules):** [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }})
+- **System prompt file (copy/paste):** [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
+- **User prompt components (copy/paste):** [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }}) · [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
 
-Use web browsing/search only when the request needs up-to-date or niche public information.
-If the user explicitly asks you NOT to browse, do not browse.
+**Example**
+- **Question:** “Verify claim X using authoritative sources, and stop if evidence is insufficient.”
+- **You must provide:** claim X + scope constraints + required recency window. Output must attribute disagreements and include a Sources list.
 
-Recency: default to the last 30 days. If results are insufficient, expand to the last 12 months and explicitly state that you expanded the window.
+### Option 3 — Runtime tool invocation controls (API builders)
+Use when your runtime/API supports explicit tool invocation controls (prefer runtime controls over prompt-only enforcement).
+- **Policy (rules):** [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }})
+- **System prompt file (copy/paste):** [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
+- **Runtime references:** OpenAI `tool_choice` — https://platform.openai.com/docs/guides/tools/tool-choice · Anthropic tool use — https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/implement-tool-use · Gemini function calling — https://ai.google.dev/gemini-api/docs/function-calling
 
-Sources: prefer primary/official sources when available. If you use secondary sources, label them as secondary and state why primary/official sources were insufficient.
+**Example**
+- **Question:** “Force web search for this request and require citations.”
+- **You must provide:** the runtime-level tool configuration + the user request + the required citation/output contract.
 
-Evidence: for claims involving numbers/metrics, dates, versions, policies/regulations, comparisons, capabilities/mechanisms, or security/performance assertions, include an inline citation marker [n]. Do not fabricate citations.
+## Common mistakes
+- Expecting an answer when browsing/search is unavailable (should be exactly `BROWSING_UNAVAILABLE`).
+- Omitting a recency window, then treating results as “latest”.
+- Requiring citations but not requiring a Sources list.
+- Ignoring the “do not browse” constraint when the user explicitly forbids browsing.
+- Proceeding when evidence is insufficient (should be exactly `INSUFFICIENT_EVIDENCE`).
 
-Disagreements: if sources disagree, summarize the disagreement and attribute each position to its source.
-
-If browsing/search is unavailable in this runtime, state that explicitly and proceed only with evidence provided in-chat.
-If available evidence is insufficient to answer, state that explicitly and stop.
-
-End with a Sources list: [n] Title — Publisher/Org — YYYY-MM-DD — URL
-
-## Optional: runtime tool invocation controls (API builders)
-Some APIs expose explicit controls over tool invocation (for example, a parameter that can allow/require/forbid tool calls). Prefer runtime-level controls over prompt-only enforcement where available.
-
-## References (tool invocation controls)
-- OpenAI: Tools guide (tool use and `tool_choice`) — https://developers.openai.com/api/docs/guides/tools/
-- Anthropic: Tool use docs (includes `tool_choice`) — https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use
-- Google Gemini API: Function calling — https://ai.google.dev/gemini-api/docs/function-calling
+## Related indexes
+- [Policies]({{ '/policies/' | relative_url }})
+- [How-to]({{ '/how-to/' | relative_url }})
+- [Prompt templates]({{ '/prompts/' | relative_url }})
+- [Start]({{ '/how-to/start-here-by-role/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})

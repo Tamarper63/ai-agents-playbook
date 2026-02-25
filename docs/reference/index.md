@@ -1,5 +1,6 @@
 ---
 title: Reference
+description: Lookup-style reference pages for stable terminology, catalogs, verification techniques, and canonical diagrams used across the site.
 permalink: /reference/
 ---
 

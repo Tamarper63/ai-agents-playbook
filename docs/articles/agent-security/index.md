@@ -1,5 +1,6 @@
 ---
 title: Agent security
+description: Engineering writeups on trust boundaries, access control, orchestration control-flow, and policy enforcement for tool-using LLM agents.
 permalink: /articles/agent-security/
 ---
 

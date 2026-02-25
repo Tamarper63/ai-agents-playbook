@@ -1,5 +1,6 @@
 ---
 title: Updates
+description: Release notes and update log for new policies, how-to guides, prompt templates, and articles in the AI Agents Playbook.
 permalink: /updates/
 ---
 

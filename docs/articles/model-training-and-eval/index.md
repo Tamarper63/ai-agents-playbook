@@ -1,5 +1,6 @@
 ---
 title: Model training and evaluation
+description: Notes on evaluating LLM reliability, calibration, evidence/grounding, and interpreting benchmark results for single-turn and multi-step outputs.
 permalink: /articles/model-training-and-eval/
 ---
 

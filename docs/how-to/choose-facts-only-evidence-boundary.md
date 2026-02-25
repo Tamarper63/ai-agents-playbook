@@ -65,7 +65,7 @@ Use when you want Option 2 plus structured output (VERIFIED / NOT VERIFIED) and 
 
 **Example**
 - **Question:** “Assess whether claim X is supported by evidence.”
-- **You must provide:** the cited authoritative sources with stable locators (as in Option 2), and any supporting artifacts you want considered. Output must be structured (VERIFIED / NOT VERIFIED) with an explicit confidence line.
+- **You must provide:** the cited authoritative sources with stable locators (as in Option 2), and any supporting artifacts you want considered. Output must be structured (VERIFIED / NOT VERIFIED + confidence) with an explicit confidence line.
 
 ## Common mistakes
 - Choosing Option 1 and then requesting current public facts.
@@ -75,6 +75,6 @@ Use when you want Option 2 plus structured output (VERIFIED / NOT VERIFIED) and 
 ## Related indexes
 - [Policies]({{ '/policies/' | relative_url }})
 - [How-to]({{ '/how-to/' | relative_url }})
-- [Prompt blocks]({{ '/prompts/' | relative_url }})
+- [Prompt templates]({{ '/prompts/' | relative_url }})
 - [Start]({{ '/how-to/start-here-by-role/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})

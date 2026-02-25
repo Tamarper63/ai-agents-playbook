@@ -1,4 +1,5 @@
 title: AI Agents Playbook
+tagline: Reliable AI agents & agentic security
 description: A public, versioned knowledge base for building reliable AI agents and securing agentic systems.
 author:
   name: Tamar Peretz
@@ -8,6 +9,7 @@ url: https://www.andyagentlab.com
 baseurl: ""
 
 lang: en
+locale: en_US
 
 theme: jekyll-theme-cayman
 google_analytics: G-2ZQ4K2Z02Q

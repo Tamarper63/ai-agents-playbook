@@ -1,6 +1,7 @@
 ---
 layout: default
 title: AI Agents Playbook
+description: A public, versioned knowledge base for building reliable AI agents, with policies, how-to guides, prompt templates, and security-focused articles.
 show_title: false
 ---
 
