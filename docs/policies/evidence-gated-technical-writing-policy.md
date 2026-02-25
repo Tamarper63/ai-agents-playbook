@@ -7,13 +7,14 @@ permalink: /policies/evidence-gated-technical-writing-policy/
 Prevent overclaiming in technical writing by requiring evidence for each non-trivial claim and failing closed when evidence is missing.
 
 ## Canonical links
-- How-to: [Evidence-Gated Technical Writing Gate — Verification Procedure (Claims)]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
-- Prompt (system): [evidence-gated-technical-writing-gate.system.txt]({{ '/prompts/evidence-gated-technical-writing-gate.system.txt' | relative_url }})
-- Prompt (user runner): [evidence-gated-technical-writing-gate.user.txt]({{ '/prompts/evidence-gated-technical-writing-gate.user.txt' | relative_url }})
+- **How-to (procedure):** {% include page-title-link.html url="/how-to/evidence-gated-technical-writing-gate-procedure/" fallback="Evidence-Gated Technical Writing Gate — Verification Procedure (Claims)" %}
+- **System prompt template:** [evidence-gated-technical-writing-gate.system.txt]({{ '/prompts/evidence-gated-technical-writing-gate.system.txt' | relative_url }})
+- **User prompt template:** [evidence-gated-technical-writing-gate.user.txt]({{ '/prompts/evidence-gated-technical-writing-gate.user.txt' | relative_url }})
+- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
 
 ## Scope
 This policy applies to **technical writing claim verification**.
-It does not cover architecture/code-quality “best practices” reviews (use a separate quality gate for that workflow).
+It does not cover architecture/code-quality reviews (use the Engineering Quality Gate workflow for that).
 
 ## Rules
 1) **Terminology control**
@@ -31,6 +32,12 @@ It does not cover architecture/code-quality “best practices” reviews (use a 
    - If key claims cannot be supported with authoritative evidence, output:
      `INSUFFICIENT_EVIDENCE: <what is missing>`
 
-## External anchors (why this exists)
-- OWASP LLM Top 10: emphasizes risks when outputs are not validated/handled properly.  
-- NIST AI RMF: emphasizes verification/validation (TEVV) throughout the AI lifecycle.
+## External references
+- OWASP LLM Top 10
+- NIST AI RMF
+
+## Related indexes
+- **Policies:** {{ '/policies/' | relative_url }}
+- **How-to:** {{ '/how-to/' | relative_url }}
+- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Start:** {{ '/how-to/start-here-by-role/' | relative_url }}

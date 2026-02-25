@@ -4,14 +4,15 @@ permalink: /policies/web-verification-and-citations/
 ---
 
 ## Purpose
-Define a deterministic operating contract for when to use web browsing, how to select sources, and how to cite claims.
+Define an operating contract for when to use web browsing, how to select sources, and how to cite claims.
 
 ## Canonical links
-- How-to: [Request web browsing (prompt template)]({{ '/how-to/request-web-browsing/' | relative_url }})
-- Prompt (system SSOT): [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
-- Prompt (composite): [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
-- Prompt (block): [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }})
-- Prompt (block): [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
+- **How-to (procedure):** {% include page-title-link.html url="/how-to/request-web-browsing/" fallback="Request web browsing" %}
+- **System prompt template:** [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
+- **User prompt template (browsing runner):** [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
+- **User prompt template (verification procedure):** [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }})
+- **User prompt template (citations output contract):** [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
+- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
 
 ## Scope
 Applies when answering questions that can benefit from up-to-date or niche public information.
@@ -46,5 +47,11 @@ Applies when answering questions that can benefit from up-to-date or niche publi
      `[n] Title — Publisher/Org — YYYY-MM-DD — URL`
 
 ## References
-- ISO 8601 date format (YYYY-MM-DD): https://www.iso.org/iso-8601-date-and-time-format.html
-- Common knowledge and attribution: https://owl.purdue.edu/owl/avoiding_plagiarism/common_knowledge_attribution.html
+- ISO 8601 date format (YYYY-MM-DD): <https://www.iso.org/iso-8601-date-and-time-format.html>
+- Common knowledge and attribution: <https://owl.purdue.edu/owl/avoiding_plagiarism/common_knowledge_attribution.html>
+
+## Related indexes
+- **Policies:** {{ '/policies/' | relative_url }}
+- **How-to:** {{ '/how-to/' | relative_url }}
+- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Start:** {{ '/how-to/start-here-by-role/' | relative_url }}

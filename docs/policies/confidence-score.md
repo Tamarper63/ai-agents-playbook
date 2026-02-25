@@ -7,15 +7,15 @@ permalink: /policies/confidence-score/
 Provide a standardized, evidence-based way to communicate **analytic confidence** in a response.
 This is intended to improve auditability, triage, and quality gating.
 
+## Canonical links
+- **System prompt template (copy/paste):** [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
+- **How-to (apply):** {% include page-title-link.html url="/how-to/add-confidence-score-to-responses/" fallback="Add a confidence score (0–100) to every response" %}
+- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+
 ## What this is (and is not)
 - **Is:** an evidence-weighted self-assessment of correctness and support for the delivered answer.
 - **Is not:** a statistical probability, model token likelihoods/logprobs, or a calibrated forecast.
-  (Confidence here follows the tradecraft notion of stating confidence and the basis for it.)  
-
-## Canonical links
-- **Prompt block (copy/paste):** [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
-- **How-to (apply):** [Add a confidence score (0–100) to every response]({{ '/how-to/add-confidence-score-to-responses/' | relative_url }})
-- **Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
+  (Confidence here follows the tradecraft notion of stating confidence and the basis for it.)
 
 ## Scope
 Applies to responses that make factual, technical, or operational claims.
@@ -61,3 +61,9 @@ To reduce false precision, prefer coarse bands unless you have unusually strong 
 ## References (tradecraft notion of confidence)
 - Analytic standards require stating confidence and the basis for it: ICD 203 (ODNI).
 - Confidence language based on evidence and agreement: IPCC Uncertainty Guidance Note.
+
+## Related indexes
+- **Policies:** {{ '/policies/' | relative_url }}
+- **How-to:** {{ '/how-to/' | relative_url }}
+- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Start:** {{ '/how-to/start-here-by-role/' | relative_url }}

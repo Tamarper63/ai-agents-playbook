@@ -3,19 +3,18 @@ title: "Evidence-Gated Academic Mode (EGAM) — profile (authoritative sources +
 permalink: /policies/evidence-gated-academic-mode/
 ---
 
-## Canonical links
-
-- **Prompt block (copy/paste):** [evidence-gated-academic-mode.system.txt]({{ '/prompts/evidence-gated-academic-mode.system.txt' | relative_url }})
-- **How-to (procedure):** [Evidence-Gated Academic Mode — procedure]({{ '/how-to/evidence-gated-academic-mode/' | relative_url }})
-- **Base policy (normative):** [Facts-only: Authoritative sources required]({{ '/policies/facts-only-authoritative-sources-required/' | relative_url }})
-
 ## Purpose
-
 EGAM is a compact, publication-oriented profile layered on top of “Authoritative sources required”:
 - explicit WORLD-CLAIM vs PROCESS-RULE taxonomy,
 - academic register (semantic constraints),
 - minimal output contract,
 - mandatory confidence scoring for verified claims.
+
+## Canonical links
+- **How-to (procedure):** {% include page-title-link.html url="/how-to/evidence-gated-academic-mode/" fallback="Evidence-Gated Academic Mode — procedure" %}
+- **System prompt template (copy/paste):** [evidence-gated-academic-mode.system.txt]({{ '/prompts/evidence-gated-academic-mode.system.txt' | relative_url }})
+- **Base policy (normative):** {% include page-title-link.html url="/policies/facts-only-authoritative-sources-required/" fallback="Facts-only: Authoritative sources required" %}
+- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
 
 ## Non-negotiable rules (normative)
 
@@ -48,3 +47,9 @@ Outputs MUST be structured as:
 
 ### E6) OpenAI-scope restriction (conditional)
 For questions specifically about OpenAI products/docs/policies, sources MUST be restricted to official OpenAI domains unless the user explicitly allows broader sources.
+
+## Related indexes
+- **Policies:** {{ '/policies/' | relative_url }}
+- **How-to:** {{ '/how-to/' | relative_url }}
+- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Start:** {{ '/how-to/start-here-by-role/' | relative_url }}

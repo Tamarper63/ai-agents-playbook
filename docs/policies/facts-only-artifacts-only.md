@@ -3,20 +3,19 @@ title: "Facts-only: Artifacts-only (no external sources)"
 permalink: /policies/facts-only-artifacts-only/
 ---
 
-## Canonical links
-
-- **Prompt block (copy/paste):** [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
-- **How-to (procedure):** [Facts-only: Artifacts-only — procedure]({{ '/how-to/facts-only-artifacts-only/' | relative_url }})
-- **Chooser (how to pick):** [Choose a facts-only evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
-- **Prompt blocks index:** [Prompt blocks]({{ '/prompts/' | relative_url }})
-
 ## Purpose
 
 Enforce artifact-grounded factual outputs:
-
 - Only artifacts supplied in the current request are admissible evidence.
 - Each factual claim must cite an artifact and a locator.
 - If evidence is missing, the response must fail closed.
+
+## Canonical links
+
+- **System prompt template (copy/paste):** [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
+- **How-to (procedure):** {% include page-title-link.html url="/how-to/facts-only-artifacts-only/" fallback="Facts-only: Artifacts-only — procedure" %}
+- **Chooser (how to pick):** {% include page-title-link.html url="/how-to/choose-facts-only-evidence-boundary/" fallback="Choose a facts-only evidence boundary" %}
+- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
 
 ## Scope
 
@@ -53,3 +52,9 @@ Interpretation is allowed ONLY if labeled explicitly as **Interpretation** and l
 If a claim cannot be proven directly from artifacts provided in the current request, output exactly:
 `HANDS UP – no artifact, cannot verify.`
 and stop.
+
+## Related indexes
+- **Policies:** {{ '/policies/' | relative_url }}
+- **How-to:** {{ '/how-to/' | relative_url }}
+- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Start:** {{ '/how-to/start-here-by-role/' | relative_url }}

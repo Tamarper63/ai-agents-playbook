@@ -162,6 +162,7 @@ topics:
           - "/articles/model-training-and-eval/sycophancy-agreement-bias/"
           - "/articles/model-training-and-eval/theory-of-mind-in-llms/"
           - "/articles/model-training-and-eval/orders-of-intentionality-recursive-mindreading/"
+          - "/articles/model-training-and-eval/almost-human-but-not-quite/"
 
   prompt-engineering:
     start_goals:
