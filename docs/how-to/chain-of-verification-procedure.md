@@ -1,57 +1,113 @@
 ---
-title: "Choose allowed sources for factual answers"
-description: Choose an evidence boundary for factual answers, defining allowed sources and fail-closed enforcement rules.
-permalink: /how-to/choose-facts-only-evidence-boundary/
+title: Run the Chain-of-Verification (CoVe) — procedure
+permalink: /how-to/chain-of-verification-procedure/
 ---
 
-Use this procedure to run a structured verification loop before emitting a final answer.
+## Purpose
+Use this page to run **Chain-of-Verification (CoVe)**: a structured verification loop before emitting a final answer.
 
-## Canonical links (SSOT)
-- **Technique (reference):** {% include page-title-link.html url="/reference/verification-techniques/chain-of-verification/" fallback="Chain-of-Verification (reference)" %}
-- **Policy:** {% include page-title-link.html url="/policies/chain-of-verification/" fallback="Chain-of-Verification — policy" %}
-- **Prompt block (system/developer):** [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
-- **Evidence boundary chooser:** {% include page-title-link.html url="/how-to/choose-facts-only-evidence-boundary/" fallback="Choose a facts-only evidence boundary" %}
-- **Run the full workflow:** {% include page-title-link.html url="/how-to/fact-checking-kit/" fallback="Run Fact-Checking Kit" %}
+**Enforcement (fail-closed):**
+- You **must** select an evidence boundary first (Artifacts-only / Authoritative sources required).
+- You **must** load the evidence-boundary **system prompt template** and then `chain-of-verification.system.txt` at the highest-priority instruction layer available.
+- CoVe output uses exact sections in order: `DRAFT` → `VERIFICATION_QUESTIONS` → `VERIFICATION_ANSWERS` → `FINAL`.
+- If the active evidence boundary requires failing closed, you **must** output the boundary’s **exact sentinel** and stop (even if CoVe is installed):
+  - `"HANDS UP – no artifact, cannot verify."`
+  - `"HANDS UP – no source, cannot verify."`
+  - `BROWSING_UNAVAILABLE`
+  - `INSUFFICIENT_EVIDENCE`
 
-## Related prompts (SSOT)
-**Required: pick exactly one evidence boundary**
-- Artifacts-only: [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
-- Authoritative sources required: [facts-only-authoritative-sources-required.system.txt]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
+## Canonical links
+{% include catalog/howto-canonical-links.html %}
 
-**If using “Authoritative sources required”**
-- [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
-- [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
-- [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
+## Choose a mode
+- **Option 1 (Artifacts-only CoVe):** verify using only artifacts you provide (no external sources).
+- **Option 2 (Authoritative sources CoVe):** verify world-claims using authoritative sources with stable locators.
+- **Option 3 (Web verification CoVe):** use browsing/search (if available) + inline citations + Sources list (exact failure modes apply).
 
-**Optional (recommended in the site’s default stack)**
-- [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
-- [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
+## Setup
+1) Choose an evidence boundary (required): [Choose allowed sources for factual answers]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }}).
+2) Install the boundary’s **system prompt template** (Option 1 / 2 below).
+3) Install CoVe:
+   - **System prompt template (copy/paste):** [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
+4) If using Option 3, also install web verification + citation formatting:
+   - **System prompt template (copy/paste):** [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
+   - **User prompt template (copy/paste):** [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
+   - **User prompt component (copy/paste):** [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
+   - Use: [Request web browsing — prompt template]({{ '/how-to/request-web-browsing/' | relative_url }})
+5) Optional (recommended) cross-cutting enforcement:
+   - **System prompt template (copy/paste):** [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
+   - **System prompt template (copy/paste):** [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
+6) Run CoVe:
+   - Write `DRAFT`
+   - Derive checkable `VERIFICATION_QUESTIONS` for each factual claim
+   - Answer independently in `VERIFICATION_ANSWERS` using admissible evidence only
+   - Emit `FINAL` with only verified claims
 
-## Related guides (SSOT)
-- {% include page-title-link.html url="/how-to/request-web-browsing/" fallback="Request web browsing (prompt template)" %}
-- {% include page-title-link.html url="/how-to/add-confidence-score-to-responses/" fallback="Add a confidence score (0–100) to every response" %}
+## Verify (smoke test)
+Ask a factual question **without** providing any artifacts or citations.
+- **Option 1 expected:** output exactly `"HANDS UP – no artifact, cannot verify."`
+- **Option 2 expected:** output exactly `"HANDS UP – no source, cannot verify."`
+- **Option 3 expected:** output exactly `BROWSING_UNAVAILABLE` (if browsing/search is unavailable) or `INSUFFICIENT_EVIDENCE` (if evidence is insufficient).
 
-## Procedure
-1) **Select an evidence boundary first (non-negotiable).**
-   - **[Facts-only: Artifacts-only (no external sources)]({{ '/policies/facts-only-artifacts-only/' | relative_url }})**
-   - **[Facts-only: Authoritative sources required (citations required)]({{ '/policies/facts-only-authoritative-sources-required/' | relative_url }})**
+## Options
 
-2) **Load the prompt blocks into the highest-priority instruction layer.**
-   - Always: your chosen evidence boundary prompt block (one of the two).
-   - Then: [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
-   - If “Authoritative sources required”: also load the Web verification & citations prompts listed above.
-   - Optional: confidence-score + instruction-hierarchy blocks.
+### Option 1 — Artifacts-only CoVe
+- **Policy (rules):** [Chain-of-Verification — policy]({{ '/policies/chain-of-verification/' | relative_url }})
+- **Evidence boundary (rules):** [Facts-only: Artifacts-only]({{ '/policies/facts-only-artifacts-only/' | relative_url }})
+- **System prompt templates (copy/paste):**
+  - [facts-only-artifacts-only.system.txt]({{ '/prompts/facts-only-artifacts-only.system.txt' | relative_url }})
+  - [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
+- Optional (recommended):
+  - [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
+  - [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
 
-3) **Run CoVe using the required output sections (exact order).**
-   - `DRAFT`
-   - `VERIFICATION_QUESTIONS`
-   - `VERIFICATION_ANSWERS`
-   - `FINAL`
+**Example**
+- **Question:** “Why did this CI run fail?”
+- **You must provide:** CI/build logs + referenced config snippets/files. Every factual claim must cite `[artifact-id §locator]`.
 
-4) **In `VERIFICATION_QUESTIONS`: enumerate checkable questions for each factual claim in `DRAFT`.**
+### Option 2 — Authoritative sources CoVe
+- **Policy (rules):** [Chain-of-Verification — policy]({{ '/policies/chain-of-verification/' | relative_url }})
+- **Evidence boundary (rules):** [Facts-only: Authoritative sources required]({{ '/policies/facts-only-authoritative-sources-required/' | relative_url }})
+- **System prompt templates (copy/paste):**
+  - [facts-only-authoritative-sources-required.system.txt]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
+  - [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
+- Optional (recommended):
+  - [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
+  - [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
 
-5) **In `VERIFICATION_ANSWERS`: answer each question independently (no copy from the draft).**
-   - Apply the active evidence boundary rules for admissible evidence and citations/locators.
+**Example**
+- **Question:** “What does standard/spec X say about Y?”
+- **You must provide:** DOI or standard-id + section/clause (or official vendor doc version + section). If not verifiable, output exactly `"HANDS UP – no source, cannot verify."`
 
-6) **In `FINAL`: include only claims supported by the verification answers.**
-   - If verification cannot be completed under the active boundary, fail closed using that boundary’s exact sentinel and stop.
+### Option 3 — Web verification CoVe (browsing + citations)
+- **Policy (rules):** [Chain-of-Verification — policy]({{ '/policies/chain-of-verification/' | relative_url }})
+- **Web verification policy (rules):** [Web Verification & Citations Policy]({{ '/policies/web-verification-and-citations/' | relative_url }})
+- **System prompt templates (copy/paste):**
+  - [facts-only-authoritative-sources-required.system.txt]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
+  - [web-verification-and-citations.system.txt]({{ '/prompts/web-verification-and-citations.system.txt' | relative_url }})
+  - [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
+- **User prompt templates/components (copy/paste):**
+  - [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
+  - [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
+- Optional (recommended):
+  - [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
+  - [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
+- **Procedure:** [Request web browsing — prompt template]({{ '/how-to/request-web-browsing/' | relative_url }})
+
+**Example**
+- **Question:** “Find the most recent official guidance about X and cite it.”
+- **You must provide:** topic X + constraints (jurisdiction/organization) + required recency window. If browsing is unavailable, output exactly `BROWSING_UNAVAILABLE`.
+
+## Common mistakes
+- Installing CoVe without selecting an evidence boundary first.
+- Expecting CoVe sections when the active evidence boundary requires an exact sentinel-only fail-closed response.
+- Using web verification mode but omitting `citations-output-contract.user.txt`, then failing to produce the required Sources list format.
+- Mixing evidence boundaries (artifacts-only vs authoritative) in the same run without an explicit selection.
+- Asking for “latest” without specifying a recency window (web verification mode).
+
+## Related indexes
+- [Policies]({{ '/policies/' | relative_url }})
+- [How-to]({{ '/how-to/' | relative_url }})
+- [Prompt templates]({{ '/prompts/' | relative_url }})
+- [Start]({{ '/how-to/start-here-by-role/' | relative_url }})
+- [Content map]({{ '/reference/content-map/' | relative_url }})
