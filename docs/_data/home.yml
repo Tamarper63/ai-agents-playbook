@@ -39,8 +39,8 @@ quickstart:
   subtitle: "Baseline (do in order): evidence boundary → verification → quality gate."
   steps:
     - title: "Choose allowed sources for factual answers"
-    - output: "Select allowed sources and refusal conditions (fail-closed)."
-    - url: "/how-to/choose-facts-only-evidence-boundary/"
+      output: "Select allowed sources and refusal conditions (fail-closed)."
+      url: "/how-to/choose-facts-only-evidence-boundary/"
     - title: "Run the fact-checking kit — procedure"
       output: "Verify non-trivial claims against allowed sources before output."
       url: "/how-to/fact-checking-kit/"

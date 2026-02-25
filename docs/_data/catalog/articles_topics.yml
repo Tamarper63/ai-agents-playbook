@@ -8,35 +8,15 @@ topics:
       - goal: "Failure patterns for orchestrators, routing components, and policy enforcement points"
         start_url: "/articles/agent-security/control-plane-failures/"
         then_urls:
-          - "/articles/agent-security/trust-boundary-checkpoints/"
-      - goal: "Policy enforcement in LLM request construction (authorization vs provenance separation)"
-        start_url: "/articles/agent-security/prompt-assembly-policy-enforcement/"
-        then_urls:
-          - "/articles/agent-security/request-assembly-threat-model/"
-      - goal: "A public-safe report template with explicit verification limits"
-        start_url: "/articles/agent-security/provenance-boundary-report/"
-        then_urls:
-          - "/policies/web-verification-and-citations/"
-      - goal: "Manipulation of the decision pipeline (beyond prompt injection payloads)"
-        start_url: "/articles/agent-security/social-engineering-ai-decision-pipeline/"
-        then_urls:
-          - "/articles/agent-security/trust-boundary-checkpoints/"
+          - "/articles/agent-security/prompt-policy-is-not-a-safety-layer/"
 
     page_sections:
-      - title: "Foundations"
-        urls:
-          - "/articles/agent-security/llm-boundary-first-touch/"
-          - "/articles/agent-security/controller-loop-attack-surface/"
-      - title: "Audit & enforcement"
+      - title: "Core pages"
         urls:
           - "/articles/agent-security/trust-boundary-checkpoints/"
+          - "/articles/agent-security/controller-loop-attack-surface/"
           - "/articles/agent-security/control-plane-failures/"
-          - "/articles/agent-security/prompt-assembly-policy-enforcement/"
-          - "/articles/agent-security/request-assembly-threat-model/"
-      - title: "Reports & human factors"
-        urls:
-          - "/articles/agent-security/social-engineering-ai-decision-pipeline/"
-          - "/articles/agent-security/provenance-boundary-report/"
+          - "/articles/agent-security/prompt-policy-is-not-a-safety-layer/"
 
     about_md: |
       ### Scope
@@ -51,16 +31,16 @@ topics:
       - Model-training security or claims about mechanism-level cognition.
 
     contracts:
-      - title: "Evidence boundary chooser"
+      - title: "Choose allowed sources for factual answers"
         desc: "Pick a facts-only boundary (allowed sources + refusal contract)."
         url: "/how-to/choose-facts-only-evidence-boundary/"
-      - title: "Web claims: verification + citations"
+      - title: "Web Verification & Citations Policy"
         desc: "When you cite web sources, enforce verification + citation rules."
         url: "/policies/web-verification-and-citations/"
-      - title: "Evidence class separation in reports"
+      - title: "Security report (client-captured): control-plane assurance failures at the LLM boundary"
         desc: "Client-observed artifacts vs claims requiring server-side confirmation (explicitly labeled)."
         url: "/articles/agent-security/provenance-boundary-report/"
-      - title: "Code/architecture validation"
+      - title: "Run the engineering quality gate — procedure"
         desc: "Use the engineering quality gate for structural/code correctness (not writing verification)."
         url: "/how-to/engineering-quality-gate-procedure/"
 
@@ -68,7 +48,7 @@ topics:
       - [OWASP Top 10 for Large Language Model Applications (2025)](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
       - [OWASP AI Agent Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html)
       - [NIST SP 800-207: Zero Trust Architecture](https://doi.org/10.6028/NIST.SP.800-207)
-      - [OpenAI: Safety in building agents](https://developers.openai.com/api/docs/guides/agent-builder-safety/)          
+      - [OpenAI: Safety in building agents](https://developers.openai.com/api/docs/guides/agent-builder-safety/)
 
   agent-architecture:
     start_goals:
@@ -96,36 +76,23 @@ topics:
 
       - **Orchestration patterns (control-flow mechanisms)** — where control flow lives and how workflows are sequenced.
       - **State & lifecycle management** — what persists across steps and boundaries (session/thread/run), what resets, and when.
-      - **Tool invocation lifecycle** — selection, authorization/enforcement, validation, error handling, retries, timeouts, and safe fallbacks.
-      - **Retrieval (RAG) & context construction** — what gets retrieved, selected, and included in the model input, and why.
-      - **Evaluation & test harnesses** — regression suites for multi-step workflows (robustness, failure-mode coverage, attack-oriented cases).
+      - **Tool invocation lifecycle** — selection, authorization/enforcement, validation, error handling, retries, and egress constraints.
+      - **Write paths** — where and how the system can persist changes to external systems.
 
-    terms_md: |
-      ### Industry-standard baselines
+      ### Terminology
 
-      - **Orchestration (control-flow mechanisms)** / **Workflows**: control-flow mechanisms that dictate an agent’s behavior and the structured sequences of steps it follows.  
-        Reference: OWASP *Securing Agentic Applications Guide 1.0*.
-      - **Control plane / data plane (ZTA)**: in NIST SP 800-207, ZTA logical components communicate on a separate control plane, while application data is communicated on a data plane.  
-        This section uses “control plane” as shorthand for the orchestration/policy communication and decision layer.
-      - **Retrieval-Augmented Generation (RAG)**: retrieval-backed generation where retrieved documents are used during generation.  
-        Reference: Lewis et al., NeurIPS 2020.
-      - **Test harness**: a test environment (e.g., stubs/drivers/test doubles) needed to execute tests.  
-        Reference: ISTQB glossary.
-
-      ### Section-defined labels (used for comparison)
-
-      - **Orchestrator-led**: a controller sequences steps and enforces policy; the model is called for scoped sub-tasks.
+      - **Orchestrator**: the component that owns control flow (decides next action/tool call) and enforces policy.
       - **Model-led**: the model proposes next actions/tool calls within constraints enforced by the orchestrator.
 
     related_links:
-      - title: "How-to"
+      - title: "How-to guides"
         url: "/how-to/"
         desc: "Procedures"
-      - title: "Choose an evidence boundary"
+      - title: "Choose allowed sources for factual answers"
         url: "/how-to/choose-facts-only-evidence-boundary/"
-      - title: "Engineering Quality Gate — Procedure"
+      - title: "Run the engineering quality gate — procedure"
         url: "/how-to/engineering-quality-gate-procedure/"
-      - title: "Prompt blocks"
+      - title: "Prompt templates"
         url: "/prompts/"
       - title: "Policies"
         url: "/policies/"
@@ -203,7 +170,7 @@ topics:
           - "/articles/prompt-engineering/prompt-engineering-daily-work/"
 
     related_links:
-      - title: "Prompt components (snippets)"
+      - title: "Prompt components"
         url: "/prompts/components/"
       - title: "Content map"
         url: "/reference/content-map/"

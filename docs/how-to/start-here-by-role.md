@@ -1,172 +1,124 @@
 ---
-title: Start here (choose a goal)
+title: Start here — choose a role
 permalink: /how-to/start-here-by-role/
 ---
 
-Start here: use this page to pick the right policies, prompt templates, and procedures for your goal.
-Complete the baseline once, then jump to a goal.
+## Purpose
+Use this page to route your work to the **correct How-to procedure(s)** and avoid two common failure modes in AI work: **unsupported factual claims** and **contract drift** (mixing incompatible rules/prompt templates).
 
-## Baseline (do this first)
+Use this page in AI workflows when:
+- You are not sure which procedure applies (facts-only, verification, writing gates, engineering gates).
+- You need predictable stop behavior (fail-closed) when evidence is missing.
+- You are using AI outputs in work that will be **published, audited, or shipped**.
 
-<ol class="c-grid c-grid--2 c-list-reset" aria-label="Baseline steps">
-  <li>
-    <a class="c-card" href="{{ '/policies/objective-technical-operating-profile/' | relative_url }}">
-      <div class="c-card__content">
-        <div class="c-card__title">1) Adopt the operating profile (site-wide rules)</div>
-        <div class="c-card__desc">Sets global constraints: objective-only, no simulation, and fail-closed defaults.</div>
-      </div>
-    </a>
-  </li>
+Workflow map (minimal):
+- **Choose evidence boundary** → **Choose a role** → **Run “Start with” + smoke test**
 
-  <li>
-    <a class="c-card" href="{{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }}">
-      <div class="c-card__content">
-        <div class="c-card__title">2) Choose allowed sources (evidence boundary)</div>
-        <div class="c-card__desc">Defines which sources are allowed and when to refuse (fail-closed).</div>
-      </div>
-    </a>
-  </li>
+## Canonical links
+{% include catalog/howto-canonical-links.html %}
 
-  <li>
-    <a class="c-card" href="{{ '/prompts/' | relative_url }}">
-      <div class="c-card__content">
-        <div class="c-card__title">3) Apply the matching prompt templates</div>
-        <div class="c-card__desc">Copy/paste system + user prompts that implement the profile + boundary.</div>
-      </div>
-    </a>
-  </li>
+## Choose a role
+- **Option 1 (Everyday user):** you use AI tools for daily work (summaries, drafts, analysis) and need reliable defaults.
+- **Option 2 (Builder):** you design/ship agentic systems, prompt stacks, or control flows.
+- **Option 3 (Auditor):** you verify correctness/safety, enforce evidence + citations, or investigate failures.
+- **Option 4 (Writer/Publisher):** you publish AI-assisted technical writing and must eliminate overclaims.
 
-  <li>
-    <a class="c-card" href="{{ '/how-to/fact-checking-kit/' | relative_url }}">
-      <div class="c-card__content">
-        <div class="c-card__title">4) Verify outputs before you rely on them</div>
-        <div class="c-card__desc">Run the Fact-Checking Kit for non-trivial claims.</div>
-      </div>
-    </a>
-  </li>
-</ol>
+## Setup
+1) Choose an evidence boundary (required for any factual output):
+   - [Choose allowed sources for factual answers]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
+2) (Recommended) Apply the operating profile (site-wide behavioral rules):
+   - [Objective Technical Baseline Rules (No Simulation) — policy]({{ '/policies/objective-technical-operating-profile/' | relative_url }})
+3) Pick one role below and start with its “Start with” procedure.
+4) Run that procedure’s smoke test to confirm fail-closed behavior in your runtime.
 
-### Optional controls
+## Verify (smoke test)
+Ask a factual question **without** providing admissible evidence for the chosen boundary.
+- Expected: fail-closed behavior (request missing evidence and/or output the boundary’s sentinel), not an answer.
 
-Use these only when the condition applies:
+## Options
 
-- **High-stakes outputs:** [Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
-- **Shipping changes:** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
+### Option 1 — Everyday user (daily AI use)
+Use when you want reliable defaults for everyday AI work (drafting, summarizing, planning, analysis) without building systems.
 
-Terminology used on this page: [Jump to terminology](#terminology)
+**Start with**
+- [Prompt Engineering Guide for Daily Work]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }})
 
-## Choose a goal
+**You’ll do**
+- Apply a consistent request shape (goal + constraints + evidence boundary).
+- Prevent “confidence by fluency” by requiring explicit uncertainty handling.
+- Use prompt templates and micro-components to enforce reading/coverage when needed.
 
-<nav class="page-toc page-toc--inline" aria-label="Jump to goal">
-  <ul class="page-toc__list">
-    <li><a href="#build--ship">Build & ship</a></li>
-    <li><a href="#secure--audit">Secure & audit</a></li>
-    <li><a href="#research--publish">Research & publish</a></li>
-  </ul>
-</nav>
+**Add next (when needed)**
+- [Prompt templates]({{ '/prompts/' | relative_url }})
+- [Prompt components (micro add-ons)]({{ '/prompts/components/' | relative_url }})
+- [Run the Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
 
----
+Example: “Summarize these notes and list what is NOT proven under artifacts-only.”
 
-<a id="build--ship"></a>
-## Build & ship
+### Option 2 — Builder (agentic systems, prompts, control flow)
+Use when you are building or changing systems where structure matters (architecture, boundaries, tool use, memory, orchestration).
 
-Focus: architecture, tool use, and context selection.
+**Start with**
+- [Run the engineering quality gate — procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
 
-### Do next
-- [Manage LLM memory boundaries]({{ '/how-to/llm-memory-boundaries/' | relative_url }})
-- [Choose tool-execution model: LLM-led vs orchestrator-led]({{ '/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/' | relative_url }})
+**You’ll do**
+- Classify architecture/boundaries from provided materials.
+- Produce a file-specific changeset plan (source-backed when required).
+- Fail closed when inputs/sources are missing.
 
-<details class="c-disclosure-compact">
-  <summary class="c-btn c-btn--secondary c-btn--compact">
-    <span class="c-disclosure__label--closed">More: architecture + routines</span>
-    <span class="c-disclosure__label--open">Hide</span>
-  </summary>
-  <div class="c-disclosure-compact__panel">
-    <ul class="c-linklist">
-      <li><a href="{{ '/articles/agent-architecture/' | relative_url }}">Agent architecture (hub)</a></li>
-      <li><a href="{{ '/articles/agent-architecture/llm-memory-boundary-model/' | relative_url }}">LLM memory boundary model</a></li>
-      <li><a href="{{ '/how-to/prompt-engineering-daily-work/' | relative_url }}">Prompt Engineering Guide for Daily Work (procedure)</a></li>
-    </ul>
-  </div>
-</details>
+**Add next (common builder stack)**
+- [Manage LLM memory boundaries (ChatGPT + agentic systems) — procedure]({{ '/how-to/llm-memory-boundaries/' | relative_url }})
+- [Prompt components (micro add-ons)]({{ '/prompts/components/' | relative_url }})
+- [Run the Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
 
----
+Example: “Review this repo snapshot for boundary violations and output a minimal changeset plan.”
 
-<a id="secure--audit"></a>
-## Secure & audit
+### Option 3 — Auditor (evidence-first verification)
+Use when you must verify claims, investigate failures, or enforce citation discipline.
 
-Focus: threat models, enforcement, and audit checkpoints.
+**Start with**
+- [Run the fact-checking kit — procedure]({{ '/how-to/fact-checking-kit/' | relative_url }})
 
-### Do next
-- [Threat model the controller loop]({{ '/articles/agent-security/controller-loop-attack-surface/' | relative_url }})
-- [Run the 8 Trust-Boundary Audit Checkpoints]({{ '/articles/agent-security/trust-boundary-checkpoints/' | relative_url }})
+**You’ll do**
+- Enforce claim-level traceability (artifact locators or citation-grade sources).
+- Run verification loops for non-trivial outputs.
+- Fail closed deterministically when evidence is missing.
 
-<details class="c-disclosure-compact">
-  <summary class="c-btn c-btn--secondary c-btn--compact">
-    <span class="c-disclosure__label--closed">More: enforcement + diagrams</span>
-    <span class="c-disclosure__label--open">Hide</span>
-  </summary>
-  <div class="c-disclosure-compact__panel">
-    <ul class="c-linklist">
-      <li><a href="{{ '/policies/web-verification-and-citations/' | relative_url }}">Web Verification & Citations Policy</a></li>
-      <li><a href="{{ '/how-to/request-web-browsing/' | relative_url }}">Request web browsing + citations</a></li>
-      <li><a href="{{ '/articles/agent-security/request-assembly-threat-model/' | relative_url }}">Request assembly threat model: reading the diagram</a></li>
-      <li><a href="{{ '/articles/agent-security/prompt-assembly-policy-enforcement/' | relative_url }}">Prompt Assembly Policy Enforcement: Typed Provenance</a></li>
-      <li><a href="{{ '/articles/agent-security/llm-boundary-first-touch/' | relative_url }}">The Attack Surface Starts Before Agents — The LLM Boundary</a></li>
-    </ul>
-  </div>
-</details>
+**Add next (when needed)**
+- [Request web browsing — prompt template]({{ '/how-to/request-web-browsing/' | relative_url }}) (only if browsing is available and allowed)
+- [Run the Chain-of-Verification (CoVe) — procedure]({{ '/how-to/chain-of-verification-procedure/' | relative_url }})
+- [Add an evidence-based confidence score (0–100) — procedure]({{ '/how-to/add-confidence-score-to-responses/' | relative_url }})
 
----
+Example: “Verify whether claim X is supported; fail closed if not.”
 
-<a id="research--publish"></a>
-## Research & publish
+### Option 4 — Writer/Publisher (publishable technical writing)
+Use when a draft was written or rewritten by an LLM and must become publishable without unsupported claims.
 
-Focus: evidence-gated writing and evaluation discipline.
+**Start with**
+- [Verify claims in technical writing — procedure]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
 
-### Do next
-- [Run the Evidence-Gated Technical Writing Gate]({{ '/how-to/evidence-gated-technical-writing-gate-procedure/' | relative_url }})
-- [Run the Semantic Accuracy Gate]({{ '/how-to/semantic-accuracy-gate-procedure/' | relative_url }})
+**You’ll do**
+- Produce a claim ledger (VERIFIED / NOT VERIFIED / DISPUTED).
+- Rewrite/remove overclaims so final text contains only VERIFIED claims (or fail closed).
+- Stabilize terminology for publishable text.
 
-<details class="c-disclosure-compact">
-  <summary class="c-btn c-btn--secondary c-btn--compact">
-    <span class="c-disclosure__label--closed">More: evaluation + publishing discipline</span>
-    <span class="c-disclosure__label--open">Hide</span>
-  </summary>
-  <div class="c-disclosure-compact__panel">
-    <ul class="c-linklist">
-      <li><a href="{{ '/how-to/add-confidence-score-to-responses/' | relative_url }}">Add an evidence-based confidence score</a></li>
-      <li><a href="{{ '/how-to/evidence-gated-academic-mode/' | relative_url }}">Evidence-Gated Academic Mode (EGAM)</a></li>
-      <li><a href="{{ '/articles/model-training-and-eval/' | relative_url }}">Model training & eval (hub)</a></li>
-      <li><a href="{{ '/articles/model-training-and-eval/fluency-vs-factuality/' | relative_url }}">Fluency Is Not Factuality</a></li>
-      <li><a href="{{ '/articles/model-training-and-eval/sycophancy-agreement-bias/' | relative_url }}">Sycophancy in LLM Assistants</a></li>
-    </ul>
-  </div>
-</details>
+**Add next (to improve semantic stability and reporting)**
+- [Run the semantic accuracy gate — procedure]({{ '/how-to/semantic-accuracy-gate-procedure/' | relative_url }})
+- [Run the evidence-gated academic mode (EGAM) — procedure]({{ '/how-to/evidence-gated-academic-mode/' | relative_url }})
+- [Add an evidence-based confidence score (0–100) — procedure]({{ '/how-to/add-confidence-score-to-responses/' | relative_url }})
+- [Request web browsing — prompt template]({{ '/how-to/request-web-browsing/' | relative_url }}) (only if browsing is available and allowed)
 
----
+Example: “Turn this AI-assisted draft into publishable content where every material claim is evidence-backed.”
 
-## Explore more
+## Common mistakes
+- Skipping the evidence boundary and expecting “facts-only” behavior.
+- Choosing a role but running a different gate contract (engineering vs writing) in the same run without deciding which contract applies.
+- Expecting “latest” without either (a) browsing enabled and allowed, or (b) providing authoritative sources yourself.
+- Using micro prompt components without a runner template (components are add-ons, not standalone workflows).
+
+## Related indexes
+- [How-to]({{ '/how-to/' | relative_url }})
+- [Policies]({{ '/policies/' | relative_url }})
+- [Prompt templates]({{ '/prompts/' | relative_url }})
+- [Prompt components]({{ '/prompts/components/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})
-- [Reference]({{ '/reference/' | relative_url }})
-- [Newsletter]({{ '/newsletter/' | relative_url }})
-
-<a id="terminology"></a>
-## Terminology
-
-<details class="c-disclosure">
-  <summary>
-    <span class="c-disclosure__label--closed">Show terminology</span>
-    <span class="c-disclosure__label--open">Hide terminology</span>
-  </summary>
-
-  <div class="c-disclosure__body">
-    <ul class="c-linklist">
-      <li><strong>Operating profile:</strong> the site-wide rules for outputs (objective-only, no simulation, fail-closed).</li>
-      <li><strong>Evidence boundary:</strong> the allowed source set (artifacts-only vs public sources with citations).</li>
-      <li><strong>Fail-closed:</strong> if required evidence is missing/forbidden, refuse instead of guessing.</li>
-      <li><strong>Prompt templates:</strong> copy/paste prompts that enforce the profile + boundary.</li>
-      <li><strong>Verification workflow:</strong> a repeatable checklist to validate non-trivial claims.</li>
-    </ul>
-  </div>
-</details>
