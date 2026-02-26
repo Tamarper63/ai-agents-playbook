@@ -2043,6 +2043,7 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
   outline: 3px solid rgba($accent_2, 0.35);
   outline-offset: 2px;
 }
+
 /* =========================
    Articles index: On this page (inline ToC) — aligned + consistent
    Requires: <nav class="page-toc page-toc--inline page-toc--articles">
@@ -2050,19 +2051,19 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
 
 .page-toc.page-toc--inline.page-toc--articles {
   max-width: 74ch;
-  margin: 1.15rem auto 1.6rem;
-  padding: 1rem 1.05rem;
+  margin: 0.75rem auto 1.15rem;
+  padding: 0;
 
-  border: 1px solid $border;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.78);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 
-  box-shadow: 0 10px 26px rgba($text, 0.06);
+  box-shadow: none;
   text-align: left;
 }
 
 .page-toc.page-toc--inline.page-toc--articles .page-toc__title {
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.55rem;
   font-size: 0.90rem;
   font-weight: 750;
 
@@ -2071,59 +2072,40 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
   color: rgba($text, 0.85);
 }
 
-/* Balanced layout: grid prevents “random wrap” chips */
+/* Compact ToC: secondary navigation (not CTA buttons) */
 .page-toc.page-toc--inline.page-toc--articles .page-toc__list {
   list-style: none;
   margin: 0;
   padding: 0;
-
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.55rem 0.75rem;
 }
 
-@media (max-width: 900px) {
-  .page-toc.page-toc--inline.page-toc--articles .page-toc__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  /* avoid “orphan” last chip on 2-col layouts */
-  .page-toc.page-toc--inline.page-toc--articles .page-toc__list li:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 560px) {
-  .page-toc.page-toc--inline.page-toc--articles .page-toc__list {
-    grid-template-columns: 1fr;
-  }
+.page-toc.page-toc--inline.page-toc--articles .page-toc__list li {
+  margin: 0.28rem 0;
 }
 
 .page-toc.page-toc--inline.page-toc--articles .page-toc__list a,
 .page-toc.page-toc--inline.page-toc--articles .page-toc__list a:visited {
-  /* make each item look/behave like site buttons */
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
 
-  min-height: 44px;
-  padding: 0.6rem 0.9rem;
+  min-height: 28px;
+  padding: 0.12rem 0.25rem;
 
-  border: 1px solid rgba($text, 0.14);
-  border-radius: 999px;
-  background: rgba($surface, 0.72);
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
 
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+
   color: rgba($text, 0.92);
-  font-weight: 750;
+  font-weight: 700;
 }
 
 .page-toc.page-toc--inline.page-toc--articles .page-toc__list a:hover,
 .page-toc.page-toc--inline.page-toc--articles .page-toc__list a:focus {
-  background: rgba($surface, 0.82);
-  border-color: rgba($text, 0.18);
-  text-decoration: none;
+  text-decoration-thickness: 2px;
 }
 
 .page-toc.page-toc--inline.page-toc--articles .page-toc__list a:focus-visible {

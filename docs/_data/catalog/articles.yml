@@ -1,5 +1,11 @@
 intro: "Long-form technical articles (engineering-oriented): threat models, agent/system architecture notes, evaluation methodology, and evidence/citation policy design. Use How-to for procedures and checklists; use Reference for stable lookup pages and canonical diagrams."
 
+latest:
+  title: "Latest articles"
+  note: "Newest published pages (auto-generated)."
+  grid: "c-grid--2"
+  limit: 6
+
 quick_links:
   grid: "c-grid--3"
   items:
@@ -42,5 +48,5 @@ browse_by_topic:
 
 all_articles:
   title: "All articles"
-  note: "Sorted by published date (newest first)."
+  note: "Grouped by topic; within each topic sorted by published date (newest first)."
   grid: "c-grid--2"

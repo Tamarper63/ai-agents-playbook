@@ -72,13 +72,9 @@ latest_articles:
   subtitle: "Context and threat models (not procedures)."
   all_label: "Browse all articles"
   all_url: "/articles/"
-  items:
-    - label: "Fluency Is Not Factuality"
-      url: "/articles/model-training-and-eval/fluency-vs-factuality/"
-      desc: "Why fluent LLM outputs can still be wrong, and how to enforce evidence-locked answers."
-    - label: "The attack surface is the orchestration loop, not the model"
-      url: "/articles/agent-security/controller-loop-attack-surface/"
-      desc: "How multi-step controller loops change the threat model, and where to enforce separation, authorization, validation, and budgets."
+  mode: "dynamic"
+  limit: 3
+
 
 scope:
   title: "Scope"

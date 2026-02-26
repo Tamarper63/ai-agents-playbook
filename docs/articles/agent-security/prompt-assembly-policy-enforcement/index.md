@@ -1,6 +1,7 @@
 ---
 title: "Prompt Assembly Policy Enforcement: Typed Provenance to Prevent Authority Confusion"
 permalink: /articles/agent-security/prompt-assembly-policy-enforcement/
+summary: "Prevent authority confusion in prompt assembly by enforcing typed provenance separation between authoritative policy and untrusted content at ingress."
 layout: default
 categories: [agent-security]
 author: Tamar Peretz

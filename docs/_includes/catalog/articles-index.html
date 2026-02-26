@@ -2,65 +2,200 @@
 
 <p>{{ d.intro }}</p>
 
-<h2 id="start-here">{{ d.start_here.title }}</h2>
-{% if d.start_here.note %}<p>{{ d.start_here.note }}</p>{% endif %}
+{% assign article_pages = site.pages | where_exp: "p", "p.url contains '/articles/'" | where_exp: "p", "p.published" %}
 
-<div class="c-grid {{ d.start_here.grid }}">
-  {% for u in d.start_here.urls %}
-    {% assign p = site.pages | where: "url", u | first %}
-    {% if p %}
-      <a class="c-card" href="{{ p.url | relative_url }}">
-        <div class="c-card__content">
-          <div class="c-card__title">{{ forloop.index }}) {{ p.title }}</div>
-          {% if p.summary %}<div class="c-card__desc">{{ p.summary }}</div>{% endif %}
-        </div>
-      </a>
-    {% endif %}
-  {% endfor %}
-</div>
+{% assign article_pages_sorted = article_pages | sort: "published" | reverse %}
 
-<h2 id="browse-by-topic">{{ d.browse_by_topic.title }}</h2>
-{% if d.browse_by_topic.note %}<p>{{ d.browse_by_topic.note }}</p>{% endif %}
+{% assign latest_limit = d.latest.limit | default: 6 %}
+{% assign latest_grid = d.latest.grid | default: "c-grid--2" %}
+{% assign topic_grid = d.browse_by_topic.grid | default: "c-grid--2" %}
+{% assign start_grid = d.start_here.grid | default: "c-grid--2" %}
+{% assign all_grid = d.all_articles.grid | default: "c-grid--2" %}
 
-<div class="c-grid {{ d.browse_by_topic.grid }}">
-  {% for item in d.browse_by_topic.items %}
-    <a class="c-card" href="{{ item.url | relative_url }}">
-      <div class="c-card__content">
-        <div class="c-card__title">{{ item.title }}</div>
-        <div class="c-card__desc">{{ item.desc }}</div>
-      </div>
-    </a>
-  {% endfor %}
-</div>
+<section id="latest" class="c-section c-section--thin">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub">{{ d.latest.title }}</h2>
+  </div>
+  {% if d.latest.note %}<p class="c-section__subtitle">{{ d.latest.note }}</p>{% endif %}
 
-<h2 id="all-articles">{{ d.all_articles.title }}</h2>
-{% if d.all_articles.note %}<p>{{ d.all_articles.note }}</p>{% endif %}
+  <div class="c-grid {{ latest_grid }}">
+    {% for p in article_pages_sorted limit: latest_limit %}
+      {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
+      {% assign desc = desc | strip %}
+      {% if desc == "" %}
+        {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 26 %}
+      {% endif %}
 
-{% assign pages_sorted = site.pages | sort: "published" | reverse %}
-
-<div class="c-grid {{ d.all_articles.grid }}">
-  {% for p in pages_sorted %}
-    {% if p.url contains '/articles/' and p.summary %}
       <a class="c-card" href="{{ p.url | relative_url }}">
         <div class="c-card__content">
           <div class="c-card__title">{{ p.title }}</div>
-          <div class="c-card__desc">{{ p.summary }}</div>
-          {% if p.published %}<div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>{% endif %}
+          {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}
+          <div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>
         </div>
       </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="browse-by-topic" class="c-section c-section--thin">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub">{{ d.browse_by_topic.title }}</h2>
+  </div>
+  {% if d.browse_by_topic.note %}<p class="c-section__subtitle">{{ d.browse_by_topic.note }}</p>{% endif %}
+
+  <div class="c-grid {{ topic_grid }}">
+    {% for item in d.browse_by_topic.items %}
+      {% assign topic_pages = article_pages | where_exp: "p", "p.url contains item.url" %}
+      <a class="c-card" href="{{ item.url | relative_url }}">
+        <div class="c-card__content">
+          <div class="c-card__title">{{ item.title }}</div>
+          <div class="c-card__desc">{{ item.desc }}</div>
+          <div class="c-card__meta">{{ topic_pages | size }} articles</div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="start-here" class="c-section c-section--thin">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub">{{ d.start_here.title }}</h2>
+  </div>
+  {% if d.start_here.note %}<p class="c-section__subtitle">{{ d.start_here.note }}</p>{% endif %}
+
+  <div class="c-grid {{ start_grid }}">
+    {% for u in d.start_here.urls %}
+      {% assign p = site.pages | where: "url", u | first %}
+      {% if p %}
+        {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
+        {% assign desc = desc | strip %}
+        {% if desc == "" %}
+          {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 24 %}
+        {% endif %}
+
+        <a class="c-card" href="{{ p.url | relative_url }}">
+          <div class="c-card__content">
+            <div class="c-card__title">{{ forloop.index }}) {{ p.title }}</div>
+            {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}
+            {% if p.published %}<div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>{% endif %}
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section id="all-articles" class="c-section c-section--thin">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub">{{ d.all_articles.title }}</h2>
+  </div>
+  {% if d.all_articles.note %}<p class="c-section__subtitle">{{ d.all_articles.note }}</p>{% endif %}
+
+  {%- comment -%}
+  Progressive disclosure for long lists (topic-grouped). Rationale:
+  - GOV.UK: long lists can overwhelm; use structured browsing.
+  - NN/g: accordions help on content-heavy pages, with known tradeoffs.
+  {%- endcomment -%}
+
+  {% for item in d.browse_by_topic.items %}
+    {% assign topic_pages = article_pages_sorted | where_exp: "p", "p.url contains item.url" %}
+    {% if topic_pages and topic_pages.size > 0 %}
+      <details class="c-disclosure">
+        <summary>
+          <span class="c-disclosure__label--closed">{{ item.title }} ({{ topic_pages | size }})</span>
+          <span class="c-disclosure__label--open">{{ item.title }} ({{ topic_pages | size }})</span>
+        </summary>
+
+        <div class="c-disclosure__body">
+          <div class="c-grid {{ all_grid }}">
+            {% for p in topic_pages %}
+              {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
+              {% assign desc = desc | strip %}
+              {% if desc == "" %}
+                {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 26 %}
+              {% endif %}
+
+              <a class="c-card" href="{{ p.url | relative_url }}">
+                <div class="c-card__content">
+                  <div class="c-card__title">{{ p.title }}</div>
+                  {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}
+                  <div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </details>
     {% endif %}
   {% endfor %}
-</div>
 
-<h2 id="related">Explore other sections</h2>
-
-<div class="c-grid {{ d.quick_links.grid }}">
-  {% for item in d.quick_links.items %}
-    <a class="c-card" href="{{ item.url | relative_url }}">
-      <div class="c-card__content">
-        <div class="c-card__title">{{ item.title }}</div>
-        <div class="c-card__desc">{{ item.desc }}</div>
-      </div>
-    </a>
+  {%- comment -%} Safety net: pages not matching any topic prefix. {%- endcomment -%}
+  {% assign unclassified_count = 0 %}
+  {% for p in article_pages_sorted %}
+    {% assign found = false %}
+    {% for item in d.browse_by_topic.items %}
+      {% if p.url contains item.url %}
+        {% assign found = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% unless found %}
+      {% assign unclassified_count = unclassified_count | plus: 1 %}
+    {% endunless %}
   {% endfor %}
-</div>
+
+  {% if unclassified_count > 0 %}
+    <details class="c-disclosure">
+      <summary>
+        <span class="c-disclosure__label--closed">Other ({{ unclassified_count }})</span>
+        <span class="c-disclosure__label--open">Other ({{ unclassified_count }})</span>
+      </summary>
+
+      <div class="c-disclosure__body">
+        <div class="c-grid {{ all_grid }}">
+          {% for p in article_pages_sorted %}
+            {% assign found = false %}
+            {% for item in d.browse_by_topic.items %}
+              {% if p.url contains item.url %}
+                {% assign found = true %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% unless found %}
+              {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
+              {% assign desc = desc | strip %}
+              {% if desc == "" %}
+                {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 26 %}
+              {% endif %}
+
+              <a class="c-card" href="{{ p.url | relative_url }}">
+                <div class="c-card__content">
+                  <div class="c-card__title">{{ p.title }}</div>
+                  {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}
+                  <div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>
+                </div>
+              </a>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+    </details>
+  {% endif %}
+</section>
+
+<section id="related" class="c-section c-section--thin">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub">Explore other sections</h2>
+  </div>
+
+  <div class="c-grid {{ d.quick_links.grid }}">
+    {% for item in d.quick_links.items %}
+      <a class="c-card" href="{{ item.url | relative_url }}">
+        <div class="c-card__content">
+          <div class="c-card__title">{{ item.title }}</div>
+          <div class="c-card__desc">{{ item.desc }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
