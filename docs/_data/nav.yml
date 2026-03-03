@@ -1,5 +1,5 @@
 items:
-  - label: "Start here"
+  - label: "Getting started"
     url: "/how-to/start-here-by-role/"
     active_contains: "/how-to/start-here-by-role/"
 
@@ -22,10 +22,6 @@ items:
   - label: "Reference"
     url: "/reference/"
     active_contains: "/reference/"
-
-  - label: "Content map"
-    url: "/reference/content-map/"
-    active_contains: "/reference/content-map/"
 
   - label: "Subscribe"
     url: "/newsletter/"

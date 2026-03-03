@@ -162,8 +162,8 @@ EVIDENCE:
 - Add tests: missing evidence → `INSUFFICIENT_EVIDENCE`, wrong cite → reject, stale source → reject.
 - Defend against indirect prompt injection: treat retrieved content as untrusted data; do instruction/data separation.
 
-## Related prompt blocks (this site)
-- Prompt blocks index: {% include page-title-link.html url="/prompts/" fallback="Prompt library" %}
+## Related prompt templates (this site)
+- Prompt templates index: {% include page-title-link.html url="/prompts/" fallback="Prompt templates" %}
 - [Facts-only evidence boundary (authoritative sources required)]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
 - [Evidence-Gated Technical Writing Gate]({{ '/prompts/evidence-gated-technical-writing-gate.system.txt' | relative_url }})
 - [Semantic Accuracy Gate (per-claim ledger)]({{ '/prompts/semantic-accuracy-gate.user.txt' | relative_url }})

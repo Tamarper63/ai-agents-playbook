@@ -34,6 +34,9 @@ These literatures often use different dependent variables:
 - **Behavioral intentions vs detection** (e.g., “can people tell?” vs “do people trust/share?”).
 
 This matters because a result about **trustworthiness ratings** or **detectability** is not automatically a result about **eeriness**, and a result about **sharing intention** is not automatically a result about **belief**.
+
+---
+
 ## 1) The “clown” case: near-human + reduced emotional cue readability
 In a study on coulrophobia, respondents rated multiple proposed contributors to fear of clowns using the Origins of Fear of Clowns Questionnaire (OFCQ). The highest-endorsed themes were **Hidden Emotional Signals** (rank 1; M ≈ 5.20) and **Negative Media Portrayals** (rank 2; M ≈ 5.03), followed by **Unpredictable Behaviour** (rank 3; M ≈ 4.96) and an **Uncanny Valley Effect** (rank 4; M ≈ 4.78).  
 This matters for the “almost human” framing because the top-ranked themes combine (a) reduced readability of social/emotional cues and (b) appearance/behavior cues that can trigger “near-human” discomfort.  
@@ -61,9 +64,10 @@ A Bayesian account models “eeriness” as emerging when perceptual evidence su
 (Moore, *Scientific Reports*, 2012. DOI: 10.1038/srep00864)
 
 ### 2.3 Boundary case: high realism does not imply “uncanny”
-Experimental work reports a series of perceptual studies in which participants judged whether faces were real vs GAN-synthesized and also rated trustworthiness. The authors report that participants could not reliably distinguish synthetic from real faces and that synthetic faces were rated as more trustworthy on average in those tasks.
-The paper’s framing is that state-of-the-art face synthesis has “passed through the uncanny valley” in the sense that these faces are highly photorealistic and, in their perceptual evaluations, are **indistinguishable** from real faces and rated as **more trustworthy** on average. This is evidence that “near-human” realism does not universally produce negative responses in all evaluation regimes, and it motivates separating **detectability/trust** from **eeriness/affect** as distinct outcomes.  
+Experimental work reports perceptual studies in which participants judged whether faces were real vs GAN-synthesized and also rated trustworthiness. The authors report that participants could not reliably distinguish synthetic from real faces and that synthetic faces were rated as more trustworthy on average; they frame this as evidence that state-of-the-art face synthesis has “passed through the uncanny valley” in these perceptual evaluations. This motivates separating **detectability/trust** from **eeriness/affect** as distinct outcomes.  
 (Nightingale & Farid, *PNAS*, 2022. DOI: 10.1073/pnas.2120481119)
+
+Bridge: why these mechanisms get conflated in practice. “Something feels off” is often treated as a single proxy for “bad” or “untrustworthy,” but the literatures above show that different judgments can move in different directions: perceptual realism can reduce **detectability** and even increase **trustworthiness** in some evaluation regimes, while disclosure labels can reduce perceived accuracy and sharing even when content is unchanged. Treating “offness” as a single signal collapses distinct dependent variables (affect vs credibility vs sharing) and can lead to incorrect inferences about why a user is reacting.
 ---
 
 ## 3) AI-generated text: AI-label effects on credibility and sharing
@@ -76,7 +80,7 @@ Design detail (why this matters for interpretation):
 - Study 2 tests mechanisms by providing explicit definitions of “AI-generated” (**Weak / Medium / Strong** automation). Label effects are weaker under weak/medium definitions than under no-definition assumptions, consistent with the interpretation that skepticism tracks **assumed degree of automation** (label semantics).
 
 ### 3.1 Boundary conditions: label effects are not uniform across contexts
-Not all studies find strong main effects of AIGC labels on perceived accuracy, credibility, or sharing intentions. In a web-based randomized controlled experiment on misinformation (JMIR Formative Research, 2024; doi: 10.2196/60024), the main effects of AIGC labels were not statistically significant for perceived accuracy, message credibility, or sharing intention, but interaction effects varied by information type and content category. This suggests that “AI-generated” labels can behave more like a **context-dependent nudge** than a universal credibility penalty, and that label design/placement may interact with content type.  
+Not all studies find strong main effects of AIGC labels on perceived accuracy, credibility, or sharing intentions. In a web-based randomized controlled experiment on misinformation (JMIR Formative Research, 2024; doi: 10.2196/60024), the main effects of AIGC labels were not statistically significant for perceived accuracy, message credibility, or sharing intention, but interaction effects varied by information type and content category. 
 This suggests that “AI-generated” labels can behave more like a **context-dependent nudge** than a universal credibility penalty, and that label design/placement may interact with content type. The study also reports that labels help users distinguish AIGC from human-generated content; overall main effects on accuracy/credibility/sharing are minimal, with effects varying by information type and category.  
 (Li & Yang, *JMIR Formative Research*, 2024. DOI: 10.2196/60024)
 

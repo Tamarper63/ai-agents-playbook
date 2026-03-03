@@ -3,8 +3,16 @@ title: Prompt Engineering Guide for Daily Work
 permalink: /how-to/prompt-engineering-daily-work/
 ---
 
-## Goal
+## Purpose
 Provide operational, copy/paste prompting patterns for daily work across major assistants, with explicit evidence boundaries and fail-closed behavior.
+
+Use this page in daily-work AI workflows when:
+- You see confident outputs that aren’t supported by evidence (need an explicit evidence boundary + fail-closed behavior).
+- You’re working with long inputs (docs/threads/code) and need explicit handling for context limits and skipped content.
+- Tool behavior changes by runtime (browsing/connectors/code execution) and you need explicit tool-policy constraints.
+- You want to reduce agreement bias (sycophancy) and enforce “conflict with evidence → say so + cite”.
+
+Related (context): [Prompt Engineering Guide for Daily Work (Deep Dive)]({{ "/articles/prompt-engineering/prompt-engineering-daily-work/" | relative_url }})
 
 ## Choose the right tool (vendor-documented orientation)
 Use the mapping below as a default decision guide. Verify availability by plan/tier in the vendor documentation.

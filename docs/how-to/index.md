@@ -1,12 +1,22 @@
 ---
 title: How-to guides
-description: "Step-by-step procedures and checklists for running tasks under explicit policies and prompt templates."
+description: "Operational procedures for AI daily work and agent-building: policies, evidence boundaries, and prompt templates."
 permalink: /how-to/
 ---
 
-Step-by-step procedures and checklists for running tasks under explicit **policies** (rules) and **prompt templates** (copy/paste prompt files).
+## Purpose
+This hub helps you choose the correct **How-to procedure** (step-by-step checklist) and apply the right **policy** + **prompt templates** before you run a task.
 
-If you’re not sure where to start, use the **Start here** path below. If you need an overview of content types (How-to vs Reference vs Articles), use the [Content map]({{ '/reference/content-map/' | relative_url }}).
+## Who this is for
+- People using AI assistants/tools for daily work (drafting, summarizing, analysis).
+- Builders and reviewers of agentic workflows who need repeatable procedures (verification, evidence boundaries, engineering gates).
+
+## How to use this page
+1) Start with **Start here (recommended path)**.
+2) Use **On this page** to jump to a topic, or scan the full **How-to catalog**.
+3) If you need prerequisites/definitions, open **Before you run**.
+
+If you need an overview of content types (How-to vs Reference vs Articles), use the [Content map]({{ '/reference/content-map/' | relative_url }}).
 
 ## Start here (recommended path)
 
@@ -53,39 +63,50 @@ If you’re not sure where to start, use the **Start here** path below. If you n
     </div>
   </article>
 
-  <article class="c-card c-card--row c-span-full" role="listitem" aria-label="Alternate starting path">
-    <div class="c-card__main">
-      <div class="c-card__title">
-        <a class="c-card__link" href="{{ '/how-to/start-here-by-role/' | relative_url }}">Start here by role</a>
-      </div>
-      <div class="c-card__desc">Pick the shortest path by objective (builder/developer, security/platform, research).</div>
+<article class="c-card c-card--row c-span-full" role="listitem" aria-label="Alternate starting path">
+  <div class="c-card__main">
+    <div class="c-card__title">
+      <a class="c-card__link" href="{{ '/how-to/start-here-by-role/' | relative_url }}">Alternate: Choose a role</a>
     </div>
+    <div class="c-card__desc">Choose a persona (practitioner/builder/security/research) to get a tailored starting path.</div>
+  </div>
 
-    <div class="c-card__actions" aria-label="Start-by-role actions">
-      <a class="c-btn c-btn--secondary c-btn--compact"
-         href="{{ '/how-to/start-here-by-role/' | relative_url }}"
-         title="Open the start-by-role guide">
-        Open guide
-      </a>
-    </div>
-  </article>
+  <div class="c-card__actions" aria-label="Role-based start actions">
+    <a class="c-btn c-btn--secondary c-btn--compact"
+       href="{{ '/how-to/start-here-by-role/' | relative_url }}"
+       title="Open the role-based start guide">
+      Open guide
+    </a>
+  </div>
+</article>
 
 </div>
 
-## On this page
+<section class="c-section c-section--divider" aria-label="On this page">
+  <div class="c-grid c-grid--2 c-disclosure-grid" role="list" aria-label="In-page navigation">
+    <details class="c-disclosure" role="listitem">
+      <summary>
+        <span class="c-disclosure__label--closed">On this page</span>
+        <span class="c-disclosure__label--open">On this page (hide)</span>
+      </summary>
 
-<nav class="c-inpage-nav" aria-label="On this page">
-  <ul class="c-inpage-nav__list">
-    {% assign data = site.data.catalog.howto %}
-    {% for section in data.catalog %}
-      {% if section.id != 'start-here' %}
-        <li>
-          <a class="c-btn c-btn--secondary c-btn--compact" href="#{{ section.id }}">{{ section.title | escape }}</a>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</nav>
+      <div class="c-disclosure__body">
+        <nav class="c-inpage-nav" aria-label="On this page">
+          <ul class="c-inpage-nav__list">
+            {% assign data = site.data.catalog.howto %}
+            {% for section in data.catalog %}
+              {% if section.id != 'start-here' %}
+                <li>
+                  <a class="c-btn c-btn--secondary c-btn--compact" href="#{{ section.id }}">{{ section.title | escape }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </details>
+  </div>
+</section>
 
 ## How-to catalog (scan)
 

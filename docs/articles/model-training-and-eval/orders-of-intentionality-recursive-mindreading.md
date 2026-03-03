@@ -134,8 +134,8 @@ When describing “Level N” performance for any system (humans or LLMs), state
 3) **Controls** used to limit shortcuts/confounds (matched factual-memory items, stricter task variants).  
 4) Whether your claim is **behavioral** (task performance) or **mechanistic** (which these tasks generally do not determine). (Jones et al., 2024)
 
-## Related prompt blocks (this site)
-- Prompt blocks index: {% include page-title-link.html url="/prompts/" fallback="Prompt library" %}
+## Related prompt templates (this site)
+- Prompt templates index: {% include page-title-link.html url="/prompts/" fallback="Prompt templates" %}
 
 ## Suggested next
 - [Articles — Start here]({{ '/articles/#start-here' | relative_url }})

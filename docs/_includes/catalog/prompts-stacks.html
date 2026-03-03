@@ -9,8 +9,8 @@
       <div class="c-card__actions">
         <details class="c-disclosure-compact">
           <summary class="c-btn c-btn--secondary c-btn--compact">
-            <span class="c-disclosure__label--closed">Prompt blocks ({{ s.items | size }})</span>
-            <span class="c-disclosure__label--open">Hide prompt blocks</span>
+            <span class="c-disclosure__label--closed">Prompt templates ({{ s.items | size }})</span>
+            <span class="c-disclosure__label--open">Hide prompt templates</span>
           </summary>
 
           <div class="c-disclosure-compact__panel">
@@ -27,7 +27,7 @@
                 {% endif %}
 
                 <li>
-                  <a href="{{ p | relative_url }}" title="Open prompt block file">
+                  <a href="{{ p | relative_url }}" title="Open prompt template file">
                     <span class="c-filetag c-filetag--{{ ftag | downcase }}">{{ ftag }}</span>
                     <code>{{ fname }}</code>
                   </a>

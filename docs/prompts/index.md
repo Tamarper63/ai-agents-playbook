@@ -8,14 +8,12 @@ Copy/paste **prompt templates** mapped to their companion **Policies (rules)** a
 
 - **System message templates:** `.system.txt` (highest-authority rules: boundaries, output contract, fallback/“when unsure” policy)
 - **User message templates:** `.user.txt` (execution templates you paste as the user message)
-- **Components:** small add-ons you paste into a user template (not standalone workflows)
 
 ## On this page
 
 <nav class="c-inpage-nav" aria-label="On this page">
   <ul class="c-inpage-nav__list">
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-quick-chooser">Quick chooser</a></li>
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-stacks">Common stacks</a></li>
+    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-stacks">Start here</a></li>
     <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-catalog">Templates catalog</a></li>
     <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-components">Components</a></li>
     <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-usage-rules">Usage rules</a></li>
@@ -23,13 +21,8 @@ Copy/paste **prompt templates** mapped to their companion **Policies (rules)** a
   </ul>
 </nav>
 
-<a id="prompts-quick-chooser"></a>
-## Quick chooser (pick the workflow)
-
-{% include catalog/prompts-quick-chooser.html %}
-
 <a id="prompts-stacks"></a>
-## Common stacks (start here)
+## Start here (recommended stacks)
 
 {% include catalog/prompts-stacks.html %}
 
@@ -63,10 +56,22 @@ Components are small reference snippets to augment a runner with <strong>one add
 - Components that require tools (e.g., browsing) must be used only in runtimes that support those tools.
 
 <a id="prompts-usage-rules"></a>
-## Usage rules (non-negotiable)
-- **Policies** are normative rules.
-- **Templates** are operational copy/paste assets.
-- Keep mappings explicit to prevent drift across policies → templates → procedures.
+## Usage rules
+
+<details class="c-disclosure">
+  <summary>
+    <span class="c-disclosure__label--closed">Usage rules (show)</span>
+    <span class="c-disclosure__label--open">Usage rules (hide)</span>
+  </summary>
+
+  <div class="c-disclosure__body">
+    <ul>
+      <li><strong>Policies</strong> are normative rules.</li>
+      <li><strong>Templates</strong> are operational copy/paste assets.</li>
+      <li>Keep mappings explicit to prevent drift across policies → templates → procedures.</li>
+    </ul>
+  </div>
+</details>
 
 <a id="prompts-related"></a>
 ## Related indexes

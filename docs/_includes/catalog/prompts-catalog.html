@@ -31,9 +31,9 @@
             {% if item.prompts %}
               <details class="c-disclosure-compact">
                 <summary class="c-btn c-btn--secondary c-btn--compact"
-                         title="Show the mapped prompt blocks (files)">
-                  <span class="c-disclosure__label--closed">Prompt blocks ({{ item.prompts | size }})</span>
-                  <span class="c-disclosure__label--open">Hide prompt blocks</span>
+                         title="Show the mapped prompt templates (files)">
+                  <span class="c-disclosure__label--closed">Prompt templates ({{ item.prompts | size }})</span>
+                  <span class="c-disclosure__label--open">Hide prompt templates</span>
                 </summary>
 
                 <div class="c-disclosure-compact__panel">
@@ -50,7 +50,7 @@
                       {% endif %}
 
                       <li>
-                        <a href="{{ p | relative_url }}" title="Open prompt block file">
+                        <a href="{{ p | relative_url }}" title="Open prompt template file">
                           <span class="c-filetag c-filetag--{{ ftag | downcase }}">{{ ftag }}</span>
                           <code>{{ fname }}</code>
                         </a>
