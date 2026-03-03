@@ -8,6 +8,7 @@ They are not standalone workflows.
 
 ## Quick picks
 
+- **Prevent automatic agreement with strong user assertions** → [anti-auto-agreement (user)](#anti-auto-agreement-user)
 - **Ensure complete reading of user-provided artifacts** → [deep-read (user)](#deep-read-user)
 - **Require exhaustive artifact scanning + coverage reporting** → [deep-scan (user)](#deep-scan-user)
 - **Require web retrieval + citations (when tools are available)** → [deep-search (user)](#deep-search-user)
@@ -17,6 +18,7 @@ They are not standalone workflows.
 
 | Component | Adds | Use when | File |
 |---|---|---|---|
+| anti-auto-agreement (user) | Prevents automatic confirmation of user assertions without evidence | You want stance-neutral answers (no “you’re right” mirroring) | [anti-auto-agreement.user.txt]({{ '/prompts/components/anti-auto-agreement.user.txt' | relative_url }}) |
 | deep-read (user) | Read all provided artifacts before answering | Output depends on user-provided text/files | [deep-read.user.txt]({{ '/prompts/components/deep-read.user.txt' | relative_url }}) |
 | deep-scan (user) | Exhaustive artifact scan + coverage reporting + evidence pointers | You have repo files / uploaded attachments and need completeness before conclusions | [deep-scan.user.txt]({{ '/prompts/components/deep-scan.user.txt' | relative_url }}) |
 | deep-search (user) | Web retrieval + citations for external/up-to-date facts | You need current/public facts and browsing/tools are available | [deep-search.user.txt]({{ '/prompts/components/deep-search.user.txt' | relative_url }}) |
@@ -27,6 +29,16 @@ They are not standalone workflows.
 - Paste components into a **user runner** (`.user.txt`) unless explicitly documented otherwise.
 - Use **1–2 components max** per run to reduce instruction collisions.
 - Components that require tools (e.g., browsing) should be used only in runtimes that support those tools.
+
+---
+
+## anti-auto-agreement (user)
+{: #anti-auto-agreement-user }
+
+**Adds:** prevents automatic agreement/confirmation of user assertions unless supported by evidence.  
+**Use when:** you need objective answers and want to avoid stance mirroring.  
+**Avoid when:** there is no user stance/assertion to evaluate.  
+**File:** [anti-auto-agreement.user.txt]({{ '/prompts/components/anti-auto-agreement.user.txt' | relative_url }})
 
 ---
 

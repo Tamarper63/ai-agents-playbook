@@ -26,7 +26,7 @@ Canonical quick version (procedural):
 If you want the step-by-step procedure + templates, use the How-to link above. This article explains the underlying failure modes and how to encode them into daily-work prompts.
 
 ## Scope and verification limits
-This article describes *prompt specifications* as a way to make daily-work prompting testable, auditable, and safer.
+This article describes *prompt specifications* as a way to make daily-work prompting testable, auditable, and safer. It is a **clause library** you can assemble into a specification; the linked How-to provides the step-by-step procedure and templates.
 
 Some claims in this space are **runtime-specific** (model version, plan/tier, tool and connector/app availability, and policy settings). Treat runtime-specific behavior as **versioned** and verify it in the vendor documentation for the exact product/API you are using.
 
@@ -83,7 +83,7 @@ Two distinct failure modes apply:
 - **Fail-closed sentinel:** if the required section/evidence is not processed or not found, output `INSUFFICIENT_EVIDENCE` (or a dedicated `INPUT_TOO_LONG`) and stop.
 
 **Copy/paste clause (drop into your spec)**
-- “If the input is too long to process fully, do not answer. Output `INPUT_TOO_LONG` and list what you need (chunking plan or required sections). Always include ‘Sections used’ and refuse if the required section was not processed.”
+- “If the input is too long to process fully, do not answer. Output `INPUT_TOO_LONG`, list what you need (chunking plan or required sections), and stop. Always include ‘Sections used’ and refuse if the required section was not processed.”
 
 **How to test (evaluation hooks)**
 - **Positive control:** short input; expected: cites the exact section and lists ‘Sections used’.
@@ -174,3 +174,6 @@ Instruction-tuned assistants follow the instructions they can infer. When the go
 - [Sharma et al. — “Towards Understanding Sycophancy in Language Models” (arXiv, 2023)](https://arxiv.org/abs/2310.13548)
 - [OpenAI Help Center — “What are tokens and how to count them?”](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
 - [OpenAI Help Center — “Best practices for prompt engineering with the OpenAI API”](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api)
+- [OpenAI API Reference — “Responses” (instruction precedence: developer/system over user)](https://developers.openai.com/api/reference/resources/responses/)
+- [OpenAI Help Center — “Apps in ChatGPT” (apps/connectors governance)](https://help.openai.com/en/articles/11487775-connectors-in-chatgpt)
+- [OpenAI API Guide — “Function calling” (tool calling provided by the application)](https://developers.openai.com/api/docs/guides/function-calling/)

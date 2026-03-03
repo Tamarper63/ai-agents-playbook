@@ -15,8 +15,36 @@
 <section id="latest" class="c-section c-section--thin">
   <div class="c-section__header">
     <h2 class="c-section__title c-section__title--sub">{{ d.latest.title }}</h2>
+    <a class="c-section__link" href="#all-articles">Browse all</a>
   </div>
-  {% if d.latest.note %}<p class="c-section__subtitle">{{ d.latest.note }}</p>{% endif %}
+
+  {% assign latest_total = article_pages_sorted | size %}
+  {% if latest_total > 0 %}
+    {% assign first_article = article_pages_sorted | first %}
+    {% assign latest_date = first_article.published %}
+
+    {% assign latest_date_count = 0 %}
+    {% for p in article_pages_sorted %}
+      {% if p.published == latest_date %}
+        {% assign latest_date_count = latest_date_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign latest_shown = latest_limit %}
+    {% if latest_total < latest_limit %}
+      {% assign latest_shown = latest_total %}
+    {% endif %}
+
+    {% if latest_date_count > latest_shown %}
+      <p class="c-section__subtitle">
+        Showing {{ latest_shown }} of {{ latest_date_count }} published on {{ latest_date | date: "%Y-%m-%d" }} (same-date tie). Use “Browse all” for the full list.
+      </p>
+    {% elsif d.latest.note %}
+      <p class="c-section__subtitle">{{ d.latest.note }}</p>
+    {% endif %}
+  {% elsif d.latest.note %}
+    <p class="c-section__subtitle">{{ d.latest.note }}</p>
+  {% endif %}
 
   <div class="c-grid {{ latest_grid }}">
     {% for p in article_pages_sorted limit: latest_limit %}

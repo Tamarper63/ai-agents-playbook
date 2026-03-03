@@ -5,16 +5,6 @@ permalink: /how-to/
 
 Step-by-step procedures and checklists for running tasks under explicit **policies** (rules) and **prompt templates** (copy/paste prompt files).
 
-## How the pieces fit
-- **Policies** = rules (evidence boundaries, citation requirements, fail-closed behavior).
-- **Prompt templates** = copy/paste prompt files you load into your runtime (typically as system/developer/user messages).
-- **How-to guides** = the procedure steps for applying the policy + templates to a task. 
-
-## Quickstart (3 steps)
-1) Pick an **evidence boundary** (what sources are allowed).
-2) Load the mapped **system/developer prompt template(s)** (higher-priority instructions take precedence over user input). 
-3) Follow the **How-to** steps. If required evidence is missing, **fail closed** per the active policy.
-
 If you’re not sure where to start, use the **Start here** path below. If you need an overview of content types (How-to vs Reference vs Articles), use the [Content map]({{ '/reference/content-map/' | relative_url }}).
 
 ## Start here (recommended path)
@@ -114,79 +104,42 @@ If you’re not sure where to start, use the **Start here** path below. If you n
         </ul>
       </div>
     </details>
+
+    <details class="c-disclosure" role="listitem">
+      <summary>
+        <span class="c-disclosure__label--closed">How the pieces fit</span>
+        <span class="c-disclosure__label--open">How the pieces fit (hide)</span>
+      </summary>
+
+      <div class="c-disclosure__body">
+        <ul>
+          <li><strong>Policies</strong> = rules (evidence boundaries, citation requirements, fail-closed behavior).</li>
+          <li><strong>Prompt templates</strong> = copy/paste prompt files you load into your runtime (typically as system/developer/user messages).</li>
+          <li><strong>How-to guides</strong> = the procedure steps for applying the policy + templates to a task.</li>
+        </ul>
+      </div>
+    </details>
   </div>
 </section>
 
 ## Browse by topic (jump)
 
-<div class="c-grid c-grid--3 c-grid--topic-jump" role="list" aria-label="How-to topics">
-  <article class="c-card" role="listitem">
-    <div class="c-card__title">
-      <a class="c-card__link" href="#evidence-boundaries-facts-only">Evidence boundaries</a>
-    </div>
-    <div class="c-card__desc">Pick the allowed evidence sources for the run.</div>
-    <div class="c-card__actions" aria-label="Jump actions">
-      <a class="c-btn c-btn--secondary c-btn--compact" href="#evidence-boundaries-facts-only">Jump</a>
-    </div>
-  </article>
-
-  <article class="c-card" role="listitem">
-    <div class="c-card__title">
-      <a class="c-card__link" href="#verification-workflows">Verification procedures</a>
-    </div>
-    <div class="c-card__desc">Gates and procedures that verify claims before output.</div>
-    <div class="c-card__actions" aria-label="Jump actions">
-      <a class="c-btn c-btn--secondary c-btn--compact" href="#verification-workflows">Jump</a>
-    </div>
-  </article>
-
-  <article class="c-card" role="listitem">
-    <div class="c-card__title">
-      <a class="c-card__link" href="#web-verification--citations">Web verification & citations</a>
-    </div>
-    <div class="c-card__desc">How to request browsing + produce verifiable citations.</div>
-    <div class="c-card__actions" aria-label="Jump actions">
-      <a class="c-btn c-btn--secondary c-btn--compact" href="#web-verification--citations">Jump</a>
-    </div>
-  </article>
-
-  <article class="c-card" role="listitem">
-    <div class="c-card__title">
-      <a class="c-card__link" href="#modes--reporting">Modes & reporting</a>
-    </div>
-    <div class="c-card__desc">Reporting conventions (e.g., confidence score) and mode procedures.</div>
-    <div class="c-card__actions" aria-label="Jump actions">
-      <a class="c-btn c-btn--secondary c-btn--compact" href="#modes--reporting">Jump</a>
-    </div>
-  </article>
-
-  <article class="c-card" role="listitem">
-    <div class="c-card__title">
-      <a class="c-card__link" href="#tooling--prompting">Tooling & prompting</a>
-    </div>
-    <div class="c-card__desc">Daily-work prompting workflow + reusable prompt components.</div>
-    <div class="c-card__actions" aria-label="Jump actions">
-      <a class="c-btn c-btn--secondary c-btn--compact" href="#tooling--prompting">Jump</a>
-    </div>
-  </article>
-
-  <article class="c-card" role="listitem">
-    <div class="c-card__title">
-      <a class="c-card__link" href="#memory--context-management">Memory & context management</a>
-    </div>
-    <div class="c-card__desc">Memory boundaries and context hygiene.</div>
-    <div class="c-card__actions" aria-label="Jump actions">
-      <a class="c-btn c-btn--secondary c-btn--compact" href="#memory--context-management">Jump</a>
-    </div>
-  </article>
-</div>
+<nav aria-label="How-to topics">
+  <ul class="c-linklist">
+    {% assign data = site.data.catalog.howto %}
+    {% for section in data.catalog %}
+      {% if section.id != 'start-here' %}
+        <li><a href="#{{ section.id }}">{{ section.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
 
 ## How-to catalog (scan)
 
 {% include catalog/howto-catalog.html %}
 
 ## Related indexes
-- [Start here by role]({{ '/how-to/start-here-by-role/' | relative_url }})
 - [Policies]({{ '/policies/' | relative_url }})
 - [Prompt templates]({{ '/prompts/' | relative_url }})
 - [Reference]({{ '/reference/' | relative_url }})
