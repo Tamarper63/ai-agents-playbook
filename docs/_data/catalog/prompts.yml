@@ -41,15 +41,6 @@ quick_chooser:
         url: "/policies/objective-technical-operating-profile/"
         desc: "Rules-first, non-simulative baseline."
 
-  - title: "Components"
-    grid: "c-grid--2"
-    items:
-      - title: "Prompt components"
-        url: "/prompts/components/"
-        desc: "Small add-ons to augment a runner with one behavior."
-      - title: "Don’t confirm without evidence"
-        url: "/prompts/components/#anti-auto-agreement-user"
-        desc: "Prevents automatic agreement with strong user assertions."
 
 stacks:
   - title: "Stack A — Facts-only: Artifacts-only (no external sources)"

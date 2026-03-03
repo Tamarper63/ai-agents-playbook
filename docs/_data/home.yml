@@ -17,8 +17,8 @@ actions:
       url: "/policies/"
     - label: "Browse how-to"
       url: "/how-to/"
-    - label: "Updates (1–2×/week)"
-      url: "/updates/"
+    - label: "Subscribe"
+      url: "/newsletter/"
 
 paths:
   title: "Choose a goal"

@@ -1,5 +1,6 @@
 ---
 title: How-to guides
+description: "Step-by-step procedures and checklists for running tasks under explicit policies and prompt templates."
 permalink: /how-to/
 ---
 
@@ -68,7 +69,27 @@ If you’re not sure where to start, use the **Start here** path below. If you n
       </a>
     </div>
   </article>
+
 </div>
+
+## On this page
+
+<nav class="c-inpage-nav" aria-label="On this page">
+  <ul class="c-inpage-nav__list">
+    {% assign data = site.data.catalog.howto %}
+    {% for section in data.catalog %}
+      {% if section.id != 'start-here' %}
+        <li>
+          <a class="c-btn c-btn--secondary c-btn--compact" href="#{{ section.id }}">{{ section.title | escape }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+
+## How-to catalog (scan)
+
+{% include catalog/howto-catalog.html %}
 
 <section class="c-section c-section--divider" aria-label="Before you run">
   <div class="c-grid c-grid--2 c-disclosure-grid" role="list" aria-label="Baseline and terminology">
@@ -121,23 +142,6 @@ If you’re not sure where to start, use the **Start here** path below. If you n
     </details>
   </div>
 </section>
-
-## Browse by topic (jump)
-
-<nav aria-label="How-to topics">
-  <ul class="c-linklist">
-    {% assign data = site.data.catalog.howto %}
-    {% for section in data.catalog %}
-      {% if section.id != 'start-here' %}
-        <li><a href="#{{ section.id }}">{{ section.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</nav>
-
-## How-to catalog (scan)
-
-{% include catalog/howto-catalog.html %}
 
 ## Related indexes
 - [Policies]({{ '/policies/' | relative_url }})

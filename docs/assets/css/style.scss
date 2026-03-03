@@ -1442,6 +1442,7 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
   width: 100%;
   max-width: 100%;
 }
+
 /* Link list inside disclosure */
 .c-linklist {
   list-style: none;
@@ -1479,6 +1480,22 @@ details.c-disclosure-compact[open] > summary .c-disclosure__label--open {
 .c-linklist a:focus-visible {
   outline: 2px solid rgba($accent_2, 0.55);
   outline-offset: 2px;
+}
+
+/* In-page navigation (On this page) */
+.c-inpage-nav {
+  margin-top: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+
+.c-inpage-nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.60rem;
 }
 
 /* Small tag before file tokens (System/User/File) */

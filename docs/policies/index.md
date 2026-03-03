@@ -1,5 +1,6 @@
 ---
 title: Policies
+description: "Rules for evidence boundaries, citations, and fail-closed outputs for LLM/agent workflows."
 permalink: /policies/
 ---
 

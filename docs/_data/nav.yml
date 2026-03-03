@@ -26,5 +26,9 @@ items:
   - label: "Content map"
     url: "/reference/content-map/"
     active_contains: "/reference/content-map/"
+
+  - label: "Subscribe"
+    url: "/newsletter/"
+    active_contains: "/newsletter/"
     cta: true
     cta_variant: "util"

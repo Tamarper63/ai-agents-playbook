@@ -4,9 +4,9 @@ description: Release notes and update log for new policies, how-to guides, promp
 permalink: /updates/
 ---
 
+{% if site.data.updates.updates and site.data.updates.updates.size > 0 %}
 Planned cadence: **1–2× per week**.
 
-{% if site.data.updates.updates and site.data.updates.updates.size > 0 %}
 <div class="c-grid c-grid--2">
   {% assign sorted = site.data.updates.updates | sort: 'date' | reverse %}
   {% for u in sorted %}
