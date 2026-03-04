@@ -1230,6 +1230,39 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.75rem;
 }
 
+/* Home: compact CTA layout (no disclosure bar) */
+.newsletter-cta--home .newsletter-cta__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.newsletter-cta--home .newsletter-cta__copy {
+  flex: 1;
+  min-width: 18rem;
+}
+
+.newsletter-cta--home .newsletter-subtitle {
+  margin-bottom: 0;
+}
+
+.newsletter-cta--home .newsletter-form {
+  margin-top: 0;
+  max-width: 520px;
+}
+
+@media (max-width: 820px) {
+  .newsletter-cta--home .newsletter-cta__inner {
+    flex-direction: column;
+  }
+
+  .newsletter-cta--home .newsletter-form {
+    max-width: none;
+    width: 100%;
+  }
+}
+
 /* =========================
    Capability map
    ========================= */

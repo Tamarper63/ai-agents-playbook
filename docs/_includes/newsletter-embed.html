@@ -1,11 +1,23 @@
+{% assign bd_tag = include.tag | default: 'website' %}
+{% assign bd_campaign = include.utm_campaign | default: 'subscribe_website' %}
+
+{% if page.url == '/' %}
+  {% assign bd_tag = 'home' %}
+  {% assign bd_campaign = 'subscribe_home' %}
+{% elsif page.url == '/newsletter/' %}
+  {% assign bd_tag = 'newsletter_page' %}
+  {% assign bd_campaign = 'subscribe_newsletter_page' %}
+{% endif %}
+
 <form class="newsletter-form"
       action="https://buttondown.com/api/emails/embed-subscribe/andyagentlab"
       method="post">
-  <!-- Buttondown supports tags and UTM params via hidden fields. -->
-  <input type="hidden" name="tag" value="website">
+  <!-- Buttondown supports tags + UTM params via hidden fields; embed=1 is included in their HTML form example. -->
+  <input type="hidden" name="tag" value="{{ bd_tag }}">
   <input type="hidden" name="utm_source" value="andyagentlab">
   <input type="hidden" name="utm_medium" value="website">
-  <input type="hidden" name="utm_campaign" value="newsletter">
+  <input type="hidden" name="utm_campaign" value="{{ bd_campaign }}">
+  <input type="hidden" name="embed" value="1" />
 
   <label class="newsletter-label" for="bd-email">Email</label>
 

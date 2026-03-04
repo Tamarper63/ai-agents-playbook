@@ -1,6 +1,24 @@
 {% assign mode = include.mode | default: 'footer' %}
 
-{% if mode == 'page' %}
+{% if mode == 'home' %}
+<section class="newsletter-cta newsletter-cta--home" aria-label="Subscribe">
+
+  <div class="newsletter-cta__inner">
+    <div class="newsletter-cta__copy">
+      <div class="newsletter-title">Subscribe</div>
+      <p class="newsletter-subtitle">
+        Email updates when new policies, prompt templates, procedures, or security articles ship.
+      </p>
+    </div>
+
+    <div class="newsletter-form">
+      {% include newsletter-embed.html %}
+    </div>
+  </div>
+
+</section>
+
+{% elsif mode == 'page' %}
 <section class="newsletter-block" aria-label="Newsletter signup">
 
   <p class="newsletter-subtitle">
