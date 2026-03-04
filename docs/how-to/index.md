@@ -110,7 +110,7 @@ If you need an overview of content types (How-to vs Reference vs Articles), use 
 
 ## How-to catalog (scan)
 
-{% include catalog/howto-catalog.html %}
+{% include catalog/howto-catalog.html skip_id="start-here" %}
 
 <section class="c-section c-section--divider" aria-label="Before you run">
   <div class="c-grid c-grid--2 c-disclosure-grid" role="list" aria-label="Baseline and terminology">
