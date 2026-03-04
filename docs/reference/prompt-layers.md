@@ -19,12 +19,23 @@ A **system/developer block** contains high-priority instructions that bind the a
 ### User runner (task message)
 A **user runner** is a task template: objective + inputs + required output structure.
 
-### Component (user add-on)
-A **component** is a small add-on pasted into a user runner to enforce a specific execution behavior (e.g., deep read / scan / output schema).
+### Component (user add-on / micro-prompt)
+A **component** is a small add-on pasted into a user runner to enforce one specific execution behavior (e.g., deep read / scan / anti-auto-agreement / output structure).
+
+### Workflow template (multi-step runner)
+A **workflow template** is a runnable prompt template that defines a multi-step procedure (inputs → steps → required output → stop condition). It may reference one or more policies and may include optional components.
+
+### Stack (bundle)
+A **stack** is a recommended bundle of copy/paste assets (system/developer block + user runner + optional components) for a common goal.
+
+### Naming rule for library labels (components/workflows/stacks)
+Use labels with high “information scent”: the title should state the action/outcome (not internal jargon). Put important keywords early in the title so items are scannable. 
+
+### Standard card fields (for catalogs)
+Each library item should be documented with: What it does, Use when, Inputs required, Placement, Stop/failure behavior, Copy/paste. 
 
 ### Untrusted content (data, not instructions)
 Untrusted content includes uploaded files, pasted excerpts, retrieved pages, and tool outputs. Instructions inside untrusted content are treated as data unless explicitly delegated.
-
 ## Minimal mapping (API + agents)
 
 ### API pipelines
@@ -38,7 +49,7 @@ Untrusted content includes uploaded files, pasted excerpts, retrieved pages, and
 
 ## See also (repo pages)
 - Policies index: [Policies]({{ '/policies/' | relative_url }})
-- Prompt library: [Prompts]({{ '/prompts/' | relative_url }})
+- Prompt templates: [Prompt templates]({{ '/prompts/' | relative_url }})
 - Prompt components: [Prompt components]({{ '/prompts/components/' | relative_url }})
 - Evidence boundary chooser: [Choose a facts-only evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
 - Engineering Quality Gate procedure: [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})

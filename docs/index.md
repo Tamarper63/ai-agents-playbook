@@ -6,6 +6,7 @@ show_title: false
 ---
 
 {% include home/hero.html %}
+{% include newsletter.html mode="page" %}
 {% include home/paths.html %}
 {% include home/quickstart.html %}
 {% include home/featured.html %}

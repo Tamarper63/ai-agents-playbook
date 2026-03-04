@@ -8,7 +8,7 @@ hero:
 
 actions:
   primary:
-    label: "Start here (choose a goal)"
+    label: "Start here (choose a role)"
     url: "/how-to/start-here-by-role/"
   secondary:
     - label: "Browse prompt templates"
