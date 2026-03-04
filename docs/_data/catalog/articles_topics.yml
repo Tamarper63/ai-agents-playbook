@@ -8,15 +8,17 @@ topics:
       - goal: "Failure patterns for orchestrators, routing components, and policy enforcement points"
         start_url: "/articles/agent-security/control-plane-failures/"
         then_urls:
-          - "/articles/agent-security/prompt-policy-is-not-a-safety-layer/"
+          - "/articles/agent-security/prompt-assembly-policy-enforcement/"
 
     page_sections:
       - title: "Core pages"
         urls:
-          - "/articles/agent-security/trust-boundary-checkpoints/"
           - "/articles/agent-security/controller-loop-attack-surface/"
-          - "/articles/agent-security/control-plane-failures/"
-          - "/articles/agent-security/prompt-policy-is-not-a-safety-layer/"
+          - "/articles/agent-security/llm-boundary-first-touch/"
+          - "/articles/agent-security/prompt-assembly-policy-enforcement/"
+          - "/articles/agent-security/request-assembly-threat-model/"
+          - "/articles/agent-security/provenance-boundary-report/"
+          - "/articles/agent-security/social-engineering-ai-decision-pipeline/"
 
     about_md: |
       ### Scope
