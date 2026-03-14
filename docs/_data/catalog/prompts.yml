@@ -1,50 +1,45 @@
 quick_chooser:
-  - title: "Start here"
+  - title: "Stacks (bundles)"
     grid: "c-grid--3"
     items:
-      - title: "Prompt Engineering Guide for Daily Work"
-        url: "/how-to/prompt-engineering-daily-work/"
-        desc: "A consistent daily driver execution template."
-      - title: "Choose allowed sources for factual answers"
-        url: "/how-to/choose-facts-only-evidence-boundary/"
-        desc: "Pick artifacts-only vs authoritative sources required (citations required)."
-      - title: "Web Verification & Citations Policy"
-        url: "/policies/web-verification-and-citations/"
-        desc: "Up-to-date public facts with citation-grade sources."
+      - title: "Stacks (recommended bundles)"
+        url: "/prompts/#prompts-stacks"
+        desc: "Recommended bundles of templates + components for common goals."
 
-  - title: "Quality gates / controls"
-    grid: "c-grid--2"
-    items:
-      - title: "Chain-of-Verification — policy"
-        url: "/policies/chain-of-verification/"
-        desc: "Structured self-check loop before output."
-      - title: "Engineering Quality Gate Policy (Architecture & Best Practices)"
-        url: "/policies/engineering-quality-gate-policy/"
-        desc: "Architecture + best practices + regressions gate."
-      - title: "Evidence-Gated Technical Writing Policy (Claims)"
-        url: "/policies/evidence-gated-technical-writing-policy/"
-        desc: "Publishable writing: claims must be verified or removed."
-      - title: "Semantic Accuracy Gate (Claims + Terminology)"
-        url: "/policies/semantic-accuracy-gate/"
-        desc: "Prevent overclaims + enforce terminology consistency."
-
-  - title: "Profiles / reporting"
+  - title: "Workflow templates"
     grid: "c-grid--3"
     items:
-      - title: "Evidence-Gated Academic Mode (EGAM) — profile (authoritative sources + academic register + confidence)"
-        url: "/policies/evidence-gated-academic-mode/"
-        desc: "Academic-style evidence-gated outputs."
-      - title: "Evidence-based confidence score (0–100) — analytic reporting policy"
-        url: "/policies/confidence-score/"
-        desc: "Append a numeric confidence line."
-      - title: "Objective Technical Baseline Rules (No Simulation) — policy"
-        url: "/policies/objective-technical-operating-profile/"
-        desc: "Rules-first, non-simulative baseline."
+      - title: "Workflow templates (catalog)"
+        url: "/prompts/#prompts-catalog"
+        desc: "Runnable templates mapped to policies and how-to procedures."
+
+  - title: "Prompt components (micro-prompts)"
+    grid: "c-grid--3"
+    items:
+      - title: "Prompt components (catalog)"
+        url: "/prompts/components/"
+        desc: "Drop-in micro-prompts that add one behavior."
+      - title: "Don’t confirm without evidence"
+        url: "/prompts/components/#anti-auto-agreement-user"
+        desc: "Prevents automatic agreement with strong user assertions."
+
+  - title: "Related guidance"
+    grid: "c-grid--3"
+    items:
+      - title: "Home"
+        url: "/"
+        desc: "Primary entry point for choosing the right path from the homepage."
+      - title: "How-to guides"
+        url: "/how-to/"
+        desc: "Step-by-step procedures for running the workflows."
+      - title: "Policies"
+        url: "/policies/"
+        desc: "Normative rules (evidence boundaries, refusals, enforcement)."
 
 
 stacks:
-  - title: "Stack A — Facts-only: Artifacts-only (no external sources)"
-    desc: "Facts-only: Artifacts-only (no external sources) + optional Chain-of-Verification — policy + optional confidence score."
+  - title: "Daily work — files only"
+    desc: "Use for day-to-day work when the answer must stay inside the files you provide, with no external lookup."
     items:
       - "/prompts/facts-only-artifacts-only.system.txt"
       - "/prompts/components/deep-read.user.txt"
@@ -52,8 +47,8 @@ stacks:
       - "/prompts/chain-of-verification.system.txt"
       - "/prompts/confidence-score.system.txt"
 
-  - title: "Stack B — Facts-only: Authoritative sources required (citations required)"
-    desc: "Facts-only: Authoritative sources required (citations required) + Web Verification & Citations Policy + optional Chain-of-Verification — policy + optional confidence score."
+  - title: "Daily work — web-verified"
+    desc: "Use for day-to-day work when the task depends on current or public facts that must be checked and cited."
     items:
       - "/prompts/facts-only-authoritative-sources-required.system.txt"
       - "/prompts/web-verification-and-citations.system.txt"
@@ -61,8 +56,31 @@ stacks:
       - "/prompts/chain-of-verification.system.txt"
       - "/prompts/confidence-score.system.txt"
 
-  - title: "Stack C — Evidence-Gated Technical Writing Policy (Claims)"
-    desc: "Evidence-Gated Technical Writing Policy (Claims) + optional Semantic Accuracy Gate (Claims + Terminology) + optional confidence score."
+  - title: "Developer architecture boundary review stack"
+    desc: "Use when the task is to classify the architecture, inspect layering and dependency direction, and propose minimal structural remediation."
+    items:
+      - "/prompts/facts-only-artifacts-only.system.txt"
+      - "/prompts/architecture-boundary-review.system.txt"
+      - "/prompts/architecture-boundary-review.user.txt"
+      - "/prompts/components/deep-read.user.txt"
+      - "/prompts/components/deep-scan.user.txt"
+      - "/prompts/chain-of-verification.system.txt"
+      - "/prompts/confidence-score.system.txt"
+
+  - title: "Standards-backed implementation review stack"
+    desc: "Use when code or configuration changes must be checked against official framework, library, runtime, or platform guidance."
+    items:
+      - "/prompts/facts-only-authoritative-sources-required.system.txt"
+      - "/prompts/web-verification-and-citations.system.txt"
+      - "/prompts/standards-backed-implementation-review.system.txt"
+      - "/prompts/standards-backed-implementation-review.user.txt"
+      - "/prompts/components/deep-search.user.txt"
+      - "/prompts/components/deep-scan.user.txt"
+      - "/prompts/chain-of-verification.system.txt"
+      - "/prompts/confidence-score.system.txt"
+
+  - title: "Evidence-gated technical writing stack"
+    desc: "Use when drafting technical content that must control claims, terminology, and evidence quality before publication."
     items:
       - "/prompts/evidence-gated-technical-writing-gate.system.txt"
       - "/prompts/evidence-gated-technical-writing-gate.user.txt"
@@ -70,35 +88,47 @@ stacks:
       - "/prompts/semantic-accuracy-gate.user.txt"
       - "/prompts/confidence-score.system.txt"
 
-catalog:
-  - title: "Daily runner"
-    grid: "c-grid--2"
+  - title: "Scholarly review & synthesis stack"
+    desc: "Use when the task is a literature-based scholarly review or cross-source evidence synthesis."
     items:
-      - title: "Prompt Engineering Guide for Daily Work"
-        desc: "Use for a consistent daily driver execution template."
-        howto: "/how-to/prompt-engineering-daily-work/"
-        prompts:
-          - "/prompts/prompt-engineering-daily-work.user.txt"
+      - "/prompts/scholarly-evidence-gate.system.txt"
+      - "/prompts/literature-review.user.txt"
+      - "/prompts/evidence-synthesis.user.txt"
 
-  - title: "Evidence boundaries"
+  - title: "Scholarly comparison & gap-mapping stack"
+    desc: "Use when the task is to compare sources, identify disagreement, and map evidence gaps."
+    items:
+      - "/prompts/scholarly-evidence-gate.system.txt"
+      - "/prompts/source-comparison.user.txt"
+      - "/prompts/gap-mapping.user.txt"
+
+  - title: "Scholarly bibliography & evidence-table stack"
+    desc: "Use when the task is to produce source-by-source annotations or a structured evidence table."
+    items:
+      - "/prompts/scholarly-evidence-gate.system.txt"
+      - "/prompts/annotated-bibliography.user.txt"
+      - "/prompts/evidence-table.user.txt"
+
+catalog:
+  - title: "Evidence modes"
     grid: "c-grid--2"
     items:
       - title: "Facts-only: Artifacts-only (no external sources)"
-        desc: "No external sources; operate only on user-provided artifacts."
+        desc: "Use when the run must stay strictly inside user-provided artifacts with no external lookup."
         policy: "/policies/facts-only-artifacts-only/"
         howto: "/how-to/facts-only-artifacts-only/"
         prompts:
           - "/prompts/facts-only-artifacts-only.system.txt"
 
       - title: "Facts-only: Authoritative sources required (citations required)"
-        desc: "Browsing allowed; claims require citation-grade sources."
+        desc: "Use when claims must be supported by citation-grade external sources rather than unsupported recall."
         policy: "/policies/facts-only-authoritative-sources-required/"
         howto: "/how-to/facts-only-authoritative-sources-required/"
         prompts:
           - "/prompts/facts-only-authoritative-sources-required.system.txt"
 
       - title: "Web Verification & Citations Policy"
-        desc: "Up-to-date facts + citations output contract."
+        desc: "Add live browsing, retrieval, and citation output requirements for current or public facts."
         policy: "/policies/web-verification-and-citations/"
         howto: "/how-to/request-web-browsing/"
         span_full: true
@@ -108,68 +138,137 @@ catalog:
           - "/prompts/web-verification-procedure.user.txt"
           - "/prompts/citations-output-contract.user.txt"
 
-  - title: "Verification / quality gates"
+  - title: "Task workflows"
     grid: "c-grid--2"
     items:
-      - title: "Chain-of-Verification — policy"
-        desc: "Structured self-check loop before final output."
-        policy: "/policies/chain-of-verification/"
-        howto: "/how-to/chain-of-verification-procedure/"
+      - title: "Architecture Boundary Review"
+        desc: "Use for architecture classification, layering and boundary analysis, and minimal structural remediation."
+        policy: "/policies/architecture-boundary-review-policy/"
+        howto: "/how-to/architecture-boundary-review-procedure/"
         prompts:
-          - "/prompts/chain-of-verification.system.txt"
+          - "/prompts/architecture-boundary-review.system.txt"
+          - "/prompts/architecture-boundary-review.user.txt"
 
-      - title: "Engineering Quality Gate Policy (Architecture & Best Practices)"
-        desc: "Architecture/best-practice checks and regression-minded constraints."
-        policy: "/policies/engineering-quality-gate-policy/"
-        howto: "/how-to/engineering-quality-gate-procedure/"
+      - title: "Standards-Backed Implementation Review"
+        desc: "Use for source-backed review of code or configuration changes against official framework, library, runtime, or platform guidance."
+        policy: "/policies/standards-backed-implementation-review-policy/"
+        howto: "/how-to/standards-backed-implementation-review-procedure/"
         prompts:
-          - "/prompts/engineering-quality-gate.system.txt"
-          - "/prompts/engineering-quality-gate.user.txt"
+          - "/prompts/standards-backed-implementation-review.system.txt"
+          - "/prompts/standards-backed-implementation-review.user.txt"
 
-      - title: "Evidence-Gated Technical Writing Policy (Claims)"
-        desc: "Claims gate for publishable technical writing."
+      - title: "Evidence-Gated Technical Writing"
+        desc: "Use for publishable technical writing where non-trivial claims must be checked before output."
         policy: "/policies/evidence-gated-technical-writing-policy/"
         howto: "/how-to/evidence-gated-technical-writing-gate-procedure/"
         prompts:
           - "/prompts/evidence-gated-technical-writing-gate.system.txt"
           - "/prompts/evidence-gated-technical-writing-gate.user.txt"
 
+  - title: "Scholarly workflows"
+    grid: "c-grid--2"
+    items:
+      - title: "Literature review"
+        desc: "Use when you need a focused scholarly review grounded in inspected sources."
+        policy: "/policies/scholarly-literature-review/"
+        howto: "/how-to/scholarly-literature-review/"
+        prompts:
+          - "/prompts/scholarly-evidence-gate.system.txt"
+          - "/prompts/literature-review.user.txt"
+
+      - title: "Evidence synthesis"
+        desc: "Use when you need themes, patterns, or positions synthesized across inspected sources."
+        policy: "/policies/scholarly-literature-review/"
+        howto: "/how-to/scholarly-literature-review/"
+        prompts:
+          - "/prompts/scholarly-evidence-gate.system.txt"
+          - "/prompts/evidence-synthesis.user.txt"
+
+      - title: "Source comparison"
+        desc: "Use when you need agreements, disagreements, and meaningful differences compared across inspected sources."
+        policy: "/policies/scholarly-literature-review/"
+        howto: "/how-to/scholarly-literature-review/"
+        prompts:
+          - "/prompts/scholarly-evidence-gate.system.txt"
+          - "/prompts/source-comparison.user.txt"
+
+      - title: "Gap mapping"
+        desc: "Use when you need to identify where the current evidence is thin, missing, inconsistent, or underexplored."
+        policy: "/policies/scholarly-literature-review/"
+        howto: "/how-to/scholarly-literature-review/"
+        prompts:
+          - "/prompts/scholarly-evidence-gate.system.txt"
+          - "/prompts/gap-mapping.user.txt"
+
+      - title: "Annotated bibliography"
+        desc: "Use when you need one annotated entry per inspected source."
+        policy: "/policies/scholarly-literature-review/"
+        howto: "/how-to/scholarly-literature-review/"
+        prompts:
+          - "/prompts/scholarly-evidence-gate.system.txt"
+          - "/prompts/annotated-bibliography.user.txt"
+
+      - title: "Evidence table"
+        desc: "Use when you need a structured evidence row for each inspected source or unit of analysis."
+        policy: "/policies/scholarly-literature-review/"
+        howto: "/how-to/scholarly-literature-review/"
+        prompts:
+          - "/prompts/scholarly-evidence-gate.system.txt"
+          - "/prompts/evidence-table.user.txt"
+
+  - title: "Review / enforcement gates"
+    grid: "c-grid--2"
+    items:
+      - title: "Chain-of-Verification"
+        desc: "Add a structured self-check loop before final output."
+        policy: "/policies/chain-of-verification/"
+        howto: "/how-to/chain-of-verification-procedure/"
+        prompts:
+          - "/prompts/chain-of-verification.system.txt"
+
       - title: "Semantic Accuracy Gate (Claims + Terminology)"
-        desc: "Prevent overclaims and enforce consistent terminology."
+        desc: "Add a claim and terminology check to suppress overstatement and wording drift."
         policy: "/policies/semantic-accuracy-gate/"
         howto: "/how-to/semantic-accuracy-gate-procedure/"
         prompts:
           - "/prompts/semantic-accuracy-gate.system.txt"
           - "/prompts/semantic-accuracy-gate.user.txt"
 
-  - title: "Profiles / reporting"
-    grid: "c-grid--3"
+      - title: "Scholarly Evidence Gate"
+        desc: "Add a scholarly evidence boundary when claims must stay inside inspected scholarly sources and make disagreement, limitations, and source quality visible."
+        policy: "/policies/scholarly-literature-review/"
+        howto: "/how-to/scholarly-literature-review/"
+        prompts:
+          - "/prompts/scholarly-evidence-gate.system.txt"
+
+  - title: "Output modes"
+    grid: "c-grid--2"
     items:
-      - title: "Evidence-Gated Academic Mode (EGAM) — profile (authoritative sources + academic register + confidence)"
-        desc: "Academic-style evidence-gated outputs."
+      - title: "Evidence-Gated Academic Mode (EGAM)"
+        desc: "Use when the output must be written in a formal academic register with authoritative citations and fail-closed behavior."
         policy: "/policies/evidence-gated-academic-mode/"
         howto: "/how-to/evidence-gated-academic-mode/"
         prompts:
           - "/prompts/evidence-gated-academic-mode.system.txt"
 
-      - title: "Evidence-based confidence score (0–100) — analytic reporting policy"
-        desc: "Always append a numeric confidence line."
-        policy: "/policies/confidence-score/"
-        howto: "/how-to/add-confidence-score-to-responses/"
-        prompts:
-          - "/prompts/confidence-score.system.txt"
-
-      - title: "Objective Technical Baseline Rules (No Simulation) — policy"
-        desc: "Rules-first baseline compatible with facts-only policies."
+  - title: "Defaults & output modifiers"
+    grid: "c-grid--3"
+    items:
+      - title: "Objective Technical Baseline Rules (No Simulation)"
+        desc: "Default operating rules for objective, non-simulative technical responses."
         policy: "/policies/objective-technical-operating-profile/"
         prompts:
           - "/prompts/objective-technical-style-non-simulative.system.txt"
           - "/prompts/instruction-hierarchy-and-evidence-boundary.system.txt"
 
-  - title: "Baselines"
-    grid: "c-grid--2"
-    items:
       - title: "Minimal non-speculation baseline"
-        desc: "Lightweight do-not-speculate baseline."
+        desc: "Lightweight default that suppresses speculation without a full gate stack."
         prompts:
           - "/prompts/epistemic-constraints-minimal.system.txt"
+
+      - title: "Confidence score (0–100)"
+        desc: "Append a numeric confidence line to standardize uncertainty reporting."
+        policy: "/policies/confidence-score/"
+        howto: "/how-to/add-confidence-score-to-responses/"
+        prompts:
+          - "/prompts/confidence-score.system.txt"

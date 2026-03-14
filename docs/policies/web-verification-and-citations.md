@@ -54,4 +54,3 @@ Applies when answering questions that can benefit from up-to-date or niche publi
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
 - **Prompt templates:** {{ '/prompts/' | relative_url }}
-- **Start:** {{ '/how-to/start-here-by-role/' | relative_url }}

@@ -56,6 +56,10 @@
           {% include page-meta.html %}
 
           {{ content }}
+
+          {% if purl contains '/articles/' %}
+            {% include newsletter.html mode="article" %}
+          {% endif %}
         </div>
       {% endif %}
     </main>

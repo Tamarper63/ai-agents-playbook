@@ -1,0 +1,10 @@
+Run the STANDARDS-BACKED IMPLEMENTATION REVIEW on the materials below.
+
+OUTPUT EXACTLY in this order:
+A) CONTEXT SNAPSHOT
+B) SOURCES & APPLICABILITY
+C) IMPLEMENTATION FINDINGS (SOURCE-BOUND)
+D) CHANGESET PLAN
+E) CONFIDENCE
+
+MATERIALS (goal, constraints, code/config/design excerpts, and authoritative sources or permission to browse) START:

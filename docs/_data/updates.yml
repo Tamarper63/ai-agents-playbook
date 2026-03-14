@@ -1,1 +1,35 @@
-updates: []
+updates:
+  - date: 2026-03-13
+    type: navigation
+    title: "Prompt library reorganized into stacks, workflow templates, and components"
+    url: "/prompts/"
+
+  - date: 2026-03-13
+    type: how-to
+    title: "Added procedure: Scholarly literature review"
+    url: "/how-to/scholarly-literature-review/"
+
+  - date: 2026-03-13
+    type: policy
+    title: "Added policy: Scholarly literature review"
+    url: "/policies/scholarly-literature-review/"
+
+  - date: 2026-02-25
+    type: article
+    title: "Published article: Why “Almost Human, But Not Quite” Feels Wrong"
+    url: "/articles/model-training-and-eval/almost-human-but-not-quite/"
+
+  - date: 2026-02-22
+    type: article
+    title: "Published article: Prompt Engineering Guide for Daily Work"
+    url: "/articles/prompt-engineering/prompt-engineering-daily-work/"
+
+  - date: 2026-02-22
+    type: article
+    title: "Published article: Sycophancy in LLM Assistants"
+    url: "/articles/model-training-and-eval/sycophancy-agreement-bias/"
+
+  - date: 2026-02-22
+    type: article
+    title: "Published article: LLM-Led vs Orchestrator-Led Tool Execution"
+    url: "/articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/"

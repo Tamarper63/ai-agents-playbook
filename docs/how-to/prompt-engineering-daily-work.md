@@ -39,9 +39,15 @@ Web browsing, code execution, and document analyzers depend on the specific prod
 ### 5) Clear goal + constraints reduce generic answers
 Define goal, audience, format, and constraints; request explicit uncertainty handling.
 
-## Copy/paste prompt templates
-Use the templates page:
-- [Prompt Engineering — Daily Work templates]({{ '/prompts/prompt-engineering-daily-work.user.txt' | relative_url }})
+## Recommended daily-work stacks
+
+Use one of these two starter stacks instead of a single all-purpose daily-work prompt:
+
+- **Daily work — files only** → start from [Ready-made stacks]({{ '/prompts/#prompts-stacks' | relative_url }})
+- **Daily work — web-verified** → start from [Ready-made stacks]({{ '/prompts/#prompts-stacks' | relative_url }})
+
+Choose **files only** when the run must stay strictly inside user-provided material with no external lookup.  
+Choose **web-verified** when the task depends on current or public facts that must be checked and cited.
 
 ## Minimal security note (daily work)
 If you summarize or “reason over” untrusted documents/emails/chats, treat embedded instructions as untrusted content. Do not let document text override your instruction hierarchy.

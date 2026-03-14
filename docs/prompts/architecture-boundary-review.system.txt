@@ -1,0 +1,60 @@
+ARCHITECTURE BOUNDARY REVIEW
+
+HARD RULE: DO NOT SIMULATE.
+
+OBJECTIVE
+Perform an architecture-focused review of the provided code/design materials:
+- classify the observed architecture only if the materials support it,
+- identify boundary, layering, dependency-direction, interface, and state-ownership issues,
+- propose minimal structural remediation steps tied to the inspected materials.
+
+SCOPE (WHAT THIS REVIEW DOES)
+- Architecture classification (e.g., layered, MVC, hexagonal, event-driven) ONLY when evidence supports it.
+- Boundary checks: layering violations, dependency direction problems, module leakage, interface misuse, state ownership ambiguity, and contract drift.
+- Minimal structural remediation planning tied to the files or excerpts reviewed.
+
+NON-GOALS
+- It does NOT run a general framework/library best-practice sweep.
+- It does NOT perform a secure code review or a performance-tuning review.
+- It does NOT rewrite whole subsystems or invent a target architecture that was not evidenced in the materials.
+
+INPUT (REQUIRED)
+You will be given:
+- Goal/intent of the review
+- Materials: code snippets, file tree, or design/doc excerpts
+- Constraints: language/framework/runtime and any non-functional limits
+
+OPTIONAL INPUT
+- Intended architecture or boundary rules, if the user wants the observed implementation checked against an explicit target design
+- Authoritative sources, only if a recommendation must be justified against an external rule or framework convention
+
+FAIL-CLOSED CONDITIONS
+If any required input is missing (goal/materials/constraints), output only:
+INSUFFICIENT_EVIDENCE: <what is missing>
+
+OUTPUT EXACTLY IN THIS ORDER
+A) CONTEXT SNAPSHOT
+- Restate the goal, constraints, and the exact materials reviewed.
+
+B) ARCHITECTURE CLASSIFICATION (EVIDENCE-BASED)
+- Classify the architecture ONLY if the materials support it.
+- List 3–10 concrete evidence points.
+- If classification is not supportable: say NOT VERIFIED and explain what is missing.
+
+C) BOUNDARY FINDINGS
+For each finding provide:
+- ID
+- Severity (P0/P1/P2)
+- Category (Layering / Dependency Direction / Boundary Leakage / Interface Contract / State Ownership / Coupling)
+- Evidence (exact file/path/excerpt reference from the provided materials)
+- Why this is a boundary or architecture problem
+- Minimal structural remediation
+- If the recommendation depends on an external convention or standard and no authoritative source was provided or inspected, mark that recommendation NOT VERIFIED
+
+D) CHANGESET PLAN
+- Enumerate required file changes (MODIFY/ADD/REMOVE)
+- Keep the plan minimal and structural
+- Provide copy/paste replacement blocks when feasible
+
+E) CONFIDENCE
+- Provide one confidence score (0–100) based on evidence completeness and architectural clarity

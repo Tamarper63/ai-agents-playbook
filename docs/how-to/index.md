@@ -5,114 +5,43 @@ permalink: /how-to/
 ---
 
 ## Purpose
-This hub helps you choose the correct **How-to procedure** (step-by-step checklist) and apply the right **policy** + **prompt templates** before you run a task.
+This hub is the **procedure catalog** for the site. Use it when you already know you need a step-by-step guide.
 
 ## Who this is for
 - People using AI assistants/tools for daily work (drafting, summarizing, analysis).
 - Builders and reviewers of agentic workflows who need repeatable procedures (verification, evidence boundaries, engineering gates).
 
 ## How to use this page
-1) Start with **Start here (recommended path)**.
-2) Use **On this page** to jump to a topic, or scan the full **How-to catalog**.
-3) If you need prerequisites/definitions, open **Before you run**.
+
+1. If you are new to the site, start from the [homepage]({{ '/' | relative_url }}).
+2. Use [On this page](#on-this-page) to jump directly to a procedure category, or scan the full [How-to catalog](#how-to-catalog).
+3. If you need prerequisites or definitions, open [Before you run](#before-you-run).
 
 If you need an overview of content types (How-to vs Reference vs Articles), use the [Content map]({{ '/reference/content-map/' | relative_url }}).
 
-## Start here (recommended path)
-
-<div class="c-grid c-grid--3" role="list" aria-label="Recommended starting path">
-  <article class="c-card" role="listitem">
-    <div class="c-card__title">
-      <a class="c-card__link" href="{{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }}">Set: Choose an evidence boundary</a>
-    </div>
-    <div class="c-card__desc">Decide what sources are allowed for this run (artifacts-only vs authoritative sources).</div>
-    <div class="c-card__actions" aria-label="Start here actions">
-      <a class="c-btn c-btn--primary c-btn--compact"
-         href="{{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }}"
-         title="Open the guide">
-        Open guide
-      </a>
-    </div>
-  </article>
-
-  <article class="c-card" role="listitem">
-    <div class="c-card__title">
-      <a class="c-card__link" href="{{ '/how-to/fact-checking-kit/' | relative_url }}">Run: Fact-Checking Kit</a>
-    </div>
-    <div class="c-card__desc">Verify claims before writing (claim-by-claim procedure).</div>
-    <div class="c-card__actions" aria-label="Start here actions">
-      <a class="c-btn c-btn--primary c-btn--compact"
-         href="{{ '/how-to/fact-checking-kit/' | relative_url }}"
-         title="Open the guide">
-        Open guide
-      </a>
-    </div>
-  </article>
-
-  <article class="c-card" role="listitem">
-    <div class="c-card__title">
-      <a class="c-card__link" href="{{ '/how-to/engineering-quality-gate-procedure/' | relative_url }}">Enforce: Engineering Quality Gate</a>
-    </div>
-    <div class="c-card__desc">Architecture + regression checks for changes and outputs.</div>
-    <div class="c-card__actions" aria-label="Start here actions">
-      <a class="c-btn c-btn--primary c-btn--compact"
-         href="{{ '/how-to/engineering-quality-gate-procedure/' | relative_url }}"
-         title="Open the guide">
-        Open guide
-      </a>
-    </div>
-  </article>
-
-<article class="c-card c-card--row c-span-full" role="listitem" aria-label="Alternate starting path">
-  <div class="c-card__main">
-    <div class="c-card__title">
-      <a class="c-card__link" href="{{ '/how-to/start-here-by-role/' | relative_url }}">Alternate: Choose a role</a>
-    </div>
-    <div class="c-card__desc">Choose a persona (practitioner/builder/security/research) to get a tailored starting path.</div>
+<section id="on-this-page" class="c-section c-section--divider" aria-label="On this page">
+<div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub">On this page</h2>
+    <p class="c-section__subtitle">Jump directly to a procedure category.</p>
   </div>
 
-  <div class="c-card__actions" aria-label="Role-based start actions">
-    <a class="c-btn c-btn--secondary c-btn--compact"
-       href="{{ '/how-to/start-here-by-role/' | relative_url }}"
-       title="Open the role-based start guide">
-      Open guide
-    </a>
-  </div>
-</article>
-
-</div>
-
-<section class="c-section c-section--divider" aria-label="On this page">
-  <div class="c-grid c-grid--2 c-disclosure-grid" role="list" aria-label="In-page navigation">
-    <details class="c-disclosure" role="listitem">
-      <summary>
-        <span class="c-disclosure__label--closed">On this page</span>
-        <span class="c-disclosure__label--open">On this page (hide)</span>
-      </summary>
-
-      <div class="c-disclosure__body">
-        <nav class="c-inpage-nav" aria-label="On this page">
-          <ul class="c-inpage-nav__list">
-            {% assign data = site.data.catalog.howto %}
-            {% for section in data.catalog %}
-              {% if section.id != 'start-here' %}
-                <li>
-                  <a class="c-btn c-btn--secondary c-btn--compact" href="#{{ section.id }}">{{ section.title | escape }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </nav>
-      </div>
-    </details>
-  </div>
+  <nav class="c-inpage-nav" aria-label="On this page">
+    <ul class="c-inpage-nav__list">
+      {% assign data = site.data.catalog.howto %}
+      {% for section in data.catalog %}
+        <li>
+          <a class="c-btn c-btn--secondary c-btn--compact" href="#{{ section.id }}">{{ section.title | escape }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
 </section>
 
-## How-to catalog (scan)
+## How-to catalog (scan) {#how-to-catalog}
 
-{% include catalog/howto-catalog.html skip_id="start-here" %}
+{% include catalog/howto-catalog.html %}
 
-<section class="c-section c-section--divider" aria-label="Before you run">
+<section id="before-you-run" class="c-section c-section--divider" aria-label="Before you run">
   <div class="c-grid c-grid--2 c-disclosure-grid" role="list" aria-label="Baseline and terminology">
     <details class="c-disclosure" role="listitem">
       <summary>

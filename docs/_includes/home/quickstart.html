@@ -1,20 +1,27 @@
 <section class="c-section c-section--quickstart" id="quickstart">
-    <div class="c-section__header">
-    <h2 class="c-section__title">{{ site.data.home.quickstart.title }}</h2>
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub">{{ site.data.home.quickstart.title }}</h2>
   </div>
 
   {% if site.data.home.quickstart.subtitle %}
     <p class="c-section__subtitle">{{ site.data.home.quickstart.subtitle }}</p>
   {% endif %}
 
-  <div class="c-grid c-grid--3">
+  <ol class="c-baseline-steps c-list-reset" aria-label="{{ site.data.home.quickstart.title }}">
     {% for s in site.data.home.quickstart.steps %}
-      <a class="c-card" href="{{ s.url | relative_url }}">
-        <div class="c-card__content">
-          <div class="c-card__title">{{ s.title }}</div>
-          <div class="c-card__desc">{{ s.output }}</div>
+      <li class="c-baseline-step">
+        <div class="c-baseline-step__num" aria-hidden="true">{{ forloop.index }}</div>
+
+        <div class="c-baseline-step__body">
+          <div class="c-baseline-step__title">
+            <a href="{{ s.url | relative_url }}">{{ s.title }}</a>
+          </div>
+
+          {% if s.output %}
+            <div class="c-baseline-step__desc">{{ s.output }}</div>
+          {% endif %}
         </div>
-      </a>
+      </li>
     {% endfor %}
-  </div>
+  </ol>
 </section>

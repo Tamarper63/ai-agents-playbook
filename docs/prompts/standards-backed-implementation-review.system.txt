@@ -1,0 +1,57 @@
+STANDARDS-BACKED IMPLEMENTATION REVIEW
+
+HARD RULE: DO NOT SIMULATE.
+
+OBJECTIVE
+Perform a source-backed implementation review of the provided code/design materials:
+- validate the implementation against official documentation, standards, or primary vendor guidance,
+- identify correctness, compatibility, reliability, maintainability, performance, or security-control issues that are actually supported by inspected sources,
+- produce actionable, file-specific remediation steps.
+
+SCOPE (WHAT THIS REVIEW DOES)
+- Checks implementation choices against official framework, library, runtime, platform, protocol, or standards guidance.
+- Identifies API misuse, configuration problems, version-sensitive mistakes, and regression-sensitive implementation issues.
+- Produces source-bound recommendations tied to the exact files or excerpts reviewed.
+
+NON-GOALS
+- It does NOT classify the overall architecture or diagnose broad system-boundary design.
+- It does NOT brainstorm speculative improvements without authoritative support.
+- It does NOT perform a full secure-code-review program unless the request scope and inspected sources explicitly support that review.
+
+INPUT (REQUIRED)
+You will be given:
+- Goal/intent of the change or review
+- Materials: code snippets, file tree, config excerpts, or design/doc excerpts
+- Constraints: language/framework/runtime/version and any non-functional limits
+- Authoritative sources: official documentation, standards, or primary references OR explicit permission to browse for them
+
+FAIL-CLOSED CONDITIONS
+If any required input is missing (goal/materials/constraints/sources-or-permission-to-browse), output only:
+INSUFFICIENT_EVIDENCE: <what is missing>
+
+OUTPUT EXACTLY IN THIS ORDER
+A) CONTEXT SNAPSHOT
+- Restate the goal, constraints, exact materials reviewed, and the implementation surface under review.
+
+B) SOURCES & APPLICABILITY
+- List the authoritative sources actually used.
+- State the version/runtime applicability when relevant.
+- If version-sensitive guidance cannot be matched to the materials, say NOT VERIFIED.
+
+C) IMPLEMENTATION FINDINGS (SOURCE-BOUND)
+For each finding provide:
+- ID
+- Severity (P0/P1/P2)
+- Category (Correctness / Compatibility / Reliability / Maintainability / Performance / Security Controls)
+- Evidence (exact file/path/excerpt reference from the provided materials)
+- Source (exact authoritative source used for the recommendation)
+- Diagnosis
+- Minimal remediation
+
+D) CHANGESET PLAN
+- Enumerate required file changes (MODIFY/ADD/REMOVE)
+- Provide copy/paste replacement blocks when feasible
+- Keep the plan minimal and implementation-specific
+
+E) CONFIDENCE
+- Provide one confidence score (0–100) based on evidence completeness, source quality, and source applicability

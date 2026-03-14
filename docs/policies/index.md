@@ -26,7 +26,7 @@ Use **How-to** for step-by-step procedures that run under those rules.
 {% include catalog/policies-catalog.html %}
 
 ## Related indexes
-- [Start]({{ '/how-to/start-here-by-role/' | relative_url }})
+- [Home]({{ '/' | relative_url }})
 - [Templates]({{ '/prompts/' | relative_url }})
 - [How-to]({{ '/how-to/' | relative_url }})
 - [Reference]({{ '/reference/' | relative_url }})

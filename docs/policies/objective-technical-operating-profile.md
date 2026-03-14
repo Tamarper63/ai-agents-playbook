@@ -65,4 +65,3 @@ Use this ruleset when you want the assistant to behave like a technical operator
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
 - **Prompt templates:** {{ '/prompts/' | relative_url }}
-- **Start:** {{ '/how-to/start-here-by-role/' | relative_url }}

@@ -1,0 +1,32 @@
+GAP MAPPING
+
+Identify the most important evidence gaps in the sources below on the question or topic below.
+
+Question or topic:
+{{question_or_topic}}
+
+Sources:
+{{sources}}
+
+Optional scope or constraints:
+{{scope_or_constraints}}
+
+Use only sources you can actually inspect.
+
+- State which sources you actually used.
+- Briefly show what the available sources do cover.
+- Identify where the evidence is missing, thin, inconsistent, outdated, or underexplored.
+- Group the gaps by theme, method, population, dataset, timeframe, geography, or outcome when that helps clarify the picture.
+- Distinguish true evidence gaps from cases where the available sources are simply outside the requested scope.
+- Keep source-supported observations separate from your gap summary.
+- Do not present unsupported claims as fact.
+
+Return:
+1. Question or topic
+2. Sources used
+3. What the current sources cover
+4. Evidence gaps
+5. Scope limits and uncertainties
+6. Gap map summary
+
+If the available material is too narrow to support a meaningful gap map, say so clearly and stay within what the sources support.

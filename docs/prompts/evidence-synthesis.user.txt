@@ -1,0 +1,33 @@
+EVIDENCE SYNTHESIS
+
+Synthesize the evidence on the question, claim, or theme below.
+
+Question, claim, or theme:
+{{question_or_claim_or_theme}}
+
+Sources:
+{{sources}}
+
+Optional scope or constraints:
+{{scope_or_constraints}}
+
+Use only sources you can actually inspect.
+
+- State which sources you actually used.
+- Extract only evidence that is directly relevant.
+- Group the evidence into the main patterns, themes, or positions that emerge across the sources.
+- Distinguish stronger support from weaker, mixed, or limited support when that is visible in the sources.
+- Keep extracted evidence separate from your synthesis.
+- Identify the most important uncertainty, unresolved conflicts, and evidence gaps.
+- Do not present unsupported claims as fact.
+- Do not describe the result as a systematic review, scoping review, or PRISMA-compliant review unless I explicitly ask for that and provide the required review details.
+
+Return:
+1. Question, claim, or theme
+2. Sources used
+3. Evidence patterns
+4. Stronger, weaker, or mixed support
+5. Uncertainty, conflicts, and gaps
+6. Synthesis
+
+If the evidence base is too thin or inconsistent for a strong synthesis, say so clearly and stay within what the sources support.

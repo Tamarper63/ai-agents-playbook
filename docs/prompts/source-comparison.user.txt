@@ -1,0 +1,32 @@
+SOURCE COMPARISON
+
+Compare the sources below on the question, topic, or claim below.
+
+Question, topic, or claim:
+{{question_or_topic_or_claim}}
+
+Sources:
+{{sources}}
+
+Optional scope or constraints:
+{{scope_or_constraints}}
+
+Use only sources you can actually inspect.
+
+- State which sources you actually used.
+- Compare the sources only on points that are directly relevant to the question, topic, or claim.
+- Show where the sources agree, disagree, or meaningfully differ.
+- Highlight important differences in scope, method, dataset, population, assumptions, evidence type, or conclusions when relevant.
+- Distinguish direct disagreement from cases where the sources address different contexts or questions.
+- Keep source-supported comparison separate from your overall comparison summary.
+- Do not present unsupported claims as fact.
+
+Return:
+1. Question, topic, or claim
+2. Sources used
+3. Main points of comparison
+4. Agreements
+5. Disagreements and important differences
+6. Comparison summary
+
+If the sources are too limited or not comparable on key dimensions, say so clearly and stay within what the sources support.

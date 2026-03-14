@@ -1,32 +1,4 @@
 catalog:
-  - id: start-here
-    title: "Start here"
-    grid: "c-grid--2"
-    items:
-      - title: "Start here — choose a role"
-        url: "/how-to/start-here-by-role/"
-        desc: "Route work to the correct how-to procedures by role, with fail-closed evidence boundaries."
-        policies:
-          - title: "Objective Technical Baseline Rules (No Simulation) — policy"
-            url: "/policies/objective-technical-operating-profile/"
-          - title: "Facts-only: Artifacts-only (no external sources)"
-            url: "/policies/facts-only-artifacts-only/"
-          - title: "Facts-only: Authoritative sources required (citations required)"
-            url: "/policies/facts-only-authoritative-sources-required/"
-          - title: "Web Verification & Citations Policy"
-            url: "/policies/web-verification-and-citations/"
-        prompts:
-          - "/prompts/facts-only-artifacts-only.system.txt"
-          - "/prompts/facts-only-authoritative-sources-required.system.txt"
-          - "/prompts/web-verification-and-citations.system.txt"
-          - "/prompts/chain-of-verification.system.txt"
-          - "/prompts/confidence-score.system.txt"
-          - "/prompts/prompt-engineering-daily-work.user.txt"
-          - "/prompts/engineering-quality-gate.system.txt"
-          - "/prompts/engineering-quality-gate.user.txt"
-          - "/prompts/evidence-gated-technical-writing-gate.system.txt"
-          - "/prompts/evidence-gated-technical-writing-gate.user.txt"
-
   - id: evidence-boundaries-facts-only
     title: "Evidence boundaries"
     grid: "c-grid--2"
@@ -115,15 +87,31 @@ catalog:
           - "/prompts/evidence-gated-technical-writing-gate.system.txt"
           - "/prompts/evidence-gated-technical-writing-gate.user.txt"
 
-      - title: "Run the engineering quality gate — procedure"
-        url: "/how-to/engineering-quality-gate-procedure/"
-        desc: "Architecture consistency + regressions + best practices."
+      - title: "Run the architecture boundary review — procedure"
+        url: "/how-to/architecture-boundary-review-procedure/"
+        desc: "Architecture classification, layering/boundary analysis, and minimal structural remediation."
         policy:
-          title: "Engineering Quality Gate Policy (Architecture & Best Practices)"
-          url: "/policies/engineering-quality-gate-policy/"
+          title: "Architecture Boundary Review — policy"
+          url: "/policies/architecture-boundary-review-policy/"
         prompts:
-          - "/prompts/engineering-quality-gate.system.txt"
-          - "/prompts/engineering-quality-gate.user.txt"
+          - "/prompts/facts-only-artifacts-only.system.txt"
+          - "/prompts/architecture-boundary-review.system.txt"
+          - "/prompts/architecture-boundary-review.user.txt"
+          - "/prompts/components/deep-read.user.txt"
+          - "/prompts/components/deep-scan.user.txt"
+
+      - title: "Run the standards-backed implementation review — procedure"
+        url: "/how-to/standards-backed-implementation-review-procedure/"
+        desc: "Source-backed review of code or configuration changes against official guidance."
+        policy:
+          title: "Standards-Backed Implementation Review — policy"
+          url: "/policies/standards-backed-implementation-review-policy/"
+        prompts:
+          - "/prompts/facts-only-authoritative-sources-required.system.txt"
+          - "/prompts/web-verification-and-citations.system.txt"
+          - "/prompts/standards-backed-implementation-review.system.txt"
+          - "/prompts/standards-backed-implementation-review.user.txt"
+          - "/prompts/components/deep-search.user.txt"
           - "/prompts/components/deep-scan.user.txt"
 
       - title: "Semantic Accuracy Gate — Procedure"
@@ -174,15 +162,41 @@ catalog:
         prompts:
           - "/prompts/confidence-score.system.txt"
 
+  - id: scholarly-review
+    title: "Scholarly review"
+    grid: "c-grid--2"
+    items:
+      - title: "Run a scholarly literature review — procedure"
+        url: "/how-to/scholarly-literature-review/"
+        desc: "Run the scholarly literature review stack to produce one evidence-gated scholarly review output from inspected sources."
+        policy:
+          title: "Scholarly Literature Review — policy"
+          url: "/policies/scholarly-literature-review/"
+        prompts:
+          - "/prompts/scholarly-evidence-gate.system.txt"
+          - "/prompts/literature-review.user.txt"
+          - "/prompts/evidence-synthesis.user.txt"
+          - "/prompts/source-comparison.user.txt"
+          - "/prompts/gap-mapping.user.txt"
+          - "/prompts/annotated-bibliography.user.txt"
+          - "/prompts/evidence-table.user.txt"
+
   - id: tooling--prompting
     title: "Tooling & prompting"
     grid: "c-grid--2"
     items:
       - title: "Prompt Engineering Guide for Daily Work"
         url: "/how-to/prompt-engineering-daily-work/"
-        desc: "Provide operational, copy/paste prompting patterns for daily work across major assistants, with explicit evidence boundaries and fail-closed behavior."
+        desc: "Route day-to-day prompting to one of two starter stacks: files-only or web-verified."
         prompts:
-          - "/prompts/prompt-engineering-daily-work.user.txt"
+          - "/prompts/facts-only-artifacts-only.system.txt"
+          - "/prompts/components/deep-read.user.txt"
+          - "/prompts/components/deep-scan.user.txt"
+          - "/prompts/facts-only-authoritative-sources-required.system.txt"
+          - "/prompts/web-verification-and-citations.system.txt"
+          - "/prompts/web-browsing.user.txt"
+          - "/prompts/chain-of-verification.system.txt"
+          - "/prompts/confidence-score.system.txt"
 
   - id: memory--context-management
     title: "Memory & context management"

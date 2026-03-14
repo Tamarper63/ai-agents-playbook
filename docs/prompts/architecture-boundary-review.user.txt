@@ -1,0 +1,10 @@
+Run the ARCHITECTURE BOUNDARY REVIEW on the materials below.
+
+OUTPUT EXACTLY in this order:
+A) CONTEXT SNAPSHOT
+B) ARCHITECTURE CLASSIFICATION (EVIDENCE-BASED)
+C) BOUNDARY FINDINGS
+D) CHANGESET PLAN
+E) CONFIDENCE
+
+MATERIALS (goal, constraints, code/design excerpts, and optional boundary rules) START:

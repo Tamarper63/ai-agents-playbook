@@ -1,40 +1,54 @@
 ---
-title: Engineering Quality Gate Policy (Architecture & Best Practices)
-description: Policy gate for architecture correctness and best-practice compliance, requiring source-bound recommendations, file-specific deltas, and fail-closed output on insufficient evidence.
+title: "Engineering Quality Gate — choose the correct review"
+description: Routing page for the engineering review family. Choose architecture boundary review or standards-backed implementation review.
 permalink: /policies/engineering-quality-gate-policy/
 ---
 
 ## Purpose
-Gate engineering changes for **architecture correctness and best-practice compliance**, with **source-bound** recommendations and fail-closed behavior.
+This page is a **router** for the Engineering Quality Gate family.
+Use it when you know you need an engineering review but have **not yet chosen** the correct review contract.
 
-## Canonical links
-- **How-to (procedure):** {% include page-title-link.html url="/how-to/engineering-quality-gate-procedure/" fallback="Engineering Quality Gate — Procedure" %}
-- **System prompt template:** [engineering-quality-gate.system.txt]({{ '/prompts/engineering-quality-gate.system.txt' | relative_url }})
-- **User prompt template:** [engineering-quality-gate.user.txt]({{ '/prompts/engineering-quality-gate.user.txt' | relative_url }})
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+Do **not** treat this page as the normative rule set for a concrete run.
+Choose **one** of the two policies below and use that policy as the active contract.
 
-## Scope
-Applies to:
-- architecture/layering reviews,
-- interface/contract correctness,
-- best-practice recommendations tied to official docs/standards,
-- file-specific remediation planning.
+## Option 1 — Architecture Boundary Review
+Use this when the dominant question is about:
+- architecture classification,
+- layering,
+- dependency direction,
+- boundary leakage,
+- interface ownership,
+- state ownership,
+- minimal structural remediation.
 
-## Non-goals
-- Not a factual-claims writing gate. For text claim verification use:
-  [Technical Accuracy Policy (Evidence-Gated Claims)]({{ '/policies/evidence-gated-technical-writing-policy/' | relative_url }})
+Open:
+- [Architecture Boundary Review — policy]({{ '/policies/architecture-boundary-review-policy/' | relative_url }})
+- [Run the architecture boundary review — procedure]({{ '/how-to/architecture-boundary-review-procedure/' | relative_url }})
+- [architecture-boundary-review.system.txt]({{ '/prompts/architecture-boundary-review.system.txt' | relative_url }})
+- [architecture-boundary-review.user.txt]({{ '/prompts/architecture-boundary-review.user.txt' | relative_url }})
 
-## Rules (normative)
-1) **No simulation.** Do not invent architecture context, dependencies, metrics, or tool outputs.
-2) **Evidence-based architecture.** Only classify architecture when supported by provided materials; otherwise mark NOT VERIFIED.
-3) **Source-bound recommendations.** Every non-trivial recommendation MUST be supported by an authoritative source (official docs/standards/primary references) or be marked NOT VERIFIED.
-4) **File-specific deltas.** Recommendations must translate into concrete file changes (MODIFY/ADD/REMOVE) with copy/paste blocks when feasible.
-5) **Fail-closed.** If goal/materials/constraints/sources are insufficient, output only:
-   `INSUFFICIENT_EVIDENCE: <what is missing>`
-6) **Confidence required.** Output a single 0–100 confidence score based on evidence completeness and source quality.
+## Option 2 — Standards-Backed Implementation Review
+Use this when the dominant question is about:
+- code or configuration changes versus official docs,
+- framework/library/runtime/platform guidance,
+- API misuse,
+- version-sensitive implementation issues,
+- source-backed remediation steps.
+
+Open:
+- [Standards-Backed Implementation Review — policy]({{ '/policies/standards-backed-implementation-review-policy/' | relative_url }})
+- [Run the standards-backed implementation review — procedure]({{ '/how-to/standards-backed-implementation-review-procedure/' | relative_url }})
+- [standards-backed-implementation-review.system.txt]({{ '/prompts/standards-backed-implementation-review.system.txt' | relative_url }})
+- [standards-backed-implementation-review.user.txt]({{ '/prompts/standards-backed-implementation-review.user.txt' | relative_url }})
+
+## Quick decision rule
+- If the main question is **"Is the system shape/boundary correct?"**, choose **Architecture Boundary Review**.
+- If the main question is **"Is this implementation correct according to official guidance?"**, choose **Standards-Backed Implementation Review**.
+- If you need both, run them **separately**, in this order:
+  1. Architecture Boundary Review
+  2. Standards-Backed Implementation Review
 
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
 - **Prompt templates:** {{ '/prompts/' | relative_url }}
-- **Start:** {{ '/how-to/start-here-by-role/' | relative_url }}

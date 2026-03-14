@@ -21,9 +21,12 @@ quick_chooser:
       - title: "Evidence-Gated Technical Writing Policy (Claims)"
         url: "/policies/evidence-gated-technical-writing-policy/"
         desc: "Evidence-gated writing gate for publishable outputs."
-      - title: "Engineering Quality Gate Policy (Architecture & Best Practices)"
-        url: "/policies/engineering-quality-gate-policy/"
-        desc: "Engineering quality gate for code + system design outputs."
+      - title: "Architecture Boundary Review — policy"
+        url: "/policies/architecture-boundary-review-policy/"
+        desc: "Architecture classification + boundary/layering review."
+      - title: "Standards-Backed Implementation Review — policy"
+        url: "/policies/standards-backed-implementation-review-policy/"
+        desc: "Source-backed implementation review against official guidance."
       - title: "Semantic Accuracy Gate (Claims + Terminology)"
         url: "/policies/semantic-accuracy-gate/"
         desc: "Semantic Accuracy Gate."
@@ -40,6 +43,12 @@ quick_chooser:
       - title: "Objective Technical Baseline Rules (No Simulation) — policy"
         url: "/policies/objective-technical-operating-profile/"
         desc: "Objective technical operating profile."
+      - title: "Scholarly review"
+        grid: "c-grid--2"
+        items:
+          - title: "Scholarly Literature Review — policy"
+            url: "/policies/scholarly-literature-review/"
+            desc: "Normative policy for evidence-gated scholarly review workflows."
 
 catalog:
   - title: "Evidence boundaries"
@@ -88,13 +97,21 @@ catalog:
           - "/prompts/evidence-gated-technical-writing-gate.system.txt"
           - "/prompts/evidence-gated-technical-writing-gate.user.txt"
 
-      - title: "Engineering Quality Gate Policy (Architecture & Best Practices)"
-        url: "/policies/engineering-quality-gate-policy/"
-        desc: "Architecture consistency + regressions + best practices."
-        procedure: "/how-to/engineering-quality-gate-procedure/"
+      - title: "Architecture Boundary Review — policy"
+        url: "/policies/architecture-boundary-review-policy/"
+        desc: "Architecture classification, layering/boundary review, and minimal structural remediation."
+        procedure: "/how-to/architecture-boundary-review-procedure/"
         prompts:
-          - "/prompts/engineering-quality-gate.system.txt"
-          - "/prompts/engineering-quality-gate.user.txt"
+          - "/prompts/architecture-boundary-review.system.txt"
+          - "/prompts/architecture-boundary-review.user.txt"
+
+      - title: "Standards-Backed Implementation Review — policy"
+        url: "/policies/standards-backed-implementation-review-policy/"
+        desc: "Source-backed implementation review against official framework, library, runtime, platform, or standards guidance."
+        procedure: "/how-to/standards-backed-implementation-review-procedure/"
+        prompts:
+          - "/prompts/standards-backed-implementation-review.system.txt"
+          - "/prompts/standards-backed-implementation-review.user.txt"
 
       - title: "Semantic Accuracy Gate (Claims + Terminology)"
         url: "/policies/semantic-accuracy-gate/"
@@ -127,3 +144,19 @@ catalog:
         prompts:
           - "/prompts/objective-technical-style-non-simulative.system.txt"
           - "/prompts/instruction-hierarchy-and-evidence-boundary.system.txt"
+
+  - title: "Scholarly review"
+    grid: "c-grid--2"
+    items:
+      - title: "Scholarly Literature Review — policy"
+        url: "/policies/scholarly-literature-review/"
+        desc: "Evidence boundary and normative rules for scholarly review, synthesis, comparison, gap mapping, annotated bibliography, and evidence tables."
+        procedure: "/how-to/scholarly-literature-review/"
+        prompts:
+          - "/prompts/scholarly-evidence-gate.system.txt"
+          - "/prompts/literature-review.user.txt"
+          - "/prompts/evidence-synthesis.user.txt"
+          - "/prompts/source-comparison.user.txt"
+          - "/prompts/gap-mapping.user.txt"
+          - "/prompts/annotated-bibliography.user.txt"
+          - "/prompts/evidence-table.user.txt"

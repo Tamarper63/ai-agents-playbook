@@ -5,26 +5,9 @@
         <h1 class="c-hero__tagline">{{ site.data.home.hero.tagline }}</h1>
       {% endif %}
 
-      <p class="c-hero__lede">{{ site.data.home.hero.lede }}</p>
-
-      <ul class="c-hero__bullets">
-        {% for b in site.data.home.hero.bullets %}
-          <li>{{ b }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div class="c-hero__actions" aria-label="Primary actions">
-      <a class="c-btn c-btn--primary" href="{{ site.data.home.actions.primary.url | relative_url }}">
-        {{ site.data.home.actions.primary.label }}
-      </a>
-
-      <nav class="c-hero__meta-links" aria-label="Secondary actions">
-        {% for a in site.data.home.actions.secondary %}
-          <a class="c-hero__meta-link" href="{{ a.url | relative_url }}">{{ a.label }}</a>
-        {% endfor %}
-      </nav>
-
+      {% if site.data.home.hero.lede %}
+        <p class="c-hero__lede">{{ site.data.home.hero.lede }}</p>
+      {% endif %}
     </div>
   </div>
 </section>

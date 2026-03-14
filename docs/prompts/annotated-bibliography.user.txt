@@ -1,0 +1,35 @@
+ANNOTATED BIBLIOGRAPHY
+
+Create an annotated bibliography on the question, topic, or source set below.
+
+Question or topic:
+{{question_or_topic}}
+
+Sources:
+{{sources}}
+
+Optional scope or constraints:
+{{scope_or_constraints}}
+
+Use only sources you can actually inspect.
+
+- State which sources you actually used.
+- Create one annotated entry per source.
+- For each source, briefly summarize what it is about.
+- Explain how the source is relevant to the question or topic.
+- Note any important limitation, caution, or scope boundary when relevant.
+- Keep each entry source-specific.
+- Do not present unsupported claims as fact.
+
+Return:
+1. Question or topic
+2. Sources used
+3. Annotated bibliography
+
+For each entry include:
+- Source
+- Brief summary
+- Relevance
+- Important limitation or note
+
+If a source is too weak, incomplete, or not sufficiently relevant, say so clearly in the relevant entry.

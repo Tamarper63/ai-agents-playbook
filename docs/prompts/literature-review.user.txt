@@ -1,0 +1,33 @@
+LITERATURE REVIEW
+
+Write a focused literature review on the question or topic below.
+
+Question or topic:
+{{question_or_topic}}
+
+Sources:
+{{sources}}
+
+Optional scope or constraints:
+{{scope_or_constraints}}
+
+Use only sources you can actually inspect.
+
+- Briefly frame the question or topic.
+- State which sources you actually used.
+- Summarize only findings that are directly relevant.
+- Show where the sources agree, disagree, or meaningfully differ.
+- Identify the most important limitations, uncertainty, and evidence gaps.
+- Keep source-supported findings separate from your synthesis.
+- Do not present unsupported claims as fact.
+- Do not describe the result as a systematic review, scoping review, or PRISMA-compliant review unless I explicitly ask for that and provide the required review details.
+
+Return:
+1. Question or topic
+2. Sources used
+3. Main findings
+4. Agreements, disagreements, and important differences
+5. Gaps and limitations
+6. Synthesis
+
+If the available material is too limited for a strong review, say so clearly and stay within what the sources support.

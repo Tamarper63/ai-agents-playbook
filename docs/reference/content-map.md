@@ -30,9 +30,9 @@ This site separates content by reader intent (Diátaxis-style mapping), and adds
 - **Read explanations / deep dives** → [Articles]({{ '/articles/' | relative_url }})
 - **Lookup stable definitions / diagrams** → [Reference]({{ '/reference/' | relative_url }})
 
-## Role-based entry
+## Primary entry
 
-- [Start here]({{ '/how-to/start-here-by-role/' | relative_url }})
+- [Home]({{ '/' | relative_url }})
 
 ## Subscribe
 

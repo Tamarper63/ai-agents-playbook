@@ -1,0 +1,36 @@
+EVIDENCE TABLE
+
+Build an evidence table on the question, topic, or source set below.
+
+Question or topic:
+{{question_or_topic}}
+
+Sources:
+{{sources}}
+
+Optional scope or constraints:
+{{scope_or_constraints}}
+
+Use only sources you can actually inspect.
+
+- State which sources you actually used.
+- Extract only evidence that is directly relevant to the question or topic.
+- Keep one row per source unless I explicitly ask for a different unit of analysis.
+- Capture only information supported by the source.
+- Note important limitations, cautions, or scope boundaries when relevant.
+- Do not present unsupported claims as fact.
+
+Return:
+1. Question or topic
+2. Sources used
+3. Evidence table
+
+Use these columns unless I specify others:
+- Source
+- Source type or study type
+- Context / population / dataset
+- Key finding
+- Relevance to the question or topic
+- Important limitation or note
+
+If a markdown table is not practical, use a clearly structured row-by-row list with the same fields.

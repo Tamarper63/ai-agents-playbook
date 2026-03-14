@@ -77,5 +77,4 @@ Use when your runtime/API supports explicit tool invocation controls (prefer run
 - [Policies]({{ '/policies/' | relative_url }})
 - [How-to]({{ '/how-to/' | relative_url }})
 - [Prompt templates]({{ '/prompts/' | relative_url }})
-- [Start]({{ '/how-to/start-here-by-role/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})

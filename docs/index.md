@@ -1,7 +1,7 @@
 ---
 layout: default
-title: AI Agents Playbook
-description: A public, versioned knowledge base for building reliable AI agents, with policies, how-to guides, prompt templates, and security-focused articles.
+title: Andy Agent Lab | AI agent security, prompt engineering, and reliable tool use
+description: Research, policies, workflow templates, prompt components, and procedures for AI agent security, prompt engineering, and reliable tool use.
 show_title: false
 ---
 
