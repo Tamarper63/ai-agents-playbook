@@ -3,8 +3,8 @@ hero:
   lede: "How-to guides, prompt assets, policies, articles, and reference material for daily AI work, verification, and AI agent/security practice."
 
 paths:
-  title: "Choose a path"
-  subtitle: "Start with the workflow that matches your goal."
+  title: "Start with your goal"
+  subtitle: "Choose what you want to do first."
   items:
     - label: "Use AI in daily work"
       url: "/how-to/"
@@ -19,54 +19,19 @@ paths:
       url: "/how-to/scholarly-literature-review/"
       desc: "Evidence-gated literature review, writing, and publishable outputs."
 
-quickstart:
-  title: "Baseline for every track"
-  subtitle: "Apply these controls whether you are using AI for daily work, building systems, auditing systems, or publishing."
-  steps:
-    - title: "Set the evidence boundary"
-      output: "Decide which sources are allowed for factual claims and when the workflow must fail closed."
-      url: "/how-to/choose-facts-only-evidence-boundary/"
-    - title: "Verify non-trivial claims"
-      output: "Run the fact-checking procedure before output, review, or publication."
-      url: "/how-to/fact-checking-kit/"
-    - title: "Run the quality gate"
-      output: "Check architecture, regressions, and implementation quality before shipping changes."
-      url: "/how-to/engineering-quality-gate-procedure/"
-
 featured:
-  title: "Baseline policies (rules)"
-  subtitle: "Rules referenced across procedures and prompt library assets."
-  all_label: "Browse policies"
-  all_url: "/policies/"
+  title: "Featured resources"
+  subtitle: "Start with one concrete resource instead of scanning every section first."
   items:
+    - label: "Fact-checking kit — procedure"
+      url: "/how-to/fact-checking-kit/"
+      desc: "Run a concrete verification workflow before output, review, or publication."
+    - label: "Prompt library"
+      url: "/prompts/"
+      desc: "Use ready-made stacks or build a controlled run from reusable prompt assets."
     - label: "Objective Technical Baseline Rules (No Simulation) — policy"
       url: "/policies/objective-technical-operating-profile/"
-      desc: "Non-simulative, objective operating profile with fail-closed posture."
-    - label: "Facts-only: Authoritative sources required (citations required)"
-      url: "/policies/facts-only-authoritative-sources-required/"
-      desc: "Evidence boundary: world-claims require authoritative sources with citations."
-    - label: "Web Verification & Citations Policy"
-      url: "/policies/web-verification-and-citations/"
-      desc: "How to browse/verify and cite sources in outputs."
-    - label: "Engineering Quality Gate Policy (Architecture & Best Practices)"
-      url: "/policies/engineering-quality-gate-policy/"
-      desc: "Architecture checks + best practices + regression-minded review gate."
-
-latest_articles:
-  title: "Articles (explanation)"
-  subtitle: "Context and threat models (not procedures)."
-  all_label: "Browse all articles"
-  all_url: "/articles/"
-  mode: "dynamic"
-  limit: 3
-
-scope:
-  title: "Scope"
-  subtitle: "What this site covers (and what it intentionally does not)."
-  covers_title: "Focus"
-  covers:
-    - "Tool-using LLM and agent systems: orchestration, boundaries, verification, and audits."
-    - "Reusable assets: policies, workflow templates, prompt components, procedures, and diagrams."
-  excludes_title: "Not covered"
-  excludes:
-    - "Vendor-internal or proprietary details."
+      desc: "Default non-simulative operating profile for controlled AI work."
+    - label: "Fluency Is Not Factuality Why LLMs Can Sound Right and Be Wrong"
+      url: "/articles/model-training-and-eval/fluency-vs-factuality/"
+      desc: "A concrete article on why fluent output is not evidence and what evidence-locked answers require."
