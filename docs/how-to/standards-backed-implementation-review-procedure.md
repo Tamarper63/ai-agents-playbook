@@ -111,4 +111,4 @@ Confirm that the output:
 ## Related indexes
 - [Policies]({{ '/policies/' | relative_url }})
 - [How-to]({{ '/how-to/' | relative_url }})
-- [Prompt templates]({{ '/prompts/' | relative_url }})
+- [Prompt library]({{ '/prompts/' | relative_url }})

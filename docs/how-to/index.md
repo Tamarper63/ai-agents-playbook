@@ -1,6 +1,6 @@
 ---
 title: How-to guides
-description: "Operational procedures for AI daily work and agent-building: policies, evidence boundaries, and prompt templates."
+description: "Operational procedures for AI daily work and agent-building: policies, evidence boundaries, and prompt assets."
 permalink: /how-to/
 ---
 
@@ -53,7 +53,7 @@ If you need an overview of content types (How-to vs Reference vs Articles), use 
         <p>Read/apply these before running any procedure (they define the default constraints and enforcement posture).</p>
         <ul>
           <li><strong>Policy:</strong> <a href="{{ '/policies/objective-technical-operating-profile/' | relative_url }}">Objective Technical Baseline Rules (No Simulation) — policy</a></li>
-          <li><strong>System prompt templates:</strong> <a href="{{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }}"><code>objective-technical-style-non-simulative.system.txt</code></a> · <a href="{{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }}"><code>instruction-hierarchy-and-evidence-boundary.system.txt</code></a></li>
+                    <li><strong>System prompt files:</strong> <a href="{{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }}"><code>objective-technical-style-non-simulative.system.txt</code></a> · <a href="{{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }}"><code>instruction-hierarchy-and-evidence-boundary.system.txt</code></a></li>
         </ul>
       </div>
     </details>
@@ -85,8 +85,9 @@ If you need an overview of content types (How-to vs Reference vs Articles), use 
       <div class="c-disclosure__body">
         <ul>
           <li><strong>Policies</strong> = rules (evidence boundaries, citation requirements, fail-closed behavior).</li>
-          <li><strong>Prompt templates</strong> = copy/paste prompt files you load into your runtime (typically as system/developer/user messages).</li>
-          <li><strong>How-to guides</strong> = the procedure steps for applying the policy + templates to a task.</li>
+          <li><strong>Prompt library</strong> = the hub for copy/paste prompt assets used in controlled AI runs.</li>
+          <li><strong>Prompt files</strong> = the specific system/user/component files you load into your runtime.</li>
+          <li><strong>How-to guides</strong> = the procedure steps for applying the policy + prompt assets to a task.</li>
         </ul>
       </div>
     </details>
@@ -95,6 +96,6 @@ If you need an overview of content types (How-to vs Reference vs Articles), use 
 
 ## Related indexes
 - [Policies]({{ '/policies/' | relative_url }})
-- [Prompt templates]({{ '/prompts/' | relative_url }})
+- [Prompt library]({{ '/prompts/' | relative_url }})
 - [Reference]({{ '/reference/' | relative_url }})
 - [Articles]({{ '/articles/' | relative_url }})

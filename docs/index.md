@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Andy Agent Lab | AI agent security, prompt engineering, and reliable tool use
-description: Research, policies, workflow templates, prompt components, and procedures for AI agent security, prompt engineering, and reliable tool use.
+description: Research, how-to guides, prompt assets, policies, articles, and reference material for reliable AI use, prompt engineering, and AI agent/security work.
 show_title: false
 ---
 

@@ -78,5 +78,5 @@ Ask one factual question **without** providing any artifacts or citations.
 ## Related indexes
 - [Policies]({{ '/policies/' | relative_url }})
 - [How-to]({{ '/how-to/' | relative_url }})
-- [Prompt templates]({{ '/prompts/' | relative_url }})
+- [Prompt library]({{ '/prompts/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})

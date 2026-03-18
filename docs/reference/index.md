@@ -28,6 +28,6 @@ Reference pages should be:
 ## Related
 
 - [Policies]({{ '/policies/' | relative_url }}) — normative constraints and enforcement rules.
-- [Templates]({{ '/prompts/' | relative_url }}) — copy/paste prompt templates (operational assets).
+- [Prompt library]({{ '/prompts/' | relative_url }}) — copy/paste prompt assets for controlled AI work.
 - [How-to]({{ '/how-to/' | relative_url }}) — runnable procedures and checklists.
 - [Articles]({{ '/articles/' | relative_url }}) — explanations, context, and long-form analyses.

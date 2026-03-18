@@ -27,6 +27,6 @@ Use **How-to** for step-by-step procedures that run under those rules.
 
 ## Related indexes
 - [Home]({{ '/' | relative_url }})
-- [Templates]({{ '/prompts/' | relative_url }})
+- [Prompt library]({{ '/prompts/' | relative_url }})
 - [How-to]({{ '/how-to/' | relative_url }})
 - [Reference]({{ '/reference/' | relative_url }})

@@ -22,18 +22,18 @@
 
       <a class="c-btn c-btn--secondary c-btn--compact"
          href="{{ '/prompts/' | relative_url }}"
-         title="Browse prompt templates">
-        Templates
+         title="Browse prompt library">
+        Prompt library
       </a>
     </div>
 
     {% if pitem.prompts %}
-      <div class="c-card__actions" aria-label="Mapped templates">
+    <div class="c-card__actions" aria-label="Mapped prompt files">
         <details class="c-disclosure-compact">
           <summary class="c-btn c-btn--secondary c-btn--compact"
-                   title="Show the template files mapped to this policy">
-            <span class="c-disclosure__label--closed">Templates ({{ pitem.prompts | size }})</span>
-            <span class="c-disclosure__label--open">Hide templates</span>
+                   title="Show the prompt files mapped to this policy">
+            <span class="c-disclosure__label--closed">Prompt files ({{ pitem.prompts | size }})</span>
+            <span class="c-disclosure__label--open">Hide prompt files</span>
           </summary>
 
           <div class="c-disclosure-compact__panel">
@@ -48,7 +48,7 @@
                 {% endif %}
 
                 <li>
-                  <a href="{{ p | relative_url }}" title="Open template file">
+                  <a href="{{ p | relative_url }}" title="Open prompt file">
                     <span class="c-filetag c-filetag--{{ ftag | downcase }}">{{ ftag }}</span>
                     <code>{{ fname }}</code>
                   </a>

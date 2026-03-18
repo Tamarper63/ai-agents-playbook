@@ -15,6 +15,10 @@ items:
     url: "/articles/"
     active_contains: "/articles/"
 
+  - label: "Updates"
+    url: "/updates/"
+    active_contains: "/updates/"
+
   - label: "Reference"
     url: "/reference/"
     active_contains: "/reference/"

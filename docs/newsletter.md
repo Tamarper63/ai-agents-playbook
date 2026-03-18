@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Newsletter
-description: "Subscribe to updates on policies, workflow templates, procedures, and AI agent security articles."
+description: "Subscribe to updates on policies, prompt assets, how-to guides, and AI agent/security articles."
 permalink: /newsletter/
 show_title: false
 ---

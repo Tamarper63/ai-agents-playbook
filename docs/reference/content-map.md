@@ -5,12 +5,12 @@ permalink: /reference/content-map/
 
 A stable map of the site’s content types and the shortest paths to start.
 
-This site separates content by reader intent (Diátaxis-style mapping), and adds two operational layers (Policies + Templates):
+This site separates content by reader intent (Diátaxis-style mapping), and adds two operational layers (Policies + Prompt library):
 - **How-to** = task execution (procedures/checklists)
 - **Reference** = stable lookup (definitions/catalogs/diagrams)
 - **Articles** = explanations (conceptual understanding + trade-offs)
 - **Policies** = rules (evidence boundary, citations, fail-closed)
-- **Templates** = copy/paste prompt artifacts mapped to policies + how-to
+- **Prompt library** = copy/paste prompt assets mapped to policies + how-to
 
 ## Entry points (stable links)
 
@@ -19,14 +19,14 @@ This site separates content by reader intent (Diátaxis-style mapping), and adds
 - **Evidence boundary:** [Choose an evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
 - **Fact-checking procedure:** [Fact-Checking Kit]({{ '/how-to/fact-checking-kit/' | relative_url }})
 - **Code/design review gate:** [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
-- **Reading path:** [Articles → Start here]({{ '/articles/#start-here' | relative_url }})
+- **Reading path:** [Articles]({{ '/articles/' | relative_url }})
 
 ## Choose by goal (where to go)
 
 - **Run a procedure (goal/task)** → [How-to]({{ '/how-to/' | relative_url }})
 - **Apply a ruleset / evidence boundary** → [Policies]({{ '/policies/' | relative_url }})
-- **Copy/paste prompt templates** → [Templates]({{ '/prompts/' | relative_url }})
-- **Copy/paste prompt building blocks** → [Components]({{ '/prompts/components/' | relative_url }})
+- **Open the prompt asset hub** → [Prompt library]({{ '/prompts/' | relative_url }})
+- **Open reusable prompt components** → [Components]({{ '/prompts/components/' | relative_url }})
 - **Read explanations / deep dives** → [Articles]({{ '/articles/' | relative_url }})
 - **Lookup stable definitions / diagrams** → [Reference]({{ '/reference/' | relative_url }})
 

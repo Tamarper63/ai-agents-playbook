@@ -96,5 +96,5 @@ Apply Option 1 for ChatGPT usage and Option 2 for agent runtime memory.
 ## Related indexes
 - [Policies]({{ '/policies/' | relative_url }})
 - [How-to]({{ '/how-to/' | relative_url }})
-- [Prompt templates]({{ '/prompts/' | relative_url }})
+- [Prompt library]({{ '/prompts/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})
