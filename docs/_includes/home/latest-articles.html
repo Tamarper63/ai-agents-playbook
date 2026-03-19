@@ -15,38 +15,39 @@
   {% endif %}
 
   <div class="c-grid c-grid--2 c-grid--stretch">
-    <div class="c-card">
-      <div class="c-card__content">
-        <div class="c-card__title">{{ cfg.articles_title | default: "Latest articles" }}</div>
-        <ul class="c-linklist" aria-label="{{ cfg.articles_title | default: 'Latest articles' }}">
-          {% for p in article_pages limit: limit %}
-            {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
-            {% assign desc = desc | strip %}
-            {% if desc == "" %}
-              {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 18 %}
+    <section class="c-panel-list" aria-labelledby="latest-articles-heading">
+      <h3 class="c-panel-list__head" id="latest-articles-heading">{{ cfg.articles_title | default: "Latest articles" }}</h3>
+
+      <ul class="c-panel-list__items" aria-label="{{ cfg.articles_title | default: 'Latest articles' }}">
+        {% for p in article_pages limit: limit %}
+          {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
+          {% assign desc = desc | strip %}
+          {% if desc == "" %}
+            {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 18 %}
+          {% endif %}
+
+          <li class="c-panel-list__item">
+            <a class="c-panel-list__link" href="{{ p.url | relative_url }}">{{ p.title }}</a>
+            <div class="c-panel-list__meta">{{ p.published | date: "%Y-%m-%d" }}</div>
+            {% if desc %}
+              <div class="c-panel-list__desc">{{ desc }}</div>
             {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
 
-            <li>
-              <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
-              <div class="c-linklist__desc">{{ p.published | date: "%Y-%m-%d" }}{% if desc %} · {{ desc }}{% endif %}</div>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+    <section class="c-panel-list" aria-labelledby="recent-updates-heading">
+      <h3 class="c-panel-list__head" id="recent-updates-heading">{{ cfg.updates_title | default: "Recent updates" }}</h3>
 
-    <div class="c-card">
-      <div class="c-card__content">
-        <div class="c-card__title">{{ cfg.updates_title | default: "Recent updates" }}</div>
-        <ul class="c-linklist" aria-label="{{ cfg.updates_title | default: 'Recent updates' }}">
-          {% for u in recent_updates limit: update_limit %}
-            <li>
-              <a href="{{ u.url | relative_url }}">{{ u.title }}</a>
-              <div class="c-linklist__desc">{{ u.date }} · {{ u.type }}</div>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+      <ul class="c-panel-list__items" aria-label="{{ cfg.updates_title | default: 'Recent updates' }}">
+        {% for u in recent_updates limit: update_limit %}
+          <li class="c-panel-list__item">
+            <a class="c-panel-list__link" href="{{ u.url | relative_url }}">{{ u.title }}</a>
+            <div class="c-panel-list__meta">{{ u.date }} · {{ u.type }}</div>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
   </div>
 </section>

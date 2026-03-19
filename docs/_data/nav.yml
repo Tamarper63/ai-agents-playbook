@@ -19,11 +19,6 @@ items:
     url: "/reference/"
     active_contains: "/reference/"
 
-  - label: "About"
-    url: "/about/"
-    active_contains: "/about/"
-    cta: true
-    cta_variant: "util"
 
   - label: "Updates"
     url: "/updates/"

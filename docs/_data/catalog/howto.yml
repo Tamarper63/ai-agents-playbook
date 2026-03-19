@@ -3,9 +3,9 @@ catalog:
     title: "Evidence boundaries"
     grid: "c-grid--2"
     items:
-      - title: "Choose allowed sources for factual answers"
+      - title: "Choose which sources AI may use for factual answers"
         url: "/how-to/choose-facts-only-evidence-boundary/"
-        desc: "Use this chooser when you need a strict “facts-only” output contract but must decide what evidence is allowed."
+        desc: "Choose whether the answer should come from your files only, from cited public sources, or from an academic-style evidence review."
         policies:
           - title: "Facts-only: Artifacts-only (no external sources)"
             url: "/policies/facts-only-artifacts-only/"
@@ -18,9 +18,9 @@ catalog:
           - "/prompts/facts-only-authoritative-sources-required.system.txt"
           - "/prompts/evidence-gated-academic-mode.system.txt"
 
-      - title: "Answer using only the files you provide (no external sources) — procedure"
+      - title: "Answer from the files you provide only (no external sources) — procedure"
         url: "/how-to/facts-only-artifacts-only/"
-        desc: "Use only user-provided files/logs/screenshots; no web browsing."
+        desc: "Use this when the answer must come only from files, logs, screenshots, or excerpts you provide."
         policy:
           title: "Facts-only: Artifacts-only (no external sources)"
           url: "/policies/facts-only-artifacts-only/"
@@ -28,14 +28,16 @@ catalog:
           - "/prompts/facts-only-artifacts-only.system.txt"
           - "/prompts/components/deep-scan.user.txt"
 
-      - title: "Facts-only: Authoritative sources required (citations required) — procedure"
+      - title: "Answer with cited public sources (authoritative sources required) — procedure"
         url: "/how-to/facts-only-authoritative-sources-required/"
-        desc: "Browsing allowed; claims require citation-grade sources."
+        desc: "Use this when the answer must be backed by cited public sources such as standards, papers, or official documentation."
         policy:
           title: "Facts-only: Authoritative sources required (citations required)"
           url: "/policies/facts-only-authoritative-sources-required/"
         prompts:
           - "/prompts/facts-only-authoritative-sources-required.system.txt"
+          - "/prompts/web-verification-and-citations.system.txt"
+          - "/prompts/web-browsing.user.txt"
 
   - id: verification-workflows
     title: "Verification workflows"

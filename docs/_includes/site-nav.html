@@ -1,7 +1,7 @@
 {% assign purl = page.url | default: '' %}
 
 <nav class="site-nav" aria-label="Primary">
-  <div class="site-nav__inner">
+  <ul class="site-nav__list">
     {% for item in site.data.nav.items %}
       {% assign is_cta = false %}
       {% if item.cta == true or item.is_cta == true %}
@@ -24,20 +24,22 @@
           {% assign is_active = true %}
         {% endif %}
 
-        {% if is_active %}
-          {% if is_external %}
-            <a class="site-nav__link site-nav__link--active" href="{{ item_url }}" aria-current="page" rel="noopener" target="_blank">{{ item.label }}</a>
+        <li class="site-nav__item">
+          {% if is_active %}
+            {% if is_external %}
+              <a class="site-nav__link site-nav__link--active" href="{{ item_url }}" aria-current="page" rel="noopener" target="_blank">{{ item.label }}</a>
+            {% else %}
+              <a class="site-nav__link site-nav__link--active" href="{{ item_url | relative_url }}" aria-current="page">{{ item.label }}</a>
+            {% endif %}
           {% else %}
-            <a class="site-nav__link site-nav__link--active" href="{{ item_url | relative_url }}" aria-current="page">{{ item.label }}</a>
+            {% if is_external %}
+              <a class="site-nav__link" href="{{ item_url }}" rel="noopener" target="_blank">{{ item.label }}</a>
+            {% else %}
+              <a class="site-nav__link" href="{{ item_url | relative_url }}">{{ item.label }}</a>
+            {% endif %}
           {% endif %}
-        {% else %}
-          {% if is_external %}
-            <a class="site-nav__link" href="{{ item_url }}" rel="noopener" target="_blank">{{ item.label }}</a>
-          {% else %}
-            <a class="site-nav__link" href="{{ item_url | relative_url }}">{{ item.label }}</a>
-          {% endif %}
-        {% endif %}
+        </li>
       {% endunless %}
     {% endfor %}
-  </div>
+  </ul>
 </nav>

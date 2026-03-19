@@ -1,32 +1,38 @@
 ---
-title: "Answer using only the files you provide (no external sources) — procedure"
-description: Procedure to answer only from user-provided files with locator-based traceability and fail-closed behavior.
+title: "Answer from the files you provide only (no external sources) — procedure"
+description: "Step-by-step guide for answers based only on files you provide, with file references for each factual claim."
 permalink: /how-to/facts-only-artifacts-only/
 ---
 
 ## Purpose
-Use this page when you want the assistant to answer **only from the files/logs/screenshots you provide** (no web browsing).
+Use this page when the answer must come only from files, logs, screenshots, or excerpts you provide.
 
-What this procedure enforces:
-- Every factual claim must include a **file name** and a **locator** (line range / page / section).
-- If a required file or locator is missing, the assistant must **fail closed** using the exact sentinel in this policy (it must not fill gaps).
+This guide requires:
+- each factual claim to point to a file and a location,
+- no web sources or prior knowledge,
+- an exact fail-closed response if required evidence is missing.
 
 ## Canonical links
 {% include catalog/howto-canonical-links.html %}
 
+## Common uses
+- explain a failure from uploaded logs,
+- review an attached draft, screenshot, or report,
+- analyze a repo snapshot or ZIP without using outside sources.
+
 ## What you need
-- You can attach or paste the relevant files/logs/screenshots/excerpts.
-- You can cite locations (filename + line range / page / section).
-- If you provide many files (repo/zip), you can run a full scan first.
+- the relevant files, logs, screenshots, or excerpts,
+- a way to point to locations (filename + line range / page / section),
+- if you provide many files (repo/zip), the option to add a full-scan component first.
 
 ## Steps
 1) Copy/paste the linked **system prompt file** into your runtime:
    - If your runtime supports roles, paste it as a **system/developer message** (higher priority than user input).
    - Otherwise, paste it at the **top of your prompt**.
-2) Provide the files/logs/screenshots in the same request (attach files / paste logs / include screenshots).
-3) If you provided many files (repo/zip), add this component at the top of your user message before asking for work:
+2) Provide the files, logs, screenshots, or excerpts in the same request.
+3) If you provided many files (repo/zip), optionally add this scan component at the top of your user message before asking for work:
    - [deep-scan.user.txt]({{ '/prompts/components/deep-scan.user.txt' | relative_url }})
-4) Ask your question and require file+locator traceability for factual claims:
+4) Ask the question and require file + location references for factual claims:
    - every factual claim must reference `[file-id §locator]` (example: `[server.log §L120–L155]`).
 5) If a core claim cannot be supported by your files, the assistant must respond with:
    `HANDS UP – no artifact, cannot verify.`

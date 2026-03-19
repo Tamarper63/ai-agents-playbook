@@ -1,7 +1,7 @@
 ---
 layout: default
-title: AI agent security, prompt engineering, and reliable tool use
-description: Technical guidance on AI agent security, prompt engineering, and reliable tool use through how-to guides, prompt assets, policies, articles, and reference material.
+title: AI agent security, fact-checking, and prompt engineering
+description: Technical procedures, policies, prompt assets, and articles for trust boundaries, source verification, and tool-using LLM systems.
 show_title: false
 ---
 
@@ -11,3 +11,4 @@ show_title: false
 {% include home/featured.html %}
 {% include home/latest-articles.html %}
 {% include newsletter.html mode="home" %}
+{% include home/scope.html %}

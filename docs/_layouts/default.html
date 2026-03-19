@@ -25,15 +25,16 @@
 
     <header class="page-header {% if is_home %}page-header--home{% else %}page-header--compact{% endif %}" role="banner">
       <div class="page-header__inner">
-                <div class="project-name">
-          <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}">
-          <img
-  class="site-logo"
-  src="{{ '/assets/img/brand/andyagentlab-logo-hands-64h-white-clean.png' | relative_url }}"
-  srcset="{{ '/assets/img/brand/andyagentlab-logo-hands-64h-white-clean.png' | relative_url }} 1x, {{ '/assets/img/brand/andyagentlab-logo-hands-128h-white-clean.png' | relative_url }} 2x"
-  width="258" height="64"
-  alt=""
->
+        <div class="page-header__brand">
+          <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+            <img
+              class="site-logo"
+              src="{{ '/assets/img/brand/andyagentlab-logo-hands-64h-white-clean.png' | relative_url }}"
+              srcset="{{ '/assets/img/brand/andyagentlab-logo-hands-64h-white-clean.png' | relative_url }} 1x, {{ '/assets/img/brand/andyagentlab-logo-hands-128h-white-clean.png' | relative_url }} 2x"
+              width="258"
+              height="64"
+              alt=""
+            >
             <span class="site-title">{{ site.title }}</span>
           </a>
         </div>
@@ -48,16 +49,24 @@
       {% if is_home %}
         {{ content }}
       {% else %}
-       <div class="c-prose">
-          {% include breadcrumbs.html %}
+        <div class="c-prose">
+          <header class="c-page-head">
+            {% include breadcrumbs.html %}
 
-           {% if show_title and page.title %}
-            <h1 class="page-title">{{ page.title }}</h1>
-          {% endif %}
+            {% if show_title and page.title %}
+              <h1 class="page-title">{{ page.title }}</h1>
+            {% endif %}
 
-          {% include page-meta.html %}
+            {% include page-meta.html %}
 
-          {{ content }}
+            {% if page.description %}
+              <p class="c-page-dek">{{ page.description }}</p>
+            {% endif %}
+          </header>
+
+          <div class="c-page-body">
+            {{ content }}
+          </div>
 
           {% if purl contains '/articles/' %}
             {% include newsletter.html mode="article" %}
