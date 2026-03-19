@@ -10,7 +10,7 @@ Prevent overclaiming in technical writing by requiring evidence for each non-tri
 - **How-to (procedure):** {% include page-title-link.html url="/how-to/evidence-gated-technical-writing-gate-procedure/" fallback="Evidence-Gated Technical Writing Gate — Verification Procedure (Claims)" %}
 - **System prompt template:** [evidence-gated-technical-writing-gate.system.txt]({{ '/prompts/evidence-gated-technical-writing-gate.system.txt' | relative_url }})
 - **User prompt template:** [evidence-gated-technical-writing-gate.user.txt]({{ '/prompts/evidence-gated-technical-writing-gate.user.txt' | relative_url }})
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
 
 ## Scope
 This policy applies to **technical writing claim verification**.
@@ -39,4 +39,4 @@ It does not cover architecture/code-quality reviews (use the Engineering Quality
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

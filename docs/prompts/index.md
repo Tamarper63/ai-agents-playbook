@@ -6,43 +6,7 @@ permalink: /prompts/
 
 Copy/paste prompt assets for controlled AI work.
 
-<section class="c-section c-section--thin" aria-label="Choose how to start">
-  <div class="c-section__header">
-    <h2 class="c-section__title c-section__title--sub">Choose how to start</h2>
-  </div>
-  <p class="c-section__subtitle">Start with a recommended stack for a common goal, or build your own run by choosing the evidence mode, workflow, and optional gates yourself.</p>
-
-  <div class="c-grid c-grid--2" role="list" aria-label="Prompt library entry paths">
-    <article class="c-card" role="listitem">
-      <div class="c-card__title">Use a ready-made stack</div>
-      <div class="c-card__desc">
-        Choose this path when you want a recommended setup for a common goal without assembling the run manually.
-      </div>
-      <div class="c-card__actions">
-        <a class="c-btn c-btn--primary c-btn--compact"
-           href="#prompts-stacks"
-           title="Go to recommended stacks">
-          Open stacks
-        </a>
-      </div>
-    </article>
-
-    <article class="c-card" role="listitem">
-      <div class="c-card__title">Build your own run</div>
-      <div class="c-card__desc">
-        Choose this path when you want to select the evidence mode, task workflow, and optional review layers yourself.
-      </div>
-      <div class="c-card__actions">
-        <a class="c-btn c-btn--primary c-btn--compact"
-           href="#prompts-catalog"
-           title="Go to the prompt library catalog">
-          Open library
-        </a>
-      </div>
-    </article>
-  </div>
-</section>
-
+Use **Ready-made stacks** when you want a recommended setup for a common goal. Use **Build your own run** when you want to assemble the evidence mode, workflow, and review layers yourself.
 
 ## On this page
 
@@ -66,7 +30,7 @@ Choose a stack when you want a recommended setup for a common goal and do not wa
 <a id="prompts-catalog"></a>
 ## Build your own run
 
-Use this path when you want to assemble the run yourself. Start by choosing an **evidence mode**, then add either a **task workflow** or a **scholarly workflow**, and only then add optional **review gates**, **output modes**, or **defaults & output modifiers**.
+Use this path when you want to assemble the run yourself. Start by choosing an **evidence mode**, then add either a **task workflow** or a **scholarly workflow**, and only then add optional **review gates**, **output modes**, or **defaults and output modifiers**.
 
 {% include catalog/prompts-catalog.html %}
 
@@ -116,8 +80,8 @@ They are small add-ons for <strong>one extra execution behavior</strong>, not a 
     <ul>
       <li><strong>Pick one primary path:</strong> either start with a ready-made stack or build the run yourself.</li>
       <li><strong>Choose one evidence mode first</strong> before adding workflows, gates, or defaults.</li>
-      <li><strong>System templates</strong> (`.system.txt`) define higher-authority rules such as evidence boundaries, output constraints, and fallback behavior.</li>
-      <li><strong>User templates</strong> (`.user.txt`) are runnable task or workflow templates.</li>
+      <li><strong>System prompt files</strong> (`.system.txt`) define higher-authority rules such as evidence boundaries, output constraints, and fallback behavior.</li>
+      <li><strong>User prompt files</strong> (`.user.txt`) are runnable task or workflow files.</li>
       <li><strong>Components</strong> are optional add-ons for one extra behavior and should be used sparingly.</li>
       <li>Keep mappings explicit across policies, prompt assets, and procedures to prevent drift.</li>
     </ul>

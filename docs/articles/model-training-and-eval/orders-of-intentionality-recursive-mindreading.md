@@ -135,7 +135,7 @@ When describing “Level N” performance for any system (humans or LLMs), state
 4) Whether your claim is **behavioral** (task performance) or **mechanistic** (which these tasks generally do not determine). (Jones et al., 2024)
 
 ## Related prompt templates (this site)
-- Prompt templates index: {% include page-title-link.html url="/prompts/" fallback="Prompt templates" %}
+- Prompt library: {% include page-title-link.html url="/prompts/" fallback="Prompt library" %}
 
 ## Suggested next
 - [Articles — Start here]({{ '/articles/#start-here' | relative_url }})

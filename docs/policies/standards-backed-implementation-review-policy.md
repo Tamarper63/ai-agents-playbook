@@ -20,7 +20,7 @@ Do **not** use it for broad architecture classification or generic brainstorming
 - **User prompt template:** [standards-backed-implementation-review.user.txt]({{ '/prompts/standards-backed-implementation-review.user.txt' | relative_url }})
 - **Base policy (normative):** {% include page-title-link.html url="/policies/facts-only-authoritative-sources-required/" fallback="Facts-only: Authoritative sources required" %}
 - **Base policy (normative):** {% include page-title-link.html url="/policies/web-verification-and-citations/" fallback="Web Verification & Citations Policy" %}
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
 
 ## Scope
 Applies to:

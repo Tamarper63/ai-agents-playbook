@@ -20,7 +20,7 @@ Do **not** use it as a general framework best-practice sweep or as a substitute 
 - **How-to (procedure):** {% include page-title-link.html url="/how-to/architecture-boundary-review-procedure/" fallback="Run the architecture boundary review — procedure" %}
 - **System prompt template:** [architecture-boundary-review.system.txt]({{ '/prompts/architecture-boundary-review.system.txt' | relative_url }})
 - **User prompt template:** [architecture-boundary-review.user.txt]({{ '/prompts/architecture-boundary-review.user.txt' | relative_url }})
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
 
 ## Scope
 Applies to:

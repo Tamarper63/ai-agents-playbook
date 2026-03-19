@@ -15,7 +15,7 @@ EGAM is a compact, publication-oriented profile layered on top of “Authoritati
 - **How-to (procedure):** {% include page-title-link.html url="/how-to/evidence-gated-academic-mode/" fallback="Evidence-Gated Academic Mode — procedure" %}
 - **System prompt template (copy/paste):** [evidence-gated-academic-mode.system.txt]({{ '/prompts/evidence-gated-academic-mode.system.txt' | relative_url }})
 - **Base policy (normative):** {% include page-title-link.html url="/policies/facts-only-authoritative-sources-required/" fallback="Facts-only: Authoritative sources required" %}
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
 
 ## Non-negotiable rules (normative)
 
@@ -52,4 +52,4 @@ For questions specifically about OpenAI products/docs/policies, sources MUST be 
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

@@ -12,7 +12,7 @@ Define an operating contract for when to use web browsing, how to select sources
 - **User prompt template (browsing runner):** [web-browsing.user.txt]({{ '/prompts/web-browsing.user.txt' | relative_url }})
 - **User prompt template (verification procedure):** [web-verification-procedure.user.txt]({{ '/prompts/web-verification-procedure.user.txt' | relative_url }})
 - **User prompt template (citations output contract):** [citations-output-contract.user.txt]({{ '/prompts/citations-output-contract.user.txt' | relative_url }})
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
 
 ## Scope
 Applies when answering questions that can benefit from up-to-date or niche public information.

@@ -10,7 +10,7 @@ Prevent overclaims and enforce consistent terminology in technical writing and p
 - **How-to (procedure):** {% include page-title-link.html url="/how-to/semantic-accuracy-gate-procedure/" fallback="Semantic Accuracy Gate — procedure" %}
 - **System prompt template:** [semantic-accuracy-gate.system.txt]({{ '/prompts/semantic-accuracy-gate.system.txt' | relative_url }})
 - **User prompt template:** [semantic-accuracy-gate.user.txt]({{ '/prompts/semantic-accuracy-gate.user.txt' | relative_url }})
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
 
 ## Scope
 Use when:
@@ -53,4 +53,4 @@ Non-compliant outputs include:
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

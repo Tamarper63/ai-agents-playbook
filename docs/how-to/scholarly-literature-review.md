@@ -31,7 +31,7 @@ Use this procedure in AI workflows when:
 - **Workflow prompt template:** [annotated-bibliography.user.txt]({{ '/prompts/annotated-bibliography.user.txt' | relative_url }})
 - **Workflow prompt template:** [evidence-table.user.txt]({{ '/prompts/evidence-table.user.txt' | relative_url }})
 - **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
-- 
+
 ## What to load
 Load these assets in this order:
 

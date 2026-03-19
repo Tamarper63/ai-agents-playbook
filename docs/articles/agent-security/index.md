@@ -4,13 +4,9 @@ description: Engineering writeups on trust boundaries, access control, orchestra
 permalink: /articles/agent-security/
 ---
 
-Engineering writeups on security properties of LLM-powered agentic applications (tool-using agents): trust boundaries, authorization & access control, orchestration (control-flow mechanisms), and monitoring/policy enforcement.
+Engineering writeups on security properties of LLM-powered agentic applications (tool-using agents): trust boundaries, authorization and access control, orchestration (control-flow mechanisms), and monitoring/policy enforcement.
 
-## Start here (choose a goal)
-
-{% include catalog/articles-topic-start-goals.html topic="agent-security" %}
-
-## Pages in this section
+## Core articles
 
 {% include catalog/articles-topic-pages.html topic="agent-security" %}
 

@@ -27,7 +27,7 @@ The policy sets the evidence boundary, source-grounding requirements, reporting 
 - **Workflow prompt template:** [evidence-table.user.txt]({{ '/prompts/evidence-table.user.txt' | relative_url }})
 - **Base policy (normative):** {% include page-title-link.html url="/policies/facts-only-authoritative-sources-required/" fallback="Facts-only: Authoritative sources required" %}
 - **Base policy (normative):** {% include page-title-link.html url="/policies/web-verification-and-citations/" fallback="Web Verification & Citations Policy" %}
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
 
 ## Non-negotiable rules (normative)
 

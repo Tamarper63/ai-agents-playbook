@@ -11,7 +11,7 @@ This is intended to improve auditability, triage, and quality gating.
 ## Canonical links
 - **System prompt template (copy/paste):** [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
 - **How-to (apply):** {% include page-title-link.html url="/how-to/add-confidence-score-to-responses/" fallback="Add a confidence score (0–100) to every response" %}
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
 
 ## What this is (and is not)
 - **Is:** an evidence-weighted self-assessment of correctness and support for the delivered answer.
@@ -66,4 +66,4 @@ To reduce false precision, prefer coarse bands unless you have unusually strong 
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

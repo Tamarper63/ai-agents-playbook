@@ -13,7 +13,7 @@ Enforce externally verified factual outputs:
 - **System prompt template (copy/paste):** [facts-only-authoritative-sources-required.system.txt]({{ '/prompts/facts-only-authoritative-sources-required.system.txt' | relative_url }})
 - **How-to (procedure):** {% include page-title-link.html url="/how-to/facts-only-authoritative-sources-required/" fallback="Facts-only: Authoritative sources required — procedure" %}
 - **Chooser (how to pick):** {% include page-title-link.html url="/how-to/choose-facts-only-evidence-boundary/" fallback="Choose a facts-only evidence boundary" %}
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
 
 ## Scope
 - **World-claims (public facts):** require authoritative sources + stable locators.
@@ -34,4 +34,4 @@ and stop.
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

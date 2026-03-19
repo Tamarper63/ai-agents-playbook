@@ -18,7 +18,7 @@ This is a **ruleset**, not a workflow gate.
 - **System prompt template (ruleset):** [instruction-hierarchy-and-evidence-boundary.system.txt]({{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }})
 - **Evidence boundary chooser (how-to):** {% include page-title-link.html url="/how-to/choose-facts-only-evidence-boundary/" fallback="Choose a facts-only evidence boundary" %}
 - **Confidence policy (optional):** {% include page-title-link.html url="/policies/confidence-score/" fallback="Evidence-based confidence score (0–100) — analytic reporting policy" %}
-- **Prompt templates index:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})
 
 ## When to use
 Use this ruleset when you want the assistant to behave like a technical operator:
@@ -64,4 +64,4 @@ Use this ruleset when you want the assistant to behave like a technical operator
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}
