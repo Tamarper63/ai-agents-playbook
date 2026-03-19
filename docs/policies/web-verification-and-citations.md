@@ -1,5 +1,6 @@
 ---
-title: Web Verification & Citations Policy
+title: "Use web search and cite sources for current or niche claims — policy"
+description: "Rules for when to use web search, how to select public sources, and how to cite factual claims."
 permalink: /policies/web-verification-and-citations/
 ---
 
@@ -53,4 +54,4 @@ Applies when answering questions that can benefit from up-to-date or niche publi
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

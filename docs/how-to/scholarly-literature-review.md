@@ -136,4 +136,4 @@ Use when you want one structured evidence row per source or another explicit uni
 ## Related indexes
 - **Policies:** [Policies]({{ '/policies/' | relative_url }})
 - **How-to:** [How-to guides]({{ '/how-to/' | relative_url }})
-- **Prompt templates:** [Prompt templates]({{ '/prompts/' | relative_url }})
+- **Prompt library:** [Prompt library]({{ '/prompts/' | relative_url }})

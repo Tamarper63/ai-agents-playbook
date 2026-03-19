@@ -12,11 +12,11 @@ Use **Ready-made stacks** when you want a recommended setup for a common goal. U
 
 <nav class="c-inpage-nav" aria-label="On this page">
   <ul class="c-inpage-nav__list">
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-stacks">Ready-made stacks</a></li>
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-catalog">Build your own run</a></li>
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-components">Optional components</a></li>
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-usage-rules">Usage rules</a></li>
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#prompts-related">Related</a></li>
+    <li><a class="c-inpage-nav__link" href="#prompts-stacks">Ready-made stacks</a></li>
+    <li><a class="c-inpage-nav__link" href="#prompts-catalog">Build your own run</a></li>
+    <li><a class="c-inpage-nav__link" href="#prompts-components">Optional components</a></li>
+    <li><a class="c-inpage-nav__link" href="#prompts-usage-rules">Usage rules</a></li>
+    <li><a class="c-inpage-nav__link" href="#prompts-related">Related</a></li>
   </ul>
 </nav>
 

@@ -1,6 +1,6 @@
 ---
-title: "Evidence-Gated Academic Mode (EGAM) — profile (authoritative sources + academic register + confidence)"
-description: Publication-oriented profile layered on authoritative sourcing claim taxonomy (WORLD-CLAIM vs PROCESS-RULE), academic register constraints, structured output contract, and mandatory confidence scoring for verified claims.
+title: "Academic-style output with cited sources and confidence — policy"
+description: "Rules for academic-style output with cited sources, formal register, structured evidence labels, and mandatory confidence scoring."
 permalink: /policies/evidence-gated-academic-mode/
 ---
 

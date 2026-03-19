@@ -23,8 +23,6 @@ items:
   - label: "Updates"
     url: "/updates/"
     active_contains: "/updates/"
-    cta: true
-    cta_variant: "util"
 
   - label: "Subscribe"
     url: "/newsletter/"

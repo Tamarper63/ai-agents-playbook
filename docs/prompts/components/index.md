@@ -12,11 +12,11 @@ They are **not** standalone workflows.
 
 <nav class="c-inpage-nav" aria-label="On this page">
   <ul class="c-inpage-nav__list">
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#components-chooser">Choose a component</a></li>
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#components-catalog">Catalog</a></li>
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#components-usage-rules">Usage rules</a></li>
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#components-details">Component details</a></li>
-    <li><a class="c-btn c-btn--secondary c-btn--compact" href="#components-related">Related</a></li>
+    <li><a class="c-inpage-nav__link" href="#components-chooser">Choose a component</a></li>
+    <li><a class="c-inpage-nav__link" href="#components-catalog">Catalog</a></li>
+    <li><a class="c-inpage-nav__link" href="#components-usage-rules">Usage rules</a></li>
+    <li><a class="c-inpage-nav__link" href="#components-details">Component details</a></li>
+    <li><a class="c-inpage-nav__link" href="#components-related">Related</a></li>
   </ul>
 </nav>
 

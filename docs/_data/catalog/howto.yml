@@ -1,17 +1,17 @@
 catalog:
   - id: evidence-boundaries-facts-only
-    title: "Evidence boundaries"
+    title: "Choosing sources for factual answers"
     grid: "c-grid--2"
     items:
       - title: "Choose which sources AI may use for factual answers"
         url: "/how-to/choose-facts-only-evidence-boundary/"
         desc: "Choose whether the answer should come from your files only, from cited public sources, or from an academic-style evidence review."
         policies:
-          - title: "Facts-only: Artifacts-only (no external sources)"
+          - title: "Use only the files you provide for factual answers — policy"
             url: "/policies/facts-only-artifacts-only/"
-          - title: "Facts-only: Authoritative sources required (citations required)"
+          - title: "Use cited public sources for factual answers — policy"
             url: "/policies/facts-only-authoritative-sources-required/"
-          - title: "Evidence-Gated Academic Mode (EGAM) — profile (authoritative sources + academic register + confidence)"
+          - title: "Academic-style output with cited sources and confidence — policy"
             url: "/policies/evidence-gated-academic-mode/"
         prompts:
           - "/prompts/facts-only-artifacts-only.system.txt"
@@ -22,7 +22,7 @@ catalog:
         url: "/how-to/facts-only-artifacts-only/"
         desc: "Use this when the answer must come only from files, logs, screenshots, or excerpts you provide."
         policy:
-          title: "Facts-only: Artifacts-only (no external sources)"
+          title: "Use only the files you provide for factual answers(no external sources)"
           url: "/policies/facts-only-artifacts-only/"
         prompts:
           - "/prompts/facts-only-artifacts-only.system.txt"
@@ -32,7 +32,7 @@ catalog:
         url: "/how-to/facts-only-authoritative-sources-required/"
         desc: "Use this when the answer must be backed by cited public sources such as standards, papers, or official documentation."
         policy:
-          title: "Facts-only: Authoritative sources required (citations required)"
+          title: "Use cited public sources for factual answers(citations required)"
           url: "/policies/facts-only-authoritative-sources-required/"
         prompts:
           - "/prompts/facts-only-authoritative-sources-required.system.txt"
@@ -40,20 +40,20 @@ catalog:
           - "/prompts/web-browsing.user.txt"
 
   - id: verification-workflows
-    title: "Verification workflows"
+    title: "Checking facts and reviewing outputs"
     grid: "c-grid--2"
     items:
-      - title: "Run the fact-checking kit — procedure"
+      - title: "Run a structured fact-check before the final answer — procedure"
         url: "/how-to/fact-checking-kit/"
-        desc: "A concrete procedure to reduce factual errors and improve auditability."
+        desc: "Use this when you need a repeatable, multi-step fact-checking workflow before final output."
         policies:
-          - title: "Facts-only: Artifacts-only (no external sources)"
+          - title: "Use only the files you provide for factual answers — policy"
             url: "/policies/facts-only-artifacts-only/"
-          - title: "Facts-only: Authoritative sources required (citations required)"
+          - title: "Use cited public sources for factual answers — policy"
             url: "/policies/facts-only-authoritative-sources-required/"
-          - title: "Web Verification & Citations Policy"
+          - title: "Use web search and cite sources for current or niche claims — policy"
             url: "/policies/web-verification-and-citations/"
-          - title: "Evidence-based confidence score (0–100) — analytic reporting policy"
+          - title: "Add an evidence-based confidence score (0–100) — policy"
             url: "/policies/confidence-score/"
         prompts:
           - "/prompts/facts-only-artifacts-only.system.txt"
@@ -63,11 +63,11 @@ catalog:
           - "/prompts/chain-of-verification.system.txt"
           - "/prompts/confidence-score.system.txt"
 
-      - title: "Run the Chain-of-Verification (CoVe) — procedure"
+      - title: "Verify claims before the final answer — procedure"
         url: "/how-to/chain-of-verification-procedure/"
-        desc: "Use this procedure to run a structured verification loop before emitting a final answer."
+        desc: "Use this when you want a deliberate verification pass before the final response."
         policy:
-          title: "Chain-of-Verification — policy"
+          title: "Verify claims before final output — policy"
           url: "/policies/chain-of-verification/"
         prompts:
           - "/prompts/chain-of-verification.system.txt"
@@ -79,32 +79,32 @@ catalog:
           - "/prompts/confidence-score.system.txt"
           - "/prompts/instruction-hierarchy-and-evidence-boundary.system.txt"
 
-      - title: "Evidence-Gated Technical Writing Gate — Verification Procedure (Claims)"
+      - title: "Check technical writing claims before publication — procedure"
         url: "/how-to/evidence-gated-technical-writing-gate-procedure/"
-        desc: "Verification procedure (claims)."
+        desc: "Use this when publishable technical writing must be checked for unsupported or overstated claims."
         policy:
-          title: "Evidence-Gated Technical Writing Policy (Claims)"
+          title: "Check technical writing claims before publication — policy"
           url: "/policies/evidence-gated-technical-writing-policy/"
         prompts:
           - "/prompts/evidence-gated-technical-writing-gate.system.txt"
           - "/prompts/evidence-gated-technical-writing-gate.user.txt"
 
-      - title: "Code Review"
+      - title: "Choose the right code review path"
         url: "/how-to/code-review/"
-        desc: "Choose the correct code review path: architecture & boundaries or implementation vs official guidance."
+        desc: "Start here to choose between architecture review and implementation review against official guidance."
         policies:
-          - title: "Code Review"
+          - title: "Code review: choose the right policy"
             url: "/policies/code-review/"
-          - title: "Architecture Boundary Review — policy"
+          - title: "Review architecture boundaries and layering — policy"
             url: "/policies/architecture-boundary-review-policy/"
-          - title: "Standards-Backed Implementation Review — policy"
+          - title: "Check implementation against official guidance — policy"
             url: "/policies/standards-backed-implementation-review-policy/"
 
-      - title: "Run code review — architecture & boundaries"
+      - title: "Review code for architecture boundaries and layering — procedure"
         url: "/how-to/architecture-boundary-review-procedure/"
-        desc: "Use for code review when the main question is whether the system structure, boundaries, layering, and ownership are correct."
+        desc: "Use this when the main question is whether structure, layering, boundaries, ownership, and dependency direction are correct."
         policy:
-          title: "Architecture Boundary Review — policy"
+          title: "Review architecture boundaries and layering — policy"
           url: "/policies/architecture-boundary-review-policy/"
         prompts:
           - "/prompts/facts-only-artifacts-only.system.txt"
@@ -114,11 +114,11 @@ catalog:
           - "/prompts/components/deep-scan.user.txt"
           - "/prompts/components/analyze-before-answering.user.txt"
 
-      - title: "Run code review — implementation vs official guidance"
+      - title: "Review implementation against official guidance — procedure"
         url: "/how-to/standards-backed-implementation-review-procedure/"
-        desc: "Use for code review when code or configuration changes must be checked against official framework, library, runtime, API, or platform guidance."
+        desc: "Use this when code or configuration changes must be checked against official framework, library, runtime, API, platform, or standards guidance."
         policy:
-          title: "Standards-Backed Implementation Review — policy"
+          title: "Check implementation against official guidance — policy"
           url: "/policies/standards-backed-implementation-review-policy/"
         prompts:
           - "/prompts/facts-only-authoritative-sources-required.system.txt"
@@ -129,25 +129,25 @@ catalog:
           - "/prompts/components/deep-scan.user.txt"
           - "/prompts/components/analyze-before-answering.user.txt"
 
-      - title: "Semantic Accuracy Gate — Procedure"
+      - title: "Check claims and terminology for technical accuracy — procedure"
         url: "/how-to/semantic-accuracy-gate-procedure/"
-        desc: "Terminology consistency + prevent overclaims."
+        desc: "Use this when you need to prevent overclaims and keep technical terminology consistent."
         policy:
-          title: "Semantic Accuracy Gate (Claims + Terminology)"
+          title: "Check claims and terminology for technical accuracy — policy"
           url: "/policies/semantic-accuracy-gate/"
         prompts:
           - "/prompts/semantic-accuracy-gate.system.txt"
           - "/prompts/semantic-accuracy-gate.user.txt"
 
   - id: web-verification--citations
-    title: "Web verification & citations"
+    title: "Using web search and citations"
     grid: "c-grid--2"
     items:
-      - title: "Request web browsing (prompt template)"
+      - title: "Ask AI to use web search and cite sources — procedure"
         url: "/how-to/request-web-browsing/"
-        desc: "This guide provides copy/paste templates to request web browsing / web search from an agent."
+        desc: "Use this when the answer depends on current, niche, or public information and must include citations."
         policy:
-          title: "Web Verification & Citations Policy"
+          title: "Use web search and cite sources for current or niche claims — policy"
           url: "/policies/web-verification-and-citations/"
         prompts:
           - "/prompts/web-browsing.user.txt"
@@ -156,14 +156,14 @@ catalog:
           - "/prompts/web-verification-and-citations.system.txt"
 
   - id: modes--reporting
-    title: "Modes & reporting"
+    title: "Output modes and confidence scoring"
     grid: "c-grid--2"
     items:
-      - title: "Evidence-Gated Academic Mode (EGAM) — procedure"
+      - title: "Write an academic-style evidence review — procedure"
         url: "/how-to/evidence-gated-academic-mode/"
-        desc: "This guide explains how to run EGAM as a profile layered on authoritative sources."
+        desc: "Use this when the output must be formal, source-bound, citation-backed, and explicit about confidence."
         policy:
-          title: "Evidence-Gated Academic Mode (EGAM) — profile (authoritative sources + academic register + confidence)"
+          title: "Academic-style output with cited sources and confidence — policy"
           url: "/policies/evidence-gated-academic-mode/"
         prompts:
           - "/prompts/evidence-gated-academic-mode.system.txt"
@@ -172,7 +172,7 @@ catalog:
         url: "/how-to/add-confidence-score-to-responses/"
         desc: "Ensure every response includes an evidence-based analytic confidence score."
         policy:
-          title: "Evidence-based confidence score (0–100) — analytic reporting policy"
+          title: "Add an evidence-based confidence score (0–100) — policy"
           url: "/policies/confidence-score/"
         prompts:
           - "/prompts/confidence-score.system.txt"
@@ -198,12 +198,12 @@ catalog:
           - "/prompts/components/analyze-before-answering.user.txt"
 
   - id: tooling--prompting
-    title: "Tooling & prompting"
+    title: "Prompting for everyday work"
     grid: "c-grid--2"
     items:
-      - title: "Prompt Engineering Guide for Daily Work"
+      - title: "Choose the right prompting setup for everyday work"
         url: "/how-to/prompt-engineering-daily-work/"
-        desc: "Route day-to-day prompting to one of two starter stacks: files-only or web-verified."
+        desc: "Use this to choose between a files-only setup and a web-verified setup for day-to-day prompting."
         prompts:
           - "/prompts/facts-only-artifacts-only.system.txt"
           - "/prompts/components/deep-read.user.txt"
@@ -215,9 +215,9 @@ catalog:
           - "/prompts/confidence-score.system.txt"
 
   - id: memory--context-management
-    title: "Memory & context management"
+    title: "Managing memory and context in AI systems"
     grid: "c-grid--2"
     items:
-      - title: "Manage: LLM memory boundaries (ChatGPT + agentic systems)"
+      - title: "Manage memory and context boundaries in AI systems — procedure"
         url: "/how-to/llm-memory-boundaries/"
-        desc: "Procedure + checklist for making “memory” behavior predictable and auditable."
+        desc: "Use this to make memory behavior more predictable, bounded, and auditable in chat and agentic systems."

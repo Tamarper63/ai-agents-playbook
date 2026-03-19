@@ -1,6 +1,6 @@
 ---
-title: "Standards-Backed Implementation Review — policy"
-description: Normative policy for source-backed review of code and configuration changes against official framework, library, runtime, platform, or standards guidance.
+title: "Check implementation against official guidance — policy"
+description: "Rules for source-backed review of code and configuration changes against official framework, library, runtime, platform, or standards guidance."
 permalink: /policies/standards-backed-implementation-review-policy/
 ---
 
@@ -47,4 +47,4 @@ Applies to:
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

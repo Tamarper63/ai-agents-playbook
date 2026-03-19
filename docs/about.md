@@ -8,7 +8,7 @@ Andy Agent Lab is a technical site by Tamar Peretz focused on AI agent security,
 
 <p>
   <img
-    src="{{ '/assets/img/about/tamar-peretz-headshot.jpg' | relative_url }}"
+    src="{{ '/assets/img/about/tamar-peretz-headshot.jpeg' | relative_url }}"
     alt="Portrait of Tamar Peretz, author of Andy Agent Lab"
     loading="lazy"
     decoding="async"

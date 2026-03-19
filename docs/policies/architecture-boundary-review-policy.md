@@ -1,6 +1,6 @@
 ---
-title: "Architecture Boundary Review — policy"
-description: Normative policy for architecture classification, layering and boundary review, and minimal structural remediation based on inspected materials.
+title: "Review architecture boundaries and layering — policy"
+description: "Rules for architecture classification, layering, dependency direction, boundary ownership, and minimal structural remediation."
 permalink: /policies/architecture-boundary-review-policy/
 ---
 
@@ -49,4 +49,4 @@ Applies to:
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

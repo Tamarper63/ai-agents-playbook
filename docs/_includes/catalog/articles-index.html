@@ -3,7 +3,6 @@
 <p>{{ d.intro }}</p>
 
 {% assign article_pages = site.pages | where_exp: "p", "p.url contains '/articles/'" | where_exp: "p", "p.published" %}
-
 {% assign article_pages_sorted = article_pages | sort: "published" | reverse %}
 
 {% assign latest_limit = d.latest.limit | default: 6 %}
@@ -46,7 +45,7 @@
     <p class="c-section__subtitle">{{ d.latest.note }}</p>
   {% endif %}
 
-  <div class="c-grid {{ latest_grid }}">
+  <div class="c-grid {{ latest_grid }} c-grid--stretch">
     {% for p in article_pages_sorted limit: latest_limit %}
       {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
       {% assign desc = desc | strip %}
@@ -54,7 +53,7 @@
         {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 26 %}
       {% endif %}
 
-      <a class="c-card" href="{{ p.url | relative_url }}">
+      <a class="c-card c-card--article-entry" href="{{ p.url | relative_url }}">
         <div class="c-card__content">
           <div class="c-card__title">{{ p.title }}</div>
           {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}
@@ -71,11 +70,12 @@
   </div>
   {% if d.browse_by_topic.note %}<p class="c-section__subtitle">{{ d.browse_by_topic.note }}</p>{% endif %}
 
-  <div class="c-grid {{ topic_grid }}">
+  <div class="c-grid {{ topic_grid }} c-grid--stretch">
     {% for item in d.browse_by_topic.items %}
       {% assign topic_pages = article_pages | where_exp: "p", "p.url contains item.url" %}
-      <a class="c-card" href="{{ item.url | relative_url }}">
+      <a class="c-card c-card--topic-link" href="{{ item.url | relative_url }}">
         <div class="c-card__content">
+          <div class="c-card__eyebrow">Topic</div>
           <div class="c-card__title">{{ item.title }}</div>
           <div class="c-card__desc">{{ item.desc }}</div>
           <div class="c-card__meta">{{ topic_pages | size }} articles</div>
@@ -91,7 +91,7 @@
   </div>
   {% if d.start_here.note %}<p class="c-section__subtitle">{{ d.start_here.note }}</p>{% endif %}
 
-  <div class="c-grid {{ start_grid }}">
+  <div class="c-grid {{ start_grid }} c-grid--stretch">
     {% for u in d.start_here.urls %}
       {% assign p = site.pages | where: "url", u | first %}
       {% if p %}
@@ -101,9 +101,10 @@
           {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 24 %}
         {% endif %}
 
-        <a class="c-card" href="{{ p.url | relative_url }}">
+        <a class="c-card c-card--start-entry" href="{{ p.url | relative_url }}">
           <div class="c-card__content">
-            <div class="c-card__title">{{ forloop.index }}) {{ p.title }}</div>
+            <div class="c-card__eyebrow">Step {{ forloop.index }}</div>
+            <div class="c-card__title">{{ p.title }}</div>
             {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}
             {% if p.published %}<div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>{% endif %}
           </div>
@@ -119,12 +120,6 @@
   </div>
   {% if d.all_articles.note %}<p class="c-section__subtitle">{{ d.all_articles.note }}</p>{% endif %}
 
-  {%- comment -%}
-  Progressive disclosure for long lists (topic-grouped). Rationale:
-  - GOV.UK: long lists can overwhelm; use structured browsing.
-  - NN/g: accordions help on content-heavy pages, with known tradeoffs.
-  {%- endcomment -%}
-
   {% for item in d.browse_by_topic.items %}
     {% assign topic_pages = article_pages_sorted | where_exp: "p", "p.url contains item.url" %}
     {% if topic_pages and topic_pages.size > 0 %}
@@ -135,29 +130,28 @@
         </summary>
 
         <div class="c-disclosure__body">
-          <div class="c-grid {{ all_grid }}">
-            {% for p in topic_pages %}
-              {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
-              {% assign desc = desc | strip %}
-              {% if desc == "" %}
-                {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 26 %}
-              {% endif %}
+          <div class="c-panel-list c-panel-list--article-hub">
+            <ul class="c-panel-list__items">
+              {% for p in topic_pages %}
+                {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
+                {% assign desc = desc | strip %}
+                {% if desc == "" %}
+                  {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 26 %}
+                {% endif %}
 
-              <a class="c-card" href="{{ p.url | relative_url }}">
-                <div class="c-card__content">
-                  <div class="c-card__title">{{ p.title }}</div>
-                  {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}
-                  <div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>
-                </div>
-              </a>
-            {% endfor %}
+                <li class="c-panel-list__item">
+                  <a class="c-panel-list__link" href="{{ p.url | relative_url }}">{{ p.title }}</a>
+                  <div class="c-panel-list__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>
+                  {% if desc %}<div class="c-panel-list__desc">{{ desc }}</div>{% endif %}
+                </li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
       </details>
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} Safety net: pages not matching any topic prefix. {%- endcomment -%}
   {% assign unclassified_count = 0 %}
   {% for p in article_pages_sorted %}
     {% assign found = false %}
@@ -180,31 +174,32 @@
       </summary>
 
       <div class="c-disclosure__body">
-        <div class="c-grid {{ all_grid }}">
-          {% for p in article_pages_sorted %}
-            {% assign found = false %}
-            {% for item in d.browse_by_topic.items %}
-              {% if p.url contains item.url %}
-                {% assign found = true %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-            {% unless found %}
-              {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
-              {% assign desc = desc | strip %}
-              {% if desc == "" %}
-                {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 26 %}
-              {% endif %}
+        <div class="c-panel-list c-panel-list--article-hub">
+          <ul class="c-panel-list__items">
+            {% for p in article_pages_sorted %}
+              {% assign found = false %}
+              {% for item in d.browse_by_topic.items %}
+                {% if p.url contains item.url %}
+                  {% assign found = true %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
 
-              <a class="c-card" href="{{ p.url | relative_url }}">
-                <div class="c-card__content">
-                  <div class="c-card__title">{{ p.title }}</div>
-                  {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}
-                  <div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>
-                </div>
-              </a>
-            {% endunless %}
-          {% endfor %}
+              {% unless found %}
+                {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
+                {% assign desc = desc | strip %}
+                {% if desc == "" %}
+                  {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 26 %}
+                {% endif %}
+
+                <li class="c-panel-list__item">
+                  <a class="c-panel-list__link" href="{{ p.url | relative_url }}">{{ p.title }}</a>
+                  <div class="c-panel-list__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>
+                  {% if desc %}<div class="c-panel-list__desc">{{ desc }}</div>{% endif %}
+                </li>
+              {% endunless %}
+            {% endfor %}
+          </ul>
         </div>
       </div>
     </details>
@@ -216,10 +211,11 @@
     <h2 class="c-section__title c-section__title--sub">Explore other sections</h2>
   </div>
 
-  <div class="c-grid {{ d.quick_links.grid }}">
+  <div class="c-grid {{ d.quick_links.grid }} c-grid--stretch">
     {% for item in d.quick_links.items %}
-      <a class="c-card" href="{{ item.url | relative_url }}">
+      <a class="c-card c-card--topic-link" href="{{ item.url | relative_url }}">
         <div class="c-card__content">
+          <div class="c-card__eyebrow">Library</div>
           <div class="c-card__title">{{ item.title }}</div>
           <div class="c-card__desc">{{ item.desc }}</div>
         </div>

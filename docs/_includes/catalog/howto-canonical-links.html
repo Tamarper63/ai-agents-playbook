@@ -10,33 +10,41 @@
 {% endfor %}
 
 {% if hitem %}
-  <div class="c-card" aria-label="Canonical links">
-    <div class="c-card__actions" aria-label="Canonical link actions">
-      {% if hitem.policies %}
-        {% for pol in hitem.policies %}
-          <a class="c-btn c-btn--secondary c-btn--compact"
-             href="{{ pol.url | relative_url }}"
-             title="Read the mapped policy">
-            {{ pol.title }}
-          </a>
-        {% endfor %}
-      {% elsif hitem.policy %}
-        <a class="c-btn c-btn--secondary c-btn--compact"
-           href="{{ hitem.policy.url | relative_url }}"
-           title="Read the mapped policy">
-          {{ hitem.policy.title }}
-        </a>
-      {% endif %}
+  <section class="c-support-panel" aria-label="Mapped resources">
+    <div class="c-support-panel__head">
+      <div class="c-support-panel__eyebrow">Mapped resources</div>
+      <div class="c-support-panel__title">Canonical links for this guide</div>
+      <p class="c-support-panel__desc">Use these links to move between the procedure, its governing policy, and the mapped prompt assets.</p>
+    </div>
 
-      <a class="c-btn c-btn--secondary c-btn--compact"
-         href="{{ '/prompts/' | relative_url }}"
-         title="Browse prompt library">
-        Prompt library
-      </a>
+    <div class="c-support-panel__block">
+      <div class="c-support-actions" aria-label="Canonical links">
+        {% if hitem.policies %}
+          {% for pol in hitem.policies %}
+            <a class="c-btn c-btn--secondary c-btn--compact"
+               href="{{ pol.url | relative_url }}"
+               title="Read the mapped policy">
+              {{ pol.title }}
+            </a>
+          {% endfor %}
+        {% elsif hitem.policy %}
+          <a class="c-btn c-btn--secondary c-btn--compact"
+             href="{{ hitem.policy.url | relative_url }}"
+             title="Read the mapped policy">
+            {{ hitem.policy.title }}
+          </a>
+        {% endif %}
+
+        <a class="c-btn c-btn--secondary c-btn--compact"
+           href="{{ '/prompts/' | relative_url }}"
+           title="Browse prompt library">
+          Prompt library
+        </a>
+      </div>
     </div>
 
     {% if hitem.prompts %}
-    <div class="c-card__actions" aria-label="Mapped prompt files">
+      <div class="c-support-panel__block" aria-label="Mapped prompt files">
         <details class="c-disclosure-compact">
           <summary class="c-btn c-btn--secondary c-btn--compact"
                    title="Show the prompt files mapped to this how-to">
@@ -69,7 +77,7 @@
         </details>
       </div>
     {% endif %}
-  </div>
+  </section>
 {% else %}
   <p><strong>NOT VERIFIED:</strong> this how-to is not mapped in <code>docs/_data/catalog/howto.yml</code></p>
 {% endif %}

@@ -1,5 +1,6 @@
 ---
 title: Prompt engineering
+description: "Technical articles on prompting as an engineering interface: evidence contracts, capability boundaries, and reusable prompt assets."
 permalink: /articles/prompt-engineering/
 ---
 

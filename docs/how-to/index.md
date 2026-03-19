@@ -4,22 +4,96 @@ description: "Step-by-step guides for AI work: choose the right method, verify c
 permalink: /how-to/
 ---
 
-## Purpose
-Use this page to choose the right step-by-step guide for the task you need to complete.
+<section class="c-guide-intro" aria-labelledby="howto-purpose-title">
+  <div class="c-guide-intro__eyebrow">How-to hub</div>
+  <h2 class="c-guide-intro__title" id="howto-purpose-title">Purpose</h2>
+  <p class="c-guide-intro__lead">Use this page to choose the right step-by-step guide for the task you need to complete.</p>
+</section>
 
-## Start with one of these paths
-- Need to decide what sources AI is allowed to use? Start with [Choose allowed sources for factual answers]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }}).
-- Need to verify factual claims before final output? Start with [Run the fact-checking kit — procedure]({{ '/how-to/fact-checking-kit/' | relative_url }}).
-- Need a day-to-day workflow for prompting and checking output? Start with [Prompt Engineering Guide for Daily Work]({{ '/how-to/prompt-engineering-daily-work/' | relative_url }}).
-- Need a workflow for scholarly review or paper analysis? Start with [Run a scholarly literature review — procedure]({{ '/how-to/scholarly-literature-review/' | relative_url }}).
-- Need copy/paste prompt files rather than step-by-step instructions? Go to the [Prompt library]({{ '/prompts/' | relative_url }}).
+<section id="start-paths" class="c-section c-section--divider" aria-labelledby="start-paths-title">
+  <div class="c-section__header">
+    <h2 class="c-section__title" id="start-paths-title">Start with one of these paths</h2>
+    <p class="c-section__subtitle">Choose the entry point that best matches the task you need to complete.</p>
+  </div>
 
-## How to use this page
+  <div class="c-grid c-grid--2 c-grid--stretch">
+    <a class="c-card c-guide-path" href="{{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-guide-path__question">Need to decide what sources AI is allowed to use?</div>
+        <div class="c-card__title">Choose allowed sources for factual answers</div>
+        <div class="c-card__meta">Start here →</div>
+      </div>
+    </a>
 
-1. Use [On this page](#on-this-page) to jump to a task area.
-2. Open the guide that matches the task you need to complete.
-3. Use [Before you run](#before-you-run) only if you need baseline rules or key terms.
-4. If you are not sure whether you need a procedure, rules, prompt files, or reference material, use the [Content map]({{ '/reference/content-map/' | relative_url }}).
+    <a class="c-card c-guide-path" href="{{ '/how-to/fact-checking-kit/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-guide-path__question">Need to verify factual claims before final output?</div>
+        <div class="c-card__title">Run the fact-checking kit — procedure</div>
+        <div class="c-card__meta">Start here →</div>
+      </div>
+    </a>
+
+    <a class="c-card c-guide-path" href="{{ '/how-to/prompt-engineering-daily-work/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-guide-path__question">Need a day-to-day workflow for prompting and checking output?</div>
+        <div class="c-card__title">Prompt Engineering Guide for Daily Work</div>
+        <div class="c-card__meta">Start here →</div>
+      </div>
+    </a>
+
+    <a class="c-card c-guide-path" href="{{ '/how-to/scholarly-literature-review/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-guide-path__question">Need a workflow for scholarly review or paper analysis?</div>
+        <div class="c-card__title">Run a scholarly literature review — procedure</div>
+        <div class="c-card__meta">Start here →</div>
+      </div>
+    </a>
+
+    <a class="c-card c-guide-path" href="{{ '/prompts/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-guide-path__question">Need copy/paste prompt files rather than step-by-step instructions?</div>
+        <div class="c-card__title">Prompt library</div>
+        <div class="c-card__meta">Browse library →</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="how-to-use" class="c-section c-section--divider" aria-labelledby="how-to-use-title">
+  <div class="c-section__header">
+    <h2 class="c-section__title" id="how-to-use-title">How to use this page</h2>
+  </div>
+
+  <ol class="c-guide-steps" aria-label="How to use this page">
+    <li class="c-guide-step">
+      <div class="c-guide-step__num">1</div>
+      <div class="c-guide-step__body">
+        <div class="c-guide-step__title">Use <a href="#on-this-page">On this page</a> to jump to a task area.</div>
+      </div>
+    </li>
+
+    <li class="c-guide-step">
+      <div class="c-guide-step__num">2</div>
+      <div class="c-guide-step__body">
+        <div class="c-guide-step__title">Open the guide that matches the task you need to complete.</div>
+      </div>
+    </li>
+
+    <li class="c-guide-step">
+      <div class="c-guide-step__num">3</div>
+      <div class="c-guide-step__body">
+        <div class="c-guide-step__title">Use <a href="#before-you-run">Before you run</a> only if you need baseline rules or key terms.</div>
+      </div>
+    </li>
+
+    <li class="c-guide-step">
+      <div class="c-guide-step__num">4</div>
+      <div class="c-guide-step__body">
+        <div class="c-guide-step__title">If you are not sure whether you need a procedure, rules, prompt files, or reference material, use the <a href="{{ '/reference/content-map/' | relative_url }}">Content map</a>.</div>
+      </div>
+    </li>
+  </ol>
+</section>
 
 <section id="on-this-page" class="c-section c-section--divider" aria-label="On this page">
 <div class="c-section__header">
@@ -32,7 +106,7 @@ Use this page to choose the right step-by-step guide for the task you need to co
       {% assign data = site.data.catalog.howto %}
       {% for section in data.catalog %}
         <li>
-          <a class="c-btn c-btn--secondary c-btn--compact" href="#{{ section.id }}">{{ section.title | escape }}</a>
+          <a class="c-inpage-nav__link" href="#{{ section.id }}">{{ section.title | escape }}</a>
         </li>
       {% endfor %}
     </ul>
@@ -97,8 +171,43 @@ Use this page to choose the right step-by-step guide for the task you need to co
   </div>
 </section>
 
-## Related indexes
-- [Policies]({{ '/policies/' | relative_url }})
-- [Prompt library]({{ '/prompts/' | relative_url }})
-- [Reference]({{ '/reference/' | relative_url }})
-- [Articles]({{ '/articles/' | relative_url }})
+<section id="related-indexes" class="c-section c-section--divider" aria-labelledby="related-indexes-title">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub" id="related-indexes-title">Related indexes</h2>
+    <p class="c-section__subtitle">Open the matching library when you need rules, prompt files, reference material, or explanatory content.</p>
+  </div>
+
+  <div class="c-grid c-grid--2 c-grid--chooser">
+    <a class="c-card c-card--chooser" href="{{ '/policies/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">Policies</div>
+        <div class="c-card__desc">Rules, requirements, and source restrictions.</div>
+        <div class="c-card__meta">Open index →</div>
+      </div>
+    </a>
+
+    <a class="c-card c-card--chooser" href="{{ '/prompts/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">Prompt library</div>
+        <div class="c-card__desc">Copy/paste prompt files and reusable components.</div>
+        <div class="c-card__meta">Open index →</div>
+      </div>
+    </a>
+
+    <a class="c-card c-card--chooser" href="{{ '/reference/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">Reference</div>
+        <div class="c-card__desc">Definitions, diagrams, and stable lookup material.</div>
+        <div class="c-card__meta">Open index →</div>
+      </div>
+    </a>
+
+    <a class="c-card c-card--chooser" href="{{ '/articles/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">Articles</div>
+        <div class="c-card__desc">Explanation, context, and trade-off analysis.</div>
+        <div class="c-card__meta">Open index →</div>
+      </div>
+    </a>
+  </div>
+</section>

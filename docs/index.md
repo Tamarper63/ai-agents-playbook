@@ -1,7 +1,7 @@
 ---
 layout: default
-title: AI agent security, fact-checking, and prompt engineering
-description: Technical procedures, policies, prompt assets, and articles for trust boundaries, source verification, and tool-using LLM systems.
+title: AI systems review, fact-checking, and prompt engineering
+description: Technical guides, policies, prompt files, and articles for reviewing AI systems, checking claims against sources, and using AI more reliably.
 show_title: false
 ---
 
@@ -11,4 +11,3 @@ show_title: false
 {% include home/featured.html %}
 {% include home/latest-articles.html %}
 {% include newsletter.html mode="home" %}
-{% include home/scope.html %}

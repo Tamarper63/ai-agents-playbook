@@ -1,7 +1,7 @@
 ---
-title: "Objective Technical Baseline Rules (No Simulation) — policy"
+title: "Objective technical baseline (no simulation) — policy"
+description: "Baseline rules for technical, objective, non-simulative output."
 permalink: /policies/objective-technical-operating-profile/
-
 ---
 
 ## Purpose

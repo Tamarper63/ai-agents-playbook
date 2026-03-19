@@ -1,6 +1,6 @@
 ---
-title: "Scholarly Literature Review — policy"
-description: Normative policy for evidence-gated scholarly literature review workflows- literature review, evidence synthesis, source comparison, gap mapping, annotated bibliography, and evidence table outputs.
+title: "Scholarly review and evidence synthesis — policy"
+description: "Rules for literature review, evidence synthesis, source comparison, gap mapping, annotated bibliography, and evidence tables."
 permalink: /policies/scholarly-literature-review/
 ---
 
@@ -85,4 +85,4 @@ If search details are unavailable, the output MUST NOT imply more rigorous searc
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

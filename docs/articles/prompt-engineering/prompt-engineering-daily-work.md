@@ -2,6 +2,7 @@
 title: Prompt Engineering Guide for Daily Work (Deep Dive)
 permalink: /articles/prompt-engineering/prompt-engineering-daily-work/
 summary: A deep dive into why prompts fail in daily work, how to design evidence-bounded prompt specifications (grounded outputs), and how to evaluate them.
+description: "Deep dive on why prompts fail in daily work, how to design evidence-bounded prompt specifications, and how to evaluate them."
 author: Tamar Peretz
 published: 2026-02-22
 ---

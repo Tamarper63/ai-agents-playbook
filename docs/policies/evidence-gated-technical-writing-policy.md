@@ -1,5 +1,6 @@
 ---
-title: Evidence-Gated Technical Writing Policy (Claims)
+title: "Check technical writing claims before publication — policy"
+description: "Rules for publishable technical writing where non-trivial claims must be checked before output."
 permalink: /policies/evidence-gated-technical-writing-policy/
 ---
 

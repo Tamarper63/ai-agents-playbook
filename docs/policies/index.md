@@ -1,27 +1,32 @@
 ---
 title: Policies
-description: "Rules for evidence boundaries, citations, and fail-closed outputs for LLM/agent workflows."
+description: "Rules for source use, citations, verification, and technical output constraints for AI workflows."
 permalink: /policies/
 ---
 
-Policies are **rules**: they define evidence boundaries (what sources are allowed), citation requirements, and fail-closed behavior.
+Policies are **rules**. They define:
+- which sources AI may use,
+- when citations are required,
+- how verification must be done,
+- what to do when required evidence is missing.
 
-Use **Policies** when you want the rules first.  
-Use **Prompt library** for copy/paste prompt assets that implement those rules.  
-Use **How-to** for step-by-step procedures that run under those rules.
+Use **Policies** when you need rules or constraints first.  
+Use **Prompt library** when you need copy/paste prompt files that implement those rules.  
+Use **How-to** when you need step-by-step instructions for running a task under those rules.
 
-## Quick chooser (pick one)
+## Start with one of these rule sets
 
 {% include catalog/policies-quick-chooser.html %}
 
-## Common stacks (recommended combinations)
+## Recommended combinations
 
-- **Default (most work):** Facts-only (authoritative) → Web Verification & Citations → (optional) Confidence score  
-- **Offline / no browsing:** Facts-only (artifacts-only) → Code Review — Architecture & Boundaries  
-- **Publishable writing:** Evidence-Gated Technical Writing (Claims) → Web Verification & Citations → Chain-of-Verification → Semantic Accuracy Gate  
-- **Code review:** Open [Code Review]({{ '/policies/code-review/' | relative_url }}) → choose **Architecture & Boundaries** or **Implementation vs Official Guidance**
+- **General factual work:** Use cited public sources for factual answers → Use web search and cite sources for current or niche claims → Add an evidence-based confidence score (optional)
+- **Files-only analysis:** Use only the files you provide for factual answers → Verify claims before final output
+- **Publishable technical writing:** Check technical writing claims before publication → Use web search and cite sources for current or niche claims → Verify claims before final output → Check claims and terminology for technical accuracy
+- **Code review:** Open [Code review: choose the right policy]({{ '/policies/code-review/' | relative_url }}) → choose **Review architecture boundaries and layering** or **Check implementation against official guidance**
+- **Scholarly work:** Academic-style output with cited sources and confidence → Scholarly review and evidence synthesis
 
-## Policy catalog
+## Browse all policies
 
 {% include catalog/policies-catalog.html %}
 

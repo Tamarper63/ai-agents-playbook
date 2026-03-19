@@ -1,6 +1,6 @@
 ---
-title: "Code Review — choose the correct policy"
-description: "Routing page for code review policies. Choose architecture & boundaries or implementation vs official guidance."
+title: "Code review: choose the right policy"
+description: "Routing page for code review policies: architecture review or implementation review against official guidance."
 permalink: /policies/code-review/
 ---
 

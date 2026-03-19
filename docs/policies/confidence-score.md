@@ -1,6 +1,6 @@
 ---
-title: Evidence-based confidence score (0–100) — analytic reporting policy
-description: Policy defining how to report an evidence-based analytic confidence score (0–100), including scoring semantics, disclosure thresholds, and basis statements for high-impact judgments.
+title: "Add an evidence-based confidence score (0–100) — policy"
+description: "Rules for reporting an evidence-based confidence score, including scoring meaning, thresholds, and basis statements for high-impact judgments."
 permalink: /policies/confidence-score/
 ---
 

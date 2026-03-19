@@ -1,6 +1,6 @@
 ---
-title: Chain-of-Verification — policy
-description: Policy requiring a deliberate verification pass under an explicit facts-only evidence boundary before final output, with no-simulation and fail-closed behavior.
+title: "Verify claims before final output — policy"
+description: "Rules for a deliberate verification pass before final output under the active source policy."
 permalink: /policies/chain-of-verification/
 ---
 

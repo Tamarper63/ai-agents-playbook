@@ -1,5 +1,6 @@
 ---
 title: Prompt Engineering Guide for Daily Work
+description: "Operational prompting patterns for daily work with explicit evidence boundaries, verification, and fail-closed behavior."
 permalink: /how-to/prompt-engineering-daily-work/
 ---
 

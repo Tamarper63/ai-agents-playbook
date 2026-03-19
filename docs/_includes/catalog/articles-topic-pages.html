@@ -3,29 +3,41 @@
 
 {% assign any_rendered = "false" %}
 
-{% for s in t.page_sections %}
-  <h3>{{ s.title }}</h3>
-  <div class="c-grid c-grid--2">
-    {% for u in s.urls %}
-      {% assign p = site.pages | where: "url", u | first %}
-      {% if p %}
-        {% assign any_rendered = "true" %}
-        <a class="c-card" href="{{ p.url | relative_url }}">
-          <div class="c-card__content">
-            <div class="c-card__title">{{ p.title }}</div>
-            {% if p.summary %}<div class="c-card__desc">{{ p.summary }}</div>{% endif %}
-          </div>
-        </a>
-      {% endif %}
-    {% endfor %}
-  </div>
-{% endfor %}
+<div class="c-topic-sections">
+  {% for s in t.page_sections %}
+    <section class="c-topic-section" aria-labelledby="{{ include.topic }}-{{ s.title | slugify }}">
+      <div class="c-topic-section__head">
+        <h3 class="c-topic-section__title" id="{{ include.topic }}-{{ s.title | slugify }}">{{ s.title }}</h3>
+      </div>
+
+      <div class="c-grid c-grid--2 c-grid--stretch">
+        {% for u in s.urls %}
+          {% assign p = site.pages | where: "url", u | first %}
+          {% if p %}
+            {% assign any_rendered = "true" %}
+            {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
+            {% assign desc = desc | strip %}
+            {% if desc == "" %}
+              {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 24 %}
+            {% endif %}
+
+            <a class="c-card c-card--article-entry" href="{{ p.url | relative_url }}">
+              <div class="c-card__content">
+                <div class="c-card__title">{{ p.title }}</div>
+                {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}
+                {% if p.published %}<div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>{% endif %}
+              </div>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+</div>
 
 {% if any_rendered != "true" %}
-  <div class="c-card">
-    <div class="c-card__content">
-      <div class="c-card__desc">No articles are currently published in this section.</div>
-    </div>
+  <div class="c-empty-state">
+    <div class="c-empty-state__text">No articles are currently published in this section.</div>
   </div>
 {% endif %}
 

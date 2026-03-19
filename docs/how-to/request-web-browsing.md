@@ -1,5 +1,6 @@
 ---
-title: Request web browsing (prompt template)
+title: Request web browsing — procedure
+description: "Step-by-step guide for requesting web browsing for current or niche public questions, with citation-grade outputs and fail-closed behavior."
 permalink: /how-to/request-web-browsing/
 ---
 

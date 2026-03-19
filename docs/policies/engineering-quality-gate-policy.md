@@ -1,6 +1,6 @@
 ---
-title: "Engineering Quality Gate — choose the correct review"
-description: Routing page for the engineering review family. Choose architecture boundary review or standards-backed implementation review.
+title: "Engineering review: choose the right policy"
+description: "Routing page for engineering review policies: architecture review or implementation review against official guidance."
 permalink: /policies/engineering-quality-gate-policy/
 ---
 
@@ -51,4 +51,4 @@ Open:
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

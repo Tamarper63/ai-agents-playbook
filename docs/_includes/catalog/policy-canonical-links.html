@@ -10,25 +10,33 @@
 {% endfor %}
 
 {% if pitem %}
-  <div class="c-card" aria-label="Canonical links">
-    <div class="c-card__actions" aria-label="Canonical link actions">
-      {% if pitem.procedure %}
-        <a class="c-btn c-btn--secondary c-btn--compact"
-           href="{{ pitem.procedure | relative_url }}"
-           title="Open the mapped how-to procedure">
-          How-to
-        </a>
-      {% endif %}
+  <section class="c-support-panel" aria-label="Mapped resources">
+    <div class="c-support-panel__head">
+      <div class="c-support-panel__eyebrow">Mapped resources</div>
+      <div class="c-support-panel__title">Canonical links for this policy</div>
+      <p class="c-support-panel__desc">Use these links to move between the policy, its mapped procedure, and the related prompt assets.</p>
+    </div>
 
-      <a class="c-btn c-btn--secondary c-btn--compact"
-         href="{{ '/prompts/' | relative_url }}"
-         title="Browse prompt library">
-        Prompt library
-      </a>
+    <div class="c-support-panel__block">
+      <div class="c-support-actions" aria-label="Canonical links">
+        {% if pitem.procedure %}
+          <a class="c-btn c-btn--secondary c-btn--compact"
+             href="{{ pitem.procedure | relative_url }}"
+             title="Open the mapped how-to procedure">
+            How-to
+          </a>
+        {% endif %}
+
+        <a class="c-btn c-btn--secondary c-btn--compact"
+           href="{{ '/prompts/' | relative_url }}"
+           title="Browse prompt library">
+          Prompt library
+        </a>
+      </div>
     </div>
 
     {% if pitem.prompts %}
-    <div class="c-card__actions" aria-label="Mapped prompt files">
+      <div class="c-support-panel__block" aria-label="Mapped prompt files">
         <details class="c-disclosure-compact">
           <summary class="c-btn c-btn--secondary c-btn--compact"
                    title="Show the prompt files mapped to this policy">
@@ -59,7 +67,7 @@
         </details>
       </div>
     {% endif %}
-  </div>
+  </section>
 {% else %}
   <p><strong>NOT VERIFIED:</strong> this policy is not mapped in <code>docs/_data/catalog/policies.yml</code></p>
 {% endif %}

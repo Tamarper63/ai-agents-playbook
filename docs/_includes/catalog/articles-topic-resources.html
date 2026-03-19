@@ -9,11 +9,15 @@
 {% if t.baselines_md %}{% assign has_resources = true %}{% endif %}
 
 {% if has_resources %}
-<section class="c-section c-section--divider" aria-label="Section resources">
+<section class="c-section c-section--divider c-section--support" aria-label="Section resources">
   <div class="c-section__header">
     <h2 class="c-section__title c-section__title--sub">Section resources</h2>
   </div>
 
-  {% include catalog/articles-topic-disclosures.html topic=include.topic %}
+  <p class="c-section__subtitle">Context, reusable contracts, related links, and external baselines for this topic.</p>
+
+  <div class="c-support-stack">
+    {% include catalog/articles-topic-disclosures.html topic=include.topic %}
+  </div>
 </section>
 {% endif %}

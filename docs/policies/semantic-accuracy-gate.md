@@ -1,5 +1,6 @@
 ---
-title: Semantic Accuracy Gate (Claims + Terminology)
+title: "Check claims and terminology for technical accuracy — policy"
+description: "Rules for preventing overclaims and keeping terminology consistent in technical writing and prompt outputs."
 permalink: /policies/semantic-accuracy-gate/
 ---
 

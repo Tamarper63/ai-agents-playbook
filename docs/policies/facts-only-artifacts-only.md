@@ -1,5 +1,6 @@
 ---
-title: "Facts-only: Artifacts-only (no external sources)"
+title: "Use only the files you provide for factual answers — policy"
+description: "Rules for factual answers based only on user-provided files, logs, screenshots, or excerpts."
 permalink: /policies/facts-only-artifacts-only/
 ---
 
@@ -56,5 +57,4 @@ and stop.
 ## Related indexes
 - **Policies:** {{ '/policies/' | relative_url }}
 - **How-to:** {{ '/how-to/' | relative_url }}
-- **Prompt templates:** {{ '/prompts/' | relative_url }}
-- **Home:** {{ '/' | relative_url }}
+- **Prompt library:** {{ '/prompts/' | relative_url }}

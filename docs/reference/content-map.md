@@ -1,5 +1,6 @@
 ---
 title: Content map
+description: "A stable map of the site’s content types and the shortest paths to start by task, rule, prompt asset, or reference need."
 permalink: /reference/content-map/
 ---
 

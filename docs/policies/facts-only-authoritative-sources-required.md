@@ -1,5 +1,6 @@
 ---
-title: "Facts-only: Authoritative sources required (citations required)"
+title: "Use cited public sources for factual answers — policy"
+description: "Rules for factual answers backed by cited public sources such as standards, papers, and official documentation."
 permalink: /policies/facts-only-authoritative-sources-required/
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Prompt layers & policy mapping
+description: "Canonical definitions for policy, system/developer instructions, user runners, components, workflow templates, and stacks."
 permalink: /reference/prompt-layers/
 ---
 
@@ -49,7 +50,7 @@ Untrusted content includes uploaded files, pasted excerpts, retrieved pages, and
 
 ## See also (repo pages)
 - Policies index: [Policies]({{ '/policies/' | relative_url }})
-- Prompt templates: [Prompt templates]({{ '/prompts/' | relative_url }})
+- Prompt library: [Prompt library]({{ '/prompts/' | relative_url }})
 - Prompt components: [Prompt components]({{ '/prompts/components/' | relative_url }})
 - Evidence boundary chooser: [Choose a facts-only evidence boundary]({{ '/how-to/choose-facts-only-evidence-boundary/' | relative_url }})
 - Engineering Quality Gate procedure: [Engineering Quality Gate — Procedure]({{ '/how-to/engineering-quality-gate-procedure/' | relative_url }})
