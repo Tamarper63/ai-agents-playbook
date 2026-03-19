@@ -1,0 +1,11 @@
+ANALYZE BEFORE ANSWERING
+
+Purpose
+- Add a short analysis pass before the final answer.
+- Does not define reading coverage, evidence policy, or output format.
+
+Rules
+- Do not answer immediately after the first pass.
+- First identify the main evidence, constraints, conflicts, and uncertainties in the provided material.
+- Then produce the final answer under the active workflow and evidence policy.
+- Do not invent missing facts, context, or conclusions during the analysis pass.

@@ -1,52 +1,52 @@
 {% assign cfg = site.data.home.latest_articles %}
-{% assign mode = cfg.mode | default: "static" %}
-{% assign limit = cfg.limit | default: 2 %}
+{% assign limit = cfg.limit | default: 3 %}
+{% assign update_limit = cfg.update_limit | default: 3 %}
 
 {% assign article_pages = site.pages | where_exp: "p", "p.url contains '/articles/'" | where_exp: "p", "p.published" | sort: "published" | reverse %}
+{% assign recent_updates = site.data.updates.updates | sort: 'date' | reverse %}
 
-<section class="c-section c-section--latest">
+<section class="c-section c-section--latest" id="latest">
   <div class="c-section__header">
-    <h2 class="c-section__title">{{ cfg.title }}</h2>
-
-    {% if cfg.all_url and cfg.all_label %}
-      <a class="c-section__link" href="{{ cfg.all_url | relative_url }}">
-        {{ cfg.all_label }} <span aria-hidden="true">→</span>
-      </a>
-    {% endif %}
+    <h2 class="c-section__title c-section__title--sub">{{ cfg.title }}</h2>
   </div>
 
   {% if cfg.subtitle %}
     <p class="c-section__subtitle">{{ cfg.subtitle }}</p>
   {% endif %}
 
-  <div class="c-grid c-grid--2">
-    {% if mode == "dynamic" %}
-      {% for p in article_pages limit: limit %}
-        {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
-        {% assign desc = desc | strip %}
-        {% if desc == "" %}
-          {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 24 %}
-        {% endif %}
-
-        <a class="c-card" href="{{ p.url | relative_url }}">
-          <div class="c-card__content">
-            <div class="c-card__title">{{ p.title }}</div>
-            {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}
-            <div class="c-card__meta">Published: {{ p.published | date: "%Y-%m-%d" }}</div>
-          </div>
-        </a>
-      {% endfor %}
-    {% else %}
-      {% for item in cfg.items %}
-        <a class="c-card" href="{{ item.url | relative_url }}">
-          <div class="c-card__content">
-            <div class="c-card__title">{{ item.label }}</div>
-            {% if item.desc %}
-              <div class="c-card__desc">{{ item.desc }}</div>
+  <div class="c-grid c-grid--2 c-grid--stretch">
+    <div class="c-card">
+      <div class="c-card__content">
+        <div class="c-card__title">{{ cfg.articles_title | default: "Latest articles" }}</div>
+        <ul class="c-linklist" aria-label="{{ cfg.articles_title | default: 'Latest articles' }}">
+          {% for p in article_pages limit: limit %}
+            {% capture desc %}{{ p.summary | default: p.description }}{% endcapture %}
+            {% assign desc = desc | strip %}
+            {% if desc == "" %}
+              {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 18 %}
             {% endif %}
-          </div>
-        </a>
-      {% endfor %}
-    {% endif %}
+
+            <li>
+              <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+              <div class="c-linklist__desc">{{ p.published | date: "%Y-%m-%d" }}{% if desc %} · {{ desc }}{% endif %}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="c-card">
+      <div class="c-card__content">
+        <div class="c-card__title">{{ cfg.updates_title | default: "Recent updates" }}</div>
+        <ul class="c-linklist" aria-label="{{ cfg.updates_title | default: 'Recent updates' }}">
+          {% for u in recent_updates limit: update_limit %}
+            <li>
+              <a href="{{ u.url | relative_url }}">{{ u.title }}</a>
+              <div class="c-linklist__desc">{{ u.date }} · {{ u.type }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </section>

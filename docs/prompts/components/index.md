@@ -82,6 +82,19 @@ They are **not** standalone workflows.
         </a>
       </div>
     </article>
+    <article class="c-card">
+      <div class="c-card__title">Pause for analysis before answering</div>
+      <div class="c-card__desc">
+        Add a short analysis pass before the final answer in higher-depth review or synthesis tasks.
+      </div>
+      <div class="c-card__actions">
+        <a class="c-btn c-btn--primary c-btn--compact"
+           href="#analyze-before-answering-user"
+           title="Jump to analyze-before-answering">
+          Open component
+        </a>
+      </div>
+    </article>
 
     <article class="c-card">
       <div class="c-card__title">Add a structured analysis pass</div>
@@ -173,6 +186,25 @@ They are **not** standalone workflows.
       </a>
       <a class="c-btn c-btn--secondary c-btn--compact"
          href="#deep-search-user"
+         title="Jump to component details">
+        Details
+      </a>
+    </div>
+  </article>
+
+  <article class="c-card">
+    <div class="c-card__title">analyze-before-answering (user)</div>
+    <div class="c-card__desc">
+      Adds a short analysis pause before the final answer.
+    </div>
+    <div class="c-card__actions">
+      <a class="c-btn c-btn--secondary c-btn--compact"
+         href="{{ '/prompts/components/analyze-before-answering.user.txt' | relative_url }}"
+         title="Open component file">
+        Open component
+      </a>
+      <a class="c-btn c-btn--secondary c-btn--compact"
+         href="#analyze-before-answering-user"
          title="Jump to component details">
         Details
       </a>
@@ -290,6 +322,24 @@ They are **not** standalone workflows.
   <div class="c-card__actions">
     <a class="c-btn c-btn--secondary c-btn--compact"
        href="{{ '/prompts/components/deep-search.user.txt' | relative_url }}">
+      Open component
+    </a>
+  </div>
+</article>
+
+<a id="analyze-before-answering-user"></a>
+<article class="c-card c-card--row">
+  <div class="c-card__main">
+    <div class="c-card__title">analyze-before-answering (user)</div>
+    <div class="c-card__desc">Adds a short analysis pause before the final answer.</div>
+    <ul>
+      <li><strong>Use when:</strong> the task is non-trivial and you want a brief evidence/constraint/conflict pass before the final answer.</li>
+      <li><strong>Avoid when:</strong> the task is trivial, latency-sensitive, or already uses a heavier analysis component.</li>
+    </ul>
+  </div>
+  <div class="c-card__actions">
+    <a class="c-btn c-btn--secondary c-btn--compact"
+       href="{{ '/prompts/components/analyze-before-answering.user.txt' | relative_url }}">
       Open component
     </a>
   </div>

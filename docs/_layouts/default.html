@@ -14,6 +14,8 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
+
     {% assign purl = page.url | default: '' %}
     {% assign is_home = false %}
     {% case purl %}
@@ -76,12 +78,13 @@
       {% endfor %}
     {% endif %}
 
+    <li><a href="{{ '/about/' | relative_url }}">About</a></li>
     <li><a href="{{ '/updates/' | relative_url }}">Updates</a></li>
     <li><a href="{{ '/newsletter/' | relative_url }}">Newsletter</a></li>
   </ul>
 
   <div class="build-info" aria-label="Build info" dir="ltr">
-    <span><bdi dir="ltr">&copy; {{ site.time | date: '%Y' }} {{ site.author.name | default: site.author | default: site.title }}. All rights reserved.</bdi></span>
+    <span><bdi dir="ltr">&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</bdi></span>
   </div>
 </footer>
   </body>

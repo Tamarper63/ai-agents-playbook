@@ -15,13 +15,21 @@ items:
     url: "/articles/"
     active_contains: "/articles/"
 
-  - label: "Updates"
-    url: "/updates/"
-    active_contains: "/updates/"
-
   - label: "Reference"
     url: "/reference/"
     active_contains: "/reference/"
+
+  - label: "About"
+    url: "/about/"
+    active_contains: "/about/"
+    cta: true
+    cta_variant: "util"
+
+  - label: "Updates"
+    url: "/updates/"
+    active_contains: "/updates/"
+    cta: true
+    cta_variant: "util"
 
   - label: "Subscribe"
     url: "/newsletter/"

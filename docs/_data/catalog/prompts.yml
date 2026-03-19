@@ -12,6 +12,10 @@ quick_chooser:
       - title: "Workflow templates (catalog)"
         url: "/prompts/#prompts-catalog"
         desc: "Runnable templates mapped to policies and how-to procedures."
+      - title: "Code review"
+        url: "/how-to/code-review/"
+        desc: "Choose the correct code review path: architecture & boundaries or implementation vs official guidance."
+
 
   - title: "Prompt components (micro-prompts)"
     grid: "c-grid--3"
@@ -56,8 +60,8 @@ stacks:
       - "/prompts/chain-of-verification.system.txt"
       - "/prompts/confidence-score.system.txt"
 
-  - title: "Developer architecture boundary review stack"
-    desc: "Use when the task is to classify the architecture, inspect layering and dependency direction, and propose minimal structural remediation."
+  - title: "Code Review — Architecture & Boundaries"
+    desc: "Use for code review when the main question is whether the system structure, boundaries, ownership, and dependency direction are correct."
     items:
       - "/prompts/facts-only-artifacts-only.system.txt"
       - "/prompts/architecture-boundary-review.system.txt"
@@ -67,8 +71,8 @@ stacks:
       - "/prompts/chain-of-verification.system.txt"
       - "/prompts/confidence-score.system.txt"
 
-  - title: "Standards-backed implementation review stack"
-    desc: "Use when code or configuration changes must be checked against official framework, library, runtime, or platform guidance."
+  - title: "Code Review — Implementation vs Official Guidance"
+    desc: "Use for code review when code or configuration changes must be checked against official framework, library, runtime, API, or platform guidance."
     items:
       - "/prompts/facts-only-authoritative-sources-required.system.txt"
       - "/prompts/web-verification-and-citations.system.txt"
@@ -141,16 +145,16 @@ catalog:
   - title: "Task workflows"
     grid: "c-grid--2"
     items:
-      - title: "Architecture Boundary Review"
-        desc: "Use for architecture classification, layering and boundary analysis, and minimal structural remediation."
+      - title: "Code Review — Architecture & Boundaries"
+        desc: "Use for code review when the main question is whether the system structure, layering, boundaries, and ownership are correct."
         policy: "/policies/architecture-boundary-review-policy/"
         howto: "/how-to/architecture-boundary-review-procedure/"
         prompts:
           - "/prompts/architecture-boundary-review.system.txt"
           - "/prompts/architecture-boundary-review.user.txt"
 
-      - title: "Standards-Backed Implementation Review"
-        desc: "Use for source-backed review of code or configuration changes against official framework, library, runtime, or platform guidance."
+      - title: "Code Review — Implementation vs Official Guidance"
+        desc: "Use for code review when code or configuration changes must be checked against official framework, library, runtime, API, or platform guidance."
         policy: "/policies/standards-backed-implementation-review-policy/"
         howto: "/how-to/standards-backed-implementation-review-procedure/"
         prompts:

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Newsletter
-description: "Subscribe to updates on policies, prompt assets, how-to guides, and AI agent/security articles."
+description: "Subscribe to Andy Agent Lab for new articles, procedures, prompt assets, and updates on reliable AI work."
 permalink: /newsletter/
 show_title: false
 ---

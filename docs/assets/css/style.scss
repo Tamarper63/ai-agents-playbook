@@ -64,6 +64,35 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 1000;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.55rem 0.8rem;
+  border-radius: 12px;
+
+  background: $surface;
+  color: $text;
+  border: 1px solid rgba($text, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 1rem;
+  outline: 3px solid rgba($accent_2, 0.55);
+  outline-offset: 2px;
+}
+
 code,
 pre,
 kbd,

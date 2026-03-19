@@ -44,6 +44,9 @@ Load these assets in this order:
    - `annotated-bibliography.user.txt`
    - `evidence-table.user.txt`
 
+Optional add-on when needed:
+- `analyze-before-answering.user.txt` when you want a short evidence/conflict/uncertainty pass before the final answer
+
 Do **not** load multiple workflow prompt templates in the same run unless you intentionally want to rerun the task separately for another output.
 
 ## Inputs required

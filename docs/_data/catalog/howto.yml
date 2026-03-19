@@ -87,9 +87,20 @@ catalog:
           - "/prompts/evidence-gated-technical-writing-gate.system.txt"
           - "/prompts/evidence-gated-technical-writing-gate.user.txt"
 
-      - title: "Run the architecture boundary review — procedure"
+      - title: "Code Review"
+        url: "/how-to/code-review/"
+        desc: "Choose the correct code review path: architecture & boundaries or implementation vs official guidance."
+        policies:
+          - title: "Code Review"
+            url: "/policies/code-review/"
+          - title: "Architecture Boundary Review — policy"
+            url: "/policies/architecture-boundary-review-policy/"
+          - title: "Standards-Backed Implementation Review — policy"
+            url: "/policies/standards-backed-implementation-review-policy/"
+
+      - title: "Run code review — architecture & boundaries"
         url: "/how-to/architecture-boundary-review-procedure/"
-        desc: "Architecture classification, layering/boundary analysis, and minimal structural remediation."
+        desc: "Use for code review when the main question is whether the system structure, boundaries, layering, and ownership are correct."
         policy:
           title: "Architecture Boundary Review — policy"
           url: "/policies/architecture-boundary-review-policy/"
@@ -99,10 +110,11 @@ catalog:
           - "/prompts/architecture-boundary-review.user.txt"
           - "/prompts/components/deep-read.user.txt"
           - "/prompts/components/deep-scan.user.txt"
+          - "/prompts/components/analyze-before-answering.user.txt"
 
-      - title: "Run the standards-backed implementation review — procedure"
+      - title: "Run code review — implementation vs official guidance"
         url: "/how-to/standards-backed-implementation-review-procedure/"
-        desc: "Source-backed review of code or configuration changes against official guidance."
+        desc: "Use for code review when code or configuration changes must be checked against official framework, library, runtime, API, or platform guidance."
         policy:
           title: "Standards-Backed Implementation Review — policy"
           url: "/policies/standards-backed-implementation-review-policy/"
@@ -113,6 +125,7 @@ catalog:
           - "/prompts/standards-backed-implementation-review.user.txt"
           - "/prompts/components/deep-search.user.txt"
           - "/prompts/components/deep-scan.user.txt"
+          - "/prompts/components/analyze-before-answering.user.txt"
 
       - title: "Semantic Accuracy Gate — Procedure"
         url: "/how-to/semantic-accuracy-gate-procedure/"
@@ -180,6 +193,7 @@ catalog:
           - "/prompts/gap-mapping.user.txt"
           - "/prompts/annotated-bibliography.user.txt"
           - "/prompts/evidence-table.user.txt"
+          - "/prompts/components/analyze-before-answering.user.txt"
 
   - id: tooling--prompting
     title: "Tooling & prompting"

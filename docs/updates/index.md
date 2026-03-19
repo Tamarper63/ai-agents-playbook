@@ -5,7 +5,7 @@ permalink: /updates/
 ---
 
 {% if site.data.updates.updates and site.data.updates.updates.size > 0 %}
-Planned cadence: **1–2× per week**.
+Recent updates across policies, how-to guides, prompt assets, and articles.
 
 <div class="c-grid c-grid--2">
   {% assign sorted = site.data.updates.updates | sort: 'date' | reverse %}

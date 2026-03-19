@@ -37,6 +37,7 @@ Load these assets in this order:
 Optional add-ons when needed:
 - [deep-read.user.txt]({{ '/prompts/components/deep-read.user.txt' | relative_url }}) for smaller but dense files
 - [deep-scan.user.txt]({{ '/prompts/components/deep-scan.user.txt' | relative_url }}) for repo snapshots / ZIPs / many files
+- [analyze-before-answering.user.txt]({{ '/prompts/components/analyze-before-answering.user.txt' | relative_url }}) when you want a short evidence/conflict pass before the final answer
 - [chain-of-verification.system.txt]({{ '/prompts/chain-of-verification.system.txt' | relative_url }})
 - [confidence-score.system.txt]({{ '/prompts/confidence-score.system.txt' | relative_url }})
 

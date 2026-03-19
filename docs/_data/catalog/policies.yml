@@ -21,6 +21,9 @@ quick_chooser:
       - title: "Evidence-Gated Technical Writing Policy (Claims)"
         url: "/policies/evidence-gated-technical-writing-policy/"
         desc: "Evidence-gated writing gate for publishable outputs."
+      - title: "Code Review"
+        url: "/policies/code-review/"
+        desc: "Choose the correct code review policy: architecture & boundaries or implementation vs official guidance."
       - title: "Architecture Boundary Review — policy"
         url: "/policies/architecture-boundary-review-policy/"
         desc: "Architecture classification + boundary/layering review."
@@ -96,6 +99,11 @@ catalog:
         prompts:
           - "/prompts/evidence-gated-technical-writing-gate.system.txt"
           - "/prompts/evidence-gated-technical-writing-gate.user.txt"
+
+      - title: "Code Review"
+        url: "/policies/code-review/"
+        desc: "Choose the correct code review policy: architecture & boundaries or implementation vs official guidance."
+        procedure: "/how-to/code-review/"
 
       - title: "Architecture Boundary Review — policy"
         url: "/policies/architecture-boundary-review-policy/"
