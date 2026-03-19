@@ -2,13 +2,8 @@
 title: How-to guides
 description: "Step-by-step guides for AI work: choose the right method, verify claims, and use rules and prompts correctly."
 permalink: /how-to/
+show_page_head: false
 ---
-
-<section class="c-guide-intro" aria-labelledby="howto-purpose-title">
-  <div class="c-guide-intro__eyebrow">How-to hub</div>
-  <h2 class="c-guide-intro__title" id="howto-purpose-title">Purpose</h2>
-  <p class="c-guide-intro__lead">Use this page to choose the right step-by-step guide for the task you need to complete.</p>
-</section>
 
 <section id="start-paths" class="c-section c-section--divider" aria-labelledby="start-paths-title">
   <div class="c-section__header">

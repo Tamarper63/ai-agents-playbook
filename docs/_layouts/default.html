@@ -44,25 +44,29 @@
       </div>
     </header>
 
-<main id="content" class="main-content {% if is_home %}main-content--home{% else %}main-content--page{% endif %} {{ page.page_class | default: '' }}" role="main">      {% assign show_title = page.show_title | default: true %}
+<main id="content" class="main-content {% if is_home %}main-content--home{% else %}main-content--page{% endif %} {{ page.page_class | default: '' }}" role="main">
+      {% assign show_title = page.show_title | default: true %}
+      {% assign show_page_head = page.show_page_head | default: true %}
 
       {% if is_home %}
         {{ content }}
       {% else %}
         <div class="c-prose">
-          <header class="c-page-head">
-            {% include breadcrumbs.html %}
+          {% if show_page_head %}
+            <header class="c-page-head">
+              {% include breadcrumbs.html %}
 
-            {% if show_title and page.title %}
-              <h1 class="page-title">{{ page.title }}</h1>
-            {% endif %}
+              {% if show_title and page.title %}
+                <h1 class="page-title">{{ page.title }}</h1>
+              {% endif %}
 
-            {% include page-meta.html %}
+              {% include page-meta.html %}
 
-            {% if page.description %}
-              <p class="c-page-dek">{{ page.description }}</p>
-            {% endif %}
-          </header>
+              {% if page.description %}
+                <p class="c-page-dek">{{ page.description }}</p>
+              {% endif %}
+            </header>
+          {% endif %}
 
           <div class="c-page-body">
             {{ content }}

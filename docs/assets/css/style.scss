@@ -1308,6 +1308,36 @@ details.c-disclosure-compact > summary.c-btn {
   outline-offset: 2px;
 }
 
+.c-inpage-nav--soft {
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.c-inpage-nav--soft .c-inpage-nav__list {
+  gap: 0.45rem;
+}
+
+.main-content .c-inpage-nav--soft .c-inpage-nav__link,
+.main-content .c-inpage-nav--soft .c-inpage-nav__link:visited {
+  min-height: 34px;
+  padding: 0.34rem 0.62rem;
+  border-color: rgba($text, 0.08);
+  background: rgba(255, 255, 255, 0.56);
+  font-size: 0.88rem;
+  font-weight: 740;
+}
+
+.main-content .c-inpage-nav--soft .c-inpage-nav__link:hover,
+.main-content .c-inpage-nav--soft .c-inpage-nav__link:focus {
+  border-color: rgba($text, 0.14);
+  background: rgba(255, 255, 255, 0.82);
+}
+
 @media (max-width: 640px) {
   .c-inpage-nav {
     padding: 0.8rem 0.8rem 0.75rem;
@@ -1316,6 +1346,11 @@ details.c-disclosure-compact > summary.c-btn {
   .main-content .c-inpage-nav__link,
   .main-content .c-inpage-nav__link:visited {
     min-height: 40px;
+  }
+
+  .main-content .c-inpage-nav--soft .c-inpage-nav__link,
+  .main-content .c-inpage-nav--soft .c-inpage-nav__link:visited {
+    min-height: 38px;
   }
 }
 
@@ -1799,6 +1834,114 @@ a.c-card--start-entry:focus {
   padding: 0.88rem 0.95rem;
 }
 
+/* Generic hub page top sections */
+.c-hub-intro {
+  max-width: 74ch;
+  margin: 0 0 1.1rem;
+  padding: 1rem 1.1rem 0.95rem;
+  border: 1px solid rgba($text, 0.08);
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(255, 255, 255, 0.70) 100%
+  );
+  box-shadow: 0 10px 24px rgba($text, 0.03);
+}
+
+.c-hub-intro__eyebrow {
+  margin: 0 0 0.38rem;
+  font-size: 0.73rem;
+  line-height: 1.2;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba($text, 0.56);
+}
+
+.c-hub-intro__title {
+  margin: 0;
+  font-size: clamp(1.9rem, 2.4vw, 2.5rem);
+  line-height: 1.06;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: rgba($text, 0.94);
+}
+
+.c-hub-intro__lead {
+  margin: 0.55rem 0 0;
+  max-width: 62ch;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba($text, 0.76);
+}
+
+.c-hub-decision {
+  border-top: 3px solid rgba($accent_2, 0.28);
+  background: rgba(255, 255, 255, 0.80);
+  box-shadow: 0 10px 24px rgba($text, 0.04);
+}
+
+.c-hub-decision__label {
+  margin: 0 0 0.35rem;
+  font-size: 0.73rem;
+  line-height: 1.2;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba($text, 0.56);
+}
+
+.c-hub-decision .c-card__title {
+  font-size: 1.04rem;
+  line-height: 1.28;
+}
+
+.c-hub-decision .c-card__desc {
+  margin-top: 0.28rem;
+  color: rgba($text, 0.72);
+}
+
+.c-hub-decision .c-card__meta {
+  margin-top: auto;
+  padding-top: 0.78rem;
+  font-size: 0.8rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba($accent_2, 0.92);
+}
+
+.c-hub-panel {
+  padding: 1rem 1.05rem 0.95rem;
+  border: 1px solid rgba($text, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 8px 22px rgba($text, 0.03);
+}
+
+.c-hub-panel__title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: 850;
+  color: rgba($text, 0.92);
+}
+
+.c-hub-panel__desc {
+  margin: 0.35rem 0 0;
+  color: rgba($text, 0.72);
+}
+
+.c-hub-list {
+  margin: 0.7rem 0 0;
+  padding-left: 1.05rem;
+}
+
+.c-hub-list li + li {
+  margin-top: 0.45rem;
+}
+
 /* How-to hub top sections */
 .c-guide-intro {
   max-width: 74ch;
@@ -1919,12 +2062,20 @@ a.c-card--start-entry:focus {
 }
 
 @media (max-width: 640px) {
+  .c-hub-intro {
+    padding: 0.95rem 0.95rem 0.88rem;
+  }
+
   .c-guide-intro {
     padding: 1rem 0.95rem 0.92rem;
   }
 
   .c-guide-steps {
     grid-template-columns: 1fr;
+  }
+
+  .c-hub-panel {
+    padding: 0.95rem 0.95rem 0.9rem;
   }
 }
 
