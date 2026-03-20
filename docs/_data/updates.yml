@@ -1,4 +1,19 @@
 updates:
+  - date: 2026-03-20
+    type: prompt
+    title: "Added: Prompt components catalog (drop-in micro-prompts)"
+    url: "/prompts/components/"
+
+  - date: 2026-03-20
+    type: how-to
+    title: "Added procedure: Code Review — choose the correct review path"
+    url: "/how-to/code-review/"
+
+  - date: 2026-03-20
+    type: policy
+    title: "Added policy: Code review: choose the right policy"
+    url: "/policies/code-review/"
+
   - date: 2026-03-13
     type: navigation
     title: "Prompt library reorganized into stacks, workflow files, and components"
