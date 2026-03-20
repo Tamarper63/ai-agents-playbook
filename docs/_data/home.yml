@@ -1,7 +1,6 @@
 hero:
-  tagline: "Technical guidance for reviewing AI systems, checking claims, and working from sources more reliably."
-  lede: "For practitioners who need stronger source checks, clearer review paths, and practical guidance for AI-assisted work."
-
+  tagline: "Technical guidance for practical AI work — from everyday tools to agent systems."
+  lede: "Andy Agent Lab covers prompt engineering, source verification, system review, agent design, tool and memory behavior, and AI security."
 paths:
   title: "Start with your task"
   subtitle: "Choose the path that matches what you need to do."
