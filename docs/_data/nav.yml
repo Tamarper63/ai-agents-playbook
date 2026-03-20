@@ -1,4 +1,4 @@
-items:
+primary:
   - label: "How-to"
     url: "/how-to/"
     active_contains: "/how-to/"
@@ -19,13 +19,13 @@ items:
     url: "/reference/"
     active_contains: "/reference/"
 
-
+utilities:
   - label: "Updates"
     url: "/updates/"
     active_contains: "/updates/"
+    variant: "util"
 
   - label: "Subscribe"
     url: "/newsletter/"
     active_contains: "/newsletter/"
-    cta: true
-    cta_variant: "util"
+    variant: "cta"

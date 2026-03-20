@@ -341,7 +341,7 @@ In this report, these are treated as **UI-exposed labels** and are described usi
 - “artifact/export binding”
 
 ## Suggested next
-- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Articles index]({{ '/articles/' | relative_url }})
 - [Agent security]({{ '/articles/agent-security/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})
 

@@ -15,7 +15,7 @@
 
   <div class="c-grid c-grid--2 c-grid--home-utility">
     {% for item in site.data.home.featured.items %}
-      <a class="c-card c-card--home-utility" href="{{ item.url | relative_url }}">
+    <a class="c-card c-card--utility" href="{{ item.url | relative_url }}">
         <div class="c-card__content">
           <div class="c-card__title">{{ item.label }}</div>
           {% if item.desc %}

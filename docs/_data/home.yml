@@ -1,9 +1,14 @@
 hero:
   tagline: "Technical guidance for practical AI work — from everyday tools to agent systems."
-  lede: "Andy Agent Lab covers prompt engineering, source verification, system review, agent design, tool and memory behavior, and AI security."
+  lede: "Use the site to choose task-first workflows, inspect claims against sources, review AI systems, and study agent behavior, tool use, memory, and security."
+  primary_cta_label: "Start with a guide"
+  primary_cta_url: "/how-to/"
+  secondary_cta_label: "Browse articles"
+  secondary_cta_url: "/articles/"
+
 paths:
   title: "Start with your task"
-  subtitle: "Choose the path that matches what you need to do."
+  subtitle: "Choose the workflow that matches what you need to do."
   items:
     - label: "Review AI systems and code"
       url: "/how-to/code-review/"
@@ -18,26 +23,11 @@ paths:
       url: "/how-to/prompt-engineering-daily-work/"
       desc: "Choose a file-based or web-verified workflow, then add source checks and stricter rules only when needed."
 
-quickstart:
-  title: "How to use this site"
-  subtitle: "Start with a guide, choose whether to work from your files or from external sources, then open Policies or Prompt library only when needed."
-  steps:
-    - title: "Start with a guide"
-      url: "/how-to/"
-      output: "Choose the guide that matches your task before opening Policies or Prompt library."
-    - title: "Choose which sources to use"
-      url: "/how-to/choose-facts-only-evidence-boundary/"
-      output: "Decide whether the run should stay inside your files or use authoritative external sources."
-    - title: "Add Policies if needed"
-      url: "/policies/"
-      output: "Open Policies when the run needs citation rules, fail-closed behavior, or tighter source constraints."
-    - title: "Open Prompt library if needed"
-      url: "/prompts/"
-      output: "Use Prompt library for ready-made stacks, reusable prompt files, and optional components."
-
 featured:
-  title: "Explore key topics and frameworks"
-  subtitle: "These entry points highlight the ideas, models, and review frameworks that most strongly define the site."
+  title: "Browse core topics and review frameworks"
+  subtitle: "Use these entry points to study the concepts and review models that define the site."
+  all_url: "/articles/"
+  all_label: "Browse all articles"
   items:
     - label: "AI agent security"
       url: "/articles/agent-security/"
@@ -53,9 +43,13 @@ featured:
       desc: "Eight checkpoints for reviewing where untrusted input can steer routing, tool use, and write actions in chained LLM systems."
 
 latest_articles:
-  title: "Latest articles and site updates"
-  subtitle: "See new articles and recent site changes at a glance."
+  title: "Latest work on the site"
+  subtitle: "New articles first, then recent site changes."
   limit: 3
-  update_limit: 3
+  update_limit: 2
   articles_title: "Latest articles"
+  articles_url: "/articles/"
+  articles_label: "View all articles"
   updates_title: "Recent site updates"
+  updates_url: "/updates/"
+  updates_label: "View all updates"

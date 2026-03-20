@@ -21,7 +21,7 @@
               {% assign desc = p.content | markdownify | strip_html | strip_newlines | truncatewords: 24 %}
             {% endif %}
 
-            <a class="c-card c-card--article-entry" href="{{ p.url | relative_url }}">
+        <a class="c-card c-card--panel" href="{{ p.url | relative_url }}">
               <div class="c-card__content">
                 <div class="c-card__title">{{ p.title }}</div>
                 {% if desc %}<div class="c-card__desc">{{ desc }}</div>{% endif %}

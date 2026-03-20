@@ -139,7 +139,7 @@ Output_schema_validation,Validate outputs deterministically,Output validator,For
 - Use enforcement patterns consistent with policy decision + policy enforcement separation described in Zero Trust Architecture. NIST SP 800-207, DOI: 10.6028/NIST.SP.800-207.
 
 ## Suggested next
-- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Articles index]({{ '/articles/' | relative_url }})
 - [Agent architecture]({{ '/articles/agent-architecture/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})
 

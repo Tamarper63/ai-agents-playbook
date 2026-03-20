@@ -52,7 +52,6 @@ show_page_head: false
       <li><a class="c-inpage-nav__link" href="#prompts-stacks">Ready-made stacks</a></li>
       <li><a class="c-inpage-nav__link" href="#prompts-catalog">Build your own run</a></li>
       <li><a class="c-inpage-nav__link" href="#prompts-components">Optional components</a></li>
-      <li><a class="c-inpage-nav__link" href="#prompts-usage-rules">Usage rules</a></li>
       <li><a class="c-inpage-nav__link" href="#prompts-related">Related</a></li>
     </ul>
   </nav>
@@ -103,23 +102,6 @@ show_page_head: false
   </div>
 </section>
 
-<section id="prompts-usage-rules" class="c-section c-section--divider" aria-labelledby="prompts-usage-rules-title">
-  <div class="c-section__header">
-    <h2 class="c-section__title" id="prompts-usage-rules-title">Usage rules</h2>
-  </div>
-
-  <section class="c-hub-panel" aria-label="Prompt library usage rules">
-    <ul class="c-hub-list">
-      <li><strong>Pick one primary path:</strong> either start with a ready-made stack or build the run yourself.</li>
-      <li><strong>Choose one evidence mode first</strong> before adding workflows, gates, or defaults.</li>
-      <li><strong>System prompt files</strong> (<code>.system.txt</code>) define higher-authority rules such as evidence boundaries, output constraints, and fallback behavior.</li>
-      <li><strong>User prompt files</strong> (<code>.user.txt</code>) are runnable task or workflow files.</li>
-      <li><strong>Components</strong> are optional add-ons for one extra behavior and should be used sparingly.</li>
-      <li>Keep mappings explicit across policies, prompt assets, and procedures to prevent drift.</li>
-    </ul>
-  </section>
-</section>
-
 <section id="prompts-related" class="c-section c-section--divider" aria-labelledby="prompts-related-title">
   <div class="c-section__header">
     <h2 class="c-section__title c-section__title--sub" id="prompts-related-title">Related</h2>
@@ -127,15 +109,7 @@ show_page_head: false
   </div>
 
   <div class="c-grid c-grid--2 c-grid--chooser">
-    <a class="c-card c-card--chooser" href="{{ '/' | relative_url }}">
-      <div class="c-card__content">
-        <div class="c-card__title">Home</div>
-        <div class="c-card__desc">Start from task-based paths across the whole site.</div>
-        <div class="c-card__meta">Open page →</div>
-      </div>
-    </a>
-
-    <a class="c-card c-card--chooser" href="{{ '/how-to/' | relative_url }}">
+    <a class="c-card c-card--decision" href="{{ '/how-to/' | relative_url }}">
       <div class="c-card__content">
         <div class="c-card__title">How-to guides</div>
         <div class="c-card__desc">Step-by-step procedures and runnable checklists.</div>
@@ -143,7 +117,7 @@ show_page_head: false
       </div>
     </a>
 
-    <a class="c-card c-card--chooser" href="{{ '/policies/' | relative_url }}">
+    <a class="c-card c-card--decision" href="{{ '/policies/' | relative_url }}">
       <div class="c-card__content">
         <div class="c-card__title">Policies</div>
         <div class="c-card__desc">Rules, requirements, and source restrictions.</div>
@@ -151,18 +125,18 @@ show_page_head: false
       </div>
     </a>
 
-    <a class="c-card c-card--chooser" href="{{ '/articles/' | relative_url }}">
+    <a class="c-card c-card--decision" href="{{ '/reference/' | relative_url }}">
       <div class="c-card__content">
-        <div class="c-card__title">Articles</div>
-        <div class="c-card__desc">Explanation, context, and trade-off analysis.</div>
+        <div class="c-card__title">Reference</div>
+        <div class="c-card__desc">Stable terminology, diagrams, and lookup material.</div>
         <div class="c-card__meta">Open index →</div>
       </div>
     </a>
 
-    <a class="c-card c-card--chooser" href="{{ '/reference/' | relative_url }}">
+    <a class="c-card c-card--decision" href="{{ '/articles/' | relative_url }}">
       <div class="c-card__content">
-        <div class="c-card__title">Reference</div>
-        <div class="c-card__desc">Stable terminology, diagrams, and lookup material.</div>
+        <div class="c-card__title">Articles</div>
+        <div class="c-card__desc">Explanation, context, and trade-off analysis.</div>
         <div class="c-card__meta">Open index →</div>
       </div>
     </a>

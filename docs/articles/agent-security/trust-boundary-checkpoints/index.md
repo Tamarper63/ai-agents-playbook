@@ -315,6 +315,6 @@ Capture, at least:
 - [NIST AI 600-1 — Generative AI Profile][nist-ai-600-1]
 
 ## Suggested next
-- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Articles index]({{ '/articles/' | relative_url }})
 - [Agent security]({{ '/articles/agent-security/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})

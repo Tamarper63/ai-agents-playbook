@@ -7,7 +7,7 @@ show_page_head: false
 
 <section id="start-paths" class="c-section c-section--divider" aria-labelledby="start-paths-title">
   <div class="c-section__header">
-    <h2 class="c-section__title" id="start-paths-title">Start with one of these paths</h2>
+    <h2 class="c-section__title" id="start-paths-title">Start with a guide for your task</h2>
     <p class="c-section__subtitle">Choose the entry point that best matches the task you need to complete.</p>
   </div>
 
@@ -31,7 +31,7 @@ show_page_head: false
     <a class="c-card c-guide-path" href="{{ '/how-to/prompt-engineering-daily-work/' | relative_url }}">
       <div class="c-card__content">
         <div class="c-guide-path__question">Need a day-to-day workflow for prompting and checking output?</div>
-        <div class="c-card__title">Prompt Engineering Guide for Daily Work</div>
+        <div class="c-card__title">Choose a prompting workflow for daily work</div>
         <div class="c-card__meta">Start here →</div>
       </div>
     </a>
@@ -54,46 +54,10 @@ show_page_head: false
   </div>
 </section>
 
-<section id="how-to-use" class="c-section c-section--divider" aria-labelledby="how-to-use-title">
-  <div class="c-section__header">
-    <h2 class="c-section__title" id="how-to-use-title">How to use this page</h2>
-  </div>
-
-  <ol class="c-guide-steps" aria-label="How to use this page">
-    <li class="c-guide-step">
-      <div class="c-guide-step__num">1</div>
-      <div class="c-guide-step__body">
-        <div class="c-guide-step__title">Use <a href="#on-this-page">On this page</a> to jump to a task area.</div>
-      </div>
-    </li>
-
-    <li class="c-guide-step">
-      <div class="c-guide-step__num">2</div>
-      <div class="c-guide-step__body">
-        <div class="c-guide-step__title">Open the guide that matches the task you need to complete.</div>
-      </div>
-    </li>
-
-    <li class="c-guide-step">
-      <div class="c-guide-step__num">3</div>
-      <div class="c-guide-step__body">
-        <div class="c-guide-step__title">Use <a href="#before-you-run">Before you run</a> only if you need baseline rules or key terms.</div>
-      </div>
-    </li>
-
-    <li class="c-guide-step">
-      <div class="c-guide-step__num">4</div>
-      <div class="c-guide-step__body">
-        <div class="c-guide-step__title">If you are not sure whether you need a procedure, rules, prompt files, or reference material, use the <a href="{{ '/reference/content-map/' | relative_url }}">Content map</a>.</div>
-      </div>
-    </li>
-  </ol>
-</section>
-
 <section id="on-this-page" class="c-section c-section--divider" aria-label="On this page">
-<div class="c-section__header">
+  <div class="c-section__header">
     <h2 class="c-section__title c-section__title--sub">On this page</h2>
-    <p class="c-section__subtitle">Jump to a task area.</p>
+    <p class="c-section__subtitle">Jump directly to the task area you need.</p>
   </div>
 
   <nav class="c-inpage-nav" aria-label="On this page">
@@ -104,66 +68,40 @@ show_page_head: false
           <a class="c-inpage-nav__link" href="#{{ section.id }}">{{ section.title | escape }}</a>
         </li>
       {% endfor %}
+      <li><a class="c-inpage-nav__link" href="#baseline-rules">Baseline for all runs</a></li>
+      <li><a class="c-inpage-nav__link" href="#related-indexes">Related indexes</a></li>
     </ul>
   </nav>
 </section>
 
-## Browse all guides {#how-to-catalog}
-
-{% include catalog/howto-catalog.html %}
-
-<section id="before-you-run" class="c-section c-section--divider" aria-label="Before you run">
-  <div class="c-grid c-grid--2 c-disclosure-grid" role="list" aria-label="Baseline and terminology">
-    <details class="c-disclosure" role="listitem">
-      <summary>
-        <span class="c-disclosure__label--closed">Baseline (recommended for all runs)</span>
-        <span class="c-disclosure__label--open">Baseline (hide)</span>
-      </summary>
-
-      <div class="c-disclosure__body">
-        <p>Use these as the default operating rules unless a guide tells you otherwise.</p>
-        <ul>
-          <li><strong>Policy:</strong> <a href="{{ '/policies/objective-technical-operating-profile/' | relative_url }}">Objective Technical Baseline Rules (No Simulation) — policy</a></li>
-          <li><strong>System prompt files:</strong> <a href="{{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }}"><code>objective-technical-style-non-simulative.system.txt</code></a> · <a href="{{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }}"><code>instruction-hierarchy-and-evidence-boundary.system.txt</code></a></li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="c-disclosure" role="listitem">
-      <summary>
-        <span class="c-disclosure__label--closed">Key terms</span>
-        <span class="c-disclosure__label--open">Key terms (hide)</span>
-      </summary>
-
-      <div class="c-disclosure__body">
-        <ul>
-          <li><strong>Allowed sources:</strong> the source types the model may use for the answer.</li>
-          <li><strong>User-provided materials:</strong> files, logs, screenshots, or excerpts included in the request.</li>
-          <li><strong>Authoritative sources:</strong> official documentation, standards, or peer-reviewed publications.</li>
-          <li><strong>Claim:</strong> a non-trivial statement that should be checked before final output.</li>
-          <li><strong>Verification procedure:</strong> a repeatable set of checks before the final answer.</li>
-          <li><strong>Stop and report what is missing:</strong> if required evidence is missing, do not fill gaps.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="c-disclosure" role="listitem">
-      <summary>
-        <span class="c-disclosure__label--closed">Choose the right section</span>
-        <span class="c-disclosure__label--open">Choose the right section (hide)</span>
-      </summary>
-
-      <div class="c-disclosure__body">
-        <ul>
-          <li>Open <strong>How-to guides</strong> when you need step-by-step instructions for a task.</li>
-          <li>Open <strong>Policies</strong> when you need rules, requirements, or source restrictions.</li>
-          <li>Open <strong>Prompt library</strong> when you need copy/paste prompt files.</li>
-          <li>Open <strong>Reference</strong> when you need definitions, diagrams, or stable lookup material.</li>
-          <li>Open <strong>Articles</strong> when you need explanation, context, or trade-off analysis.</li>
-        </ul>
-      </div>
-    </details>
+<section id="how-to-catalog" class="c-section c-section--divider" aria-labelledby="how-to-catalog-title">
+  <div class="c-section__header">
+    <h2 class="c-section__title" id="how-to-catalog-title">Browse all guides</h2>
+    <p class="c-section__subtitle">Open the guide that matches the task you need to complete.</p>
   </div>
+
+  {% include catalog/howto-catalog.html %}
+</section>
+
+<section id="baseline-rules" class="c-section c-section--divider" aria-labelledby="baseline-rules-title">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub" id="baseline-rules-title">Baseline for all runs</h2>
+    <p class="c-section__subtitle">Use these defaults unless a guide tells you to do something stricter.</p>
+  </div>
+
+  <details class="c-disclosure">
+    <summary>
+      <span class="c-disclosure__label--closed">Show baseline rules</span>
+      <span class="c-disclosure__label--open">Hide baseline rules</span>
+    </summary>
+
+    <div class="c-disclosure__body">
+      <ul>
+        <li><strong>Policy:</strong> <a href="{{ '/policies/objective-technical-operating-profile/' | relative_url }}">Objective Technical Baseline Rules (No Simulation) — policy</a></li>
+        <li><strong>System prompt files:</strong> <a href="{{ '/prompts/objective-technical-style-non-simulative.system.txt' | relative_url }}"><code>objective-technical-style-non-simulative.system.txt</code></a> · <a href="{{ '/prompts/instruction-hierarchy-and-evidence-boundary.system.txt' | relative_url }}"><code>instruction-hierarchy-and-evidence-boundary.system.txt</code></a></li>
+      </ul>
+    </div>
+  </details>
 </section>
 
 <section id="related-indexes" class="c-section c-section--divider" aria-labelledby="related-indexes-title">
@@ -173,7 +111,7 @@ show_page_head: false
   </div>
 
   <div class="c-grid c-grid--2 c-grid--chooser">
-    <a class="c-card c-card--chooser" href="{{ '/policies/' | relative_url }}">
+    <a class="c-card c-card--decision" href="{{ '/policies/' | relative_url }}">
       <div class="c-card__content">
         <div class="c-card__title">Policies</div>
         <div class="c-card__desc">Rules, requirements, and source restrictions.</div>
@@ -181,7 +119,7 @@ show_page_head: false
       </div>
     </a>
 
-    <a class="c-card c-card--chooser" href="{{ '/prompts/' | relative_url }}">
+    <a class="c-card c-card--decision" href="{{ '/prompts/' | relative_url }}">
       <div class="c-card__content">
         <div class="c-card__title">Prompt library</div>
         <div class="c-card__desc">Copy/paste prompt files and reusable components.</div>
@@ -189,7 +127,7 @@ show_page_head: false
       </div>
     </a>
 
-    <a class="c-card c-card--chooser" href="{{ '/reference/' | relative_url }}">
+    <a class="c-card c-card--decision" href="{{ '/reference/' | relative_url }}">
       <div class="c-card__content">
         <div class="c-card__title">Reference</div>
         <div class="c-card__desc">Definitions, diagrams, and stable lookup material.</div>
@@ -197,7 +135,7 @@ show_page_head: false
       </div>
     </a>
 
-    <a class="c-card c-card--chooser" href="{{ '/articles/' | relative_url }}">
+    <a class="c-card c-card--decision" href="{{ '/articles/' | relative_url }}">
       <div class="c-card__content">
         <div class="c-card__title">Articles</div>
         <div class="c-card__desc">Explanation, context, and trade-off analysis.</div>

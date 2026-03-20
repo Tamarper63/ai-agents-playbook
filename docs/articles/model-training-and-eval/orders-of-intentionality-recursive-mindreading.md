@@ -138,7 +138,7 @@ When describing “Level N” performance for any system (humans or LLMs), state
 - Prompt library: {% include page-title-link.html url="/prompts/" fallback="Prompt library" %}
 
 ## Suggested next
-- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Articles index]({{ '/articles/' | relative_url }})
 - [Prompt engineering]({{ '/articles/prompt-engineering/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})
 

@@ -1,12 +1,29 @@
 <section class="c-section c-section--hero" aria-label="Homepage intro">
   <div class="c-hero">
     <div class="c-hero__body">
+      {% assign primary_label = site.data.home.hero.primary_cta_label %}
+      {% assign primary_url = site.data.home.hero.primary_cta_url %}
+      {% assign secondary_label = site.data.home.hero.secondary_cta_label %}
+      {% assign secondary_url = site.data.home.hero.secondary_cta_url %}
+
       {% if site.data.home.hero.tagline %}
         <h1 class="c-hero__tagline">{{ site.data.home.hero.tagline }}</h1>
       {% endif %}
 
       {% if site.data.home.hero.lede %}
         <p class="c-hero__lede">{{ site.data.home.hero.lede }}</p>
+      {% endif %}
+
+      {% if primary_label or secondary_label %}
+        <div class="c-hero__actions" aria-label="Homepage primary actions">
+          {% if primary_label and primary_url %}
+            <a class="c-btn c-btn--primary" href="{{ primary_url | relative_url }}">{{ primary_label }}</a>
+          {% endif %}
+
+          {% if secondary_label and secondary_url %}
+            <a class="c-btn c-btn--secondary" href="{{ secondary_url | relative_url }}">{{ secondary_label }}</a>
+          {% endif %}
+        </div>
       {% endif %}
     </div>
   </div>

@@ -256,7 +256,7 @@ They are **not** standalone workflows.
 <div class="c-grid c-grid--1">
 
 <a id="anti-auto-agreement-user"></a>
-<article class="c-card c-card--row">
+<article class="c-card c-card--panel c-card--row">
   <div class="c-card__main">
     <div class="c-card__title">anti-auto-agreement (user)</div>
     <div class="c-card__desc">Prevents automatic agreement/confirmation of user assertions unless supported by evidence.</div>
@@ -274,7 +274,7 @@ They are **not** standalone workflows.
 </article>
 
 <a id="deep-read-user"></a>
-<article class="c-card c-card--row">
+<article class="c-card c-card--panel c-card--row">
   <div class="c-card__main">
     <div class="c-card__title">deep-read (user)</div>
     <div class="c-card__desc">Requires complete reading of user-provided artifacts before answering.</div>
@@ -292,7 +292,7 @@ They are **not** standalone workflows.
 </article>
 
 <a id="deep-scan-user"></a>
-<article class="c-card c-card--row">
+<article class="c-card c-card--panel c-card--row">
   <div class="c-card__main">
     <div class="c-card__title">deep-scan (user)</div>
     <div class="c-card__desc">Requires exhaustive artifact scanning, explicit coverage disclosure, and evidence pointers.</div>
@@ -310,7 +310,7 @@ They are **not** standalone workflows.
 </article>
 
 <a id="deep-search-user"></a>
-<article class="c-card c-card--row">
+<article class="c-card c-card--panel c-card--row">
   <div class="c-card__main">
     <div class="c-card__title">deep-search (user)</div>
     <div class="c-card__desc">Requires web retrieval and citations for external or up-to-date facts.</div>
@@ -328,7 +328,7 @@ They are **not** standalone workflows.
 </article>
 
 <a id="analyze-before-answering-user"></a>
-<article class="c-card c-card--row">
+<article class="c-card c-card--panel c-card--row">
   <div class="c-card__main">
     <div class="c-card__title">analyze-before-answering (user)</div>
     <div class="c-card__desc">Adds a short analysis pause before the final answer.</div>
@@ -346,7 +346,7 @@ They are **not** standalone workflows.
 </article>
 
 <a id="deep-analyzed-user"></a>
-<article class="c-card c-card--row">
+<article class="c-card c-card--panel c-card--row">
   <div class="c-card__main">
     <div class="c-card__title">deep-analyzed (user)</div>
     <div class="c-card__desc">Adds a structured analysis pass with missing-input, contradiction, and compliance checks.</div>

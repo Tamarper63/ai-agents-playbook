@@ -7,7 +7,7 @@
 
     <div class="c-grid {{ group.grid }} c-grid--chooser">
       {% for item in group.items %}
-        <a class="c-card c-card--chooser" href="{{ item.url | relative_url }}">
+        <a class="c-card c-card--decision" href="{{ item.url | relative_url }}">
           <div class="c-card__content">
             <div class="c-card__title">{{ item.title }}</div>
             {% if item.desc %}<div class="c-card__desc">{{ item.desc }}</div>{% endif %}

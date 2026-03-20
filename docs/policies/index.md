@@ -2,36 +2,79 @@
 title: Policies
 description: "Rules for source use, citations, verification, and technical output constraints for AI workflows."
 permalink: /policies/
+show_page_head: false
 ---
 
-Policies are **rules**. They define:
-- which sources AI may use,
-- when citations are required,
-- how verification must be done,
-- what to do when required evidence is missing.
+<section class="c-section c-section--divider" aria-labelledby="policies-when-to-use-title">
+  <div class="c-section__header">
+    <h2 class="c-section__title" id="policies-when-to-use-title">Use this section when you need rules before you run</h2>
+    <p class="c-section__subtitle">Policies define source boundaries, verification requirements, citation rules, and what to do when evidence is missing.</p>
+  </div>
 
-Use **Policies** when you need rules or constraints first.  
-Use **Prompt library** when you need copy/paste prompt files that implement those rules.  
-Use **How-to** when you need step-by-step instructions for running a task under those rules.
+  <section class="c-hub-panel" aria-label="When to use policies">
+    <ul class="c-hub-list">
+      <li>Use <strong>Policies</strong> when you need rules, requirements, or source restrictions first.</li>
+      <li>Use <strong>Prompt library</strong> when you need copy/paste prompt files that implement those rules.</li>
+      <li>Use <strong>How-to</strong> when you need step-by-step instructions for running a task under those rules.</li>
+    </ul>
+  </section>
+</section>
 
-## Start with one of these rule sets
+<section id="policies-quick-chooser" class="c-section c-section--divider" aria-labelledby="policies-quick-chooser-title">
+  <div class="c-section__header">
+    <h2 class="c-section__title" id="policies-quick-chooser-title">Start with one of these rule sets</h2>
+    <p class="c-section__subtitle">Choose the rule set that matches the type of work you need to control.</p>
+  </div>
 
-{% include catalog/policies-quick-chooser.html %}
+  {% include catalog/policies-quick-chooser.html %}
+</section>
 
-## Recommended combinations
+<section id="policies-catalog" class="c-section c-section--divider" aria-labelledby="policies-catalog-title">
+  <div class="c-section__header">
+    <h2 class="c-section__title" id="policies-catalog-title">Browse all policies</h2>
+    <p class="c-section__subtitle">Open the policy page when you need the full rule set, mapped procedures, or linked prompt files.</p>
+  </div>
 
-- **General factual work:** Use cited public sources for factual answers → Use web search and cite sources for current or niche claims → Add an evidence-based confidence score (optional)
-- **Files-only analysis:** Use only the files you provide for factual answers → Verify claims before final output
-- **Publishable technical writing:** Check technical writing claims before publication → Use web search and cite sources for current or niche claims → Verify claims before final output → Check claims and terminology for technical accuracy
-- **Code review:** Open [Code review: choose the right policy]({{ '/policies/code-review/' | relative_url }}) → choose **Review architecture boundaries and layering** or **Check implementation against official guidance**
-- **Scholarly work:** Academic-style output with cited sources and confidence → Scholarly review and evidence synthesis
+  {% include catalog/policies-catalog.html %}
+</section>
 
-## Browse all policies
+<section id="policies-related" class="c-section c-section--divider" aria-labelledby="policies-related-title">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub" id="policies-related-title">Related</h2>
+    <p class="c-section__subtitle">Open the matching library when you need procedures, prompt files, reference material, or explanatory content.</p>
+  </div>
 
-{% include catalog/policies-catalog.html %}
+  <div class="c-grid c-grid--2 c-grid--chooser">
+    <a class="c-card c-card--decision" href="{{ '/how-to/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">How-to guides</div>
+        <div class="c-card__desc">Step-by-step procedures and runnable checklists.</div>
+        <div class="c-card__meta">Open index →</div>
+      </div>
+    </a>
 
-## Related indexes
-- [Home]({{ '/' | relative_url }})
-- [Prompt library]({{ '/prompts/' | relative_url }})
-- [How-to]({{ '/how-to/' | relative_url }})
-- [Reference]({{ '/reference/' | relative_url }})
+    <a class="c-card c-card--decision" href="{{ '/prompts/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">Prompt library</div>
+        <div class="c-card__desc">Copy/paste prompt files and reusable components.</div>
+        <div class="c-card__meta">Open index →</div>
+      </div>
+    </a>
+
+    <a class="c-card c-card--decision" href="{{ '/reference/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">Reference</div>
+        <div class="c-card__desc">Definitions, diagrams, and stable lookup material.</div>
+        <div class="c-card__meta">Open index →</div>
+      </div>
+    </a>
+
+    <a class="c-card c-card--decision" href="{{ '/articles/' | relative_url }}">
+      <div class="c-card__content">
+        <div class="c-card__title">Articles</div>
+        <div class="c-card__desc">Explanation, context, and trade-off analysis.</div>
+        <div class="c-card__meta">Open index →</div>
+      </div>
+    </a>
+  </div>
+</section>

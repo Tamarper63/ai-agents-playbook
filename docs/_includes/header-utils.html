@@ -1,74 +1,62 @@
 {% assign purl = page.url | default: '' %}
 {% assign utils_mode = include.mode | default: 'desktop' %}
+{% assign utility_items = site.data.nav.utilities | default: empty %}
 
 {% if utils_mode == 'mobile' %}
   <div class="mobile-nav__utils" aria-label="Mobile utilities">
-    {% if site.data.nav and site.data.nav.items %}
-      {% for item in site.data.nav.items %}
-        {% assign is_cta = false %}
-        {% if item.cta == true or item.is_cta == true %}
-          {% assign is_cta = true %}
-        {% endif %}
+    {% for item in utility_items %}
+      {% assign href = item.url | default: '' %}
+      {% assign ac = item.active_contains | default: '' %}
+      {% assign is_active = false %}
 
-        {% if is_cta %}
-          {% assign href = item.url | default: '' %}
-          {% assign ac = item.active_contains | default: '' %}
-          {% assign is_active = false %}
+      {% if href != '' and purl == href %}
+        {% assign is_active = true %}
+      {% elsif ac != '' and purl contains ac %}
+        {% assign is_active = true %}
+      {% endif %}
 
-          {% if href != '' and purl == href %}
-            {% assign is_active = true %}
-          {% elsif ac != '' and purl contains ac %}
-            {% assign is_active = true %}
-          {% endif %}
+      {% assign cls = 'mobile-nav__action' %}
+      {% if item.variant == 'cta' %}
+        {% assign cls = cls | append: ' mobile-nav__action--cta' %}
+      {% endif %}
+      {% if is_active %}
+        {% assign cls = cls | append: ' mobile-nav__action--active' %}
+      {% endif %}
 
-          {% assign cls = 'mobile-nav__action' %}
-          {% if is_active %}{% assign cls = cls | append: ' mobile-nav__action--active' %}{% endif %}
-
-          {% if href contains '://' %}
-            <a class="{{ cls }}" href="{{ href }}" rel="noopener" target="_blank"{% if is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
-          {% else %}
-            <a class="{{ cls }}" href="{{ href | relative_url }}"{% if is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
+      {% if href contains '://' %}
+        <a class="{{ cls }}" href="{{ href }}" rel="noopener" target="_blank"{% if is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% else %}
+        <a class="{{ cls }}" href="{{ href | relative_url }}"{% if is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endif %}
+    {% endfor %}
   </div>
 {% else %}
   <div class="page-header__utils page-header__utils--desktop" aria-label="Header utilities">
-    {% if site.data.nav and site.data.nav.items %}
-      {% for item in site.data.nav.items %}
-        {% assign is_cta = false %}
-        {% if item.cta == true or item.is_cta == true %}
-          {% assign is_cta = true %}
-        {% endif %}
+    {% for item in utility_items %}
+      {% assign variant = item.variant | default: 'util' %}
+      {% assign href = item.url | default: '' %}
+      {% assign ac = item.active_contains | default: '' %}
+      {% assign is_active = false %}
 
-        {% if is_cta %}
-          {% assign variant = item.cta_variant | default: 'primary' %}
-          {% assign href = item.url | default: '' %}
-          {% assign ac = item.active_contains | default: '' %}
-          {% assign is_active = false %}
+      {% if href != '' and purl == href %}
+        {% assign is_active = true %}
+      {% elsif ac != '' and purl contains ac %}
+        {% assign is_active = true %}
+      {% endif %}
 
-          {% if href != '' and purl == href %}
-            {% assign is_active = true %}
-          {% elsif ac != '' and purl contains ac %}
-            {% assign is_active = true %}
-          {% endif %}
+      {% if variant == 'cta' %}
+        {% assign cls = 'site-nav__cta' %}
+        {% if is_active %}{% assign cls = cls | append: ' site-nav__cta--active' %}{% endif %}
+      {% else %}
+        {% assign cls = 'page-header__util' %}
+        {% if is_active %}{% assign cls = cls | append: ' page-header__util--active' %}{% endif %}
+      {% endif %}
 
-          {% if variant == 'util' %}
-            {% assign cls = 'page-header__util' %}
-            {% if is_active %}{% assign cls = cls | append: ' page-header__util--active' %}{% endif %}
-          {% else %}
-            {% assign cls = 'site-nav__cta' %}
-            {% if is_active %}{% assign cls = cls | append: ' site-nav__cta--active' %}{% endif %}
-          {% endif %}
-
-          {% if href contains '://' %}
-            <a class="{{ cls }}" href="{{ href }}" rel="noopener" target="_blank"{% if is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
-          {% else %}
-            <a class="{{ cls }}" href="{{ href | relative_url }}"{% if is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
+      {% if href contains '://' %}
+        <a class="{{ cls }}" href="{{ href }}" rel="noopener" target="_blank"{% if is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% else %}
+        <a class="{{ cls }}" href="{{ href | relative_url }}"{% if is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endif %}
+    {% endfor %}
   </div>
 {% endif %}

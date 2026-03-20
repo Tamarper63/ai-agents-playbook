@@ -170,7 +170,7 @@ EVIDENCE:
 - [Semantic Accuracy Gate (per-claim ledger)]({{ '/prompts/semantic-accuracy-gate.user.txt' | relative_url }})
 
 ## Suggested next
-- [Articles — Start here]({{ '/articles/#start-here' | relative_url }})
+- [Articles index]({{ '/articles/' | relative_url }})
 - [Prompt engineering]({{ '/articles/prompt-engineering/' | relative_url }})
 - [Content map]({{ '/reference/content-map/' | relative_url }})
 
