@@ -2,6 +2,7 @@
 title: Control-Plane Failure Patterns in Tool-Using LLM Systems
 permalink: /articles/agent-security/control-plane-failures/
 summary: Two vendor-agnostic control-plane failure patterns—privilege persistence across interaction boundaries and non-enforcing integrity signals—that allow untrusted state to steer tool execution across steps.
+description: "Two control-plane failure patterns that let untrusted state steer tool execution across steps in multi-step LLM systems."
 author: Tamar Peretz
 published: 2026-02-22
 ---

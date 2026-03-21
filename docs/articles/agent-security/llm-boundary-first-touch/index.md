@@ -2,6 +2,7 @@
 title: "The attack surface starts before agents: the LLM integration trust boundary"
 permalink: /articles/agent-security/llm-boundary-first-touch/
 summary: "Why agent-layer threat modeling is incomplete: the first high-leverage control point is the LLM integration trust boundary (before agent frameworks exist)."
+description: "Threat-modeling guide for the LLM integration boundary where prompts, tools, and production systems first intersect."
 author: Tamar Peretz
 published: 2026-02-22
 ---

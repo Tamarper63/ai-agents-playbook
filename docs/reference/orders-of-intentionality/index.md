@@ -1,5 +1,6 @@
 ---
 title: Orders of intentionality
+description: "Reference definition of orders of intentionality and related recursive mindreading terms used in the literature and in this repository."
 permalink: /reference/orders-of-intentionality/
 ---
 

@@ -2,6 +2,7 @@
 title: Diagrams
 permalink: /reference/diagrams/
 summary: Index of technical diagrams with captions and text alternatives.
+description: "Index of technical diagrams with captions and text alternatives for architecture, trust boundaries, and attack surfaces."
 ---
 
 This index lists technical diagrams.

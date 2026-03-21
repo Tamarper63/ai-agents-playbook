@@ -2,6 +2,7 @@
 title: "Request assembly / context selection — attack surface (summary)"
 permalink: /reference/diagrams/request-assembly-context-selection-attack-surface/
 summary: "Summary schematic of the request-assembly boundary highlighting common failure modes: instruction injection, precedence confusion, truncation, provenance loss, and memory poisoning."
+description: "Summary diagram of request assembly and context selection failures, including injection, precedence confusion, truncation, provenance loss, and memory poisoning."
 ---
 
 {% include diagrams/figure.html

@@ -2,6 +2,7 @@
 title: LLM-Led vs Orchestrator-Led Tool Execution Control-Plane Placement Tradeoffs
 permalink: /articles/agent-architecture/llm-led-vs-orchestrator-led-tool-execution/
 summary: A control-plane placement comparison across reliability, observability, latency, cost governance, and security for tool-using LLM systems.
+description: "Comparison of LLM-led and orchestrator-led tool execution across reliability, observability, latency, cost governance, and security."
 author: Tamar Peretz
 published: 2026-02-22
 ---

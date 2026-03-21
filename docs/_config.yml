@@ -28,17 +28,17 @@ twitter:
   card: summary_large_image
 
 palette:
-  bg: "#FDF0D5"
+  bg: "#F7F8FA"
   surface: "#FFFFFF"
-  text: "#003049"
-  muted: "#669BBC"
-  accent: "#780000"
-  accent_2: "#C1121F"
-  border: "rgba(0,48,73,0.12)"
-  header_primary: "#003049"
-  header_secondary: "#003049"
-  header_text: "#FDF0D5"
-  header_link: "#FDF0D5"
+  text: "#0F172A"
+  muted: "#475569"
+  accent: "#7A263A"
+  accent_2: "#2563EB"
+  border: "rgba(15,23,42,0.10)"
+  header_primary: "#09111E"
+  header_secondary: "#09111E"
+  header_text: "#F8FAFC"
+  header_link: "#CBD5E1"
 
 defaults:
   - scope:

@@ -2,6 +2,7 @@
 title: "Social engineering in AI systems: attacking the decision pipeline (not just people)"
 permalink: /articles/agent-security/social-engineering-ai-decision-pipeline/
 summary: "Threat model of social engineering against AI decision pipelines; maps prompt injection to enforcement controls outside the model (PDP/PEP, validation, budgets)."
+description: "Threat model for social engineering against AI decision pipelines, mapping prompt injection to controls outside the model."
 author: Tamar Peretz
 published: 2026-02-22
 ---

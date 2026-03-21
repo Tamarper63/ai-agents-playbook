@@ -1,5 +1,6 @@
 ---
 title: Add an evidence-based confidence score (0–100) — procedure
+description: "Procedure for adding an evidence-based 0–100 confidence score to responses while preserving fail-closed sentinel behavior."
 permalink: /how-to/add-confidence-score-to-responses/
 ---
 

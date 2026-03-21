@@ -1,5 +1,6 @@
 ---
 title: "Provenance Boundary Failure — Prompt Assembly Diagram"
+description: "Reference diagram of a provenance boundary failure in prompt assembly, where untrusted input is misclassified as authoritative policy."
 permalink: /reference/diagrams/provenance-boundary-failure-prompt-assembly/
 layout: default
 ---

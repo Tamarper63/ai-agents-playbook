@@ -2,6 +2,7 @@
 title: "Why “Almost Human, But Not Quite” Feels Wrong: From Clowns to AI-Generated Images and Text"
 permalink: /articles/model-training-and-eval/almost-human-but-not-quite/
 summary: "Two separable mechanisms behind the “something feels off” reaction: cue-level perceptual mismatch (uncanny/cue conflict) vs AI-label effects on credibility and sharing."
+description: "Why AI-generated text and images can feel subtly wrong: cue-level mismatch, uncanny effects, and AI-label effects on credibility."
 author: Tamar Peretz
 published: 2026-02-25
 ---

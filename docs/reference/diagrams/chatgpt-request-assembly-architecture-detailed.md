@@ -2,6 +2,7 @@
 title: "ChatGPT request assembly architecture (detailed)"
 permalink: /reference/diagrams/chatgpt-request-assembly-architecture-detailed/
 summary: "Detailed author-mapped reference diagram for request assembly, context inputs, tool loops, observability, and R1–R8 checkpoints."
+description: "Detailed reference diagram of ChatGPT request assembly, context inputs, tool loops, observability, and R1–R8 checkpoints."
 ---
 
 > **Scope & provenance:** This is an author-mapped reference model; not a vendor-published internal placement diagram.

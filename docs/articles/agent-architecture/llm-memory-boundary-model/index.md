@@ -2,6 +2,7 @@
 title: "LLM Memory Boundary Model: Context Construction (Eligibility, Selection, Persistence) and Why Answers Change"
 permalink: /articles/agent-architecture/llm-memory-boundary-model/
 summary: A vendor-agnostic model of context construction—what can enter context (eligibility), what gets used per response (selection), and what is retained for later (persistence)—and the security controls that must live outside the prompt.
+description: "Vendor-agnostic model of context construction, selection, and persistence, and why security controls must live outside the prompt."
 author: Tamar Peretz
 published: 2026-02-22
 ---

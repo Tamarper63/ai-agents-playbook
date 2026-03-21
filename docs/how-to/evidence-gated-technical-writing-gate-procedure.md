@@ -1,5 +1,6 @@
 ---
 title: Verify claims in technical writing — procedure
+description: "Procedure for verifying technical writing claims, controlling overclaims, and producing evidence-aligned clean final text."
 permalink: /how-to/evidence-gated-technical-writing-gate-procedure/
 ---
 

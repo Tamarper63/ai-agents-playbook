@@ -2,6 +2,7 @@
 title: ChatGPT connectors basic vs agent mode
 permalink: /reference/diagrams/chatgpt-connectors-basic-vs-agent-mode/
 summary: A schematic comparing a basic-mode hint set vs a connector/agent-mode routing surface.
+description: "Schematic comparing basic-mode prompt hints with a connector or agent-mode routing surface in ChatGPT."
 ---
 
 {% include diagrams/figure.html

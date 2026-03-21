@@ -2,6 +2,7 @@
 title: The attack surface is the orchestration loop, not the model
 permalink: /articles/agent-security/controller-loop-attack-surface/
 summary: How multi-step orchestration (controller) loops change the threat model in tool-using systems, and where to enforce separation, authorization, validation, and budgets to reduce prompt injection, tool misuse, unsafe writes, and unbounded consumption.
+description: "Threat model for orchestration loops in tool-using LLM systems, with enforcement points for separation, authorization, validation, and budgets."
 author: Tamar Peretz
 published: 2026-02-22
 ---

@@ -2,6 +2,7 @@
 title: "Effective-privileges invariant — provenance & replay failure modes"
 permalink: /reference/diagrams/effective-privileges-invariant-provenance-replay/
 summary: "Reference diagram showing two common failures: chat-derived context influencing effective privileges, and model output persistence/replay into later context; highlights the server-side AuthZ + authoritative state invariant."
+description: "Reference diagram of provenance and replay failures that can corrupt effective privileges without server-side authorization invariants."
 ---
 
 {% include diagrams/figure.html

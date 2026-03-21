@@ -1,5 +1,6 @@
 ---
 title: Run the Chain-of-Verification (CoVe) — procedure
+description: "Step-by-step procedure for running Chain-of-Verification before a final answer under an explicit evidence boundary."
 permalink: /how-to/chain-of-verification-procedure/
 ---
 

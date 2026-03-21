@@ -2,6 +2,7 @@
 title: "Web tool access — prompt injection risk map"
 permalink: /reference/diagrams/web-tool-access-prompt-injection-risks/
 summary: "Reference schematic of prompt-injection risk in web tool access: routing manipulation and downstream failure modes (content-based instructions, source poisoning, query leakage, unbounded consumption, improper output handling)."
+description: "Reference diagram of prompt-injection risks in web tool access, including routing manipulation and downstream failure modes."
 ---
 
 {% include diagrams/figure.html

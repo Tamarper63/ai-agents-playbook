@@ -1,5 +1,6 @@
 ---
 title: Run the evidence-gated academic mode (EGAM) — procedure
+description: "Procedure for running Evidence-Gated Academic Mode with authoritative sources, fail-closed verification, and structured academic output."
 permalink: /how-to/evidence-gated-academic-mode/
 ---
 

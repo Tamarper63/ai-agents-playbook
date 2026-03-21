@@ -1,5 +1,6 @@
 ---
 title: Run the semantic accuracy gate — procedure
+description: "Procedure for enforcing terminology consistency, evidence labeling, and clean final text in AI-assisted technical writing."
 permalink: /how-to/semantic-accuracy-gate-procedure/
 ---
 

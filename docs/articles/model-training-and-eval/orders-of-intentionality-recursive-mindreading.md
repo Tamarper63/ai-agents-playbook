@@ -2,6 +2,7 @@
 title: Orders of Intentionality and Recursive Mindreading Definitions and Use in LLM Evaluation
 permalink: /articles/model-training-and-eval/orders-of-intentionality-recursive-mindreading/
 summary: A precise reference for nested mental-state attribution (“orders of intentionality” / “recursive mindreading”) and how these constructs are operationalized in evaluations of humans and LLMs—without implying mechanism-level Theory of Mind.
+description: "Reference on orders of intentionality and recursive mindreading, and how these constructs are used in human and LLM evaluation."
 author: Tamar Peretz
 published: 2026-02-22
 ---

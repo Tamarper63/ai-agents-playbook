@@ -2,6 +2,7 @@
 title: "Request Assembly Threat Model (Author-Mapped): Reading the “ChatGPT Request Assembly Architecture” Diagram"
 permalink: /articles/agent-security/request-assembly-threat-model/
 summary: "A reviewer-oriented explanation of the request path (S1–S5), context sources, and R1–R8 checkpoints in an author-mapped request-assembly model."
+description: "Reviewer-oriented explanation of request assembly, context sources, and control checkpoints in an author-mapped ChatGPT request model."
 author: Tamar Peretz
 published: 2026-02-22
 ---

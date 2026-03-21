@@ -2,6 +2,7 @@
 title: Human vs GenAI capability map (engineering view)
 permalink: /articles/agent-architecture/human-vs-genai-capability-map/
 summary: A practical mapping of human cognitive capabilities to GenAI limitations, engineering substitutes, and residual gaps.
+description: "Engineering map of human cognitive capabilities versus GenAI limitations, substitute design patterns, and residual gaps."
 author: Tamar Peretz
 published: 2026-02-22
 ---

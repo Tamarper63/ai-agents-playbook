@@ -2,6 +2,7 @@
 title: ChatGPT request assembly architecture
 permalink: /reference/diagrams/chatgpt-request-assembly-architecture/
 summary: Request assembly/context selection schematic with annotated risk points across tools, memory, retrieval/caching, and observability.
+description: "Reference schematic of ChatGPT request assembly and context selection with annotated risks across tools, memory, retrieval, and observability."
 ---
 
 {% include diagrams/figure.html
