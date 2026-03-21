@@ -1,10 +1,10 @@
 {% assign mode = include.mode | default: 'footer' %}
 
 {% if mode == 'home' %}
-<section class="newsletter-cta newsletter-cta--home" aria-label="Subscribe">
+<section class="newsletter-cta newsletter-cta--home" aria-label="Email updates">
   <div class="newsletter-cta__inner">
     <div class="newsletter-cta__copy">
-      <div class="newsletter-title">Subscribe</div>
+      <div class="newsletter-title">Email updates</div>
       <p class="newsletter-subtitle">
         Email updates when new guides, prompt assets, policies, and articles are published.
       </p>
@@ -17,8 +17,8 @@
 </section>
 
 {% elsif mode == 'article' %}
-<section class="newsletter-cta newsletter-cta--article" aria-label="Subscribe">
-  <div class="newsletter-title">Subscribe</div>
+<section class="newsletter-cta newsletter-cta--article" aria-label="Email updates">
+  <div class="newsletter-title">Email updates</div>
   <p class="newsletter-subtitle">
     Get new Andy Agent Lab articles and updates when new pieces ship.
   </p>
@@ -31,7 +31,7 @@
 <section class="newsletter-block" aria-label="Newsletter signup">
 
   <p class="newsletter-subtitle">
-    Subscribe for new Andy Agent Lab articles, procedures, prompt assets, and updates on AI agent security, prompt engineering, and reliable tool use.
+    Get email updates for new Andy's AI Playbook articles, procedures, prompt assets, and updates on AI agent security, prompt engineering, and reliable tool use.
   </p>
 
   <ul class="newsletter-list">
@@ -50,7 +50,7 @@
 <section class="newsletter-footer" aria-label="Newsletter">
   <div class="newsletter-footer-inner">
     <span class="newsletter-footer-title">Newsletter</span>
-    <a class="newsletter-footer-link" href="{{ '/newsletter/' | relative_url }}">Subscribe for updates</a>
+    <a class="newsletter-footer-link" href="{{ '/newsletter/' | relative_url }}">Newsletter</a>
   </div>
 </section>
 {% endif %}

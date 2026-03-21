@@ -1,4 +1,4 @@
-title: Andy Agent Lab
+title: Andy's AI Playbook
 tagline: AI agent security, prompt engineering, and reliable tool use
 description: Technical procedures, policies, prompt assets, and articles for trust boundaries, source verification, and tool-using LLM systems.
 author:
@@ -54,7 +54,7 @@ defaults:
       image: /assets/img/brand/andyagentlab-logo-hands-128h-white-clean.png
 
 social:
-  name: Andy Agent Lab
+  name: Andy's AI Playbook
   links:
     - https://www.linkedin.com/in/tamar-peretz-59245b198/
     - https://github.com/Tamarper63/ai-agents-playbook

@@ -1,15 +1,15 @@
 ---
-title: About Andy Agent Lab
-description: "What Andy Agent Lab covers, who it is for, and how the site is structured."
+title: About Andy's AI Playbook
+description: "What Andy's AI Playbook covers, who it is for, and how the site is structured."
 permalink: /about/
 ---
 
-Andy Agent Lab is a technical site by Tamar Peretz focused on AI agent security, evidence-gated AI work, prompt engineering operating patterns, and reviewable AI system behavior.
+Andy's AI Playbook is a technical site by Tamar Peretz focused on AI agent security, evidence-gated AI work, prompt engineering operating patterns, and reviewable AI system behavior.
 
 <p>
   <img
     src="{{ '/assets/img/about/tamar-peretz-headshot.jpeg' | relative_url }}"
-    alt="Portrait of Tamar Peretz, author of Andy Agent Lab"
+    alt="Portrait of Tamar Peretz, author of Andy's AI Playbook"
     loading="lazy"
     decoding="async"
     style="max-width: 360px; width: 100%; height: auto; border-radius: 14px;">
@@ -27,7 +27,7 @@ The main content focus areas are:
 - model behavior and evaluation topics where fluent output can be misleading without evidence
 
 ## Who this site is for
-Andy Agent Lab is intended for readers who need a more controlled and reviewable way to work with AI, including:
+Andy's AI Playbook is intended for readers who need a more controlled and reviewable way to work with AI, including:
 
 - practitioners using AI in daily work and needing stronger verification
 - engineers and reviewers working on agentic systems, tool use, orchestration, or architecture boundaries
@@ -60,7 +60,7 @@ This site is built around a consistent operating orientation:
 - treat AI outputs as reviewable artifacts, not as authority by default
 
 ## Author
-Andy Agent Lab is written and maintained by Tamar Peretz.
+Andy's AI Playbook is written and maintained by Tamar Peretz.
 
 ## Follow
 - [Newsletter](/newsletter/)

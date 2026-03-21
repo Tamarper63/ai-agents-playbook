@@ -1,5 +1,6 @@
 ---
 title: Chain-of-Verification 
+description: "Reference on Chain-of-Verification as a hallucination-mitigation method for drafting, verifying, and revising model outputs."
 permalink: /reference/verification-techniques/chain-of-verification/
 ---
 

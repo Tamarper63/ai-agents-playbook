@@ -25,7 +25,7 @@ utilities:
     active_contains: "/updates/"
     variant: "util"
 
-  - label: "Subscribe"
+  - label: "Newsletter"
     url: "/newsletter/"
     active_contains: "/newsletter/"
     variant: "cta"

@@ -1,6 +1,6 @@
 ---
 title: Updates
-description: Release notes and update log for new policies, how-to guides, prompt assets, and articles on Andy Agent Lab.
+description: Release notes and update log for new policies, how-to guides, prompt assets, and articles on Andy's AI Playbook.
 permalink: /updates/
 ---
 

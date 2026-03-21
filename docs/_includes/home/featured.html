@@ -1,6 +1,6 @@
-<section class="c-section c-section--featured">
+<section class="c-section c-section--featured" id="topics" aria-labelledby="home-topics-title">
   <div class="c-section__header">
-    <h2 class="c-section__title c-section__title--sub">{{ site.data.home.featured.title }}</h2>
+    <h2 class="c-section__title c-section__title--sub" id="home-topics-title">{{ site.data.home.featured.title }}</h2>
 
     {% if site.data.home.featured.all_url and site.data.home.featured.all_label %}
       <a class="c-section__link" href="{{ site.data.home.featured.all_url | relative_url }}">
