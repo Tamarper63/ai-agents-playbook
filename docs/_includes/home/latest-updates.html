@@ -1,0 +1,32 @@
+{% assign cfg = site.data.home.latest_updates %}
+{% assign limit = cfg.limit | default: 4 %}
+{% assign updates = site.data.updates.updates | sort: "date" | reverse %}
+
+<section class="c-section c-section--latest" id="latest-updates">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub">{{ cfg.title }}</h2>
+
+    {% if cfg.updates_url and cfg.updates_label %}
+      <a class="c-section__link" href="{{ cfg.updates_url | relative_url }}">
+        {{ cfg.updates_label }} <span aria-hidden="true">→</span>
+      </a>
+    {% endif %}
+  </div>
+
+  {% if cfg.subtitle %}
+    <p class="c-section__subtitle">{{ cfg.subtitle }}</p>
+  {% endif %}
+
+  <section class="c-panel-list" aria-labelledby="latest-updates-heading">
+    <h3 class="c-panel-list__head" id="latest-updates-heading">Latest updates</h3>
+
+    <ul class="c-panel-list__items" aria-label="Latest updates">
+      {% for u in updates limit: limit %}
+        <li class="c-panel-list__item">
+          <a class="c-panel-list__link" href="{{ u.url | relative_url }}">{{ u.title }}</a>
+          <div class="c-panel-list__meta">{{ u.date }} · {{ u.type }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</section>

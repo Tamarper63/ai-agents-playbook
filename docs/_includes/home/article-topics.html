@@ -1,0 +1,28 @@
+<section class="c-section c-section--featured" id="article-topics" aria-labelledby="home-article-topics-title">
+  <div class="c-section__header">
+    <h2 class="c-section__title c-section__title--sub" id="home-article-topics-title">{{ site.data.home.article_topics.title }}</h2>
+
+    {% if site.data.home.article_topics.all_url and site.data.home.article_topics.all_label %}
+      <a class="c-section__link" href="{{ site.data.home.article_topics.all_url | relative_url }}">
+        {{ site.data.home.article_topics.all_label }} <span aria-hidden="true">→</span>
+      </a>
+    {% endif %}
+  </div>
+
+  {% if site.data.home.article_topics.subtitle %}
+    <p class="c-section__subtitle">{{ site.data.home.article_topics.subtitle }}</p>
+  {% endif %}
+
+  <div class="c-grid c-grid--2 c-grid--home-utility">
+    {% for item in site.data.home.article_topics.items %}
+      <a class="c-card c-card--utility" href="{{ item.url | relative_url }}">
+        <div class="c-card__content">
+          <div class="c-card__title">{{ item.label }}</div>
+          {% if item.desc %}
+            <div class="c-card__desc">{{ item.desc }}</div>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>

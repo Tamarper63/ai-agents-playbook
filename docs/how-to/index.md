@@ -2,7 +2,7 @@
 title: How-to guides
 description: "Step-by-step guides for AI work: choose the right method, verify claims, and use rules and prompts correctly."
 permalink: /how-to/
-show_page_head: false
+show_page_head: true
 ---
 
 <section id="start-paths" class="c-section c-section--divider" aria-labelledby="start-paths-title">

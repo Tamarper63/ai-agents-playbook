@@ -1,10 +1,12 @@
 hero:
-  tagline: "Technical guidance for practical AI work — from everyday tools to agent systems."
-  lede: "Use the site to choose task-first workflows, inspect claims against sources, review AI systems, and study agent behavior, tool use, memory, and security."
-  primary_cta_label: "Start with your task"
+  tagline: "Practical guidance for reliable AI work — from daily prompting to agent review."
+  lede: "Start with a task, check what changed recently, or open a reusable asset that helps you run work more reliably."
+  primary_cta_label: "Start with a task"
   primary_cta_url: "/how-to/"
 
 paths:
+  title: "Choose a workflow"
+  subtitle: "Start with the workflow that matches your task. Use the top navigation when you already know the library you need."
   items:
     - label: "Review AI systems and code"
       url: "/how-to/code-review/"
@@ -23,28 +25,28 @@ paths:
       desc: "Choose a file-based or web-verified workflow, then add source checks and stricter rules only when needed."
       action_label: "Open prompting guide →"
 
-featured:
-  title: "Browse by topic"
-  subtitle: "Use topic hubs to navigate the article library."
-  all_url: "/articles/"
-  all_label: "Browse all articles"
-  items:
-    - label: "Agent security"
-      url: "/articles/agent-security/"
-      desc: "Trust boundaries, orchestration risk, access control, and policy enforcement for tool-using AI systems."
-    - label: "Agent architecture"
-      url: "/articles/agent-architecture/"
-      desc: "Controller placement, memory boundaries, orchestration patterns, and execution design for multi-step systems."
-    - label: "Model training and evaluation"
-      url: "/articles/model-training-and-eval/"
-      desc: "Reliability, grounding, benchmark interpretation, and failure analysis for model outputs."
-    - label: "Prompt engineering"
-      url: "/articles/prompt-engineering/"
-      desc: "Prompting as an engineering interface: evidence contracts, capability boundaries, and reusable operational assets."
+latest_updates:
+  title: "Latest updates"
+  subtitle: "Recent additions and changes across the site."
+  limit: 4
+  updates_url: "/updates/"
+  updates_label: "View all updates"
 
-latest_articles:
-  title: "Latest articles"
-  subtitle: "Newest long-form pieces from the site."
-  limit: 3
-  articles_url: "/articles/"
-  articles_label: "View all articles"
+featured:
+  title: "Start from a reusable asset"
+  subtitle: "Use one of these entry points when you need a bundle, a focused add-on, a rule set, or a canonical reference."
+  all_url: "/prompts/"
+  all_label: "Open prompt library"
+  items:
+    - label: "Use a ready-made stack"
+      url: "/prompts/#prompts-stacks"
+      desc: "Start with a pre-assembled bundle for daily work, code review, or scholarly review."
+    - label: "Add one prompt component"
+      url: "/prompts/components/"
+      desc: "Attach one focused behavior such as deep read, deep scan, web verification, or anti-auto-agreement."
+    - label: "Apply a rule set before you run"
+      url: "/policies/#policies-quick-chooser"
+      desc: "Choose the policy that sets evidence boundaries, citation requirements, and refusal conditions."
+    - label: "Check the canonical model"
+      url: "/reference/prompt-layers/"
+      desc: "Use the reference mapping for policy layers, components, workflow templates, and stacks."

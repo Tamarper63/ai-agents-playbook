@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Reliable AI work- guides, prompt assets, policies, and technical articles
-description: How-to guides, prompt assets, policies, articles, and reference for practical AI work- prompting, verification, technical writing, AI system review, and agent security.
+title: Andy's AI Playbook — practical AI work, prompt assets, policies, and reference
+description: Task-first guidance and reusable assets for practical AI work, how-to guides, prompt stacks and components, policies, reference, updates, and technical articles.
 show_title: false
 ---
 
 {% include home/hero.html %}
 {% include home/paths.html %}
 {% include home/featured.html %}
-{% include home/latest-articles.html %}
+{% include home/latest-updates.html %}
 {% include newsletter.html mode="home" %}
