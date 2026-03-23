@@ -1,5 +1,4 @@
 ---
----
 layout: default
 title: Newsletter
 description: "Newsletter with new Andy's AI Playbook articles, procedures, prompt assets, and updates on reliable AI work."

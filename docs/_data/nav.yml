@@ -1,9 +1,9 @@
 primary:
-  - label: "How-to"
+  - label: "Guides"
     url: "/how-to/"
     active_contains: "/how-to/"
 
-  - label: "Prompt library"
+  - label: "Prompts"
     url: "/prompts/"
     active_contains: "/prompts/"
 
