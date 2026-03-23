@@ -18,6 +18,7 @@ primary:
   - label: "Reference"
     url: "/reference/"
     active_contains: "/reference/"
+    hide_on_mobile: true
 
 utilities:
   - label: "Updates"

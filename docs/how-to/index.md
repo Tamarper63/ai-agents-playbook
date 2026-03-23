@@ -8,7 +8,7 @@ show_page_head: true
 <section id="start-paths" class="c-section c-section--divider" aria-labelledby="start-paths-title">
   <div class="c-section__header">
     <h2 class="c-section__title" id="start-paths-title">Start with a guide for your task</h2>
-    <p class="c-section__subtitle">Choose the entry point that best matches the task you need to complete.</p>
+    <p class="c-section__subtitle">Choose the guide that matches the task you need to complete.</p>
   </div>
 
   <div class="c-grid c-grid--2 c-grid--stretch">
@@ -23,7 +23,7 @@ show_page_head: true
     <a class="c-card c-guide-path" href="{{ '/how-to/fact-checking-kit/' | relative_url }}">
       <div class="c-card__content">
         <div class="c-guide-path__question">Need to verify factual claims before final output?</div>
-        <div class="c-card__title">Run the fact-checking kit — procedure</div>
+        <div class="c-card__title">Run the fact-checking kit</div>
         <div class="c-card__meta">Start here →</div>
       </div>
     </a>
@@ -46,9 +46,9 @@ show_page_head: true
 
     <a class="c-card c-guide-path" href="{{ '/prompts/' | relative_url }}">
       <div class="c-card__content">
-        <div class="c-guide-path__question">Need copy/paste prompt files rather than step-by-step instructions?</div>
+        <div class="c-guide-path__question">Need copy/paste prompt files rather than step-by-step guides?</div>
         <div class="c-card__title">Prompt library</div>
-        <div class="c-card__meta">Browse library →</div>
+        <div class="c-card__meta">Open prompt library →</div>
       </div>
     </a>
   </div>
@@ -68,8 +68,8 @@ show_page_head: true
           <a class="c-inpage-nav__link" href="#{{ section.id }}">{{ section.title | escape }}</a>
         </li>
       {% endfor %}
-      <li><a class="c-inpage-nav__link" href="#baseline-rules">Baseline for all runs</a></li>
-      <li><a class="c-inpage-nav__link" href="#related-indexes">Related indexes</a></li>
+      <li><a class="c-inpage-nav__link" href="#baseline-rules">Default rules for every guide</a></li>
+      <li><a class="c-inpage-nav__link" href="#related-indexes">Other libraries</a></li>
     </ul>
   </nav>
 </section>
@@ -77,7 +77,7 @@ show_page_head: true
 <section id="how-to-catalog" class="c-section c-section--divider" aria-labelledby="how-to-catalog-title">
   <div class="c-section__header">
     <h2 class="c-section__title" id="how-to-catalog-title">Browse all guides</h2>
-    <p class="c-section__subtitle">Open the guide that matches the task you need to complete.</p>
+    <p class="c-section__subtitle">Open the guide that matches the task area you need.</p>
   </div>
 
   {% include catalog/howto-catalog.html %}

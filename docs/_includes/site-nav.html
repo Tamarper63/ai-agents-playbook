@@ -5,36 +5,43 @@
 <nav class="site-nav site-nav--{{ nav_mode }}" aria-label="{% if nav_mode == 'mobile' %}Mobile primary{% else %}Primary{% endif %}">
   <ul class="site-nav__list site-nav__list--{{ nav_mode }}">
     {% for item in nav_items %}
-      {% assign is_active = false %}
-      {% assign item_url = item.url | default: '' %}
-      {% assign ac = item.active_contains | default: '' %}
-      {% assign is_external = false %}
-
-      {% if item_url contains '://' %}
-        {% assign is_external = true %}
+      {% assign is_hidden_in_mode = false %}
+      {% if nav_mode == 'mobile' and item.hide_on_mobile == true %}
+        {% assign is_hidden_in_mode = true %}
       {% endif %}
 
-      {% if item_url != '' and purl == item_url %}
-        {% assign is_active = true %}
-      {% elsif ac != '' and purl contains ac %}
-        {% assign is_active = true %}
-      {% endif %}
+      {% unless is_hidden_in_mode %}
+        {% assign is_active = false %}
+        {% assign item_url = item.url | default: '' %}
+        {% assign ac = item.active_contains | default: '' %}
+        {% assign is_external = false %}
 
-      <li class="site-nav__item site-nav__item--{{ nav_mode }}">
-        {% if is_active %}
-          {% if is_external %}
-            <a class="site-nav__link site-nav__link--{{ nav_mode }} site-nav__link--active" href="{{ item_url }}" aria-current="page" rel="noopener" target="_blank">{{ item.label }}</a>
-          {% else %}
-            <a class="site-nav__link site-nav__link--{{ nav_mode }} site-nav__link--active" href="{{ item_url | relative_url }}" aria-current="page">{{ item.label }}</a>
-          {% endif %}
-        {% else %}
-          {% if is_external %}
-            <a class="site-nav__link site-nav__link--{{ nav_mode }}" href="{{ item_url }}" rel="noopener" target="_blank">{{ item.label }}</a>
-          {% else %}
-            <a class="site-nav__link site-nav__link--{{ nav_mode }}" href="{{ item_url | relative_url }}">{{ item.label }}</a>
-          {% endif %}
+        {% if item_url contains '://' %}
+          {% assign is_external = true %}
         {% endif %}
-      </li>
+
+        {% if item_url != '' and purl == item_url %}
+          {% assign is_active = true %}
+        {% elsif ac != '' and purl contains ac %}
+          {% assign is_active = true %}
+        {% endif %}
+
+        <li class="site-nav__item site-nav__item--{{ nav_mode }}">
+          {% if is_active %}
+            {% if is_external %}
+              <a class="site-nav__link site-nav__link--{{ nav_mode }} site-nav__link--active" href="{{ item_url }}" aria-current="page" rel="noopener" target="_blank">{{ item.label }}</a>
+            {% else %}
+              <a class="site-nav__link site-nav__link--{{ nav_mode }} site-nav__link--active" href="{{ item_url | relative_url }}" aria-current="page">{{ item.label }}</a>
+            {% endif %}
+          {% else %}
+            {% if is_external %}
+              <a class="site-nav__link site-nav__link--{{ nav_mode }}" href="{{ item_url }}" rel="noopener" target="_blank">{{ item.label }}</a>
+            {% else %}
+              <a class="site-nav__link site-nav__link--{{ nav_mode }}" href="{{ item_url | relative_url }}">{{ item.label }}</a>
+            {% endif %}
+          {% endif %}
+        </li>
+      {% endunless %}
     {% endfor %}
   </ul>
 </nav>
